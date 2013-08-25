@@ -1,0 +1,17 @@
+加入不用經過同意
+提出修改的部份才需要經過同意
+我前幾天剛學會流程
+先上這裡註冊
+https://github.com
+
+註冊成功之後
+到這裡按右上的"Fork"
+Fork就是分叉的意思，它會創造出你的專屬分叉
+接著
+到你的專屬分叉頁面，按右下的"Clone in Desktop"
+就可以整個下載到電腦上跑
+
+
+Windows使用說明：http://blog.sanc.idv.tw/2012/10/github-github.html
+
+Mac下載點：http://mac.github.com
