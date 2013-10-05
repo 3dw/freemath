@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+
+</head>
+
+<script type="text/javascript">
+
+	function plch(obj, add, sym) {
+		var ans = eval(obj.innerHTML);
+		if (obj.innerHTML !== String(ans)) {
+			obj.innerHTML = ans;
+			document.getElementById('bigans').innerHTML = ans;
+		}
+		else {
+			var n1 = Math.floor(Math.random()*10) + add;
+			var n2 = Math.floor(Math.random()*10) + 1;
+			var ques = n1+sym+n2;
+			obj.innerHTML = ques;
+			document.getElementById('bigans').innerHTML = ques;
+		}
+	}
+
+	function pl(obj) {
+		plch(obj,1,' + ');
+	}
+
+	function ch(obj) {
+		plch(obj,10,' - ');
+	}
+
+	function tmdv(obj,symR,symE, n1, n2) {
+
+		var ans = eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]);
+
+		if (ans && obj.innerHTML !== String(ans)) {
+			obj.innerHTML = ans;
+			document.getElementById('bigans').innerHTML = ans;
+
+		}
+		else {
+			var ques = n1+symR+n2;
+			obj.innerHTML = ques;
+			document.getElementById('bigans').innerHTML = ques;
+		}
+	}
+
+	function tm(obj) {
+		
+		var n1 = Math.floor(Math.random()*10) + 1;
+		var n2 = Math.floor(Math.random()*10) + 1;
+		
+		tmdv(obj," x "," * ",n1,n2);
+	}
+
+	function dv(obj) {
+		
+		var n2 = Math.floor(Math.random()*10) + 1;
+		var n1 = n2 * (Math.floor(Math.random()*10) + 1);
+		
+		tmdv(obj," ÷ "," / ",n1,n2);
+	}
+</script>
+
+<body>
+
+
+<h1>閃卡</h1>
+
+<br />
+<br />
+
+<p em = "4">
+
+<button onclick="pl(this)"> 7 + 8 </button><br /><br />
+<button onclick="pl(this)"> 6 + 7 </button><br /><br />
+<button onclick="ch(this)"> 12 - 5 </button><br /><br />
+<button onclick="ch(this)"> 17 - 9</button><br /><br />
+<br />
+<div position = "absolute" top = "300px" left = "300px">
+	<big><big><big id = "bigans">???
+	</big></big></big>
+</div>
+<br />
+<button onclick="tm(this)"> 9 x 7</button><br /><br />
+<button onclick="tm(this)"> 6 x 5</button><br /><br />
+<button onclick="dv(this)"> 21 ÷ 3</button><br /><br />
+<button onclick="dv(this)"> 42 ÷ 6</button><br /><br />
+
+</p>
+
+
+</body>
