@@ -8,7 +8,31 @@
 <!-- Release to Freemath, 自學數學團-->
 <!-- Right: CC0, Public Domain-->
 
-<!--Todo next: add Roman number switch botton -->
+<!--Todo next: 修$的長相 -->
+<style>
+  div.circle {
+    border: 3px solid #803100;
+    background: brown;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    width: 50px; height: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  div.rect {
+    border: 3px solid #AA0000;
+    background: #FF9999;
+    border-radius: 0%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    width: 100px; height: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+</style>
 
 </head>
 
@@ -82,13 +106,13 @@
 	function symToM (sym) {
 		switch (sym){
 			case ' + ': 
-				return '又有';
+				return '<div style ="float:left">又有</div>';
 			case ' - ':
-				return '扣掉';
+				return '<div style ="float:left">扣掉</div>';
 			case ' × ':
-				return '每一塊都變成';
+				return '<div style ="float:left">每一塊都變成</div>';
 			case ' ÷ ':
-				return '分裝成好幾包，每包都要裝';
+				return '<div style ="float:left">分裝成好幾包，每包都要裝</div>';
 			default:
 				return '';
 		}
@@ -97,7 +121,7 @@
 
 	function toM (num) {		
 		var ansM = "";
-		num < 0 ? ansM = "欠" : ansM = "";
+		num < 0 ? ansM = "<div style ='float:left'>欠債</div>" : ansM = "";
 		num < 0 ? num = Math.abs(num) : num = num;
 		
 		var fHunds = Math.floor(num / 500);
@@ -107,24 +131,26 @@
 		var fives = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
 		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
 
-		for (var i = 0; i < hunds; i++) {
-			ansM = ansM + "(500)";
+		for (var i = 0; i < fHunds; i++) {
+			ansM = ansM + "<div class=rect style='background:#FF91FE;width:120px;height:60px;line-height:60px'>500</div>";
 		};
 		for (var i = 0; i < hunds; i++) {
-			ansM = ansM + "(100)";
+			ansM = ansM + "<div class=rect>100</div>";
 		};
 		for (var i = 0; i < fiftys; i++) {
-			ansM = ansM + "(50)";
+			ansM = ansM + "<div class=circle style='background:gold;width:64px;height:64px;line-height:64px;'>50</div>";
 		};
 		for (var i = 0; i < tens; i++) {
-			ansM = ansM + "(10)";
+			ansM = ansM + "<div class=circle style = 'border: 3px solid gray;background:silver; width:60px;height:60px;line-height:60px;'>10</div>";
 		};
 		for (var i = 0; i < fives; i++) {
-			ansM = ansM + "(5)";
+			ansM = ansM + "<div class=circle style = 'border: 3px solid gray;background:silver; width:54px;height:54px;line-height:54px;'>5</div>";
 		};
 		for (var i = 0; i < ones; i++) {
-			ansM = ansM + "(1)";
+			ansM = ansM + "<div class=circle>1</div>";
 		};
+
+		ansM = ansM + "<br /><br />"
 
 		return ansM;
 	}
@@ -416,6 +442,7 @@
 <button onclick="chLow(this)">-50</button>
 <button onclick="chLow(this)">-100</button>
 </h1>
+<hr>
 
 <br />
 <br />
