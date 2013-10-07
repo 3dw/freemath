@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
@@ -13,6 +14,8 @@
 
 <script type="text/javascript">
 
+	var upBound = 20;
+	var lowBound = 0;
 	var win = 0;
 	var start = 0;
 	var objNow;
@@ -34,14 +37,17 @@
 	}
 
 	function toC(num) {
+		
+		var ansC = "";
+		num < 0 ? ansC = "負" : ansC = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+		
 		var hunds = Math.floor(num / 100);
 		var tens = Math.floor((num - hunds * 100 ) / 10);
 		var ones = num - hunds * 100 - 10 * tens;
 
 		var list = ['','','二','三','四','五','六','七','八','九'];
 		var list1 = ['','一','二','三','四','五','六','七','八','九'];
-
-		var ansC = "";
 
 		if (num == 0) {
 			return '零';
@@ -74,7 +80,7 @@
 	function symToM (sym) {
 		switch (sym){
 			case ' + ': 
-				return '';
+				return '又有';
 			case ' - ':
 				return '扣掉';
 			case ' × ':
@@ -87,13 +93,21 @@
 	}
 
 
-	function toM (num) {
-		var hunds = Math.floor(num / 100);
-		var fiftys = Math.floor((num - hunds * 100) / 50);
-		var tens = Math.floor((num - hunds * 100 - fiftys * 50) / 10);
-		var fives = Math.floor((num - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
-		var ones = num - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
+	function toM (num) {		
 		var ansM = "";
+		num < 0 ? ansM = "欠" : ansM = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+		
+		var fHunds = Math.floor(num / 500);
+		var hunds = Math.floor((num - fHunds * 500) / 100);
+		var fiftys = Math.floor((num - fHunds * 500 - hunds * 100) / 50);
+		var tens = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50) / 10);
+		var fives = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
+		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
+
+		for (var i = 0; i < hunds; i++) {
+			ansM = ansM + "(500)";
+		};
 		for (var i = 0; i < hunds; i++) {
 			ansM = ansM + "(100)";
 		};
@@ -114,12 +128,19 @@
 	}
 
 	function toR(num) {
-		var hunds = Math.floor(num / 100);
-		var fiftys = Math.floor((num - hunds * 100) / 50);
-		var tens = Math.floor((num - hunds * 100 - fiftys * 50) / 10);
-		var fives = Math.floor((num - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
-		var ones = num - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
 		var ansR = "";
+		num < 0 ? ansR = "-" : ansR = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+					
+		var fHunds = Math.floor(num / 500);
+		var hunds = Math.floor((num - fHunds * 500) / 100);
+		var fiftys = Math.floor((num - fHunds * 500 - hunds * 100) / 50);
+		var tens = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50) / 10);
+		var fives = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
+		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
+		for (var i = 0; i < fHunds; i++) {
+			ansR = ansR + "D";
+		};
 		for (var i = 0; i < hunds; i++) {
 			ansR = ansR + "C";
 		};
@@ -140,19 +161,32 @@
 
 	}
 
-	function checkAns (bigAns, data){
+	function checkAns (bigAns, data, att){
 		var ans = eval(data);
 		if (document.getElementById(bigAns).getElementsByTagName("input")[0].value == eval(data)) {
 			win++;
-			var bonus = "";
+			var bonus = "有";
 			for (var i = 0; i < Math.floor(win / 3);i++) {
+				if (bonus == "有") {
+					bonus = "";
+				}					
 				bonus += "超";
 			}
-			alert("答對了！這是你第"+win+"次連續答對！你"+bonus+"強！");
+			if (att == "positive") {
+				alert("答對了！這是你第"+win+"次連續答對！你"+bonus+["強！", "讚！", "用心！", "認真!"][Math.floor(Math.random()*4)]);
+			}
+			if (att =="negative") {
+				alert("才連續答對"+win+"次…根本就是"+bonus+"靠運氣！");
+			}
 		}
 		else {
-			alert("答案是"+ans+"。沒關係，再接再勵！在此之前你已連續答對了"+win+"次！");
-			win = 0;
+			if (att == "positive") {
+				alert("答案是"+ans+"。沒關係，再接再勵！在此之前你已連續答對了"+win+"次！");
+				win = 0;
+			}
+			if (att =="negative") {
+				alert("答案是"+ans+["才對，你是笨，還是菜，還是呆？","才對，這很簡單，你怎麼都不會？","才對，拜託你小心一點！","才對，不要胡亂回答！"][Math.floor(Math.random()*4)]);
+			}
 		}
 		start = 1;
 	}
@@ -181,7 +215,18 @@
 						start = 0;
 				}
 				else {
-					checkAns('bigans',data);
+					checkAns('bigans',data, "positive");
+					document.getElementById('bigans').innerHTML = data;
+				}
+				break;
+				
+			case "挫折模式":			
+				if (qa == "Q") {
+					document.getElementById('bigans').innerHTML = data+" = "+"<input type = 'search'></input><button onclick = 'clk()'>忍受挫折!</button>";
+						start = 0;
+				}
+				else {
+					checkAns('bigans',data, "negative");
 					document.getElementById('bigans').innerHTML = data;
 				}
 				break;
@@ -202,8 +247,10 @@
 			writeBig("A",ans,ansR,ansM,ansC);
 		}
 		else {
-			var n1 = Math.floor(Math.random()*10) + add;
-			var n2 = Math.floor(Math.random()*10) + 1;
+			var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
+			var n2 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + 1;
+			n1 = eval(n1 + lowBound / 2);
+			n2 = eval(n2 + lowBound / 2);
 			var ques = n1+sym+n2;
 			var quesR = toR(n1)+sym+toR(n2);
 			var quesM = toM(n1)+symToM(sym)+toM(n2);
@@ -216,11 +263,11 @@
 	}
 
 	function pl(obj) {
-		plch(obj,1,' + ');
+		plch(obj, 1, ' + ');
 	}
 
 	function ch(obj) {
-		plch(obj,10,' - ');
+		plch(obj, (upBound - lowBound) / 2, ' - ');
 	}
 
 	function tmdv(obj,symR,symE, n1, n2) {
@@ -295,7 +342,12 @@
 				alert("已進入挑戰模式");
 				start = 1;
 				break;
-
+				
+			case "挫折模式" : 
+				rep = "挫折模式";
+				alert("已進入挫折模式");
+				start = 1;
+				break;
 			
 			default : 
 				obj.innerHTML = "6";
@@ -304,18 +356,40 @@
 				alert("已進入單純阿拉伯數字模式");
 		};			
 	}
+	
+	function chUp(obj) {
+		upBound = obj.innerHTML;
+		alert("加減法上限已設為"+upBound);
+	}
+	
+	function chLow(obj) {
+		lowBound = obj.innerHTML;
+		alert("加減法下限已設為"+lowBound);
+	}
+	
 </script>
 
 <body>
 
 
 <h1>閃卡<button onclick="swi(this)">6</button><button onclick="swi(this)">VI</button><button onclick="swi(this)">$</button><button onclick="swi(this)">六</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<button onclick="swi(this)">挑戰模式</button></h1>
+<button onclick="swi(this)">挑戰模式</button>
+<button onclick="swi(this)">挫折模式</button>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="chUp(this)">20</button>
+<button onclick="chUp(this)">50</button>
+<button onclick="chUp(this)">100</button>
+<button onclick="chUp(this)">1000</button>
+<button onclick="chLow(this)">0</button>
+<button onclick="chLow(this)">-20</button>
+<button onclick="chLow(this)">-50</button>
+<button onclick="chLow(this)">-100</button>
+</h1>
 
 <br />
 <br />
 <br />
-
 
 <button onclick="pl(this)"> 7 + 8 </button><br /><br />
 <button onclick="pl(this)"> 6 + 7 </button><br /><br />
