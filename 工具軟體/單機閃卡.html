@@ -13,7 +13,9 @@
 </head>
 
 <script type="text/javascript">
-
+	
+	var posRight = ["強！", "讚！", "用心！", "認真!"];
+	var negWrong = ["你是笨，還是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
 	var upBound = 20;
 	var lowBound = 0;
 	var win = 0;
@@ -165,15 +167,15 @@
 		var ans = eval(data);
 		if (document.getElementById(bigAns).getElementsByTagName("input")[0].value == eval(data)) {
 			win++;
-			var bonus = "有";
+			var bonus = "真";
 			for (var i = 0; i < Math.floor(win / 3);i++) {
-				if (bonus == "有") {
+				if (bonus == "真") {
 					bonus = "";
 				}					
 				bonus += "超";
 			}
 			if (att == "positive") {
-				alert("答對了！這是你第"+win+"次連續答對！你"+bonus+["強！", "讚！", "用心！", "認真!"][Math.floor(Math.random()*4)]);
+				alert("答對了！這是你第"+win+"次連續答對！你"+bonus+posRight[Math.floor(Math.random()*posRight.length)]);
 			}
 			if (att =="negative") {
 				alert("才連續答對"+win+"次…根本就是"+bonus+"靠運氣！");
@@ -185,7 +187,7 @@
 				win = 0;
 			}
 			if (att =="negative") {
-				alert("答案是"+ans+["才對，你是笨，還是菜，還是呆？","才對，這很簡單，你怎麼都不會？","才對，拜託你小心一點！","才對，不要胡亂回答！"][Math.floor(Math.random()*4)]);
+				alert("答案是"+ans+"才對，"+negWrong[Math.floor(Math.random()*negWrong.length)]);
 			}
 		}
 		start = 1;
@@ -236,7 +238,7 @@
 		}
 	}
 
-	function plch(obj, add, sym) {
+	function plmi(obj, add, sym) {
 		objNow = obj;
 		var ans = eval(obj.innerHTML);
 		var ansR = toR(ans);
@@ -263,11 +265,11 @@
 	}
 
 	function pl(obj) {
-		plch(obj, 1, ' + ');
+		plmi(obj, 1, ' + ');
 	}
 
-	function ch(obj) {
-		plch(obj, (upBound - lowBound) / 2, ' - ');
+	function mi(obj) {
+		plmi(obj, (upBound - lowBound) / 2, ' - ');
 	}
 
 	function tmdv(obj,symR,symE, n1, n2) {
@@ -367,6 +369,33 @@
 		alert("加減法下限已設為"+lowBound);
 	}
 	
+
+	function hacker(obj,val) {
+		var objs = document.getElementById('bigans').getElementsByTagName("input");
+		var ans = [];
+		var objT = objs[val];
+		var list = objT.value.split(",");
+
+		for (var i = 0; i < list.length; i++) {
+			ans.push(list[i]);
+		};
+
+		switch (val) {
+			case 0:
+				posRight = ans;
+				break;
+			case 1:
+				negWrong = ans;
+				break;
+		}
+		alert(ans);
+	}
+
+	function hack(obj) {
+		document.getElementById('bigans').innerHTML = "目前正評<br /><input type = 'search'  size = '60' value = '" + posRight + "'></input><button onclick = 'hacker(this, 0)'>修改完畢</button><hr><br />" +"目前負評<br /><input type = 'search' size = '100' value = '" + negWrong + "'></input><button onclick = 'hacker(this, 1)'>修改完畢</button><hr><br />";
+	}
+
+	
 </script>
 
 <body>
@@ -375,6 +404,7 @@
 <h1>閃卡<button onclick="swi(this)">6</button><button onclick="swi(this)">VI</button><button onclick="swi(this)">$</button><button onclick="swi(this)">六</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <button onclick="swi(this)">挑戰模式</button>
 <button onclick="swi(this)">挫折模式</button>
+<button onclick="hack(this)">修改評語</button>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <button onclick="chUp(this)">20</button>
@@ -393,8 +423,8 @@
 
 <button onclick="pl(this)"> 7 + 8 </button><br /><br />
 <button onclick="pl(this)"> 6 + 7 </button><br /><br />
-<button onclick="ch(this)"> 12 - 5 </button><br /><br />
-<button onclick="ch(this)"> 17 - 9</button><br /><br />
+<button onclick="mi(this)"> 12 - 5 </button><br /><br />
+<button onclick="mi(this)"> 17 - 9</button><br /><br />
 <br />
 <div position = "absolute" top = "300px" left = "300px">
 	<big><big><big id = "bigans">???
