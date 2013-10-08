@@ -37,7 +37,8 @@
 </head>
 
 <script type="text/javascript">
-	
+
+	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是笨，還是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
 	var upBound = 20;
@@ -223,6 +224,8 @@
 		objNow.onclick(objNow);
 	}
 
+// 書寫
+
 	function writeBig (qa, data, dataR, dataM, dataC){
 		switch (rep) {
 			case "VI":
@@ -236,6 +239,7 @@
 			case "六":
 				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataC;
 				break;
+
 
 			case "挑戰模式":
 				if (qa == "Q") {
@@ -264,9 +268,12 @@
 		}
 	}
 
+	// 加減法 
+
 	function plmi(obj, add, sym) {
 		objNow = obj;
-		var ans = eval(obj.innerHTML);
+		var ans;
+		ring != Infinity ? ans = (eval(obj.innerHTML) % ring + ring) % ring : ans = eval(obj.innerHTML);
 		var ansR = toR(ans);
 		var ansM = toM(ans); 
 		var ansC = toC(ans);
@@ -277,8 +284,8 @@
 		else {
 			var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
 			var n2 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + 1;
-			n1 = eval(n1 + lowBound / 2);
-			n2 = eval(n2 + lowBound / 2);
+			n1 = eval(n1 + lowBound / 2) % ring;
+			n2 = eval(n2 + lowBound / 2) % ring;
 			var ques = n1+sym+n2;
 			var quesR = toR(n1)+sym+toR(n2);
 			var quesM = toM(n1)+symToM(sym)+toM(n2);
@@ -298,10 +305,12 @@
 		plmi(obj, (upBound - lowBound) / 2, ' - ');
 	}
 
+	// 乘除法 
+
 	function tmdv(obj,symR,symE, n1, n2) {
 		objNow = obj;
-
-		var ans = eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]);
+		var ans;
+		ring != Infinity ? ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]) % ring + ring) % ring : ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]));
 		var ansR = toR(ans);
 		var ansC = toC(ans);
 		var ansM = toM(ans);
@@ -313,7 +322,7 @@
 
 		}
 		else {
-			var ques = n1+symR+n2;
+			var ques = (n1 % ring)+symR+(n2 % ring);
 			var quesR = toR(n1)+symR+toR(n2);
 			var quesC = toC(n1)+symToC(symR)+toC(n2);
 			var quesM = toM(n1)+symToM(symR)+toM(n2);
@@ -326,19 +335,27 @@
 	}
 
 	function tm(obj) {
-		
-		var n1 = Math.floor(Math.random()*10) + 1;
-		var n2 = Math.floor(Math.random()*10) + 1;
-		
+		var sig = 1;
+		lowBound < 0 ? sig = -1 : sig = 1;
+		var n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+		var n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+
 		tmdv(obj," × "," * ",n1,n2);
 	}
 
 	function dv(obj) {
-		
-		var n2 = Math.floor(Math.random()*10) + 1;
-		var n1 = n2 * (Math.floor(Math.random()*10) + 1);
+		var sig = 1;
+		lowBound < 0 ? sig = -1 : sig = 1;
+
+		var n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
+		var n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
 		
 		tmdv(obj," ÷ "," / ",n1,n2);
+	}
+
+	function showdv (nors) {
+		document.getElementById("dv1").style.display = nors;
+		document.getElementById("dv2").style.display = nors;
 	}
 
 	function swi(obj) {
@@ -376,6 +393,27 @@
 				alert("已進入挫折模式");
 				start = 1;
 				break;
+
+			case "Z" : 
+				rep = "Z";
+				alert("整數系");
+				ring = Infinity;
+				showdv("");
+				break;
+
+			case "Z/7Z" : 
+				rep = "7/7Z";
+				alert("星期鐘(7的數環)");
+				ring = 7;
+				showdv("none");
+				break;
+
+			case "Z/12Z" : 
+				rep = "Z/12Z";
+				alert("星期鐘(12的數環)");
+				ring = 12;
+				showdv("none"); 
+				break;
 			
 			default : 
 				obj.innerHTML = "6";
@@ -392,7 +430,10 @@
 	
 	function chLow(obj) {
 		lowBound = obj.innerHTML;
-		alert("加減法下限已設為"+lowBound);
+		var words = '';
+		lowBound < 0 ? words = "，乘除負數已開啟。" : words = "乘除負數已關閉";
+		alert("加減法下限已設為"+lowBound+words);
+
 	}
 	
 
@@ -427,7 +468,11 @@
 <body>
 
 
-<h1>閃卡<button onclick="swi(this)">6</button><button onclick="swi(this)">VI</button><button onclick="swi(this)">$</button><button onclick="swi(this)">六</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<h1>閃卡<button onclick="swi(this)">6</button>
+<button onclick="swi(this)">VI</button>
+<button onclick="swi(this)">$</button>
+<button onclick="swi(this)">六</button>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <button onclick="swi(this)">挑戰模式</button>
 <button onclick="swi(this)">挫折模式</button>
 <button onclick="hack(this)">修改評語</button>
@@ -442,26 +487,44 @@
 <button onclick="chLow(this)">-50</button>
 <button onclick="chLow(this)">-100</button>
 </h1>
+
 <hr>
 
-<br />
-<br />
-<br />
+<br /><br /><br />
+<table>
 
-<button onclick="pl(this)"> 7 + 8 </button><br /><br />
-<button onclick="pl(this)"> 6 + 7 </button><br /><br />
-<button onclick="mi(this)"> 12 - 5 </button><br /><br />
-<button onclick="mi(this)"> 17 - 9</button><br /><br />
-<br />
-<div position = "absolute" top = "300px" left = "300px">
+<tr>
+	<td width = "200px">
+加<button style="width:80px" onclick="pl(this)"> 7 + 8 </button><button style="width:80px" onclick="pl(this)"> 6 + 7 </button>
+	</td>
+	<td>
+乘<button style="width:80px" onclick="tm(this)"> 9 × 7</button><button style="width:80px" onclick="tm(this)"> 6 × 5</button>
+	</td>
+</tr>
+<tr>
+	<td width = "200px">
+減<button style="width:80px" onclick="mi(this)"> 12 - 5 </button><button style="width:80px" onclick="mi(this)"> 17 - 9</button>
+	</td>
+	<td>
+除<button id = "dv1" style="width:80px" onclick="dv(this)"> 21 ÷ 3</button><button id = "dv2" style="width:80px" onclick="dv(this)"> 42 ÷ 6</button>
+	</td>
+</tr>
+</table>
+<br /><br /><br />
+
+<div style="dispaly:box;height:200px">
 	<big><big><big id = "bigans">???
 	</big></big></big>
 </div>
 <br />
-<button onclick="tm(this)"> 9 × 7</button><br /><br />
-<button onclick="tm(this)"> 6 × 5</button><br /><br />
-<button onclick="dv(this)"> 21 ÷ 3</button><br /><br />
-<button onclick="dv(this)"> 42 ÷ 6</button><br /><br />
+
+
+<br /><br /><br />
+<hr>
+
+<button onclick="swi(this)">Z</button>
+<button onclick="swi(this)">Z/7Z</button>
+<button onclick="swi(this)">Z/12Z</button>
 
 
 
