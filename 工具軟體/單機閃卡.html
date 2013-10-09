@@ -48,6 +48,29 @@
 	var objNow;
 	var rep = "6";
 
+	function symToS (sym) {
+		switch (sym){
+			case ' + ': 
+				return '，又面向前方';
+			case ' - ':
+				return '，又面向後方';
+			case ' × ':
+				return '路，每段路要';
+			case ' ÷ ':
+				return '，分成';
+			default:
+				return '';
+		}
+	}
+
+	function toS (num, isDuan) {
+		var ansS = "";
+		num < 0 ? ansS = "倒退" : ansS = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+		isDuan ? ansS += "走" + num + "步" : ansS += num + "段";
+		return ansS;
+	}
+
 	function symToC (sym) {
 		switch (sym){
 			case ' + ': 
@@ -226,7 +249,7 @@
 
 // 書寫
 
-	function writeBig (qa, data, dataR, dataM, dataC){
+	function writeBig (qa, data, dataR, dataM, dataC, dataS){
 		switch (rep) {
 			case "VI":
 				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataR;
@@ -240,6 +263,9 @@
 				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataC;
 				break;
 
+			case "步":
+				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataS;
+				break;
 
 			case "挑戰模式":
 				if (qa == "Q") {
@@ -277,9 +303,10 @@
 		var ansR = toR(ans);
 		var ansM = toM(ans); 
 		var ansC = toC(ans);
+		var ansS = toS(ans,1);
 		if (obj.innerHTML !== String(ans) && start !== 1) {
 			obj.innerHTML = ans;
-			writeBig("A",ans,ansR,ansM,ansC);
+			writeBig("A",ans,ansR,ansM,ansC, ansS);
 		}
 		else {
 			var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
@@ -290,9 +317,10 @@
 			var quesR = toR(n1)+sym+toR(n2);
 			var quesM = toM(n1)+symToM(sym)+toM(n2);
 			var quesC = toC(n1)+symToC(sym)+toC(n2);
+			var quesS = toS(n1,1)+symToS(sym)+toS(n2,1);
 
 			obj.innerHTML = ques;
-			writeBig("Q",ques,quesR,quesM,quesC);
+			writeBig("Q",ques,quesR,quesM,quesC, quesS);
 			start = 0;
 		}
 	}
@@ -314,22 +342,25 @@
 		var ansR = toR(ans);
 		var ansC = toC(ans);
 		var ansM = toM(ans);
+		var ansS = toS(ans,1);
 
 		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
 			obj.innerHTML = ans;
 			
-			writeBig("A",ans,ansR,ansM,ansC);
+			writeBig("A",ans,ansR,ansM,ansC,ansS);
 
 		}
 		else {
 			var ques = (n1 % ring)+symR+(n2 % ring);
 			var quesR = toR(n1)+symR+toR(n2);
-			var quesC = toC(n1)+symToC(symR)+toC(n2);
 			var quesM = toM(n1)+symToM(symR)+toM(n2);
+			var quesC = toC(n1)+symToC(symR)+toC(n2);
+			var quesS;
+			symR == " × " ? quesS = toS(n1,0)+symToS(symR)+toS(n2,1) : quesS = toS(n1,1)+symToS(symR)+toS(n2,0) ;			
 
 			obj.innerHTML = ques;
 
-			writeBig("Q",ques,quesR,quesM,quesC);
+			writeBig("Q",ques,quesR,quesM,quesC,quesS);
 
 		}
 	}
@@ -381,6 +412,12 @@
 				alert("已進入中文參照模式");
 				start = 0;
 				break;
+
+			case "步" : 
+				rep = "步";
+				alert("已進入走路參照模式");
+				start = 0;
+				break;			
 
 			case "挑戰模式" : 
 				rep = "挑戰模式";
@@ -472,6 +509,7 @@
 <button onclick="swi(this)">VI</button>
 <button onclick="swi(this)">$</button>
 <button onclick="swi(this)">六</button>
+<button onclick="swi(this)">步</button>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <button onclick="swi(this)">挑戰模式</button>
 <button onclick="swi(this)">挫折模式</button>
