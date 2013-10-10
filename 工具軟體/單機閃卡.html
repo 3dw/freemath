@@ -56,9 +56,9 @@
 			case ' - ':
 				return '，又面向後方';
 			case ' × ':
-				return '路，每段路要';
+				return '路，每段路正著走都要';
 			case ' ÷ ':
-				return '，分成';
+				return '，就是';
 			default:
 				return '';
 		}
@@ -68,7 +68,10 @@
 		var ansS = "";
 		num < 0 ? ansS = "倒退" : ansS = "";
 		num < 0 ? num = Math.abs(num) : num = num;
-		isDuan ? ansS += "走" + num + "步" : ansS += num + "段";
+		isDuan ? ansS += "走" + num + "步" : ansS += num + "段路";
+		if (isDuan && num < 0) {
+			 ansS = "反著走" + num + "段路";
+		}
 		return ansS;
 	}
 
@@ -340,10 +343,12 @@
 		objNow = obj;
 		var ans;
 		ring != Infinity ? ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]) % ring + ring) % ring : ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]));
+
 		var ansR = toR(ans);
 		var ansC = toC(ans);
 		var ansM = toM(ans);
-		var ansS = toS(ans,1);
+		var ansS;
+		symR == " × " ? ansS = toS(ans,1) :  ansS = "每段路要：" + toS(ans,1);
 
 		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
 			obj.innerHTML = ans;
@@ -378,9 +383,13 @@
 	function dv(obj) {
 		var sig = 1;
 		lowBound < 0 ? sig = -1 : sig = 1;
+		var n2;
+		var n1;
 
-		var n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
-		var n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
+		while (!(n1 * n2)) {
+			n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
+			n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
+		}
 		
 		tmdv(obj," ÷ "," / ",n1,n2);
 	}
