@@ -39,6 +39,15 @@
 
 <script type="text/javascript">
 
+// **keycode tester**
+//	document.onkeydown = checkKeycode
+//	function checkKeycode(e) {
+//	var keycode;
+//	if (window.event) keycode = window.event.keyCode;
+//	else if (e) keycode = e.which;
+//	alert("keycode: " + keycode);
+//  }
+
 	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
@@ -46,7 +55,10 @@
 	var lowBound = 0;
 	var win = 0;
 	var start = 0;
-	var objNow;
+	var objNow; // current obj
+	var funNow; // current function
+	var parNow; // curent parapeter
+	var SymNow; // current symbol
 	var rep = "6";
 
 	function symToS (sym) {
@@ -218,6 +230,7 @@
 	}
 
 	function checkAns (bigAns, data, att){
+
 		var ans = eval(data);
 		if (document.getElementById(bigAns).getElementsByTagName("input")[0].value == eval(data)) {
 			win++;
@@ -251,6 +264,13 @@
 		objNow.onclick(objNow);
 	}
 
+	function askq (data, pnword){
+		document.getElementById('bigans').innerHTML = data+" = "+"<input type = 'search' onkeydown='if (event.keyCode == 13){clk()}'></input><button onclick = 'clk()'>"+pnword+"</button>";
+		document.getElementById('bigans').getElementsByTagName("input")[0].focus();
+
+		start = 0;
+	}
+
 // 書寫
 
 	function writeBig (qa, data, dataR, dataM, dataC, dataS){
@@ -273,8 +293,7 @@
 
 			case "挑戰模式":
 				if (qa == "Q") {
-					document.getElementById('bigans').innerHTML = data+" = "+"<input type = 'search'></input><button onclick = 'clk()'>送出挑戰!</button>";
-						start = 0;
+					askq(data,"忍受挫折！");
 				}
 				else {
 					checkAns('bigans',data, "positive");
@@ -284,8 +303,7 @@
 				
 			case "挫折模式":			
 				if (qa == "Q") {
-					document.getElementById('bigans').innerHTML = data+" = "+"<input type = 'search'></input><button onclick = 'clk()'>忍受挫折!</button>";
-						start = 0;
+					askq(data,"送出挑戰！");
 				}
 				else {
 					checkAns('bigans',data, "negative");
@@ -298,10 +316,27 @@
 		}
 	}
 
+	function runCode(e) {
+		var keycode;
+		if (window.event) keycode = window.event.keyCode;
+		else if (e) keycode = e.which;
+		if (keycode == 13) funNow(objNow,parNow,symNow);
+	}
+
+	function setNow (obj,fun,par,sym){
+		objNow = obj;
+		funNow = fun;
+		parNow = par;
+		symNow = sym;
+		document.onkeydown = runCode;
+	}
+
 	// 加減法 
 
 	function plmi(obj, add, sym) {
-		objNow = obj;
+
+		setNow(obj,plmi,add,sym);
+
 		var ans;
 		ring != Infinity ? ans = (eval(obj.innerHTML) % ring + ring) % ring : ans = eval(obj.innerHTML);
 		var ansR = toR(ans);
@@ -339,8 +374,9 @@
 
 	// 乘除法 
 
-	function tmdv(obj,symR,symE, n1, n2) {
-		objNow = obj;
+	function tmdv(obj,symR,symE) {
+		setNow(obj,tmdv,symR,symE);
+
 		var ans;
 		ring != Infinity ? ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]) % ring + ring) % ring : ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]));
 
@@ -353,10 +389,29 @@
 		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
 			obj.innerHTML = ans;
 			
-			writeBig("A",ans,ansR,ansM,ansC,ansS);
+			writeBig("A",ans,ansR,ansM,ansC,ansS); 
 
 		}
 		else {
+
+			var n1, n2;
+			var sig = 1;
+				lowBound < 0 ? sig = -1 : sig = 1;
+
+			while (!(n1 * n2) || ( sig == -1 && n1 > 0 && n2 > 0)) {
+
+				if (symR == "*") {
+					n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+					n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+
+				}
+				else {	
+					n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
+					n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
+				}
+			}
+
+
 			var ques = (n1 % ring)+symR+(n2 % ring);
 			var quesR = toR(n1)+symR+toR(n2);
 			var quesM = toM(n1)+symToM(symR)+toM(n2);
@@ -372,26 +427,11 @@
 	}
 
 	function tm(obj) {
-		var sig = 1;
-		lowBound < 0 ? sig = -1 : sig = 1;
-		var n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
-		var n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
-
-		tmdv(obj," × "," * ",n1,n2);
+		tmdv(obj," × "," * ");
 	}
 
 	function dv(obj) {
-		var sig = 1;
-		lowBound < 0 ? sig = -1 : sig = 1;
-		var n2;
-		var n1;
-
-		while (!(n1 * n2)) {
-			n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
-			n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
-		}
-		
-		tmdv(obj," ÷ "," / ",n1,n2);
+		tmdv(obj," ÷ "," / ");
 	}
 
 	function showdv (nors) {
