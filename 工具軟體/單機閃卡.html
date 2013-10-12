@@ -68,7 +68,7 @@
 			case ' - ':
 				return '，又面向後方';
 			case ' × ':
-				return '路，每段路正著走都要';
+				return '，每段是';
 			case ' ÷ ':
 				return '，就是';
 			default:
@@ -547,6 +547,8 @@
 
 	function hack(obj) {
 		document.getElementById('bigans').innerHTML = "挑戰模式正評<br /><input type = 'search'  size = '60' value = '" + posRight + "'></input><button onclick = 'hacker(this, 0)'>修改完畢</button><hr><br />" +"挫折模式負評<br /><input type = 'search' size = '100' value = '" + negWrong + "'></input><button onclick = 'hacker(this, 1)'>修改完畢</button><hr><br />";
+
+		document.getElementById('bigans').getElementsByTagName("input")[1].focus();
 	}
 
 	
