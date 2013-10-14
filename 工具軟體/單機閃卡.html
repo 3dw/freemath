@@ -238,7 +238,6 @@
 	}
 
 	function checkAns (bigAns, data, att){
-
 		var ans = eval(data);
 		if (document.getElementById(bigAns).getElementsByTagName("input")[0].value == eval(data)) {
 			win++;
@@ -273,7 +272,7 @@
 	}
 
 	function askq (data, pnword){
-		document.getElementById('bigans').innerHTML = data+" = "+"<input type = 'search' onkeydown='if (event.keyCode == 13){clk()}'></input><button onclick = 'clk()'>"+pnword+"</button>";
+		document.getElementById('bigans').innerHTML = data+" = "+"<input class='ui input' type = 'text' onkeydown='if (event.keyCode == 13){clk()}'></input> <button class='ui small teal button' onclick = 'clk()'>"+pnword+"</button>";
 		document.getElementById('bigans').getElementsByTagName("input")[0].focus();
 
 		start = 0;
@@ -301,7 +300,7 @@
 
 			case "挑戰模式":
 				if (qa == "Q") {
-					askq(data,"忍受挫折！");
+					askq(data,"送出挑戰！");
 				}
 				else {
 					checkAns('bigans',data, "positive");
@@ -311,7 +310,7 @@
 				
 			case "挫折模式":			
 				if (qa == "Q") {
-					askq(data,"送出挑戰！");
+					askq(data,"忍受挫折！");
 				}
 				else {
 					checkAns('bigans',data, "negative");
@@ -554,7 +553,7 @@
 	}
 
 	function hack(obj) {
-		document.getElementById('bigans').innerHTML = "挑戰模式正評<br /><input type = 'search'  size = '60' value = '" + posRight + "'></input><button onclick = 'hacker(this, 0)'>修改完畢</button><hr><br />" +"挫折模式負評<br /><input type = 'search' size = '100' value = '" + negWrong + "'></input><button onclick = 'hacker(this, 1)'>修改完畢</button><hr><br />";
+		document.getElementById('bigans').innerHTML = "挑戰模式正評<br /><input type='text'  class='ui input' size = '60' value = '" + posRight + "'></input> <button  class='ui button small teal' onclick = 'hacker(this, 0)'>修改完畢</button><hr><br />" +"挫折模式負評<br /><input type='text' size='100' class='ui input' value = '" + negWrong + "'></input> <button onclick='hacker(this, 1)' class='ui button small teal'>修改完畢</button><hr><br />";
 
 		document.getElementById('bigans').getElementsByTagName("input")[1].focus();
 	}
@@ -592,27 +591,27 @@
 <table style="margin-left: 20px">
 
 <tr>
-	<td width="350" class="ui segment">
+	<td width="400" class="ui segment">
             <span class="ui red ribbon label">加</span>
-            <button class="ui purple button" style="width:120px" onclick="pl(this)"> 7 + 8 </button class="ui button">
-                <button class="ui purple button" style="width:120px" onclick="pl(this)"> 6 + 7 </button class="ui button">
+            <button class="ui purple button" style="width:150px" onclick="pl(this)"> 7 + 8 </button class="ui button">
+                <button class="ui purple button" style="width:150px" onclick="pl(this)"> 6 + 7 </button class="ui button">
 	</td>
-	<td width="350" class="ui segment">
+	<td width="400" class="ui segment">
             <span class="ui red ribbon label">乘</span>
-            <button class="ui purple button" style="width:120px" onclick="tm(this)"> 9 × 7</button class="ui purple button">
-                <button class="ui purple button" style="width:120px" onclick="tm(this)"> 6 × 5</button class="ui purple button">
+            <button class="ui purple button" style="width:150px" onclick="tm(this)"> 9 × 7</button class="ui purple button">
+                <button class="ui purple button" style="width:150px" onclick="tm(this)"> 6 × 5</button class="ui purple button">
 	</td>
 </tr>
 <tr>
-	<td width="350" class="ui segment">
+	<td width="400" class="ui segment">
             <span class="ui red ribbon label">減</span>
-<button class="ui purple button" style="width:120px" onclick="mi(this)"> 12 - 5 </button class="ui purple button">
-    <button class="ui purple button" style="width:120px" onclick="mi(this)"> 17 - 9</button class="ui purple button">
+<button class="ui purple button" style="width:150px" onclick="mi(this)"> 12 - 5 </button class="ui purple button">
+    <button class="ui purple button" style="width:150px" onclick="mi(this)"> 17 - 9</button class="ui purple button">
 	</td>
-	<td width="350" class="ui segment">
+	<td width="400" class="ui segment">
             <span class="ui red ribbon label">除</span>
-<button class="ui purple button" id = "dv1" style="width:120px" onclick="dv(this)"> 21 ÷ 3</button class="ui purple button">
-    <button class="ui purple button" id = "dv2" style="width:120px" onclick="dv(this)"> 42 ÷ 6</button class="ui purple button">
+<button class="ui purple button" id = "dv1" style="width:150px" onclick="dv(this)"> 21 ÷ 3</button class="ui purple button">
+    <button class="ui purple button" id = "dv2" style="width:150px" onclick="dv(this)"> 42 ÷ 6</button class="ui purple button">
 	</td>
 </tr>
 </table>
