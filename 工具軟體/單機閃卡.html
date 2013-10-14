@@ -56,6 +56,8 @@
 //	alert("keycode: " + keycode);
 //  }
 
+	var now = new Date();
+
 	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
@@ -70,6 +72,7 @@
 	var rep = "6";
 
 	function symToS (sym) {
+
 		switch (sym){
 			case ' + ': 
 				return '，又面向前方';
@@ -336,13 +339,24 @@
 		parNow = par;
 		symNow = sym;
 		document.onkeydown = runCode;
+
+		var mil = now.getMilliseconds();
+		var sec = now.getSeconds();
+		now = new Date();
+		var mil1 = now.getMilliseconds();
+		var sec1 = now.getSeconds();
+
+		if (mil1-mil < 100 && sec1 - sec < 1) {
+			return 0;
+		}
+		return 1;  // 防止Chrome自動把Enter鍵當按下，變成按兩次。
 	}
 
 	// 加減法 
 
 	function plmi(obj, add, sym) {
 
-		setNow(obj,plmi,add,sym);
+		if (!setNow(obj,plmi,add,sym)) return;
 
 		var ans;
 		ring != Infinity ? ans = (eval(obj.innerHTML) % ring + ring) % ring : ans = eval(obj.innerHTML);
@@ -382,7 +396,7 @@
 	// 乘除法 
 
 	function tmdv(obj,symR,symE) {
-		setNow(obj,tmdv,symR,symE);
+		if (!setNow(obj,tmdv,symR,symE)) return;
 
 		var ans;
 		ring != Infinity ? ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]) % ring + ring) % ring : ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]));
@@ -407,7 +421,7 @@
 
 			while (!(n1 * n2) || ( sig == -1 && n1 > 0 && n2 > 0)) {
 
-				if (symR == "*") {
+				if (symR == " × ") {
 					n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
 					n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
 
