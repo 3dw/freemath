@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
+<title>閃卡</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 
 <!--Author: Bestian Tang-->
 <!--Version: 1.0-->
@@ -37,7 +39,13 @@
 
 </head>
 
+<!-- <script src="../javascripts/jquery-1.10.2.js"></script> -->
 <script type="text/javascript">
+
+//    $.getJSON("https://www.moedict.tw/a/%E8%80%81%E4%BA%BA.json", function(x){
+//        alert(x.translation.English[0]);
+//    });
+
 
 // **keycode tester**
 //	document.onkeydown = checkKeycode
@@ -556,65 +564,72 @@
 
 <body>
 
-
-<h1>閃卡<button onclick="swi(this)">6</button>
-<button onclick="swi(this)">VI</button>
-<button onclick="swi(this)">$</button>
-<button onclick="swi(this)">六</button>
-<button onclick="swi(this)">步</button>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<button onclick="swi(this)">挑戰模式</button>
-<button onclick="swi(this)">挫折模式</button>
-<button onclick="hack(this)">修改評語</button>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<button onclick="chUp(this)">20</button>
-<button onclick="chUp(this)">50</button>
-<button onclick="chUp(this)">100</button>
-<button onclick="chUp(this)">1000</button>
-<button onclick="chLow(this)">0</button>
-<button onclick="chLow(this)">-20</button>
-<button onclick="chLow(this)">-50</button>
-<button onclick="chLow(this)">-100</button>
+<h1>
+    閃卡
+    <button class="ui black tiny button" onclick="swi(this)">6</button>
+<button class="ui black tiny button" onclick="swi(this)">VI</button>
+<button class="ui black tiny button" onclick="swi(this)">$</button>
+<button class="ui black tiny button" onclick="swi(this)">六</button>
+<button class="ui black tiny button" onclick="swi(this)">步</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="ui green tiny button" onclick="swi(this)">挑戰模式</button>
+<button class="ui green tiny button" onclick="swi(this)">挫折模式</button>
+<button class="ui green tiny button" onclick="hack(this)">修改評語</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="ui blue tiny button" onclick="chUp(this)">20</button>
+<button class="ui blue tiny button" onclick="chUp(this)">50</button>
+<button class="ui blue tiny button" onclick="chUp(this)">100</button>
+<button class="ui blue tiny button" onclick="chUp(this)">1000</button>
+<button class="ui blue tiny button" onclick="chLow(this)">0</button>
+<button class="ui blue tiny button" onclick="chLow(this)">-20</button>
+<button class="ui blue tiny button" onclick="chLow(this)">-50</button>
+<button class="ui blue tiny button" onclick="chLow(this)">-100</button>
 </h1>
 
 <hr>
 
-<br /><br /><br />
-<table>
+<table style="margin-left: 20px">
 
 <tr>
-	<td width = "200px">
-加<button style="width:80px" onclick="pl(this)"> 7 + 8 </button><button style="width:80px" onclick="pl(this)"> 6 + 7 </button>
+	<td width="350" class="ui segment">
+            <span class="ui red ribbon label">加</span>
+            <button class="ui purple button" style="width:120px" onclick="pl(this)"> 7 + 8 </button class="ui button">
+                <button class="ui purple button" style="width:120px" onclick="pl(this)"> 6 + 7 </button class="ui button">
 	</td>
-	<td>
-乘<button style="width:80px" onclick="tm(this)"> 9 × 7</button><button style="width:80px" onclick="tm(this)"> 6 × 5</button>
+	<td width="350" class="ui segment">
+            <span class="ui red ribbon label">乘</span>
+            <button class="ui purple button" style="width:120px" onclick="tm(this)"> 9 × 7</button class="ui purple button">
+                <button class="ui purple button" style="width:120px" onclick="tm(this)"> 6 × 5</button class="ui purple button">
 	</td>
 </tr>
 <tr>
-	<td width = "200px">
-減<button style="width:80px" onclick="mi(this)"> 12 - 5 </button><button style="width:80px" onclick="mi(this)"> 17 - 9</button>
+	<td width="350" class="ui segment">
+            <span class="ui red ribbon label">減</span>
+<button class="ui purple button" style="width:120px" onclick="mi(this)"> 12 - 5 </button class="ui purple button">
+    <button class="ui purple button" style="width:120px" onclick="mi(this)"> 17 - 9</button class="ui purple button">
 	</td>
-	<td>
-除<button id = "dv1" style="width:80px" onclick="dv(this)"> 21 ÷ 3</button><button id = "dv2" style="width:80px" onclick="dv(this)"> 42 ÷ 6</button>
+	<td width="350" class="ui segment">
+            <span class="ui red ribbon label">除</span>
+<button class="ui purple button" id = "dv1" style="width:120px" onclick="dv(this)"> 21 ÷ 3</button class="ui purple button">
+    <button class="ui purple button" id = "dv2" style="width:120px" onclick="dv(this)"> 42 ÷ 6</button class="ui purple button">
 	</td>
 </tr>
 </table>
-<br /><br /><br />
 
-<div style="height:200px">
-	<big><big><big id = "bigans">???
+<br><br>
+<div class="ui message" style="height: 50ex">
+	<big><big><big id = "bigans" style="font-size: 180%">???
 	</big></big></big>
 </div>
 <br />
 
 
-<br /><br /><br />
-<hr>
-
-<button onclick="swi(this)">Z</button>
-<button onclick="swi(this)">Z/7Z</button>
-<button onclick="swi(this)">Z/12Z</button>
+<div style="position: absolute; bottom: 10px; right: 10px">
+<button class="ui teal mini button" onclick="swi(this)">Z</button>
+<button class="ui teal mini button" onclick="swi(this)">Z/7Z</button>
+<button class="ui teal mini button" onclick="swi(this)">Z/12Z</button>
+</div>
 
 
 
