@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+
+<!--Author: Bestian Tang-->
+<!--Version: 1.0-->
+<!-- Release to Freemath, 自學數學團-->
+<!-- Right: CC0, Public Domain-->
+
+<!--Last work: add 走路參照 -->
+<!--Todo next: none -->
+<style>
+  div.circle {
+    border: 3px solid #803100;
+    background: brown;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    width: 50px; height: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  div.rect {
+    border: 3px solid #AA0000;
+    background: #FF9999;
+    border-radius: 0%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    width: 100px; height: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+</style>
+
+</head>
+
+<script type="text/javascript">
+
+// **keycode tester**
+//	document.onkeydown = checkKeycode
+//	function checkKeycode(e) {
+//	var keycode;
+//	if (window.event) keycode = window.event.keyCode;
+//	else if (e) keycode = e.which;
+//	alert("keycode: " + keycode);
+//  }
+
+	var ring = Infinity;
+	var posRight = ["強！", "讚！", "用心！", "認真!"];
+	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
+	var upBound = 20;
+	var lowBound = 0;
+	var win = 0;
+	var start = 0;
+	var objNow; // current obj
+	var funNow; // current function
+	var parNow; // curent parapeter
+	var SymNow; // current symbol
+	var rep = "6";
+
+	function symToS (sym) {
+		switch (sym){
+			case ' + ': 
+				return '，又面向前方';
+			case ' - ':
+				return '，又面向後方';
+			case ' × ':
+				return '，每段是';
+			case ' ÷ ':
+				return '，就是';
+			default:
+				return '';
+		}
+	}
+
+	function toS (num, isDuan) {
+		var ansS = "";
+		num < 0 ? ansS = "倒退" : ansS = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+		isDuan ? ansS += "走" + num + "步" : ansS += num + "段路";
+		if (isDuan && num < 0) {
+			 ansS = "反著走" + num + "段路";
+		}
+		return ansS;
+	}
+
+	function symToC (sym) {
+		switch (sym){
+			case ' + ': 
+				return '加';
+			case ' - ':
+				return '減';
+			case ' × ':
+				return '乘以';
+			case ' ÷ ':
+				return '除以';
+			default:
+				return '';
+		}
+	}
+
+	function toC(num) {
+		
+		var ansC = "";
+		num < 0 ? ansC = "負" : ansC = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+		
+		var hunds = Math.floor(num / 100);
+		var tens = Math.floor((num - hunds * 100 ) / 10);
+		var ones = num - hunds * 100 - 10 * tens;
+
+		var list = ['','','二','三','四','五','六','七','八','九'];
+		var list1 = ['','一','二','三','四','五','六','七','八','九'];
+
+		if (num == 0) {
+			return '零';
+		}
+
+		if (hunds) {
+			ansC = ansC + list1[hunds] + '百';
+			if (tens) {
+				ansC += list1[tens] + '十';
+			}
+			else {
+				if (ones) {
+					ansC += '零';
+				}
+			};
+		}		
+		else {
+			if (tens) {
+				ansC += list[tens] + '十';
+			}
+			else {
+			};
+
+		}
+		ansC += list1[ones];
+
+		return ansC;
+	}
+
+	function symToM (sym) {
+		switch (sym){
+			case ' + ': 
+				return '<div style ="float:left">又有</div>';
+			case ' - ':
+				return '<div style ="float:left">扣掉</div>';
+			case ' × ':
+				return '<div style ="float:left">每一塊都變成</div>';
+			case ' ÷ ':
+				return '<div style ="float:left">分裝成好幾包，每包都要裝</div>';
+			default:
+				return '';
+		}
+	}
+
+
+	function toM (num) {		
+		var ansM = "";
+		num < 0 ? ansM = "<div style ='float:left'>欠債</div>" : ansM = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+		
+		var fHunds = Math.floor(num / 500);
+		var hunds = Math.floor((num - fHunds * 500) / 100);
+		var fiftys = Math.floor((num - fHunds * 500 - hunds * 100) / 50);
+		var tens = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50) / 10);
+		var fives = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
+		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
+
+		for (var i = 0; i < fHunds; i++) {
+			ansM = ansM + "<div class=rect style='background:#FF91FE;width:120px;height:60px;line-height:60px'>500</div>";
+		};
+		for (var i = 0; i < hunds; i++) {
+			ansM = ansM + "<div class=rect>100</div>";
+		};
+		for (var i = 0; i < fiftys; i++) {
+			ansM = ansM + "<div class=circle style='background:gold;width:64px;height:64px;line-height:64px;'>50</div>";
+		};
+		for (var i = 0; i < tens; i++) {
+			ansM = ansM + "<div class=circle style = 'border: 3px solid gray;background:silver; width:60px;height:60px;line-height:60px;'>10</div>";
+		};
+		for (var i = 0; i < fives; i++) {
+			ansM = ansM + "<div class=circle style = 'border: 3px solid gray;background:silver; width:54px;height:54px;line-height:54px;'>5</div>";
+		};
+		for (var i = 0; i < ones; i++) {
+			ansM = ansM + "<div class=circle>1</div>";
+		};
+
+		ansM = ansM + "<br /><br />"
+
+		return ansM;
+	}
+
+	function toR(num) {
+		var ansR = "";
+		num < 0 ? ansR = "-" : ansR = "";
+		num < 0 ? num = Math.abs(num) : num = num;
+					
+		var fHunds = Math.floor(num / 500);
+		var hunds = Math.floor((num - fHunds * 500) / 100);
+		var fiftys = Math.floor((num - fHunds * 500 - hunds * 100) / 50);
+		var tens = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50) / 10);
+		var fives = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
+		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
+		for (var i = 0; i < fHunds; i++) {
+			ansR = ansR + "D";
+		};
+		for (var i = 0; i < hunds; i++) {
+			ansR = ansR + "C";
+		};
+		for (var i = 0; i < fiftys; i++) {
+			ansR = ansR + "L";
+		};
+		for (var i = 0; i < tens; i++) {
+			ansR = ansR + "X";
+		};
+		for (var i = 0; i < fives; i++) {
+			ansR = ansR + "V";
+		};
+		for (var i = 0; i < ones; i++) {
+			ansR = ansR + "I";
+		};
+
+		return ansR;
+
+	}
+
+	function checkAns (bigAns, data, att){
+
+		var ans = eval(data);
+		if (document.getElementById(bigAns).getElementsByTagName("input")[0].value == eval(data)) {
+			win++;
+			var bonus = "真";
+			for (var i = 0; i < Math.floor(win / 3);i++) {
+				if (bonus == "真") {
+					bonus = "";
+				}					
+				bonus += "超";
+			}
+			if (att == "positive") {
+				alert("答對了！這是你第"+win+"次連續答對！你"+bonus+posRight[Math.floor(Math.random()*posRight.length)]);
+			}
+			if (att =="negative") {
+				alert("才連續答對"+win+"次…根本就是"+bonus+"靠運氣！");
+			}
+		}
+		else {
+			if (att == "positive") {
+				alert("答案是"+ans+"。沒關係，再接再勵！在此之前你已連續答對了"+win+"次！");
+				win = 0;
+			}
+			if (att =="negative") {
+				alert("答案是"+ans+"才對，"+negWrong[Math.floor(Math.random()*negWrong.length)]);
+			}
+		}
+		start = 1;
+	}
+
+	function clk (){
+		objNow.onclick(objNow);
+	}
+
+	function askq (data, pnword){
+		document.getElementById('bigans').innerHTML = data+" = "+"<input type = 'search' onkeydown='if (event.keyCode == 13){clk()}'></input><button onclick = 'clk()'>"+pnword+"</button>";
+		document.getElementById('bigans').getElementsByTagName("input")[0].focus();
+
+		start = 0;
+	}
+
+// 書寫
+
+	function writeBig (qa, data, dataR, dataM, dataC, dataS){
+		switch (rep) {
+			case "VI":
+				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataR;
+				break;
+
+			case "$":
+				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataM;
+				break;
+
+			case "六":
+				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataC;
+				break;
+
+			case "步":
+				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataS;
+				break;
+
+			case "挑戰模式":
+				if (qa == "Q") {
+					askq(data,"忍受挫折！");
+				}
+				else {
+					checkAns('bigans',data, "positive");
+					document.getElementById('bigans').innerHTML = data;
+				}
+				break;
+				
+			case "挫折模式":			
+				if (qa == "Q") {
+					askq(data,"送出挑戰！");
+				}
+				else {
+					checkAns('bigans',data, "negative");
+					document.getElementById('bigans').innerHTML = data;
+				}
+				break;
+							
+			default:
+				document.getElementById('bigans').innerHTML = data;		
+		}
+	}
+
+	function runCode(e) {
+		var keycode;
+		if (window.event) keycode = window.event.keyCode;
+		else if (e) keycode = e.which;
+		if (keycode == 13) funNow(objNow,parNow,symNow);
+	}
+
+	function setNow (obj,fun,par,sym){
+		objNow = obj;
+		funNow = fun;
+		parNow = par;
+		symNow = sym;
+		document.onkeydown = runCode;
+	}
+
+	// 加減法 
+
+	function plmi(obj, add, sym) {
+
+		setNow(obj,plmi,add,sym);
+
+		var ans;
+		ring != Infinity ? ans = (eval(obj.innerHTML) % ring + ring) % ring : ans = eval(obj.innerHTML);
+		var ansR = toR(ans);
+		var ansM = toM(ans); 
+		var ansC = toC(ans);
+		var ansS = toS(ans,1);
+		if (obj.innerHTML !== String(ans) && start !== 1) {
+			obj.innerHTML = ans;
+			writeBig("A",ans,ansR,ansM,ansC, ansS);
+		}
+		else {
+			var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
+			var n2 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + 1;
+			n1 = eval(n1 + lowBound / 2) % ring;
+			n2 = eval(n2 + lowBound / 2) % ring;
+			var ques = n1+sym+n2;
+			var quesR = toR(n1)+sym+toR(n2);
+			var quesM = toM(n1)+symToM(sym)+toM(n2);
+			var quesC = toC(n1)+symToC(sym)+toC(n2);
+			var quesS = toS(n1,1)+symToS(sym)+toS(n2,1);
+
+			obj.innerHTML = ques;
+			writeBig("Q",ques,quesR,quesM,quesC, quesS);
+			start = 0;
+		}
+	}
+
+	function pl(obj) {
+		plmi(obj, 1, ' + ');
+	}
+
+	function mi(obj) {
+		plmi(obj, (upBound - lowBound) / 2, ' - ');
+	}
+
+	// 乘除法 
+
+	function tmdv(obj,symR,symE) {
+		setNow(obj,tmdv,symR,symE);
+
+		var ans;
+		ring != Infinity ? ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]) % ring + ring) % ring : ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]));
+
+		var ansR = toR(ans);
+		var ansC = toC(ans);
+		var ansM = toM(ans);
+		var ansS;
+		symR == " × " ? ansS = toS(ans,1) :  ansS = "每段路要：" + toS(ans,1);
+
+		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
+			obj.innerHTML = ans;
+			
+			writeBig("A",ans,ansR,ansM,ansC,ansS); 
+
+		}
+		else {
+
+			var n1, n2;
+			var sig = 1;
+				lowBound < 0 ? sig = -1 : sig = 1;
+
+			while (!(n1 * n2) || ( sig == -1 && n1 > 0 && n2 > 0)) {
+
+				if (symR == "*") {
+					n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+					n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+
+				}
+				else {	
+					n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
+					n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
+				}
+			}
+
+
+			var ques = (n1 % ring)+symR+(n2 % ring);
+			var quesR = toR(n1)+symR+toR(n2);
+			var quesM = toM(n1)+symToM(symR)+toM(n2);
+			var quesC = toC(n1)+symToC(symR)+toC(n2);
+			var quesS;
+			symR == " × " ? quesS = toS(n1,0)+symToS(symR)+toS(n2,1) : quesS = toS(n1,1)+symToS(symR)+toS(n2,0) ;			
+
+			obj.innerHTML = ques;
+
+			writeBig("Q",ques,quesR,quesM,quesC,quesS);
+
+		}
+	}
+
+	function tm(obj) {
+		tmdv(obj," × "," * ");
+	}
+
+	function dv(obj) {
+		tmdv(obj," ÷ "," / ");
+	}
+
+	function showdv (nors) {
+		document.getElementById("dv1").style.display = nors;
+		document.getElementById("dv2").style.display = nors;
+	}
+
+	function swi(obj) {
+
+		var data = obj.innerHTML;
+
+		switch (data)
+		{
+			case "VI" : 
+				rep = "VI";
+				alert("已進入羅馬參照模式");
+				start = 0;
+				break;
+
+			case "$" : 
+				rep = "$";
+				alert("已進入錢幣參照模式");
+				start = 0;
+				break;
+
+			case "六" : 
+				rep = "六";
+				alert("已進入中文參照模式");
+				start = 0;
+				break;
+
+			case "步" : 
+				rep = "步";
+				alert("已進入走路參照模式");
+				start = 0;
+				break;			
+
+			case "挑戰模式" : 
+				rep = "挑戰模式";
+				alert("已進入挑戰模式");
+				start = 1;
+				break;
+				
+			case "挫折模式" : 
+				rep = "挫折模式";
+				alert("已進入挫折模式");
+				start = 1;
+				break;
+
+			case "Z" : 
+				rep = "Z";
+				alert("整數系");
+				ring = Infinity;
+				showdv("");
+				break;
+
+			case "Z/7Z" : 
+				rep = "7/7Z";
+				alert("星期鐘(7的數環)");
+				ring = 7;
+				showdv("none");
+				break;
+
+			case "Z/12Z" : 
+				rep = "Z/12Z";
+				alert("時鐘(12的數環)");
+				ring = 12;
+				showdv("none"); 
+				break;
+			
+			default : 
+				obj.innerHTML = "6";
+				rep = "6";
+				start = 0;
+				alert("已進入單純阿拉伯數字模式");
+		};			
+	}
+	
+	function chUp(obj) {
+		upBound = obj.innerHTML;
+		alert("加減法上限已設為"+upBound);
+	}
+	
+	function chLow(obj) {
+		lowBound = obj.innerHTML;
+		var words = '';
+		lowBound < 0 ? words = "，乘除負數已開啟。" : words = "乘除負數已關閉";
+		alert("加減法下限已設為"+lowBound+words);
+
+	}
+	
+
+	function hacker(obj,val) {
+		var objs = document.getElementById('bigans').getElementsByTagName("input");
+		var ans = [];
+		var objT = objs[val];
+		var list = objT.value.split(",");
+
+		for (var i = 0; i < list.length; i++) {
+			ans.push(list[i]);
+		};
+
+		switch (val) {
+			case 0:
+				posRight = ans;
+				break;
+			case 1:
+				negWrong = ans;
+				break;
+		}
+		alert(ans);
+	}
+
+	function hack(obj) {
+		document.getElementById('bigans').innerHTML = "挑戰模式正評<br /><input type = 'search'  size = '60' value = '" + posRight + "'></input><button onclick = 'hacker(this, 0)'>修改完畢</button><hr><br />" +"挫折模式負評<br /><input type = 'search' size = '100' value = '" + negWrong + "'></input><button onclick = 'hacker(this, 1)'>修改完畢</button><hr><br />";
+
+		document.getElementById('bigans').getElementsByTagName("input")[1].focus();
+	}
+
+	
+</script>
+
+<body>
+
+
+<h1>閃卡<button onclick="swi(this)">6</button>
+<button onclick="swi(this)">VI</button>
+<button onclick="swi(this)">$</button>
+<button onclick="swi(this)">六</button>
+<button onclick="swi(this)">步</button>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="swi(this)">挑戰模式</button>
+<button onclick="swi(this)">挫折模式</button>
+<button onclick="hack(this)">修改評語</button>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button onclick="chUp(this)">20</button>
+<button onclick="chUp(this)">50</button>
+<button onclick="chUp(this)">100</button>
+<button onclick="chUp(this)">1000</button>
+<button onclick="chLow(this)">0</button>
+<button onclick="chLow(this)">-20</button>
+<button onclick="chLow(this)">-50</button>
+<button onclick="chLow(this)">-100</button>
+</h1>
+
+<hr>
+
+<br /><br /><br />
+<table>
+
+<tr>
+	<td width = "200px">
+加<button style="width:80px" onclick="pl(this)"> 7 + 8 </button><button style="width:80px" onclick="pl(this)"> 6 + 7 </button>
+	</td>
+	<td>
+乘<button style="width:80px" onclick="tm(this)"> 9 × 7</button><button style="width:80px" onclick="tm(this)"> 6 × 5</button>
+	</td>
+</tr>
+<tr>
+	<td width = "200px">
+減<button style="width:80px" onclick="mi(this)"> 12 - 5 </button><button style="width:80px" onclick="mi(this)"> 17 - 9</button>
+	</td>
+	<td>
+除<button id = "dv1" style="width:80px" onclick="dv(this)"> 21 ÷ 3</button><button id = "dv2" style="width:80px" onclick="dv(this)"> 42 ÷ 6</button>
+	</td>
+</tr>
+</table>
+<br /><br /><br />
+
+<div style="height:200px">
+	<big><big><big id = "bigans">???
+	</big></big></big>
+</div>
+<br />
+
+
+<br /><br /><br />
+<hr>
+
+<button onclick="swi(this)">Z</button>
+<button onclick="swi(this)">Z/7Z</button>
+<button onclick="swi(this)">Z/12Z</button>
+
+
+
+</body>
