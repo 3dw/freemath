@@ -71,8 +71,8 @@
 	var SymNow; // current symbol
 	var rep = "6";
 
-	function symToS (sym) {
 
+	function symToS (sym) {
 		switch (sym){
 			case ' + ': 
 				return '，又面向前方';
@@ -87,6 +87,7 @@
 		}
 	}
 
+//Step
 	function toS (num, isDuan) {
 		var ansS = "";
 		num < 0 ? ansS = "倒退" : ansS = "";
@@ -113,8 +114,8 @@
 		}
 	}
 
-	function toC(num) {
-		
+//中文
+	function toC(num) {		
 		var ansC = "";
 		num < 0 ? ansC = "負" : ansC = "";
 		num < 0 ? num = Math.abs(num) : num = num;
@@ -169,7 +170,7 @@
 		}
 	}
 
-
+//Money
 	function toM (num) {		
 		var ansM = "";
 		num < 0 ? ansM = "<div style ='float:left'>欠債</div>" : ansM = "";
@@ -206,6 +207,7 @@
 		return ansM;
 	}
 
+//Roman
 	function toR(num) {
 		var ansR = "";
 		num < 0 ? ansR = "-" : ansR = "";
@@ -281,24 +283,28 @@
 		start = 0;
 	}
 
-// 書寫
+	function innerBig (data, data2) {
+		document.getElementById('bigans').innerHTML = data+"<br /><hr><font color = 'black'>"+data2+"</font>";
+	}
 
-	function writeBig (qa, data, dataR, dataM, dataC, dataS){
+// 書寫
+	function writeBig (qa, data, dataR, dataM, dataC, dataS, dataList){
+		(qa == "Q") ? document.getElementById('bigans').style.color = "red" : document.getElementById('bigans').style.color = "blue";
 		switch (rep) {
 			case "VI":
-				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataR;
+					innerBig(data, dataR);
 				break;
-
 			case "$":
-				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataM;
+					innerBig(data, dataM);
 				break;
-
 			case "六":
-				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataC;
+					innerBig(data, dataC);
 				break;
-
 			case "步":
-				document.getElementById('bigans').innerHTML = data+"<br /><hr>"+dataS;
+					innerBig(data, dataS);
+				break;
+			case "列":
+					innerBig(data, dataList);
 				break;
 
 			case "挑戰模式":
@@ -334,117 +340,126 @@
 	}
 
 	function setNow (obj,fun,par,sym){
-		objNow = obj;
-		funNow = fun;
-		parNow = par;
-		symNow = sym;
+		objNow = obj; funNow = fun; parNow = par; symNow = sym;
 		document.onkeydown = runCode;
 
-		var mil = now.getMilliseconds();
-		var sec = now.getSeconds();
+		var mil = now.getMilliseconds(); var sec = now.getSeconds();
 		now = new Date();
-		var mil1 = now.getMilliseconds();
-		var sec1 = now.getSeconds();
+		var mil1 = now.getMilliseconds(); var sec1 = now.getSeconds();
 
 		if (mil1-mil < 100 && sec1 - sec < 1) {
 			return 0;
 		}
-		return 1;  // 防止Chrome自動把Enter鍵當按下，變成按兩次。
+		return 1;  // 防止Chrome瀏覽器自動把Enter鍵當按下，變成按兩次。
+	}
+
+	//Eval Answer
+
+	function evAns(formula, up) {
+		var ans;
+		if (formula.split(" ")[2]) {
+			formula = formula.split(" ")[0] + formula.split(" ")[1] + '('+ formula.split(" ")[2] + '+' + up +')';
+		}
+		else {
+			formula = '(' + formula + '+'+ up +')';
+		}
+		ring != Infinity ? ans = (eval(formula) % ring + ring) % ring : ans = eval(formula);
+		return ans;
+	}
+
+	function makeQues (obj, n1, n2, sym) {
+
+		var ques = n1+sym+n2;
+		var quesR = toR(n1)+sym+toR(n2);
+		var quesM = toM(n1)+symToM(sym)+toM(n2);
+		var quesC = toC(n1)+symToC(sym)+toC(n2);
+		var quesS;
+		sym == " × " ? quesS = toS(n1,0)+symToS(sym)+toS(n2,1) : quesS = toS(n1,1)+symToS(sym)+toS(n2,0) ;
+
+
+		var quesList = [ques, n1+sym+(n2+1), n1+sym+(n2+2), n1+sym+(n2+3), n1+sym+(n2+4)];
+
+		quesList = quesList.join(',&nbsp;&nbsp;');
+
+		obj.innerHTML = ques;
+
+		writeBig("Q",ques,quesR,quesM,quesC,quesS,quesList);
+	}
+
+	// Abstract flashcard
+	function flashcard (obj, fun, par1, symR, symE, n1, n2){
+
+		if (!setNow(obj,fun,par1,symE)) return;
+
+		// construct formula   symR ==> Readable Symbol, symE ==> Evaluable Symbol
+		var formula = obj.innerHTML;
+		if (symR != symE) formula = obj.innerHTML.split(symR).join(symE);
+
+		// modulus ring
+		n1 = n1 % ring; n2 = n2 % ring;
+
+		//construct Ans
+		var ans = evAns(formula,0);
+		var ansR = toR(ans); var ansM = toM(ans); var ansC = toC(ans);
+
+
+		var ansS = toS(ans,1);
+			if (symR == " × ") ansS = toS(ans,1);
+			if (symR == " ÷ ") ansS = "每段路要：" + toS(ans,1);
+
+		var ansList = [ans, evAns(formula,1),  evAns(formula,2),  evAns(formula,3),  evAns(formula,4)];  ansList = ansList.join(',&nbsp;&nbsp;');
+	
+		// dicide Q or A
+		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
+
+			obj.innerHTML = ans;
+			writeBig("A",ans,ansR,ansM,ansC, ansS, ansList);
+		}
+		else {
+			makeQues(obj, n1, n2, symR);
+		}
 	}
 
 	// 加減法 
-
 	function plmi(obj, add, sym) {
 
-		if (!setNow(obj,plmi,add,sym)) return;
+		//construct n1,n2
+		var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
+		var n2 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + 1;
+		n1 = eval(n1 + lowBound / 2);
+		n2 = eval(n2 + lowBound / 2);
 
-		var ans;
-		ring != Infinity ? ans = (eval(obj.innerHTML) % ring + ring) % ring : ans = eval(obj.innerHTML);
-		var ansR = toR(ans);
-		var ansM = toM(ans); 
-		var ansC = toC(ans);
-		var ansS = toS(ans,1);
-		if (obj.innerHTML !== String(ans) && start !== 1) {
-			obj.innerHTML = ans;
-			writeBig("A",ans,ansR,ansM,ansC, ansS);
-		}
-		else {
-			var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
-			var n2 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + 1;
-			n1 = eval(n1 + lowBound / 2) % ring;
-			n2 = eval(n2 + lowBound / 2) % ring;
-			var ques = n1+sym+n2;
-			var quesR = toR(n1)+sym+toR(n2);
-			var quesM = toM(n1)+symToM(sym)+toM(n2);
-			var quesC = toC(n1)+symToC(sym)+toC(n2);
-			var quesS = toS(n1,1)+symToS(sym)+toS(n2,1);
+		//main
+		flashcard(obj, plmi, add, sym, sym, n1, n2);		
+	}
 
-			obj.innerHTML = ques;
-			writeBig("Q",ques,quesR,quesM,quesC, quesS);
-			start = 0;
+	// 乘除法 
+	function tmdv(obj,symR,symE) {
+
+		//construct n1,n2
+		var n1, n2;	var sig = 1;
+			lowBound < 0 ? sig = -1 : sig = 1;
+		while (!(n1 * n2) || ( sig == -1 && n1 > 0 && n2 > 0)) {
+			if (symR == " × ") {
+				n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+				n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
+
+			}
+			else {	
+				n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
+				n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
+			}
 		}
+
+		//main
+		flashcard(obj, tmdv, symR, symR, symE, n1, n2);
 	}
 
 	function pl(obj) {
 		plmi(obj, 1, ' + ');
 	}
-
 	function mi(obj) {
 		plmi(obj, (upBound - lowBound) / 2, ' - ');
-	}
-
-	// 乘除法 
-
-	function tmdv(obj,symR,symE) {
-		if (!setNow(obj,tmdv,symR,symE)) return;
-
-		var ans;
-		ring != Infinity ? ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]) % ring + ring) % ring : ans = (eval(obj.innerHTML.split(symR)[0] + symE + obj.innerHTML.split(symR)[1]));
-
-		var ansR = toR(ans);
-		var ansC = toC(ans);
-		var ansM = toM(ans);
-		var ansS;
-		symR == " × " ? ansS = toS(ans,1) :  ansS = "每段路要：" + toS(ans,1);
-
-		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
-			obj.innerHTML = ans;
-			
-			writeBig("A",ans,ansR,ansM,ansC,ansS); 
-
-		}
-		else {
-
-			var n1, n2;
-			var sig = 1;
-				lowBound < 0 ? sig = -1 : sig = 1;
-
-			while (!(n1 * n2) || ( sig == -1 && n1 > 0 && n2 > 0)) {
-
-				if (symR == " × ") {
-					n1 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
-					n2 = Math.floor(Math.random() * (15 - sig * 5)) + 1 + (sig-1) * 5;
-
-				}
-				else {	
-					n2 = Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5;
-					n1 = n2 * (Math.floor(Math.random()*(15 - sig * 5)) + 1 + (sig-1) * 5);
-				}
-			}
-
-
-			var ques = (n1 % ring)+symR+(n2 % ring);
-			var quesR = toR(n1)+symR+toR(n2);
-			var quesM = toM(n1)+symToM(symR)+toM(n2);
-			var quesC = toC(n1)+symToC(symR)+toC(n2);
-			var quesS;
-			symR == " × " ? quesS = toS(n1,0)+symToS(symR)+toS(n2,1) : quesS = toS(n1,1)+symToS(symR)+toS(n2,0) ;			
-
-			obj.innerHTML = ques;
-
-			writeBig("Q",ques,quesR,quesM,quesC,quesS);
-
-		}
 	}
 
 	function tm(obj) {
@@ -471,25 +486,23 @@
 				alert("已進入羅馬參照模式");
 				start = 0;
 				break;
-
 			case "$" : 
 				rep = "$";
 				alert("已進入錢幣參照模式");
 				start = 0;
 				break;
-
 			case "六" : 
 				rep = "六";
-				alert("已進入中文參照模式");
-				start = 0;
+				alert("已進入中文參照模式"); start = 0;
 				break;
-
 			case "步" : 
 				rep = "步";
-				alert("已進入走路參照模式");
-				start = 0;
+				alert("已進入走路參照模式"); start = 0;
 				break;			
-
+			case "列" : 
+				rep = "列";
+				alert("已進入數列參照模式"); start = 0;
+				break;		
 			case "挑戰模式" : 
 				rep = "挑戰模式";
 				alert("已進入挑戰模式");
@@ -503,21 +516,18 @@
 				break;
 
 			case "Z" : 
-				rep = "Z";
 				alert("整數系");
 				ring = Infinity;
 				showdv("");
 				break;
 
 			case "Z/7Z" : 
-				rep = "7/7Z";
 				alert("星期鐘(7的數環)");
 				ring = 7;
 				showdv("none");
 				break;
 
 			case "Z/12Z" : 
-				rep = "Z/12Z";
 				alert("時鐘(12的數環)");
 				ring = 12;
 				showdv("none"); 
@@ -584,6 +594,7 @@
 <button class="ui black tiny button" onclick="swi(this)">$</button>
 <button class="ui black tiny button" onclick="swi(this)">六</button>
 <button class="ui black tiny button" onclick="swi(this)">步</button>
+<button class="ui black tiny button" onclick="swi(this)">列</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button class="ui green tiny button" onclick="swi(this)">挑戰模式</button>
 <button class="ui green tiny button" onclick="swi(this)">挫折模式</button>
@@ -606,25 +617,25 @@
 <tr>
 	<td width="50%" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">加</span>
-            <button class="ui button" style="width:40%" onclick="pl(this)"> 7 + 8 </button class="ui button">
-                <button class="ui button" style="width:40%" onclick="pl(this)"> 6 + 7 </button class="ui button">
+            <button class="ui button" style="width:40%" onclick="pl(this)">7 + 8</button class="ui button">
+                <button class="ui button" style="width:40%" onclick="pl(this)">6 + 7</button class="ui button">
 	</td>
 	<td width="50%" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">乘</span>
-            <button class="ui button" style="width:40%" onclick="tm(this)"> 9 × 7</button class="ui button">
-                <button class="ui button" style="width:40%" onclick="tm(this)"> 6 × 5</button class="ui button">
+            <button class="ui button" style="width:40%" onclick="tm(this)">9 × 7</button class="ui button">
+                <button class="ui button" style="width:40%" onclick="tm(this)">6 × 5</button class="ui button">
 	</td>
 </tr>
 <tr>
 	<td width="400" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">減</span>
-<button class="ui button" style="width:40%" onclick="mi(this)"> 12 - 5 </button class="ui button">
-    <button class="ui button" style="width:40%" onclick="mi(this)"> 17 - 9</button class="ui button">
+<button class="ui button" style="width:40%" onclick="mi(this)">12 - 5</button class="ui button">
+    <button class="ui button" style="width:40%" onclick="mi(this)">17 - 9</button class="ui button">
 	</td>
 	<td width="400" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">除</span>
-<button class="ui button" id = "dv1" style="width:40%" onclick="dv(this)"> 21 ÷ 3</button class="ui button">
-    <button class="ui button" id = "dv2" style="width:40%" onclick="dv(this)"> 42 ÷ 6</button class="ui button">
+<button class="ui button" id = "dv1" style="width:40%" onclick="dv(this)">21 ÷ 3</button class="ui button">
+    <button class="ui button" id = "dv2" style="width:40%" onclick="dv(this)">42 ÷ 6</button class="ui button">
 	</td>
 </tr>
 </table>
