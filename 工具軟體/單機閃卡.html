@@ -46,16 +46,6 @@
 //        alert(x.translation.English[0]);
 //    });
 
-
-// **keycode tester**
-//	document.onkeydown = checkKeycode
-//	function checkKeycode(e) {
-//	var keycode;
-//	if (window.event) keycode = window.event.keyCode;
-//	else if (e) keycode = e.which;
-//	alert("keycode: " + keycode);
-//  }
-
 	var now = new Date();
 
 	var ring = Infinity;
@@ -66,9 +56,8 @@
 	var win = 0;
 	var start = 0;
 	var objNow; // current obj
-	var funNow; // current function
-	var parNow; // curent parapeter
-	var SymNow; // current symbol
+	var bottonFunNow; //corrent botton function
+//	var funNow; // current function	var parNow; // curent parapeter	var SymNow; // current symbol
 	var rep = "6";
 
 
@@ -254,7 +243,9 @@
 				bonus += "超";
 			}
 			if (att == "positive") {
-				alert("答對了！這是你第"+win+"次連續答對！你"+bonus+posRight[Math.floor(Math.random()*posRight.length)]);
+				var many = "";
+				if (win > 1) many = "連續";
+				alert("答對了！這是你第"+win+"次"+many+"答對！你"+bonus+posRight[Math.floor(Math.random()*posRight.length)]);
 			}
 			if (att =="negative") {
 				alert("才連續答對"+win+"次…根本就是"+bonus+"靠運氣！");
@@ -292,25 +283,18 @@
 		(qa == "Q") ? document.getElementById('bigans').style.color = "red" : document.getElementById('bigans').style.color = "blue";
 		switch (rep) {
 			case "VI":
-					innerBig(data, dataR);
-				break;
+					innerBig(data, dataR);	break;
 			case "$":
-					innerBig(data, dataM);
-				break;
+					innerBig(data, dataM);	break;
 			case "六":
-					innerBig(data, dataC);
-				break;
+					innerBig(data, dataC);	break;
 			case "步":
-					innerBig(data, dataS);
-				break;
+					innerBig(data, dataS);	break;
 			case "列":
-					innerBig(data, dataList);
-				break;
+					innerBig(data, dataList);	break;
 
 			case "挑戰模式":
-				if (qa == "Q") {
-					askq(data,"送出挑戰！");
-				}
+				if (qa == "Q") { askq(data,"送出挑戰！") }
 				else {
 					checkAns('bigans',data, "positive");
 					document.getElementById('bigans').innerHTML = data;
@@ -318,9 +302,7 @@
 				break;
 				
 			case "挫折模式":			
-				if (qa == "Q") {
-					askq(data,"忍受挫折！");
-				}
+				if (qa == "Q") { askq(data,"忍受挫折！") }
 				else {
 					checkAns('bigans',data, "negative");
 					document.getElementById('bigans').innerHTML = data;
@@ -336,11 +318,14 @@
 		var keycode;
 		if (window.event) keycode = window.event.keyCode;
 		else if (e) keycode = e.which;
-		if (keycode == 13) funNow(objNow,parNow,symNow);
+		if (keycode == 13) bottonFunNow(objNow);
+//		if (keycode == 13) funNow(objNow,parNow,symNow);
 	}
 
-	function setNow (obj,fun,par,sym){
-		objNow = obj; funNow = fun; parNow = par; symNow = sym;
+	function setNow (obj, bottonFun){
+		objNow = obj; // funNow = fun; parNow = par; symNow = sym;
+		bottonFunNow = bottonFun;
+
 		document.onkeydown = runCode;
 
 		var mil = now.getMilliseconds(); var sec = now.getSeconds();
@@ -374,7 +359,9 @@
 		var quesM = toM(n1)+symToM(sym)+toM(n2);
 		var quesC = toC(n1)+symToC(sym)+toC(n2);
 		var quesS;
-		sym == " × " ? quesS = toS(n1,0)+symToS(sym)+toS(n2,1) : quesS = toS(n1,1)+symToS(sym)+toS(n2,0) ;
+		if (sym == " × ") quesS = toS(n1,0)+symToS(sym)+toS(n2,1);
+		if (sym == " ÷ ") quesS = toS(n1,1)+symToS(sym)+toS(n2,0);
+		if (sym == " + " || sym == "-") quesS = toS(n1,1)+symToS(sym)+toS(n2,1);
 
 
 		var quesList = [ques, n1+sym+(n2+1), n1+sym+(n2+2), n1+sym+(n2+3), n1+sym+(n2+4)];
@@ -387,11 +374,11 @@
 	}
 
 	// Abstract flashcard
-	function flashcard (obj, fun, par1, symR, symE, n1, n2){
+	function flashcard (obj, bottonFun, symR, symE, n1, n2){
 
-		if (!setNow(obj,fun,par1,symE)) return;
+		if (!setNow(obj,bottonFun)) return;
 
-		// construct formula   symR ==> Readable Symbol, symE ==> Evaluable Symbol
+		// construct formula   symR: Readable Symbol, symE: Evaluable Symbol
 		var formula = obj.innerHTML;
 		if (symR != symE) formula = obj.innerHTML.split(symR).join(symE);
 
@@ -421,7 +408,7 @@
 	}
 
 	// 加減法 
-	function plmi(obj, add, sym) {
+	function plmi(obj, bottonFun, add, sym) {
 
 		//construct n1,n2
 		var n1 = Math.floor(Math.random() * ((upBound - lowBound) / 2 - 1)) + add;
@@ -430,11 +417,11 @@
 		n2 = eval(n2 + lowBound / 2);
 
 		//main
-		flashcard(obj, plmi, add, sym, sym, n1, n2);		
+		flashcard(obj, bottonFun, sym, sym, n1, n2);		
 	}
 
 	// 乘除法 
-	function tmdv(obj,symR,symE) {
+	function tmdv(obj, bottonFun,symR,symE) {
 
 		//construct n1,n2
 		var n1, n2;	var sig = 1;
@@ -452,27 +439,17 @@
 		}
 
 		//main
-		flashcard(obj, tmdv, symR, symR, symE, n1, n2);
+		flashcard(obj, bottonFun, symR, symE, n1, n2);
 	}
 
-	function pl(obj) {
-		plmi(obj, 1, ' + ');
-	}
-	function mi(obj) {
-		plmi(obj, (upBound - lowBound) / 2, ' - ');
-	}
+	function pl(obj) { plmi(obj, pl, 1, ' + ') }
+	function mi(obj) { plmi(obj, mi, (upBound - lowBound) / 2, ' - ') }
+	function tm(obj) { tmdv(obj, tm, " × "," * ") }
+	function dv(obj) { tmdv(obj, dv, " ÷ "," / ") }
 
-	function tm(obj) {
-		tmdv(obj," × "," * ");
-	}
-
-	function dv(obj) {
-		tmdv(obj," ÷ "," / ");
-	}
-
-	function showdv (nors) {
-		document.getElementById("dv1").style.display = nors;
-		document.getElementById("dv2").style.display = nors;
+	function showdv (nOrs) {
+		document.getElementById("dv1").style.display = nOrs;
+		document.getElementById("dv2").style.display = nOrs;
 	}
 
 	function swi(obj) {
@@ -482,61 +459,33 @@
 		switch (data)
 		{
 			case "VI" : 
-				rep = "VI";
-				alert("已進入羅馬參照模式");
-				start = 0;
-				break;
+				rep = "VI";	alert("已進入羅馬參照模式"); start = 0;	break;
 			case "$" : 
-				rep = "$";
-				alert("已進入錢幣參照模式");
-				start = 0;
-				break;
+				rep = "$"; alert("已進入錢幣參照模式"); start = 0;	break;
 			case "六" : 
-				rep = "六";
-				alert("已進入中文參照模式"); start = 0;
-				break;
+				rep = "六";	alert("已進入中文參照模式"); start = 0; break;
 			case "步" : 
-				rep = "步";
-				alert("已進入走路參照模式"); start = 0;
-				break;			
+				rep = "步";	alert("已進入走路參照模式"); start = 0; break;			
 			case "列" : 
-				rep = "列";
-				alert("已進入數列參照模式"); start = 0;
-				break;		
+				rep = "列";	alert("已進入數列參照模式"); start = 0; break;		
 			case "挑戰模式" : 
-				rep = "挑戰模式";
-				alert("已進入挑戰模式");
-				start = 1;
-				break;
+				rep = "挑戰模式"; alert("已進入挑戰模式"); start = 1; break;
 				
 			case "挫折模式" : 
-				rep = "挫折模式";
-				alert("已進入挫折模式");
-				start = 1;
-				break;
+				rep = "挫折模式"; alert("已進入挫折模式"); start = 1; break;
 
 			case "Z" : 
-				alert("整數系");
-				ring = Infinity;
-				showdv("");
-				break;
+				alert("整數系");	ring = Infinity; showdv(""); break;
 
 			case "Z/7Z" : 
-				alert("星期鐘(7的數環)");
-				ring = 7;
-				showdv("none");
-				break;
+				alert("星期鐘(7的數環)");	ring = 7; showdv("none"); break;
 
 			case "Z/12Z" : 
-				alert("時鐘(12的數環)");
-				ring = 12;
-				showdv("none"); 
+				alert("時鐘(12的數環)"); ring = 12; showdv("none"); 
 				break;
 			
 			default : 
-				obj.innerHTML = "6";
-				rep = "6";
-				start = 0;
+				obj.innerHTML = "6"; rep = "6";	start = 0;
 				alert("已進入單純阿拉伯數字模式");
 		};			
 	}
