@@ -46,8 +46,7 @@
 //        alert(x.translation.English[0]);
 //    });
 
-	var now = new Date();
-
+	var now = new Date(); var qa;
 	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
@@ -58,6 +57,27 @@
 //	var funNow; // current function	var parNow; // curent parapeter	var SymNow; // current symbol
 	var rep = "6"; var mode = "閃卡模式";
 
+	function toX (sym, n1, n2) {
+		var maybeQ = '';
+		if ((mode == "挑戰模式" || mode == "挫折模式") && qa == "Q"){
+			maybeQ = ', x'	
+		}
+		else {
+			alert(qa);
+		};
+		switch (sym){
+			case ' + ': 
+				return 'x - '+n2+' = '+n1+ maybeQ;
+			case ' - ':
+				return  'x + '+n2+' = '+n1+ maybeQ;
+			case ' × ':
+				return  'x ÷ '+n2+' = '+n1+ maybeQ;
+			case ' ÷ ':
+				return  'x × '+n2+' = '+n1+ maybeQ;
+			default:
+				return '';
+		}
+	}
 
 	function symToS (sym) {
 		switch (sym){
@@ -206,24 +226,12 @@
 		var tens = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50) / 10);
 		var fives = Math.floor((num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens) / 5);
 		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
-		for (var i = 0; i < fHunds; i++) {
-			ansR = ansR + "D";
-		};
-		for (var i = 0; i < hunds; i++) {
-			ansR = ansR + "C";
-		};
-		for (var i = 0; i < fiftys; i++) {
-			ansR = ansR + "L";
-		};
-		for (var i = 0; i < tens; i++) {
-			ansR = ansR + "X";
-		};
-		for (var i = 0; i < fives; i++) {
-			ansR = ansR + "V";
-		};
-		for (var i = 0; i < ones; i++) {
-			ansR = ansR + "I";
-		};
+		for (var i = 0; i < fHunds; i++) 	{ 	ansR = ansR + "D" };
+		for (var i = 0; i < hunds; i++) 	{ 	ansR = ansR + "C" };
+		for (var i = 0; i < fiftys; i++) 	{ 	ansR = ansR + "L" };
+		for (var i = 0; i < tens; i++) 		{ 	ansR = ansR + "X" };
+		for (var i = 0; i < fives; i++) 	{	ansR = ansR + "V" };
+		for (var i = 0; i < ones; i++) 		{	ansR = ansR + "I" };
 
 		return ansR;
 
@@ -282,12 +290,12 @@
 	}
 
 // 書寫
-	function writeBig (qa, data, dataR, dataM, dataC, dataS, dataList){
+	function writeBig (data, dataR, dataM, dataC, dataS, dataList, dataX){
 		(qa == "Q") ? document.getElementById('bigans').style.color = "red" : document.getElementById('bigans').style.color = "blue";
 		var dataRep;
 		switch (rep) {
 			case "6":
-					break;
+					dataRep = data; break;
 			case "VI":
 					dataRep = dataR; break;
 			case "$":
@@ -297,7 +305,9 @@
 			case "步":
 					dataRep = dataS; break;
 			case "列":
-					dataRep = dataList; break;					
+					dataRep = dataList; break;
+			case "x":
+					dataRep = dataX; break;						
 			default:
 					break;				
 		}
@@ -381,9 +391,10 @@
 
 		quesList = quesList.join(',&nbsp;&nbsp;');
 
-		obj.innerHTML = ques; // obj.style.display = "none";
+		var quesX = toX(sym, n1, n2);
 
-		writeBig("Q",ques,quesR,quesM,quesC,quesS,quesList);
+		obj.innerHTML = ques;
+		writeBig(ques,quesR,quesM,quesC,quesS,quesList, quesX);
 	}
 
 	// Abstract flashcard
@@ -402,20 +413,22 @@
 		var ans = evAns(formula,0);
 		var ansR = toR(ans); var ansM = toM(ans); var ansC = toC(ans);
 
-
 		var ansS = toS(ans,1);
 			if (symR == " × ") ansS = toS(ans,1);
 			if (symR == " ÷ ") ansS = "每段路要：" + toS(ans,1);
 
 		var ansList = [ans, evAns(formula,1),  evAns(formula,2),  evAns(formula,3),  evAns(formula,4)];  ansList = ansList.join(',&nbsp;&nbsp;');
+
+		var ansX = "x = "+ans;
 	
 		// dicide Q or A
 		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
 
-			obj.innerHTML = ans;
-			writeBig("A",ans,ansR,ansM,ansC, ansS, ansList);
+			obj.innerHTML = ans; qa = "A";
+			writeBig(ans,ansR,ansM,ansC, ansS, ansList, ansX);
 		}
 		else {
+			qa = "Q";
 			makeQues(obj, n1, n2, symR);
 		}
 	}
@@ -480,13 +493,17 @@
 			case "步" : 
 				rep = "步";	alert("已進入走路參照模式"); start = 0; break;			
 			case "列" : 
-				rep = "列";	alert("已進入數列參照模式"); start = 0; break;
+				rep = "列";	alert("已進入數列參照模式"); start = 0; break;			
+			case "x" : 
+				rep = "x";	alert("已進入代數方程式參照模式"); start = 0; break;
+
 			case "閃卡" : 
 				mode = "閃卡模式"; alert("已回到閃卡模式"); start = 0; break;		
 			case "挑戰" : 
 				mode = "挑戰模式"; alert("已進入挑戰模式"); start = 1; break;
 			case "挫折" : 
 				mode = "挫折模式"; alert("已進入挫折模式"); start = 1; break;
+
 			case "Z" : 
 				alert("整數系");	ring = Infinity; showdv(""); break;
 			case "Z/7Z" : 
@@ -554,6 +571,7 @@
 <button class="ui black tiny button" onclick="swi(this)">六</button>
 <button class="ui black tiny button" onclick="swi(this)">步</button>
 <button class="ui black tiny button" onclick="swi(this)">列</button>
+<button class="ui black tiny button" onclick="swi(this)">x</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button class="ui green tiny button" onclick="swi(this)">閃卡</button>
 <button class="ui green tiny button" onclick="swi(this)">挑戰</button>
@@ -577,25 +595,25 @@
 <tr>
 	<td width="50%" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">加</span>
-            <button class="ui button" style="width:40%" onclick="pl(this)">7 + 8</button class="ui button">
-                <button class="ui button" style="width:40%" onclick="pl(this)">6 + 7</button class="ui button">
+            <button class="ui button" style="width:40%" onclick="pl(this)">1</button class="ui button">
+                <button class="ui button" style="width:40%" onclick="pl(this)">2</button class="ui button">
 	</td>
 	<td width="50%" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">乘</span>
-            <button class="ui button" style="width:40%" onclick="tm(this)">9 × 7</button class="ui button">
-                <button class="ui button" style="width:40%" onclick="tm(this)">6 × 5</button class="ui button">
+            <button class="ui button" style="width:40%" onclick="tm(this)">5</button class="ui button">
+                <button class="ui button" style="width:40%" onclick="tm(this)">6</button class="ui button">
 	</td>
 </tr>
 <tr>
 	<td width="400" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">減</span>
-<button class="ui button" style="width:40%" onclick="mi(this)">12 - 5</button class="ui button">
-    <button class="ui button" style="width:40%" onclick="mi(this)">17 - 9</button class="ui button">
+<button class="ui button" style="width:40%" onclick="mi(this)">3</button class="ui button">
+    <button class="ui button" style="width:40%" onclick="mi(this)">4</button class="ui button">
 	</td>
 	<td width="400" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">除</span>
-<button class="ui button" id = "dv1" style="width:40%" onclick="dv(this)">21 ÷ 3</button class="ui button">
-    <button class="ui button" id = "dv2" style="width:40%" onclick="dv(this)">42 ÷ 6</button class="ui button">
+<button class="ui button" id = "dv1" style="width:40%" onclick="dv(this)">7</button class="ui button">
+    <button class="ui button" id = "dv2" style="width:40%" onclick="dv(this)">8</button class="ui button">
 	</td>
 </tr>
 </table>
