@@ -15,7 +15,7 @@
 <style>
   div.circle {
     border: 3px solid #803100;
-    background: brown;
+    background: brown; color: black;
     border-radius: 50%;
     float: left;
     text-align: center;
@@ -26,7 +26,7 @@
   }
   div.rect {
     border: 3px solid #AA0000;
-    background: #FF9999;
+    background: #FF9999; color: black;
     border-radius: 0%;
     float: left;
     text-align: center;
@@ -39,7 +39,7 @@
 
 </head>
 
-<!-- <script src="../javascripts/jquery-1.10.2.js"></script> -->
+<script src="../javascripts/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 
 //    $.getJSON("https://www.moedict.tw/a/%E8%80%81%E4%BA%BA.json", function(x){
@@ -51,14 +51,12 @@
 	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
-	var upBound = 20;
-	var lowBound = 0;
-	var win = 0;
-	var start = 0;
+	var upBound = 20; var lowBound = 0;
+	var win = 0; var start = 0;
 	var objNow; // current obj
 	var bottonFunNow; //corrent botton function
 //	var funNow; // current function	var parNow; // curent parapeter	var SymNow; // current symbol
-	var rep = "6";
+	var rep = "6"; var mode = "閃卡模式";
 
 
 	function symToS (sym) {
@@ -275,42 +273,57 @@
 	}
 
 	function innerBig (data, data2) {
-		document.getElementById('bigans').innerHTML = data+"<br /><hr><font color = 'black'>"+data2+"</font>";
+		if (!data2) {
+			document.getElementById('bigans').innerHTML = data;
+		}
+		else {
+			document.getElementById('bigans').innerHTML = data+"<br /><hr><font color = 'black'>"+data2+"</font>";
+		}
 	}
 
 // 書寫
 	function writeBig (qa, data, dataR, dataM, dataC, dataS, dataList){
 		(qa == "Q") ? document.getElementById('bigans').style.color = "red" : document.getElementById('bigans').style.color = "blue";
+		var dataRep;
 		switch (rep) {
+			case "6":
+					break;
 			case "VI":
-					innerBig(data, dataR);	break;
+					dataRep = dataR; break;
 			case "$":
-					innerBig(data, dataM);	break;
+					dataRep = dataM; break;
 			case "六":
-					innerBig(data, dataC);	break;
+					dataRep = dataC; break;
 			case "步":
-					innerBig(data, dataS);	break;
+					dataRep = dataS; break;
 			case "列":
-					innerBig(data, dataList);	break;
+					dataRep = dataList; break;					
+			default:
+					break;				
+		}
 
+		switch (mode) {
 			case "挑戰模式":
-				if (qa == "Q") { askq(data,"送出挑戰！") }
+				if (qa == "Q") { askq(dataRep,"送出挑戰！") }
 				else {
 					checkAns('bigans',data, "positive");
-					document.getElementById('bigans').innerHTML = data;
+					innerBig(dataRep);
 				}
-				break;
-				
+				break;				
 			case "挫折模式":			
-				if (qa == "Q") { askq(data,"忍受挫折！") }
+				if (qa == "Q") { askq(dataRep,"忍受挫折！") }
 				else {
 					checkAns('bigans',data, "negative");
-					document.getElementById('bigans').innerHTML = data;
+					innerBig(dataRep);
 				}
 				break;
-							
 			default:
-				document.getElementById('bigans').innerHTML = data;		
+				if (rep == "6") {
+					innerBig(data);
+				}
+				else {
+					innerBig(data, dataRep);
+				}
 		}
 	}
 
@@ -332,7 +345,7 @@
 		now = new Date();
 		var mil1 = now.getMilliseconds(); var sec1 = now.getSeconds();
 
-		if (mil1-mil < 100 && sec1 - sec < 1) {
+		if ((mil1-mil < 100 && sec1 - sec < 1)) {
 			return 0;
 		}
 		return 1;  // 防止Chrome瀏覽器自動把Enter鍵當按下，變成按兩次。
@@ -368,7 +381,7 @@
 
 		quesList = quesList.join(',&nbsp;&nbsp;');
 
-		obj.innerHTML = ques;
+		obj.innerHTML = ques; // obj.style.display = "none";
 
 		writeBig("Q",ques,quesR,quesM,quesC,quesS,quesList);
 	}
@@ -467,23 +480,20 @@
 			case "步" : 
 				rep = "步";	alert("已進入走路參照模式"); start = 0; break;			
 			case "列" : 
-				rep = "列";	alert("已進入數列參照模式"); start = 0; break;		
-			case "挑戰模式" : 
-				rep = "挑戰模式"; alert("已進入挑戰模式"); start = 1; break;
-				
-			case "挫折模式" : 
-				rep = "挫折模式"; alert("已進入挫折模式"); start = 1; break;
-
+				rep = "列";	alert("已進入數列參照模式"); start = 0; break;
+			case "閃卡" : 
+				mode = "閃卡模式"; alert("已回到閃卡模式"); start = 0; break;		
+			case "挑戰" : 
+				mode = "挑戰模式"; alert("已進入挑戰模式"); start = 1; break;
+			case "挫折" : 
+				mode = "挫折模式"; alert("已進入挫折模式"); start = 1; break;
 			case "Z" : 
 				alert("整數系");	ring = Infinity; showdv(""); break;
-
 			case "Z/7Z" : 
 				alert("星期鐘(7的數環)");	ring = 7; showdv("none"); break;
-
 			case "Z/12Z" : 
 				alert("時鐘(12的數環)"); ring = 12; showdv("none"); 
-				break;
-			
+				break;			
 			default : 
 				obj.innerHTML = "6"; rep = "6";	start = 0;
 				alert("已進入單純阿拉伯數字模式");
@@ -545,8 +555,9 @@
 <button class="ui black tiny button" onclick="swi(this)">步</button>
 <button class="ui black tiny button" onclick="swi(this)">列</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button class="ui green tiny button" onclick="swi(this)">挑戰模式</button>
-<button class="ui green tiny button" onclick="swi(this)">挫折模式</button>
+<button class="ui green tiny button" onclick="swi(this)">閃卡</button>
+<button class="ui green tiny button" onclick="swi(this)">挑戰</button>
+<button class="ui green tiny button" onclick="swi(this)">挫折</button>
 <button class="ui green tiny button" onclick="hack(this)">修改評語</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button class="ui blue tiny button" onclick="chUp(this)">20</button>
