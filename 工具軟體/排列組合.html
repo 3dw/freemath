@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>排列組合</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+
+<!--Author: Bestian Tang-->
+<!--Version: 1.0-->
+<!-- Release to Freemath, 自學數學團-->
+<!-- Right: CC0, Public Domain-->
+
+<!--Last work: add CSS -->
+<!--Todo next: add Sequence mode -->
+
+
+</head>
+
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	
+var list = [1,2,3,4,5];
+
+function fork (elem, list) {
+	var ans = elem;
+	for (var i = 0; i < list.length; i++) {
+		ans = ans + list[i];
+	}
+	return ans;
+}
+
+
+function permu (list, take) {
+
+	var ans = '';
+	if (!list) list = [];
+
+ 	for (var i = 0; i < list.length; i++) {
+
+ 		var listNew = [];
+ 		for (var j = 0; j < list.length; j++) {
+ 			if (j!= i) listNew.push(list[j]);
+ 		};
+
+ 		if (listNew) ans = ans + fork(list[i], permu(listNew,take-1));
+ 		ans += '<br />'
+ 	};
+ 	if (take==0) return ans;
+ }
+
+function swi(obj) {
+	document.getElementById("bigans").innerHTML = permu(list,4)+'<br />';
+}
+
+</script>
+
+
+
+<h1>
+	<button class="ui green tiny button" onclick="swi(this)">閃卡</button>
+</h1>
+
+<p id = "bigans"></p>
+
+
+
+</body>
