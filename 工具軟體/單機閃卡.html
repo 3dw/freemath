@@ -59,12 +59,7 @@
 
 	function toX (sym, n1, n2) {
 		var maybeQ = '';
-		if ((mode == "挑戰模式" || mode == "挫折模式") && qa == "Q"){
-			maybeQ = ', x'	
-		}
-		else {
-			alert(qa);
-		};
+		if ((mode == "挑戰模式" || mode == "挫折模式") && qa == "Q") maybeQ = ', x' ;
 		switch (sym){
 			case ' + ': 
 				return 'x - '+n2+' = '+n1+ maybeQ;
