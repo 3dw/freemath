@@ -46,29 +46,29 @@
 //        alert(x.translation.English[0]);
 //    });
 
-	var now = new Date(); var qa;
+	var now = new Date(); var qa; var maybeX;
 	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
 	var upBound = 20; var lowBound = 0;
 	var win = 0; var start = 0;
-	var objNow; // current obj
-	var bottonFunNow; //corrent botton function
+	var objNow; var bottonFunNow; var n1Now = 0; var n2Now = 0;
 //	var funNow; // current function	var parNow; // curent parapeter	var SymNow; // current symbol
 	var rep = "6"; var mode = "閃卡模式";
 
 	function toX (sym, n1, n2) {
 		var maybeQ = '';
-		if ((mode == "挑戰模式" || mode == "挫折模式") && qa == "Q") maybeQ = ', x' ;
+		rep == '()' ? maybeX = '(&nbsp;&nbsp;&nbsp;&nbsp;)' : maybeX = 'x';
+		if ((mode == "挑戰模式" || mode == "挫折模式") && qa == "Q") maybeQ = ', ' +maybeX;
 		switch (sym){
 			case ' + ': 
-				return 'x - '+n2+' = '+n1+ maybeQ;
+				return maybeX + ' - '+n2+' = '+n1+ maybeQ;
 			case ' - ':
-				return  'x + '+n2+' = '+n1+ maybeQ;
+				return maybeX + ' + '+n2+' = '+n1+ maybeQ;
 			case ' × ':
-				return  'x ÷ '+n2+' = '+n1+ maybeQ;
+				return maybeX + ' ÷ '+n2+' = '+n1+ maybeQ;
 			case ' ÷ ':
-				return  'x × '+n2+' = '+n1+ maybeQ;
+				return maybeX + ' × '+n2+' = '+n1+ maybeQ;
 			default:
 				return '';
 		}
@@ -204,7 +204,7 @@
 			ansM = ansM + "<div class=circle>1</div>";
 		};
 
-		ansM = ansM + "<br /><br />"
+//		ansM = ansM + "<br /><br />"
 
 		return ansM;
 	}
@@ -268,14 +268,19 @@
 		objNow.onclick(objNow);
 	}
 
-	function askq (data, pnword){
-		document.getElementById('bigans').innerHTML = data+" = "+"<input class='ui input' type = 'text' onkeydown='if (event.keyCode == 13){clk()}'></input> <button class='ui small teal button' onclick = 'clk()'>"+pnword+"</button>";
+	function askq (data, pnword){	
+
+		document.getElementById('bigans').innerHTML = data+" = "+"<input class='ui input' type = 'text' ></input> <button class='ui small teal button' onclick = 'clk()'>"+pnword+"</button>";
 		document.getElementById('bigans').getElementsByTagName("input")[0].focus();
 
 		start = 0;
+
 	}
 
 	function innerBig (data, data2) {
+
+//		document.onkeydown = runCode;
+
 		if (!data2) {
 			document.getElementById('bigans').innerHTML = data;
 		}
@@ -302,6 +307,7 @@
 			case "列":
 					dataRep = dataList; break;
 			case "x":
+			case "()":
 					dataRep = dataX; break;						
 			default:
 					break;				
@@ -333,11 +339,10 @@
 	}
 
 	function runCode(e) {
-		var keycode;
+		var keycode; 
 		if (window.event) keycode = window.event.keyCode;
 		else if (e) keycode = e.which;
-		if (keycode == 13) bottonFunNow(objNow);
-//		if (keycode == 13) funNow(objNow,parNow,symNow);
+		if (keycode == 13) bottonFunNow(objNow); // 32:Spacebar  13:ENTER
 	}
 
 	function setNow (obj, bottonFun){
@@ -390,6 +395,7 @@
 
 		obj.innerHTML = ques;
 		writeBig(ques,quesR,quesM,quesC,quesS,quesList, quesX);
+
 	}
 
 	// Abstract flashcard
@@ -414,18 +420,28 @@
 
 		var ansList = [ans, evAns(formula,1),  evAns(formula,2),  evAns(formula,3),  evAns(formula,4)];  ansList = ansList.join(',&nbsp;&nbsp;');
 
-		var ansX = "x = "+ans;
-	
-		// dicide Q or A
-		if (ans && obj.innerHTML !== String(ans) && start !== 1) {
-
-			obj.innerHTML = ans; qa = "A";
-			writeBig(ans,ansR,ansM,ansC, ansS, ansList, ansX);
+		var ansX;
+		if (maybeX == 'x') {
+			ansX = "x = " + ans;
 		}
 		else {
+			if (toX(symR, n1Now, n2Now).split(')')[1]) {
+				ansX = "(" + ans + ")" + toX(symR, n1Now, n2Now).split(')')[1].split(',')[0];
+			} else {
+				ansX = "(" + ans + ")" + toX(symR, n1Now, n2Now).split(')')[1];
+			}
+		} 
+	
+		// dicide Q or A
+		if (ans && obj.innerHTML !== String(ans) && start != 1) {
+			obj.innerHTML = ans; qa = "A";
+			writeBig(ans,ansR,ansM,ansC, ansS, ansList, ansX);
+		} else {
 			qa = "Q";
+			n1Now = n1; n2Now = n2;
 			makeQues(obj, n1, n2, symR);
 		}
+
 	}
 
 	// 加減法 
@@ -490,7 +506,11 @@
 			case "列" : 
 				rep = "列";	alert("已進入數列參照模式"); start = 0; break;			
 			case "x" : 
-				rep = "x";	alert("已進入代數方程式參照模式"); start = 0; break;
+				rep = "x";	alert("已進入代數方程式參照模式");
+				start = 0; obj.innerHTML = '()'; break;
+			case "()":
+				rep = "()";	alert("已進入算式填空參照模式");
+				start = 0; obj.innerHTML = 'x'; break;
 
 			case "閃卡" : 
 				mode = "閃卡模式"; alert("已回到閃卡模式"); start = 0; break;		
@@ -615,7 +635,7 @@
 
 <br><br>
 <div class="ui message" style="height: 50ex;">
-	<big><big id = "bigans" style="font-size: 300%; margin-left:20px; color:blue">請連續按同一個鈕，或按鈕再按ENTER鍵。
+	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue">請連續按同一個鈕，或按鈕再按ENTER鍵。
 	</big></big>
 </div>
 <br />
