@@ -489,6 +489,10 @@
 		document.getElementById("dv2").style.display = nOrs;
 	}
 
+	function doSwi(obj, doRep, word, doStart, doInner){
+		if (confirm(word)) {rep = doRep; doStart; if (doInner) obj.innerHTML = doInner}
+	}
+
 	function swi(obj) {
 
 		var data = obj.innerHTML;
@@ -496,39 +500,36 @@
 		switch (data)
 		{
 			case "VI" : 
-				rep = "VI";	alert("已進入羅馬參照模式"); start = 0;	break;
+				doSwi(obj, "VI", "已進入羅馬參照模式", 0);	break;
 			case "$" : 
-				rep = "$"; alert("已進入錢幣參照模式"); start = 0;	break;
+				doSwi(obj, "$", "已進入錢幣參照模式", 0); break;
 			case "六" : 
-				rep = "六";	alert("已進入中文參照模式"); start = 0; break;
+				doSwi(obj, "六", "進入中文參照模式", 0); break;
 			case "步" : 
-				rep = "步";	alert("已進入走路參照模式"); start = 0; break;			
+				doSwi(obj, "步", "進入走路參照模式", 0); break;			
 			case "列" : 
-				rep = "列";	alert("已進入數列參照模式"); start = 0; break;			
+				doSwi(obj, "列", "進入數列參照模式", 0); break;			
 			case "x" : 
-				rep = "x";	alert("已進入代數方程式參照模式");
-				start = 0; obj.innerHTML = '()'; break;
+				doSwi(obj, "x", "進入代數方程式參照模式", 0, '()');	break;
 			case "()":
-				rep = "()";	alert("已進入算式填空參照模式");
-				start = 0; obj.innerHTML = 'x'; break;
+				doSwi(obj, "()", "進入算式填空參照模式", 0, 'x'); break;
 
 			case "閃卡" : 
-				mode = "閃卡模式"; alert("已回到閃卡模式"); start = 0; break;		
+				if (confirm("已回到閃卡模式")) {mode = "閃卡模式"; start = 0}; break;	
 			case "挑戰" : 
-				mode = "挑戰模式"; alert("已進入挑戰模式"); start = 1; break;
+				if (confirm("已進入挑戰模式")) {mode = "挑戰模式"; start = 1}; break;
 			case "挫折" : 
-				mode = "挫折模式"; alert("已進入挫折模式"); start = 1; break;
+				if (confirm("已進入挫折模式")) {mode = "挫折模式"; start = 1}; break;
 
 			case "Z" : 
-				alert("整數系");	ring = Infinity; showdv(""); break;
+				if (confirm("整數系")){ring = Infinity; showdv("")}; break;
 			case "Z/7Z" : 
-				alert("星期鐘(7的數環)");	ring = 7; showdv("none"); break;
+				if (confirm("星期鐘(7的數環)")){ring = 7; showdv("none")}; break;
 			case "Z/12Z" : 
-				alert("時鐘(12的數環)"); ring = 12; showdv("none"); 
-				break;			
+				if (confirm("時鐘(12的數環)")){ring = 12; showdv("none")}; break;			
 			default : 
 				obj.innerHTML = "6"; rep = "6";	start = 0;
-				alert("已進入單純阿拉伯數字模式");
+				alert("已回到進入單純阿拉伯數字模式");
 		};			
 	}
 	
@@ -635,7 +636,8 @@
 
 <br><br>
 <div class="ui message" style="height: 50ex;">
-	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue">請連續按同一個鈕，或按鈕再按ENTER鍵。
+	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue">請連續按同一個鈕，或按鈕再按ENTER鍵。<br/>
+	手機請橫放，字會比較大。
 	</big></big>
 </div>
 <br />
