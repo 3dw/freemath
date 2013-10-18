@@ -55,6 +55,11 @@
 	var objNow; var bottonFunNow; var n1Now = 0; var n2Now = 0;
 //	var funNow; // current function	var parNow; // curent parapeter	var SymNow; // current symbol
 	var rep = "6"; var mode = "閃卡模式";
+	
+	window.addEventListener("touchstart", function(ev){
+		console.log(ev.touches); // good
+		alert(ev.touches);
+    });
 
 	function toX (sym, n1, n2) {
 		var maybeQ = '';
@@ -606,6 +611,12 @@
 
 <br />
 
+<table style = "float:right;width:15%">
+	<tr>
+		<td><button class="ui huge black button" onclick="clk()">Enter</button></td>
+	</tr>
+</table>
+
 <table style="margin-left: 20px;width:80%" >
 
 <tr>
@@ -633,6 +644,7 @@
 	</td>
 </tr>
 </table>
+
 
 <br><br>
 <div class="ui message" style="height: 50ex;">
