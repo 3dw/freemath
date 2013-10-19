@@ -270,7 +270,8 @@
 	}
 
 	function clk (){
-		objNow.onclick(objNow);
+//		alert(objNow);
+		objNow ? objNow.onclick(objNow) : alert("請先點一個按鈕");
 	}
 
 
@@ -651,8 +652,9 @@
 
 <br><br>
 <div class="ui message" style="height: 50ex;">
-	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue">請連續按同一個鈕，或按鈕再按ENTER鍵。<br/>
-	手機請橫放，字會比較大。
+	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue"><br/>
+	歡迎使用多功能閃卡！請按鈕開始。<br />
+	手機橫放畫面較佳。
 	</big></big>
 </div>
 <br />
