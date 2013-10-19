@@ -273,11 +273,12 @@
 		objNow.onclick(objNow);
 	}
 
-	window.addEventListener("touchstart", function(ev){
-		alert("aaa");
-		clk();
-	});
 
+	window.addEventListener("touchstart", function(ev){
+		console.log(ev.touches); // good
+		clk();
+    });
+    
 
 	function askq (data, pnword){	
 
