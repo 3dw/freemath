@@ -274,10 +274,6 @@
 	}
 
 
-	window.addEventListener("touchstart", function(ev){
-		console.log(ev.touches); // good
-		clk();
-    });
     
 
 	function askq (data, pnword){	
@@ -668,6 +664,14 @@
 <button class="ui teal mini button" onclick="swi(this)">Z/12Z</button>
 </div>
 
+<script type="text/javascript">
 
+	document.getElementById("bigans").addEventListener("touchstart", function(ev){
+		console.log(ev.touches); // good
+		clk();
+    });
+
+
+</script>
 
 </body>
