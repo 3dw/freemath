@@ -55,7 +55,7 @@
 //        alert(x.translation.English[0]);
 //    });
 
-	var now = new Date(); var qa; var maybeX;
+	var now = new Date(); var qa; var maybeX; var dotColor;
 	var ring = Infinity;
 	var posRight = ["強！", "讚！", "用心！", "認真!"];
 	var negWrong = ["你是菜，還是呆？","這很簡單，你怎麼都不會？","拜託你小心一點！","不要胡亂回答！"];
@@ -71,22 +71,22 @@
 				if (t == 'S') return '，又面向前方';
 				if (t == 'C') return '加';
 				if (t == 'M') return '<div style ="float:left">又有</div>';
-				if (t == 'R') return '<div style ="float:left"> + </div>';
+				if (t == 'R') return '<div style ="float:left">&nbsp+&nbsp</div>';
 			case ' - ':
 				if (t == 'S') return '，又面向後方';
 				if (t == 'C') return '減';
 				if (t == 'M') return '<div style ="float:left">扣掉</div>';
-				if (t == 'R') return '<div style ="float:left"> - </div>';
+				if (t == 'R') return '<div style ="float:left">&nbsp;-&nbsp;</div>';
 			case ' × ':
 				if (t == 'S') return '，每段是';
 				if (t == 'C') return '乘以';
 				if (t == 'M') return '<div style ="float:left">每一塊都變成</div>';
-				if (t == 'R') return '<div style ="float:left"> × </div>';
+				if (t == 'R') return '<div style ="float:left">&nbsp;×&nbsp;</div>';
 			case ' ÷ ':
 				if (t == 'S') return '，就是';
 				if (t == 'C') return '除以';
 				if (t == 'M') return '<div style ="float:left">分裝成好幾包，每包都要裝</div>';
-				if (t == 'R') return '<div style ="float:left"> ÷ </div>';
+				if (t == 'R') return '<div style ="float:left">&nbsp÷&nbsp</div>';
 			default:
 				return '';
 		}
@@ -200,6 +200,18 @@
 		return ansM;
 	}
 
+//Dot
+	function toD(num) {
+		var ansD = "";	
+		for (var i = 0; i < num; i++) {
+			ansD = ansD + "<div class='circle' style = 'border:none;background:"+dotColor+";'></div>";
+			if (i % 5 == 4) ansD += "<div class=roman>&nbsp;</div>";
+			if (i % 10 == 9) ansD += "<br />";
+		};
+		ansD += "<br />";
+		return ansD;
+	}
+
 //Roman
 
 	function toR(num) {
@@ -293,17 +305,18 @@
 			document.getElementById('bigans').innerHTML = data+"<br /><hr><font color = 'black'>"+data2+"</font>";
 		}
 
-		$('#bigans').children().children('div').draggable(); 	// 斷網時無此功能 
-																// 手機也無此功能
+		$('#bigans').children().children('div').draggable().click(function(e) {e.shiftKey ? $(this).clone().appendTo("#bigans").draggable().click(function(e) { $(this).hide()}) : $(this).hide()});
 	}
 
 // 書寫
-	function writeBig (data, dataR, dataM, dataC, dataS, dataList, dataX){
+	function writeBig (data, dataD, dataR, dataM, dataC, dataS, dataList, dataX){
 		(qa == "Q") ? document.getElementById('bigans').style.color = "red" : document.getElementById('bigans').style.color = "blue";
 		var dataRep;
 		switch (rep) {
 			case "6":
 					dataRep = data; break;
+			case ".":
+					dataRep = dataD; break;
 			case "VI":
 					dataRep = dataR; break;
 			case "$":
@@ -386,6 +399,7 @@
 	function makeQues (obj, n1, n2, sym) {
 
 		var ques = n1+sym+n2;
+		var quesD = toD(n1)+symbol('R',sym)+toD(n2);
 		var quesR = toR(n1)+symbol('R',sym)+toR(n2);
 		var quesM = toM(n1)+symbol('M',sym)+toM(n2);
 		var quesC = toC(n1)+symbol('C',sym)+toC(n2);
@@ -401,7 +415,7 @@
 		var quesX = toX(sym, n1, n2);
 
 		obj.innerHTML = ques;
-		writeBig(ques,quesR,quesM,quesC,quesS,quesList, quesX);
+		writeBig(ques,quesD,quesR,quesM,quesC,quesS,quesList, quesX);
 
 	}
 
@@ -419,6 +433,9 @@
 
 		//construct Ans
 		var ans = evAns(formula,0);
+
+		if (qa == "A") dotColor = ["darkgreen","goldenrod","brown","purple","darkred","darkblue"][Math.floor(Math.random()*6)];
+		var ansD = toD(ans);
 		var ansR = toR(ans); var ansM = toM(ans); var ansC = toC(ans);
 
 		var ansS = toS(ans,1);
@@ -442,7 +459,7 @@
 		// dicide Q or A
 		if (ans && obj.innerHTML !== String(ans) && start != 1) {
 			obj.innerHTML = ans; qa = "A";
-			writeBig(ans,ansR,ansM,ansC, ansS, ansList, ansX);
+			writeBig(ans, ansD, ansR,ansM,ansC, ansS, ansList, ansX);
 		} else {
 			qa = "Q";
 			n1Now = n1; n2Now = n2;
@@ -506,10 +523,12 @@
 
 		switch (data)
 		{
+			case "." : 
+				doSwi(obj, ".", "進入點點參照模式", 0,"VI");	break;
 			case "VI" : 
-				doSwi(obj, "VI", "已進入羅馬參照模式", 0);	break;
+				doSwi(obj, "VI", "進入羅馬參照模式", 0, ".");	break;
 			case "$" : 
-				doSwi(obj, "$", "已進入錢幣參照模式", 0); break;
+				doSwi(obj, "$", "進入錢幣參照模式", 0); break;
 			case "六" : 
 				doSwi(obj, "六", "進入中文參照模式", 0); break;
 			case "步" : 
@@ -588,8 +607,9 @@
 
 <h1>
     閃卡
-    <button class="ui black tiny button" onclick="swi(this)">6</button>
-<button class="ui black tiny button" onclick="swi(this)">VI</button>
+<button class="ui black tiny button" onclick="swi(this)">6</button>
+<button class="ui black tiny button" onclick="swi(this)">.</button>
+<!-- <button class="ui black tiny button" onclick="swi(this)">VI</button> -->
 <button class="ui black tiny button" onclick="swi(this)">$</button>
 <button class="ui black tiny button" onclick="swi(this)">六</button>
 <button class="ui black tiny button" onclick="swi(this)">步</button>
