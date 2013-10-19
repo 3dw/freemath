@@ -299,10 +299,10 @@
 //		document.onkeydown = runCode;
 
 		if (!data2) {
-			document.getElementById('bigans').innerHTML = data;
+			document.getElementById('bigans').innerHTML = "<span>"+data+"</span>";
 		}
 		else {
-			document.getElementById('bigans').innerHTML = data+"<br /><hr><font color = 'black'>"+data2+"</font>";
+			document.getElementById('bigans').innerHTML = "<span>"+data+"</span>"+"<br /><hr><font color = 'black'>"+data2+"</font>";
 		}
 
 		$('#bigans').children().children('div').draggable().click(function(e) {e.shiftKey ? $(this).clone().appendTo("#bigans").draggable().click(function(e) { $(this).hide()}) : $(this).hide()});
@@ -517,7 +517,7 @@
 		if (confirm(word)) {rep = doRep; doStart; if (doInner) obj.innerHTML = doInner}
 	}
 
-	function swi(obj) 
+	function swi(obj) {
 		var data = obj.innerHTML;
 
 		switch (data)
@@ -685,7 +685,7 @@
 
 <script type="text/javascript">
 
-	document.getElementById("bigans").addEventListener("touchstart", function(ev){
+	document.getElementById("bigans").getElementsByTagName("span")[0].addEventListener("touchstart", function(ev){
 		console.log(ev.touches); // good
 		clk();
     });
