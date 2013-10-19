@@ -37,7 +37,11 @@
   }
 </style>
 
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
 </head>
+
 
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script type="text/javascript">
@@ -56,10 +60,6 @@
 //	var funNow; // current function	var parNow; // curent parapeter	var SymNow; // current symbol
 	var rep = "6"; var mode = "閃卡模式";
 	
-	window.addEventListener("touchstart", function(ev){
-		console.log(ev.touches); // good
-		alert(ev.touches);
-    });
 
 	function toX (sym, n1, n2) {
 		var maybeQ = '';
@@ -272,6 +272,11 @@
 	function clk (){
 		objNow.onclick(objNow);
 	}
+
+	window.addEventListener("touchmove", function(ev){
+		if (lastTouch.clientX > ev.touches.item(0).clientX) clk();
+	});
+
 
 	function askq (data, pnword){	
 
