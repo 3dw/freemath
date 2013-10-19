@@ -10,8 +10,8 @@
 <!-- Release to Freemath, 自學數學團-->
 <!-- Right: CC0, Public Domain-->
 
-<!--Last work: add CSS -->
-<!--Todo next: add Sequence mode -->
+<!--Last work: draggable(連網時有此功能) $ -->
+<!--Todo next: 錢參照的div在safari看起來不對，試著改為ex, em而非px的定義 -->
 <style>
   div.circle {
     border: 3px solid #803100;
@@ -44,7 +44,9 @@
 
 
 <script src="../javascripts/jquery-1.10.2.js"></script>
-<script type="text/javascript">
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script type="text/javascript"> 
 
 //    $.getJSON("https://www.moedict.tw/a/%E8%80%81%E4%BA%BA.json", function(x){
 //        alert(x.translation.English[0]);
@@ -296,6 +298,9 @@
 		else {
 			document.getElementById('bigans').innerHTML = data+"<br /><hr><font color = 'black'>"+data2+"</font>";
 		}
+
+		$('#bigans').children().children('div').draggable(); 	// 斷網時無此功能 
+																// 手機也無此功能
 	}
 
 // 書寫
