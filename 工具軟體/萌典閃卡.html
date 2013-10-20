@@ -55,6 +55,7 @@
 
 
 	function core (obj) {
+//		var indexCore = indexM;
 
 		if (!indexM) {
 			console.log('索引尚未讀取');
@@ -63,7 +64,17 @@
 
 		enterLock = 1; // lock Enter
 
-		var wordNow = pickone(indexM);
+		var newSrc = $("#source").val();
+
+//		if (newSrc.substr(0,1) == '[') {
+//			indexCore = eval(newSrc);
+//		}
+//		if (newSrc.split('json')) {
+//			$.getJSON(newSrc, function(x) {indexCore = x});	
+//		};	
+
+		var wordNow = pickone(indexM); //indexCore
+
 		var wordNowD = decodeURIComponent(wordNow.replace(/\+/g,  " ")); // 國字
 
 //		$.getJSON("https://www.moedict.tw/a/index.json", function(x){
@@ -158,6 +169,20 @@
 				doSwi(obj, '', "英漢", "改為英漢對照?", 0, "英漢"); break;
 			case "英漢" : 
 				doSwi(obj, '', "漢英", "改為漢英對照?", 0, "漢英"); break;	
+			case "自訂字庫" :
+				var newSrc = $("#source").val();
+
+				if (newSrc.substr(0,1) == '[') {
+					indexM = eval(newSrc);
+				}
+				if (newSrc.substr(newSrc.length-4,4) == 'json') {
+					$.getJSON("https://www.moedict.tw/a/index.json", function(x) {indexM = x});	
+				}
+
+				alert(newSrc.substr(newSrc.length-4,4));
+
+				core();
+				break;		
 			default : 
 				alert("發生錯誤");
 		};			
@@ -173,6 +198,9 @@
 
 <button class="ui pink large button" onclick="swi(this)">雙面</button>
 <button class="ui pink large button" onclick="swi(this)">漢英</button>
+<textarea id = "source" rows = "2" cols = "60">https://www.moedict.tw/a/index.json</textarea>
+<button class="ui pink large button" onclick="swi(this)">自訂字庫</button>
+<p align="center">以json路徑或形如['萌','字典', '閃', '卡']之串列取代，即可自訂字庫。您可開一個記事本，諸存累積您的自訂字庫</p>
 
 <div class="ui message blue" style="height: 50ex;">
 	<big><big id = "bigans" style="font-size: 400%; margin-left:20px;">
@@ -180,8 +208,10 @@
 </div>
 <br />
 
+
 <script type="text/javascript">
 	window.onload = showAndCore(); // still have bug: 不會等json讀完就先跑了
+//	alert($("#source").html());
 </script>
 
 </body>
