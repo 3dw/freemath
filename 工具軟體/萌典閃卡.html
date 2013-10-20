@@ -16,10 +16,16 @@
 
 <script type="text/javascript">
 	var bottonFunNow, objNow;
+	var enterLock = 1; var flipped = 0;
 	var ansBig = '<div>歡迎使用活潑的萌典閃卡！<br/>請按Enter鍵開始。<br />手機橫放畫面較佳。</div>';
-	var start = 0; var mustflip = 0;
+	var start = 0; var faceNow = 0;
 	var card = "雙面"; var mode = "閃卡模式";
-	var faceBack = "漢英";     // var face = "漢"; var back = "英";	
+	var faceBack = "漢英";     // var face = "漢"; var back = "英";
+
+	var indexM;
+
+	$.getJSON("https://www.moedict.tw/a/index.json", function(x) {indexM = x});
+
 	function pickone(list) {
 		return list[Math.floor(Math.random() * list.length)];
 	}
@@ -34,77 +40,86 @@
 	}
 
 	function innerBig () {
-		document.getElementById('bigans').innerHTML = ansBig;
-		if (card == "單面") {document.getElementById('bigans').getElementsByTagName("div")[1].style.display = "none"};
-
-//		document.getElementById('bigans').innerHTML = "<div><a href = "+"'https://www.moedict.tw/#"+data+"' target = 'new'>"+data+"</a></div>";
-//		if (data2) document.getElementById('bigans').innerHTML += "<hr><div><font color = 'darkgreen'>"+data2+"</font></div>";
-
+		if (flipped) {
+			return;
+		}
+		else {
+			document.getElementById('bigans').innerHTML = ansBig;
+			if (card == "單面") {
+				$('#bigans').show();
+				if (faceNow == 0) {document.getElementById('bigans').getElementsByTagName("div")[1].style.display = "none"};
+				if (faceNow == 1) {document.getElementById('bigans').getElementsByTagName("div")[0].style.display = "none"};
+			}
+		}
 	}
 
 
 	function core (obj) {
 
-		document.onkeydown = ''; // lock Enter
+		if (!indexM) {
+			console.log('索引尚未讀取');
+			enterLock = 0; // unlock Enter
+			return;};
 
-		$.getJSON("https://www.moedict.tw/a/index.json", function(x){
-        var wordNow = pickone(x);  
+		enterLock = 1; // lock Enter
+
+		var wordNow = pickone(indexM);
 		var wordNowD = decodeURIComponent(wordNow.replace(/\+/g,  " ")); // 國字
+
+//		$.getJSON("https://www.moedict.tw/a/index.json", function(x){
+//      var wordNow = pickone(x);  
+//		var wordNowD = decodeURIComponent(wordNow.replace(/\+/g,  " ")); // 國字
 		console.log(wordNowD);
         
         $.getJSON("https://www.moedict.tw/a/"+wordNowD+".json", function(x){
-	        	var enWord, zhPrononce; // 英文, 注音
-	        	zhPrononce = x.h[0].b;
+        	var enWord, zhPrononce; // 英文, 注音
+        	zhPrononce = x.h[0].b;
 
-	        	try {
-	        		enWord = x.translation.English[0];
-	        		if (enWord.substr(0,8) == 'same as `'){
-	        			console.log("發現"+enWord+"重新取得英文翻譯")
-	        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
-	        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
-	        		}
-	        		if (enWord.substr(0,8) == 'same as `'){
-	        			console.log("發現"+enWord+"重新取得英文翻譯")
-	        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
-	        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
-	        		}
+        	try {
+        		enWord = x.translation.English[0];
+        		if (enWord.substr(0,8) == 'same as `'){
+        			console.log("發現"+enWord+"重新取得英文翻譯")
+        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
+        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
+        		}
+        		if (enWord.substr(0,8) == 'same as `'){
+        			console.log("發現"+enWord+"重新取得英文翻譯")
+        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
+        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
+        		}
 
-	        		console.log(enWord);
-	        		 // 拿英文
-	        				// 如果有 same as `寧缺毋濫~|`宁~`缺~`毋~滥[ning4 que1 wu2 lan4] 就再去找 寧缺毋濫
-	        				// todo:  還有其他特例未解決
- 			        switch (faceBack)
- 			        {
+        		console.log(enWord);
+        		 // 拿英文
+        				// 如果有 same as `寧缺毋濫~|`宁~`缺~`毋~滥[ning4 que1 wu2 lan4] 就再去找 寧缺毋濫
+        				// todo:  還有其他特例未解決
+			        switch (faceBack)
+			        {
 
-			        	case "漢英": catchData(wordNowD, enWord); break;
- 			        	case "英漢": catchData(enWord, wordNowD); break;
- 			        }
- 			        
-	        	}
-		        catch (err) {
-		        	console.log(err+"____條目「"+wordNowD+"」暫無英文翻譯");
-					core(obj); 	// 條目無英文對照就換一張
-		        }        			        	
-	        	
-		    });
+		        	case "漢英": catchData(wordNowD, enWord); break;
+			        	case "英漢": catchData(enWord, wordNowD); break;
+			        }
+	        		enterLock = 0; // unlock Enter
+        	}
+	        catch (err) {
+	        	console.log(err+"____條目「"+wordNowD+"」暫無英文翻譯");
+				core(obj); 	// 條目無英文對照就換一張
+	        }        			        	
 	    });
-
-		document.onkeydown = runCode; // unlock Enter
 
 	}
 
 
 	function showAndCore (obj) {   // 預先讀好下次要顯示的資料，使用者按鍵時就不用等
 
-		if (mustflip > 0) {
-			$("#bigans").children("div").toggle();
-			mustflip = 0;
-		}
-		else {
-			innerBig();
+
+		innerBig();	faceNow++;
+
+		if (card != "單面" || faceNow == 2) {
 			core(obj);
-			if (card == "單面") 	mustflip = 1;
+			faceNow = 0;
 		}
+		enterLock = 0; // unlock Enter
+
 	}
 
 	// goal: 使用者可設定: 「正面/背面」, 「一起顯示」,「正背面的順序」 「是否加注音?」
@@ -114,8 +129,8 @@
 		var keycode; 
 		if (window.event) keycode = window.event.keyCode;
 		else if (e) keycode = e.which;
-		if (keycode == 13) {  // 32:Spacebar  13:ENTER
-
+		if (keycode == 13 && !enterLock) {  // 32:Spacebar  13:ENTER
+			enterLock = 1; // lock Enter
 			bottonFunNow(objNow);
 		}
 	}
@@ -166,7 +181,7 @@
 <br />
 
 <script type="text/javascript">
-	showAndCore();
+	window.onload = showAndCore(); // still have bug: 不會等json讀完就先跑了
 </script>
 
 </body>
