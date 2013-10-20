@@ -68,6 +68,8 @@
 	        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
 	        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
 	        		}
+
+	        		console.log(enWord);
 	        		 // 拿英文
 	        				// 如果有 same as `寧缺毋濫~|`宁~`缺~`毋~滥[ning4 que1 wu2 lan4] 就再去找 寧缺毋濫
 	        				// todo:  還有其他特例未解決
