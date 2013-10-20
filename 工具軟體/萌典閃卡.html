@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+
+<title>萌典閃卡</title>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link href="https://www.moedict.tw/styles.css" rel="stylesheet"></link>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+
+
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+	var bottonFunNow, objNow;
+	var ansBig = '<div>歡迎使用活潑的萌典閃卡！<br/>請按Enter鍵開始。<br />手機橫放畫面較佳。</div>';
+	var start = 0; var mustflip = 0;
+	var card = "雙面"; var mode = "閃卡模式";
+	var faceBack = "漢英";     // var face = "漢"; var back = "英";	
+	function pickone(list) {
+		return list[Math.floor(Math.random() * list.length)];
+	}
+
+	function clearStr (str){
+		return str.split('~').join('').split('`').join('').split('(S)').join('');
+	}
+	
+	function catchData (data, data2) {
+		ansBig = "<div><a href = "+"'https://www.moedict.tw/#"+data+"' target = 'new'>"+data+"</a></div>";
+		if (data2) ansBig += "<hr><div><font color = 'darkgreen'>"+data2+"</font></div>";
+	}
+
+	function innerBig () {
+		document.getElementById('bigans').innerHTML = ansBig;
+		if (card == "單面") {document.getElementById('bigans').getElementsByTagName("div")[1].style.display = "none"};
+
+//		document.getElementById('bigans').innerHTML = "<div><a href = "+"'https://www.moedict.tw/#"+data+"' target = 'new'>"+data+"</a></div>";
+//		if (data2) document.getElementById('bigans').innerHTML += "<hr><div><font color = 'darkgreen'>"+data2+"</font></div>";
+
+	}
+
+
+	function core (obj) {
+
+		document.onkeydown = ''; // lock Enter
+
+		$.getJSON("https://www.moedict.tw/a/index.json", function(x){
+        var wordNow = pickone(x);  
+		var wordNowD = decodeURIComponent(wordNow.replace(/\+/g,  " ")); // 國字
+		console.log(wordNowD);
+        
+        $.getJSON("https://www.moedict.tw/a/"+wordNowD+".json", function(x){
+	        	var enWord, zhPrononce; // 英文, 注音
+	        	zhPrononce = x.h[0].b;
+
+	        	try {
+	        		enWord = x.translation.English[0];
+	        		if (enWord.substr(0,8) == 'same as `'){
+	        			console.log("發現"+enWord+"重新取得英文翻譯")
+	        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
+	        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
+	        		}
+	        		if (enWord.substr(0,8) == 'same as `'){
+	        			console.log("發現"+enWord+"重新取得英文翻譯")
+	        			var nextWord = decodeURIComponent(enWord.split('same as `')[1].split('~')[0].replace(/\+/g,  " "));
+	        			enWord = $.getJSON("https://www.moedict.tw/a/"+nextWord+".json", function(x) {return x.translation.English[0]});
+	        		}
+	        		 // 拿英文
+	        				// 如果有 same as `寧缺毋濫~|`宁~`缺~`毋~滥[ning4 que1 wu2 lan4] 就再去找 寧缺毋濫
+	        				// todo:  還有其他特例未解決
+ 			        switch (faceBack)
+ 			        {
+
+			        	case "漢英": catchData(wordNowD, enWord); break;
+ 			        	case "英漢": catchData(enWord, wordNowD); break;
+ 			        }
+ 			        
+	        	}
+		        catch (err) {
+		        	console.log(err+"____條目「"+wordNowD+"」暫無英文翻譯");
+					core(obj); 	// 條目無英文對照就換一張
+		        }        			        	
+	        	
+		    });
+	    });
+
+		document.onkeydown = runCode; // unlock Enter
+
+	}
+
+
+	function showAndCore (obj) {   // 預先讀好下次要顯示的資料，使用者按鍵時就不用等
+
+		if (mustflip > 0) {
+			$("#bigans").children("div").toggle();
+			mustflip = 0;
+		}
+		else {
+			innerBig();
+			core(obj);
+			if (card == "單面") 	mustflip = 1;
+		}
+	}
+
+	// goal: 使用者可設定: 「正面/背面」, 「一起顯示」,「正背面的順序」 「是否加注音?」
+
+	function runCode(e) {
+
+		var keycode; 
+		if (window.event) keycode = window.event.keyCode;
+		else if (e) keycode = e.which;
+		if (keycode == 13) {  // 32:Spacebar  13:ENTER
+
+			bottonFunNow(objNow);
+		}
+	}
+
+	function doSwi(obj, doCard, doFaceBack, word, doStart, doInner){
+		if (confirm(word)) {
+			if (doCard) card = doCard;
+			if (doFaceBack) faceBack = doFaceBack;
+			start = doStart;
+			if (doInner) obj.innerHTML = doInner;
+		}
+	}
+
+	function swi(obj) {
+		var data = obj.innerHTML;
+		core(obj);
+
+		switch (data)
+		{
+			case "單面" : 
+				doSwi(obj, "雙面",'', "換成雙面卡?", 0, "雙面"); break;
+			case "雙面" : 
+				doSwi(obj, "單面",'', "換成單面卡?", 0, "單面"); break;	
+			case "漢英" : 
+				doSwi(obj, '', "英漢", "改為英漢對照?", 0, "英漢"); break;
+			case "英漢" : 
+				doSwi(obj, '', "漢英", "改為漢英對照?", 0, "漢英"); break;	
+			default : 
+				alert("發生錯誤");
+		};			
+	}
+
+	//目標：桌電 ==> Enter連閃, 按字查詢		手機&平板 ==> 右滑連閃, 按字查詢
+
+	bottonFunNow = showAndCore;
+
+	document.onkeydown = runCode;
+
+</script>
+
+<button class="ui pink large button" onclick="swi(this)">雙面</button>
+<button class="ui pink large button" onclick="swi(this)">漢英</button>
+
+<div class="ui message blue" style="height: 50ex;">
+	<big><big id = "bigans" style="font-size: 400%; margin-left:20px;">
+	</big></big>
+</div>
+<br />
+
+<script type="text/javascript">
+	showAndCore();
+</script>
+
+</body>
