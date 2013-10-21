@@ -13,31 +13,39 @@
 <!--Last work: draggable(連網時有此功能) $ -->
 <!--Todo next: 錢參照的div在safari看起來不對，試著改為ex, em而非px的定義 -->
 <style>
-  div.circle {
-    border: 3px solid #803100;
-    background: brown; color: black;
-    border-radius: 50%;
-    float: left;
-    text-align: center;
-    line-height: 70px;
-    width: 70px; height: 70px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  div.rect {
-    border: 3px solid #AA0000;
-    background: #FF9999; color: black;
-    border-radius: 0%;
-    float: left;
-    text-align: center;
-    line-height: 70px;
-    width: 130px; height: 70px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  div.roman {
-  	float: left;
-  }
+	div.circle {
+	border: 3px solid #803100;
+	background: brown; color: black;
+	border-radius: 50%;
+	float: left;
+	text-align: center;
+	line-height: 70px;
+	width: 70px; height: 70px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+	div.rect {
+	border: 3px solid #AA0000;
+	background: #FF9999; color: black;
+	border-radius: 0%;
+	float: left;
+	text-align: center;
+	line-height: 70px;
+	width: 130px; height: 70px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+	div.roman {
+		float: left;
+	}
+
+	@media screen and (min-width: 720px) {   /* 如果使用者之裝置寬度 >= 720px，將會再載入這裡的 CSS。 */
+   		.mobile {
+        	display: none;
+		}
+
+	}
+
 </style>
 
 
@@ -667,8 +675,8 @@
 <br><br>
 <div id = "card" class="ui message" style="height: 50ex;width: 95%; border:2px;">
 	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue"><br/>
-	歡迎使用多功能閃卡！請按鈕開始。<br />
-	手機橫放畫面較佳。
+	歡迎使用多功能閃卡！<br/>
+	<span class ="mobile">手機橫放畫面較佳。</span>
 	</big></big>
 </div>
 <br />
