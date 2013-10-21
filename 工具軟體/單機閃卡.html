@@ -665,7 +665,7 @@
 
 
 <br><br>
-<div class="ui message" style="height: 50ex;">
+<div id = "card" class="ui message" style="height: 50ex;">
 	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue"><br/>
 	歡迎使用多功能閃卡！請按鈕開始。<br />
 	手機橫放畫面較佳。
@@ -682,11 +682,15 @@
 
 <script type="text/javascript">
 
-	document.getElementById("bigans").addEventListener("touchstart", function(ev){
-		console.log(ev.touches); // good
-		clk();
-    });
+	function touchAble() {
+		document.getElementById("card").addEventListener("touchstart", function(ev){
+			console.log(ev.touches); // good
+			clk();
+	    });
 
+    }
+
+    touchAble();
 
 </script>
 
