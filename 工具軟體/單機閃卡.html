@@ -39,13 +39,17 @@
 		float: left;
 	}
 
-	@media screen and (min-width: 720px) {   /* 如果使用者之裝置寬度 >= 720px，將會再載入這裡的 CSS。 */
+	@media screen and (min-width: 1060px) {  
    		.mobile {
+        	display: none;
+		}
+	}
+	@media screen and (max-width: 1060px) {  
+   		.mobileOut {
         	display: none;
 		}
 
 	}
-
 </style>
 
 
@@ -626,14 +630,18 @@
 <button class="ui green tiny button" onclick="swi(this)">挫折</button>
 <button class="ui green tiny button" onclick="hack(this)">修改評語</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br class="mobile" />
+<br class="mobile" />
 <button class="ui blue tiny button" onclick="chUp(this)">20</button>
 <button class="ui blue tiny button" onclick="chUp(this)">50</button>
 <button class="ui blue tiny button" onclick="chUp(this)">100</button>
 <button class="ui blue tiny button" onclick="chUp(this)">1000</button>
-<button class="ui brown tiny button" onclick="chLow(this)">0</button>
-<button class="ui brown tiny button" onclick="chLow(this)">-20</button>
-<button class="ui brown tiny button" onclick="chLow(this)">-50</button>
-<button class="ui brown tiny button" onclick="chLow(this)">-100</button>
+<button class="ui purple tiny button" onclick="chLow(this)">0</button>
+<button class="ui purple tiny button" onclick="chLow(this)">-20</button>
+<button class="ui purple tiny button" onclick="chLow(this)">-50</button>
+<button class="ui purple tiny button" onclick="chLow(this)">-100</button>
+
+
 
 <br />
 
@@ -648,25 +656,26 @@
 <tr>
 	<td width="50%" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">加</span>
-            <button class="ui button" style="width:40%" onclick="pl(this)">1</button class="ui button">
-                <button class="ui button" style="width:40%" onclick="pl(this)">2</button class="ui button">
+            <button class="ui button" style="width:40%" onclick="pl(this)">1</button>
+
+            <button class ="ui button" style="width:40%" onclick="pl(this)">2</button>
 	</td>
 	<td width="50%" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">乘</span>
-            <button class="ui button" style="width:40%" onclick="tm(this)">5</button class="ui button">
-                <button class="ui button" style="width:40%" onclick="tm(this)">6</button class="ui button">
+            <button class="ui button" style="width:40%" onclick="tm(this)">5</button>
+                <button class="ui button" style="width:40%" onclick="tm(this)">6</button>
 	</td>
 </tr>
 <tr>
 	<td width="400" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">減</span>
-<button class="ui button" style="width:40%" onclick="mi(this)">3</button class="ui button">
-    <button class="ui button" style="width:40%" onclick="mi(this)">4</button class="ui button">
+<button class="ui button" style="width:40%" onclick="mi(this)">3</button>
+    <button class="ui button" style="width:40%" onclick="mi(this)">4</button>
 	</td>
 	<td width="400" class="ui segment">
             <span class="ui gray ribbon label" style = "width:12%">除</span>
-<button class="ui button" id = "dv1" style="width:40%" onclick="dv(this)">7</button class="ui button">
-    <button class="ui button" id = "dv2" style="width:40%" onclick="dv(this)">8</button class="ui button">
+<button class="ui button" id = "dv1" style="width:40%" onclick="dv(this)">7</button>
+    <button class="ui button" id = "dv2" style="width:40%" onclick="dv(this)">8</button>
 	</td>
 </tr>
 </table>
@@ -681,12 +690,14 @@
 </div>
 <br />
 
-
-<div style="position: absolute; bottom: 40px; right:40px">
+<div class = "mobileOut" style="position: absolute; bottom: 40px; right:40px">
 <button class="ui teal mini button" onclick="swi(this)">Z</button>
 <button class="ui teal mini button" onclick="swi(this)">Z/7Z</button>
 <button class="ui teal mini button" onclick="swi(this)">Z/12Z</button>
 </div>
+
+
+
 
 <script type="text/javascript">
 
