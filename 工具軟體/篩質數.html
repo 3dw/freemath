@@ -13,18 +13,31 @@
 <!--Last work: add CSS -->
 <!--Todo next: add Sequence mode -->
 
+<!--
+
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js" type="text/javascript"></script>
 <script src="http://jsxgraph.uni-bayreuth.de/distrib/GeogebraReader.js" type="text/javascript" ></script>
 
+-->
+
 </head>
 
 <body>
+<script>
+	var list = [2];
+	for (var i = 2; i < 1002; i++) {
+		var good = 1;
+	 	for (var j = 0; j < list.length; j++) {
+	 		if (i % list[j] == 0) good = 0;
+	 	};
+	 	if (good == 1) list.push(i);
+	};
 
-<div id="box" style="width:500px;height:500px;border:1px solid #cfcfcf"></div>
+	alert(list.join());
 
-<script type="text/javascript">
-	var b = JXG.JSXGraph.loadBoardFromFile('box', '分數圓餅製造機.ggb', 'Geogebra');
 </script>
+
+
 
 </body>
