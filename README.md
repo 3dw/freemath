@@ -16,6 +16,7 @@ Freemath是以中文書寫的數學教材與、教法、學習方法的匯整
 
 站外連結：
 
+*<a href = "http://math.alearn.org.tw/">自由數學freemath簡介</a>
 *<a href = "http://map.alearn.org.tw/">自學地圖</a>
 
 ======
