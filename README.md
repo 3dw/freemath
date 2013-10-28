@@ -11,7 +11,9 @@ Freemath是以中文書寫的數學教材與、教法、學習方法的匯整
 - 使用便利商店的印表機
 
 
-## 線上工具：（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的<a href="http://moztw.org/firefox/">Firefox瀏覽器</a>）##
+## 線上工具：##
+
+***（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的[Firefox瀏覽器](http://moztw.org/firefox/）***
 
 - [GGB線上試用(含星星製造機)](http://bestian.github.io/freemath/工具軟體/GGBtester.html)
 - [多功能閃卡](http://bestian.github.io/freemath/工具軟體/單機閃卡.html)
