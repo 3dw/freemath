@@ -13,13 +13,13 @@ Freemath是以中文書寫的數學教材與、教法、學習方法的匯整
 
 ## 線上工具：（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的<a href="http://moztw.org/firefox/">Firefox瀏覽器</a>）##
 
- [GGB](http://bestian.github.io/freemath/工具軟體/GGBtester.html) "GGB線上試用(含星星製造機)"
- [FC](http://bestian.github.io/freemath/工具軟體/單機閃卡.html) "閃卡"
+- [GGB線上試用(含星星製造機)](http://bestian.github.io/freemath/工具軟體/GGBtester.html)
+- [多功能閃卡](http://bestian.github.io/freemath/工具軟體/單機閃卡.html)
 
 
 ## 站外連結： ##
 
-[mathfree](http://math.alearn.org.tw/) "自由數學簡介"
-[automap](http://map.alearn.org.tw/) "自學地圖"
+- [自由數學簡介](http://math.alearn.org.tw/)
+- [自學地圖](http://map.alearn.org.tw/)
 
 ======
