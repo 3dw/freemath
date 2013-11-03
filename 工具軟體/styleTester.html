@@ -212,10 +212,10 @@
 				    		this.advice.min.push(tag);
 				    	}				    	
 				    	if (this.resault[tag] >= 6 && this.resault[tag] < 10) {
-				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ccffff');// 中風格色改這裡
+				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ffd8af');// 中風格色改這裡
 				    	}
 				    	if (this.resault[tag] >= 10) {
-				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ffd8af');// 強風格色改這裡
+				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ccffff');// 強風格色改這裡
 				    		this.advice.max.push({t: tag, n: this.resault[tag]});
 				    	}
 			    };   
