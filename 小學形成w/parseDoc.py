@@ -1,6 +1,10 @@
  #!/usr/bin/python
  # -*- coding: utf-8 -*-
 
+#note: every parse action here shold be an idempotent, say f^2 = f;
+#註: 在此的每一個剖析動作都必須是一個idempotent，也就是 f^2 = f，做兩次和做一次一樣;
+
+
 import os
 import re
 directory = os.getcwd()
