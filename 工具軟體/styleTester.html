@@ -27,6 +27,10 @@
 			min-width: 75px;
 		}
 
+		.invis {
+			display: none;
+		}
+
 	</style>
 
 	<script src="../javascripts/jquery-1.10.2.js"></script>
@@ -39,6 +43,8 @@
 <body>
 
 <script type="text/javascript">
+
+	var once = 0;
 
 	var bg = "#D0BAA2";
 
@@ -110,8 +116,11 @@
 	];
 
 	var dataS = {
+		r: {v: 0, a:0, r:0, k: 0},
 		s: {v: '👀視覺', a:'👂聽覺', r:'📖閱讀', k: '🙌操作'},
-		g: "http://www.vark-learn.com/english/index.asp",
+		l: [6,10],
+		e: '正在試探自己的',
+		f: '"🔥測驗結果：你是一名「"+finalTitles.join(\'+\')+"優勢」的學習者!!👏"',
 		adv: {
 			max:{'v' :'你具有視覺學習的優勢。視覺優勢的人，通常擅於看圖表、做圖形的設計與資訊整理。<br/><br/>你的筆記本應該充滿你自己的圖鴨和圖象式筆記吧？太雜亂的顏色與空間，可能會打亂你的思考、降低學習效率，最好在一個視覺單純的環境下學習。',
 
@@ -128,76 +137,157 @@
 
 					'k' :'你目前還不大擅長實作學習。試著把你學到的知識，拿來創作一些作品吧！'},	
 		},
-		i: "現代的教育研究者發現，每個人擅長的學習方式都有不同。即使在同一個課室中，每個人去掌握和理解的方法也不一樣。這就是每個人的學習風格。<br /><br />學習風格有千百種以上，要細分有很多角度。本測試採取的是「視聽讀作」(VARK)架構，特色是只要回答16個問題，就能讓您很快找出適合自己的有效學習方式。"
+		icon: '👍', //🔱💫🌈💯
+		it: '🐬何謂學習風格？', //🎨
+
+		i: "現代的教育研究者發現，每個人擅長的學習方式都有不同。即使在同一個課室中，每個人去掌握和理解的方法也不一樣。這就是每個人的學習風格。<br /><br />學習風格有千百種以上，要細分有很多角度。本測試採取的是「視聽讀作」(VARK)架構，特色是只要回答16個問題，就能讓您很快找出適合自己的有效學習方式。",
+
+		ow: '原文的問題出處與更多資訊，請至VARK介紹網站',
+		g: "http://www.vark-learn.com/english/index.asp",
 	};
 
+//資料二號
+
+var dataF1 = [
+		{t: '當颱風來了，突然停班停班一天，你通常會覺得：（可複選）', 
+		c:['賺到一天假，好欸！','沒差，我本來每天都像在放假', '放假還是有些正經事可做，但想想還是算了','那就換一種安排吧，總是能充實','不知道要做什麼？'], 
+		r:['s','r','e','a','o']},
+
+		{t: '當上課連續幾次都聽不懂，你通常會覺得：（可複選）', 
+		c:['老師教得太爛！','我可能需要加強先備知識？研究看看', '我太弱了，應該可以更強的','不懂就算了，做自己的事','考試怎麼辦？'], 
+		r:['s','a','e','r','o']},
+
+		{t: '如果你練習了一項表演，但是演出卻受到好友的批評，你會覺得：（可複選）', 
+		c:['我自己知道問題在哪裡啊！但就是練不起來嘛。','批評我的算不上朋友！', '好受傷','沒關係反正我也只是隨便演演','或許他看到了一些我自己不知道的點？多問一些'], 
+		r:['e','s','o','r','a']},
+
+		{t: '當你設定一個為期一個月以上的學習目標，還包括成果發表，通常結果會是？（可複選）',
+		c: ['我會三分鐘熱度，最後取消發表','我會照著大人的安排把它做好','我只發表給會讚美我的人看','沒意外的話，我自己準備也會很順利','我有自己設定的目標，但是需要別人的指導才能做好'],
+		r:['r','o','s','a','e']},
+
+		{t: '你完成了某項測試，認為測試能告訴你什麼？（可複選）',
+		c: ['它能告訴我，我的狀態啊。','它什麼都不能說','我完全清楚自己是怎樣，只是看看這測試準不準而已','我想它會告訴我，我的缺點','我可以從中學到一些想法，或許能做為有意義的參考？'],
+		r:['o','r','s','e','a']},
+	];
+
+
+var dataS1 = {
+		r: {o:0, r:0, s:0, e:0, a:0},
+		s: {o:'😱他律', r: '😈解放', s:'😡自我中心', e: '👷眼高手低', a: '😃自主成熟'},
+		l: [2,3],
+		e: '懵懵懂懂',
+		f: '"🔥測驗結果：你目前處於「"+finalTitles.join(\'+\')+"」的狀態!!👏"',
+		adv: {
+			max:{
+				o:'你目前還在他律的狀態，雖然照著安排很安全，但是卻很少聆聽內心的聲音。<br /><br />想想看，假如有一天別人都不替你安排、也不給你評價，你想要做什麼？你有什麼想望和長遠的目標？',
+				r:'在解放期中，你需要安全感和逐漸健康的生活節奏。你可以多休息多、多放鬆、多試探自己的興趣和方向，是要小心沈迷於沒有益處、純粹殺時間的逸樂。<br /><br />如果有些事，當下似乎有趣，結束後心裡卻更空虛，那就要避免自己養成這種習慣。',
+				s:'在自我中心的階段，你正在重新經驗自己的支配感。你是可以擁有的、你是可以拒絕的、你是可以要的。<br /><br /這個階段你需要被人真正的同理，以及撞到外在的明確界限，才能建立正向的人我關係，避免過度的自我膨脹。',
+				e:'在眼高手低期，你已經有自知自明，也有目標和方向了，只差能力和行動跟不上。你明白成功來自努力，但就是提不起勁來努力。<br /><br />千里之行始於足下，一開始不要想一步登天，只要每天進步一點點就好。從基本功開始，積沙成塔、一步一腳步的持續創作與學習，就能一點一點克服目標和能力之間的落差。',
+				a:'在自主成熟期，你已經建立了清楚的自律能力、有效的學習方法、良好的學習習慣。你需要的是持續創作與交流，認識其他精彩的人物，拓展視野、練習應變，只要能開展人際，避免閉車造車、孤芳自賞，相信你的未來一定會海闊天空。',},
+
+			min:{o:'',r:'',s:'',e:'',a:'',},	
+		},
+		icon: '🌰',  // 🐫🎩⛅🌳🌱🔮🎨
+		it: '🌔何謂自主學習四階段？', //💭
+		i: "與他律到自主的過程，一般會經過解放散漫、自我中心、眼高手低和自主成熟這四個階段。<br /><br />在解放散漫期需要安全感和逐漸健康的生活節奏、自我中心期需要外在明確界限、眼高手低期需要踏實的累積與持續創作。<br /><br />這些都是需要成人介入引導與提點的，兒童與青少年，若任其自生自滅，往往不能自己走過自主四階段。",
 	
+		ow: '更多資訊，請至自主學習促進會網站',
+		g: "http://www.alearn.org.tw/",
+	};
+
+
+// 主程式
+
+	// add Controller??
+	// 當好幾個View 搶同一個 .el -> body時。方法是：
+		// 1. 取消listener
+		// 2. 消失hide(), 進來用append(), 不用toggle()和fadeIn() xxx
+		// 3. 把body.children先remove()掉
+
 	var ListView = Backbone.View.extend({
 			
-		    el: $('body'), // el attaches to existing element
+     		el: $('body'),
 
 		    events: {
-		      'click button#showResault': 'addResault',
-		      'click button#go': 'goOut',
-		      'click button#close': 'hideIntro',
-		      'click input': 'countResault',
+//		      'click button#close' : 'hideIntro', 
+//		      'click button#showResault': 'addResault', 
+//		      'click button#go': 'goOut', 
+		      'click input': 'countResault', 
 		    },
 
-		    initialize: function(){
-		      _.bindAll(this, 'render', 'addItem', 'countResault', 'addResault' ,'makeAdvice','goOut', 'hideIntro'); // every function that uses 'this' as the current object should be in here
+		    detach_event: function(e_name) {
+		        delete this.events[e_name];
+		        this.delegateEvents();
+		    },
+
+		    initialize: function(dataF, dataS, name){
+		      _.bindAll(this, 'render', 'addItems', 'addItem', 'countResault', 'addResault' ,'makeAdvice','goOut', 'hideIntro'); // every function that uses 'this' as the current object should be in here
 
 		      this.d = dataF;
 		      this.counter = 0; // total number of items added thus far
-		      this.resault = {v: 0, a:0, r:0, k: 0};
+		      this.resault = dataS.r;
+		      this.introTitle = dataS.it;
 		      this.intro = dataS.i;
+		      this.icon = dataS.icon;
 		      this.show = dataS.s;
 		      this.go = dataS.g;
 		      this.adv = dataS.adv;
+		      this.level0 = dataS.l[0];
+		      this.level1 = dataS.l[1];
+		      this.empty = dataS.e;
+		      this.finalTitle = dataS.f;
 		      this.advice = {max:[], min:[]};
+		      this.name = name;
+		      this.outWord = dataS.ow;
 		      this.render();
 		    },
 
 		    render: function(){ // 具現
 
-		    	$(this.el).append('<div class = "item"><h1>'+'🐬何謂學習風格？'+'</h1><p>'+this.intro+'</p><button id = "close" class = "ui big button">'+'開始測驗!!'+'</botton></div><br /><br /><br />');
+		    	$(this.el).append('<div class = "item"><h1>'+this.introTitle+'</h1><p>'+this.intro+'</p><button id = "close" onclick = "'+this.name+'.hideIntro()" class = "ui big button">'+'開始測驗!!'+'</botton></div><br /><br /><br />');
+		      	
+		    },
 
-		      	for (var i = 0; i < this.d.length; i++) {
+			addItems: function(){
+				for (var i = 0; i < this.d.length; i++) {
 		      		this.addItem();
 		      	};	
 
-      	    	$(this.el).append("<button id='showResault' class = 'ui big button'>看結果!!</button>");
+      	    	$(this.el).append("<button id='showResault' class = 'item ui big button' onclick = '"+this.name+".addResault()'>看結果!!</button><br /><br />");
+
+      	    	$(this.el).children('.invis').toggle("slide");
 		    },
 
 		    addItem: function(){ // 加一個問題
 
-		    	var item = "<h2>"+(this.counter+1)+'. 👍'+this.d[this.counter].t+"</h2><hr></hr>";
+		    	var item = "<h2>"+(this.counter+1)+'. '+this.icon+this.d[this.counter].t+"</h2><hr></hr>";
 
 			    for (i = 0; i <  Object.keys(this.resault).length; i++) {
-			    		item += "<input type = 'checkbox' class = " + this.d[this.counter].r[i] + " name = "+this.counter+">"+["A","B","C","D"][i]+this.d[this.counter].c[i]+"</input><br/>";
+			    		item += "<input type = 'checkbox' class = " + this.d[this.counter].r[i] + " name = "+this.counter+">"+["A","B","C","D","E","F","G","H","I"][i]+this.d[this.counter].c[i]+"</input><br/>";
 			    }
 
- 		    	$(this.el).append("<div class = 'item'  style = 'display:none'>"+item+"</div><br /><br /><br />");
+ 		    	$(this.el).append("<div class = 'invis item' >"+item+"</div><br /><br class = 'item'><br class = 'item' style = >");
 
 			    this.counter++;
 		    },
 
 		    countResault: function() { // 統計結果
-		    	this.resault.v = $('input:checked').filter('.v').length; //test
-		    	this.resault.a = $('input:checked').filter('.a').length; //test
-		    	this.resault.r = $('input:checked').filter('.r').length;
-		    	this.resault.k = $('input:checked').filter('.k').length;
+
+		    	for (var i = 0; i < Object.keys(this.resault).length; i++) {
+		    		this.resault[Object.keys(this.resault)[i]] = $('input:checked').filter('.'+Object.keys(this.resault)[i]).filter(function() {return $(this).css("display")}).length;
+		    	}
 		    },
 
 		    addResault: function() {
-		    	if ($('#final').length==0) {
-			    	$(this.el).append("<div id = 'final'> 統計結果：</div>");
-			    	for (var i = 0; i < Object.keys(this.resault).length; i++) {
-			    		var tag = Object.keys(this.resault)[i];
-			    		$(this.el).append("<div id='progressbar_"+tag+"'></div>");
-				    	
-			    	}
-		    	}
 
+				$(this.el).children('.final').hide(); 
+
+			//放bar
+		    	for (var i = 0; i < Object.keys(this.resault).length; i++) {
+		    		var tag = Object.keys(this.resault)[i];
+		    		$(this.el).append("<div id='progressbar_"+tag+"'></div>");
+				}    	
+			    
 		    	this.advice = {max:[], min:[]};
 		    		
 		    	for (var i = 0; i < Object.keys(this.resault).length; i++) {
@@ -207,14 +297,14 @@
 				    	$("#progressbar_"+tag ).progressbar({ max: this.d.length , value: this.resault[tag] }).css({background: bg}) // 長條底色改這裡
 				    			.children('.ui-progressbar-value').html( this.show[tag]+": "+this.resault[tag] ).css({display: "block"});  //  長條底色改這裡
 
-				    	if (this.resault[tag] < 6 ) {
+				    	if (this.resault[tag] < this.level0 ) {
 				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ccccff');// 弱風格色改這裡
 				    		this.advice.min.push(tag);
 				    	}				    	
-				    	if (this.resault[tag] >= 6 && this.resault[tag] < 10) {
+				    	if (this.resault[tag] >= this.level0 && this.resault[tag] < this.level1) {
 				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ffd8af');// 中風格色改這裡
 				    	}
-				    	if (this.resault[tag] >= 10) {
+				    	if (this.resault[tag] >= this.level1) {
 				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ccffff');// 強風格色改這裡
 				    		this.advice.max.push({t: tag, n: this.resault[tag]});
 				    	}
@@ -223,14 +313,12 @@
 		     	this.makeAdvice();
 
 		     	$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 1000);
-
 	    	
 		    },
 
 		    makeAdvice: function(){
 
 		    	$(".final").hide();
-
 
 		    	var advs = [];
 		    	var finalTitles = [];
@@ -243,16 +331,20 @@
 		    		finalTitles.push(this.show[this.advice.max[i].t]);
 		    	};
 
-		    	if (finalTitles.length == 0) finalTitles.push('正在試探自己的');
+		    	if (finalTitles.length == 0) finalTitles.push(this.empty);
 
-		    	 finalTitle = '<h2>🔥測驗結果：你是一名「'+finalTitles.join('+')+'優勢」的學習者!!👏</h2>'; // 視覺+操作優勢 
+		    	 finalTitle = '<h2>'+eval(this.finalTitle)+'</h2>'; // 視覺+操作優勢 
 
 		    	for (var i = 0; i < this.advice.min.length; i++) {
 		    		advs.push(this.adv.min[this.advice.min[i]]); //mack advice mim;
 		    	};
 
 		    	$(this.el).append("<div class = 'final item'>"+finalTitle+(advs.join('<br/><br/><br/>'))+"🎅</div>");
-			    $(this.el).append("<button id = 'go' class = 'final ui big button'>原文的問題出處與更多資訊，請至VARK介紹網站</button>");
+			    $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = '"+this.name+"'.goOut()'>"+this.outWord+"</button>");
+
+			   $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = 'restart(\""+this.name+"\")'>試試其他的測驗</button>");
+
+
 		    },
 
 		    goOut: function(){
@@ -260,17 +352,40 @@
 		    },
 
 		    hideIntro: function(){
-		   		$('.item').toggle(1000);
-		    }
+				$(this.el).children("br").hide();
+				$(this.el).children().slideUp(1000);
+				this.addItems();
+		    },
+
 
 		  });
 
+	var listView; var listView1;
+	var formNames; var formViews = [];
+
 	$(document).ready(function() {
- 
-		var listView = new ListView();
-		  
+
+		formNames = ["formViews[0]", "formViews[1]"];
+		formViews.push(new ListView(dataF, dataS, formNames[0]));
+		formViews.push(new ListView(dataF1, dataS1, formNames[1]));
+
 	});
 
+	function restart (noView){
+
+		console.log('noView: '+noView);
+		$('body').children().fadeOut(500);
+
+		setTimeout(function() {
+			$('body').children().remove();
+
+			for (var i = 0; i < formNames.length; i++) {
+
+				console.log('formNames[i]: '+formNames[i]);
+				if (formNames[i] != noView) eval(formNames[i]+'.render()'); 
+			};
+		}, 500);		
+	}
 
 </script>
 
