@@ -221,7 +221,7 @@ var dataS1 = {
 		    },
 
 		    initialize: function(dataF, dataS, name){
-		      _.bindAll(this, 'render', 'addItems', 'addItem', 'countResault', 'addResault' ,'makeAdvice','goOut', 'hideIntro'); // every function that uses 'this' as the current object should be in here
+		      _.bindAll(this, 'render', 'addItems', 'addItem', 'countResault', 'addResault' ,'makeAdvice', 'hideIntro'); // every function that uses 'this' as the current object should be in here
 
 		      this.d = dataF;
 		      this.counter = 0; // total number of items added thus far
@@ -253,7 +253,8 @@ var dataS1 = {
 		      		this.addItem();
 		      	};	
 
-      	    	$(this.el).append("<button id='showResault' class = 'item ui big button' onclick = '"+this.name+".addResault()'>看結果!!</button><br /><br />");
+      	    	$(this.el).append("<button id='showResault' class = 'item ui big button' onclick = '"+this.name+".addResault()'>看結果!!</button><br /><br />");   	    	
+
 
       	    	$(this.el).children('.invis').toggle("slide");
 		    },
@@ -310,6 +311,7 @@ var dataS1 = {
 				    	}
 			    };   
 
+
 		     	this.makeAdvice();
 
 		     	$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 1000);
@@ -340,16 +342,14 @@ var dataS1 = {
 		    	};
 
 		    	$(this.el).append("<div class = 'final item'>"+finalTitle+(advs.join('<br/><br/><br/>'))+"🎅</div>");
-			    $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = '"+this.name+"'.goOut()'>"+this.outWord+"</button>");
 
-			   $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = 'restart(\""+this.name+"\")'>試試其他的測驗</button>");
+			    $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = 'redirect(\""+this.go+"\")'>"+this.outWord+"</button>");
+
+			    $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = 'restart(\""+this.name+"\")'>試試其他的測驗</button>");
 
 
 		    },
 
-		    goOut: function(){
-		    	location = this.go;
-		    },
 
 		    hideIntro: function(){
 				$(this.el).children("br").hide();
@@ -370,6 +370,10 @@ var dataS1 = {
 		formViews.push(new ListView(dataF1, dataS1, formNames[1]));
 
 	});
+
+	function redirect(url) {
+		window.open(url);
+	};
 
 	function restart (noView){
 
