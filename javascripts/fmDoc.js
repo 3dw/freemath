@@ -65,6 +65,8 @@ $(document).ready(function(){
 			$(nextSpan).css('color','green');
 			$(nextSpan).html($(nextSpan).html()+'&nbsp;&nbsp;&nbsp;&nbsp;👀參考看看？');
 
+
+
 			$("span").filter(function(){
 //				console.log($(this).css('color'));
 				return $(this).css('color') == 'rgb(255, 255, 255)';
