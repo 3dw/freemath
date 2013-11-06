@@ -116,6 +116,10 @@ for root,dirs,files in os.walk(directory):
 
 #			print "write texting is : ", text
 
+			#特殊cases
+			text = re.sub(r"</span></span><span style='font-size:14.0pt;font-family:\s*新細明體;color:white'>", '', text)
+
+
 			f.seek(0)
 			f.write(text)
 			f.truncate()

@@ -11,6 +11,19 @@
       background: #E0CAB2;  /*  方塊底色   */
     }
 
+    .fixed {
+      position: fixed;
+      padding: 0px;
+    }
+
+    .top {
+      top:10px;     
+    }
+    
+    .right {
+      right:20px;
+    }
+
     .ui-progressbar-value {
       border-radius: 5px;
       padding-left: 15px;

@@ -19,6 +19,7 @@ $(document).ready(function(){
 		initialize: function() {
 		      _.bindAll(this, 'render', 'showStart', 'showHint', 'showMain');
  	     	  this.count = 0;
+ 	     	  this.max = $(this.el).find("input").length
 		      this.render();
 	    },
 
@@ -66,17 +67,41 @@ $(document).ready(function(){
 				return $(this).css('color') == 'rgb(255, 255, 255)';
 			}).hide();
 
+	    	$("#intro").slideUp(1000).removeClass("item", 1000);
+	    	setTimeout('$("#intro").html("")', 1000) ;
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 1000 }, 1000);
+
+    		$(this.el).prepend('<div id="bar" class = "fixed top right item" >'
+    			+'</div>');
+
+    		$("#bar").progressbar({ max: this.max ,
+    							 value: this.count });
+
 	    },
 
 	    showHint: function(){
 	    	// 提示語
-	    	$("#intro").slideUp(1000).removeClass("item", 1000);
-	    	setTimeout('$("#intro").html("")', 1000) ;
    	
 	    	this.showSection(this.count);
+
+//	    	if (this.count > this.max - 2) $("*").show() ;
+
 	    	this.count++;
+
+    		$("#bar").progressbar({ max: this.max ,
+    							 value: this.count });
+
+    		if ( this.count < this.max / 3 ) {
+	    		$("#bar").progressbar().children('.ui-progressbar-value').css('background','#ccccff');// 弱風格色改這裡
+	    	}
+	    	if ( this.count > this.max / 3 ) {
+	    		$("#bar").progressbar().children('.ui-progressbar-value').css('background','#ffd8af');// 中風格色改這裡
+	    	}
+	    	if ( this.count > this.max * 2 / 3) {
+	    		$("#bar").progressbar().children('.ui-progressbar-value').css('background','#ccffff');// 強風格色改這裡
+	    	}
+
 	    },
 
 	    showSection: function(num) {
@@ -100,6 +125,8 @@ $(document).ready(function(){
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 500 }, 1000);
 
+
+
 	    },
 
 	    showMain: function(num) {
@@ -120,6 +147,9 @@ $(document).ready(function(){
 
 			$("*:gt("+(indexNextP_after_nextInput)+")").hide();
 			$("*:lt("+(indexNextP_after_nextInput+1)+")").show();
+
+			if (indexNextP_after_nextInput == -1) $("*").show();
+
 	    	return indexInput;
 	    }
 	});
