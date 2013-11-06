@@ -7,7 +7,7 @@ $(document).ready(function(){
 			+'<button class = "ui small button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')">'
 				+document.title+'.doc</button>'
 			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲'
-			+'<br /><br />請拿一張紙或筆記本、和一隻筆，開始練功吧！📝'
+			+'<br /><br />使用時，請拿一張紙或筆記本、和一隻筆，當作輔助📝'
 			+'<br /><br />（愛的小叮嚀：有會的人在旁邊，遇到關卡可以即時詢問的話，學習效果更佳）👼',
 
 		events :{
@@ -26,7 +26,7 @@ $(document).ready(function(){
 	    	$(this.el).prepend('<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1><p>'
 	    		+this.intro+'</p>'
 	    		+'<button class = "ui small button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
-	    			+'若身邊沒有會的人，也可以上臉書「自學數學團」提問</button>'
+	    			+'若身邊沒有會的人，也可以上臉書「自學數學團」提問👼</button>'
 	    		+'<br />'
 	    		+'<button id = "start" class = "ui huge green button">'+'進入學習!!'+'</button>'
 				+'</div>' );

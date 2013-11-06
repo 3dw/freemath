@@ -74,16 +74,24 @@ for root,dirs,files in os.walk(directory):
 
 			for friend in files:
 				if friend.endswith(".htm") and not friend.endswith(f.name):
-					final += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+					thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+					text = text.replace(thisButton, '')
+					final += thisButton+'</button>'
 
 #				if friend.endswith(".htm"):
 #					finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 
+			after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
 
-			final += '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
+			text = text.replace(after, '')
+			final += after
 
-				# 解決重覆放final的問題
-			text = text.replace(final, '')
+
+				# 已解決重覆放final的問題
+#			text = text.replace(final, '') 
+
+				#這段改成逐一拿掉button, 來防止新加入成員造成混亂   well-done
+
 #			text = text.replace(finalAll, '')
 
 			text = re.sub(r'[\s]*</body>', '\n'
