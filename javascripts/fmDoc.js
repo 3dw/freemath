@@ -3,13 +3,12 @@ $(document).ready(function(){
 	var DocView = Backbone.View.extend({ 
 		el: $('body'),
 
-		intro: '歡迎使用數學形成性教材線上版。'
-			+'<br /><br />這原是紙本教材，由資深自學教師朱佳仁與唐宗浩合作編創。'
-			+'<button onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')">'
-				+'看紙本</button>'
-			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。'
-			+'<br /><br />請拿一張紙或筆記本、和一隻筆，開始練功吧！'
-			+'<br /><br />雖然教材適合自學，最好還是有會的人在旁邊，若卡住就可以即時詢問。',
+		intro: '歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載'
+			+'<button class = "ui small button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')">'
+				+document.title+'.doc</button>'
+			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲'
+			+'<br /><br />請拿一張紙或筆記本、和一隻筆，開始練功吧！📝'
+			+'<br /><br />（愛的小叮嚀：有會的人在旁邊，遇到關卡可以即時詢問的話，學習效果更佳）👼',
 
 		events :{
 			'change input' : 'showHint',
@@ -24,7 +23,13 @@ $(document).ready(function(){
 
 	    render: function() {
 	    	$("p,div").hide();
-	    	$(this.el).prepend('<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1><p>'+this.intro+'</p><button id = "start" class = "ui big button">'+'進入學習!!'+'</botton></div><br /><br /><br />');
+	    	$(this.el).prepend('<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1><p>'
+	    		+this.intro+'</p>'
+	    		+'<button class = "ui small button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
+	    			+'若身邊沒有會的人，也可以上臉書「自學數學團」提問</button>'
+	    		+'<br />'
+	    		+'<button id = "start" class = "ui huge green button">'+'進入學習!!'+'</button>'
+				+'</div>' );
 //	    	$("button").show();
 	    },
 
@@ -58,7 +63,7 @@ $(document).ready(function(){
 			}).eq(0);
 
 			$(nextSpan).css('color','green');
-			$(nextSpan).html($(nextSpan).html()+'（僅供參考）');
+			$(nextSpan).html($(nextSpan).html()+'__👀參考看看');
 
 			$("span").filter(function(){
 //				console.log($(this).css('color'));
@@ -81,10 +86,13 @@ $(document).ready(function(){
 
 			var nextInput = $("*:gt("+indexInput+")").filter("input").eq(0);
 			var indexNextInput = ($("*").index(nextInput));
-		   	console.log("indexNextP:"+ indexNextInput);
+		   	console.log("indexNextInput:"+ indexNextInput);
 
-			$("*:gt("+(indexNextInput)+")").hide();
-			$("*:lt("+(indexNextInput+1)+")").show();
+		   	var nextP_after_nextInput = $("*:gt("+indexNextInput+")").filter("p").eq(0);
+		   	var indexNextP_after_nextInput = ($("*").index(nextP_after_nextInput));
+
+			$("*:gt("+(indexNextP_after_nextInput)+")").hide();
+			$("*:lt("+(indexNextP_after_nextInput+1)+")").show();
 	    	return indexInput;
 	    }
 	});

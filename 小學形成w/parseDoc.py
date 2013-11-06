@@ -69,26 +69,31 @@ for root,dirs,files in os.walk(directory):
 			text = re.sub(r'除錯練習時間[.\s\S]*e-mail','', text)
 			text = re.sub(r'我寫的單元是[.\s\S]*e-mail','', text)
 
+			final = ''
+#			finalAll = ''
 
-			final = ''										
 			for friend in files:
-				if friend.endswith(".htm"):
+				if friend.endswith(".htm") and not friend.endswith(f.name):
 					final += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+
+#				if friend.endswith(".htm"):
+#					finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+
 
 			final += '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
 
 				# 解決重覆放final的問題
-			text = text.replace(final, '');
+			text = text.replace(final, '')
+#			text = text.replace(finalAll, '')
 
 			text = re.sub(r'[\s]*</body>', '\n'
 				+final
 				+'</body>' ,text )
 
 
-#			text = re.sub(r'</body>[\s]*</html>', '</body>\n'  # 結尾程式(待修!!)
+#			text = re.sub(r'</body>[\s]*</html>', '</body>\n'  # 結尾程式(目前用不到)
 #				+'\n'
 #				+'<script type="text/javascript">\n'
-#				+'\tfmDoc.main();\n'
 #				+'</script>'
 #				+'</html>',text )
 
