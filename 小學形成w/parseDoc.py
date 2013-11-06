@@ -2,7 +2,7 @@
  # -*- coding: utf-8 -*-
 
 #note1: every parse action here should be an idempotent, say f^2 = f;
-#註1: 在此的每一個剖析動作都必須是一個idempotent，也就是 f^2 = f，做兩次和做一次一樣;
+#註1: 在此的每一個剖析動作都必須是一個冪等運算(idempotent)，也就是 f^2 = f，做兩次和做一次一樣;
 
 #note2: left and right should be invariant(fix porint);
 #註2: 左和右必須不變;

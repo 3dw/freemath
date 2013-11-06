@@ -63,7 +63,7 @@ $(document).ready(function(){
 			}).eq(0);
 
 			$(nextSpan).css('color','green');
-			$(nextSpan).html($(nextSpan).html()+'__👀參考看看');
+			$(nextSpan).html($(nextSpan).html()+'&nbsp;&nbsp;&nbsp;&nbsp;👀參考看看？');
 
 			$("span").filter(function(){
 //				console.log($(this).css('color'));
