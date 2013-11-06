@@ -81,8 +81,10 @@ for root,dirs,files in os.walk(directory):
 #				if friend.endswith(".htm"):
 #					finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 
-			after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
+			afterOld = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
+			after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemath主頁</button>'
 
+			text = text.replace(afterOld, '')
 			text = text.replace(after, '')
 			final += after
 
