@@ -24,9 +24,12 @@ for root,dirs,files in os.walk(directory):
 
 #			print "Read texting is : ", text
 
-			text = re.sub(r'【([.\s\S]*?)】', '【<input type = \'text\'>'+r'\g<1>'+'</input>】', text) # 填空
+			# 填空
+			text = re.sub(r'【([.\s\S]*?)】', '【<input type = \'text\'>'+r'\g<1>'+'</input>】', text) 
+
+			# 二變一
 			text = re.sub(r'<input type = \'text\'><input type = \'text\'>([.\s\S]*?)</input></input>',
-			 '<input type = \'text\'>'+r'\g<1>'+'</input>', text)
+			 '<input type = \'text\'>'+r'\g<1>'+'</input>', text) 
 
 
 			if (text.find('</title>') == -1) :
@@ -72,11 +75,15 @@ for root,dirs,files in os.walk(directory):
 			final = ''
 #			finalAll = ''
 
+			#生出其他單元的按鈕
+
 			for friend in files:
-				if friend.endswith(".htm") and not friend.endswith(f.name):
+				if friend.endswith(".htm"):
 					thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 					text = text.replace(thisButton, '')
-					final += thisButton+'</button>'
+
+					if not friend.endswith(f.name):				
+						final += thisButton+'</button>'
 
 #				if friend.endswith(".htm"):
 #					finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'

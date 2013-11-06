@@ -8,6 +8,7 @@ $(document).ready(function(){
 				+document.title+'.doc</button>'
 			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲'
 			+'<br /><br />使用時，請拿一張紙或筆記本、和一隻筆，當作輔助📝'
+			+'<br /><br />如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵'
 			+'<br /><br />（愛的小叮嚀：有會的人在旁邊，遇到關卡可以即時詢問的話，學習效果更佳）👼',
 
 		events :{
@@ -23,6 +24,29 @@ $(document).ready(function(){
 
 	    render: function() {
 	    	$("p,div").hide();
+
+			$(this.el).find("input:eq(0)").attr('value', '請填答再按ENTER👼');
+			$(this.el).find("input:gt(0)").attr('value', '請填答👼');
+
+			var firstWhite = $("*").filter(function(){
+					return $(this).css('color') == 'rgb(255, 255, 255)';
+				}).eq(0)
+
+			var	indexFW = $("*").index(firstWhite);
+
+			$(firstWhite).html(firstWhite.html() + '&nbsp;&nbsp;&nbsp;&nbsp;👀參考看看？');
+
+			$("*:gt("+indexFW+")").filter(function(){
+					return $(this).css('color') == 'rgb(255, 255, 255)';
+				}).append('&nbsp;&nbsp;&nbsp;&nbsp;👀');
+
+
+
+			$(this.el).find("input[type='text']").on("click", function () {
+   				$(this).select();
+			});
+
+
 	    	$(this.el).prepend('<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1><p>'
 	    		+this.intro+'</p>'
 	    		+'<button class = "ui small button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
@@ -41,6 +65,7 @@ $(document).ready(function(){
 //				console.log($(this).css('color'));
 				return $(this).css('color') == 'rgb(255, 255, 255)';
 			}).hide();
+
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 1000 }, 1000);
 	    },
@@ -63,7 +88,7 @@ $(document).ready(function(){
 			}).eq(0);
 
 			$(nextSpan).css('color','green');
-			$(nextSpan).html($(nextSpan).html()+'&nbsp;&nbsp;&nbsp;&nbsp;👀參考看看？');
+//			$(nextSpan).html($(nextSpan).html()+'&nbsp;&nbsp;&nbsp;&nbsp;👀參考看看？');
 
 
 
