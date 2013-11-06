@@ -8,7 +8,12 @@
 <title>代數入門</title>
 <link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 <link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
-
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
 <style>
  body {
 	background-color: #D0BAA2;
@@ -46,6 +51,53 @@ input {
 p.MsoNormal, li.MsoNormal, div.MsoNormal
 {margin:1cm;
 	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:新細明體;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
 	font-size:9.0pt;
 	font-family:Arial;}
  /* Page Definitions */
@@ -61,11 +113,11 @@ ol
 ul
 	{margin-bottom:0cm;}
 -->
-</style><script>
-alert("這是一份紙本教材，你正瀏覽相容模式。
+</style>
 
-如欲完整使用請在自由數學freemath列印它的.doc原始檔");
-</script></head>
+
+
+</head>
 
 <body lang=ZH-TW link=blue vlink=purple style='text-justify-trim:punctuation'>
 
@@ -185,12 +237,14 @@ break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1)</span><span
-style='font-size:14.0pt;font-family:新細明體'>誰加三會是六呢？答案是【<input type = 'text'><input type = 'text'><span lang=EN-US>    </span></input></input>】</span></p>
+style='font-size:14.0pt;font-family:新細明體'>誰加三會是六呢？答案是【<input type = 'text'>  <span lang=EN-US
+style='color:white'>3</span><span lang=EN-US>  </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2)</span><span
 style='font-size:14.0pt;font-family:新細明體'>把你的答案 加上<span lang=EN-US> 3</span>，檢查一下是不是<span
-lang=EN-US>6</span>？【<input type = 'text'><input type = 'text'><span lang=EN-US>     </span></input></input>】</span></p>
+lang=EN-US>6</span>？【<input type = 'text'><span lang=EN-US>  </span><span style='color:white'>是</span><span
+lang=EN-US>   </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -213,12 +267,14 @@ break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1) </span><span
-style='font-size:14.0pt;font-family:新細明體'>誰減二會是十五呢？你猜答案是【<input type = 'text'><input type = 'text'><span lang=EN-US>    </span></input></input>】</span></p>
+style='font-size:14.0pt;font-family:新細明體'>誰減二會是十五呢？你猜答案是【<input type = 'text'><span lang=EN-US>  <span
+style='color:white'>17</span>  </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2)</span><span
 style='font-size:14.0pt;font-family:新細明體'>把你的答案 減掉 <span lang=EN-US>2</span>，檢查一下是不是<span
-lang=EN-US>15</span>？【<input type = 'text'><input type = 'text'><span lang=EN-US>     </span></input></input>】</span></p>
+lang=EN-US>15</span>？【<input type = 'text'><span lang=EN-US>  </span><span style='color:white'>是</span><span
+lang=EN-US>   </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -242,13 +298,15 @@ break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1)</span><span
-style='font-size:14.0pt;font-family:新細明體'>誰除以三是九？你猜答案是【<input type = 'text'><input type = 'text'><span lang=EN-US>    </span></input></input>】</span></p>
+style='font-size:14.0pt;font-family:新細明體'>誰除以三是九？你猜答案是【<input type = 'text'><span lang=EN-US>  <span
+style='color:white'>27</span>  </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:28.0pt;margin-bottom:
 0cm;margin-left:24.0pt;margin-bottom:.0001pt;word-break:break-all'><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2)</span><span
 style='font-size:14.0pt;font-family:新細明體'>把你的答案 除以 <span lang=EN-US>3</span>，檢查一下是不是<span
-lang=EN-US>9</span>？【<input type = 'text'><input type = 'text'><span lang=EN-US>     </span></input></input>】</span></p>
+lang=EN-US>9</span>？【<input type = 'text'><span lang=EN-US>  </span><span style='color:white'>是</span><span
+lang=EN-US>   </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
 break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -333,8 +391,9 @@ break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                        </span></b><b><span
-style='font-size:14.0pt;font-family:新細明體'>你猜<span lang=EN-US>x =</span>【<input type = 'text'><input type = 'text'><span
-lang=EN-US>    </span></input></input>】<span lang=EN-US>, y =</span>【<input type = 'text'><input type = 'text'>  <span lang=EN-US>  </span></input></input>】</span></b></p>
+style='font-size:14.0pt;font-family:新細明體'>你猜<span lang=EN-US>x =</span>【<input type = 'text'><span
+lang=EN-US>  <span style='color:white'>4</span>  </span></input>】<span lang=EN-US>, y =</span>【<input type = 'text'>
+ <span lang=EN-US style='color:white'>7</span><span lang=EN-US>  </span></input>】</span></b></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -342,7 +401,8 @@ lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>      </span></b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                              </span><span
-style='font-size:14.0pt;font-family:新細明體'>檢查一下答案對不對？【<input type = 'text'><input type = 'text'><span lang=EN-US>       </span></input></input>】</span></p>
+style='font-size:14.0pt;font-family:新細明體'>檢查一下答案對不對？【<input type = 'text'><span lang=EN-US>  <span
+style='color:white'>yes</span>  </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -388,8 +448,9 @@ break-all'><b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                        </span></b><b><span
-style='font-size:14.0pt;font-family:新細明體'>你猜<span lang=EN-US>x =</span>【<input type = 'text'><input type = 'text'><span
-lang=EN-US>    </span></input></input>】<span lang=EN-US>, y =</span>【<input type = 'text'><input type = 'text'><span lang=EN-US>    </span></input></input>】</span></b></p>
+style='font-size:14.0pt;font-family:新細明體'>你猜<span lang=EN-US>x =</span>【<input type = 'text'><span
+lang=EN-US>  <span style='color:white'>8</span>  </span></input>】<span lang=EN-US>, y =</span>【<input type = 'text'><span
+lang=EN-US>  <span style='color:white'>3</span>  </span></input>】</span></b></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -397,7 +458,8 @@ lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>      </span></b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                              </span><span
-style='font-size:14.0pt;font-family:新細明體'>檢查一下答案對不對？【<input type = 'text'><input type = 'text'><span lang=EN-US>       </span></input></input>】</span></p>
+style='font-size:14.0pt;font-family:新細明體'>檢查一下答案對不對？【<input type = 'text'><span lang=EN-US>   <span
+style='color:white'>yes</span>    </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
@@ -467,7 +529,7 @@ lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></
 lang=EN-US style='font-size:14.0pt;font-family:"Arial Narrow"'>     1     3      x</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial Narrow"'>  
-         +        y      6</span></p>
+         +        y      6</span></p>
 
 <p class=MsoNormal style='text-indent:37.95pt'><span lang=EN-US
 style='font-size:14.0pt;font-family:"Arial Narrow"'>------------------------------           </span></p>
@@ -614,18 +676,20 @@ lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>x </span><span
-style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 4   </span>寫作【<input type = 'text'><input type = 'text'><span
-lang=EN-US>     </span></input></input>】<span lang=EN-US>                   7 </span>×<span
-lang=EN-US> x   </span>寫作【<input type = 'text'><input type = 'text'><span lang=EN-US>     </span></input></input>】</span></p>
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 4   </span>寫作【<input type = 'text'><span
+lang=EN-US>  <span style='color:white'>4x</span>   </span></input>】<span lang=EN-US>                      7
+</span>×<span lang=EN-US> x   </span>寫作【<input type = 'text'><span lang=EN-US>  <span
+style='color:white'>7x</span>   </span></input>】</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>63 </span><span
-style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> y       </span>寫作【<input type = 'text'><input type = 'text'><span
-lang=EN-US>     </span></input></input>】<b><span lang=EN-US>            </span></b><span
-lang=EN-US>z </span>×<span lang=EN-US> 5     </span>寫作【<input type = 'text'><input type = 'text'><span lang=EN-US>     </span></input></input>】<b><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> y       </span>寫作【<input type = 'text'><span
+lang=EN-US>  <span style='color:white'>63y</span>  </span></input>】<b><span lang=EN-US> 
+            </span></b><span lang=EN-US>z </span>×<span lang=EN-US> 5     </span>寫作【<input type = 'text'>
+<span style='color:white'> <span lang=EN-US>5z</span></span><span lang=EN-US>  </span></input>】<b><span
 lang=EN-US>  </span></b></span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
@@ -633,10 +697,11 @@ lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
 lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1.5 </span><span
-style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> a      </span>寫作【<input type = 'text'><input type = 'text'><span
-lang=EN-US>     </span></input></input>】<b><span lang=EN-US>            </span></b><span
-lang=EN-US>b </span>×<span lang=EN-US> 1    </span>寫作【<input type = 'text'><input type = 'text'><span lang=EN-US>     </span></input></input>】<b><span
-lang=EN-US>  <br clear=all style='page-break-before:always'>
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> a      </span>寫作【<input type = 'text'><span
+lang=EN-US>  <span style='color:white'>1.5a</span> </span></input>】<b><span lang=EN-US> 
+       </span></b><span lang=EN-US>b </span>×<span lang=EN-US> 1    </span>寫作【<input type = 'text'><span
+lang=EN-US>   </span></input>】<b><span lang=EN-US>  <br clear=all style='page-break-before:
+always'>
 </span>解謎時間<span lang=EN-US>2</span></b></span></p>
 
 <p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
@@ -798,6 +863,141 @@ style='position:absolute;left:33px;top:-446px;width:38px;height:38px'>
     <td>
     <div style='padding:3.6pt 7.2pt 3.6pt 7.2pt;text-align:left'>
     <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt'>+3</span></p>
-    </div><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemth主頁</button></body>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b><span
+style='font-size:14.0pt;font-family:新細明體'>請將上圖填空補完，最後找出<span lang=EN-US>x</span>的真面目！</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+style='font-size:14.0pt;font-family:新細明體'>綜合解謎</span></b></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>以下的謎題中，未知數均不限範圍。</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;text-indent:24.0pt;word-break:
+break-all'><span style='font-size:14.0pt;font-family:新細明體'>你可以用任何方法解，解完請把答案代入原式，檢查一遍：</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一、<span
+lang=EN-US>[  (x - 5)  </span>÷<span lang=EN-US>  2 – 3  ]  </span>×<span
+lang=EN-US> 7   =  49</span></span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>二、<span lang=EN-US>3x + 2 = 4x</span></span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>三、<span lang=EN-US>4x + 3 = 5x - 1</span></span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+style='font-size:14.0pt;font-family:新細明體'>來延伸挑戰吧！</span></b></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>四、如果用任何數代入<span lang=EN-US>y</span>，「<span
+lang=EN-US>yx = y</span>」都成立<span lang=EN-US>, </span>請問<span lang=EN-US>x</span>是多少？</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>      </span></b><span
+style='font-size:14.0pt;font-family:新細明體'>（提示：這式子表示<span lang=EN-US>y</span>乘上<span
+lang=EN-US>x</span>後完全沒有改變）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>五、如果用任何數代入<span lang=EN-US>y</span>，「<span
+lang=EN-US>yx = x</span>」都成立<span lang=EN-US>,  </span>請問<span lang=EN-US>x</span>是多少？</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt;word-break:break-all'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>      </span></b><span
+style='font-size:14.0pt;font-family:新細明體'>（提示：這式子表示<span lang=EN-US>y</span>乘上<span
+lang=EN-US>x</span>後就變成了<span lang=EN-US>x</span>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+新細明體'>&nbsp;</span></b></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=48
+id="_x0000_i1031" src="%E4%BB%A3%E6%95%B8%E5%85%A5%E9%96%80_files/image010.gif"
+alt="♡形成性教材意見回饋♡"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'></span><span style='font-size:14.0pt;
+font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                                                                   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+</div>
+<button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemth主頁</button></body>
 
 </html>

@@ -8,9 +8,7 @@
 #註2: 左和右必須不變;
 
 
-#Todo: download all src css like j ui-.css to freemath and relink it  (tester,too)   || Done
-#Todo: make /main.js a useful js and call it
-
+#Todo:   解決重覆放final的問題
 
 import os
 import re
@@ -18,24 +16,38 @@ directory = os.getcwd()
 
 for root,dirs,files in os.walk(directory):
     for file in files:
-       	if file.endswith(".htm"):
+       	if file.endswith(".htm") and (not file.endswith("index.htm") or file.endswith("index.html")):
 
 			f = open(file, 'r+')
 
 			text = f.read()
 
 #			print "Read texting is : ", text
-			
-			text = text.replace('【', '【<input type = \'text\'>').replace('】', '</input>】') 			# 填空
 
-#			text = text.replace('&#12304;', '【<input type = \'text\'>').replace('&#12305;', '</input>】')	# 填空在字元特殊時
+			text = re.sub(r'【([.\s\S]*?)】', '【<input type = \'text\'>'+r'\g<1>'+'</input>】', text) # 填空
+			text = re.sub(r'<input type = \'text\'><input type = \'text\'>([.\s\S]*?)</input></input>',
+			 '<input type = \'text\'>'+r'\g<1>'+'</input>', text)
+
+
+			if (text.find('</title>') == -1) :
+				text = re.sub(r'[\s]*<style>', '\n'
+				+'<title>AAA</title>\n'
+				+'<style>' , text)
+				print "i make a title for this page:", f.name
+
 
 			text = re.sub(r'<title>.*</title>', "<title>"+re.sub('.htm','', f.name)+"</title>", text)	# 抬頭
 
 
 			text = re.sub(r'</title>[.\s\S]*<style>' , '</title>\n'										# 資源庫(待增)
 				+'<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">\n'
-				+'<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />\n\n'
+				+'<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />\n'
+				+'<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />\n'
+				+'<script src="../javascripts/jquery-1.10.2.js"></script>\n'
+				+'<script src="../javascripts/jquery-ui.js"></script>\n'
+				+'<script src="../javascripts/underscore-min.js"></script>\n'
+				+'<script src="../javascripts/backbone-min.js"></script>\n'
+				+'<script src="../javascripts/fmDoc.js"></script>\n'
 				+'<style>', text)
 
 
@@ -45,27 +57,40 @@ for root,dirs,files in os.walk(directory):
 				+'\n\ninput {\n\tline-height: 18px;\n}'
 				+'\n\n/* Font Definitions */', text)
 
-			text = re.sub(r'div\.MsoNormal[\s\S]*{margin:0cm;', 'div.MsoNormal\n{margin:1cm;',text, re.DOTALL)	# 樣式_縮排
+
+			text = re.sub(r'div\.MsoNormal[\s]*{margin:0cm;', 'div.MsoNormal\n{margin:1cm;',text, re.DOTALL)	# 樣式_縮排
 
 
-			text = re.sub(r'</style>[.\s.S]*</head>', '</style>\n\n'									# 歡迎程式(待修!!)
-				+'<script>\n\talert("這是一份紙本教材，你正瀏覽相容模式。如欲完整使用請在自由數學freemath列印它的.doc原始檔^_^");\n</script>'
+			text = re.sub(r'</style>[.\s.\S]*</head>', '</style>\n\n'		
+#				+'<script>\n\talert("這是一份紙本教材，你正瀏覽相容模式。如欲完整使用請在自由數學freemath列印它的.doc原始檔^_^");\n</script>'
+							# 歡迎程式(待修!!)
 				+'\n\n</head>', text)
 
 			text = re.sub(r'除錯練習時間[.\s\S]*e-mail','', text)
 			text = re.sub(r'我寫的單元是[.\s\S]*e-mail','', text)
 
-			final = ''										# 結尾程式(待修!!)
+
+			final = ''										
 			for friend in files:
 				if friend.endswith(".htm"):
 					final += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 
 			final += '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
 
-			text = re.sub(r'</div>[.\s\S]*</body>', '</div>'
+				# 解決重覆放final的問題
+			text = text.replace(final, '');
+
+			text = re.sub(r'[\s]*</body>', '\n'
 				+final
 				+'</body>' ,text )
 
+
+#			text = re.sub(r'</body>[\s]*</html>', '</body>\n'  # 結尾程式(待修!!)
+#				+'\n'
+#				+'<script type="text/javascript">\n'
+#				+'\tfmDoc.main();\n'
+#				+'</script>'
+#				+'</html>',text )
 
 #			print "write texting is : ", text
 
