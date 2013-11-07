@@ -10,6 +10,9 @@
 	<script src="../javascripts/jquery-ui.js"></script>
 	<script src="../javascripts/underscore-min.js"></script>
 	<script src="../javascripts/backbone-min.js"></script>
+    <script src="../javascripts/tongwen_core.js"></script>
+    <script src="../javascripts/tongwen_table_pt2s.js"></script>
+    <script src="../javascripts/tongwen_table_t2s.js"></script>
 
 </head>
 
@@ -177,6 +180,7 @@ var dataS1 = {
 		// 2. 消失hide(), 進來用append(), 不用toggle()和fadeIn() xxx
 		// 3. 把body.children先remove()掉
 
+
 	var ListView = Backbone.View.extend({
 			
      		el: $('body'),
@@ -186,6 +190,7 @@ var dataS1 = {
 //		      'click button#showResault': 'addResault', 
 //		      'click button#go': 'goOut', 
 		      'click input': 'countResault', 
+		      'click button#simp': 'changeSimp',
 		    },
 
 		    detach_event: function(e_name) {
@@ -194,7 +199,7 @@ var dataS1 = {
 		    },
 
 		    initialize: function(dataF, dataS, name){
-		      _.bindAll(this, 'render', 'addItems', 'addItem', 'countResault', 'addResault' ,'makeAdvice', 'hideIntro'); // every function that uses 'this' as the current object should be in here
+		      _.bindAll(this, 'render', 'addItems', 'addItem', 'countResault', 'addResault' ,'makeAdvice', 'hideIntro', 'changeSimp'); // every function that uses 'this' as the current object should be in here
 
 		      this.d = dataF;
 		      this.counter = 0; // total number of items added thus far
@@ -212,13 +217,22 @@ var dataS1 = {
 		      this.advice = {max:[], min:[]};
 		      this.name = name;
 		      this.outWord = dataS.ow;
+		      this.simp = false;
 		      this.render();
 		    },
 
 		    render: function(){ // 具現
 
-		    	$(this.el).append('<div class = "item"><h1>'+this.introTitle+'</h1><p>'+this.intro+'</p><button id = "close" onclick = "'+this.name+'.hideIntro()" class = "ui big button">'+'開始測驗!!'+'</botton></div><br /><br /><br />');
+		    	$(this.el).append('<div class = "item"><h1>'+this.introTitle+'</h1><p>'+this.intro+'</p><button id = "close" onclick = "'+this.name+'.hideIntro()" class = "ui big green button">開始測驗!!</botton>'
+		    		+ '<button id = "simp" class = "ui big blue button">转成简体测验</button></div><br /><br /><br />');
+
 		      	
+		    },
+
+		    changeSimp: function() {
+		    	TongWen.trans2Simp(document);
+ 			    this.simp = true;
+
 		    },
 
 			addItems: function(){
@@ -226,10 +240,12 @@ var dataS1 = {
 		      		this.addItem();
 		      	};	
 
-      	    	$(this.el).append("<button id='showResault' class = 'item ui big button' onclick = '"+this.name+".addResault()'>看結果!!</button><br /><br />");   	    	
-
-
+      	    	$(this.el).append("<button id='showResault' class = 'item ui big green button' onclick = '"+this.name+".addResault()'>看結果!!</button><br /><br />");   	    	
       	    	$(this.el).children('.invis').toggle("slide");
+
+      	    	if (this.simp) {
+      	    		setTimeout( function(){TongWen.trans2Simp(document);}, 500) 						
+ 				}
 		    },
 
 		    addItem: function(){ // 加一個問題
@@ -316,10 +332,13 @@ var dataS1 = {
 
 		    	$(this.el).append("<div class = 'final item'>"+finalTitle+(advs.join('<br/><br/><br/>'))+"🎅</div>");
 
-			    $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = 'redirect(\""+this.go+"\")'>"+this.outWord+"</button>");
+			    $(this.el).append("<button id = 'go' class = 'final ui big blue button' onclick = 'redirect(\""+this.go+"\")'>"+this.outWord+"</button>");
 
-			    $(this.el).append("<button id = 'go' class = 'final ui big button' onclick = 'restart(\""+this.name+"\")'>試試其他的測驗</button>");
+			    $(this.el).append("<button id = 'go' class = 'final ui big green button' onclick = 'restart(\""+this.name+"\")'>試試其他的測驗</button>");
 
+			    if (this.simp) {
+      	    		setTimeout( function(){TongWen.trans2Simp(document);}, 500) 		
+ 				}
 
 		    },
 
