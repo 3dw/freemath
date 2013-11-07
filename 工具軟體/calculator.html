@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng:app>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<meta charset=utf-8 />
+<title>計算機</title>
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+	<script src="../javascripts/jquery-1.10.2.js"></script>
+	<script src="../javascripts/jquery-ui.js"></script>
+	<script src="../javascripts/underscore-min.js"></script>
+	<script src="../javascripts/backbone-min.js"></script>
+<meta name="viewport" content="width=device-width">
+<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+  
+<body>
+
+ <h2>數量 <input type ="number" ng-model = "number" ng-init = "number = 1"></input></h2>
+
+  <br/>
+ <h2>單價 <input type ="number" ng-model = "price" ng-init = "price = 100"></input></h2>
+
+<br/>
+ <h2>折扣 <input type ="number" ng-model = "discount" ng-init = "discount = 9"></input>折____(95折請輸入9.5而非95)</h2>
+
+<br/>
+  
+<h2>總價  {{ number * price * discount / 10 | currency}}</h2>
+
+</body>

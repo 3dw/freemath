@@ -50,6 +50,9 @@ for root,dirs,files in os.walk(directory):
 				+'<script src="../javascripts/jquery-ui.js"></script>\n'
 				+'<script src="../javascripts/underscore-min.js"></script>\n'
 				+'<script src="../javascripts/backbone-min.js"></script>\n'
+				+'<script src="../javascripts/tongwen_core.js"></script>\n'
+				+'<script src="../javascripts/tongwen_table_pt2s.js"></script>\n'
+				+'<script src="../javascripts/tongwen_table_t2s.js"></script>\n'
 				+'<script src="../javascripts/fmDoc.js"></script>\n'
 				+'<style>', text)
 
