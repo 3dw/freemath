@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html ng:app>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <meta charset=utf-8 />
+<meta name="viewport" content="width=device-width">
+
 <title>計算機</title>
 	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
@@ -11,23 +12,166 @@
 	<script src="../javascripts/jquery-ui.js"></script>
 	<script src="../javascripts/underscore-min.js"></script>
 	<script src="../javascripts/backbone-min.js"></script>
-<meta name="viewport" content="width=device-width">
-<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.0.7/angular-locale_zh-tw.js"></script>
+
+
 </head>
   
 <body>
 
+	<label>Name:</label>
+	<input type = "text" ng-model = "name" placeholder = "Enter a name here"></input>
+	<h1>Hello
+	<span ng-bind = "name || 'Freemath'">Freemath</span>!!</h1>
+
  <h2>數量 <input type ="number" ng-model = "number" ng-init = "number = 1"></input></h2>
 
-  <br/>
+	<br/>
  <h2>單價 <input type ="number" ng-model = "price" ng-init = "price = 100"></input></h2>
 
-<br/>
+	<br/>
  <h2>折扣 <input type ="number" ng-model = "discount" ng-init = "discount = 9"></input>折____(95折請輸入9.5而非95)</h2>
 
 <br/>
   
 <h2>總價  {{ number * price * discount / 10 | currency}}</h2>
 
+<form class="well span6" style="margin-top:20px;" ng-submit="submit()" ng-controller="Ctrl">
+	<label>請輸入你想玩的正整數：</label>
+ 	<input type="text" ng-model="skill" name="skill" />
+ 
+	<input type="submit" id="submit" value="加入" />
+	<div>目前數字有 {{ skills }} </div>
+	<div>最大公因數 {{ gcd }} </div>
+</form>
+
+<hr>
+
+<label>Search:</label>
+<input type="text" ng-model="search">
+<hr>
+
+<div data-ng-controller="FriendsCtrl">
+	<h5 >共{{ (friends | filter:search).length }}筆有趣的資料</h5>
+	<h5 >最優的是：{{ (friends | filter:search)[0] }}</h5>
+	<li data-ng-repeat="friend in friends | filter:search">{{ friend.name }}({{ friend.age }})</li>
+
+</div>
+
+
 </body>
+
+<script type="text/javascript">
+
+		var primesBelowSqrt = function(n) {
+			var primes = [2];
+			for (var i = 2; i < Math.sqrt(n); i++) {
+				var good = 1;
+			 	for (var j = 0; j < primes.length; j++) {
+			 		if (i % primes[j] == 0) good = 0;
+			 	};
+			 	if (good == 1) primes.push(i);
+			};
+		}
+
+		var primeFactorize = function(n) {
+			var ans = [];
+			var primes = primesBelowSqrt(n);
+			while(n > 1) {
+				for (var i = 0; i < primes.length; i++) {
+					if (n % primes[i] == 0) {
+						n = n / primes[i];
+						ans[primes[i]] += 1;
+					}
+				};
+			}
+			return ans;
+		}
+
+		var maxs = function(list) {
+			var ans = list[0];
+			for (var i = 0; i < list.length; i++) {
+				ans = Math.max(ans, list[i])
+			};
+			return ans;
+		}
+
+		var fromPrimeFact = function(list){
+			var ans = 1;
+			for (var i = 0; i < list.length; i++) {
+				if (i > 0) ans = ans * i ** list[i];
+			};
+			return ans;
+		}
+
+		var lcm = function(list){
+			var ans = [];
+			var factList = [];
+			var factLengList = [];
+			for (var i = 0; i < list.length; i++) {
+				factList[i] = primeFactorize(list[i]);
+				factLengList[i] = primeFactorize(list[i]).length;
+			};
+
+			var maxLeng = maxs(factLengList);
+
+			for (var i = 0; i < maxLeng.length; i++) {
+				var exponent = 0;
+				var expList = [];
+				for (var j = 0; j < factList.length; j++) {
+					expList.psuh(factList[j]);
+				};
+				exponent = maxs(expList);
+				ans[i] = exponent;
+			};
+
+			return fromPrimeFact(ans);
+
+		}
+
+		var gcds = function(list) {
+			var ans = list[0];
+
+				var gcd = function(a, b) {
+				    if ( ! b) {
+				        return a;
+				    }
+
+				    return gcd(b, a % b);
+				};
+
+			for (var i = 0; i < list.length; i++) {
+				ans = gcd(ans,list[i])
+			};
+			return ans;
+		};
+
+
+	var Ctrl = function($scope){
+		$scope.skills = [];
+	 
+		$scope.skill = '';
+		$scope.submit = function(){
+			if(!!$scope.skill) {
+				$scope.skills.push($scope.skill);
+				$scope.gcd = gcds($scope.skills);
+			}
+			$scope.skill = '';
+		}
+
+
+
+//		$scope.gcd = lcm($scope.skills);
+
+
+	};
+
+	var FriendsCtrl = function($scope){
+		$scope.friends = [	{ name: '男丁格爾', 	age: 18 }, 
+							{ name: 'jelly', 	age: 16 }, 
+							{ name: '梅干桑', 	age: 30 }, 
+							{ name: '莫希爾', 	age: 31 }
+			];
+	};
+</script>

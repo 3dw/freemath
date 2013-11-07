@@ -25,16 +25,16 @@
 
 <body>
 <script>
-	var list = [2];
+	var primes = [2];
 	for (var i = 2; i < 1002; i++) {
 		var good = 1;
-	 	for (var j = 0; j < list.length; j++) {
-	 		if (i % list[j] == 0) good = 0;
+	 	for (var j = 0; j < primes.length; j++) {
+	 		if (i % primes[j] == 0) good = 0;
 	 	};
-	 	if (good == 1) list.push(i);
+	 	if (good == 1) primes.push(i);
 	};
 
-	alert(list.join());
+	alert(primes.join());
 
 </script>
 

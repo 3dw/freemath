@@ -32,8 +32,8 @@ $(document).ready(function(){
 	    render: function() {
 	    	$("p,div").hide();
 
-			$(this.el).find("input:eq(0)").attr('value', '請填答再按ENTER👼');
-			$(this.el).find("input:gt(0)").attr('value', '請填答👼');
+			$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
+			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼');
 
 			var firstWhite = $("*").filter(function(){
 					return $(this).css('color') == 'rgb(255, 255, 255)';
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 			var	indexFW = $("*").index(firstWhite);
 
-			$(firstWhite).html(firstWhite.html() + '&nbsp;&nbsp;&nbsp;&nbsp;👀參考看看？');
+			$(firstWhite).html('「'+firstWhite.html()+'」&nbsp;&nbsp;&nbsp;&nbsp;👀參考而已');
 
 			$("*:gt("+indexFW+")").filter(function(){
 					return $(this).css('color') == 'rgb(255, 255, 255)';
