@@ -16,7 +16,7 @@ import re
 
 # docDirs = ["幼兒形成w","小學形成w","國中形成w","高中形成w","大專形成w","其他形成w"]
 # symDirs = ["k","e","j","s","c","?"]
-symDir = r'^[kejsc?]'
+symDir = r'[kejsc?]'
 
 directory = os.getcwd()
 
@@ -94,18 +94,21 @@ for root,dirs,files in os.walk(directory):
 					isRel = False
 
 					for pre in pres:
-						print pre.replace('pre:','').replace(symDir,'').replace(r'\s','').replace(r'-->','')
-						if (friend.replace('.htm','') == pre.replace('pre:','').replace(symDir,'').replace(' ','').replace('-->','')):
+						pre = pre.replace('pre:','').replace(' ','').replace('-->','')
+						pre = re.sub(symDir, '', pre)
+						if (friend.replace('.htm','') == pre):
 							isPre = True
 
 					for after in afters:
-#						print after.replace('after:','').replace(' ','').replace('-->','')
-						if (friend.replace('.htm','') == after.replace('after:','').replace(symDir,'').replace(' ','').replace('-->','')):
+						after = after.replace('after:','').replace(' ','').replace('-->','')
+						after = re.sub(symDir, '', after)
+						if (friend.replace('.htm','') == after):
 							isAfter = True
 
 					for rel in rels:
-#						print rel.replace('rel:','').replace(' ','').replace('-->','')
-						if (friend.replace('.htm','') == rel.replace('rel:','').replace(symDir,'').replace(' ','')):
+						rel = rel.replace('rel:','').replace(' ','').replace('-->','')
+						rel = re.sub(symDir, '', rel)
+						if (friend.replace('.htm','') == rel):
 							isRel = True		
 
 
