@@ -11,7 +11,7 @@
 <body>
 <script>
 	var primes = [2]; var range = prompt("請輸入一個正整數");
-	for (var i = 2; i < range; i++) {
+	for (var i = 3; i < range; i += 2) {
 		var good = 1;
 	 	for (var j = 0; j < primes.length; j++) {
 	 		if (i % primes[j] == 0) {good = 0; break}  // break make this speed up
