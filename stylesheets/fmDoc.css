@@ -34,3 +34,9 @@
     .invis {
       display: none;
     }
+
+    .tip {
+      font-size: 66%;
+      float: right;
+    }
+

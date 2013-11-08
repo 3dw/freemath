@@ -8,7 +8,8 @@
 #註2: 左和右必須不變;
 
 
-#Todo:   解決重覆放final的問題
+
+# Todo::  parse   pre,  after  and lnik to elematary&junoir... 
 
 import os
 import re
@@ -21,8 +22,6 @@ for root,dirs,files in os.walk(directory):
 			f = open(file, 'r+')
 
 			text = f.read()
-
-#			print "Read texting is : ", text
 
 			# 填空
 			text = re.sub(r'【([.\s\S]*?)】', '【<input type = \'text\'>'+r'\g<1>'+'</input>】', text) 
@@ -66,11 +65,7 @@ for root,dirs,files in os.walk(directory):
 
 			text = re.sub(r'div\.MsoNormal[\s]*{margin:0cm;', 'div.MsoNormal\n{margin:1cm;',text, re.DOTALL)	# 樣式_縮排
 
-
-			text = re.sub(r'</style>[.\s.\S]*</head>', '</style>\n\n'		
-#				+'<script>\n\talert("這是一份紙本教材，你正瀏覽相容模式。如欲完整使用請在自由數學freemath列印它的.doc原始檔^_^");\n</script>'
-							# 歡迎程式(待修!!)
-				+'\n\n</head>', text)
+#			text = re.sub(r'</style>[.\s.\S]*</head>', '</style>\n\n\n\n</head>', text)
 
 			text = re.sub(r'除錯練習時間[.\s\S]*e-mail','', text)
 			text = re.sub(r'我寫的單元是[.\s\S]*e-mail','', text)
@@ -78,15 +73,51 @@ for root,dirs,files in os.walk(directory):
 			final = ''
 #			finalAll = ''
 
-			#生出其他單元的按鈕
+			#生出其他單元的按鈕  new 待測試
+
+			pres = re.findall(r'pre:.+', text)
+			afters = re.findall(r'after:.+', text)
 
 			for friend in files:
 				if friend.endswith(".htm"):
-					thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+
+					isPre =	isAfter = False
+
+					for pre in pres:
+#						print pre.replace('pre:','').replace(' ','').replace('-->','')
+						if (friend.replace('.htm','') == pre.replace('pre:','').replace(' ','').replace('-->','')):
+							isPre = True
+
+					for after in afters:
+						print after.replace('after:','').replace(' ','').replace('-->','')
+						if (friend.replace('.htm','') == after.replace('after:','').replace(' ','').replace('-->','')):
+							isAfter = True
+
+
+					if isPre:
+						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
+						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+
+					elif isAfter:
+						thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
+						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						oldButton = thatButton
+
+					else:
+						thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						thatButton = thisButton
+						oldButton = thisButton
+
 					text = text.replace(thisButton, '')
+					text = text.replace(thatButton, '')
+					text = text.replace(oldButton, '')
+
 
 					if not friend.endswith(f.name):				
 						final += thisButton+'</button>'
+
+# 之後還可以把先備後續存進一個.js中，用來生地圖
 
 #				if friend.endswith(".htm"):
 #					finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
@@ -106,33 +137,40 @@ for root,dirs,files in os.walk(directory):
 
 #			text = text.replace(finalAll, '')
 
-			text = re.sub(r'[\s]*</body>', '\n'
+			text = re.sub(r'\s*</body>', '\n'
 				+final
 				+'</body>' ,text )
+			text = text.replace('</button></button>','</button>')
 
 
-#			text = re.sub(r'</body>[\s]*</html>', '</body>\n'  # 結尾程式(目前用不到)
+#			text = re.sub(r'</body>\s*pre:\s?([kejsc])?(.+)\s*after:\s?([kejsc])?(.+)\s*</html>', '</body>\n'  # 結尾程式(目前用不到)
 #				+'\n'
 #				+'<script type="text/javascript">\n'
+#				+r'\g<1>'	 # k:kindergarden, e:elementary
+#				+r'\g<2>'	 # 分數, 分數到小數,因數與倍數      split(r',\s*')
+#				+r'\g<3>'	 # j:junior, s:senior   ?: 難以分類
+#				+r'\g<2>'    # 一元一次方程式, 二元一次方程式
 #				+'</script>'
 #				+'</html>',text )
 
-#			print "write texting is : ", text
+#    先備 : 藍    後續: 綠
+
 
 			#特殊cases
 			text = re.sub(r"</span></span><span style='font-size:14.0pt;font-family:\s*新細明體;color:white'>", '', text)
+
 
 
 			f.seek(0)
 			f.write(text)
 			f.truncate()
 
-			print "I have parse the file: ", f.name
-			print "and replaced all【__sonthing__】to <input type = 'text'>__something__</input>"
-			print "and changed title to: ", f.name
-			print "and changed margin to: 1cm"
-			print "and set background-color: #D0BAA2"
-			print "and add final buttons and link with semantic ui, jquery ui css"			
-			print "and 消掉意見回饋欄 and 加上提示語"
+			print "I have parsed the file: ", f.name
+#			print "and replaced all【__sonthing__】to <input type = 'text'>__something__</input>"
+#			print "and changed title to: ", f.name
+#			print "and changed margin to: 1cm"
+#			print "and set background-color: #D0BAA2"
+#			print "and add final buttons and link with semantic ui, jquery ui css"			
+#			print "and 消掉意見回饋欄 and 加上提示語"
 
 			f.close

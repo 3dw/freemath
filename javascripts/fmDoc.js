@@ -4,6 +4,10 @@
 // <script src="../javascripts/backbone-min.js"></script>
 // <script src="../javascripts/tongwen_core.js"></script>
 
+
+// Todo::  add auto Facebook Like button from title... 
+// Todo::  add php that gater feedback [Star] and [Comment]...
+
 $(document).ready(function(){
 
 	var DocView = Backbone.View.extend({ 
@@ -13,7 +17,7 @@ $(document).ready(function(){
 			+'<button class = "ui small blue button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')">'
 				+document.title+'.doc</button>'
 			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲'
-			+'<br /><br />使用時，請拿一張紙或筆記本、和一隻筆，當作輔助📝'
+			+'<br /><br />因為這原是紙本教材，有些活動需要紙筆和動手操作。請拿一張紙或筆記本、和一隻筆，當作輔助📝'
 			+'<br /><br />如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵'
 			+'<br /><br />（愛的小叮嚀：有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼',
 
@@ -31,11 +35,13 @@ $(document).ready(function(){
 
 	    render: function() {
 	    	$("p,div").hide();
+	    	$(".first").show();
 
 			$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
 			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼');
 
 			var firstWhite = $("*").filter(function(){
+					if ($(this).hasClass('button') || $(this).hasClass('tip')) return false;
 					return $(this).css('color') == 'rgb(255, 255, 255)';
 				}).eq(0)
 
@@ -44,6 +50,7 @@ $(document).ready(function(){
 			$(firstWhite).html('「'+firstWhite.html()+'」&nbsp;&nbsp;&nbsp;&nbsp;👀參考而已');
 
 			$("*:gt("+indexFW+")").filter(function(){
+					if ($(this).hasClass('button') || $(this).hasClass('tip')) return false;
 					return $(this).css('color') == 'rgb(255, 255, 255)';
 				}).append('&nbsp;&nbsp;&nbsp;&nbsp;👀');
 
@@ -62,7 +69,7 @@ $(document).ready(function(){
 	    		+'<br />'
 	    		+'<button id = "start" class = "ui huge green button">'+'進入學習!!'+'</button>'
 				+'<button class = "ui blue button" onclick = "TongWen.trans2Simp(document)">或转成一份简体教材再开始</button>'
-				+'</div>');
+				+'</div><br /><br />');
 //	    	$("button").show();
 	    },
 
