@@ -15,6 +15,7 @@
 		var good = 1;
 	 	for (var j = 0; j < primes.length; j++) {
 	 		if (i % primes[j] == 0) {good = 0; break}  // break make this speed up
+	 		if (primes[j] * primes[j] > i) break; // break make this speed up mucj more
 	 	};
 	 	if (good == 1) primes.push(i);
 	};
