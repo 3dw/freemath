@@ -70,18 +70,20 @@ for root,dirs,files in os.walk(directory):
 			text = re.sub(r'除錯練習時間[.\s\S]*e-mail','', text)
 			text = re.sub(r'我寫的單元是[.\s\S]*e-mail','', text)
 
-			final = ''
-#			finalAll = ''
 
 			#生出其他單元的按鈕  new 待測試
 
 			pres = re.findall(r'pre:.+', text)
 			afters = re.findall(r'after:.+', text)
+			rels = re.findall(r'rel:.+', text)
+
+			buttonList = []
+			leftWall = 	middleWall = middleWall2 = 0
 
 			for friend in files:
 				if friend.endswith(".htm"):
 
-					isPre =	isAfter = False
+					isPre =	isAfter = isRel = False    # isRel  平行參考  purple ??
 
 					for pre in pres:
 #						print pre.replace('pre:','').replace(' ','').replace('-->','')
@@ -89,33 +91,60 @@ for root,dirs,files in os.walk(directory):
 							isPre = True
 
 					for after in afters:
-						print after.replace('after:','').replace(' ','').replace('-->','')
+#						print after.replace('after:','').replace(' ','').replace('-->','')
 						if (friend.replace('.htm','') == after.replace('after:','').replace(' ','').replace('-->','')):
 							isAfter = True
 
+					for rel in rels:
+						print rel.replace('rel:','').replace(' ','').replace('-->','')
+						if (friend.replace('.htm','') == rel.replace('rel:','').replace(' ','').replace('-->','')):
+							isRel = True		
+
 
 					if isPre:
-						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
+						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-						oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
+						buttonList.insert(0, thisButton+ '</button>')				
+						leftWall += 1
 
 					elif isAfter:
-						thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
+						thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-						oldButton = thatButton
+						oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
+						buttonList.insert(leftWall+middleWall+middleWall2, thisButton+ '</button>')
+
+					elif isRel:
+						thisButton = '<button class = "ui big teal button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						buttonList.insert(leftWall+middleWall, thisButton+ '</button>')	
+						middleWall2 += 1
+
+					elif friend.endswith(f.name):
+						thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						thatButton = thisButton
+						oldButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						buttonList.insert(leftWall, thisButton+ '</button>')
+						middleWall += 1					 			
 
 					else:
 						thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = thisButton
 						oldButton = thisButton
+						buttonList.append(thisButton+ '</button>')
+#						rightWall += 1
 
 					text = text.replace(thisButton, '')
 					text = text.replace(thatButton, '')
 					text = text.replace(oldButton, '')
 
+#					final = ''					
+					final = ''.join(buttonList);
 
-					if not friend.endswith(f.name):				
-						final += thisButton+'</button>'
+
+#					if not friend.endswith(f.name):
+#						final += thisButton+'</button>'
 
 # 之後還可以把先備後續存進一個.js中，用來生地圖
 

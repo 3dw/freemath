@@ -14,8 +14,8 @@ $(document).ready(function(){
 		el: $('body'),
 
 		intro: '歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載'
-			+'<button class = "ui small blue button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')">'
-				+document.title+'.doc</button>'
+			+'<button class = "ui small blue button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')"'
+				+'style = "margin-left:2ex">'+document.title+'.doc</button>'
 			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲'
 			+'<br /><br />因為這原是紙本教材，有些活動需要紙筆和動手操作。請拿一張紙或筆記本、和一隻筆，當作輔助📝'
 			+'<br /><br />如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵'
@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 		events :{
 			'change input' : 'showHint',
-			'click button#start' : 'showStart'
+			'click div#start' : 'showStart'
 		},
 
 		initialize: function() {
@@ -66,10 +66,16 @@ $(document).ready(function(){
 	    		+this.intro+'</p>'
 	    		+'<button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
 	    			+'也可以上臉書「自學數學團」提問👼</button>'
-	    		+'<br />'
-	    		+'<button id = "start" class = "ui huge green button">'+'進入學習!!'+'</button>'
-				+'<button class = "ui blue button" onclick = "TongWen.trans2Simp(document)">或转成一份简体教材再开始</button>'
+	    		+'<br /><br />'
+	    		+'<div class="ui huge buttons">'
+				+' <div id = "start" class="ui huge green button">👼線上學習'+document.title+'👼</div>'
+				+' <div class="or"></div>'
+				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成一份简体教材再开始</div>'
+				+'</div>'
+//				+'<button class = "ui  button" </button>'
 				+'</div><br /><br />');
+				
+
 //	    	$("button").show();
 	    },
 
