@@ -25,8 +25,8 @@
 
 <body>
 <script>
-	var primes = [2];
-	for (var i = 2; i < 1002; i++) {
+	var primes = [2]; range = prompt("請輸入一個正整數");
+	for (var i = 2; i < range ; i++) {
 		var good = 1;
 	 	for (var j = 0; j < primes.length; j++) {
 	 		if (i % primes[j] == 0) good = 0;
