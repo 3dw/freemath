@@ -13,6 +13,10 @@
 
 import os
 import re
+
+# docDirs = ["幼兒形成w","小學形成w","國中形成w","高中形成w","大專形成w","其他形成w"]
+# symDirs = ["k","e","j","s","c","?"]
+
 directory = os.getcwd()
 
 for root,dirs,files in os.walk(directory):
@@ -105,34 +109,34 @@ for root,dirs,files in os.walk(directory):
 						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
-						buttonList.insert(0, thisButton+ '</button>')				
+						buttonList.insert(0, thisButton)				
 						leftWall += 1
 
 					elif isAfter:
 						thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
-						buttonList.insert(leftWall+middleWall+middleWall2, thisButton+ '</button>')
+						buttonList.insert(leftWall+middleWall+middleWall2, thisButton)
 
 					elif isRel:
 						thisButton = '<button class = "ui big teal button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-						buttonList.insert(leftWall+middleWall, thisButton+ '</button>')	
+						buttonList.insert(leftWall+middleWall, thisButton)	
 						middleWall2 += 1
 
 					elif friend.endswith(f.name):
 						thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = thisButton
 						oldButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-						buttonList.insert(leftWall, thisButton+ '</button>')
+						buttonList.insert(leftWall, thisButton)
 						middleWall += 1					 			
 
 					else:
 						thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						thatButton = thisButton
 						oldButton = thisButton
-						buttonList.append(thisButton+ '</button>')
+						buttonList.append(thisButton)
 #						rightWall += 1
 
 					text = text.replace(thisButton, '')
@@ -154,10 +158,10 @@ for root,dirs,files in os.walk(directory):
 			afterOld = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
 			after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemath主頁</button>'
 
-			text = text.replace(afterOld, '')
-			text = text.replace(after, '')
-			final += after
+#			text = text.replace(afterOld, '')
+#			text = text.replace(after, '')
 
+			final += after
 
 				# 已解決重覆放final的問題
 #			text = text.replace(final, '') 
@@ -166,10 +170,12 @@ for root,dirs,files in os.walk(directory):
 
 #			text = text.replace(finalAll, '')
 
-			text = re.sub(r'\s*</body>', '\n'
+			print final
+
+			text = re.sub(r'</div>\s*(<br />)*?\s*(<button[.\s\S]*?</button>)?\s*</body>', '</div>\n'
 				+final
 				+'</body>' ,text )
-			text = text.replace('</button></button>','</button>')
+#			text = text.replace('</button></button>','</button>')
 
 
 #			text = re.sub(r'</body>\s*pre:\s?([kejsc])?(.+)\s*after:\s?([kejsc])?(.+)\s*</html>', '</body>\n'  # 結尾程式(目前用不到)

@@ -37,7 +37,7 @@ $(document).ready(function(){
 	    	$("p,div").hide();
 	    	$(".first").show();
 
-			$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
+	    	$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
 			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼');
 
 			var firstWhite = $("*").filter(function(){
@@ -56,9 +56,12 @@ $(document).ready(function(){
 
 
 
-			$(this.el).find("input[type='text']").on("click", function () {
-   				$(this).select();
-			});
+	//		$(this.el).find("input[type='text']").on("click", function () {
+  // 				$(this).select();
+//			});
+
+			$(this.el).find("input[type='text']").css("font-size", "2ex");
+
 
 
 	    	$(this.el).prepend(
@@ -74,6 +77,7 @@ $(document).ready(function(){
 				+'</div>'
 //				+'<button class = "ui  button" </button>'
 				+'</div><br /><br />');
+
 				
 
 //	    	$("button").show();

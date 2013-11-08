@@ -1,0 +1,2918 @@
+<html>
+
+<!--
+
+pre: 乘法
+pre: 除法
+
+rel: 分數
+
+after: j數列與級數
+after: j因式分解
+
+-->
+
+<head>
+<meta name=Title content="">
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>因數與倍數</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+@font-face
+	{font-family:"MS Mincho";}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Calibri;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Calibri;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Cambria;}
+p.a, li.a, div.a
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;}
+span.a0
+	{color:gray;}
+span.BalloonTextChar
+	{font-family:Cambria;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+
+
+</head>
+
+<body lang=ZH-TW style='text-justify-trim:punctuation'>
+
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251662848'><span style='left:0px;position:
+absolute;left:56px;top:-21px;width:64px;height:55px'><img width=64 height=55
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image001.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>因</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251665920'><span style='left:0px;position:
+absolute;left:290px;top:-54px;width:37px;height:46px'><img width=37 height=46
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image002.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>數</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251666944'><span style='left:0px;position:
+absolute;left:65px;top:-60px;width:46px;height:55px'><img width=46 height=55
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image003.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>與</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>倍</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251664896'><span style='left:0px;position:
+absolute;left:326px;top:-99px;width:73px;height:73px'><img width=73 height=73
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image004.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>數</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251663872'><span style='left:0px;position:
+absolute;left:2px;top:-132px;width:55px;height:55px'><img width=55 height=55
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image005.png"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:18.0pt;font-family:新細明體'>因數</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們先來想想這個問題。</span><span
+lang=EN-US style='font-size:14.0pt'>12 </span><span style='font-size:14.0pt;
+font-family:新細明體'>個蘋果，若干個裝一盒，裝成幾盒可以剛好全部裝完，沒有剩下？</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>先寫出你的答案。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果想不出來的話，先從裝一盒開始。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>裝成</span><span
+lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;
+font-family:新細明體'>盒，每盒有【<input type = 'text'></span><span style='font-size:14.0pt'> <span
+lang=EN-US style='color:white'>  12  </span><span lang=EN-US> </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】個，（可以，不可以）（圈出正確選項）全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>裝成</span><span
+lang=EN-US style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;
+font-family:新細明體'>盒，每盒有【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  <span
+style='color:white'>6</span>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】個，（可以，不可以）全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>裝成</span><span
+lang=EN-US style='font-size:14.0pt'>3</span><span style='font-size:14.0pt;
+font-family:新細明體'>盒，每盒有【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  <span
+style='color:white'>4</span>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】個，（可以，不可以）全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>裝成</span><span
+lang=EN-US style='font-size:14.0pt'>4</span><span style='font-size:14.0pt;
+font-family:新細明體'>盒，每盒有【<input type = 'text'></span><span style='font-size:14.0pt'>  <span
+lang=EN-US style='color:white'>3</span><span lang=EN-US>    </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】個，（可以，不可以）全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以上面的程序一路推下去，我們發現裝成</span><span
+lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;
+font-family:新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>3</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>4 </span><span
+style='font-size:14.0pt;font-family:新細明體'>、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>6</span>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>12</span>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】盒，都可以全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>而以上這些過程，我們可以寫成一個</span><span
+lang=EN-US style='font-size:14.0pt'>12 </span><span style='font-size:14.0pt;
+font-family:新細明體'>÷某數的算式，如果結果沒有餘數，就可以裝盒。我們稱這種全部分完，沒有餘數的除法，為<b>「整除」</b>。而這些可以把</span><span
+lang=EN-US style='font-size:14.0pt'>12</span><span style='font-size:14.0pt;
+font-family:新細明體'>除盡，沒有餘數（整除）的數，就為</span><span lang=EN-US style='font-size:
+14.0pt'>12</span><span style='font-size:14.0pt;font-family:新細明體'>的<b>因數</b>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請由因數的定義，找出所有</span><span
+lang=EN-US style='font-size:14.0pt'>18</span><span style='font-size:14.0pt;
+font-family:新細明體'>的因數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請找出</span><span
+lang=EN-US style='font-size:14.0pt'>13</span><span style='font-size:14.0pt;
+font-family:新細明體'>的所有因數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請找出</span><span
+lang=EN-US style='font-size:14.0pt'>21</span><span style='font-size:14.0pt;
+font-family:新細明體'>的所有因數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>除了用整除的概念來定義因數，我們還有另一種方法。考慮如果你有</span><span
+lang=EN-US style='font-size:14.0pt'>12</span><span style='font-size:14.0pt;
+font-family:新細明體'>個正方形紙片，全部用完，沒有剩下，你可以排出幾種長方形？請在下面畫畫看，並寫出對應的「長方形面積＝長×寬」的算式：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>第一種：</span><span
+style='font-size:14.0pt'>     <span lang=EN-US>1 </span></span><span
+style='font-size:14.0pt;font-family:新細明體'>×【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>1</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】＝</span><span lang=EN-US
+style='font-size:14.0pt'> 12 </span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>第二種：【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>  <span style='color:white'>2</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】×【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>6</span>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】＝</span><span lang=EN-US
+style='font-size:14.0pt'> 12</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>第三種：【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>  <span style='color:white'>3</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】×【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>4</span>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】＝</span><span lang=EN-US
+style='font-size:14.0pt'> 12</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>我們發現：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;font-family:
+新細明體'>×</span><span lang=EN-US style='font-size:14.0pt'>12</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;font-family:
+新細明體'>×</span><span lang=EN-US style='font-size:14.0pt'>6</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt'>3</span><span style='font-size:14.0pt;font-family:
+新細明體'>×</span><span lang=EN-US style='font-size:14.0pt'>4</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>可以寫出以上三種<b>整數</b>相乘的式子，而每個構成的整數，也都為</span><span
+lang=EN-US style='font-size:14.0pt'>12</span><span style='font-size:14.0pt;
+font-family:新細明體'>的因數。這是以乘法來定義因數的方式。只要一個整數，能寫成另外兩個或兩個以上整數的乘積，則稱這些整數為這個整數的因數。一定有人會覺得</span><span
+lang=EN-US style='font-size:14.0pt'>12</span><span style='font-size:14.0pt;
+font-family:新細明體'>＝</span><span lang=EN-US style='font-size:14.0pt'>2.4</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt'>5</span><span style='font-size:14.0pt;font-family:
+新細明體'>，為什麼</span><span lang=EN-US style='font-size:14.0pt'>2.4</span><span
+style='font-size:14.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:14.0pt'>5</span><span style='font-size:14.0pt;font-family:
+新細明體'>不是</span><span lang=EN-US style='font-size:14.0pt'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數？那是因為我們定義因數與之後的倍數，只限於整數，小數和分數是不討論因數與倍數的。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：請利用整數相乘的式子，寫出</span><span
+lang=EN-US style='font-size:14.0pt'>54</span><span style='font-size:14.0pt;
+font-family:新細明體'>的所有因數。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>從「整除」的概念來定義因數，或是由分解成整數乘積的方式來定義因數，各有其好處，也有其限制，我們可以視狀況選擇適當的方式。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:18.0pt;font-family:新細明體'>公因數</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們想想下面這個問題：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>阿花在自己的果園中，採了</span><span
+lang=EN-US style='font-size:14.0pt'>24</span><span style='font-size:14.0pt;
+font-family:新細明體'>個蘋果，</span><span lang=EN-US style='font-size:14.0pt'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>個梨子，想要將兩種水果裝成禮盒，每個禮盒都有相同數量的蘋果，也有相同數量的梨子，並且要全部裝完，請問可以裝成幾個禮盒？</span><span
+style='font-size:14.0pt'> </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以這樣想：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>24</span><span
+style='font-size:14.0pt;font-family:新細明體'>個蘋果，裝成</span><span lang=EN-US
+style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>、【<input type = 'text'></span><span style='font-size:14.0pt;
+color:white'>  <span lang=EN-US>3</span></span><span lang=EN-US
+style='font-size:14.0pt'>  </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  <span
+style='color:white'>4 </span> </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】、【<input type = 'text'></span><span style='font-size:14.0pt'> <span lang=EN-US>  <span
+style='color:white'>6</span>    </span></span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   <span
+style='color:white'>8</span>   </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  <span
+style='color:white'>12</span>   </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】、</span><span lang=EN-US style='font-size:14.0pt'>24</span><span
+style='font-size:14.0pt;font-family:新細明體'>盒，可以全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>個梨子，裝成</span><span lang=EN-US
+style='font-size:14.0pt'>1 </span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   <span style='color:white'>3</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>6</span>    </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    <span style='color:white'>9</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、</span><span lang=EN-US
+style='font-size:14.0pt'>18</span><span style='font-size:14.0pt;font-family:
+新細明體'>盒，可以全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>兩個一樣可以裝成</span><span
+lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;
+font-family:新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   <span style='color:white'>3</span>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>6</span>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】盒，全部裝完，沒有剩下。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在這個問題中，</span><span
+lang=EN-US style='font-size:14.0pt'>24</span><span style='font-size:14.0pt;
+font-family:新細明體'>的因數為</span><span lang=EN-US style='font-size:14.0pt'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>4</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>8</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>24</span><span style='font-size:14.0pt;font-family:
+新細明體'>，而</span><span lang=EN-US style='font-size:14.0pt'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數為</span><span lang=EN-US
+style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>3</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>9</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>，兩者有相同的因數</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>                             </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】，這些因數我們就稱它們為</span><span lang=EN-US
+style='font-size:14.0pt'>24</span><span style='font-size:14.0pt;font-family:
+新細明體'>與</span><span lang=EN-US style='font-size:14.0pt'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>的<b>「公因數」</b></span><span
+style='font-size:14.0pt'> </span><span style='font-size:14.0pt;font-family:
+新細明體'>，代表兩個或是兩個以上整數共同的因數。這些公因數中，最大的是【<input type = 'text'></span><span lang=EN-US style='font-size:
+14.0pt'>  <span style='color:white'>6</span>   </span><span style='font-size:
+14.0pt;font-family:新細明體'></input>】，則稱</span><span lang=EN-US style='font-size:14.0pt'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>為</span><span lang=EN-US
+style='font-size:14.0pt'>24</span><span style='font-size:14.0pt;font-family:
+新細明體'>與</span><span lang=EN-US style='font-size:14.0pt'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>的<b>「最大公因數」。</b>我們在之後的單元，還會教最大公因數的其他求法。</span><span
+style='font-size:14.0pt'> </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>1. </span><span
+style='font-size:14.0pt;font-family:新細明體'>請求出</span><span lang=EN-US
+style='font-size:14.0pt'>28</span><span style='font-size:14.0pt;font-family:
+新細明體'>與</span><span lang=EN-US style='font-size:14.0pt'>42</span><span
+style='font-size:14.0pt;font-family:新細明體'>的公因數與最大公因數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>2. </span><span
+style='font-size:14.0pt;font-family:新細明體'>有一個長方形，長</span><span lang=EN-US
+style='font-size:14.0pt'>16</span><span style='font-size:14.0pt;font-family:
+新細明體'>公分，寬</span><span lang=EN-US style='font-size:14.0pt'>28</span><span
+style='font-size:14.0pt;font-family:新細明體'>公分，要剪成整數公分的小正方形，全部用完，沒有剩下任何的紙張，則可以剪出一邊長為幾公分的小正方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>3. </span><span
+style='font-size:14.0pt;font-family:新細明體'>有男生</span><span lang=EN-US
+style='font-size:14.0pt'>16</span><span style='font-size:14.0pt;font-family:
+新細明體'>人，女生</span><span lang=EN-US style='font-size:14.0pt'>24</span><span
+style='font-size:14.0pt;font-family:新細明體'>人，想要分組做活動，每組要有一樣多的女生與一樣多的男生。請問最多可以分成幾組？每組有幾個男生？幾個女生？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請找出下面有因數</span><span
+lang=EN-US style='font-size:14.0pt'>3 </span><span style='font-size:14.0pt;
+font-family:新細明體'>的數，用</span><span style='font-size:14.0pt;font-family:新細明體'>○</span><span
+style='font-size:14.0pt;font-family:新細明體'>標示。再找出有因數</span><span lang=EN-US
+style='font-size:14.0pt'>5</span><span style='font-size:14.0pt;font-family:
+新細明體'>的數，用</span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>X</span><span
+style='font-size:14.0pt;font-family:新細明體'>標示。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:14.0pt'>24</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt'> 15</span><span style='font-size:14.0pt;font-family:
+新細明體'>，</span><span lang=EN-US style='font-size:14.0pt'>82</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt'>72</span><span style='font-size:14.0pt;font-family:
+新細明體'>，</span><span lang=EN-US style='font-size:14.0pt'>45</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt'>42</span><span style='font-size:14.0pt;font-family:
+新細明體'>，</span><span lang=EN-US style='font-size:14.0pt'>55</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt'>10</span><span style='font-size:14.0pt;font-family:
+新細明體'>，</span><span lang=EN-US style='font-size:14.0pt'>30</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt'>29</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:14.0pt;font-family:
+新細明體'>請問那些數又有因數</span><span lang=EN-US style='font-size:14.0pt'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>，又有因數</span><span lang=EN-US
+style='font-size:14.0pt'>5</span><span style='font-size:14.0pt;font-family:
+新細明體'>？</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:新細明體'>倍數</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>高鐵的接駁車每隔</span><span
+lang=EN-US style='font-size:14.0pt'>15</span><span style='font-size:14.0pt;
+font-family:新細明體'>分鐘發一班車。小華到的時候，剛好接駁車開走了，他必須等【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  <span style='color:white'>15</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】分鐘，下一班車才會來。而第二班車要【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>   <span style='color:white'>30</span>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】分鐘後來會來。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以把等候的班次與時間列表：</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=418
+ style='width:418.1pt;margin-left:12.0pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=60 valign=top style='width:59.7pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>班次</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>1</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>2</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>3</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>4</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>5</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>6</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=60 valign=top style='width:59.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>時間</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>15</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+  <td width=60 valign=top style='width:59.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請完成上表。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以注意到，表中的各數，都是</span><span
+lang=EN-US style='font-size:14.0pt'>15</span><span style='font-size:14.0pt;
+font-family:新細明體'>的整數倍，則我們稱</span><span lang=EN-US style='font-size:14.0pt'>15</span><span
+style='font-size:14.0pt;font-family:新細明體'>的整數倍為</span><span lang=EN-US
+style='font-size:14.0pt'>15</span><span style='font-size:14.0pt;font-family:
+新細明體'>的<b>倍數</b>。跟因數一樣，倍數的討論只限於整數倍。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>從</span><span
+lang=EN-US style='font-size:14.0pt'>12</span><span style='font-size:14.0pt;
+font-family:新細明體'>開始，請依序寫出</span><span lang=EN-US style='font-size:14.0pt'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>個</span><span lang=EN-US
+style='font-size:14.0pt'>12 </span><span style='font-size:14.0pt;font-family:
+新細明體'>的倍數。</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><b><span lang=EN-US
+style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></b><span style='font-size:14.0pt;font-family:新細明體'>請問</span><span
+lang=EN-US style='font-size:14.0pt'>1-100</span><span style='font-size:14.0pt;
+font-family:新細明體'>之間，有幾個</span><span lang=EN-US style='font-size:14.0pt'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數？有幾個</span><span lang=EN-US
+style='font-size:14.0pt'>3 </span><span style='font-size:14.0pt;font-family:
+新細明體'>的倍數？</span><b><span lang=EN-US style='font-size:14.0pt'><br clear=all
+style='page-break-before:always'>
+</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:新細明體'>因倍數之間的關係</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們在學習因數的時候，曾經定義過，如果一個數</span><span
+lang=EN-US style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;
+font-family:新細明體'>，能夠寫成兩個或是兩個以上整數相乘的形式，則這些整數都為</span><span lang=EN-US
+style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;font-family:
+新細明體'>的因數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如：</span><span
+lang=EN-US style='font-size:14.0pt'>98</span><span style='font-size:14.0pt;
+font-family:新細明體'>＝</span><span lang=EN-US style='font-size:14.0pt'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt'>14</span><span style='font-size:14.0pt;font-family:
+新細明體'>，則</span><span lang=EN-US style='font-size:14.0pt'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:14.0pt'>14</span><span style='font-size:14.0pt;font-family:
+新細明體'>皆為</span><span lang=EN-US style='font-size:14.0pt'>98</span><span
+style='font-size:14.0pt;font-family:新細明體'>的【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>  </span><span style='font-size:14.0pt;font-family:
+新細明體;color:white'>因數</span><span lang=EN-US style='font-size:14.0pt'>    </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。同時我們可以看到</span><span lang=EN-US
+style='font-size:14.0pt'>98</span><span style='font-size:14.0pt;font-family:
+新細明體'>為</span><span lang=EN-US style='font-size:14.0pt'>14</span><span
+style='font-size:14.0pt;font-family:新細明體'>的整數倍，或是</span><span lang=EN-US
+style='font-size:14.0pt'>7</span><span style='font-size:14.0pt;font-family:
+新細明體'>的整數倍，所以反過來說</span><span lang=EN-US style='font-size:14.0pt'>98</span><span
+style='font-size:14.0pt;font-family:新細明體'>是它的因數</span><span lang=EN-US
+style='font-size:14.0pt'>7</span><span style='font-size:14.0pt;font-family:
+新細明體'>的【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>倍數</span><span
+style='font-size:14.0pt;color:white'> </span><span lang=EN-US style='font-size:
+14.0pt'>  </span><span style='font-size:14.0pt;font-family:新細明體'></input>】，或是因數</span><span
+lang=EN-US style='font-size:14.0pt'>14</span><span style='font-size:14.0pt;
+font-family:新細明體'>的倍</span><span style='font-size:14.0pt;font-family:新細明體'>數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>a</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>b</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>c</span><span
+style='font-size:14.0pt;font-family:新細明體'>，則我們稱</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>b, c </span><span
+style='font-size:14.0pt;font-family:新細明體'>為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>a</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>a</span><span
+style='font-size:14.0pt;font-family:新細明體'>為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>b, c</span><span
+style='font-size:14.0pt;font-family:新細明體'>的【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>   </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>倍數</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>    </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:16.0pt;font-family:
+"MS Mincho"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:新細明體'>因倍數的判別法</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果我們觀察倍數表，我們會發現有些數的倍數有些規則可尋，這些規則可以幫助我們快速找到一個數的因數（倍數）。這對未來學習質因數分解的技巧有很大的幫助。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:Webdings'>ÿ</span><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2</span></b><b><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數判別</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數又稱為偶數，請從<span lang=EN-US>2 </span>開始，寫出<span
+lang=EN-US>2</span>的倍數，直到<span lang=EN-US>30</span>…</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請問你發現<span
+lang=EN-US>2</span>的倍數的規律嗎？所有<span lang=EN-US>2</span>的倍數，其個位數字都是<span
+lang=EN-US>2</span>、<span lang=EN-US>4</span>、【<input type = 'text'><span lang=EN-US>  <span
+style='color:white'>6</span>   </span></input>】、【<input type = 'text'><span lang=EN-US>  <span
+style='color:white'>8</span>   </span></input>】、<span lang=EN-US>0</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在這邊，我們可以給個簡單的證明。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>任何一個數<span
+lang=EN-US>n</span>，我們都可以寫成<span lang=EN-US>n = a </span>×<span lang=EN-US> 10</span>＋<span
+lang=EN-US>b</span>，其中<span lang=EN-US>b</span>為個位數。因為<span lang=EN-US>a </span>×<span
+lang=EN-US> 10</span>＝（<span lang=EN-US>a </span>×<span lang=EN-US> 5</span>） ×<span
+lang=EN-US> 2 </span>一定為<span lang=EN-US>2 </span>的倍數，所以只要檢查<span lang=EN-US>b</span>是否為偶數既可。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:Webdings'>ÿ</span><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>5</span></b><b><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數判別法</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請從<span
+lang=EN-US>5</span>開始，依序寫出<span lang=EN-US>10</span>個<span lang=EN-US>5</span>的倍數：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請問你發現了什麼規律？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以發現，<span
+lang=EN-US>5</span>的倍數的尾數也只有【<input type = 'text'><span lang=EN-US>  <span style='color:white'>5</span>  
+</span></input>】與【<input type = 'text'><span lang=EN-US>  <span style='color:white'>0</span>   </span></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請模仿<span
+lang=EN-US>2</span>的倍數的證明法，證明尾數為<span lang=EN-US>5</span>與<span lang=EN-US>0</span>的，皆為<span
+lang=EN-US>5</span>的倍數。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:Webdings'>ÿ</span><b><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>3</span></b><b><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數判別法</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>當我們寫一個十進位的數字，如<span
+lang=EN-US>1377</span>，並不是單純的由<span lang=EN-US>1</span>、<span lang=EN-US>3</span>、<span
+lang=EN-US>7</span>、<span lang=EN-US>7</span>四個數字的大小構成的，實際上<span lang=EN-US>1377</span>＝<span
+lang=EN-US>1</span>×<span lang=EN-US>1000</span>＋<span lang=EN-US>3</span>×<span
+lang=EN-US>100</span>＋<span lang=EN-US>7</span>×<span lang=EN-US>10</span>＋<span
+lang=EN-US>7</span>，我們發現<span lang=EN-US>1000</span>＝<span lang=EN-US>999</span>＋<span
+lang=EN-US>1</span>，<span lang=EN-US>100</span>＝【<input type = 'text'> <span lang=EN-US
+style='color:white'>99</span><span lang=EN-US>  </span></input>】＋<span lang=EN-US>1</span>，<span
+lang=EN-US>10</span>＝【<input type = 'text'> <span lang=EN-US style='color:white'>9</span><span
+lang=EN-US> </span></input>】＋<span lang=EN-US>1</span>，<span lang=EN-US>10</span>，<span
+lang=EN-US>100</span>，<span lang=EN-US>1000</span>，<span lang=EN-US>10000</span>…等十進位的單位，剛好都能寫做<span
+lang=EN-US>999</span>…＋<span lang=EN-US>1</span>的形式，而<span lang=EN-US>9</span>，<span
+lang=EN-US>99</span>，<span lang=EN-US>999</span>，<span lang=EN-US>9999</span>…很明顯的為<span
+lang=EN-US>3</span>的倍數。因此<span lang=EN-US>1377</span>可以改寫成</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1377</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝<span lang=EN-US>1</span>×（<span
+lang=EN-US>999</span>＋<span lang=EN-US>1</span>）＋<span lang=EN-US>3 </span>×（<span
+lang=EN-US>99</span>＋<span lang=EN-US>1</span>）＋<span lang=EN-US>7</span>×（<span
+lang=EN-US>9</span>＋<span lang=EN-US>1</span>）＋<span lang=EN-US>7</span>再使用分配律，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1377</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝<span lang=EN-US>1</span>×<span
+lang=EN-US>999</span>＋<span lang=EN-US>1</span>＋<span lang=EN-US>3</span>×【<input type = 'text'> <span
+lang=EN-US style='color:white'>99</span><span lang=EN-US>  </span></input>】＋<span
+lang=EN-US>3</span>＋<span lang=EN-US>7</span>×<span lang=EN-US>9</span>＋【<input type = 'text'> <span
+lang=EN-US style='color:white'>7</span><span lang=EN-US>  </span></input>】＋<span
+lang=EN-US>7</span>，而其中的<span lang=EN-US>1</span>×<span lang=EN-US>999</span>＋<span
+lang=EN-US>3</span>×<span lang=EN-US>99</span>＋<span lang=EN-US>7</span>×<span
+lang=EN-US>9</span>為<span lang=EN-US>3</span>的倍數，所以我們只要檢查剩下的<span lang=EN-US>1</span>＋<span
+lang=EN-US>3</span>＋<span lang=EN-US>7</span>＋<span lang=EN-US>7</span>是否為<span
+lang=EN-US>3</span>的倍數即可，而<span lang=EN-US>1</span>＋<span lang=EN-US>3</span>＋<span
+lang=EN-US>7</span>＋<span lang=EN-US>7</span>恰好為各位數字的總和，因此<span lang=EN-US>3</span>的倍數的判斷除了以<span
+lang=EN-US>3</span>來除，我們還可以使將各位數字加起來，看看是否為<span lang=EN-US>3</span>的倍數，就不需要再以<span
+lang=EN-US>3 </span>除，可以省時省力。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請圈出<span
+lang=EN-US>3</span>的倍數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>124</span><span
+style='font-size:14.0pt;font-family:新細明體'>，<span lang=EN-US>5291</span>，<span
+lang=EN-US>3384</span>，<span lang=EN-US>10089</span>，<span lang=EN-US>10523</span>，<span
+lang=EN-US>20513456</span>，<span lang=EN-US>14421</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>如果<span
+lang=EN-US>35</span></span><span lang=EN-US style='font-family:Webdings'>c</span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>12</span><span
+style='font-size:14.0pt;font-family:新細明體'>為<span lang=EN-US>3</span>的倍數，請問</span><span
+lang=EN-US style='font-family:Webdings'>c</span><span style='font-size:14.0pt;
+font-family:新細明體'>可以填入什麼數字？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請問<span
+lang=EN-US>9</span>的倍數該如何判別？有沒有和<span lang=EN-US>3</span>的倍數一樣簡便的方法？</span></p>
+
+<p class=a><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+Webdings'>ÿ</span></b><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"MS Mincho"'>11</span></b><b><span style='font-size:14.0pt;font-family:新細明體'>的倍數判別法</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數與</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數一樣有個簡易的判別法。我們一樣將一個數字以十進位的表示法來表示，如</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4125</span><span
+style='font-size:14.0pt;font-family:新細明體'>。請寫出</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4125</span><span
+style='font-size:14.0pt;font-family:新細明體'>的十進位表示法：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4125</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們發現</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>10</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>100</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>99</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1000</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>，其中</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>99</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>都為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數。所以：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4125</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>×（</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>）＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>×（</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>99</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>）＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>×（</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>）＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>＝</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>－【<input type = 'text'></span><span style='font-size:14.0pt;
+font-family:"MS Mincho"'> <span lang=EN-US style='color:white'>4</span><span
+lang=EN-US>  </span></span><span style='font-size:14.0pt;font-family:新細明體'></input>】＋</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>99</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>×【<input type = 'text'></span><span style='font-size:14.0pt;
+font-family:"MS Mincho"'> </span><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體;color:white'>11</span><span lang=EN-US style='font-size:14.0pt;
+font-family:"MS Mincho"'>  </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】－</span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>＝</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>99</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>其中</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>99</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數，因此只要最後的－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數或為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>0</span><span
+style='font-size:14.0pt;font-family:新細明體'>就可以了。－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>0</span><span
+style='font-size:14.0pt;font-family:新細明體'>，所以</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4125</span><span
+style='font-size:14.0pt;font-family:新細明體'>為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數。請用除法再檢驗一次。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有個好記的方法</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>－</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>－</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝－（</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>）＋（</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4
+1 2 5</span><span style='font-size:14.0pt;font-family:新細明體'>，</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 4</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>＋</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>剛好可以看成把每偶數位的數字相加，再把奇數位的數字相加，兩個結果相減，如果等於</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>0</span><span
+style='font-size:14.0pt;font-family:新細明體'>或其他</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數，就為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請圈出</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>7124</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1342</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1298</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>35574</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>9876</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>84327</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>質數的定義</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請依序寫出</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1-10</span><span
+style='font-size:14.0pt;font-family:新細明體'>各數的因數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>8</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>9</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>10</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數有：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請問那幾個數的因數個數只有</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>個？</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請問那幾個數的因數個數超過</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>個？</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>像</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>這四個數的因數，只有</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>與自己，這樣的數我們就稱為質數。而</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>8</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>9</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>10</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數除了</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>與自己外，還有其他的因數，這樣的數我們稱為「合數」。另外，</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>的因數只有它自己，但是我們不會把</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>看成質數，也不會把它看為合數，理由等到我們講質因數分解時，再另外詳述。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>人類一向覺得質數有其魔力，因為如果我們繼續寫上去，會發現質數的數目愈來愈少。所以人類覺得質數是特別的，像有名的連鎖超商</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>7-eleven</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>都是質數，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>13</span><span
+style='font-size:14.0pt;font-family:新細明體'>號黑色星期五，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>13</span><span
+style='font-size:14.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>也都是【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>  </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>質數</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>    </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>質數的重要性，我們會再下個單元「質因數分解」詳述之。在這邊介紹一個簡單的方法，利用倍數關係，來找尋</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1-100</span><span
+style='font-size:14.0pt;font-family:新細明體'>間所有質數的方法。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>步驟一：在下表中把</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>畫掉</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>步驟二：把</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>圈起來，把</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數依序畫掉</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>步驟三：把</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:14.0pt;font-family:新細明體'>圈起來，把</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數依序畫掉</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>步驟四：重複步驟二，每次都圈出質數，然後畫掉質數的倍數，最後留下來的沒畫掉的數，就為</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1-100</span><span
+style='font-size:14.0pt;font-family:新細明體'>的質數。電腦也是以此種方式建立質數表，只不過電腦的運算速度快，可以找出更多、更大的質數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請寫出</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1-100</span><span
+style='font-size:14.0pt;font-family:新細明體'>的所有質數：</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=440
+ style='width:440.0pt;margin-left:.25pt;border-collapse:collapse'>
+ <tr style='height:27.0pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:double 2.25pt;border-left:
+  double 2.25pt;border-bottom:solid 1.0pt;border-right:solid 1.0pt;border-color:
+  windowtext;padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>1</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>2</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>3</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>4</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>5</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>6</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>7</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>8</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>9</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:double windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:27.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>10</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>11</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>12</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>13</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>14</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>15</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>16</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>17</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>18</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>19</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>20</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>21</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>22</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>23</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>24</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>25</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>26</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>27</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>28</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>29</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>30</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>31</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>32</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>33</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>34</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>35</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>36</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>37</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>38</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>39</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>40</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>41</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>42</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>43</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>44</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>45</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>46</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>47</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>48</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>49</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>50</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>51</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>52</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>53</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>54</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>55</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>56</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>57</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>58</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>59</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>60</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>61</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>62</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>63</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>64</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>65</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>66</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>67</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>68</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>69</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>70</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>71</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>72</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>73</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>74</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>75</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>76</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>77</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>78</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>79</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>80</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>81</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>82</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>83</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>84</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>85</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>86</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>87</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>88</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>89</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>90</span></p>
+  </td>
+ </tr>
+ <tr style='height:26.25pt'>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:double windowtext 2.25pt;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>91</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>92</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>93</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>94</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>95</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>96</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>97</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>98</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>99</span></p>
+  </td>
+  <td width=44 nowrap style='width:44.0pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 2.25pt;border-right:double windowtext 2.25pt;
+  padding:0cm 1.4pt 0cm 1.4pt;height:26.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:18.0pt;font-family:新細明體;color:black'>100</span></p>
+  </td>
+ </tr>
+</table>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:18.0pt;font-family:新細明體'>質因數分解</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在上面的單元，我們學到了質數，發現質數不能分解成其他數的乘積，只能分解為</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>和自己，只有</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>個因數。以這個觀點來看，世界上所有的整數除了</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>外，都可以分做質數與以質數用乘法組合出的數，也就是合數，這兩類數。因此質數有點像是建構整數世界的基本元素。如果我們可以把一個數分解，知道它是由那些質數組合而來的，我們就能夠寫出它們所以的因數，並且做後續的比較動作。我們現在就來試試看質因數分解法。</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>寫出</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>的質因數分解</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:14.0pt;font-family:
+新細明體'>我們知道</span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'> 6</span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>是質數，而</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>不是，我們可以進一步把</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>分解為</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'> 3</span><span
+style='font-size:14.0pt;font-family:新細明體'>，因此：</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'> 2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'> 3</span><span
+style='font-size:14.0pt;font-family:新細明體'>，使用次方的記號系統，我們可以記的更簡明</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 18</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span style='font-size:14.0pt;
+font-family:"MS Mincho"'> </span><span lang=EN-US style='vertical-align:sub'><img
+width=16 height=20 id="_x0000_i1032" src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image006.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=16 height=20 id="_x0000_i1033"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image007.png"></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:14.0pt;font-family:新細明體'>，我們可以看出</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>是由</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>個</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>和兩個</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>以乘法組合出來的數，這樣的組合方法也只有一種，沒有其他種了。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:14.0pt;font-family:
+新細明體'>上面的思考過程，可以以下面的圖示法來表示：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>18</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:18.0pt'><span
+style='position:absolute;z-index:251652588;margin-left:49px;margin-top:0px;
+width:42px;height:27px'><img width=42 height=27 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image008.png"
+align=left></span><span style='position:absolute;z-index:251652588;margin-left:
+34px;margin-top:73px;width:120px;height:41px'><img width=120 height=41
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image009.png"
+align=left alt="Text Box: 2    ×    3"></span><span style='position:absolute;
+z-index:251652588;margin-left:15px;margin-top:0px;width:39px;height:27px'><img
+width=39 height=27 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image010.png"
+align=left></span><span style='position:absolute;z-index:251652588;margin-left:
+1px;margin-top:16px;width:119px;height:41px'><img width=119 height=41
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image011.png"
+align=left alt="Text Box: 3    ×    6"></span><span style='position:absolute;
+z-index:251652588;margin-left:60px;margin-top:52px;width:39px;height:28px'><img
+width=39 height=28 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image012.png"
+align=left></span><span style='position:absolute;z-index:251652588;margin-left:
+94px;margin-top:52px;width:42px;height:28px'><img width=42 height=28
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image013.png"
+align=left></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 
+</span><span style='font-size:14.0pt;font-family:新細明體'>所以</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'> 2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'> 3</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span style='font-size:14.0pt;
+font-family:"MS Mincho"'> </span><span lang=EN-US style='vertical-align:sub'><img
+width=16 height=20 id="_x0000_i1034" src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image014.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=16 height=20 id="_x0000_i1035"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image015.png"></span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>練</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>練習：請模仿例題</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>，寫出下列各數的質因數分解：</span></p>
+
+<p class=a style='margin-left:57.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>a.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>24            
+b. 30          c. 36</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以看著質因數分解的式子，寫出數的所有因數，這個方法比我們之前用列舉法來得有效率，而且有意義。如</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 18</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×</span><span style='font-size:14.0pt;
+font-family:"MS Mincho"'> </span><span lang=EN-US style='vertical-align:sub'><img
+width=16 height=20 id="_x0000_i1036" src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image016.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=19 height=20 id="_x0000_i1027"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image017.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這個式子告訴我們，</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:14.0pt;font-family:新細明體'>是由</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1 </span><span
+style='font-size:14.0pt;font-family:新細明體'>個</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>和</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>個</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>組成的。如果我們不選</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>也不選</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>，就得到</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>，選一個的方法有兩種：選</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>或是選【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>  <span style='color:white'>3</span>  
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】，選兩個的方法有</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>種：選一個</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>與一個</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>，得到【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'> 3</span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'>6</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】，或是</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>個都選</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>，得到</span><span style='font-size:
+14.0pt;font-family:"MS Mincho"'> </span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span style='font-size:14.0pt;font-family:"MS Mincho"'>
+</span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體;color:white'>3</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho";color:white'> </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>×</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'> 3</span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>＝</span><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體;color:white'>9 </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>或<span lang=EN-US> 3^2= 9</span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>個數都選，則可以得到【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>   <span style='color:white'>2</span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體;color:white'> </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>×</span><span
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'> <span lang=EN-US>3</span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體;color:white'> </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>×</span><span
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'> <span lang=EN-US>3</span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體;color:white'> </span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho";color:white'>=</span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體;color:white'> </span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho";color:white'>18 </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>或</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'> 2 </span><span
+style='font-size:14.0pt;font-family:新細明體;color:white'>×</span><span
+style='font-size:14.0pt;font-family:"MS Mincho";color:white'> <span lang=EN-US>3^2
+= 18</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>練習：請看著上面練習做出來的</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:14.0pt;font-family:新細明體'>個數的質因數分解，寫出這</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>個數所有的質因數，並且只需要以質因數分解來表示，不需要計算出來。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>以短除法做質因數分解</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上面講的拆解方式，還可以使用另一種形式，叫做短除法。短除法的好處是在大數字時，可以以比較有系統的方式，將數拆解成質因數乘積。我們之前教的因倍數判別法，在做短除法時就十分有幫助了。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>例題：質因數分解</span><span
+lang=EN-US style='font-size:14.0pt'> 2772</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>你認為</span><span
+lang=EN-US style='font-size:14.0pt'>2772</span><span style='font-size:14.0pt;
+font-family:新細明體'>有那些質因數？【<input type = 'text'></span><span style='font-size:14.0pt'> <span
+lang=EN-US style='color:white'>2, 3, 7, 11</span><span lang=EN-US>  </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>很明顯有</span><span
+lang=EN-US style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;
+font-family:新細明體'>，所以就從</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>開始，以</span><span lang=EN-US
+style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;font-family:
+新細明體'>除</span><span lang=EN-US style='font-size:14.0pt'>2772</span><span
+style='font-size:14.0pt;font-family:新細明體'>，把商數寫在</span><span lang=EN-US
+style='font-size:14.0pt'>2772</span><span style='font-size:14.0pt;font-family:
+新細明體'>的下面，再以</span><span lang=EN-US style='font-size:14.0pt'>2 </span><span
+style='font-size:14.0pt;font-family:新細明體'>除之前得到的商</span><span lang=EN-US
+style='font-size:14.0pt'>1386</span><span style='font-size:14.0pt;font-family:
+新細明體'>，等於</span><span lang=EN-US style='font-size:14.0pt'>693</span><span
+style='font-size:14.0pt;font-family:新細明體'>，再將</span><span lang=EN-US
+style='font-size:14.0pt'>693</span><span style='font-size:14.0pt;font-family:
+新細明體'>寫在</span><span lang=EN-US style='font-size:14.0pt'>1386</span><span
+style='font-size:14.0pt;font-family:新細明體'>寫…一路除下去，直到最後得到無法分解的質數。</span></p>
+
+<p class=MsoNormal><span style='position:relative;z-index:251653632'><span
+style='position:absolute;left:-8px;top:-296px;width:85px;height:164px'><span
+style='position:absolute;z-index:251653632;margin-left:29px;margin-top:128px;
+width:56px;height:5px'><img width=56 height=5 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image018.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:38px;margin-top:133px;
+width:36px;height:31px'><img width=36 height=31 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image019.png"
+alt="Text Box: 11"></span><span style='position:absolute;z-index:251653632;
+margin-left:29px;margin-top:104px;width:5px;height:29px'><img width=5
+height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image020.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:29px;margin-top:101px;
+width:55px;height:5px'><img width=55 height=5 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image021.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:26px;margin-top:77px;
+width:56px;height:5px'><img width=56 height=5 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image022.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:24px;margin-top:27px;
+width:5px;height:29px'><img width=5 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image023.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:26px;margin-top:27px;
+width:56px;height:5px'><img width=56 height=5 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image024.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:1px;margin-top:4px;
+width:24px;height:29px'><img width=24 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image025.png"
+alt="Text Box: 2"></span><span style='position:absolute;z-index:251653632;
+margin-left:26px;margin-top:30px;width:49px;height:25px'><img width=49
+height=25 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image026.png"
+alt="Text Box: 1386&#13;&#13;"></span><span style='position:absolute;
+z-index:251653632;margin-left:7px;margin-top:31px;width:24px;height:29px'><img
+width=24 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image027.png"
+alt="Text Box: 2"></span><span style='position:absolute;z-index:251653632;
+margin-left:31px;margin-top:53px;width:48px;height:36px'><img width=48
+height=36 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image028.png"
+alt="Text Box: 693"></span><span style='position:absolute;z-index:251653632;
+margin-left:31px;margin-top:79px;width:48px;height:32px'><img width=48
+height=32 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image029.png"
+alt="Text Box: 231"></span><span style='position:absolute;z-index:251653632;
+margin-left:28px;margin-top:1px;width:47px;height:30px'><img width=47
+height=30 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image030.png"
+alt="Text Box: 2772"></span><span style='position:absolute;z-index:251653632;
+margin-left:8px;margin-top:103px;width:32px;height:33px'><img width=32
+height=33 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image031.png"
+alt="Text Box: 7"></span><span style='position:absolute;z-index:251653632;
+margin-left:8px;margin-top:52px;width:25px;height:29px'><img width=25
+height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image032.png"
+alt="Text Box: 3"></span><span style='position:absolute;z-index:251653632;
+margin-left:9px;margin-top:79px;width:25px;height:28px'><img width=25
+height=28 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image033.png"
+alt="Text Box: 3"></span><span style='position:absolute;z-index:251653632;
+margin-left:26px;margin-top:3px;width:5px;height:29px'><img width=5 height=29
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image034.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:24px;margin-top:51px;
+width:55px;height:5px'><img width=55 height=5 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image035.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:26px;margin-top:53px;
+width:5px;height:29px'><img width=5 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image036.png"></span><span
+style='position:absolute;z-index:251653632;margin-left:40px;margin-top:105px;
+width:33px;height:31px'><img width=33 height=31 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image037.png"
+alt="Text Box: 77"></span><span style='position:absolute;z-index:251653632;
+margin-left:29px;margin-top:77px;width:5px;height:29px'><img width=5 height=29
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image038.png"></span></span></span><span
+lang=EN-US style='font-size:14.0pt;background:yellow'>   </span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>                 </span><span
+style='font-size:14.0pt;font-family:新細明體'>因此</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2772</span><span
+style='font-size:14.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='vertical-align:sub'><img width=16 height=20 id="_x0000_i1037"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image039.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=16 height=20 id="_x0000_i1028"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image040.png"></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> </span><span
+lang=EN-US style='vertical-align:sub'><img width=32 height=20 id="_x0000_i1038"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image041.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=32 height=20 id="_x0000_i1029"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image042.png"></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> </span><span
+lang=EN-US style='vertical-align:sub'><img width=15 height=20 id="_x0000_i1039"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image043.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=15 height=20 id="_x0000_i1030"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image044.png"></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>7 </span><span
+lang=EN-US style='vertical-align:sub'><img width=12 height=20 id="_x0000_i1040"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image045.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=12 height=20 id="_x0000_i1031"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image046.png"></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 11</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>由於符號有點像除法的直式符號倒過來，又以比較小的除一路除下來，因此就稱這樣的方法為短除法。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>  
+</span><span style='font-size:14.0pt;font-family:新細明體'>請模仿上面的方法，以質因數分解式（不用乘開），寫出</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>2772</span><span
+style='font-size:14.0pt;font-family:新細明體'>的所有因數。</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:22.75pt'><b><span
+style='font-size:14.0pt;font-family:新細明體'>練習：</span></b></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:21.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>一、以短除法求出以下各數的質因數分解式：</span></p>
+
+<p class=a style='margin-left:57.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>1.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 1001</span></p>
+
+<p class=a style='margin-left:57.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>2.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 2800</span></p>
+
+<p class=a style='margin-left:57.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>3.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 5733</span></p>
+
+<p class=a style='margin-left:57.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 10000</span></p>
+
+<p class=a style='margin-left:57.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>5.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'> 
+4257</span></p>
+
+<p class=MsoNormal style='margin-left:39.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:39.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>二、你能不能從質因數分解的式子中，找出所有</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>4257</span><span
+style='font-size:14.0pt;font-family:新細明體'>的兩位數因數？並且能不能找出計算</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>4257</span><span
+style='font-size:14.0pt;font-family:新細明體'>因數數目的方法？</span></p>
+
+<p class=MsoNormal style='margin-left:39.0pt'><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:39.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>三、有一個計算機魔術：請先打一個</span><span lang=EN-US style='font-size:
+14.0pt;font-family:"MS Mincho"'>3</span><span style='font-size:14.0pt;
+font-family:新細明體'>位數（如</span><span lang=EN-US style='font-size:14.0pt;
+font-family:"MS Mincho"'>154</span><span style='font-size:14.0pt;font-family:
+新細明體'>），再重複打這三個數字（變成</span><span lang=EN-US style='font-size:14.0pt;font-family:
+"MS Mincho"'>154154</span><span style='font-size:14.0pt;font-family:新細明體'>），然後按「÷」</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>，「÷」</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>11</span><span
+style='font-size:14.0pt;font-family:新細明體'>，「÷」</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>13</span><span
+style='font-size:14.0pt;font-family:新細明體'>，結果又會變成</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"MS Mincho"'>154</span><span
+style='font-size:14.0pt;font-family:新細明體'>。請解釋原因（提示：請看第一大題中，</span><span
+lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>1001</span><span
+style='font-size:14.0pt;font-family:新細明體'>的質因數分解式）</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:新細明體'>以質因數分解法求出二數的公因數與最大公因數</span></b></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;font-family:新細明體'>我們求兩數的公因數，除了用列表的方式，還可以從質因數分解的結果，來做比較。因為我們可以從質因數分解式中，把一個數的所有因數寫出來。比較這些因數的式子，我們就能夠找出公因數與最大公因數。</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>1.<span style='font:7.0pt "Times New Roman"'>
+</span></span><span style='font-size:16.0pt;font-family:新細明體'>求出</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+style='font-size:16.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>的最大公因數</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>請寫出</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+style='font-size:16.0pt;font-family:新細明體'>的質因數分解式：</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+style='font-size:16.0pt;font-family:新細明體'>＝</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>請寫出</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>的質因數分解式：</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>＝</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>請以質因數分解的方式，把</span><span lang=EN-US style='font-size:16.0pt;font-family:
+"MS Mincho"'>12</span><span style='font-size:16.0pt;font-family:新細明體'>的所有因數寫出：</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>沒有</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:16.0pt;font-family:新細明體'>沒有</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:16.0pt;font-family:新細明體'>：</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>1</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>由</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:16.0pt;font-family:新細明體'>個質因數組成：</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:16.0pt;font-family:新細明體'>、【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'>  3   </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>由兩個質因數組成：</span><span lang=EN-US style='vertical-align:sub'><img
+width=19 height=38 id="_x0000_i1041" src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image047.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=19 height=38 id="_x0000_i1025"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image048.png"></span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:16.0pt;font-family:新細明體'>、【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>   <span style='color:white'>2</span></span><span
+style='font-size:16.0pt;font-family:新細明體;color:white'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'>3</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>    </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>由</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:16.0pt;font-family:新細明體'>個質因數組成：</span><span style='font-size:
+16.0pt;font-family:"MS Mincho"'> </span><span lang=EN-US style='vertical-align:
+sub'><img width=19 height=38 id="_x0000_i1042" src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image049.png"></span><span
+lang=EN-US style='vertical-align:sub'><img width=19 height=38 id="_x0000_i1026"
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image050.png"></span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:16.0pt;font-family:新細明體'>×【<input type = 'text'></span><span style='font-size:16.0pt;
+font-family:"MS Mincho"'>  <span lang=EN-US style='color:white'>3</span><span
+lang=EN-US>  </span></span><span style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>請仿照上面，寫出</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>的因數</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>沒有</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2</span><span
+style='font-size:16.0pt;font-family:新細明體'>、沒有</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>3 </span><span
+style='font-size:16.0pt;font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>   <span style='color:white'>1</span>  
+</span><span style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>由</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>1</span><span
+style='font-size:16.0pt;font-family:新細明體'>個質因數組成：【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>  <span style='color:white'>2 </span>  </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>  <span style='color:white'>3</span>  
+</span><span style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>由兩個質因數組成：【<input type = 'text'></span><span lang=EN-US style='font-size:16.0pt;font-family:
+"MS Mincho"'>  <span style='color:white'>2</span></span><span style='font-size:
+16.0pt;font-family:新細明體;color:white'>×</span><span lang=EN-US style='font-size:
+16.0pt;font-family:"MS Mincho";color:white'>3</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>   </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>   <span style='color:white'>3</span>  
+</span><span style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>-</span><span style='font-size:16.0pt;font-family:
+新細明體'>由</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:16.0pt;font-family:新細明體'>個質因數組成：【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>   </span><span lang=EN-US
+style='font-size:16.0pt;font-family:新細明體;color:white'>2 </span><span
+style='font-size:16.0pt;font-family:新細明體;color:white'>×</span><span
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'> <span lang=EN-US>3^2</span></span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>   </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>比較上面的結果，我們發現</span><span lang=EN-US style='font-size:16.0pt;font-family:
+"MS Mincho"'>12</span><span style='font-size:16.0pt;font-family:新細明體'>與</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>的公因數共有</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>1 </span><span
+style='font-size:16.0pt;font-family:新細明體'>、【<input type = 'text'></span><span style='font-size:16.0pt;
+font-family:"MS Mincho"'> </span><span lang=EN-US style='font-size:16.0pt;
+font-family:新細明體;color:white'>2</span><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>  </span><span style='font-size:16.0pt;font-family:
+新細明體'></input>】、【<input type = 'text'></span><span style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+lang=EN-US style='font-size:16.0pt;font-family:新細明體;color:white'>3</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>  </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】與</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 3 </span><span
+style='font-size:16.0pt;font-family:新細明體'>這四個公因數，其中最大的公因數與</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 3</span><span
+style='font-size:16.0pt;font-family:新細明體'>，而其他的因數皆為</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 3</span><span
+style='font-size:16.0pt;font-family:新細明體'>的因數。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='position:relative;
+z-index:251656704'><span style='left:0px;position:absolute;left:108px;
+top:-161px;width:21px;height:89px'><img width=21 height=89
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image051.png"></span></span><span
+style='position:relative;z-index:251655680'><span style='left:0px;position:
+absolute;left:43px;top:-161px;width:18px;height:89px'><img width=18 height=89
+src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image052.png"></span></span><span
+style='font-size:16.0pt;font-family:新細明體'>如果我們把</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+style='font-size:16.0pt;font-family:新細明體'>和</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>兩個數的質因數分解式並列，我們會發現：</span><span
+style='font-size:16.0pt;font-family:"MS Mincho"'> </span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>12</span><span style='font-size:16.0pt;font-family:
+新細明體'>＝</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2
+</span><span style='font-size:16.0pt;font-family:新細明體'>×</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'> 2 </span><span
+style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 3</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>18</span><span style='font-size:16.0pt;font-family:
+新細明體'>＝</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2
+</span><span style='font-size:16.0pt;font-family:新細明體'>×</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'> 3 </span><span
+style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 3</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>圈起來的部份為</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+style='font-size:16.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>13</span><span
+style='font-size:16.0pt;font-family:新細明體'>共有的因數，共有的最大乘積，就為兩者的最大公因數。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>例二</span><span style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:16.0pt;font-family:新細明體'>以質因數分解法，求出</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>84</span><span
+style='font-size:16.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>112</span><span
+style='font-size:16.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>98</span><span
+style='font-size:16.0pt;font-family:新細明體'>的最小公倍數</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>一</span><span style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:16.0pt;font-family:新細明體'>先寫出</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>84</span><span
+style='font-size:16.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>112</span><span
+style='font-size:16.0pt;font-family:新細明體'>的質因數分解</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>84 </span><span style='font-size:16.0pt;font-family:
+新細明體'>＝</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>
+</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>112</span><span style='font-size:16.0pt;font-family:
+新細明體'>＝</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>98</span><span style='font-size:16.0pt;font-family:
+新細明體'>＝</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>圈出三者共有的最大部份</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>因此三數的最大公因數為【<input type = 'text'></span><span lang=EN-US style='font-size:16.0pt;font-family:
+"MS Mincho"'>  <span style='color:white'>2 </span></span><span
+style='font-size:16.0pt;font-family:新細明體;color:white'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'> 7 </span><span
+style='font-size:16.0pt;font-family:新細明體;color:white'>或</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'> 14</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>  </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=a style='margin-left:18.0pt'><b><span style='font-size:16.0pt;
+font-family:新細明體'>另一種形式記錄：短除法</span></b></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>我們可以合併兩個數或是兩個以上的數的質因數分解式，以短除法的方式，來求得最大公因數。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>例三</span><span style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:16.0pt;font-family:新細明體'>以短除法求</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+style='font-size:16.0pt;font-family:新細明體'>與</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+style='font-size:16.0pt;font-family:新細明體'>的最大公因數</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:18.0pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  </td>
+  <td width=128 colspan=2 valign=top style='width:127.55pt;border:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='font-size:16.0pt;font-family:
+  新細明體'>短除法算式</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='font-size:16.0pt;font-family:
+  新細明體'>解說</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>2</span></p>
+  </td>
+  <td width=57 valign=top style='width:2.0cm;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>12</span></p>
+  </td>
+  <td width=71 valign=top style='width:70.85pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>18</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='position:relative;z-index:
+  251648512'><span style='position:absolute;left:-38px;top:-10px;width:22px;
+  height:29px'><img width=22 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image053.png"></span></span><span
+  style='position:relative;z-index:251649536'><span style='position:absolute;
+  left:58px;top:-10px;width:22px;height:29px'><img width=22 height=29
+  src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image054.png"></span></span><span
+  lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+  style='font-size:16.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>2 </span><span
+  style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'> 6</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>18</span><span
+  style='font-size:16.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'> 2 </span><span
+  style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'> 9</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>3</span></p>
+  </td>
+  <td width=57 valign=top style='width:2.0cm;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>6</span></p>
+  </td>
+  <td width=71 valign=top style='width:70.85pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>9</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='position:relative;z-index:
+  251658752'><span style='position:absolute;left:44px;top:-22px;width:22px;
+  height:29px'><img width=22 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image055.png"></span></span><span
+  style='position:relative;z-index:251650560'><span style='position:absolute;
+  left:-38px;top:-22px;width:22px;height:29px'><img width=22 height=29
+  src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image056.png"></span></span><span
+  lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>6</span><span
+  style='font-size:16.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'> 3 </span><span
+  style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'> 2</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>9</span><span
+  style='font-size:16.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>3 </span><span
+  style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'> 3</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  </td>
+  <td width=57 valign=top style='width:2.0cm;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>2</span></p>
+  </td>
+  <td width=71 valign=top style='width:70.85pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>3</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='font-size:16.0pt;font-family:
+  新細明體'>最後的</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2</span><span
+  style='font-size:16.0pt;font-family:新細明體'>與</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>3</span><span
+  style='font-size:16.0pt;font-family:新細明體'>找不到</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>1</span><span
+  style='font-size:16.0pt;font-family:新細明體'>以外的公因數</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'> </span><span style='font-size:16.0pt;font-family:
+新細明體'>所以最大公因數即為右邊找出來共同因數</span><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>2</span><span style='font-size:16.0pt;font-family:
+新細明體'>與</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>3</span><span
+style='font-size:16.0pt;font-family:新細明體'>的乘積：</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>2 </span><span
+style='font-size:16.0pt;font-family:新細明體'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 3</span><span
+style='font-size:16.0pt;font-family:新細明體'>＝</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'> 6</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>例二</span><span style='font-size:16.0pt;font-family:"MS Mincho"'> </span><span
+style='font-size:16.0pt;font-family:新細明體'>求</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>84</span><span
+style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>112</span><span
+style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>98</span><span
+style='font-size:16.0pt;font-family:新細明體'>的最大公因數</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:18.0pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  </td>
+  <td width=128 colspan=3 valign=top style='width:127.55pt;border:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='font-size:16.0pt;font-family:
+  新細明體'>短除法算式</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='position:relative;z-index:
+  251659776'><span style='position:absolute;left:109px;top:-54px;width:22px;
+  height:29px'><img width=22 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image057.png"></span></span><span
+  style='position:relative;z-index:251654656'><span style='position:absolute;
+  left:35px;top:-54px;width:22px;height:29px'><img width=22 height=29
+  src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image058.png"></span></span><span
+  style='position:relative;z-index:251651584'><span style='position:absolute;
+  left:-47px;top:-54px;width:22px;height:29px'><img width=22 height=29
+  src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image059.png"></span></span><span
+  style='font-size:16.0pt;font-family:新細明體'>解說</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>2</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.5pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>84</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.55pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>112</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.5pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>98</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='position:relative;z-index:
+  251660800'><span style='position:absolute;left:-43px;top:-65px;width:22px;
+  height:29px'><img width=22 height=29 src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image060.png"></span></span><span
+  style='position:relative;z-index:251661824'><span style='position:absolute;
+  left:91px;top:-68px;width:22px;height:29px'><img width=22 height=29
+  src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image061.png"></span></span><span
+  style='position:relative;z-index:251657728'><span style='position:absolute;
+  left:26px;top:-68px;width:22px;height:29px'><img width=22 height=29
+  src="%E5%9B%A0%E6%95%B8%E8%88%87%E5%80%8D%E6%95%B8_files/image062.png"></span></span><span
+  lang=EN-US style='font-family:"MS Mincho"'>84</span><span style='font-family:
+  新細明體'>＝</span><span lang=EN-US style='font-family:"MS Mincho"'>2 </span><span
+  style='font-family:新細明體'>×</span><span lang=EN-US style='font-family:"MS Mincho"'>
+  42</span><span style='font-family:新細明體'>，</span><span lang=EN-US
+  style='font-family:"MS Mincho"'>112</span><span style='font-family:新細明體'>＝</span><span
+  lang=EN-US style='font-family:"MS Mincho"'> 2 </span><span style='font-family:
+  新細明體'>×</span><span lang=EN-US style='font-family:"MS Mincho"'> 56</span><span
+  style='font-family:新細明體'>，</span><span lang=EN-US style='font-family:"MS Mincho"'>98</span><span
+  style='font-family:新細明體'>＝</span><span lang=EN-US style='font-family:"MS Mincho"'>2</span><span
+  style='font-family:新細明體'>×</span><span lang=EN-US style='font-family:"MS Mincho"'>49</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>7</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.5pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>42</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.55pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>56</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>49</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-family:"MS Mincho"'>42</span><span
+  style='font-family:新細明體'>＝</span><span lang=EN-US style='font-family:"MS Mincho"'>
+  7 </span><span style='font-family:新細明體'>×</span><span lang=EN-US
+  style='font-family:"MS Mincho"'> 6</span><span style='font-family:新細明體'>，</span><span
+  lang=EN-US style='font-family:"MS Mincho"'>56</span><span style='font-family:
+  新細明體'>＝</span><span lang=EN-US style='font-family:"MS Mincho"'>7 </span><span
+  style='font-family:新細明體'>×</span><span lang=EN-US style='font-family:"MS Mincho"'>
+  8</span><span style='font-family:新細明體'>，</span><span lang=EN-US
+  style='font-family:"MS Mincho"'>49</span><span style='font-family:新細明體'>＝</span><span
+  lang=EN-US style='font-family:"MS Mincho"'>7</span><span style='font-family:
+  新細明體'>×</span><span lang=EN-US style='font-family:"MS Mincho"'>7</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=30 valign=top style='width:29.95pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.5pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>6</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.55pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>8</span></p>
+  </td>
+  <td width=43 valign=top style='width:42.5pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>7</span></p>
+  </td>
+  <td width=251 valign=top style='width:250.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span style='font-size:16.0pt;font-family:
+  新細明體'>最後的</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>6</span><span
+  style='font-size:16.0pt;font-family:新細明體'>、</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>8</span><span
+  style='font-size:16.0pt;font-family:新細明體'>、</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>7</span><span
+  style='font-size:16.0pt;font-family:新細明體'>找不到</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>1</span><span
+  style='font-size:16.0pt;font-family:新細明體'>以外的公因數</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a style='margin-left:18.0pt'><span style='font-size:16.0pt;font-family:
+新細明體'>所以</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>84</span><span
+style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>112</span><span
+style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>98</span><span
+style='font-size:16.0pt;font-family:新細明體'>的最大公因數為【<input type = 'text'></span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>  <span style='color:white'>2 </span></span><span
+style='font-size:16.0pt;font-family:新細明體;color:white'>×</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'> 7 </span><span
+style='font-size:16.0pt;font-family:新細明體;color:white'>或</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho";color:white'> 14</span><span
+lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>     </span><span
+style='font-size:16.0pt;font-family:新細明體'></input>】</span></p>
+
+<b><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:16.0pt;font-family:
+"MS Mincho"'>&nbsp;</span></b></p>
+
+<p class=a style='margin-left:18.0pt'><b><span style='font-size:16.0pt;
+font-family:新細明體'>練習</span></b></p>
+
+<p class=a style='margin-left:18.0pt'><b><span style='font-size:16.0pt;
+font-family:新細明體'>一、求出下列各組數的最大公因數，我們通常用小括號（</span></b><b><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>    </span></b><b><span
+style='font-size:16.0pt;font-family:新細明體'>）來代表最大公因數</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:36.0pt;border-collapse:collapse'>
+ <tr>
+  <td width=196 valign=top style='width:196.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>1. </span><span style='font-size:16.0pt;font-family:
+  新細明體'>（</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>144</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>256</span><span
+  style='font-size:16.0pt;font-family:新細明體'>）＝</span></p>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  <p class=a style='margin-left:0cm'><span lang=EN-US style='font-size:16.0pt;
+  font-family:"MS Mincho"'>&nbsp;</span></p>
+  </td>
+  <td width=194 valign=top style='width:193.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>2.</span><span
+  style='font-size:16.0pt;font-family:新細明體'>（</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>198, 231, 264</span><span
+  style='font-size:16.0pt;font-family:新細明體'>）＝</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=196 valign=top style='width:196.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>3.</span><span
+  style='font-size:16.0pt;font-family:新細明體'>（</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>7</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>12</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>39</span><span
+  style='font-size:16.0pt;font-family:新細明體'>）＝</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+  </td>
+  <td width=194 valign=top style='width:193.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>4.
+  </span><span style='font-size:16.0pt;font-family:新細明體'>（</span><span
+  lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>65</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>143</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>117</span><span
+  style='font-size:16.0pt;font-family:新細明體'>）＝</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=196 valign=top style='width:196.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>5.</span><span
+  style='font-size:16.0pt;font-family:新細明體'>（</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>294</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>420</span><span
+  style='font-size:16.0pt;font-family:新細明體'>）＝</span></p>
+  </td>
+  <td width=194 valign=top style='width:193.9pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>6.
+  </span><span style='font-size:16.0pt;font-family:新細明體'>（</span><span
+  lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>45</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>135</span><span
+  style='font-size:16.0pt;font-family:新細明體'>，</span><span lang=EN-US
+  style='font-size:16.0pt;font-family:"MS Mincho"'>360</span><span
+  style='font-size:16.0pt;font-family:新細明體'>）</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span style='font-size:16.0pt;
+font-family:新細明體'>二、阿花有一張長方形的紙，長</span><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>180</span><span style='font-size:16.0pt;font-family:
+新細明體'>公分，寬</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>105</span><span
+style='font-size:16.0pt;font-family:新細明體'>公分，想要剪出正方形的紙，又不想浪費紙，請問他可以剪出的正方形，邊長為幾公分？</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span style='font-size:16.0pt;
+font-family:新細明體'>三、有一塊長方形的木頭，長</span><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>308</span><span style='font-size:16.0pt;font-family:
+新細明體'>公分、寬</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>196</span><span
+style='font-size:16.0pt;font-family:新細明體'>公分、高</span><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>252</span><span
+style='font-size:16.0pt;font-family:新細明體'>公分，小傑想要鋸出一塊塊正方形的積木，不想浪費材料，請問他最大可以鋸出邊長為多少公分的積木？共可以鋸出幾塊？</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span style='font-size:16.0pt;
+font-family:新細明體'>如果他的積木的邊長，要介於</span><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>10-20</span><span style='font-size:16.0pt;font-family:
+新細明體'>公分之間，不想浪費材料，請問他可以鋸出幾公分的積木？</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span style='font-size:16.0pt;
+font-family:新細明體'>四、阿寶有一塊長方形的地，長</span><span lang=EN-US style='font-size:16.0pt;
+font-family:"MS Mincho"'>60</span><span style='font-size:16.0pt;font-family:
+新細明體'>公尺，寬</span><span lang=EN-US style='font-size:16.0pt;font-family:"MS Mincho"'>72</span><span
+style='font-size:16.0pt;font-family:新細明體'>公尺，他想要在週圍種樹，四個頂點都要種，每棵樹之間的距離相等，請問如果兩棵樹間的間距要最大的話，他必須每隔多少公尺種一棵？這樣種需要幾棵樹？</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
+
+</div>
+<button class = "ui big purple button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big teal button" onclick = "location = '分數.htm'">分數</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>
