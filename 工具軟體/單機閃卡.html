@@ -26,36 +26,38 @@
 		font-size: 4rem; margin-left:20px; color:blue;
 	}
 	.tool {
-		display: block; width: 150px;
+		display: block;
+		min-width: 150px;
+		min-height: 100px;
 		border-top: 3px black ridge;
 		border-radius: 15px;
 	}
-	.zero {
+	.tool.zero {
 		position: fixed;
 		bottom: 10px;
 		left: 5%;
 	}
-	.one {
+	.tool.one {
 		position: fixed;
 		bottom: 10px;
 		left: 20%;
 	}
-	.two {
+	.tool.two {
 		position: fixed;
 		bottom: 10px;
 		left: 35%;
 	}
-	.three {
+	.tool.three {
 		position: fixed;
 		bottom: 10px;
 		left: 50%;
 	}
-	.four {
+	.tool.four {
 		position: fixed;
 		bottom: 10px;
 		left: 65%;
 	}
-	.five {
+	.tool.five {
 		position: fixed;
 		bottom: 10px;
 		left: 80%;
@@ -837,9 +839,9 @@
 </div>
 <br />
 
-<div class = "mobileOut" style="position: fixed; bottom: 40px; right:40px">
-<button class="ui teal mini button" onclick="swi(this)">Z</button>
-<button class="ui teal mini button" onclick="swi(this)">Z/7Z</button>
+<div class = "mobileOut" style="position: fixed; bottom: 150px; right:40px;">
+<button class="ui teal mini button" onclick="swi(this)">Z</button><br/>
+<button class="ui teal mini button" onclick="swi(this)">Z/7Z</button><br/>
 <button class="ui teal mini button" onclick="swi(this)">Z/12Z</button>
 </div>
 
