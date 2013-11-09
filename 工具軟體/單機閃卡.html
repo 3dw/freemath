@@ -3,38 +3,113 @@
 <head>
 <meta charset="utf-8">
 <title>閃卡</title>
-<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+
 
 <!--Author: Bestian Tang-->
 <!--Version: 1.0-->
 <!-- Release to Freemath, 自學數學團-->
 <!-- Right: CC0, Public Domain-->
 
-<!--Last work: draggable(連網時有此功能) $ -->
-<!--Todo next: 錢參照的div在safari看起來不對，試著改為ex, em而非px的定義 -->
+
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+
+
+
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+
+
 <style>
+	.bigans {
+		font-size: 4rem; margin-left:20px; color:blue;
+	}
+	.tool {
+		display: block; width: 150px;
+		border-top: 3px black ridge;
+		border-radius: 15px;
+	}
+	.zero {
+		position: fixed;
+		bottom: 10px;
+		left: 5%;
+	}
+	.one {
+		position: fixed;
+		bottom: 10px;
+		left: 20%;
+	}
+	.two {
+		position: fixed;
+		bottom: 10px;
+		left: 35%;
+	}
+	.three {
+		position: fixed;
+		bottom: 10px;
+		left: 50%;
+	}
+	.four {
+		position: fixed;
+		bottom: 10px;
+		left: 65%;
+	}
+	.five {
+		position: fixed;
+		bottom: 10px;
+		left: 80%;
+	}
+
+	div.piece {
+		position: fixed;
+		bottom: 10px;
+		font-size: 4rem;
+	}
+
 	div.circle {
-	border: 3px solid #803100;
-	background: brown; color: black;
-	border-radius: 50%;
-	float: left;
-	text-align: center;
-	line-height: 70px;
-	width: 70px; height: 70px;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+		border: 3px solid #803100;
+		background: brown; color: black;
+		border-radius: 50%;
+		float: left;
+		margin-left: 5px;
+		text-align: center;
+		line-height: 70px;
+		width: 70px; height: 70px;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
+	div.circle.five {
+		border: 3px solid gray; background:silver; width:75px;height:75px;line-height:75px;
+	}
+	div.circle.ten {
+		border: 3px solid gray;background:silver; width:80px;height:80px;line-height:80px;
+	}
+	div.circle.fifty {
+		background:gold;width:85px;height:85px;line-height:85px;
+	}
+	div.circle.dot {
+		border: none;
+		margin-left: 30px;
+	}
+
 	div.rect {
-	border: 3px solid #AA0000;
-	background: #FF9999; color: black;
-	border-radius: 0%;
-	float: left;
-	text-align: center;
-	line-height: 70px;
-	width: 130px; height: 70px;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+		border: 3px solid #AA0000;
+		background: #FF9999; color: black;
+		border-radius: 0%;
+		float: left;
+		text-align: center;
+		line-height: 70px;
+		width: 130px; height: 70px;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
+
+	div.rect.fiveHundred {
+		background:#FF91FE;width:130px;height:70px;line-height:70px	
+	}
+
+
 	div.roman {
 		float: left;
 	}
@@ -53,19 +128,16 @@
 </style>
 
 
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-
 </head>
 
-
-<script src="../javascripts/jquery-1.10.2.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 <script type="text/javascript"> 
 
 //    $.getJSON("https://www.moedict.tw/a/%E8%80%81%E4%BA%BA.json", function(x){
 //        alert(x.translation.English[0]);
 //    });
+
+
 
 	var now = new Date(); var qa; var maybeX; var dotColor;
 	var ring = Infinity;
@@ -75,6 +147,68 @@
 	var win = 0; var start = 0;
 	var objNow; var bottonFunNow; var n1Now = 0; var n2Now = 0;
 	var rep = "6"; var mode = "閃卡模式";
+
+
+
+
+	Toolkit = Backbone.Model.extend({
+		defaults: {
+				rep: 6,
+	        },
+	    makeTools: function() {
+	    	$("body").append("<div class = 'tool zero'></div>"
+							+"<div class = 'tool one'></div>"
+							+"<div class = 'tool two'></div>"
+							+"<div class = 'tool three'></div>"
+							+"<div class = 'tool four'></div>"
+							+"<div class = 'tool five'></div>");
+	    },
+		initialize: function(model) {
+
+			this.on("change:rep", function(model){
+
+				$(".piece, tool").remove();
+				model.makeTools();
+
+				switch (model.get('rep')) {
+
+					case '$':
+
+						for (var i = 0; i < 20; i++) {
+							$(".tool.zero").append("<div class='rect fiveHundred piece'>500</div>");
+							$(".tool.one").append("<div class='rect piece'>100</div>");
+							$(".tool.two").append("<div class='circle fifty piece'>50</div>");
+							$(".tool.three").append("<div class='circle ten piece'>10</div>");
+							$(".tool.four").append("<div class='circle five piece'>5</div>");
+							$(".tool.five").append("<div class='circle piece'>1</div>");
+						}
+
+						break;
+
+					case '.':
+						var dotColor =["darkgreen","goldenrod","brown","purple","darkred","darkblue"];
+
+						for (var i = 0; i < 20; i++) {
+							$(".tool.zero").append("<div class='circle dot piece' style = 'background:"+dotColor[0]+";'></div>");
+							$(".tool.one").append("<div class='circle dot piece' style = 'background:"+dotColor[1]+";'></div>");  
+							$(".tool.two").append("<div class='circle dot piece' style = 'background:"+dotColor[2]+";'></div>");  
+							$(".tool.three").append("<div class='circle dot piece' style = 'background:"+dotColor[3]+";'></div>");  
+							$(".tool.four").append("<div class='circle dot piece' style = 'background:"+dotColor[4]+";'></div>");  
+							$(".tool.five").append("<div class='circle dot piece' style = 'background:"+dotColor[5]+";'></div>");
+						}    
+						break;
+
+					default:
+//						$(".piece, tool").remove()			
+
+				}		
+
+				$('.piece').draggable().click(function (){$(this).hide()});
+			});
+		}       
+    });
+
+	var fcTool = new Toolkit();
 	
 
 	function symbol (t, sym) {
@@ -83,24 +217,30 @@
 				if (t == 'S') return '，又面向前方';
 				if (t == 'C') return '加';
 				if (t == 'M') return '<div style ="float:left">又有</div>';
+				if (t == 'D') {chDotColor(); return '<div style ="float:left">&nbsp;+&nbsp;</div>'}
 				if (t == 'R') return '<div style ="float:left">&nbsp+&nbsp</div>';
 			case ' - ':
 				if (t == 'S') return '，又面向後方';
 				if (t == 'C') return '減';
 				if (t == 'M') return '<div style ="float:left">扣掉</div>';
+				if (t == 'D') {chDotColor(); return '<div style ="float:left">&nbsp;-&nbsp;</div>'}
 				if (t == 'R') return '<div style ="float:left">&nbsp;-&nbsp;</div>';
 			case ' × ':
+				
 				if (t == 'S') return '，每段是';
 				if (t == 'C') return '乘以';
-				if (t == 'M') return '<div style ="float:left">每一塊都變成</div>';
+				if (t == 'M') return '<div style ="float:left">個</div>';
+				if (t == 'D') {chDotColor(); return '<div style ="float:left">&nbsp;×&nbsp;</div>'}
 				if (t == 'R') return '<div style ="float:left">&nbsp;×&nbsp;</div>';
 			case ' ÷ ':
+				chDotColor();
 				if (t == 'S') return '，就是';
 				if (t == 'C') return '除以';
-				if (t == 'M') return '<div style ="float:left">分裝成好幾包，每包都要裝</div>';
+				if (t == 'M') return '<div style ="float:left">平分給</div>';
+				if (t == 'D') {chDotColor(); return '<div style ="float:left">&nbsp;÷&nbsp;</div>'}
 				if (t == 'R') return '<div style ="float:left">&nbsp÷&nbsp</div>';
 			default:
-				return '';
+				return '';  
 		}
 	}
 
@@ -191,23 +331,23 @@
 		var ones = num - fHunds * 500 - hunds * 100 - fiftys * 50 - 10 * tens - 5 * fives;
 
 		for (var i = 0; i < fHunds; i++) {
-			ansM = ansM + "<div class=rect style='background:#FF91FE;width:130px;height:70px;line-height:70px'>500</div>";
+			ansM +=  "<div class='rect fiveHundred'>500</div>";
 		};
 		for (var i = 0; i < hunds; i++) {
-			ansM = ansM + "<div class=rect>100</div>";
+			ansM +=  "<div class=rect>100</div>";
 		};
 		for (var i = 0; i < fiftys; i++) {
-			ansM = ansM + "<div class=circle style='background:gold;width:85px;height:85px;line-height:85px;'>50</div>";
+			ansM +=  "<div class='circle fifty'>50</div>";
 		};
 		for (var i = 0; i < tens; i++) {
-			ansM = ansM + "<div class=circle style = 'border: 3px solid gray;background:silver; width:80px;height:80px;line-height:80px;'>10</div>";
+			ansM +=  "<div class='circle ten'>10</div>";
 		};
 		for (var i = 0; i < fives; i++) {
-			ansM = ansM + "<div class=circle style = 'border: 3px solid gray;background:silver; width:75px;height:75px;line-height:75px;'>5</div>";
+			ansM +=  "<div class='circle five'>5</div>";
 		};
 		for (var i = 0; i < ones; i++) {
-			ansM = ansM + "<div class=circle>1</div>";
-		};
+			ansM += "<div class=circle>1</div>";
+		};	
 
 		return ansM;
 	}
@@ -216,8 +356,8 @@
 	function toD(num) {
 		var ansD = "";	
 		for (var i = 0; i < num; i++) {
-			ansD = ansD + "<div class='circle' style = 'border:none;background:"+dotColor+";'></div>";
-			if (i % 5 == 4) ansD += "<div class=roman>&nbsp;</div>";
+			ansD = ansD + "<div class='circle dot' style = 'background:"+dotColor+";'></div>";
+			if (i % 5 == 4) ansD += "<div class=roman>&nbsp;&nbsp;&nbsp;</div>";
 			if (i % 10 == 9) ansD += "<br />";
 		};
 		ansD += "<br />";
@@ -316,7 +456,7 @@
 		}
 
 
-		$('#bigans').children().children('div').draggable().click(function(e) {e.shiftKey ? $(this).clone().appendTo("#bigans").draggable().click(function(e) { $(this).hide()}) : $(this).hide()});
+		$('#bigans').children().children('div').draggable().click(function (){$(this).hide()});
 	}
 
 // 書寫
@@ -410,14 +550,15 @@
 	function makeQues (obj, n1, n2, sym) {
 
 		var ques = n1+sym+n2;
-		var quesD = toD(n1)+symbol('R',sym)+toD(n2);
+		var quesD = toD(n2); quesD = symbol('D',sym) + quesD; quesD = toD(n1)+ quesD; //為了變色
 		var quesR = toR(n1)+symbol('R',sym)+toR(n2);
-		var quesM = toM(n1)+symbol('M',sym)+toM(n2);
+		var quesM = toM(n1)+symbol('M',sym)+toM(n2);		
+		if (sym == " × ") quesM = toD(n2)+symbol('M',sym)+toM(n1);
+		if (sym == " ÷ ") quesM = toM(n1)+symbol('M',sym)+toD(n2)+'個人';
 		var quesC = toC(n1)+symbol('C',sym)+toC(n2);
-		var quesS;
+		var quesS = toS(n1,1)+symbol('S',sym)+toS(n2,1);
 		if (sym == " × ") quesS = toS(n1,0)+symbol('S',sym)+toS(n2,1);
 		if (sym == " ÷ ") quesS = toS(n1,1)+symbol('S',sym)+toS(n2,0);
-		if (sym == " + " || sym == "-") quesS = toS(n1,1)+symbol('S',sym)+toS(n2,1);
 
 		var quesList = [ques, n1+sym+(n2+1), n1+sym+(n2+2), n1+sym+(n2+3), n1+sym+(n2+4)];
 
@@ -428,6 +569,10 @@
 		obj.innerHTML = ques;
 		writeBig(ques,quesD,quesR,quesM,quesC,quesS,quesList, quesX);
 
+	}
+
+	function chDotColor (){
+		dotColor = ["darkgreen","goldenrod","brown","purple","darkred","darkblue"][Math.floor(Math.random()*6)];
 	}
 
 	// Abstract flashcard
@@ -445,7 +590,7 @@
 		//construct Ans
 		var ans = evAns(formula,0);
 
-		if (qa == "A") dotColor = ["darkgreen","goldenrod","brown","purple","darkred","darkblue"][Math.floor(Math.random()*6)];
+//		if (qa == "A") chDotColor();
 		var ansD = toD(ans);
 		var ansR = toR(ans); var ansM = toM(ans); var ansC = toC(ans);
 
@@ -525,7 +670,7 @@
 	}
 
 	function doSwi(obj, doRep, word, doStart, doInner){
-		if (confirm(word)) {rep = doRep; doStart; if (doInner) obj.innerHTML = doInner}
+		if (confirm(word)) {rep = doRep; fcTool.set({rep: doRep}) ;doStart; if (doInner) obj.innerHTML = doInner}
 	}
 
 	function swi(obj) {
@@ -685,14 +830,14 @@
 
 <br><br>
 <div id = "card" class="ui message" style="height: 50ex;width: 95%; border:2px;">
-	<big><big id = "bigans" style="font-size: 400%; margin-left:20px; color:blue"><br/>
+	<big><big id = "bigans" class = "bigans"><br/>
 	歡迎使用多功能閃卡！<br/>
 	<span class ="mobile">手機橫放畫面較佳。</span>
 	</big></big>
 </div>
 <br />
 
-<div class = "mobileOut" style="position: absolute; bottom: 40px; right:40px">
+<div class = "mobileOut" style="position: fixed; bottom: 40px; right:40px">
 <button class="ui teal mini button" onclick="swi(this)">Z</button>
 <button class="ui teal mini button" onclick="swi(this)">Z/7Z</button>
 <button class="ui teal mini button" onclick="swi(this)">Z/12Z</button>

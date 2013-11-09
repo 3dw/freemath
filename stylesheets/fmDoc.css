@@ -9,6 +9,7 @@
       border-radius: 15px;
       width: 50%; min-width: 420px;
       background: #E0CAB2;  /*  方塊底色   */
+/*      line-height: 0.95ex;   */
     }
 
     .fixed {
