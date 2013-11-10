@@ -22,7 +22,7 @@
 
 
 <style>
-	.bigans {
+	#bigans {
 		font-size: 4rem; margin-left:20px; color:blue;
 	}
 	.tool {
@@ -64,10 +64,17 @@
 	}
 
 	div.piece {
+		cursor: move;
 		position: fixed;
 		bottom: 10px;
 		font-size: 4rem;
 	}
+
+	#bigans div {
+		cursor: move;
+		position: static;
+	}
+
 
 	div.circle {
 		border: 3px solid #803100;
@@ -458,7 +465,7 @@
 		}
 
 
-		$('#bigans').children().children('div').draggable().click(function (){$(this).hide()});
+		$('#bigans').children().children('div').addClass("piece").draggable().click(function (){$(this).hide()});
 	}
 
 // 書寫

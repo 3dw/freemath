@@ -13,13 +13,13 @@ $(document).ready(function(){
 	var DocView = Backbone.View.extend({ 
 		el: $('body'),
 
-		intro: '歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載'
+		intro: '<p>歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載文件檔'
 			+'<button class = "ui small blue button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')"'
-				+'style = "margin-left:2ex">'+document.title+'.doc</button>'
-			+'<br /><br />本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲'
-			+'<br /><br />因為這原是紙本教材，有些活動需要紙筆和動手操作。請拿一張紙或筆記本、和一隻筆，當作輔助📝'
-			+'<br /><br />如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵'
-			+'<br /><br />（愛的小叮嚀：有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼',
+				+'style = "margin-left:2ex">'+document.title+'.doc</button></p>'
+			+'<p>本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲</p>'
+			+'<p>因為這原是紙本教材，有些活動需要紙筆和動手操作。請拿一張紙或筆記本、和一隻筆，當作輔助📝</p>'
+			+'<p>如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵</p>'
+			+'<p>（愛的小叮嚀：有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼</p>',
 
 		events :{
 			'change input' : 'showHint',
@@ -36,6 +36,7 @@ $(document).ready(function(){
 	    render: function() {
 	    	$("p,div").hide();
 	    	$(".first").show();
+	    	$("img").draggable().css("cursor", "move");
 
 	    	$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
 			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼');
@@ -65,10 +66,10 @@ $(document).ready(function(){
 
 
 	    	$(this.el).prepend(
-				'<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1><p>'
-	    		+this.intro+'</p>'
-	    		+'<button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
-	    			+'也可以上臉書「自學數學團」提問👼</button>'
+				'<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1>'
+	    		+this.intro
+	    		+'<p><button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
+	    			+'也可以上臉書「自學數學團」提問👼</button></p>'
 	    		+'<br /><br />'
 	    		+'<div class="ui huge buttons">'
 				+' <div id = "start" class="ui huge green button">👼線上學習'+document.title+'👼</div>'
