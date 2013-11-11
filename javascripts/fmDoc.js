@@ -8,8 +8,12 @@
 // Todo::  add auto Facebook Like button from title... 
 // Todo::  add php that gater feedback [Star] and [Comment]...
 
+
+
 $(document).ready(function(){
 
+	var user = '' + new Date();
+	var fire = new Firebase('https://bestian-freemath.firebaseio.com/'+document.title+'/' + user);
 	var DocView = Backbone.View.extend({ 
 		el: $('body'),
 
@@ -28,7 +32,7 @@ $(document).ready(function(){
 
 		initialize: function() {
 		      _.bindAll(this, 'render', 'showStart', 'showHint', 'showMain');
- 	     	  this.count = 0;
+ 	     	  this.count = 0;		    
  	     	  this.max = $(this.el).find("input").length
 		      this.render();
 	    },
@@ -37,6 +41,24 @@ $(document).ready(function(){
 	    	$("p,div").hide();
 	    	$(".first").show();
 	    	$("img").draggable().css("cursor", "move");
+
+	    	$('input').each(function(index) {
+
+	    		var prev = '', next = '';
+	    		var elm = this;
+	    		while (elm = elm.previousSibling) {
+	    			prev = elm.textContent + prev;
+	    			if (/[\u4E00-\u9FFF]/.test(elm.textContent)) { break; }
+	    		}
+	    		elm = this;
+	    		while (elm = elm.nextSibling) {
+	    			next += elm.textContent;
+	    			if (/[\u4E00-\u9FFF]/.test(elm.textContent)) { break; }
+	    		}
+				
+				$(this).data({ key: index, "0-prev": prev, "2-next": next });
+				console.log($(this).data());
+			});   // give all input an id
 
 	    	$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
 			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼');
@@ -106,9 +128,13 @@ $(document).ready(function(){
 
 	    },
 
-	    showHint: function(){
+	    showHint: function(ev){
 	    	// 提示語
-   	
+	    	var data = $(ev.currentTarget).data();
+	    	var key = data.key; delete data.key;
+	    	data['1-val'] = $(ev.currentTarget).val();
+	    	fire.child(key).set(data);
+
 	    	this.showSection(this.count);
 
 //	    	if (this.count > this.max - 2) $("*").show() ;
@@ -127,6 +153,7 @@ $(document).ready(function(){
 	    	if ( this.count > this.max * 2 / 3) {
 	    		$("#bar").progressbar().children('.ui-progressbar-value').css('background','#ccffff');// 強風格色改這裡
 	    	}
+
 
 	    },
 

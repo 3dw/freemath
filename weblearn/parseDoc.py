@@ -58,6 +58,7 @@ for root,dirs,files in os.walk(directory):
 				+'<script src="../javascripts/tongwen_table_pt2s.js"></script>\n'
 				+'<script src="../javascripts/tongwen_table_t2s.js"></script>\n'
 				+'<script src="../javascripts/fmDoc.js"></script>\n'
+				+'<script src='https://cdn.firebase.com/v0/firebase.js'></script>\n'
 				+'<style>', text)
 
 
