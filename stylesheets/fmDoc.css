@@ -4,14 +4,27 @@
     }
 
     .item {
+      position: relative;
+      top: 20px; left: 10px;
       border: white 3px ridge; /*  方塊邊界顏色   */
-      padding: 5px;
+      padding: 10px;
       border-radius: 15px;
       width: 50%;
       min-width: 420px;
       overflow: hidden;
       background: #E0CAB2;  /*  方塊底色   */
-/*      line-height: 0.95ex;   */
+      box-shadow: -5px 5px 0px 0px rgba(100,100,100,0.5);
+    }
+
+    .item:hover{
+      top: 10px;      left: 10px;
+      box-shadow: 0px 5px 3px 0px rgba(50,50,255,0.5), 0px 10px 3px 0px rgba(50,50,255,0.5);
+
+      -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          transition: all 1s ease; 
     }
 
     .item.first {    
@@ -21,11 +34,6 @@
     .item.first:hover {
       max-height: 1024px;
 /*      overflow: auto; */
-      -webkit-transition: all 3s ease;
-          -moz-transition: all 3s ease;
-          -ms-transition: all 3s ease;
-          -o-transition: all 3s ease;
-          transition: all 3s ease; 
     }
 
     .item.press {    
