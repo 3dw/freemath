@@ -27,13 +27,13 @@ $(document).ready(function(){
 
 		events :{
 			'change input' : 'showHint',
-			'click div#start' : 'showStart'
+			'click div#start' : 'showStart',
+			'click input#feedback' : 'feedback'
 		},
 
 		initialize: function() {
-		      _.bindAll(this, 'render', 'showStart', 'showHint', 'showMain');
+		      _.bindAll(this, 'render', 'showStart', 'showHint', 'showMain', 'feedback');
  	     	  this.count = 0;		    
- 	     	  this.max = $(this.el).find("input").length
 		      this.render();
 	    },
 
@@ -41,6 +41,8 @@ $(document).ready(function(){
 	    	$("p,div").hide();
 	    	$(".first").show();
 	    	$("img").draggable().css("cursor", "move");
+
+	     	this.max = $(this.el).find("input").length
 
 	    	$('input').each(function(index) {
 
@@ -83,7 +85,6 @@ $(document).ready(function(){
   // 				$(this).select();
 //			});
 
-			$(this.el).find("input[type='text']").css("font-size", "2ex");
 
 
 
@@ -101,9 +102,21 @@ $(document).ready(function(){
 //				+'<button class = "ui  button" </button>'
 				+'</div><br /><br />');
 
+	    	$(this.el).append('<br />'
+	    					+'<textarea id = "feedBackWords" class = "ui input" rows = "10" cols = "30" placeholder = "心得回饋與錯誤回報"></textarea>'
+	    					+'<input id = "feedback" class = "ui big green button" type = "submit"></input>');
 				
+			$(this.el).find("input[type='text']").css("font-size", "2ex");
+			$(this.el).find("textarea").css("font-size", "2ex");
 
 //	    	$("button").show();
+	    },
+
+	    feedback: function (){
+	    	var words = $("#feedBackWords").val();
+	    	console.log("Feedback:"+words);
+ 		    fire.child("Feedback").set(words);
+
 	    },
 
 	    showStart: function (){
@@ -133,6 +146,7 @@ $(document).ready(function(){
 	    	var data = $(ev.currentTarget).data();
 	    	var key = data.key; delete data.key;
 	    	data['1-val'] = $(ev.currentTarget).val();
+
 	    	fire.child(key).set(data);
 
 	    	this.showSection(this.count);
