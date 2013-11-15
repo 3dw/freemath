@@ -13,12 +13,18 @@
     <script src="../javascripts/tongwen_core.js"></script>
     <script src="../javascripts/tongwen_table_pt2s.js"></script>
     <script src="../javascripts/tongwen_table_t2s.js"></script>
+	
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
 
 </head>
 
 <body>
 
 <script type="text/javascript">
+
+	var user = '' + new Date();
+	var fire = new Firebase('https://style-tester.firebaseio.com/' + user);
+
 
 	var once = 0;
 
@@ -94,7 +100,7 @@
 	var dataS = {
 		r: {v: 0, a:0, r:0, k: 0},
 		s: {v: '👀視覺', a:'👂聽覺', r:'📖閱讀', k: '🙌操作'},
-		l: [6,10],
+		l: [6,9],
 		e: '正在試探自己的',
 		f: '"🔥測驗結果：你是一名「"+finalTitles.join(\'+\')+"優勢」的學習者!!👏"',
 		adv: {
@@ -120,6 +126,8 @@
 
 		ow: '原文的問題出處與更多資訊，請至VARK介紹網站',
 		g: "http://www.vark-learn.com/english/index.asp",
+		num: 0,
+
 	};
 
 //資料二號
@@ -173,6 +181,7 @@ var dataS1 = {
 	
 		ow: '更多資訊，請至自主學習促進會網站',
 		g: "http://www.alearn.org.tw/",
+		num: 1,
 	};
 
 
@@ -222,6 +231,7 @@ var dataS1 = {
 		      this.name = name;
 		      this.outWord = dataS.ow;
 		      this.simp = false;
+		      this.num = dataS.num;
 		      this.render();
 		    },
 
@@ -302,6 +312,8 @@ var dataS1 = {
 				    		$("#progressbar_"+tag ).progressbar().children('.ui-progressbar-value').css('background','#ccffff');// 強風格色改這裡
 				    		this.advice.max.push({t: tag, n: this.resault[tag]});
 				    	}
+
+				    	fire.child(this.num+tag+this.show[tag]).set(this.resault[tag]); // 上傳
 			    };   
 
 
@@ -335,6 +347,9 @@ var dataS1 = {
 		    	};
 
 		    	$(this.el).append("<div class = 'final item'>"+finalTitle+(advs.join('<br/><br/><br/>'))+"🎅</div>");
+
+		    	fire.child(this.num+this.introTitle).set(finalTitle); // 上傳結果
+
 
 			    $(this.el).append("<button id = 'go' class = 'final ui big blue button' onclick = 'redirect(\""+this.go+"\")'>"+this.outWord+"</button>");
 
