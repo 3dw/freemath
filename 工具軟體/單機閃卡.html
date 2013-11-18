@@ -14,9 +14,6 @@
 <link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="../javascripts/jquery-ui.js"></script>
-
-
-
 <script src="../javascripts/underscore-min.js"></script>
 <script src="../javascripts/backbone-min.js"></script>
 
@@ -30,15 +27,17 @@
 	#bigans {
 		font-size: 6rem; margin-left:20px; color:blue;
 		text-align: center;
-		text-transform: 
 	}
 
 	.tool {
 		display: block;
 		min-width: 150px;
-		min-height: 100px;
-		border-top: 3px black ridge;
+		min-height: 25px;
 		border-radius: 15px;
+		overflow: hidden;
+	}
+	.tool:hover{
+		border-bottom: 3px black ridge;
 	}
 	.tool.zero {
 		position: fixed;
@@ -126,7 +125,6 @@
 		background:#FF91FE;width:130px;height:70px;line-height:70px	
 	}
 
-
 	div.roman {
 		float: left;
 	}
@@ -185,24 +183,25 @@
 			this.on("change:rep", function(model){
 
 				$(".piece, tool").remove();
-				model.makeTools();
 
 				switch (model.get('rep')) {
 
 					case '$':
-
+						model.makeTools();
 						for (var i = 0; i < 20; i++) {
-							$(".tool.zero").append("<div class='rect fiveHundred piece'>500</div>");
-							$(".tool.one").append("<div class='rect piece'>100</div>");
-							$(".tool.two").append("<div class='circle fifty piece'>50</div>");
-							$(".tool.three").append("<div class='circle ten piece'>10</div>");
-							$(".tool.four").append("<div class='circle five piece'>5</div>");
-							$(".tool.five").append("<div class='circle piece'>1</div>");
+							$(".tool.five").append("<div class='rect fiveHundred piece'>500</div>");
+							$(".tool.four").append("<div class='rect piece'>100</div>");
+							$(".tool.three").append("<div class='circle fifty piece'>50</div>");
+							$(".tool.two").append("<div class='circle ten piece'>10</div>");
+							$(".tool.one").append("<div class='circle five piece'>5</div>");
+							$(".tool.zero").append("<div class='circle piece'>1</div>");
 						}
 
 						break;
 
 					case '.':
+
+						model.makeTools();
 						var dotColor =["darkgreen","goldenrod","brown","purple","darkred","darkblue"];
 
 						for (var i = 0; i < 20; i++) {
