@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng:app>
+<html ng-app="autoApp">
+
 <head>
 <meta charset=utf-8 />
 <meta name="viewport" content="width=device-width">
@@ -19,48 +20,201 @@
 </head>
   
 <body>
+<title>test</title>
 
-	<label>Name:</label>
-	<input type = "text" ng-model = "name" placeholder = "Enter a name here"></input>
-	<h1>Hello
-	<span ng-bind = "name || 'Freemath'">Freemath</span>!!</h1>
+<style type="text/css">
 
- <h2>數量 <input type ="number" ng-model = "number" ng-init = "number = 1"></input></h2>
+body {
+  background: rgba(200,255,255,1);
+}
 
-	<br/>
- <h2>單價 <input type ="number" ng-model = "price" ng-init = "price = 100"></input></h2>
+table {
+  border: 5px ridge;
+  border-collapse: collapse;
+  width: 75%;
+}
 
-	<br/>
- <h2>折扣 <input type ="number" ng-model = "discount" ng-init = "discount = 9"></input>折____(95折請輸入9.5而非95)</h2>
+tr, td, th { 
+    border: 3px ridge;
+}
 
-<br/>
-  
-<h2>總價  {{ number * price * discount / 10 | currency}}</h2>
+td { 
+    width: 33%;
+}
 
-<form class="well span6" style="margin-top:20px;" ng-submit="submit()" ng-controller="Ctrl">
-	<label>請輸入你想玩的正整數：</label>
- 	<input type="text" ng-model="skill" name="skill" />
- 
-	<input type="submit" id="submit" value="加入" />
-	<div>目前數字有 {{ skills }} </div>
-	<div>最大公因數 {{ gcd }} </div>
-</form>
 
-<hr>
+input {
+  font-size: 1.2rem;
+}
 
-<label>Search:</label>
-<input type="text" ng-model="search">
-<hr>
+</style>
 
-<div data-ng-controller="FriendsCtrl">
-	<h5 >共{{ (friends | filter:search).length }}筆有趣的資料</h5>
-	<h5 >最優的是：{{ (friends | filter:search)[0] }}</h5>
-	<li data-ng-repeat="friend in friends | filter:search">{{ friend.name }}({{ friend.age }})</li>
+</head>
+
+<body>
+
+<p><span>^__^</span></p>
+
+
+<div ng-controller="Ctrl">
+
+  <h1>Hello  {{yourName || 'everyone'}}!</h1>  
+
+      <label>輸入你的姓名，Angular會跟你打招呼</label>  
+      <input type="text" ng-model="yourName">  
+
+      <br/>
+
+      <table>
+
+      <tr>
+        <th><input type="number" ng-model = "s1"></input></th>
+        <th><input type="number" ng-model = "s2"></input></th>
+        <th />
+      </tr>
+
+      <tr><td> {{ s1 }}的因數有 {{ s1 | fact }} </td>
+          <td> {{ s2 }} 的因數有 {{ s2 | fact }} </td>
+          <td>{{s1 | arith}} + {{s2 | arith}} = {{ s1 + s2 | arith}}</td>
+      </tr>
+
+
+      <tr><td> {{ s1 }}的倍數有 {{ s1 | mul }} </td>
+          <td> {{ s2 }} 的倍數有 {{ s2 | mul }} </td>
+          <td>{{s1 | arith}} - {{s2 | arith}} = {{ s1 - s2 | arith}}</td>
+      </tr>
+      
+      <tr><td /><td /><td>{{s1 | arith}} * {{s2 | arith}} = {{ s1 * s2 | arith}}</td></tr>
+      
+      <tr><td /><td /><td>{{s1 | arith}} / {{s2 | arith}} = {{ {a:s1, b:s2} | div:this}}</td>
+      </tr>
+      
+      <tr><td /><td /><td>{{s1 | arith}} <sup> {{s2 | arith}} </sup> = {{ {a:s1, t:s2} | powM }} = {{ {a:s1, t:s2} | pow }}</td></tr>
+
+
+      <tr><td /><td /><td>{{s2 | arith}} <sup> {{s1 | arith}} </sup> = {{ {a:s2, t:s1} | powM }} = {{ {a:s2, t:s1} | pow }}</td></tr>
+
+      <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最大公因數： {{ {a:s1, b:s2} | gcd }}</td></tr>
+
+      <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最小公倍數： {{ {a:s1, b:s2} | lcm }}</td></tr>
+
+
+      </table>
 
 </div>
 
 
+
+<script type="text/javascript">
+
+var autoApp = angular.module('autoApp', ['autoFilters']);
+
+function Ctrl($scope) {
+  $scope.yourName = 'Bestian';
+  $scope.numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+  $scope.numbers0 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+  $scope.s1 = 7;
+  $scope.s2 = 3;
+}
+
+angular.module('autoFilters', []).filter('arith', function() {
+    return function(input) {
+      return input ? input : 0;
+    };
+  }).filter(('div'), function(){
+    return function(input){
+		var ans = 0;
+		var s1 = input.a;
+		var s2 = input.b;
+		while ((Math.abs(s1) >= Math.abs(s2)) && s2) {
+		 console.log(s1 + '/' + s2);
+		 if (s1 > 0 ) {
+		    s1 -= Math.abs(s2);
+		    ans += s2 / Math.abs(s2);
+		 }
+		 else if (s1 < 0 ) {
+		    s1 += Math.abs(s2);
+		    ans -= s2 / Math.abs(s2);
+		 }         
+		}
+		if (s2 == 0) {
+		if (s1 > 0) return Infinity;
+		if (s1 < 0) return Infinity;
+		if (s1 == 0) return NaN;
+		}
+		else {
+		if (!ans) ans = '';
+		return s1 ? ans + ' ' + s1 + '/' + s2 : ans;
+		}
+  	};
+}).filter(('pow'), function(){
+    return function(input){
+       return Math.pow(input.a, input.t);
+  	};
+}).filter(('powM'), function(){
+	return function(input){
+		var list = []; var ans;
+		for (var i = 0; i < Math.abs(input.t); i++) {
+			list.push(input.a);
+	    };
+	    ans = list.length < 10 ? list.join('*'): list.length + '個' + input.a + '相乘';
+	    return (input.a < 0) ? '1 / (' + ans + ')' : ans;
+	};
+}).filter(('fact'), function(){
+     return function(input){
+        var n = Math.abs(input);
+        var facts = [];
+        for (var i = 1; i <= n; i++) {
+          if (!(n % i)) facts.push(i);        
+
+        };
+        return facts.join();
+  };
+}).filter(('mul'), function(){
+     return function(input){
+        var muls = [];
+        for (var i = -2; i <= 5; i++) {
+           muls.push(i * input);        
+        };
+        return '...'+muls.join()+'...';
+  };
+}).filter(('gcd'), function(){
+     return function(input){
+
+        a = Math.abs(input.a);
+        b = Math.abs(input.b);
+        
+        while (b * a) {          
+          a > b ? a = a % b : b = b % a;
+        }
+
+        return (Math.max(a,b) == 1) ? "1。("+input.a+"和"+input.b+"互質)" :  Math.max(a,b);
+
+  };
+}).filter(('lcm'), function(){
+     return function(input){
+
+        a = Math.abs(input.a);
+        b = Math.abs(input.b);
+        
+        while (b * a) {          
+          a > b ? a = a % b : b = b % a;
+        }
+
+        return input.a * input.b / Math.max(a,b);
+
+  };
+});
+
+
+
+</script>
+
+
 </body>
+
+
+
 
 <script type="text/javascript">
 
@@ -159,10 +313,6 @@
 			}
 			$scope.skill = '';
 		}
-
-
-
-//		$scope.gcd = lcm($scope.skills);
 
 
 	};
