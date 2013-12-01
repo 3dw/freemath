@@ -73,18 +73,20 @@ input {
         <th />
       </tr>
 
-      <tr><td> {{ s1 }}的因數有 {{ s1 | fact }} </td>
+      <tr><td> {{ s1 }} 的因數有 {{ s1 | fact }} </td>
           <td> {{ s2 }} 的因數有 {{ s2 | fact }} </td>
           <td>{{s1 | arith}} + {{s2 | arith}} = {{ s1 + s2 | arith}}</td>
       </tr>
 
 
-      <tr><td> {{ s1 }}的倍數有 {{ s1 | mul }} </td>
+      <tr><td> {{ s1 }} 的倍數有 {{ s1 | mul }} </td>
           <td> {{ s2 }} 的倍數有 {{ s2 | mul }} </td>
           <td>{{s1 | arith}} - {{s2 | arith}} = {{ s1 - s2 | arith}}</td>
       </tr>
       
-      <tr><td /><td /><td>{{s1 | arith}} * {{s2 | arith}} = {{ s1 * s2 | arith}}</td></tr>
+      <tr><td> {{ s1 }}! = {{ s1 | factorialM }} = {{ s1 | factorial }} </td>
+          <td> {{ s2 }}! = {{ s2 | factorialM }} = {{ s2 | factorial }} </td>
+          <td>{{s1 | arith}} * {{s2 | arith}} = {{ s1 * s2 | arith}}</td></tr>
       
       <tr><td /><td /><td>{{s1 | arith}} / {{s2 | arith}} = {{ {a:s1, b:s2} | div:this}}</td>
       </tr>
@@ -97,6 +99,10 @@ input {
       <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最大公因數： {{ {a:s1, b:s2} | gcd }}</td></tr>
 
       <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最小公倍數： {{ {a:s1, b:s2} | lcm }}</td></tr>
+
+      <tr><td /><td /><td> P <sup>{{ s1 }}</sup> <sub>{{ s2 }} </sub> = {{ {a:s1, b:s2} | perm }}</td></tr>
+
+      <tr><td /><td /><td> C <sup>{{ s1 }}</sup> <sub>{{ s2 }} </sub> = {{ {a:s1, b:s2} | comb }}</td></tr>
 
 
       </table>
@@ -115,6 +121,14 @@ function Ctrl($scope) {
   $scope.numbers0 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
   $scope.s1 = 7;
   $scope.s2 = 3;
+}
+
+function fact(input) {
+	var ans = 1;
+        for (var i = 1; i <= input; i++) {
+        	ans *= i;
+    };
+    return ans;
 }
 
 angular.module('autoFilters', []).filter('arith', function() {
@@ -204,6 +218,30 @@ angular.module('autoFilters', []).filter('arith', function() {
         return input.a * input.b / Math.max(a,b);
 
   };
+}).filter(('factorial'), function(){
+     return function(input){
+        return input >= 0 ? fact(input) : NaN;
+
+  };
+}).filter(('factorialM'), function(){
+     return function(input){
+
+     	var ans = 1;
+        for (var i = 1; i <= input; i++) {
+        	ans += '*'+i;
+        };
+
+        return input >= 0 ? ans : '';
+
+  };
+}).filter(('perm'), function(){
+     return function(input){
+     	return fact(input.a) / fact(input.a - input.b);
+  };
+}).filter(('comb'), function(){
+     return function(input){
+     	return fact(input.a) / fact(input.a - input.b) / fact(input.b);
+  };
 });
 
 
@@ -254,7 +292,7 @@ angular.module('autoFilters', []).filter('arith', function() {
 		var fromPrimeFact = function(list){
 			var ans = 1;
 			for (var i = 0; i < list.length; i++) {
-				if (i > 0) ans = ans * i ** list[i];
+				if (i > 0) ans *= Math.pow(i, list[i]);
 			};
 			return ans;
 		}
@@ -302,26 +340,5 @@ angular.module('autoFilters', []).filter('arith', function() {
 		};
 
 
-	var Ctrl = function($scope){
-		$scope.skills = [];
-	 
-		$scope.skill = '';
-		$scope.submit = function(){
-			if(!!$scope.skill) {
-				$scope.skills.push($scope.skill);
-				$scope.gcd = gcds($scope.skills);
-			}
-			$scope.skill = '';
-		}
-
-
-	};
-
-	var FriendsCtrl = function($scope){
-		$scope.friends = [	{ name: '男丁格爾', 	age: 18 }, 
-							{ name: 'jelly', 	age: 16 }, 
-							{ name: '梅干桑', 	age: 30 }, 
-							{ name: '莫希爾', 	age: 31 }
-			];
-	};
+	
 </script>
