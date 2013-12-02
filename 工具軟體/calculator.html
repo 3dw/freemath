@@ -89,16 +89,13 @@ input {
 
 <body>
 
-<p><span>^__^</span></p>
-
 
 <div ng-controller="Ctrl">
 
-  <h1>Hello  {{yourName || 'World'}}!</h1>  
+  <h1>Hello  {{yourName || 'World'}}! ^__^</h1>  
 
       <h2>打招呼<input type="text" ng-model="yourName" placeholder = "請輸入您的名字">  </input></h2>
 
-      <br/>
       <br/>
 
       <table>
@@ -266,7 +263,7 @@ angular.module('autoFilters', []).filter('arith', function() {
 		return s1 ? ans + ' ' + s1 + '/' + s2 : ans;
 		}
   	};
-}).filter(('divR'), function(){     // 待整合
+}).filter(('divR'), function(){    
     return function(input){
 		var ans = 0;
 		var s1 = input.a;
