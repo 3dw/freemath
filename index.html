@@ -22,7 +22,15 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Freemath by bestian</title>
+    <title>自由數學Freemath</title>
+
+    <style type="text/css">
+    	li a:hover, td:hover {
+    		background-color: rgba(255,255,200,1);
+    	}
+    </style>
+
+
   </head>
 
   <body>
@@ -41,18 +49,21 @@
 <h3>====關於====</h3>
 
 <p>Freemath是以中文書的自由數學教材與、教法、學習方法的匯整</p>
+<p>（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的<a href="http://moztw.org/firefox/">Firefox瀏覽器</a>）</p>
 
 
-<h3>====線上工具（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的<a href="http://moztw.org/firefox/">Firefox瀏覽器</a>）====</h3>
+<h3>====線上工具====</h3>
 
-<ul>
-  <li><a href = "工具軟體/GGBtester.html">*GGB線上試用(含星星製造機)</a></li>
-  <li><a href = "工具軟體/單機閃卡.html">*閃卡</a></li>
-  <li><a href = "工具軟體/calculator.html">*超級計算機</a></li>
-  <li><a href = "工具軟體/styleTester.html">*學習風格自我測試</a></li>
-</ul>
+<table>
+	<tr>
+		<td><a href = "工具軟體/GGBtester.html">*GGB線上試用(含星星製造機)</a></td>
+		<td><a href = "工具軟體/單機閃卡.html">*閃卡</a></td>
+		<td><a href = "工具軟體/calculator.html">*超級計算機</a></td>
+		<td><a href = "工具軟體/styleTester.html">*學習風格自我測試</a></td>
+	</tr>
+</table>
 
-<h3>====教材試用====</h3>
+<h3>====教材試用(含紙本下載)====</h3>
 <ul ng-controller ="Ctrl">
   <li ng-repeat = "i in Units"> <a href = "weblearn/{{i.n}}" >{{ i.n }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級)</li>
 </ul>
@@ -70,17 +81,15 @@ function Ctrl($scope) {
 </script>
 
 
-<h3>====紙本教材====</h3>
-
-<ul>
-<li>*在家裝置一台印表機
-<li>*使用其他空間的印表機
-<li>*使用便利商店的印表機
-</ul>
-
 <h3>站外連結：</h3>
-<p><a href = "http://math.alearn.org.tw/">*自由數學簡介</a></p>
-<p><a href = "http://map.alearn.org.tw/">*自學地圖</a></p>
+
+<table>
+	<tr>
+		<td><a href = "http://math.alearn.org.tw/">*自由數學簡介</a></td>
+		<td><a href = "http://map.alearn.org.tw/">*自學地圖</a></td>
+	</tr>
+
+</table>
 
 
 <h1></h1>
