@@ -1,0 +1,1805 @@
+<html>
+
+<!--
+
+grade: 8~9
+
+pre: 幾何代數_乘法公式
+
+rel: 直角座標 幾何證明
+
+after: 根式運算 圓的方程式 三角函數
+
+-->
+
+
+<head>
+<meta name=Title content=相>
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>勾股定理</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:Arial;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:標楷體;}
+@font-face
+	{font-family:BatangChe;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:新細明體;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Arial;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>勾</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251655680'><span style='left:0px;position:
+absolute;left:56px;top:-32px;width:64px;height:55px'><img width=64 height=55
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image001.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251658752'><span style='left:0px;position:
+absolute;left:290px;top:-59px;width:37px;height:46px'><img width=37 height=46
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image002.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>股</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251659776'><span style='left:0px;position:
+absolute;left:65px;top:-65px;width:46px;height:55px'><img width=46 height=55
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image003.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>定</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251657728'><span style='left:0px;position:
+absolute;left:326px;top:-98px;width:73px;height:73px'><img width=73 height=73
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image004.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251656704'><span style='left:0px;position:
+absolute;left:2px;top:-125px;width:55px;height:55px'><img width=55 height=55
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image005.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>理</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>  </span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<span lang=EN-US style='font-size:18.0pt;font-family:標楷體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1025" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image006.gif"
+alt=章節導覽></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>本章主題為：勾股定理</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>預備知識：幾何代數與乘法公式</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>相關章節：直角座標、三角函數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>建議活動：剪紙</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>學完本章，你將能：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □瞭解勾股定理與面積問題的關係</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □瞭解並運用平方與開方</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>□ □瞭解並運用勾股定理</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>□ □瞭解何謂無理數</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>本章有<span
+lang=EN-US>5</span>個「練習時間」：</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>（寫完請打勾，檢查完再打第二個勾）</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>1</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>3</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □綜合練習</span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □除錯練習</span></p>
+
+<span lang=EN-US style='font-size:18.0pt;font-family:標楷體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1026" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image007.gif"
+alt=原始問題></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>考慮這個單純的問題：正三角形的面積是多少？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><img width=256 height=172 src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image008.gif"
+align=right hspace=12><span style='font-size:14.0pt;font-family:新細明體'>小學時，我們學過正三角形的邊長與內角，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是從來沒有處理面積。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>為什麼會這樣呢？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>原來，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>要求面積，需要知道</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>三角形的底和【<input type = 'text'><span
+lang=EN-US>     </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如下圖，正三角形的高是多少，我們並不確知。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>當然我們可以拿【<input type = 'text'><span
+lang=EN-US>     </span></input>】去量，但那只是近似值，不夠精確。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><img width=256 height=173 src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image009.gif"
+align=right hspace=12><span style='font-size:14.0pt;font-family:新細明體'>本章介紹「勾股定理」，可算出未知的高，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>解決面積的問題。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>勾股定理在測量、繪圖、解析幾何、三角函數還有微積分中，都很重要。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>歐洲人稱勾股定理為「畢氏定理」</span><span
+style='font-size:14.0pt;font-family:新細明體'>（</span><span lang=EN-US
+style='font-size:14.0pt'>Pythagorean theorem</span><span style='font-size:14.0pt;
+font-family:新細明體'>）</span><span style='font-size:14.0pt;font-family:新細明體'>，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以榮耀希臘數學家畢達哥拉斯，歐洲第一位給出嚴謹證明的數學家。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>雖然，埃及、巴比倫人都從經驗中，歸納出這個定理，但考古家沒有找到相關證明的記錄。或許勾股定理對他們而言，只是經驗法則。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>「勾股定理」是「勾股弦定理」的簡稱。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>直角三角形中，「勾」、「股」是指相互垂直的兩底邊，「弦」是指斜邊。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>勾股弦定理探討的，就是兩底邊與【<input type = 'text'><span
+lang=EN-US>    </span></input>】邊之間的關係。</span></p>
+
+<span lang=EN-US style='font-size:18.0pt;font-family:標楷體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1027" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image010.gif"
+alt=平方和開方></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>勾股定理是兩底邊與【<input type = 'text'><span
+lang=EN-US>    </span></input>】邊的關係，而且是它們平方之後的關係。讓我們先回顧一下平方的意義吧。</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=341 height=286
+id="_x0000_i1035" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image011.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如上圖，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1<sup>2</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>的意義就是由<span lang=EN-US>1</span>當邊長的正方形之面積（小塊數），數值為<span
+lang=EN-US>1</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2<sup>2</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>就是由【<input type = 'text'><span lang=EN-US>    </span></input>】當邊長的正方形之面積（小塊數），數值為<span
+lang=EN-US>4</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3<sup>2</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>就是由<span lang=EN-US>3</span>當邊長的【<input type = 'text'><span
+lang=EN-US>     </span></input>】形之【<input type = 'text'><span lang=EN-US>   </span></input>】積，數值為【<input type = 'text'><span lang=EN-US>  
+</span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3<sup>2</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>讀作「三的二次方」、「三的平方」、或「三平方」。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>叫「平方」是因為它代表「平」面上的正「方」形面積。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b><span
+style='font-size:14.0pt;font-family:新細明體'>請計算</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4<sup>2</sup> =                                    5<sup>2</sup>
+=</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>10<sup>2</sup>
+=                            (0.5)<sup>2</sup>  =   </span><span
+style='font-size:14.0pt;font-family:新細明體'>（最後一題請用上面方格紙作圖）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接下來我們引入開方，就是和平方相反的運算。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b><span
+style='font-size:14.0pt;font-family:新細明體'>請填空</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>    </span></input>】<sup><span
+lang=EN-US>2</span></sup><span lang=EN-US> = 1                                 </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<sup><span lang=EN-US>2</span></sup><span lang=EN-US> =
+4</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>    </span></input>】<sup><span
+lang=EN-US>2</span></sup><span lang=EN-US> = 9                                 </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<sup><span lang=EN-US>2</span></sup><span lang=EN-US> =
+25</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>    </span></input>】<sup><span
+lang=EN-US>2</span></sup><span lang=EN-US> = 100                                    </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<sup><span lang=EN-US>2</span></sup><span lang=EN-US> =
+0.25</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>    </span></input>】<sup><span
+lang=EN-US>2</span></sup><span lang=EN-US> = 1 / 9</span>（九分之一）<span
+lang=EN-US>       </span>【<input type = 'text'><span lang=EN-US>    </span></input>】<sup><span lang=EN-US>2</span></sup><span
+lang=EN-US> = 4 / 49</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這個填空的過程，就叫做「開平方」或「求平方根」。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上面幾題問「誰的平方是<span
+lang=EN-US>4</span>？誰的平方是<span lang=EN-US>9</span>？」</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>就是在問「<span
+lang=EN-US>4</span>的平方根是多少？<span lang=EN-US>9</span>的平方根是多少？」</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<sup><span lang=EN-US>2</span></sup><span lang=EN-US> =
+4</span>這個式子，可以改寫成 √<span lang=EN-US>4 = 2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<sup><span lang=EN-US>2</span></sup><span lang=EN-US> =
+9</span>這個式子，可以改寫成 √<span lang=EN-US>9 =</span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>√是「求平方根」的符號，讀作「根號」。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>例如，√<span
+lang=EN-US>4</span>就讀作「根號<span lang=EN-US>4</span>」；√<span lang=EN-US>9</span>就讀作「【<input type = 'text'><span
+lang=EN-US>         </span></input>】」</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=342 height=286
+id="_x0000_i1036" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image012.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=282 height=229
+id="_x0000_i1037" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image013.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如圖，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>x<sup>2</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>是以<span lang=EN-US>x</span>為邊長，作出正方形的「面積」</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>√<span
+lang=EN-US>A</span>相反，是以<span lang=EN-US>A</span>為面積的正方形的「邊長」</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>平方和開平方是相反的動作。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>比方說<span
+lang=EN-US> 3<sup>2</sup> = 9</span>，√<span lang=EN-US>9 = 3</span>，所以<span
+lang=EN-US><img width=24 height=25 id="_x0000_i1038"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image014.gif">= </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般來說，<span
+lang=EN-US><img width=22 height=24 id="_x0000_i1039"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image015.gif"> = </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>不過要住意一下，如果<span
+lang=EN-US>x</span>是負數，情況會有不同。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>像若<span
+lang=EN-US>x = -3</span>，則<span lang=EN-US>x<sup>2</sup> = (-3) </span>×<span
+lang=EN-US> (-3) =</span>【<input type = 'text'><span lang=EN-US>      </span></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>再把<span
+lang=EN-US> 9 </span>開平方，得到【<input type = 'text'><span lang=EN-US>    </span></input>】，不是本來的<span
+lang=EN-US> -3</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以，<span
+lang=EN-US><img width=22 height=24 id="_x0000_i1040"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image016.gif"> = x</span>要成立，條件是<span
+lang=EN-US>x</span>並非負數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果<span
+lang=EN-US>x</span>是負數，那麼<span lang=EN-US><img width=22 height=25
+id="_x0000_i1041" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image017.gif">
+= </span>【<input type = 'text'><span lang=EN-US>      </span></input>】（套數字試試看）。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>總之，目前討論的幾何圖形中，長度、面積都不可能是負數，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以<span
+lang=EN-US><img width=22 height=24 id="_x0000_i1042"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image018.gif"> = x</span>是一定成立的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>至於面積<span
+lang=EN-US>A</span>，一定不是負數，所以<span lang=EN-US><img width=24 height=25
+id="_x0000_i1043" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image019.gif">=
+</span>【<input type = 'text'><span lang=EN-US>     </span></input>】 一定成立。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>綜上所述，「開平方」和「平方」是相反的動作，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接在一起做，就等於沒做。<span
+lang=EN-US><img width=22 height=24 id="_x0000_i1044"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image020.gif"> = </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】  ；<span lang=EN-US>   <img width=24 height=25
+id="_x0000_i1045" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image021.gif"> =
+</span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span
+lang=EN-US>1</span></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>「長方形」指四角都是直角的四邊形，也有可能是「正方形」。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1.
+</span><span style='font-size:14.0pt;font-family:新細明體'>請用尺畫出<span lang=EN-US>1cm</span>的線段代表<span
+lang=EN-US>x</span>，再畫出面積為<span lang=EN-US>x<sup>2</sup></span>的長方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2.
+</span><span style='font-size:14.0pt;font-family:新細明體'>請用尺畫出<span lang=EN-US>1cm</span>的線段代表<span
+lang=EN-US>x</span>，再畫出面積為<span lang=EN-US>(2x)<sup>2</sup></span>的長方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3.
+</span><span style='font-size:14.0pt;font-family:新細明體'>請用尺畫出<span lang=EN-US>1cm</span>的線段代表<span
+lang=EN-US>x</span>，再畫出面積為<span lang=EN-US>2x<sup>2</sup></span>的長方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請用尺畫出<span
+lang=EN-US>1cm</span>的線段代表<span lang=EN-US>x</span>，再畫出面積為<span lang=EN-US>2x<sup>2</sup></span>的正方形。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>（提示：再畫出<span
+lang=EN-US>(2x)<sup>2</sup></span>的正方形，再將每邊中點連線）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請計算：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4<sup>2</sup>
+=                             10<sup>2</sup>  =                    </span><span
+style='font-size:14.0pt;font-family:新細明體'>√<span lang=EN-US>9 =</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img
+width=55 height=25 id="_x0000_i1046" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image022.gif">                       <img
+width=42 height=25 id="_x0000_i1047" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image023.gif">                    <img
+width=43 height=25 id="_x0000_i1048" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image024.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請證明若<span
+lang=EN-US>a, b</span>非負，則：<span lang=EN-US><img width=81 height=45
+id="_x0000_i1049" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image025.gif"></span>（提示：可將左右同取平方）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=47
+id="_x0000_i1028" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image026.gif"
+alt=勾股定理與特例></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>「勾股定理」宣稱：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在【<input type = 'text'><span
+lang=EN-US>   </span></input>】角三角形中，勾的平方<span lang=EN-US> + </span>股的平方<span
+lang=EN-US> = </span>弦的平方。</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=299 height=200
+id="_x0000_i1050" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image027.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>約西元前一世紀，古中國《周髀算經》裡記載，周公與天文官商高的對話，其中有勾<span
+lang=EN-US>3</span>、股<span lang=EN-US>4</span>、弦<span lang=EN-US>5</span>的特例，並附上一圖。</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=299 height=200
+id="_x0000_i1051" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image028.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這個圖可以用來證明勾股定理，但文中沒有詳述證法。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因此，有人認為中國數學家比畢氏更早提出證明，也有人不同意。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>總之，先來驗算一下特例：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>先拿尺在左側空白處，畫一個勾<span
+lang=EN-US>3cm</span>、股<span lang=EN-US>4cm</span>的直角三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>再量量看弦（斜邊）的長度，結果是【<input type = 'text'><span
+lang=EN-US>     </span></input>】<span lang=EN-US>cm</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3<sup>2</sup>
+= </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>   </span></input>】<span
+lang=EN-US>   4<sup>2</sup> = </span>【<input type = 'text'><span lang=EN-US>    </span></input>】<span
+lang=EN-US>  3<sup>2</sup> + 4<sup>2</sup> = </span>【<input type = 'text'><span lang=EN-US>    </span></input>】<span
+lang=EN-US>  5<sup>2</sup> = </span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>再看第二個特例：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><img width=256 height=172 src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image029.gif"
+align=left hspace=12></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>為了方便書寫，我們把</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>勾、股、弦用<span
+lang=EN-US>a, b, c</span>代表。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a</span><span
+style='font-size:14.0pt;font-family:新細明體'>和<span lang=EN-US>b</span>誰較大都可以，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>   </span></input>】則是最大的斜邊。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>此例中，<span
+lang=EN-US>a = b = 1</span>，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>是一個等腰直角三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果勾股定理正確，勾的平方<span
+lang=EN-US> + </span>股的平方<span lang=EN-US> = </span>弦的平方</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>寫成符號，就是<span
+lang=EN-US>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上圖中，大正方形的邊長為<span
+lang=EN-US>2</span>，面積為【<input type = 'text'><span lang=EN-US>    </span></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以<span
+lang=EN-US>c</span>為邊，斜正方形的面積，是大正方形的一半，所以是【<input type = 'text'><span lang=EN-US>   </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>c<sup>2</sup>
+= 2                           a<sup>2</sup> = 1<sup>2</sup> = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>  </span></input>】<span
+lang=EN-US>             b<sup>2</sup> = 1<sup>2</sup> = </span>【<input type = 'text'><span
+lang=EN-US>  </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>2</sup>
++ b<sup>2</sup> = </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>   </span></input>】<span lang=EN-US> = c<sup>2</sup></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>根據前面學的開方，<span
+lang=EN-US>c<sup>2</sup> = 2</span>，代表<span lang=EN-US>c = </span>【<input type = 'text'><span
+lang=EN-US>     </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>√<span
+lang=EN-US>2</span>是多少？</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>它是一個無理數，不能表現成分數、有限小數或循環小數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>（為什麼√<span
+lang=EN-US>2</span>是無理數？證明較長，收錄於本章最後的附錄）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>不過，即使它再無理，也不必向它投降。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>√<span
+lang=EN-US>2</span>的平方是<span lang=EN-US>2</span>，而且平方愈大的正數，本身也愈大，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以可以用平方比較的逼近法，來找根號<span
+lang=EN-US>2</span>的近似值。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>第<span
+lang=EN-US>1</span>步：<span lang=EN-US>1<sup>2</sup> &lt; </span>√<span
+lang=EN-US>2<sup>2</sup> &lt; 2<sup>2</sup>                               </span>可知<span
+lang=EN-US>1 &lt; </span>√<span lang=EN-US>2 &lt; 2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>第<span
+lang=EN-US>2</span>步：<span lang=EN-US>1<sup>2</sup> &lt; </span>√<span
+lang=EN-US>2<sup>2</sup> &lt; 1.5<sup>2</sup> = 2.25                        </span>可知<span
+lang=EN-US>1 &lt; </span>√<span lang=EN-US>2 &lt; 1.5</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>第<span
+lang=EN-US>3</span>步：<span lang=EN-US>1.4<sup>2</sup> =</span>【<input type = 'text'>   <span
+lang=EN-US>   </span></input>】<span lang=EN-US>&lt; </span>√<span lang=EN-US>2<sup>2</sup>
+&lt; 1.5<sup>2</sup>           </span>可知<span lang=EN-US>1.4 &lt; </span>√<span
+lang=EN-US>2 &lt; 1.5</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>第<span
+lang=EN-US>4</span>步：……</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上面的過程稱為逼近法。很像猜數字比大小。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>若要小數更多位的精準，重覆幾步即可。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>目前我們看了<span
+lang=EN-US>3, 4, 5</span>和<span lang=EN-US>1, 1, </span>√<span lang=EN-US>2</span>的特例，再看一個特例，就可以進入通則的證明了！</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>考慮一個直角三角形<span
+lang=EN-US>ABC</span>，∠<span lang=EN-US>C</span>是直角。勾、股、弦用<span lang=EN-US>a,
+b, c</span>代表。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>當<span
+lang=EN-US>a</span>愈來愈小，趨近於<span lang=EN-US>0</span>時，<span lang=EN-US>b</span>會趨近愈來愈大，趨近於【<input type = 'text'><span
+lang=EN-US>   </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><img width=256 height=172 src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image030.gif"
+align=left hspace=12></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>從極限的角度來看，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a</span><span
+style='font-size:14.0pt;font-family:新細明體'>會消失。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們說，在極限的情況，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a
+= 0,  b = </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>   </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接著不妨來看看，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>勾股定理在極限情況，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>成不成立？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在極限情況，<span
+lang=EN-US>a = 0,  b = </span>【<input type = 'text'><span lang=EN-US>   </span></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以<span
+lang=EN-US>a<sup>2</sup> + b<sup>2</sup> = 0 + </span>【<input type = 'text'><span lang=EN-US>   </span></input>】<span
+lang=EN-US> = c<sup>2</sup></span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>結果是成立的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們看過三個不同的特例，接下來就是要證明通則。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>數學上，證明通則很重要。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因為不管舉出幾個特例，都不能保證沒有例外。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>社會上的歧視，往往來自於「過度類推」。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>過度類推就是從一些不好的特例，就否定掉整個群體，忽略人人不同。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這就是所謂的「一竿子打翻一船人」，在邏輯上是無理的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>√<span
+lang=EN-US>(2<sup>2</sup> ) = 2             </span>√<span lang=EN-US>(3<sup>2</sup>
+)  = 3            </span>√<span lang=EN-US>(4<sup>2</sup> ) =</span>【<input type = 'text'><span
+lang=EN-US>   </span></input>】，√<span lang=EN-US>(10<sup>2</sup> ) =</span>【<input type = 'text'><span
+lang=EN-US>   </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這讓人不禁會想，√<span
+lang=EN-US>(x<sup>2</sup> )  = </span>【<input type = 'text'>  <span lang=EN-US>  </span></input>】是必定正確的公式。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>很不幸，這是過度類推，舉例不等於證明，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>考慮<span
+lang=EN-US>x = -3</span>的情況，√<span lang=EN-US>(x<sup>2</sup> )  = </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>剛剛的例子沒有負數，現在一試負數，馬上就找到反例了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以我們只能說「當<span
+lang=EN-US>x</span>非負，則√<span lang=EN-US>(x<sup>2</sup> ) = x</span>」。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們真的能這樣說嗎？還是需要證明的！</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>證明：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>由於√<span
+lang=EN-US>(x<sup>2</sup> ) = x</span>左右都非負，可以一起平方<sup>註<a href="#_ftn1"
+name="_ftnref1" title=""><span class=MsoFootnoteReference><span lang=EN-US><span
+class=MsoFootnoteReference><span lang=EN-US style='font-size:14.0pt;font-family:
+新細明體'>[1]</span></span></span></span></a></sup>，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>得到<span
+lang=EN-US>x<sup>2</sup> =</span>【<input type = 'text'>  <span lang=EN-US>  </span></input>】，是恆等式，得證。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span lang=EN-US>2</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1. </span><span
+style='font-size:14.0pt;font-family:新細明體'>已知「勾<span lang=EN-US>3</span>、股<span
+lang=EN-US>4</span>、弦<span lang=EN-US>5</span>」的直角三角形，滿足勾股定理。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><span style='font-size:14.0pt;font-family:新細明體'>請算出「勾<span
+lang=EN-US>6</span>、股<span lang=EN-US>8</span>、弦<span lang=EN-US>10</span>」的直角三角形，是否滿足勾股定理？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>承上題，請證明：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:18.0pt'><span style='font-size:14.0pt;font-family:新細明體'>若「勾<span
+lang=EN-US>a</span>、股<span lang=EN-US>b</span>、弦<span lang=EN-US>c</span>」的直角三角形，滿足勾股定理，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:18.0pt'><span style='font-size:14.0pt;font-family:新細明體'>則「勾<span
+lang=EN-US>2a</span>、股<span lang=EN-US>2b</span>、弦<span lang=EN-US>2c</span>」的直角三角形，也滿足勾股定理。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3. </span><span
+style='font-size:14.0pt;font-family:新細明體'>請以逼近法，求√<span lang=EN-US>3</span>的近似值，到小數點後第二位。（請記錄過程）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4. </span><span
+style='font-size:14.0pt;font-family:新細明體'>（將周髀算經的圖類推）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>下圖中，不考慮方格紙，以直角三角形的長邊為<span
+lang=EN-US>a</span>，短邊為<span lang=EN-US>b</span>，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=299 height=200
+id="_x0000_i1034" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image031.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請問小正方形的邊長<span lang=EN-US> = ?                </span>小正方形的面積<span
+lang=EN-US> = ?</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1029" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image032.gif"
+alt=勾股定理的證明></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>勾股定理的證明方式有幾百種，相當特出。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>每一個證明方式都代表一種不同的觀點，證明方式很多的定理，就是一個內涵豐富的定理，可以啟發、連結許多不同的觀點。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>本篇教材以完全平方的觀點為主。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>另外推薦兩種有趣的觀點：相似形原理、歐幾里德的直接證明。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有興趣的話，請到維基百科（<span
+lang=EN-US>http://zh.wikipedia.org/</span>）查「勾股定理」，就可以找到這兩種證明。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>讓我們開始證吧！</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=382 height=257
+id="_x0000_i1052" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image033.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上圖中，小矩形的長邊為<span
+lang=EN-US>a</span>，短為為<span lang=EN-US>b</span>，面積為<span lang=EN-US>ab</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>大正方形的邊長為<span
+lang=EN-US>a+b</span>，面積為【<input type = 'text'><span lang=EN-US>        </span></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>小正方形的邊長為<span
+lang=EN-US>a-b</span>，面積為【<input type = 'text'><span lang=EN-US>        </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上圖就代表了<span
+lang=EN-US> (a+b)<sup>2</sup> - 4ab = (a-b)<sup>2</sup></span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果從大正方形<span
+lang=EN-US>(a+b)<sup>2</sup></span>出發，不要扣掉<span lang=EN-US>4</span>個<span
+lang=EN-US>ab</span>，只要扣掉它們的一半，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>就會形成下頁的圖：</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=382 height=257
+id="_x0000_i1033" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image034.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上圖中，一個有色三角形面積是【<input type = 'text'>
+   <span lang=EN-US>   </span></input>】，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>斜正方形的邊長是<span
+lang=EN-US>c</span>，面積是【<input type = 'text'><span lang=EN-US>      </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>圖中顯示了，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>大正方形 <span
+lang=EN-US>– 4</span>個三角形<span lang=EN-US> = </span>斜正方形</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>寫成符號：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)<sup>2</sup>
+– 4(ab / 2) = c<sup>2</sup></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>展開得到</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>2</sup>
++ 2ab + b<sup>2</sup> – </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>      </span></input>】<span lang=EN-US> = </span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>2</sup>
++ b<sup>2</sup> = c<sup>2</sup></span><span style='font-size:14.0pt;font-family:
+新細明體'>（得證）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>同一個圖，若從小正方形<span
+lang=EN-US>(a-b)<sup>2</sup></span>開始看，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>可看出：小正方形<span
+lang=EN-US> + 4</span>個三角形<span lang=EN-US> = </span>斜正方形</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>寫成符號：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a-b)<sup>2</sup>
++ </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>        
+</span></input>】<span lang=EN-US> = c<sup>2</sup></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>展開得到</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>2</sup>
+- 2ab + b<sup>2</sup> + </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+lang=EN-US>      </span></input>】<span lang=EN-US> = </span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>2</sup>
++ b<sup>2</sup> = c<sup>2</sup></span><span style='font-size:14.0pt;font-family:
+新細明體'>（得證）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上頁的斜正方形面積<span
+lang=EN-US>c<sup>2</sup></span>，可以看作<span lang=EN-US>(a - b)<sup>2</sup></span>和<span
+lang=EN-US>(a + b)<sup>2</sup></span>的平均。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請試著不看講義，重頭畫圖、列式，複習一次勾股定理的證明：</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1030" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image035.gif"
+alt=勾股定理的應用></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>現在回到本節的原始問題：正三角形的面積是多少？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=256 height=172 id="_x0000_i1053"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image036.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>假設每邊長為</span><span
+lang=EN-US style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;
+font-family:新細明體'>，底邊的一半就是【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>    </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>解出面積的關鍵，在找出未知的高</span><span
+lang=EN-US style='font-size:14.0pt'>h</span><span style='font-size:14.0pt;
+font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>考慮左邊的直角三角形。依勾股定理，我們有勾</span><sup><span
+lang=EN-US style='font-size:14.0pt'>2</span></sup><span lang=EN-US
+style='font-size:14.0pt'> + </span><span style='font-size:14.0pt;font-family:
+新細明體'>股</span><sup><span lang=EN-US style='font-size:14.0pt'>2</span></sup><span
+lang=EN-US style='font-size:14.0pt'> = </span><span style='font-size:14.0pt;
+font-family:新細明體'>弦</span><sup><span lang=EN-US style='font-size:14.0pt'>2</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>寫成符號：（注意，現在斜邊不叫</span><span
+lang=EN-US style='font-size:14.0pt'>c</span><span style='font-size:14.0pt;
+font-family:新細明體'>，而是叫【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=119
+height=45 id="_x0000_i1032" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image037.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>展開、移項</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>h<sup>2</sup> = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>        </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>兩邊開方</span><span
+lang=EN-US style='font-size:14.0pt'><img width=47 height=45 id="_x0000_i1054"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image038.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>化簡</span><span
+lang=EN-US style='font-size:14.0pt'><img width=48 height=45 id="_x0000_i1055"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image039.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以，邊長</span><span
+lang=EN-US style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;
+font-family:新細明體'>的正三角形，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>面積是「底</span><span
+style='font-size:14.0pt'> </span><span style='font-size:14.0pt;font-family:
+新細明體'>×</span><span style='font-size:14.0pt'> </span><span style='font-size:
+14.0pt;font-family:新細明體'>高</span><span style='font-size:14.0pt'> </span><span
+style='font-size:14.0pt;font-family:新細明體'>÷</span><span lang=EN-US
+style='font-size:14.0pt'> 2</span><span style='font-size:14.0pt;font-family:
+新細明體'>」</span><span lang=EN-US style='font-size:14.0pt'> = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span><span style='font-size:14.0pt;font-family:新細明體'>×</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span style='font-size:14.0pt'>
+<span lang=EN-US>   </span></span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span><span style='font-size:14.0pt;font-family:新細明體'>÷</span><span
+lang=EN-US style='font-size:14.0pt'> 2</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>把</span><span
+lang=EN-US style='font-size:14.0pt'>h</span><span style='font-size:14.0pt;
+font-family:新細明體'>用</span><span lang=EN-US style='font-size:14.0pt'><img
+width=28 height=40 id="_x0000_i1056" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image040.gif"></span><span
+style='font-size:14.0pt;font-family:新細明體'>代入，得到正三角形的面積為【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>              </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>邊長每放大</span><span
+lang=EN-US style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;
+font-family:新細明體'>倍時，它的面積會放大【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>    
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】倍。</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span
+lang=EN-US>3</span></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>（<span
+lang=EN-US>1~5</span>題中，請將答案化成最簡，例如<span lang=EN-US><img width=144 height=30
+id="_x0000_i1057" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image041.gif"></span>）</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>（以單一根號而言，根號內的數字不能化得更小，就是最簡）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>一個直角三角形，斜邊長為<span
+lang=EN-US>13</span>，一底邊長為<span lang=EN-US>5</span>，請問另一底邊長<span lang=EN-US> =
+?</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>一個直角三角形，兩底邊長分別為<span
+lang=EN-US>3, 4</span>，請問斜邊長<span lang=EN-US> = ?</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>一個直角三角形，兩底邊長分別為<span
+lang=EN-US>3, 5</span>，請問斜邊長<span lang=EN-US> = ?</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>一個直角三角形，兩底邊長分別為<span
+lang=EN-US>1, 7</span>，請問斜邊長<span lang=EN-US> = ?</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>一個直角三角形，斜邊長為<span
+lang=EN-US>10</span>，一底邊長為<span lang=EN-US>1</span>，請問另一底邊長<span lang=EN-US> =
+?</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>綜合練習</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>下圖仿以色列國旗上的「大衛之星」，尤太教的聖徽。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img
+width=256 height=172 id="_x0000_i1058" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image042.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>假設每個短邊長為<span
+lang=EN-US>2</span>，請算出它的面積。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2.
+</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>假如消防隊用<span
+lang=EN-US>25</span>公尺高的的雲梯救人，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>雲梯車離火災現場<span
+lang=EN-US>10</span>公尺遠，受困者的高度，最高離地面<span lang=EN-US>20</span>公尺。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請問消防隊能否救出所有受困者？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3.
+</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>海上救難艇前方<span
+lang=EN-US>800</span>公尺遠有一個漂流的人，救難艇左側<span lang=EN-US>600</span>公尺遠有一條鯊魚，想吃那個人。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>假如救難艇遇上風暴，時速只有<span
+lang=EN-US>15km</span>，鯊魚時速<span lang=EN-US>20km</span>，請問那個人能否得救？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4.
+</span><span style='font-size:14.0pt;font-family:新細明體'>承上題，請問救難艇時速必須要大於多少<span
+lang=EN-US>km</span>，才能救到漂流的人？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1031" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image043.gif"
+alt="附錄：根號二是無理數*"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><img
+width=256 height=172 id="_x0000_i1059" src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image044.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:新細明體'>斜正方形的邊長為</span><span style='font-size:14.0pt;
+font-family:新細明體'>√<span lang=EN-US>2</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們前面提到，√<span
+lang=EN-US>2</span>是一個無理數（不是有理數），也就是說，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>雖然它代表數線上的一點，但不能表示成分數、有限小數或循環小數。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>要怎麼證明√<span
+lang=EN-US>2</span>不能表示成有限小數或循環小數呢？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='position:relative;z-index:251666944'><span
+style='position:absolute;left:258px;top:-110px;width:47px;height:38px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=47 height=38 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;z-index:12'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:.8503pt 7.2pt 3.6pt 7.2pt;text-align:left'>
+    <p class=MsoNormal><span style='font-family:新細明體'>＿＿</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='position:relative;z-index:251665920'><span
+style='position:absolute;left:-3px;top:-110px;width:38px;height:38px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=38 height=38 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;z-index:11'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:.8503pt 7.2pt 3.6pt 7.2pt;text-align:left'>
+    <p class=MsoNormal><span style='font-family:新細明體'>＿</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='position:relative;z-index:251664896'><span
+style='position:absolute;left:123px;top:-110px;width:38px;height:38px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=38 height=38 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;z-index:10'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:.8503pt 7.2pt 3.6pt 7.2pt;text-align:left'>
+    <p class=MsoNormal><span style='font-family:新細明體'>＿</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>0.1 = </span><span
+style='font-size:14.0pt;font-family:新細明體'>十分之一<span lang=EN-US>       0.01 = </span>百分之一<span
+lang=EN-US>           0.001 = </span>千分之一</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>0.1
+= </span><span style='font-size:14.0pt;font-family:新細明體'>九分之一<span lang=EN-US>       0.01
+= </span>九十九分之一<span lang=EN-US>    0.001 = </span>九十九分之一</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='position:relative;z-index:251670016'><span
+style='position:absolute;left:204px;top:-128px;width:38px;height:38px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=38 height=38 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;z-index:15'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:.8503pt 7.2pt 3.6pt 4.2519pt;text-align:left'>
+    <p class=MsoNormal><span style='font-family:新細明體'>＿</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='position:relative;z-index:251668992'><span
+style='position:absolute;left:69px;top:-119px;width:83px;height:43px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=83 height=43 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;z-index:14'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:.8503pt 7.2pt 3.6pt 7.2pt;text-align:left'>
+    <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:
+    新細明體'><img width=69 height=31 id="_x0000_i1060"
+    src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image045.gif"></span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='position:relative;z-index:251667968'><span
+style='position:absolute;left:51px;top:-128px;width:38px;height:38px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=38 height=38 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;z-index:13'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:.8503pt 7.2pt 3.6pt 4.2519pt;text-align:left'>
+    <p class=MsoNormal><span style='font-family:新細明體'>＿</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>依此類推，用一點組合的技巧，凡有限或循環小數，都能表示成分數。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>例如<span
+lang=EN-US>0.1269 =                            0.408 =</span>【<input type = 'text'><span lang=EN-US>    
+</span></input>】<span lang=EN-US>+</span>【<input type = 'text'><span lang=EN-US>     </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因此，我們只要證明√<span
+lang=EN-US>2</span>不能表示成分數就好了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>又因為分數都能表示成最簡分數（不能再約分的分數），</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們只要證明√<span
+lang=EN-US>2</span>不能表示成【<input type = 'text'><span lang=EN-US>    </span></input>】分數就好了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>不過，證明一個數具有某些性質容易，證明它沒有某些性質就難了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>要證明一個數可以表示成最簡分數，只要把它寫成最簡分數即可。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>要證明一個數不能表示成最簡分數，可就難了。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>數學上，面對這種問題，常用「歸謬法」或著說「反證法」來解決。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>「歸謬法」是歸於謬誤的意思，就是先假定你要證的命題是假的，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>然後推導出不可能的「矛盾」，由此證明你要證的命題是真的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>比方說，當你在樓房裡，想要知道室外有沒有雨，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>可以觀察街上有沒有人打傘。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>看到沒人打傘，你就會想：「假如有下雨，路人會打傘……但是，這和街上沒人打傘的事實矛盾，所以其實沒下雨。」這就是歸謬法。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們想要知道√<span
+lang=EN-US>2</span>是不是有理數時，也可以用一樣的思路：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>「假如√<span
+lang=EN-US>2</span>有理數，它就能表示成最簡分數……但是，一路推導之後，我們發現它其實不能表示成最簡分數，所以√<span
+lang=EN-US>2</span>其實是無理數。」</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>瞭解了這個證明的大方向，我們就來出發吧！</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>已知：√<span
+lang=EN-US>2</span>是<span lang=EN-US>2</span>的平方根</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>求證：√<span
+lang=EN-US>2</span>不是有理數</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>證明：</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>假設√<span
+lang=EN-US>2</span>是有理數，它可表示成最簡分數<span lang=EN-US> p / q</span></span></p>
+
+<p class=MsoNormal style='margin-left:144.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>（分子<span lang=EN-US>p</span>和分母 【<input type = 'text'><span lang=EN-US>   </span></input>】的最大公因數是<span
+lang=EN-US>1</span>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>由於<span
+lang=EN-US>(</span>√<span lang=EN-US>2)<sup>2</sup> = 2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>可知<span
+lang=EN-US><img width=20 height=20 id="_x0000_i1061"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image046.gif">= 2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>展開<span
+lang=EN-US><img width=12 height=21 id="_x0000_i1062"
+src="%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86_files/image047.gif">= 2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>移項<span
+lang=EN-US>p<sup>2</sup> =</span>【<input type = 'text'><span lang=EN-US>        </span></input>】<span
+lang=EN-US>       </span>────式子<span lang=EN-US>(1)</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>等號右邊是偶數，所以<span
+lang=EN-US>p</span>是偶數（若<span lang=EN-US>p</span>是奇數，那<span lang=EN-US>p<sup>2</sup></span>也是【<input type = 'text'><span
+lang=EN-US>    </span></input>】數）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>p</span><span
+style='font-size:14.0pt;font-family:新細明體'>是偶數，可以寫成<span lang=EN-US>p = 2k</span>，其中<span
+lang=EN-US>k</span>是某個整數。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以<span
+lang=EN-US>2k</span>代入<span lang=EN-US>p</span>，式子<span lang=EN-US>(1)</span>改寫成</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(2k)
+<sup>2</sup>  =  2 q<sup>2</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>展開<span
+lang=EN-US>4k<sup>2</sup>  =  2q<sup>2</sup></span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>化簡<span
+lang=EN-US>2k<sup>2</sup>  =  </span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>等號左邊是偶數，所以<span
+lang=EN-US>q</span>是偶數（如果<span lang=EN-US>q</span>是奇數，那<span lang=EN-US>q<sup>2</sup></span>也是奇數）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>p</span><span
+style='font-size:14.0pt;font-family:新細明體'>是偶數、<span lang=EN-US>q</span>也是偶數，代表<span
+lang=EN-US>2</span>是<span lang=EN-US>p, q</span>的【<input type = 'text'><span lang=EN-US>        </span></input>】數，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這和「分子<span
+lang=EN-US>p</span>和分母<span lang=EN-US> q</span>的最大公因數是<span lang=EN-US>1</span>」矛盾，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以「√<span
+lang=EN-US>2</span>是有理數」是錯誤的假設，其實√<span lang=EN-US>2</span>不是有理數。（得證）</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'></span><span style='font-size:14.0pt;
+font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                                                                   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[1]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>對非負數系，平方和開方都是一對一，是可逆的。等號兩邊一起做的事必須可逆，才會同解。</span></p>
+
+</div>
+
+</div>
+<button class = "ui big blue button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big purple button" onclick = "location = '勾股定理.htm'">勾股定理</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>

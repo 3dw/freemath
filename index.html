@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="fmIndexApp">
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -12,6 +12,11 @@
     <script src="javascripts/tongwen_core.js"></script>
     <script src="javascripts/tongwen_table_pt2s.js"></script>
     <script src="javascripts/tongwen_table_t2s.js"></script>
+
+  <script src="javascripts/jquery-1.10.2.js"></script>
+  <script src="javascripts/angular.min.js"></script>
+
+  <script src="weblearn/fmData.js"></script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,14 +53,21 @@
 </ul>
 
 <h3>====教材試用====</h3>
-<ul>
-  <li><a href = "http://bestian.github.io/freemath/小學形成w/分數.htm">分數</a></li>
-  <li><a href = "http://bestian.github.io/freemath/小學形成w/分數到小數.htm">分數到小數</a></li>
-  <li><a href = "http://bestian.github.io/freemath/小學形成w/因數與倍數.htm">因數與倍數</a></li>
-  <li><a href = "http://bestian.github.io/freemath/小學形成w/代數入門.htm">代數入門</a></li>
-  <li><a href = "http://bestian.github.io/freemath/小學形成w/面積的估算.htm">面積的估算</a></li>
-  <li><a href = "http://bestian.github.io/freemath/小學形成w/體積與容積.htm">體積與容積</a></li>
+<ul ng-controller ="Ctrl">
+  <li ng-repeat = "i in Units"> <a href = "weblearn/{{i.n}}" >{{ i.n }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級)</li>
 </ul>
+
+<script type="text/javascript">
+
+var fmIndexApp = angular.module('fmIndexApp', []);
+
+function Ctrl($scope) {
+  
+  $scope.Units = Units.sort(function(a,b){return a.g - b.g });
+  $scope.Math = window.Math;
+}
+
+</script>
 
 
 <h3>====紙本教材====</h3>

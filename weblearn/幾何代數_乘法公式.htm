@@ -1,0 +1,1788 @@
+<html>
+
+<!--
+
+grade: 7~8
+
+pre: 乘法
+
+rel: 直角座標
+rel: 二元一次方程式
+
+after: 勾股定理
+
+-->
+
+<head>
+<meta name=Title content=相>
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>幾何代數_乘法公式</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:Arial;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:標楷體;}
+@font-face
+	{font-family:BatangChe;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:新細明體;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Arial;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>幾</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251645440'><span style='left:0px;position:
+absolute;left:56px;top:-27px;width:64px;height:55px'><img width=64 height=55
+src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image001.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251648512'><span style='left:0px;position:
+absolute;left:290px;top:-54px;width:37px;height:46px'><img width=37 height=46
+src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image002.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>何</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251649536'><span style='left:0px;position:
+absolute;left:65px;top:-60px;width:46px;height:55px'><img width=46 height=55
+src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image003.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>代</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251647488'><span style='left:0px;position:
+absolute;left:326px;top:-93px;width:73px;height:73px'><img width=73 height=73
+src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image004.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251646464'><span style='left:0px;position:
+absolute;left:2px;top:-120px;width:55px;height:55px'><img width=55 height=55
+src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image005.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>數</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<span lang=EN-US style='font-size:18.0pt;font-family:標楷體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1025" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image006.gif"
+alt=章節導覽></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>本章主題為：幾何代數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>預備知識：基本圖形的面積</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>相關章節：一元一次方程式、直角座標</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>建議活動：種植、打掃</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>學完本章，你將能：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □用圖形代表數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □用圖形處理未知數</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>□ □瞭解並運用乘法分配律</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>□ □瞭解並運用乘法公式</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>本章有<span
+lang=EN-US>4</span>個「練習時間」：</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>（寫完請打勾，檢查完再打第二個勾）</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>1</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □綜合練習</span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □除錯練習</span></p>
+
+<span lang=EN-US style='font-size:18.0pt;font-family:標楷體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=47
+id="_x0000_i1026" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image007.gif"
+alt=圖形加法與乘法></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>小學時，我們學過，長方形的面積<span
+lang=EN-US> = </span>「長 × 寬」</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因此，乘法算式都可以用圖形表示，例如：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img
+width=378 height=285 id="_x0000_i1035" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image008.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>每塊中的「小方格總數」就是它的面積，數數看，並填空。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這就是代表<span
+lang=EN-US>15 </span>×<span lang=EN-US> 12</span>的圖形<sup>註<a href="#_ftn1"
+name="_ftnref1" title=""><span class=MsoFootnoteReference><span lang=EN-US><span
+class=MsoFootnoteReference><span lang=EN-US style='font-size:14.0pt;font-family:
+新細明體'>[1]</span></span></span></span></a></sup>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>15</span><span
+style='font-size:14.0pt;font-family:新細明體'>（看成<span lang=EN-US>10 + 5</span>）和<span
+lang=EN-US>12</span>（看成<span lang=EN-US>10 + 2</span>）是它的長和寛，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>和直式乘法對照看看，會有種熟悉的感覺！<span
+lang=EN-US>    </span></span></p>
+
+<p class=MsoNormal style='margin-left:264.0pt;text-indent:24.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>請補完：</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;text-indent:22.75pt'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1 5</span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><b><span
+style='font-size:14.0pt;font-family:新細明體'>×  <span lang=EN-US>1 2</span></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><b><span
+style='font-size:14.0pt;font-family:新細明體'>───</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上面的四格長方形稱為四個「項」，分別是<span
+lang=EN-US>100</span>、<span lang=EN-US>50</span>、<span lang=EN-US>20</span>、<span
+lang=EN-US>10</span>。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>四項相加<span
+lang=EN-US> = 100 + 50 + 20 + 10 = </span>【<input type = 'text'><span lang=EN-US>         </span></input>】的確對應到總面積。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>為了方便，我們可以省略方格紙，直接畫圖。（見下頁）</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=277 height=200
+id="_x0000_i1032" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image009.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們也可以用未知數當作邊長，來算含有未知數的乘法：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>像是<span
+lang=EN-US>(x+5) </span>×<span lang=EN-US> 12</span>：</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=277 height=200
+id="_x0000_i1033" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image010.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>x</span><span
+style='font-size:14.0pt;font-family:新細明體'>是未知的邊長，一開始無法畫出精確的長度，隨便畫就可以了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上圖中，左邊的小長方形，面積是「長
+× 寬」，所以是<span lang=EN-US> 12 </span>×<span lang=EN-US> x</span>。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是「×」和「<span
+lang=EN-US>x</span>」長得太像了，所以通常會省略乘號，寫成<span lang=EN-US>12 x</span>。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>右邊的小長方形，面積是【<input type = 'text'><span
+lang=EN-US>       </span></input>】×【<input type = 'text'><span lang=EN-US>      </span></input>】<span lang=EN-US> = </span>【<input type = 'text'><span
+lang=EN-US>      </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以總共面積是<span
+lang=EN-US>(x+5) </span>×<span lang=EN-US> 12  =  12 x + 60</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>12
+x + 60</span><span style='font-size:14.0pt;font-family:新細明體'>就稱為<span
+lang=EN-US>(x+5) </span>×<span lang=EN-US> 12</span>的「展開式」。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>把<span
+lang=EN-US>(x+5) </span>×<span lang=EN-US> 12</span>寫成<span lang=EN-US>12 x +
+60</span>的動作，就叫「展開」或「乘開」。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span
+lang=EN-US>1</span></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請把<span
+lang=EN-US>7</span>當成<span lang=EN-US>5 + 2</span>、<span lang=EN-US>8</span>當成<span
+lang=EN-US>5 + 3</span>，畫出<span lang=EN-US>7 </span>×<span lang=EN-US> 8</span>的圖形：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img
+width=417 height=301 id="_x0000_i1036" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image011.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>四項相加是【<input type = 'text'><span lang=EN-US>      </span></input>】<span lang=EN-US>+</span>【<input type = 'text'><span
+lang=EN-US>     </span></input>】<span lang=EN-US>+</span>【<input type = 'text'><span lang=EN-US>     </span></input>】<span
+lang=EN-US>+</span>【<input type = 'text'><span lang=EN-US>     </span></input>】<span lang=EN-US>=</span>【<input type = 'text'><span
+lang=EN-US>     </span></input>】</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>所以<span lang=EN-US>7 </span>×<span lang=EN-US> 8 = </span>【<input type = 'text'><span
+lang=EN-US>      </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>如果<span lang=EN-US>99</span>乘法表突然忘了一格，就可以用這個辦法查到。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>例如：若忘了<span lang=EN-US>9 </span>×<span lang=EN-US> 7</span>，就把<span
+lang=EN-US>9</span>當成<span lang=EN-US>5 +</span>【<input type = 'text'><span lang=EN-US>   </span></input>】，<span
+lang=EN-US>7</span>當成<span lang=EN-US>5 + 2</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2.
+</span><span style='font-size:14.0pt;font-family:新細明體'>利用左側空白處畫圖，再寫出四項展開：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>四項相加是【<input type = 'text'><span lang=EN-US>      </span></input>】<span lang=EN-US>+</span>【<input type = 'text'>
+<span lang=EN-US>    </span></input>】<span lang=EN-US>+</span>【<input type = 'text'><span lang=EN-US>     </span></input>】<span
+lang=EN-US>+</span>【<input type = 'text'><span lang=EN-US>     </span></input>】<span lang=EN-US>=</span>【<input type = 'text'><span
+lang=EN-US>     </span></input>】</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>所以<span lang=EN-US>9 </span>×<span lang=EN-US> 7 = </span>【<input type = 'text'><span
+lang=EN-US>      </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:24.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>在前兩個圖中，左上角的項，都是【<input type = 'text'><span lang=EN-US>     </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3.
+</span><span style='font-size:14.0pt;font-family:新細明體'>請利用左側空白處畫圖，再寫出<span
+lang=EN-US>(x+2)(x+3)</span>的展開式：</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1027" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image012.gif"
+alt=點與線段的標記></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在剛才的例子中，圖形很單純，所以不用加標記，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是有的圖比較複雜，像是：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><img
+width=215 height=172 src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image013.gif"
+align=left hspace=12><span style='font-size:14.0pt;font-family:新細明體'>左圖中，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>點的標記都是大寫的英文字，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>像是<span lang=EN-US>O, A, B, </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='position:relative;z-index:251651584'><span style='left:0px;position:
+absolute;left:-86px;top:-56px;width:56px;height:47px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=56 height=47 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;left:0pt;z-index:7'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:3.6pt 7.2pt 3.6pt 7.2pt;text-align:left'>
+    <p class=MsoNormal><span style='font-family:新細明體'>＿＿</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>線段的名字依點而生，比方說</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>OA</span><span
+style='font-size:14.0pt;font-family:新細明體'>就代表<span lang=EN-US>OA</span>兩點相連的線段。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如果是未知的線段，則用小寫的英文<span lang=EN-US>x,
+y, z…</span>或<span lang=EN-US>a, b, c</span>代表。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><img
+width=238 height=172 src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image014.gif"
+align=right hspace=12><span style='font-size:14.0pt;font-family:新細明體'>面積則寫成長度相乘。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>比方說，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>右上角的項是<span lang=EN-US>b </span>×<span
+lang=EN-US> c</span>，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>略過乘號，寫成【<input type = 'text'><span lang=EN-US>     </span></input>】。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>左上角的項，【<input type = 'text'><span lang=EN-US>     </span></input>】
+×<span lang=EN-US> c</span>，略過乘號，寫成【<input type = 'text'><span lang=EN-US>     </span></input>】。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><img
+width=256 height=173 src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image015.gif"
+align=left hspace=12></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>至於三角形的面積，就以「底 × 高 ÷<span lang=EN-US>
+2</span>」表示。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>左圖中，</span><span style='position:
+relative;z-index:251654656'><span style='left:0px;position:absolute;left:-33px;
+top:-143px;width:38px;height:38px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=38 height=38 align=left valign=top style='vertical-align:top'><span
+  style='position:absolute;left:0pt;z-index:10'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td>
+    <div style='padding:3.6pt 7.2pt 3.6pt 7.2pt;text-align:left'>
+    <p class=MsoNormal style='line-height:8.0pt'><span lang=EN-US
+    style='font-size:8.0pt'>ab</span></p>
+    <p class=MsoNormal style='line-height:8.0pt'><span style='font-size:8.0pt;
+    font-family:新細明體'>──</span></p>
+    <p class=MsoNormal style='text-indent:4.0pt;line-height:8.0pt'><span
+    lang=EN-US style='font-size:8.0pt'>2</span></p>
+    </div>
+    </td>
+   </tr>
+  </table>
+  </span>&nbsp;</td>
+ </tr>
+</table>
+
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>四個小三角形，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>面積都是</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>至於大正方形，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>則是<span lang=EN-US>(a+b) </span>×【<input type = 'text'><span
+lang=EN-US>      </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>兩個一樣的東西相乘，可以寫成二次方，<span lang=EN-US>(a+b)
+</span>×<span lang=EN-US> (a+b) = (a+b)<sup>2</sup></span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上圖中間的小正方形（斜斜的），面積是大正方形減四個小三角形。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>也就是<span lang=EN-US>(a+b)<sup>2</sup></span>－【<input type = 'text'><span
+lang=EN-US>          </span></input>】。</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=45
+id="_x0000_i1028" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image016.gif"
+alt=和的完全平方></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上頁中，<span lang=EN-US>(a+b)<sup>2</sup></span>－<span
+lang=EN-US> 2ab</span>怎麼算呢？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>只要先展開<span lang=EN-US>(a+b)<sup>2</sup></span>，就很好辦了。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=316 height=229
+id="_x0000_i1034" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image017.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如上圖，<span lang=EN-US>(a+b)<sup>2</sup>
+= a<sup>2</sup> +</span>【<input type = 'text'><span lang=EN-US>   </span></input>】<span lang=EN-US>+ </span>【<input type = 'text'><span
+lang=EN-US>   </span></input>】<span lang=EN-US> + b<sup>2</sup> </span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上式中，有兩個<span lang=EN-US>ab</span>和<span
+lang=EN-US>ba</span>大小一樣，可以合併成<span lang=EN-US>2ab</span>，代表<span lang=EN-US>2 </span>×<span
+lang=EN-US> a </span>×<span lang=EN-US> b</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>所以</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)<sup>2</sup> =</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>     </span></input>】<span
+lang=EN-US>+ 2ab +</span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上式稱為和的完全平方公式。叫「和」是因為<span lang=EN-US>a+b</span>是<span
+lang=EN-US>a</span>與<span lang=EN-US>b</span>的「總和」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>練習：</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>利用和的完全平方公式，化簡計算：（把<span lang=EN-US>a,b</span>用適當的數字代入）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>101<sup>2</sup> = (100 + 1)<sup>
+2</sup> =                   4005<sup>2</sup> =</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>20.1<sup>2</sup> =                                      50.02<sup>2</sup>
+=</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>下頁我們會看到差的完全平方公式，化簡計算的功能更強。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=45
+id="_x0000_i1029" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image018.gif"
+alt=差的完全平方></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>接下來，看看<span lang=EN-US>(a-b)<sup>2</sup></span>的展開。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=316 height=229
+id="_x0000_i1037" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image019.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如上圖，大正方形的邊長是<span lang=EN-US>a - b +
+b = </span>【<input type = 'text'><span lang=EN-US>     </span></input>】。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>要取<span lang=EN-US>(a-b)<sup>2</sup></span>，先把大正方形<span
+lang=EN-US>a<sup>2</sup></span>，扣掉右邊的大長條<span lang=EN-US>ab</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>接著，是否要再扣掉下面的小長條<span lang=EN-US>b(a-b)</span>呢？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>扣掉<span lang=EN-US>b(a-b)</span>，不如先把右下角的小正方形<span
+lang=EN-US>b<sup>2</sup></span>補回，再扣掉整條<span lang=EN-US>ab</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>所以，我們從大正方形<span lang=EN-US>a<sup>2</sup></span>開始，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>扣了一條<span lang=EN-US>ab</span>，又補回一小正方形【<input type = 'text'><span
+lang=EN-US>    </span></input>】，又扣了一條<span lang=EN-US>ab</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>把結果合併，寫成符號，就是<span lang=EN-US>(a-b)<sup>2</sup>
+= a<sup>2</sup> – 2ab + </span>【<input type = 'text'><span lang=EN-US>      </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上式稱為差的完全平方公式。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>叫「差」是因為<span lang=EN-US>a-b</span>是<span
+lang=EN-US>a</span>與<span lang=EN-US>b</span>的「差距」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>練習：</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>利用差的完全平方公式，化簡計算：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>99<sup>2</sup> =                                  2999<sup>2</sup>
+=</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>19.9<sup>2</sup> =                                599.99<sup>2</sup>
+=</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=45
+id="_x0000_i1030" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image020.gif"
+alt=平方差公式></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)(a+b)</span><span
+style='font-size:14.0pt;font-family:新細明體'>和<span lang=EN-US>(a-b)(a-b)</span>都討論過了，最後就是<span
+lang=EN-US>(a+b)(a-b)</span>的展開。</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=238 height=172
+id="_x0000_i1038" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image021.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如上圖，大長方形的面積等於<span lang=EN-US>(a+b)(a-b)</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>為了方便起來，我們切出一個小長方形，搬到下面，如下圖：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=316 height=229
+id="_x0000_i1039" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image022.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>搬過去後，<span lang=EN-US>L</span>字形的面積等於原本的大長方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>L</span><span
+style='font-size:14.0pt;font-family:新細明體'>字形的面積，可以看成大正方形減小正方形，也就是<span
+lang=EN-US>a<sup>2</sup> – </span>【<input type = 'text'><span lang=EN-US>    </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以，原本的大長方形，等於大正方形減小正方形。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>寫成符號，就是：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)(a-b)
+= a<sup>2</sup> –b<sup>2</sup></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上式稱為平方差公式，因為<span
+lang=EN-US>a<sup>2</sup> –b<sup>2</sup></span>是兩個平方之間的「差距」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>練習：</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>利用平方差公式，化簡計算：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>101 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 99 =                               3002
+</span>×<span lang=EN-US> 2998 =</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>30.3
+</span><span style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 29.7
+=                           3.009 </span>×<span lang=EN-US> 2.991 =</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)(a-b)
+= a<sup>2</sup> –b<sup>2</sup></span><span style='font-size:14.0pt;font-family:
+新細明體'>這條公式，其實有更深刻的意涵，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>那就是：「所有周長相等的長方形中，正方形的面積最大。」</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>也就是說，若拿一條繩子，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>圍出長方形的土地，面積愈大愈好，那麼「正方形」最好。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>畫畫看，<span
+lang=EN-US>(a+b)(a-b)</span>代表的長方形，周長是【<input type = 'text'><span lang=EN-US>        </span></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>畫畫看，<span
+lang=EN-US>a<sup>2</sup></span>代表的正方形，周長是【<input type = 'text'><span lang=EN-US>        </span></input>】。兩者周長相等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是，在<span
+lang=EN-US>b</span>不為零的情況下，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)(a-b)
+= a<sup>2</sup> –b<sup>2</sup></span><span style='font-size:14.0pt;font-family:
+新細明體'>告訴我們，<span lang=EN-US> (a+b)(a-b)  &lt;  a<sup>2</sup></span>（正方形面積較大）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>此外，平方差公式還可以解釋九九乘法表潛藏的秩序。像：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>4 = 24</span>，<span
+lang=EN-US>5</span>×<span lang=EN-US>5 = 25</span>，兩者差<span lang=EN-US>1</span>；</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>5 = 35</span>，<span
+lang=EN-US>6</span>×<span lang=EN-US>6 = 36</span>，兩者差<span lang=EN-US>1</span>；</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>8</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>6 = 48</span>，<span
+lang=EN-US>7</span>×<span lang=EN-US>7= 49</span>，兩者差【<input type = 'text'><span lang=EN-US>    </span></input>】；</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>9</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>7 = 63</span>，<span
+lang=EN-US>8</span>×<span lang=EN-US>8 = </span>【<input type = 'text'><span lang=EN-US>   </span></input>】，兩者差【<input type = 'text'><span
+lang=EN-US>   </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>7</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>3 = 21</span>，<span
+lang=EN-US>5</span>×<span lang=EN-US>5 = 25</span>，兩者差<span lang=EN-US>4</span>；</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>8</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>4 = 32</span>，<span
+lang=EN-US>6</span>×<span lang=EN-US>6 = 36</span>，兩者差<span lang=EN-US>4</span>；</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>9</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>5 = 45</span>，<span
+lang=EN-US>7</span>×<span lang=EN-US>7= 49</span>，兩者差【<input type = 'text'><span lang=EN-US>    </span></input>】；</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>10</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>6 = 60</span>，<span
+lang=EN-US>8</span>×<span lang=EN-US>8 = </span>【<input type = 'text'><span lang=EN-US>   </span></input>】，兩者差【<input type = 'text'><span
+lang=EN-US>   </span></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>同樣把<span
+lang=EN-US>12</span>拆成兩數。（不一定要<span lang=EN-US>12</span>，你可以試試看別的偶數）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>6 = 36</span>，<span
+lang=EN-US>7</span>×<span lang=EN-US>5 = 35</span>，<span lang=EN-US>8</span>×<span
+lang=EN-US>4 = 32</span>，<span lang=EN-US>9</span>×<span lang=EN-US>3 = 27</span>，<span
+lang=EN-US>10</span>×<span lang=EN-US>2 = 20</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>用最大的<span
+lang=EN-US>36</span>去減它們，得到</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>36
+- 36 = 0</span><span style='font-size:14.0pt;font-family:新細明體'>，<span
+lang=EN-US>36 - 35 = 1</span>，<span lang=EN-US>36 - 32 = 4</span>，<span
+lang=EN-US>36 - 27 = 9</span>，<span lang=EN-US>36 - 20 = 16</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>0,
+1, 4, 9, 16</span><span style='font-size:14.0pt;font-family:新細明體'>，都是平方數。為什麼呢？想想看！</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=48
+id="_x0000_i1031" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image023.gif"
+alt=代數觀點與代入法></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>其實，和的完全平方、差的完全平方、平方差公式，從代數的觀點，都可以看成是<span
+lang=EN-US>(a+b)(c+d)</span>的特例，只是有時<span lang=EN-US>c = a, d = -b</span>等等。</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><img
+width=277 height=200 id="_x0000_i1040" src="%E5%B9%BE%E4%BD%95%E4%BB%A3%E6%95%B8_files/image024.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如上圖，<span
+lang=EN-US>(a+b)(c+d) = </span>【<input type = 'text'><span lang=EN-US>    </span></input>】<span lang=EN-US>+
+</span>【<input type = 'text'><span lang=EN-US>    </span></input>】<span lang=EN-US>+</span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<span lang=EN-US>+</span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>此式稱為乘法對加法的「分配律」。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>有了分配律，我們就可用代入法導出公式。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>什麼是代入法呢？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>由於不管放什麼數，分配律都會成立，我們可以只看特例，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>考慮<span
+lang=EN-US>c = a, d = b</span>的特例，則</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)
+(c+d) = ac + ad + bc + bd  </span><span style='font-size:14.0pt;font-family:
+新細明體'>就會代換成</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)
+(a+b) = aa + ab + ba + bb  </span><span style='font-size:14.0pt;font-family:
+新細明體'>（<span lang=EN-US>c</span>都換成【<input type = 'text'><span lang=EN-US>   </span></input>】，<span
+lang=EN-US>d</span>都換成【<input type = 'text'><span lang=EN-US>   </span></input>】）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>理項之後，就是【<input type = 'text'><span
+lang=EN-US>    </span></input>】的完全平方公式。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>考慮<span
+lang=EN-US>c = a, d = -b</span>的特例，則</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+b)
+(c+d) = ac + ad + bc + bd  </span><span style='font-size:14.0pt;font-family:
+新細明體'>就會代換成</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a+(-b))
+(a+(-b)) = aa + a(-b) + (-b)a + (-b)(-b)</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>理項</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(a-b)
+(a-b) = a<sup>2</sup> - 2ab + (-b)(-b)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這很像【<input type = 'text'> <span
+lang=EN-US>  </span></input>】的完全平方公式，除了最後一項怪怪的。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>其實，<span
+lang=EN-US>(-b) </span>× <span lang=EN-US>(-b) = b<sup>2</sup></span>，所以上式就是【<input type = 'text'><span
+lang=EN-US>   </span></input>】的完全平方公式。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span lang=EN-US>2</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請利用分配律和代入法，導出「平方差公式」</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>（<span lang=EN-US>2~9</span>題，請利用乘法公式化簡計算）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>84<sup>2</sup>
+– 16<sup>2</sup>                                          3.  205<sup>2</sup></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4.   199<sup>2</sup>                                                      5.   998
+</span><span style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 1002</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1999.999<sup>2</sup>                                               7.   503
+</span><span style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 497</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>8.   990 </span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 1010                                     9.   500.03
+</span>×<span lang=EN-US> 499.97     </span></span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>綜合練習</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請填上九九乘法表，每格數字均為它到左上角圍出的面積：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>9</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=46 valign=top style='width:46.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=46 valign=top style='width:46.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=47 valign=top style='width:46.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請展開<span
+lang=EN-US>(a+b+c)(x+y+z)  </span>（提示：可用圖形畫出九宮格）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請展開<span
+lang=EN-US>(a+b)<sup>3</sup> </span>（提示：<span lang=EN-US>(a+b)<sup>3</sup> =
+(a+b)(a+b)<sup>2</sup></span>）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請展開<span
+lang=EN-US>(a+b) (a<sup>2</sup> –ab + b<sup>2</sup>) </span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>（提示：<span lang=EN-US> a<sup>2</sup> </span>、<span
+lang=EN-US>-ab</span>、<span lang=EN-US>b<sup>2</sup></span>雖然是乘積，也可當作「邊長」來作六宮格）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請展開<span
+lang=EN-US>(a-b) (a<sup>2</sup> + ab + b<sup>2</sup>)</span></span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'></span><span style='font-size:14.0pt;
+font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                                                                   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[1]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>其實還有許多圖形表示法，比方說畫</span><span
+lang=EN-US>12</span><span style='font-family:新細明體'>條長度為</span><span lang=EN-US>15</span><span
+style='font-family:新細明體'>的線接在一起。</span></p>
+
+</div>
+
+</div>
+<button class = "ui big purple button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big green button" onclick = "location = '勾股定理.htm'">勾股定理</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>

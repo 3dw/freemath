@@ -20,6 +20,8 @@ symDir = r'[kejsc?]'
 
 directory = os.getcwd()
 
+units = []
+
 for root,dirs,files in os.walk(directory):
     for file in files:
        	if file.endswith(".htm") and (not file.endswith("index.htm") or file.endswith("index.html")):
@@ -79,6 +81,19 @@ for root,dirs,files in os.walk(directory):
 
 			#生出其他單元的按鈕  new 待測試
 
+			grade = re.findall(r'grade:.+', text)
+
+			g = 4
+			G = 7
+
+			if (len(grade) > 0):
+				g = re.findall(r'\d', grade[0])[0]
+				G = re.findall(r'\d', grade[0])[1]
+
+			print grade
+			print g
+			print G
+
 			pres = re.findall(r'pre:.+', text)
 			afters = re.findall(r'after:.+', text)
 			rels = re.findall(r'rel:.+', text)
@@ -94,24 +109,31 @@ for root,dirs,files in os.walk(directory):
 					isAfter = False
 					isRel = False
 
-					for pre in pres:
-						pre = pre.replace('pre:','').replace(' ','').replace('-->','')
-						pre = re.sub(symDir, '', pre)
-						if (friend.replace('.htm','') == pre):
-							isPre = True
+					if (not friend == f.name):
 
-					for after in afters:
-						after = after.replace('after:','').replace(' ','').replace('-->','')
-						after = re.sub(symDir, '', after)
-						if (friend.replace('.htm','') == after):
-							isAfter = True
+						for pre in pres:
+		#					pre = pre.replace('pre:','').replace(' ','').replace('-->','')
+		#					pre = re.sub(symDir, '', pre)
+		#					if (friend.replace('.htm','') == pre):
+		#						isPre = True
+							if (pre.find(friend.replace('.htm','')) > -1):
+								isPre = True
 
-					for rel in rels:
-						rel = rel.replace('rel:','').replace(' ','').replace('-->','')
-						rel = re.sub(symDir, '', rel)
-						if (friend.replace('.htm','') == rel):
-							isRel = True		
+						for rel in rels:
+		#					rel = rel.replace('rel:','').replace(' ','').replace('-->','')
+		#					rel = re.sub(symDir, '', rel)
+		#					if (friend.replace('.htm','') == rel):
+		#						isRel = True
+							if (rel.find(friend.replace('.htm','')) > -1 and not isPre):
+								isRel = True
 
+						for after in afters:
+		#					after = after.replace('after:','').replace(' ','').replace('-->','')
+		#					after = re.sub(symDir, '', after)
+		#					if (friend.replace('.htm','') == after):
+		#						isAfter = True
+							if (after.find(friend.replace('.htm','')) > -1 and not isRel and not isPre):
+								isAfter = True
 
 					if isPre:
 						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
@@ -203,7 +225,6 @@ for root,dirs,files in os.walk(directory):
 			text = re.sub(r"</span></span><span style='font-size:14.0pt;font-family:\s*新細明體;color:white'>", '', text)
 
 
-
 			f.seek(0)
 			f.write(text)
 			f.truncate()
@@ -216,4 +237,14 @@ for root,dirs,files in os.walk(directory):
 #			print "and add final buttons and link with semantic ui, jquery ui css"			
 #			print "and 消掉意見回饋欄 and 加上提示語"
 
+			units.append('{ n: \'' + f.name +'\', g: ' + str(g) + ',' + 'G: ' + str(G) + '}');
+
 			f.close
+
+dataf = open('fmData.js', 'r+')
+
+dataf.seek(0)
+dataf.write('var Units = [' + ', '.join(units) + ']')
+dataf.truncate()
+
+dataf.close
