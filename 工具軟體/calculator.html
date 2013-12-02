@@ -38,13 +38,27 @@ tr, td, th {
     border: 3px ridge;
 }
 
-td { 
+td {
+	padding: 5px;
     width: 33%;
 }
 
+td:hover {
+	background-color: rgba(255,255,200,1);
+}
 
 input {
   font-size: 1.2rem;
+}
+
+.wiki {
+	width: 1rem;
+	height: 1rem;
+}
+
+.fm_tool {
+	width: 1rem;
+	height: 1rem;
 }
 
 </style>
@@ -75,35 +89,51 @@ input {
 
       <tr><td> {{ s1 }} 的因數有 {{ s1 | fact }} </td>
           <td> {{ s2 }} 的因數有 {{ s2 | fact }} </td>
-          <td>{{s1 | arith}} + {{s2 | arith}} = {{ s1 + s2 | arith}}</td>
+          <td>{{s1 | arith}} + {{s2 | arith}} = {{ s1 + s2 | arith}} <br/>
+          	<a href = "單機閃卡.html">閃卡<img class = "fm_tool" /></a></td>
       </tr>
 
 
       <tr><td> {{ s1 }} 的倍數有 {{ s1 | mul }} </td>
           <td> {{ s2 }} 的倍數有 {{ s2 | mul }} </td>
-          <td>{{s1 | arith}} - {{s2 | arith}} = {{ s1 - s2 | arith}}</td>
+          <td>{{s1 | arith}} - {{s2 | arith}} = {{ s1 - s2 | arith}} <br/>
+          	<a href = "單機閃卡.html">閃卡<img class = "fm_tool" /></a></td>
       </tr>
       
       <tr><td> {{ s1 }}! = {{ s1 | factorialM }} = {{ s1 | factorial }} </td>
           <td> {{ s2 }}! = {{ s2 | factorialM }} = {{ s2 | factorial }} </td>
-          <td>{{s1 | arith}} * {{s2 | arith}} = {{ s1 * s2 | arith}}</td></tr>
+          <td>{{s1 | arith}} × {{s2 | arith}} = {{ s1 * s2 | arith}} <br/>
+          	<a href = "單機閃卡.html">閃卡<img class = "fm_tool" /></a></td></tr>
       
-      <tr><td /><td /><td>{{s1 | arith}} / {{s2 | arith}} = {{ {a:s1, b:s2} | div:this}}</td>
+      <tr><td /><td /><td>{{s1 | arith}} ÷ {{s2 | arith}} = {{ {a:s1, b:s2} | divR}} <br/>
+      	<a href = "單機閃卡.html">閃卡<img class = "fm_tool" /></a></td>
+      </tr>
+
+      <tr><td /><td /><td>{{s1 | arith}} / {{s2 | arith}} = {{ {a:s1, b:s2} | div}} <br/>
+      	<a href = "單機閃卡.html">閃卡<img class = "fm_tool" /></a> <a href = "../weblearn/分數.htm">分數<img class = "fm_tool" /></a></td>
       </tr>
       
-      <tr><td /><td /><td>{{s1 | arith}} <sup> {{s2 | arith}} </sup> = {{ {a:s1, t:s2} | powM }} = {{ {a:s1, t:s2} | pow }}</td></tr>
+      <tr><td /><td /><td>{{s1 | arith}} <sup> {{s2 | arith}} </sup> = {{ {a:s1, t:s2} | powM }} = {{ {a:s1, t:s2} | pow }} <br/>
+      	<a href = "../weblearn/指數與科學記號.htm">指數與科學記號<img class = "fm_tool" /></a></td></tr>
 
 
-      <tr><td /><td /><td>{{s2 | arith}} <sup> {{s1 | arith}} </sup> = {{ {a:s2, t:s1} | powM }} = {{ {a:s2, t:s1} | pow }}</td></tr>
+      <tr><td /><td /><td>{{s2 | arith}} <sup> {{s1 | arith}} </sup> = {{ {a:s2, t:s1} | powM }} = {{ {a:s2, t:s1} | pow }} <br />
+      	<a href = "../weblearn/指數與科學記號.htm">指數與科學記號<img class = "fm_tool" /></a> </td></tr>
 
-      <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最大公因數： {{ {a:s1, b:s2} | gcd }}</td></tr>
+      <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最大公因數： {{ {a:s1, b:s2} | gcd }} <br />
+      	<a href = "../weblearn/因數與倍數.htm">因數與倍數<img class = "fm_tool" /></a></td></tr>
 
-      <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最小公倍數： {{ {a:s1, b:s2} | lcm }}</td></tr>
+      <tr><td /><td /><td> {{ s1 }}, {{ s2 }} 的最小公倍數： {{ {a:s1, b:s2} | lcm }} <br />
+      	<a href = "../weblearn/因數與倍數.htm">因數與倍數<img class = "fm_tool" /></a></td></tr>
 
-      <tr><td /><td /><td> P <sup>{{ s1 }}</sup> <sub>{{ s2 }} </sub> = {{ {a:s1, b:s2} | perm }}</td></tr>
+      <tr><td /><td /><td> P <sup>{{ s1 }}</sup> <sub>{{ s2 }} </sub> = {{ {a:s1, b:s2} | perm }} <br />
+      	<a href = "http://zh.wikipedia.org/wiki/组合数学#.E6.8E.92.E5.88.97">排列<img class = "wiki" /></a></td></tr>
 
-      <tr><td /><td /><td> C <sup>{{ s1 }}</sup> <sub>{{ s2 }} </sub> = {{ {a:s1, b:s2} | comb }}</td></tr>
+      <tr><td /><td /><td> C <sup>{{ s1 }}</sup> <sub>{{ s2 }} </sub> = {{ {a:s1, b:s2} | comb }} <br/>
+      	<a href = "http://zh.wikipedia.org/wiki/组合数学#.E7.BB.84.E5.90.88">組合<img class = "wiki" /> </a> </td></tr>
 
+	  <tr><td /><td /><td> log <sub>{{ s1 }}</sub> {{ s2 }} = {{ {a:s1, b:s2} | log }} <br/>
+	  	<a href = "../weblearn/指數與對數.htm">指數與對數<img class = "fm_tool" /></a> <a href = "http://zh.wikipedia.org/wiki/對數">對數<img class = "wiki" /> </a> </td></tr>
 
       </table>
 
@@ -112,6 +142,15 @@ input {
 
 
 <script type="text/javascript">
+
+
+$(document).ready(function(){
+	$(".wiki").attr("src", "http://www.zengardner.com/wp-content/uploads/500px-wikipedia-logo-v2.png");
+
+	$(".fm_tool").attr("src", "../images/math-logo.png");	
+
+
+});
 
 var autoApp = angular.module('autoApp', ['autoFilters']);
 
@@ -131,6 +170,10 @@ function fact(input) {
     return ans;
 }
 
+function isInt(input) {
+	return (input == Math.floor(input));
+}
+
 angular.module('autoFilters', []).filter('arith', function() {
     return function(input) {
       return input ? input : 0;
@@ -141,7 +184,6 @@ angular.module('autoFilters', []).filter('arith', function() {
 		var s1 = input.a;
 		var s2 = input.b;
 		while ((Math.abs(s1) >= Math.abs(s2)) && s2) {
-		 console.log(s1 + '/' + s2);
 		 if (s1 > 0 ) {
 		    s1 -= Math.abs(s2);
 		    ans += s2 / Math.abs(s2);
@@ -161,6 +203,31 @@ angular.module('autoFilters', []).filter('arith', function() {
 		return s1 ? ans + ' ' + s1 + '/' + s2 : ans;
 		}
   	};
+}).filter(('divR'), function(){     // 待整合
+    return function(input){
+		var ans = 0;
+		var s1 = input.a;
+		var s2 = input.b;
+		while (((Math.abs(s1) >= Math.abs(s2)) || s1 < 0) && s2 ) {
+			 if (s1 > 0 ) {
+			    s1 -= Math.abs(s2);
+			    ans += s2 / Math.abs(s2);
+			 }
+			 else if (s1 < 0 ) {
+			    s1 += Math.abs(s2);
+			    ans -= s2 / Math.abs(s2);
+			 }         
+		}
+		if (s2 == 0) {
+		if (s1 > 0) return Infinity;
+		if (s1 < 0) return Infinity;
+		if (s1 == 0) return NaN;
+		}
+		else {
+		if (!ans) ans = '';
+		return s1 ? ans + ' ...... ' + s1 : ans;
+		}
+  	};
 }).filter(('pow'), function(){
     return function(input){
        return Math.pow(input.a, input.t);
@@ -171,8 +238,10 @@ angular.module('autoFilters', []).filter('arith', function() {
 		for (var i = 0; i < Math.abs(input.t); i++) {
 			list.push(input.a);
 	    };
-	    ans = list.length < 10 ? list.join('*'): list.length + '個' + input.a + '相乘';
-	    return (input.a < 0) ? '1 / (' + ans + ')' : ans;
+	    ans = list.length < 10 ? list.join(' × ') : list.length + '個' + input.a + '相乘';
+
+	    if (!isInt(input.t)) return (input.a + '的' + input.t + '次方');
+		return (input.t < 0) ? '1 / (' + ans + ')' : ans;
 	};
 }).filter(('fact'), function(){
      return function(input){
@@ -190,7 +259,7 @@ angular.module('autoFilters', []).filter('arith', function() {
         for (var i = -2; i <= 5; i++) {
            muls.push(i * input);        
         };
-        return '...'+muls.join()+'...';
+        return '..., '+muls.join(', ')+', ...';
   };
 }).filter(('gcd'), function(){
      return function(input){
@@ -220,27 +289,33 @@ angular.module('autoFilters', []).filter('arith', function() {
   };
 }).filter(('factorial'), function(){
      return function(input){
+        if (!isInt(input)) return NaN;
         return input >= 0 ? fact(input) : NaN;
-
   };
 }).filter(('factorialM'), function(){
      return function(input){
 
      	var ans = 1;
         for (var i = 1; i <= input; i++) {
-        	ans += '*'+i;
+        	ans += ' × '+i;
         };
 
+        if (ans.length > 10) ans = '1 × ... × ' + input; 
+        if (!isInt(input)) return input+'的階乘';
         return input >= 0 ? ans : '';
 
   };
 }).filter(('perm'), function(){
      return function(input){
-     	return fact(input.a) / fact(input.a - input.b);
+     	return input.a >= input.b && input.b > 0 ? fact(input.a) / fact(input.a - input.b) : NaN;
   };
 }).filter(('comb'), function(){
      return function(input){
-     	return fact(input.a) / fact(input.a - input.b) / fact(input.b);
+     	return input.a >= input.b && input.b > 0 ? fact(input.a) / fact(input.a - input.b) / fact(input.b) : NaN;
+  };
+}).filter(('log'), function(){
+     return function(input){
+     	return Math.log(input.b) / Math.log(input.a);
   };
 });
 
