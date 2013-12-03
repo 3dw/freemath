@@ -116,24 +116,36 @@ for root,dirs,files in os.walk(directory):
 		#					pre = re.sub(symDir, '', pre)
 		#					if (friend.replace('.htm','') == pre):
 		#						isPre = True
-							if (pre.find(friend.replace('.htm','')) > -1):
-								isPre = True
+							for seg in pre.split(r'/\s/'):
+								if seg == friend.replace('.htm',''):
+ 									isPre = True
+
+		#						if (pre.find(friend.replace('.htm','')) > -1):
+		#							isPre = True
 
 						for rel in rels:
 		#					rel = rel.replace('rel:','').replace(' ','').replace('-->','')
 		#					rel = re.sub(symDir, '', rel)
 		#					if (friend.replace('.htm','') == rel):
 		#						isRel = True
-							if (rel.find(friend.replace('.htm','')) > -1 and not isPre):
-								isRel = True
+
+							for seg in rel.split(r'/\s/'):
+								if seg == friend.replace('.htm',''):
+ 									isRel = True
+		#					if (rel.find(friend.replace('.htm','')) > -1 and not isPre):
+		#						isRel = True
 
 						for after in afters:
 		#					after = after.replace('after:','').replace(' ','').replace('-->','')
 		#					after = re.sub(symDir, '', after)
 		#					if (friend.replace('.htm','') == after):
 		#						isAfter = True
-							if (after.find(friend.replace('.htm','')) > -1 and not isRel and not isPre):
-								isAfter = True
+
+							for seg in after.split(r'/\s/'):
+								if seg == friend.replace('.htm',''):
+ 									isAfter = True
+		#					if (after.find(friend.replace('.htm','')) > -1 and not isRel and not isPre):
+		#						isAfter = True
 
 					if isPre:
 						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'

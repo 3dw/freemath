@@ -18,12 +18,12 @@ $(document).ready(function(){
 		el: $('body'),
 
 		intro: '<p>歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載文件檔'
-			+'<button class = "ui small blue button" onclick = "location = location.href.replace(\'w/\', \'/\').replace(\'.htm\', \'.doc\')"'
-				+'style = "margin-left:2ex">'+document.title+'.doc</button></p>'
+			+'<a class = "ui small blue button" href = \'https://github.com/bestian/freemath/zipball/gh-pages\'"'
+				+'style = "margin-left:2ex">'+'下載整份Freemath文件檔'+'</a></p>'
 			+'<p>本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲</p>'
-			+'<p>因為這原是紙本教材，有些活動需要紙筆和動手操作。請拿一張紙或筆記本、和一隻筆，當作輔助📝</p>'
+			+'<p>有些部份需要紙筆和動手操作。請拿紙筆，當作輔助📝</p>'
 			+'<p>如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵</p>'
-			+'<p>（愛的小叮嚀：有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼</p>',
+			+'<p>（有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼</p>',
 
 		events :{
 			'change input' : 'showHint',
