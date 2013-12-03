@@ -63,30 +63,63 @@
 	</tr>
 </table>
 
-<h3>====教材試用(含紙本下載)====</h3>
-<ul ng-controller ="Ctrl">
-  <li ng-repeat = "i in Units"> 
+<div ng-controller ="Ctrl">
+
+<h3>====教材試用(含紙本下載)====<input type="number" ng-model="searchM" placeholder = "請輸入年級">  </input></h3>
+
+<ul>
+  <li ng-repeat = "i in filtered = (Units | mathUnitsFilter:searchM) "> 
   <a href = "weblearn/{{i.n}}" >{{ i.n }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級) 
   <a href = "weblearn/{{i.n}}" > <img class="fm_logo" /></a>
   <a href = "http://zh.wikipedia.org/wiki/{{i.n.split('.htm')[0].substr(0, 2)}}" > <img class="wiki" /></a>
-  <a href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" > <img class="google" /></a> 
+  <a href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" > {{$eval(
+            showImg())}} <img class="google" /></a> 
 </ul>
+
+</div>
 
 <script type="text/javascript">
 
-$(document).ready(function(){
+function showImg() {
   $(".fm_logo").attr("src", "images/math-logo.png").css({height: "25px", width: "25px"});
-	$(".wiki").attr("src", "http://www.zengardner.com/wp-content/uploads/500px-wikipedia-logo-v2.png").css({height: "25px", width: "25px"});
-	$(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
+  $(".wiki").attr("src", "http://www.zengardner.com/wp-content/uploads/500px-wikipedia-logo-v2.png").css({height: "25px", width: "25px"});
+  $(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
+}
+
+
+$(document).ready(function(){
+  showImg();
 });
 
-var fmIndexApp = angular.module('fmIndexApp', []);
+var fmIndexApp = angular.module('fmIndexApp', ['App.filters']);
 
-function Ctrl($scope) {
-  
+
+function Ctrl($scope) {  
   $scope.Units = Units.sort(function(a,b){return a.g - b.g });
   $scope.Math = window.Math;
+  $scope.showImg = showImg;
+
 }
+angular.module('App.filters', []).filter('mathUnitsFilter', function () {
+    return function (Units, searchM) {
+        if (!angular.isUndefined(Units) && !angular.isUndefined(searchM) && searchM) { 
+              var tempUnits = [];
+              angular.forEach(Units, function (unit) {
+                  if (unit.g <= searchM && searchM <= unit.G) { //angular.equals(unit.g, searchM)
+                      tempUnits.push(unit);
+                  }
+              });
+
+            return tempUnits.length > 0 ? tempUnits : Units;
+        } else {
+            console.log(Units[0].g);
+            console.log(searchM);
+            return Units;
+        }
+    };
+});
+
+
 
 </script>
 
