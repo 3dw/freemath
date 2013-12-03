@@ -72,8 +72,8 @@
   <a href = "weblearn/{{i.n}}" >{{ i.n }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級) 
   <a href = "weblearn/{{i.n}}" > <img class="fm_logo" /></a>
   <a href = "http://zh.wikipedia.org/wiki/{{i.n.split('.htm')[0].substr(0, 2)}}" > <img class="wiki" /></a>
-  <a href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" > {{$eval(
-            showImg())}} <img class="google" /></a> 
+  <a href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" > <img class="google" /></a> 
+  <a href="http://www.moedict.tw/{{i.n.split('.htm')[0]}}"><img class="3du" /> {{$eval(showImg())}}</a>
 </ul>
 
 </div>
@@ -82,8 +82,10 @@
 
 function showImg() {
   $(".fm_logo").attr("src", "images/math-logo.png").css({height: "25px", width: "25px"});
-  $(".wiki").attr("src", "http://www.zengardner.com/wp-content/uploads/500px-wikipedia-logo-v2.png").css({height: "25px", width: "25px"});
+  $(".wiki").attr("src", "images/wikipedia-logo.png").css({height: "25px", width: "25px"});
   $(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
+  $(".3du").attr("src", "images/3du-logo.png").css({height: "20px", width: "20px"});
+
 }
 
 
@@ -124,12 +126,13 @@ angular.module('App.filters', []).filter('mathUnitsFilter', function () {
 </script>
 
 
-<h3>站外連結：</h3>
+<h3>===連結===</h3>
 
 <table>
 	<tr>
 		<td><a href = "http://math.alearn.org.tw/">*自由數學簡介</a></td>
 		<td><a href = "http://map.alearn.org.tw/">*自學地圖</a></td>
+		<td><a href = "http://www.geogebratube.org/">*Geogebra Tube</a></td>
 	</tr>
 
 </table>
