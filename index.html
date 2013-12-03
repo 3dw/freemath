@@ -48,11 +48,12 @@
 
 <h3>====關於====</h3>
 
-<p>Freemath是以中文書的自由數學教材與、教法、學習方法的匯整</p>
-<p>（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的<a href="http://moztw.org/firefox/">Firefox瀏覽器</a>）</p>
+<p>Freemath是以中文書的自由數學教材與、教法、學習方法的匯整<a href = "http://math.alearn.org.tw/">*自由數學簡介</a></p>
 
 
 <h3>====線上工具====</h3>
+
+<p>（有用到CSS和HTML5的語法，如未能正常顯示，請下載新的<a href="http://moztw.org/firefox/">Firefox瀏覽器</a>）</p>
 
 <table>
 	<tr>
@@ -69,7 +70,7 @@
 
 <ul>
   <li ng-repeat = "i in filtered = (Units | mathUnitsFilter:searchM) "> 
-  <a href = "weblearn/{{i.n}}" >{{ i.n }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級) 
+  <a href = "weblearn/{{i.n}}" >{{ i.n.split('.htm')[0] }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級) 
   <a href = "weblearn/{{i.n}}" > <img class="fm_logo" /></a>
   <a href = "http://zh.wikipedia.org/wiki/{{i.n.split('.htm')[0].substr(0, 2)}}" > <img class="wiki" /></a>
   <a href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" > <img class="google" /></a> 
