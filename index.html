@@ -71,7 +71,7 @@
 
 <div ng-controller ="Ctrl">
 
-<h3>====教材試用(含紙本下載)====<input type="number" ng-model="searchM" placeholder = "請輸入年級">  </input></h3>
+<h3>====教材試用(含紙本下載)====<input type="number" ng-model="searchM" placeholder = "請輸入年級，例如5">  </input></h3>
 
 <ul>
   <li ng-repeat = "i in filtered = (Units | mathUnitsFilter:searchM) "> 
@@ -87,7 +87,7 @@
 <script type="text/javascript">
 
 function showImg() {
-  $(".fm_logo").attr("src", "images/math-logo.png").css({height: "25px", width: "25px"});
+  $(".fm_logo").attr("src", "images/math-logo-small.png").css({height: "25px", width: "25px"});
   $(".wiki").attr("src", "images/wikipedia-logo.png").css({height: "25px", width: "25px"});
   $(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
   $(".3du").attr("src", "images/3du-logo.png").css({height: "20px", width: "20px"}); 
