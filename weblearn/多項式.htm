@@ -1,0 +1,2170 @@
+<html>
+
+<!--
+
+grade: 9~10
+
+pre: 二次函數
+
+rel: 指數與對數 三角函數
+
+after: 微積分入門
+
+wiki: 多項式
+
+-->
+
+<head>
+<meta name=Title content=相>
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>多項式</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:Arial;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:標楷體;}
+@font-face
+	{font-family:BatangChe;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:新細明體;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Arial;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251650048'><span style='left:0px;position:
+absolute;left:56px;top:-21px;width:64px;height:55px'><img width=64 height=55
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image001.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>多</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251653120'><span style='left:0px;position:
+absolute;left:290px;top:-54px;width:37px;height:46px'><img width=37 height=46
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image002.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251654144'><span style='left:0px;position:
+absolute;left:65px;top:-54px;width:46px;height:55px'><img width=46 height=55
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image003.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>項</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251652096'><span style='left:0px;position:
+absolute;left:326px;top:-87px;width:73px;height:73px'><img width=73 height=73
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image004.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>式</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251651072'><span style='left:0px;position:
+absolute;left:2px;top:-120px;width:55px;height:55px'><img width=55 height=55
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image005.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1025" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image006.gif"
+alt=章節導覽></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>本章主題為：多項式</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>預備知識：四則運算、代數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>相關章節：方程式、幾何代數、二次函數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>建議活動：進位制猜謎</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>學完本章，你將能：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □用式子代表一整類的數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □瞭解何謂多項式及基本的分類</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>□ □瞭解多項式和十進位制的關係</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □初步運算多項式四則和分離係數法</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:18.0pt;font-family:新細明體'>□ □初步運用齊次性分析</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>□ □初步運用未定係數法<span
+lang=EN-US><br>
+<br>
+</span></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>本章有<span
+lang=EN-US>7</span>個「練習時間」：</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:18.0pt;font-family:新細明體'>（寫完請打勾，檢查完再打第二個勾）</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>1</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>2</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>3</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>4</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □基本功操練<span
+lang=EN-US>5</span></span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □綜合練習</span></p>
+
+<p class=MsoNormal><span style='font-size:18.0pt;font-family:新細明體'>□ □除錯練習</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:18.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1026" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image007.gif"
+alt=用式子表達一群數></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>我們先來看個例子：為什麼奇數加奇數是偶數？</span></p>
+
+<p class=MsoNormal style='margin-left:48.1pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:23.9pt'><span style='font-size:14.0pt;font-family:
+新細明體'>奇數加偶數是【<input type = 'text'><span lang=EN-US>  </span></input>】數？</span></p>
+
+<p class=MsoNormal style='margin-left:48.1pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:23.9pt'><span style='font-size:14.0pt;font-family:
+新細明體'>偶數加偶數是【<input type = 'text'><span lang=EN-US>  </span></input>】數？</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:48.1pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:23.9pt'><span style='font-size:14.0pt;font-family:
+新細明體'>奇數乘奇數是奇數？</span></p>
+
+<p class=MsoNormal style='margin-left:48.1pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:23.9pt'><span style='font-size:14.0pt;font-family:
+新細明體'>奇數乘偶數是【<input type = 'text'><span lang=EN-US>  </span></input>】數？</span></p>
+
+<p class=MsoNormal style='margin-left:48.1pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:23.9pt'><span style='font-size:14.0pt;font-family:
+新細明體'>偶數乘偶數是【<input type = 'text'><span lang=EN-US>  </span></input>】數？</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>這些事情需要硬記嗎？當然不需要。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>因為，若引入符號，用<span
+lang=EN-US>n, m </span>等數代表未知的整數，那麼</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>奇數都可寫成<span
+lang=EN-US>2n + 1</span></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>偶數都可寫成<span
+lang=EN-US>2n</span></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>奇數加奇數，就可寫成<span
+lang=EN-US>(2n + 1) + (2m + 1)</span></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'> (2n
++ 1) + (2m + 1)</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>=
+2n + 2m + 2</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>=
+2(n + m + 1)</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>結果是<span lang=EN-US>2</span>的整數倍，和<span
+lang=EN-US>2n</span>屬於相同的型，所以是偶數。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2n</span><span
+style='font-size:14.0pt;font-family:新細明體'>就稱為偶數的「通式」；【<input type = 'text'><span lang=EN-US>     </span></input>】則稱為奇數的「通式」。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b><span
+style='font-size:14.0pt;font-family:新細明體'>請寫出以下敘述對應的通式：</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a) </span><span
+style='font-size:14.0pt;font-family:新細明體'>三的倍數<span lang=EN-US>                  
+    b) </span>三角形數</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>c) </span><span
+style='font-size:14.0pt;font-family:新細明體'>平方數 <span lang=EN-US>                         d)
+</span>二位小數</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>1</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>一、請寫出以下敘述對應的通式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a) 12</span><span
+style='font-size:14.0pt;font-family:新細明體'>的倍數<span lang=EN-US>                  b)
+n</span>邊形的內角和</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>c) n</span><span
+style='font-size:14.0pt;font-family:新細明體'>角星的邊數<span lang=EN-US>                  c)
+</span>奇數乘以奇數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>二、上頁中，任意奇數加奇數，是寫成<span lang=EN-US>(2n
++ 1) + (2m + 1)</span>，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請問可不可以寫成<span lang=EN-US>(2n + 1) +
+(2n + 1)</span>呢？為什麼？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>三、請利用通式，證明奇數乘以奇數等於奇數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>四、請利用通式，證明偶數乘以奇數或偶數，都等於偶數</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>五、請利用通式，證明任何平方數，除以三的餘數都不是二。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>（平方就是<span
+lang=EN-US>1, 4, 9, 16...</span>某整數的平方）</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>六、承上題，請證明任何畢式三組數中，<span
+lang=EN-US>a, b</span>至少有一個是三的倍數。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>（畢式三組數就是<span
+lang=EN-US>a, b, c</span>三個正整數，滿足<span lang=EN-US>a<sup>2</sup> + b<sup>2</sup>
+= c<sup>2</sup></span>）</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=48
+id="_x0000_i1028" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image008.gif"
+alt=多項式的定義></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>多項式的研究起源於方程式求解的問題。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>像<span lang=EN-US>x+2 = 5</span>是一個方程式；左側的<span
+lang=EN-US>x+2</span>就是一個多項式。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>正規來說，多項式的定義，是由常數（一般的數字，如<span
+lang=EN-US>1, 2, 3, -5, </span>√<span lang=EN-US>2, </span>π）和變數（如<span
+lang=EN-US>x, y, z, a, b, c</span>）透過「<span lang=EN-US>+</span>」和「×」<sup>註<a
+href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference><span
+lang=EN-US><span class=MsoFootnoteReference><span lang=EN-US style='font-size:
+14.0pt;font-family:新細明體'>[1]</span></span></span></span></a></sup>組合而成的式子。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>例如：</span></b><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><br>
+2x + 6</span><span style='font-size:14.0pt;font-family:新細明體'>是<span lang=EN-US>2
+</span>×<span lang=EN-US> x + 6</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>5x<sup>3</sup> - 7</span><span
+style='font-size:14.0pt;font-family:新細明體'>是<span lang=EN-US>5 </span>×<span
+lang=EN-US> x </span>×<span lang=EN-US> x </span>×<span lang=EN-US> x + (-7)</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>4x<sup>3</sup> – 2x - 8</span><span
+style='font-size:14.0pt;font-family:新細明體'>是【<input type = 'text'><span lang=EN-US>                    </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請注意，多項式的生成方式不包括「÷」，像<span lang=EN-US><img
+width=24 height=26 id="_x0000_i1040" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image009.gif"></span>、<span
+lang=EN-US><img width=19 height=26 id="_x0000_i1041"
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image010.gif"></span>就不是多項式。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>多項式通常有「展開型」和「因式型」的寫法，視需要來使用。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>請填表：</span></b></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:1.0cm'>
+  <td width=209 colspan=2 style='width:209.05pt;border:solid windowtext 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>展開型</span></p>
+  </td>
+  <td width=209 style='width:209.05pt;border:solid windowtext 1.0pt;border-left:
+  none;background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>因式型</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=105 style='width:104.5pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#E6E6E6;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:新細明體'>降幕排列</span></p>
+  </td>
+  <td width=105 style='width:104.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#E6E6E6;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:新細明體'>升幕排列</span></p>
+  </td>
+  <td width=209 style='width:209.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=105 style='width:104.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>x<sup>2</sup> + 3x + 2</span></p>
+  </td>
+  <td width=105 style='width:104.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>2 + 3x + x<sup>2</sup></span></p>
+  </td>
+  <td width=209 style='width:209.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>(x+2)(x+1)</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=105 style='width:104.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=105 style='width:104.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>1 – 5x + 4x<sup>2</sup></span></p>
+  </td>
+  <td width=209 style='width:209.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=105 style='width:104.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=105 style='width:104.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=209 style='width:209.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>(x+4)(x-3)</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=105 style='width:104.5pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=105 style='width:104.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=209 style='width:209.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>(2x+4)(x-3)(x+6)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-size:
+9.0pt;font-family:新細明體'>註：降幕排列、升幕排列中的「幕」（<span lang=EN-US>power</span>）是指每一項的次數。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如果我們以<span lang=EN-US>10</span>代入<span
+lang=EN-US>x</span>，那麼多項式就會變成有趣的樣子。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>例如<span lang=EN-US>x<sup>2</sup> + 3x
++ 2</span>中，若<span lang=EN-US>x</span>代進<span lang=EN-US>10</span>，則會成為【<input type = 'text'><span
+lang=EN-US>           </span></input>】。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=239 height=47
+id="_x0000_i1029" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image011.gif"
+alt=多項式的組成></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:18.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>最簡單的多項式，就是只有一項的單項式。例如：<span
+lang=EN-US>7x2</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上式中，<span lang=EN-US>x</span>稱為變數。<span
+lang=EN-US>7</span>稱為係數。<span lang=EN-US>2</span>稱為次數。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>7x2</span><span
+style='font-size:14.0pt;font-family:新細明體'>是一個「<span lang=EN-US>x</span>的<span
+lang=EN-US>2</span>次單項式」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>練習：請完成下表</span></b></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;background:
+  #CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>式子</span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>分類</span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>係數</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>x<sup>3</sup></span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>x</span><span
+  style='font-size:14.0pt;font-family:新細明體'>的<span lang=EN-US>3</span>次單項式</span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2a<sup>5</sup></span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a</span><span
+  style='font-size:14.0pt;font-family:新細明體'>的【<input type = 'text'><span lang=EN-US>    </span></input>】次單項式<span
+  lang=EN-US> </span></span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3<sup>y</sup></span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>  </span></input>】的【<input type = 'text'><span
+  lang=EN-US>    </span></input>】次【<input type = 'text'><span lang=EN-US>  </span></input>】項式</span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>-5k<sup>9</sup></span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>  </span></input>】的【<input type = 'text'><span
+  lang=EN-US>    </span></input>】次【<input type = 'text'><span lang=EN-US>  </span></input>】項式</span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>√<span lang=EN-US>3x<sup>100</sup></span></span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>  </span></input>】的【<input type = 'text'><span
+  lang=EN-US>    </span></input>】次【<input type = 'text'><span lang=EN-US>  </span></input>】項式</span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=86 style='width:86.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>π<span lang=EN-US>y<sup>45</sup></span></span></p>
+  </td>
+  <td width=243 style='width:243.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>  </span></input>】的【<input type = 'text'><span
+  lang=EN-US>    </span></input>】次【<input type = 'text'><span lang=EN-US>  </span></input>】項式</span></p>
+  </td>
+  <td width=97 style='width:96.7pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>多項式都可以看做是幾個單項式，用【<input type = 'text'><span lang=EN-US>   
+</span></input>】法組合起來的結果。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>兩個多項式如果相等，就代表組成它們的每項都對應相等。例如：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>若<span lang=EN-US>a + bx + cx<sup>2</sup> 
+=  2 + x + x<sup>2</sup></span>，可推得<span lang=EN-US>a = </span>【<input type = 'text'><span
+lang=EN-US>  </span></input>】，<span lang=EN-US>b = </span>【<input type = 'text'><span lang=EN-US>  </span></input>】，<span
+lang=EN-US>c = </span>【<input type = 'text'><span lang=EN-US>   </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>多項式代人不同的值，結果就不一樣，所以它們很難比大小，<span
+lang=EN-US><br>
+</span>通常只可以比高低。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>次數<sup>註<a href="#_ftn2"
+name="_ftnref2" title=""><span class=MsoFootnoteReference><span lang=EN-US><span
+class=MsoFootnoteReference><span lang=EN-US style='font-size:14.0pt;font-family:
+新細明體'>[2]</span></span></span></span></a></sup>較大的，就比較高；次數較小的，就比較低。例如：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2 + x + x<sup>2</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>比<span lang=EN-US>2 + x - x<sup>3</sup></span>項來得低</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3 + x + x<sup>4</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>比<span lang=EN-US>2 + x -5 x<sup>3</sup></span>項來得【<input type = 'text'><span
+lang=EN-US>   </span></input>】</span><span lang=EN-US style='font-size:18.0pt;
+font-family:新細明體'><br clear=all style='page-break-before:always'>
+</span><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>2</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>一、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>我們常用<span
+lang=EN-US>degree</span>函數<span lang=EN-US>deg(  )</span>來代表多項式的次數，例如：<span
+lang=EN-US><br>
+<br>
+deg(2x + 3)  =  1                  deg(7x<sup>3</sup> - 5)  =  3<br>
+<br>
+deg(6) = 0</span>（因為<span lang=EN-US>x<sup>0</sup> = 1</span>）<span lang=EN-US>       <br>
+<br>
+</span>而<span lang=EN-US>deg(0) = </span>未定義 （因為<span lang=EN-US>0</span>多項式，沒有係數非零的項）<span
+lang=EN-US><br>
+<br>
+</span>請問：<span lang=EN-US><br>
+<br>
+deg(-3x + 2) =                       deg(-3x<sup>6</sup> + 2x<sup>3</sup> - 1)
+= <br>
+<br>
+deg(2 – 6x<sup>2</sup>) =                        deg[(x + 2) (x - 6) (x + 4)] =
+<br>
+<br>
+deg(-3x<sup>2</sup> + 2x<sup>6</sup> + 1) =                   deg(3) = </span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請利用多項式的等價，解出以下式子中，未知的係數：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt'>二、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>ax + 4  =  5x + 4                        <br>
+<br>
+<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt'>三、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>ax<sup>2</sup> - 3x + 1  =  5 + bx – 6x<sup>2</sup>                   <br>
+<br>
+<br>
+<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt'>四、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>ax<sup>3</sup> - 4x<sup>2</sup> + cx + 2 
+=  bx<sup>2</sup> + 3x + d          <br>
+<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt'>五、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:14.0pt;font-family:新細明體'>請比較以下幾組多項式中，誰高？誰低？或是一樣高？</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+<br>
+5x<sup>2</sup> - 3x + 1  ;   x – 6x<sup>3</sup>  <br>
+<br>
+2x<sup>2</sup> - 4x - 2  ;  a - bx – 6x<sup>2</sup>    <br>
+<br>
+<br>
+</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=239 height=46
+id="_x0000_i1030" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image012.gif"
+alt="多項式的加、減、乘"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>多項式的加減法，就是逐項分別加減，不同次項無法相加相減。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如果有缺項，可以看作該項的係數為零。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>例如： <span lang=EN-US>(1 + 2x + x<sup>3</sup>)
+– (2 + 5x<sup>2</sup> +3x<sup>3</sup>) = ?</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>我們從最低的常數項開始，常數項係數<span lang=EN-US> =
+1-2 = -1</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>一次項係數<span lang=EN-US> = 2 - 0 = 2</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>二次項係數<span lang=EN-US> = </span>【<input type = 'text'><span
+lang=EN-US>         </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>三次項係數<span lang=EN-US> = </span>【<input type = 'text'><span
+lang=EN-US>         </span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>所以<span lang=EN-US>(1 + 2x + x<sup>3</sup>)
+– (2 + 5x<sup>2</sup> +3x<sup>3</sup>) = </span>【<input type = 'text'><span lang=EN-US>                     
+</span></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>在乘法上，多項式的乘法和一般乘法一樣，遵守分配性。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>例如：</span></b><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>(1 + 2x + x<sup>3</sup>) </span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> (2 + 5x<sup>2</sup>)
+= ?</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>我們可以用表格表示：（請填滿）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:1.0cm'>
+  <td width=84 style='width:83.55pt;border:solid windowtext 1.0pt;background:
+  #CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=85 style='width:84.8pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>1</span></p>
+  </td>
+  <td width=86 style='width:86.35pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>2x</span></p>
+  </td>
+  <td width=84 style='width:83.6pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>0x<sup>2</sup></span></p>
+  </td>
+  <td width=88 style='width:87.8pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>x<sup>3</sup></span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=84 style='width:83.55pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>2</span></p>
+  </td>
+  <td width=85 style='width:84.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>2</span></p>
+  </td>
+  <td width=86 style='width:86.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>4x</span></p>
+  </td>
+  <td width=84 style='width:83.6pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>0 x<sup>2</sup></span></p>
+  </td>
+  <td width=88 style='width:87.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>2x<sup>3</sup></span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=84 style='width:83.55pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>0x</span></p>
+  </td>
+  <td width=85 style='width:84.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>0x</span></p>
+  </td>
+  <td width=86 style='width:86.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=84 style='width:83.6pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=88 style='width:87.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0cm'>
+  <td width=84 style='width:83.55pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>5 x<sup>2</sup></span></p>
+  </td>
+  <td width=85 style='width:84.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=86 style='width:86.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=84 style='width:83.6pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=88 style='width:87.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>或是用分離係數法，由高而低，寫成乘法直式（請補完）：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:48.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:24.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>3 + 2 + 0 + 1</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>            </span><span
+style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US>          5 + 0 + 2</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='position:relative;z-index:251655168'><span style='left:0px;position:
+absolute;left:41px;top:-199px;width:122px;height:5px'><img width=122 height=5
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image013.gif"></span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span><br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=239 height=46
+id="_x0000_i1031" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image014.gif"
+alt=除法複習></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>討論多項式的除法時，我們要習慣「包含除」的概念。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>所謂包含除，就是用小的量大的。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>例<span lang=EN-US>1</span>：若一個箱子可以裝<span
+lang=EN-US>30</span>個蘋果，<span lang=EN-US>75</span>個蘋果要裝幾袋？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>（請列除法算式，算算看）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>例<span lang=EN-US>2</span>：<span
+lang=EN-US><br>
+</span>若水筒容積<span lang=EN-US>20</span>公升，水杯容積<span lang=EN-US>0.3</span>公升，那麼要幾杯水才能倒滿水筒？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>（請列除法算式，算算看）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>在自然數的除法中，我們學過「被除數」、「除數」、「商數」、「餘數」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>以上面的筒子和杯子的例子，來玩<b>連連看：</b></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:39.15pt'>
+  <td width=167 style='width:167.4pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>被除數○</span></p>
+  </td>
+  <td width=253 style='width:253.0pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:14.0pt;font-family:新細明體'>●剩餘的量</span></p>
+  </td>
+ </tr>
+ <tr style='height:39.15pt'>
+  <td width=167 style='width:167.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>除數○</span></p>
+  </td>
+  <td width=253 style='width:253.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+  style='font-size:14.0pt;font-family:新細明體'>●筒子的容積</span></p>
+  </td>
+ </tr>
+ <tr style='height:39.15pt'>
+  <td width=167 style='width:167.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>商數○</span></p>
+  </td>
+  <td width=253 style='width:253.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal align=right style='margin-right:7.0pt;text-align:right'><span
+  style='font-size:14.0pt;font-family:新細明體'>●不滿出時，水杯最多能倒的次數</span></p>
+  </td>
+ </tr>
+ <tr style='height:39.15pt'>
+  <td width=167 style='width:167.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>餘數○</span></p>
+  </td>
+  <td width=253 style='width:253.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:39.15pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:14.0pt;font-family:新細明體'>●杯子的容積</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>餘數是不是一定小於除數？【<input type = 'text'><span lang=EN-US>     </span></input>】（是／否）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>一般的除法其實代表了一個乘法與加法的等式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>被除數 <span lang=EN-US>= </span>除數 ×【<input type = 'text'><span
+lang=EN-US>       </span></input>】<span lang=EN-US>+ </span>餘數<span lang=EN-US>     </span>（其中餘數小於【<input type = 'text'><span
+lang=EN-US>      </span></input>】）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>所以凡是可做乘法與加法的東西，就可以做除法。多項式也不例外。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>多項式的除法，在做高次的因式分解時，是相當常用的工具。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=239 height=46
+id="_x0000_i1032" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image015.gif"
+alt=多項式的除法></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>在多項式裡面，我們把除法等式</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><span style='font-size:14.0pt;font-family:新細明體'>被除數<span
+lang=EN-US>  = </span>除數 × 商數<span lang=EN-US> + </span>餘數<span lang=EN-US>           </span>（其中餘數
+小於 除數）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>改為</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><span style='font-size:14.0pt;font-family:新細明體'>被除式<span
+lang=EN-US>  = </span>除式 × 商式<span lang=EN-US> + </span>餘式<span lang=EN-US>           </span>（其中餘式
+低於 除式）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>為什麼改成「餘式低於除式」呢？因為多項式只能比高低啊。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>和因倍數很相似，在多項式的除法中，如果餘式是零，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>除式就稱為被除式的「倍式」；後者則是前者的「因式」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>總之，舉個例子看看就清楚了。<b>例如：</b></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br>
+(</span></b><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3x<sup>2</sup>
++ 2x – 1)  </span><span style='font-size:14.0pt;font-family:新細明體'>÷<span
+lang=EN-US>  (x – 2)  =  ?</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>為了省力，我們可以寫成分離係數，就變成<span lang=EN-US>(3
++ 2 – 1)  </span>÷<span lang=EN-US>  (1 – 2 )</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>利用直式即可解決：（請補完）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                                    3</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='position:relative;z-index:251659264'><span style='left:0px;position:
+absolute;left:5px;top:-132px;width:64px;height:39px'><img width=64 height=39
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image016.gif"></span></span><span
+style='position:relative;z-index:251656192'><span style='left:0px;position:
+absolute;left:59px;top:-132px;width:158px;height:5px'><img width=158 height=5
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image017.gif"></span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                        </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1    -     2          3    +    2    -     1</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'> </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                        3  
+-   6</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='position:relative;z-index:251658240'><span style='left:0px;position:
+absolute;left:86px;top:-153px;width:86px;height:5px'><img width=86 height=5
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image018.gif"></span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>                              -     4    -     1</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='position:relative;z-index:251657216'><span style='left:0px;position:
+absolute;left:122px;top:-154px;width:86px;height:5px'><img width=86 height=5
+src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image019.gif"></span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(</span></b><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3x<sup>2</sup> + 2x – 1) </span><span
+style='font-size:14.0pt;font-family:新細明體'>是不是<span lang=EN-US> (x – 2) </span>的倍式？【<input type = 'text'><span
+lang=EN-US>     </span></input>】（是／否）</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>3</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>一、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請計算：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(x + 1) + (5x<sup>2</sup>
++ 2) =                              (3x + 1) – (5x<sup>2</sup> - 3) =</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(x<sup>3</sup> + 2x<i><sup>2</sup></i>
++ 1)  </span><span style='font-size:14.0pt;font-family:新細明體'>×<span lang=EN-US> 
+(x + 2) =                  (10x + 2x<sup>3</sup>) </span>×<span lang=EN-US> (-2
++ 5x<sup>2</sup> - 3x<sup>3</sup>) =</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>(x<sup>4</sup> + 2x<sup>2</sup>
+- 1) </span><span style='font-size:14.0pt;font-family:新細明體'>÷<span lang=EN-US>
+(x<sup>2</sup>+1)  =</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>二、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請用直式除法，檢查<span
+lang=EN-US>x+2</span>是不是<span lang=EN-US>x<sup>3</sup> + 4x<sup>2</sup> + 5x +
+2</span>的因式？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>三、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>f. (x<sup>4</sup>
++ 2x<sup>2</sup> - 3) </span><span style='font-size:14.0pt;font-family:新細明體'>÷<span
+lang=EN-US> (x - 1) =</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt;
+font-family:新細明體'>四、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>承上題，請因式分解<span
+lang=EN-US>(x<sup>4</sup> + 2x<sup>2</sup> - 3)<br>
+</span>（提示：答案中含有一個不能分解的二次式）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1033" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image020.gif"
+alt=齊次多項式></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>在未知數的符號發明前，人們通常是用幾何圖形來證明公式，</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>用線段的長度來扮演現代<span
+lang=EN-US>x, y, z</span>的角色，用面積來代表未知量的乘積。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>舉例來說，以<span
+lang=EN-US>a, b</span>代表兩個未知的長度，那麼：</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>2</sup>, 
+ab,  b<sup>2</sup></span><span style='font-size:14.0pt;font-family:新細明體'>都是代表面積；</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>a<sup>3</sup>, 
+a<sup>2</sup>b,  ab<sup>2</sup>,  b<sup>3</sup></span><span style='font-size:
+14.0pt;font-family:新細明體'>如果畫出來，都是代表【<input type = 'text'>  <span lang=EN-US>     </span></input>】。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>以乘法公式<span
+lang=EN-US>(a+b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></span>為例。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>我們不難看出，<span lang=EN-US>(a+b)<sup>2</sup>
+= a<sup>2</sup> + 2ab + b<sup>2</sup></span>是一個談論面積的式子。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>因為它的每個項，都是【<input type = 'text'><span lang=EN-US>   </span></input>】次。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>我們稱<span lang=EN-US>a<sup>2</sup>+2ab+b<sup>2</sup></span>為一個齊<span
+lang=EN-US>2</span>次式，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>更完整地說，它是一個「<span lang=EN-US>2</span>元<span
+lang=EN-US>2</span>次齊次<span lang=EN-US>3</span>項式」。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>因為幾何代數的公式都有幾何意義，一定是齊式，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>如果背公式<span lang=EN-US>(a+b)<sup>2</sup></span>時，跑出一個<span
+lang=EN-US>a<sup>2</sup>b<sup>2</sup></span>，次數不對，那肯定是背錯了。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>齊次性在物理、化學的公式上，也是很好的檢驗標準。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>4</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-36.0pt'><span lang=EN-US style='font-size:14.0pt'>六、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:14.0pt;font-family:新細明體'>請將以下多項式中，齊次的打勾：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>甲：</span><span lang=EN-US
+style='font-size:14.0pt'>x<sup>2</sup> + 2x +1                          </span><span
+style='font-size:14.0pt;font-family:新細明體'>乙：</span><span lang=EN-US
+style='font-size:14.0pt'>x<sup>2</sup> + 2xy + y<sup>2</sup></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>丙：</span><span lang=EN-US
+style='font-size:14.0pt'>(x + y)(x<sup>2 </sup>– xy + y<sup>2</sup>)                  </span><span
+style='font-size:14.0pt;font-family:新細明體'>丁：</span><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'>(x + y + z)<sup>3</sup></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>戍：<span lang=EN-US>(x + y + 1)<sup>3</sup></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>二、令梯形上底為<span lang=EN-US>a, </span>下底為<span
+lang=EN-US>b, </span>高為<span lang=EN-US>h, </span>面積為<span lang=EN-US>A</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請寫出梯形的面積公式<span lang=EN-US>A = ?</span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>三、承上題，請完整地敘述，梯形面積公式是一個怎樣的多項式？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>四、請寫出圓柱體半徑為<span lang=EN-US>r, </span>高為<span
+lang=EN-US>h, </span>表面積為<span lang=EN-US>A, </span>體積為<span lang=EN-US>V</span>。<span
+lang=EN-US><br>
+</span>請寫出圓柱體的表面積公式<span lang=EN-US>A = ?    </span>以及體積公式<span lang=EN-US>V =
+?</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>五、承上題，請完整地敘述，<span lang=EN-US><br>
+</span>圓柱體的表面積公式和體積公式各是怎樣的多項式？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='margin-left:.1pt;text-align:center'><span
+lang=EN-US style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1036" src="%E5%A4%9A%E9%A0%85%E5%BC%8F_files/image021.gif"
+alt=未定係數法></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>本章開頭中，三角形數有<span
+lang=EN-US>1, 1+2, 1+2+3, 1+2+3+4, ...</span>等等，</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>通式是<span
+lang=EN-US>1 + 2 + ... + n</span>。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>但是這樣的通式，對於計算較大的數字時，<span
+lang=EN-US><br>
+</span>不夠方便（每次都要從頭加很多次）。因為我們可以把它化簡看看。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>例如<span
+lang=EN-US>1 + 2 + ... + n</span>用圖形來看，</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>代表的是一個面積，變數為ｎ，</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>我們如可確定它能夠化為Ａ<span
+lang=EN-US>n<sup>2</sup> + Bn + C</span>這種二次式。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>接著只要算出<span
+lang=EN-US>A, B, C</span>即可。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>利用Ａ<span
+lang=EN-US>n<sup>2</sup> + Bn + C = 1 + 2 + ... + n</span>（無論<span lang=EN-US>n</span>是多少）的性質，</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>代三個<span
+lang=EN-US>n</span>的數值，即可解出三個未知數Ａ<span lang=EN-US>, B, C</span>。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>請填表：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:0cm;border-collapse:collapse;border:none'>
+ <tr style='height:1.0cm'>
+  <td width=139 style='width:139.35pt;border:solid windowtext 1.0pt;background:
+  #CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>n</span></p>
+  </td>
+  <td width=139 style='width:139.35pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>Ａ<span lang=EN-US>n<sup>2</sup> +
+  Bn + C</span></span></p>
+  </td>
+  <td width=139 style='width:139.4pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:1.0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>1 + 2 + ... + n</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=139 style='width:139.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>0</span></p>
+  </td>
+  <td width=139 style='width:139.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>C</span></p>
+  </td>
+  <td width=139 style='width:139.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=139 style='width:139.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>1</span></p>
+  </td>
+  <td width=139 style='width:139.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>A + B + C</span></p>
+  </td>
+  <td width=139 style='width:139.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=139 style='width:139.35pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>2</span></p>
+  </td>
+  <td width=139 style='width:139.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=139 style='width:139.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>解出</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>A =</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>   </span></input>】<span
+lang=EN-US>             B =</span>【<input type = 'text'><span lang=EN-US>    </span></input>】<span
+lang=EN-US>                 C =</span>【<input type = 'text'><span lang=EN-US>    </span></input>】</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>這種方法，稱為未定係數法。</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>或許你會想，<span lang=EN-US>1 + 2 + ... +
+n</span>的公式，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>用梯形圖一畫就可以得到，為什麼要這樣費工呢？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>我們可以這樣想，假如要化簡<span lang=EN-US>1<sup>2</sup>
++ 2<sup>2</sup> + ... + n<sup>2</sup></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>或者是化簡<span lang=EN-US>1<sup>3</sup> +
+2<sup>3</sup> + ... + n<sup>3</sup></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>原本的梯形圖就不夠用了，而未定係數法還是管用呢。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span
+lang=EN-US>5</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>一、請用未定係數法，化簡<span
+lang=EN-US>1<sup>2</sup> + 2<sup>2</sup> + ... + n<sup>2</sup></span></span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:14.0pt;font-family:新細明體'>（提示，許多平方相加，會是立體結構，是一個三次式）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>二、請用未定係數法，找出五邊形數的通式</span></p>
+
+<p class=MsoNormal style='margin-left:.1pt;text-align:justify;text-justify:
+inter-ideograph'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'></span><span style='font-size:14.0pt;
+font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                                                                   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><a
+href="#_ftnref1" name="_ftn1" title=""><span class=MsoFootnoteReference><span
+lang=EN-US><span class=MsoFootnoteReference><span lang=EN-US style='font-size:
+12.0pt;font-family:"Times New Roman"'>[1]</span></span></span></span></a><span
+lang=EN-US style='font-size:10.0pt'> </span><span style='font-size:10.0pt;
+font-family:新細明體'>「×」和代數符號</span><span lang=EN-US style='font-size:10.0pt'>x</span><span
+style='font-size:10.0pt;font-family:新細明體'>長得很像，通常省略不寫。</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[2]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>多項式的次數，指的是它最高次係數非零的項的次數</span></p>
+
+</div>
+
+</div>
+<button class = "ui big blue button" onclick = "location = '二次函數.htm'">二次函數</button><button class = "ui big purple button" onclick = "location = '多項式.htm'">多項式</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '一元二次方程式.htm'">一元二次方程式</button><button class = "ui big button" onclick = "location = '三角形的心.htm'">三角形的心</button><button class = "ui big button" onclick = "location = '不等式.htm'">不等式</button><button class = "ui big button" onclick = "location = '二元一次方程式.htm'">二元一次方程式</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '全等形.htm'">全等形</button><button class = "ui big button" onclick = "location = '函數圖形.htm'">函數圖形</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '勾股定理.htm'">勾股定理</button><button class = "ui big button" onclick = "location = '四則運算總複習.htm'">四則運算總複習</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '圓與角.htm'">圓與角</button><button class = "ui big button" onclick = "location = '尺規作圖.htm'">尺規作圖</button><button class = "ui big button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big button" onclick = "location = '幾何證明.htm'">幾何證明</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '數列與級數.htm'">數列與級數</button><button class = "ui big button" onclick = "location = '數線.htm'">數線</button><button class = "ui big button" onclick = "location = '根式運算.htm'">根式運算</button><button class = "ui big button" onclick = "location = '機率與統計.htm'">機率與統計</button><button class = "ui big button" onclick = "location = '正負分數.htm'">正負分數</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '比與比值.htm'">比與比值</button><button class = "ui big button" onclick = "location = '直角座標.htm'">直角座標</button><button class = "ui big button" onclick = "location = '相似三角形.htm'">相似三角形</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>

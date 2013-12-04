@@ -1,0 +1,2331 @@
+<html>
+
+<!--
+
+grade: 7~8
+
+pre: 一元一次方程式
+
+rel: 一元二元次方程式 直角座標
+
+after: 多項式 圓的方程式 高斯消去法
+
+-->
+
+<head>
+<meta name=Title content="">
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>二元一次方程式</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:標楷體;}
+@font-face
+	{font-family:BatangChe;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Calibri;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Calibri;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Cambria;}
+p.a, li.a, div.a
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;}
+span.a0
+	{color:gray;}
+span.BalloonTextChar
+	{font-family:Cambria;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>二</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251656704'><span style='left:0px;position:
+absolute;left:56px;top:-27px;width:64px;height:55px'><img width=64 height=55
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image001.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>元</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251659776'><span style='left:0px;position:
+absolute;left:290px;top:-60px;width:37px;height:46px'><img width=37 height=46
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image002.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>一</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251660800'><span style='left:0px;position:
+absolute;left:65px;top:-66px;width:46px;height:55px'><img width=46 height=55
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image003.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>次</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>方</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251658752'><span style='left:0px;position:
+absolute;left:326px;top:-105px;width:73px;height:73px'><img width=73 height=73
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image004.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>程</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251657728'><span style='left:0px;position:
+absolute;left:2px;top:-138px;width:55px;height:55px'><img width=55 height=55
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image005.png"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>式</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<span lang=EN-US style='font-size:18.0pt;font-family:標楷體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=47
+id="_x0000_i1025" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image006.png"
+alt="二元一次式、二元一次方程式"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>我們之前學過解一元一次方程式，式子中只有一個未知數的方程式，未知數的次數為一次，或是經轉換後為一次，就叫做一元一次方程式，如</span><span
+lang=EN-US>2X</span><span style='font-family:新細明體'>－</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>÷</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>…等。如果一個方程式中有兩個未知數，但是未知數都為一次，就稱做二元一次方程式。如</span><span
+lang=EN-US>3x</span><span style='font-family:新細明體'>－</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>請圈出二元一次方程式：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>3x</span><span style='font-family:新細明體'>－</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>9</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>X<sup>2 </sup></span><span style='font-family:新細明體'>－</span><span
+lang=EN-US>y<sup>2 </sup></span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>3</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>3x</span><span style='font-family:新細明體'>＝</span><span lang=EN-US>4y</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>3x</span><span style='font-family:新細明體'>－</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>7x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>2</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Y</span><span style='font-family:新細明體'>＝</span><span lang=EN-US>13x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>2</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>既然是方程式，就會有解，我們來想想二元一次方程式的解。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>例一</span></b><span
+style='font-family:新細明體'>：</span><span lang=EN-US>  x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>在這個方程式中，有兩個未知數，</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>與</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>。所以我們只要指定</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>的值或是</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的值就可以了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>X</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>5</span><span style='font-family:新細明體'>，將</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>代入方程式，原方程式變為：【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】－</span><span lang=EN-US>3y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，為一元一次方程式，解出</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>所以（</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）為二元一次方程式</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>的解。數對（</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）前面為</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>的值，後面為</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的值，這是為了日後將方程式畫在平面上用的。當然也可以寫成</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='vertical-align:sub'><img
+width=33 height=56 id="_x0000_i1027" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image007.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=33 height=56
+id="_x0000_i1026" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image008.png"></span></span><span
+lang=EN-US>  </span><span style='font-family:新細明體'>這種聯立的方式。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>你也可以指定</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，原方程式變為</span><span lang=EN-US> x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>×【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，可以解出</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】，</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Y</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>2</span><span style='font-family:新細明體'>，（</span><span lang=EN-US>8</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）為方程式</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>的解。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>請再寫出三組</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>－</span><span lang=EN-US>3y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>的解。請問</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>有幾組解，為什麼？</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>例二：</span></b><span
+style='font-family:新細明體'>如果</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>是</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>ky</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>的解，求</span><span lang=EN-US>k</span><span
+style='font-family:新細明體'>之值。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>不要被一堆未知數嚇著了。即然是方程式的解，代入方程式一定要滿足方程式，所以我們就把</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>代入看看吧！</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>     
+</span><span style='font-family:新細明體'></input>】－</span><span lang=EN-US>k </span><span
+style='font-family:新細明體'>×【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】＝</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>，</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>原式變成</span><span lang=EN-US>
+7</span><span style='font-family:新細明體'>＋</span><span lang=EN-US>k </span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>，是【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】（填</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>或是</span><span lang=EN-US>k</span><span
+style='font-family:新細明體'>）的一元一次方程式。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>解得</span><span lang=EN-US>k</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>例三：</span></b><span
+style='font-family:新細明體'>從前面的例一我們知道，一個二元一次方程式有<u>無限多個</u>解，但是有時候我們可以限定解的範圍。像一般而言，日常生活中較多「正整數」的狀況，所以我們來試著看看找二元一次方程式正整數解。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>找出</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>的所有正整數解。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>正整數為大於</span><span
+lang=EN-US>0</span><span style='font-family:新細明體'>的整數。這個問題先指定【<input type = 'text'></span><span
+lang=EN-US>      </span><span style='font-family:新細明體'></input>】（填</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>）比較容易。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>X</span><span style='font-family:新細明體'>最小為</span><span
+lang=EN-US>1</span><span style='font-family:新細明體'>，我們就從</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>先找起。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>X</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>1</span><span style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US>X</span><span style='font-family:新細明體'>＝【<input type = 'text'></span><span
+lang=EN-US>      </span><span style='font-family:新細明體'></input>】，</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     
+</span><span style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>請問</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>可以找到符合條件的</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>嗎？</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>所以只有【<input type = 'text'></span><span lang=EN-US>          
+</span><span style='font-family:新細明體'></input>】與【<input type = 'text'></span><span lang=EN-US>          </span><span
+style='font-family:新細明體'></input>】兩組解。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>當然二元一次式也可以拿來表示應用問題，有時候問題中的未知數不只一個，可以用兩個來表示。如：</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例四：若長方形的長為</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>公分，寬為</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>公分，周長為（</span><span lang=EN-US>              </span><span
+style='font-family:新細明體'>）公分。</span></p>
+
+<p class=MsoNormal><span style='position:relative;z-index:251654656'><span
+style='position:absolute;left:51px;top:-115px;width:151px;height:102px'><span
+style='position:absolute;z-index:251654656;margin-left:22px;margin-top:26px;
+width:129px;height:76px'><img width=129 height=76
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image009.png"></span><span
+style='position:absolute;z-index:251654656;margin-left:74px;margin-top:1px;
+width:21px;height:29px'><img width=21 height=29
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image010.png"
+alt="Text Box: x"></span><span style='position:absolute;z-index:251654656;
+margin-left:1px;margin-top:44px;width:19px;height:25px'><img width=19
+height=25 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image011.png"
+alt="Text Box: y"></span></span></span><span style='font-family:新細明體'>（</span><span
+lang=EN-US>hint</span><span style='font-family:新細明體'>：周長為長方形外圍的長度總和。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例五：小玲的錢包內有佰元鈔票</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>張，拾元硬幣</span><span
+lang=EN-US>Y</span><span style='font-family:新細明體'>個，請問錢包內有（</span><span
+lang=EN-US>                </span><span style='font-family:新細明體'>）元。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例六：一個二位數的十位數字為</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>，個位數字為</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>，則此二位數的大小為（</span><span
+lang=EN-US>             </span><span style='font-family:新細明體'>）（注意：不能寫成</span><span
+lang=EN-US>xy</span><span style='font-family:新細明體'>，要從二位數的實際大小來考量）</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>一個二元一次方程式有無限多個解，但是如果我們把兩個二元一次方程式放在一起看呢？這叫做「<b>二元一次聯立方程式</b>」。它的解必須同時滿足兩個方程式。一組「二元聯立方程式」有幾個解呢？</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>我們可以從一個大家在一元一次方程式解過的應用問題來看：雞和兔共有</span><span
+lang=EN-US>12</span><span style='font-family:新細明體'>頭，腳合起來有</span><span
+lang=EN-US>30</span><span style='font-family:新細明體'>支，請問有幾隻雞？幾隻兔？</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>在一元一次方程式中，我們設雞有</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>隻，兔有（</span><span lang=EN-US>           
+</span><span style='font-family:新細明體'>）（因為兩者合起來有</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>頭）。雞有（</span><span lang=EN-US>        </span><span
+style='font-family:新細明體'>）支腳，兔有</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>）支腳，所以兩者合起來共有（</span><span lang=EN-US>                        
+</span><span style='font-family:新細明體'>）隻腳，又因為題目告知腳數有</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>支，所以可列出一元一次式：</span> <span lang=EN-US>2x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US> 4</span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>             </span><span
+style='font-family:新細明體'>）＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>解方程式可以得到雞有（</span><span
+lang=EN-US>          </span><span style='font-family:新細明體'>）頭，兔有</span> <span
+style='font-family:新細明體'>（</span><span lang=EN-US>           </span><span
+style='font-family:新細明體'>）頭。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>這個題目也可以用二元一次方程式來表示。設雞有</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>頭，兔有</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>頭，雞和兔共有</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>頭，可列出方程式（</span><span lang=EN-US>                           
+</span><span style='font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>雞有</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>隻腳，</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>頭雞有（</span><span lang=EN-US>            </span><span
+style='font-family:新細明體'>），兔有</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>隻腳，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>頭兔有（</span><span lang=EN-US>           </span><span
+style='font-family:新細明體'>）隻腳，兩個合起來有</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>支腳，所以可列出方程式（</span><span lang=EN-US>                      
+</span><span style='font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>因為兩個絛件中雞和兔的數目是一樣的。所以我們就可聯立此兩方程式得到</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='vertical-align:sub'><img
+width=70 height=56 id="_x0000_i1028" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image012.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=70 height=56
+id="_x0000_i1029" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image013.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>這組聯立方程式。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>從一元一次的解可以知道，只有一個條件滿足這個問題，因此<u>一組二元一次聯立方程式，也只會有一個解</u>而已。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>至於該如何解一組二元一次聯立方程式，在後面我們會教你方法，讓二元一次方程式轉換成一元一次方程式。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>練習</span></b></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:新細明體'>找出三組二元一次方程式</span> <span style='font-family:新細明體'>－</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＋</span><span lang=EN-US>2y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>的解。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:新細明體'>小梅和班上同學共</span><span lang=EN-US>35</span><span
+style='font-family:新細明體'>人，到郊外騎協力車玩。協力車有兩種，一種可以</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>人共乘，一種可以</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>人共乘，請設</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>人共乘有</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>台，</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>人共乘有</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>台，列出方程式後，以列表的方式，找出所有可能租車的方法。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:新細明體'>梯形上底為</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>公分，下底為</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>公分，高為</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>公分，則面積為多少平方公分？</span></p>
+
+<p class=a style='margin-left:18.0pt'><span style='font-family:新細明體'>若這個梯形的面積為</span><span
+lang=EN-US>75</span><span style='font-family:新細明體'>公分，請找出三組上底與下底。</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-family:新細明體'>想想看，如果</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>5y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>8</span><span
+style='font-family:新細明體'>，則</span><span lang=EN-US>0.3x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>0.5y</span><span
+style='font-family:新細明體'>等於多少？（提示：從等量公理去想），又</span><span lang=EN-US>15x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>25y</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>等於多少？</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>以代入消去法解二元一次聯立方程式</span></b></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>上面我們使用了一個例題，來說明二元一次聯立方程式只有一個解。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>雞和兔共有</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>頭，腳合起來有</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>支，請問有幾隻雞？幾隻兔？</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>設雞有</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>頭，兔有</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>頭，雞和兔共有</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>頭，可列出方程式（</span><span lang=EN-US>                            </span><span
+style='font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>雞有</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>隻腳，</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>頭雞有（</span><span lang=EN-US>            </span><span
+style='font-family:新細明體'>），兔有</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>隻腳，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>頭兔有（</span><span lang=EN-US>           </span><span
+style='font-family:新細明體'>）隻腳，兩個合起來有</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>支腳，所以可列出方程式（</span><span lang=EN-US>                      
+</span><span style='font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>因為兩個絛件中雞和兔的數目是一樣的。所以我們就可聯立此兩方程式得到</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=125 height=56
+id="_x0000_i1030" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image014.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=125 height=56
+id="_x0000_i1031" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image015.png"></span></span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>我們現在來解這個方程式。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>在使用一元一次方程式解題時，我們把雞設為</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>頭，兔有</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>頭，在這個式子中，我們指定兔有</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>頭，則</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>從這個聯立方程式的（</span><span
+lang=EN-US>1</span><span style='font-family:新細明體'>）式，把</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>移項（或兩邊同減</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>）我們也可以得到</span></p>
+
+<p class=MsoNormal><span lang=EN-US>y</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>12</span><span style='font-family:新細明體'>－</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>。由於上下兩式的</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>是相同的，所以我們可以把</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>                </span><span
+style='font-family:新細明體'>）代入（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式中</span><span lang=EN-US>Y</span><span
+style='font-family:新細明體'>的位置。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>我們就會得到</span><span
+lang=EN-US> 2x</span><span style='font-family:新細明體'>＋</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>                   </span><span
+style='font-family:新細明體'>）＝</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>，回顧前面，我們在一元一次方程式中，也用了同樣的手法。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>整理式子可以得到</span><span
+lang=EN-US> 2x</span><span style='font-family:新細明體'>＋</span><span lang=EN-US>48</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>4x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>解一元一次方程式，得</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>     
+</span><span style='font-family:新細明體'>），將</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>9</span><span
+style='font-family:新細明體'>代入（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式或是</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>中，可以得到</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>所以這個聯立方程式的解為</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=33 height=56
+id="_x0000_i1032" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image016.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=33 height=56
+id="_x0000_i1033" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image017.png"></span></span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>我們再來做幾個練習。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例一：解聯立方程式</span> <span
+lang=EN-US><span style='vertical-align:sub'><img width=112 height=56
+id="_x0000_i1034" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image018.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=112 height=56
+id="_x0000_i1035" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image019.png"></span></span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>從（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式知道</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2x</span><span
+style='font-family:新細明體'>，把</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2x</span><span
+style='font-family:新細明體'>代入（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式，得到</span></p>
+
+<p class=MsoNormal><span lang=EN-US>X</span><span style='font-family:新細明體'>＋（</span><span
+lang=EN-US>              </span><span style='font-family:新細明體'>）＝</span><span
+lang=EN-US>30</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>解方程式，得</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>        
+</span><span style='font-family:新細明體'>），將</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>代入（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式，可得</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>        </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>所以這個聯立方程式的解為</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>    
+</span><span style='font-family:新細明體'>），</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例二：解聯立方程式</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=121 height=56
+id="_x0000_i1036" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image020.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=121 height=56
+id="_x0000_i1037" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image021.png"></span></span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>由（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）知道</span> <span lang=EN-US><span style='vertical-align:
+sub'><img width=52 height=20 id="_x0000_i1038" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image022.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=52 height=20
+id="_x0000_i1039" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image023.png"></span></span><span
+style='font-family:新細明體'>，代入（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式，</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>                  </span><span
+style='font-family:新細明體'>）＝</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>，化簡式子得到</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>（</span><span lang=EN-US>   </span><span
+style='font-family:新細明體'>）</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>30</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>12</span><span
+style='font-family:新細明體'>，解方程式，得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>），將</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>21</span><span
+style='font-family:新細明體'>代入（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式，</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Y</span><span style='font-family:新細明體'>＝</span>
+<span style='font-family:新細明體'>（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>）＋</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>11</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>所以方程式的解為</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝－</span><span lang=EN-US>21</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>11</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例三：解聯立方程式</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=114 height=56
+id="_x0000_i1040" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image024.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=114 height=56
+id="_x0000_i1041" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image025.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>在（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）、（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）兩式中，找不到直接的</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>…</span><span
+style='font-family:新細明體'>或是</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝…的關係，所以我們必須做些轉換。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>從（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=54 height=20 id="_x0000_i1042" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image026.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=54 height=20
+id="_x0000_i1043" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image027.png"></span></span><span
+style='font-family:新細明體'>中，可以得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）－</span><span lang=EN-US>5y</span><span
+style='font-family:新細明體'>，代入（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式，可以得到</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的一元一次方程式</span><span lang=EN-US> 7</span><span
+style='font-family:新細明體'>－（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>－（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>）</span> <span style='font-family:新細明體'>）＝（</span><span
+lang=EN-US>      </span><span style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>破括號可以得到</span><span
+lang=EN-US> 7</span><span style='font-family:新細明體'>－</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>＋（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）＝（</span><span lang=EN-US>       </span><span
+style='font-family:新細明體'>），</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>解方程式得到</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>   
+    </span><span style='font-family:新細明體'>），代入</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>5y</span><span
+style='font-family:新細明體'>中，得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>    </span><span
+style='font-family:新細明體'>）－</span><span lang=EN-US>5 </span><span
+style='font-family:新細明體'>×（</span><span lang=EN-US>   </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>求得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>9</span><span
+style='font-family:新細明體'>所以方程式的解為</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>    </span><span
+style='font-family:新細明體'>），</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例四：解聯立方程式</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=121 height=56
+id="_x0000_i1044" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image028.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=121 height=56
+id="_x0000_i1045" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image029.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>在（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）、（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）兩式中，找不到直接的</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>…</span><span
+style='font-family:新細明體'>或是</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝…的關係，所以我們必須做些轉換。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>從（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式中，移項</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>，可以得到</span><span lang=EN-US>2y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>－（</span><span lang=EN-US>          </span><span
+style='font-family:新細明體'>），兩邊在同除</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>可以得到</span><span lang=EN-US>
+y</span><span style='font-family:新細明體'>＝</span><span lang=EN-US><span
+style='vertical-align:sub'><img width=7 height=38 id="_x0000_i1046"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image030.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1047" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image031.png"></span></span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>）……（</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>）。將</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=7 height=38 id="_x0000_i1048" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image032.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1049" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image033.png"></span></span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>）代入（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）中，可以得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>的一元一次方程式</span><span lang=EN-US> 2x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>                     </span><span
+style='font-family:新細明體'>）＝</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>，化簡這個式子，可以得到</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>（</span><span lang=EN-US>                          
+</span><span style='font-family:新細明體'>）＝</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>，解方程式可得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，將</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>代入</span></p>
+
+<p class=MsoNormal><span lang=EN-US>y</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1050" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image034.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1051" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image035.png"></span></span><span
+style='font-family:新細明體'>（</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>3x</span><span
+style='font-family:新細明體'>），可得</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>             </span><span
+style='font-family:新細明體'>）。因此方式程的解</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>         </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US>y</span><span style='font-family:新細明體'>＝（</span><span
+lang=EN-US>                </span><span style='font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>大家一定覺得例四很不好做，因為要處理較複雜的分數式子。在一下節中，我們會教「加減消去法」，像例四這樣的題目以加減消去法處理就容易多了。</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>練習</span></b></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>以代入消去法解下列的二元一次方程式</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=73 height=56
+  id="_x0000_i1052" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image036.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=73 height=56
+  id="_x0000_i1053" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image037.png"></span></span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=74 height=56
+  id="_x0000_i1054" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image038.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=74 height=56
+  id="_x0000_i1055" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image039.png"></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=72 height=56
+  id="_x0000_i1056" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image040.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=72 height=56
+  id="_x0000_i1057" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image041.png"></span></span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>4.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1058" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image042.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1059" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image043.png"></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>5.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=65 height=56
+  id="_x0000_i1060" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image044.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=65 height=56
+  id="_x0000_i1061" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image045.png"></span></span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>6.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1062" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image046.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1063" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image047.png"></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>7.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=66 height=56
+  id="_x0000_i1064" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image048.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=66 height=56
+  id="_x0000_i1065" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image049.png"></span></span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-indent:-18.0pt'><span lang=EN-US>8.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=65 height=56
+  id="_x0000_i1066" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image050.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=65 height=56
+  id="_x0000_i1067" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image051.png"></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>加減消去法</span></b></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>前面學習一元一次方程式，我們知道在等式兩邊同時加、減、乘、除一個數，相等的關係不會變。加減消去法的原則也是建立在「等量公理」上。我們將兩個等式相加，相等關係也不會變。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>如：</span><span lang=EN-US><span
+style='vertical-align:sub'><img width=55 height=56 id="_x0000_i1068"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image052.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=55 height=56
+id="_x0000_i1069" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image053.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>將上下兩等式相加，等號左邊＝（</span><span
+lang=EN-US>                 </span><span style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='position:relative;z-index:251655680'><span
+style='position:absolute;left:49px;top:-7px;width:260px;height:66px'><span
+style='position:absolute;z-index:251655680;margin-left:84px;margin-top:36px;
+width:80px;height:30px'><img width=80 height=30
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image054.png"
+alt="Text Box: 4＋（－3）"></span><span style='position:absolute;z-index:251655680;
+margin-left:211px;margin-top:42px;width:49px;height:24px'><img width=49
+height=24 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image055.png"
+alt="Text Box: 3＋5"></span><span style='position:absolute;z-index:251655680;
+margin-left:1px;margin-top:42px;width:49px;height:24px'><img width=49
+height=24 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image056.png"
+alt="Text Box: 1＋6"></span><span style='position:absolute;z-index:251655680;
+margin-left:151px;margin-top:1px;width:23px;height:23px'><img width=23
+height=23 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image057.png"
+alt="Text Box: ＝"></span><span style='position:absolute;z-index:251655680;
+margin-left:47px;margin-top:1px;width:23px;height:23px'><img width=23
+height=23 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image058.png"
+alt="Text Box: ＋"></span><span style='position:absolute;z-index:251655680;
+margin-left:101px;margin-top:20px;width:12px;height:19px'><img width=12
+height=19 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image059.png"></span><span
+style='position:absolute;z-index:251655680;margin-left:14px;margin-top:20px;
+width:12px;height:19px'><img width=12 height=19
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image060.png"></span><span
+style='position:absolute;z-index:251655680;margin-left:224px;margin-top:20px;
+width:12px;height:19px'><img width=12 height=19
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image061.png"></span><span
+style='position:absolute;z-index:251655680;margin-left:9px;margin-top:1px;
+width:22px;height:23px'><img width=22 height=23
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image062.png"
+alt="Text Box: 7"></span><span style='position:absolute;z-index:251655680;
+margin-left:95px;margin-top:1px;width:23px;height:23px'><img width=23
+height=23 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image063.png"
+alt="Text Box: 1"></span><span style='position:absolute;z-index:251655680;
+margin-left:217px;margin-top:1px;width:22px;height:23px'><img width=22
+height=23 src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image064.png"
+alt="Text Box: 8"></span></span></span><span style='font-family:新細明體'>右邊＝（</span><span
+lang=EN-US>                   </span><span style='font-family:新細明體'>），我們也可以將其寫成</span><span
+lang=EN-US>            </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>同樣的，將兩個式子相減，請問相等關係會變嗎？</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>請仿照上面的方式寫出來。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>既然</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>代表特定的數，所以它們當然也符合數的運算規則。因此我們可以利用兩式相加或相減，等號不變的性質，來解二元一次方程式。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>例一：解方程式</span> <span
+lang=EN-US>   </span><span lang=EN-US><span style='vertical-align:sub'><img
+width=65 height=56 id="_x0000_i1070" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image065.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=65 height=56
+id="_x0000_i1071" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image066.png"></span></span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>我們直接把兩式相加看看。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>             x </span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>         y</span><span
+style='font-family:新細明體'>＝</span> <span style='font-family:新細明體'>－</span><span
+lang=EN-US>3</span></p>
+
+<p class=MsoNormal><span lang=EN-US>        </span><span style='font-family:
+新細明體'>＋</span><span lang=EN-US>   x </span><span style='font-family:新細明體'>－</span><span
+lang=EN-US>         y</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>  9</span></p>
+
+<p class=MsoNormal><span lang=EN-US>      <u>                               </u></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>（</span><span lang=EN-US>       
+</span><span style='font-family:新細明體'>）</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＋（</span><span lang=EN-US>         </span><span
+style='font-family:新細明體'>）</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>         </span><span
+style='font-family:新細明體'>），我們可以發現＋</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＋（－</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>）＝</span><span lang=EN-US>0</span><span
+style='font-family:新細明體'>，以後</span><span lang=EN-US>0y</span><span
+style='font-family:新細明體'>就不需要再寫出來，</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>因此這個式子變成</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>的一元一次方程式，可以得到</span> <span
+style='font-family:新細明體'>（</span><span lang=EN-US>    </span><span
+style='font-family:新細明體'>）</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>，解得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>    </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>代入第一個式子，</span><span
+lang=EN-US> 3</span><span style='font-family:新細明體'>＋</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>），可得</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>             </span><span
+style='font-family:新細明體'>），因此</span></p>
+
+<p class=MsoNormal><span lang=EN-US>x</span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>3</span><span style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>為此方程式的解。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>同樣我們可以把兩式相減</span></p>
+
+<p class=MsoNormal><span lang=EN-US>      x </span><span style='font-family:
+新細明體'>＋</span><span lang=EN-US>         y</span><span style='font-family:新細明體'>＝</span>
+<span style='font-family:新細明體'>－</span><span lang=EN-US>3</span></p>
+
+<p class=MsoNormal><span lang=EN-US>   </span><span style='font-family:新細明體'>－</span><span
+lang=EN-US> x </span><span style='font-family:新細明體'>－</span><span lang=EN-US>        
+y</span><span style='font-family:新細明體'>＝</span><span lang=EN-US>  9</span></p>
+
+<p class=MsoNormal><span lang=EN-US> <u>                               </u></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>（</span><span lang=EN-US>       
+</span><span style='font-family:新細明體'>）</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＋（</span><span lang=EN-US>         </span><span
+style='font-family:新細明體'>）</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>         </span><span
+style='font-family:新細明體'>），我們可以發現</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>0</span><span
+style='font-family:新細明體'>，以後</span><span lang=EN-US>0x</span><span
+style='font-family:新細明體'>就不需要再寫出來，</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>因此這個方程式變成</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>的一元一次方程式，可以得到（</span><span
+lang=EN-US>     </span><span style='font-family:新細明體'>）</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>        </span><span
+style='font-family:新細明體'>），解得</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>，代入第一個式子，可以得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＋（</span><span lang=EN-US>       </span><span
+style='font-family:新細明體'>）＝（</span><span lang=EN-US>        </span><span
+style='font-family:新細明體'>），可得</span></p>
+
+<p class=MsoNormal><span lang=EN-US>x</span><span style='font-family:新細明體'>＝（</span><span
+lang=EN-US>      </span><span style='font-family:新細明體'>），因此</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>     
+</span><span style='font-family:新細明體'>），</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>）為此方程式的解，請問這個結果與兩式相加得出來的</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>相同嗎？</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>從以上的例子，我們知道利用<b>「兩式相加相減，等號不變」</b>的原則，我們可以消去一個未知數，化成一元一次方程式，先解出一個未知數，再代入式中解出另一個未知數。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>不過有人會問，一般二元一次方程式的例子，不像</span><span
+lang=EN-US>  </span><span lang=EN-US><span style='vertical-align:sub'><img
+width=65 height=56 id="_x0000_i1072" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image067.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=65 height=56
+id="_x0000_i1073" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image068.png"></span></span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>這麼單純，</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>與</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的係數可能不一樣，還能用加減消去法解出方程式嗎？我們來看看下一個例子：</span></p>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>例二</span></b><span
+style='font-family:新細明體'>：解方程式</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=114 height=56 id="_x0000_i1074"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image069.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=114 height=56
+id="_x0000_i1075" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image070.png"></span></span><span
+lang=EN-US>  </span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>在這個例子中，上下兩式</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>與</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的係數都不相同，如果直接拿來相加減也無法消去任一個未知數。沒關係，我們可以利用一些小小的變換來解決這個問題。前面在學等量公理時，我們知道等號兩旁同乘或同除一個數，等號不變。我們也可以將（</span><span
+lang=EN-US>1</span><span style='font-family:新細明體'>）式兩邊同乘（</span><span
+lang=EN-US>     </span><span style='font-family:新細明體'>），讓上下兩式的</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>係數相等。這時我們（</span><span
+lang=EN-US>1</span><span style='font-family:新細明體'>）式變成：</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2x</span><span style='font-family:新細明體'>－（</span><span
+lang=EN-US>        </span><span style='font-family:新細明體'>）</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>       
+</span><span style='font-family:新細明體'>）……（</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>把這個（</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>）式拿來減（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-US>2x     </span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>   4y     </span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>     8</span></p>
+
+<p class=MsoNormal><span lang=EN-US> </span><span style='font-family:新細明體'>－</span><span
+lang=EN-US>   2x     </span><span style='font-family:新細明體'>＋</span><span
+lang=EN-US>    y     </span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>     8</span></p>
+
+<p class=MsoNormal><u><span lang=EN-US>                                         </span></u></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>得</span><span lang=EN-US>             
+</span><span style='font-family:新細明體'>－</span><span lang=EN-US>5y</span><span
+style='font-family:新細明體'>＝</span> <span style='font-family:新細明體'>（</span><span
+lang=EN-US>          </span><span style='font-family:新細明體'>），</span><span
+lang=EN-US> y</span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>     
+</span><span style='font-family:新細明體'>），將</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>0</span><span
+style='font-family:新細明體'>代入（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式中，可以解得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>），因此（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>0</span><span
+style='font-family:新細明體'>）為此方程式之解。</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>作法二：如果我們要消去</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>，讓上下兩式的</span><span
+lang=EN-US>y</span><span style='font-family:新細明體'>的係數互為相反數。則（</span><span
+lang=EN-US>      </span><span style='font-family:新細明體'>）式要乘以</span><span
+lang=EN-US>2</span><span style='font-family:新細明體'>，得</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt'><span lang=EN-US>4x</span><span
+style='font-family:新細明體'>＋（</span><span lang=EN-US>     </span><span
+style='font-family:新細明體'>）</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>16 </span><span
+style='font-family:新細明體'>……（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>將這個（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>）式拿來（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>）（填加或減）（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式，</span></p>
+
+<p class=MsoNormal><span lang=EN-US>      x  </span><span style='font-family:
+新細明體'>－</span><span lang=EN-US>   2y    </span><span style='font-family:新細明體'>＝</span><span
+lang=EN-US>   4</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>＋</span><span lang=EN-US>  
+4x  </span><span style='font-family:新細明體'>＋</span><span lang=EN-US>   2y    </span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>  16</span></p>
+
+<p class=MsoNormal><u><span lang=EN-US>                          </span></u></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>得</span><span lang=EN-US> 
+5x  </span><span style='font-family:新細明體'>＝（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>），</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>      </span><span
+style='font-family:新細明體'>），將</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>代入（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式，可以解得</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝（</span><span lang=EN-US>    </span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span style='font-family:新細明體'>因此（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>0</span><span
+style='font-family:新細明體'>）為此方程式之解。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>                                    </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-family:新細明體'>例三：</span></b><span style='font-family:新細明體'>解聯立方程式</span>
+<span lang=EN-US><span style='vertical-align:sub'><img width=142 height=56
+id="_x0000_i1076" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image071.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=142 height=56
+id="_x0000_i1077" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image072.png"></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>先觀察，在這兩個式子中，我們無法只靠轉換一個式子就能夠解決，必須要動到兩個式子。想法有點類似分數加減中的通分。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>想想看：如果我們要消去</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>，（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式要最少要兩邊同乘以【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】，變成</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>－</span><span lang=EN-US>16y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>       </span><span
+style='font-family:新細明體'></input>】……（</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>），</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式最少要兩邊同乘以【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】，變成</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>12x</span><span style='font-family:新細明體'>＋【<input type = 'text'></span><span lang=EN-US>     
+</span><span style='font-family:新細明體'></input>】</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>21</span><span
+style='font-family:新細明體'>……（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>把（</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>）式和（</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>）式相【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】填加或減），就可以消去</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>了</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:36.0pt'><span lang=EN-US>12x</span><span style='font-family:新細明體'>－</span><span
+lang=EN-US>16y</span><span style='font-family:新細明體'>＝－</span><span lang=EN-US>72</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><span style='font-family:新細明體'>－</span><span lang=EN-US>12x</span><span
+style='font-family:新細明體'>＋</span><span lang=EN-US>15y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><u><span lang=EN-US>                       </span></u></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:36.0pt'><span style='font-family:新細明體'>得到【<input type = 'text'></span><span lang=EN-US>   
+</span><span style='font-family:新細明體'></input>】</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】，解得</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>，代入任一式，可以得到</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:36.0pt'><span lang=EN-US>x</span><span style='font-family:新細明體'>＝【<input type = 'text'></span><span
+lang=EN-US>     </span><span style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:36.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:36.0pt'><span style='font-family:新細明體'>所以</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝－</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>為此聯立方程式之解。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-family:新細明體'>例四：</span></b><span style='font-family:新細明體'>解聯立方程式</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=91 height=56
+id="_x0000_i1078" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image073.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=91 height=56
+id="_x0000_i1079" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image074.png"></span></span><span
+lang=EN-US> </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>這個聯立方程式乍看之下很複雜，其實大家只要整理一下，就能夠變成我們上面練習過的標準式，再利用加減消去法就能夠解了。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>請將整理後的式子寫於下方：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>請解聯立方程式</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>我們可以歸納解二元一次方程式的流程：</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>先整理式子</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>觀察</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的係數，將上下兩式同乘一數，使得上下兩式</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>或</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的係數相同</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>使用加或減消去其中一個未知數</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>解一元一次方程式，再將解代入兩式之一，求另一個未知數</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>練習解下列各二元一次聯立方程式</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=80 height=56 id="_x0000_i1080" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image075.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=80 height=56
+  id="_x0000_i1081" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image076.png"></span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=73 height=56 id="_x0000_i1082" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image077.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=73 height=56
+  id="_x0000_i1083" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image078.png"></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=70 height=56 id="_x0000_i1084" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image079.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=70 height=56
+  id="_x0000_i1085" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image080.png"></span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=68 height=56 id="_x0000_i1086" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image081.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=68 height=56
+  id="_x0000_i1087" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image082.png"></span></span><span
+  lang=EN-US> </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=115 height=56 id="_x0000_i1088" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image083.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=115 height=56
+  id="_x0000_i1089" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image084.png"></span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=60 height=56 id="_x0000_i1090" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image085.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1091" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image086.png"></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=60 height=56 id="_x0000_i1092" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image087.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1093" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image088.png"></span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+  text-indent:-18.0pt'><span lang=EN-US>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US><span style='vertical-align:sub'><img
+  width=60 height=56 id="_x0000_i1094" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image089.png"></span></span><span
+  lang=EN-US><span style='vertical-align:sub'><img width=60 height=56
+  id="_x0000_i1095" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image090.png"></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>解方程式</span><span lang=EN-US>  </span><span
+lang=EN-US><span style='vertical-align:sub'><img width=71 height=56
+id="_x0000_i1096" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image091.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=71 height=56
+id="_x0000_i1097" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image092.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>提示：不要被分數嚇到了，把</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=30 height=38
+id="_x0000_i1098" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image093.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=30 height=38
+id="_x0000_i1099" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image094.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>視為</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>原來的式子可以看成</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>的二元一次方程式，先解出</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>再求</span><span lang=EN-US> x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:新細明體'>甲、乙兩個人同解一個二元一次聯立方程式</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=127 height=56
+id="_x0000_i1100" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image095.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=127 height=56
+id="_x0000_i1101" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image096.png"></span></span><span
+lang=EN-US> </span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>甲生把（</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>）式中的</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>看錯，解得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>6</span><span
+style='font-family:新細明體'>，乙生把（</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>）式中的</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>看錯，解得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>，此外就沒任何其他計算上的錯誤。請求出</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>之值與原聯立方程式的正確解。（提示：一個式子看錯，另一個式子沒錯，所以解得的</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>其實是正確式子的解，所以可以代入求出</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>或</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>）</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-family:新細明體'>應用問題</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>與一元一次方程式相同，二元一次方程式也可應用於生活上，解決問題。我們可以依照題意設未知數，立出等式，再經由解方程式的程序求解。因為二元一次方程式，可以使用兩個未知數，所以更能夠直接的來立式，使用起來更為順手。我們來看幾個例題：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><b><span style='font-family:新細明體'>例一：</span></b><span
+style='font-family:新細明體'>老師買了</span><span lang=EN-US>50</span><span
+style='font-family:新細明體'>支</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>元的鉛筆與</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>元的原子筆，已知老師共付了</span><span lang=EN-US>286</span><span
+style='font-family:新細明體'>元，請問老師買了幾支鉛筆？幾支原子筆？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>二元一次方程式一定要立出兩個等式，才能求出解來。我們設老師買了</span><span
+lang=EN-US>x</span><span style='font-family:新細明體'>支鉛筆，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>支原子筆。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>由第一句話，老師買了</span><span lang=EN-US>50</span><span
+style='font-family:新細明體'>支</span><span lang=EN-US>5 </span><span
+style='font-family:新細明體'>元的鉛筆與</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>元的原子筆，可以得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的方程式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>                         </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>第二句話，老師共付了</span><span lang=EN-US>286</span><span
+style='font-family:新細明體'>元，從錢數相等我們可以得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的方程式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>    </span><span
+style='font-family:新細明體'></input>】</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＋【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>聯立兩個方程式得到：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US><img width=146 height=56 id="_x0000_i1102"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image097.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>解聯立方程式可得</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>       </span><span
+style='font-family:新細明體'></input>】，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝</span><span lang=EN-US>18</span><span
+style='font-family:新細明體'>，所以老師買了【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】支鉛筆，【<input type = 'text'></span><span lang=EN-US>    </span><span
+style='font-family:新細明體'></input>】支原子筆。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>其實我們在學習一元一次方程式時，也做過類似的問題，你認為兩者的相同與相異處為何？那種方法你比較喜歡？為什麼？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-align:justify;text-justify:
+inter-ideograph'><b><span style='font-family:新細明體'>例二：</span></b><span
+style='font-family:新細明體'>有一個長方形，它的長比寬的</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>倍多</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>公分，周長為</span><span lang=EN-US>42</span><span
+style='font-family:新細明體'>公分，請問面積為多少平方公分？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>要求長方形的面積，要先知道長與寬。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>設長為</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>公分，寬為</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>公分。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>由長比寬的</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>倍多</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>公分，可以寫出</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的方程式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>x</span><span style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     
+</span><span style='font-family:新細明體'></input>】</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＋【<input type = 'text'></span><span lang=EN-US>       </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>周長為長方形繞一周的長度，所以可以得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>的方程式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>                            </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>聯立兩方程式得到</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US><img width=70 height=56 id="_x0000_i1103"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image098.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>解二元一次聯立方程式可得：</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】、</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】，因此長方形面積為【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】平方公分。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><b><span style='font-family:新細明體'>例三：</span></b><span
+style='font-family:新細明體'>有兩種合金各含有</span><span lang=EN-US>20%</span><span
+style='font-family:新細明體'>與</span><span lang=EN-US>50%</span><span
+style='font-family:新細明體'>的銅，兩種應該各用多少公克，才能混合製造出含銅量</span><span lang=EN-US>42%</span><span
+style='font-family:新細明體'>的合金</span><span lang=EN-US>300</span><span
+style='font-family:新細明體'>公克？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>這個題目比較不明確看出兩個相等的條件。第一個條件是總重量相同。第二個條件是銅的量相同。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>設使用</span><span lang=EN-US>20%</span><span
+style='font-family:新細明體'>的</span><span lang=EN-US>X</span><span
+style='font-family:新細明體'>公克，</span><span lang=EN-US>50%</span><span
+style='font-family:新細明體'>的</span><span lang=EN-US>Y</span><span
+style='font-family:新細明體'>公克。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>總重量相同，則可列出等式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>X</span><span style='font-family:新細明體'>＋</span><span lang=EN-US>Y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>         </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>銅的總量相同，因為銅的量＝重量×含銅率，所以：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>20%X</span><span style='font-family:新細明體'>＋【<input type = 'text'></span><span lang=EN-US>  
+    </span><span style='font-family:新細明體'></input>】</span><span lang=EN-US>Y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>          </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>聯立兩方程式，可以得下面聯立方程式組：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US><img width=150 height=56 id="_x0000_i1104"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image099.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>解方程式，可得</span><span lang=EN-US>X</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>        </span><span
+style='font-family:新細明體'></input>】、</span><span lang=EN-US>Y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>答：需用</span><span lang=EN-US>20%</span><span
+style='font-family:新細明體'>的合金</span><span lang=EN-US>80 </span><span
+style='font-family:新細明體'>克，</span><span lang=EN-US>50%</span><span
+style='font-family:新細明體'>的合金</span><span lang=EN-US>220</span><span
+style='font-family:新細明體'>克。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:24.0pt'><b><span style='font-family:新細明體'>例四：</span></b><span
+style='font-family:新細明體'>有一工程男工</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>人加上女工</span><span lang=EN-US>3 </span><span
+style='font-family:新細明體'>人合作</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>天可以完成，若男工</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>人加上女工</span><span lang=EN-US>9</span><span
+style='font-family:新細明體'>人合作</span><span lang=EN-US>2 </span><span
+style='font-family:新細明體'>天也可以完成，則男工</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>人獨作需多少天可完成？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>設男工</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>人獨作</span><span lang=EN-US>X</span><span
+style='font-family:新細明體'>天完成，女工一人獨作</span><span lang=EN-US>Y</span><span
+style='font-family:新細明體'>天可完成。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>這邊要把整個工程看成</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>份，若</span><span lang=EN-US>X</span><span
+style='font-family:新細明體'>天完成，代表一天做</span><span lang=EN-US><span
+style='vertical-align:sub'><img width=10 height=38 id="_x0000_i1105"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image100.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=10 height=38
+id="_x0000_i1106" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image101.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>份。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>男工</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>人加上女工</span><span lang=EN-US>3</span><span
+style='font-family:新細明體'>人合作</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>天可完成，則可列出方程式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1107" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image102.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1108" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image103.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>＋</span><span lang=EN-US> 3</span><span
+style='font-family:新細明體'>．</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=7 height=38 id="_x0000_i1109" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image104.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1110" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image105.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     
+</span><span style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>男工</span><span lang=EN-US>7</span><span
+style='font-family:新細明體'>人加上女工</span><span lang=EN-US>9</span><span
+style='font-family:新細明體'>人合作</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>天可以完成，可列出方程式：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】．</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=7 height=38 id="_x0000_i1111" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image106.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1112" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image107.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>＋</span> <span
+style='font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】．</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=7 height=38 id="_x0000_i1113" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image108.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1114" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image109.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     
+</span><span style='font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>聯立兩方程式，可以得到下面聯立方程式組</span><span lang=EN-US><span
+style='vertical-align:sub'><img width=104 height=56 id="_x0000_i1115"
+src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image110.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=104 height=56
+id="_x0000_i1116" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image111.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>，解這個聯立方程式（提示：把</span><span
+lang=EN-US><span style='vertical-align:sub'><img width=15 height=38
+id="_x0000_i1117" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image112.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=15 height=38
+id="_x0000_i1118" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image113.png"></span></span><span
+style='font-family:新細明體'>視作</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US><span style='vertical-align:
+sub'><img width=7 height=38 id="_x0000_i1119" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image114.png"></span></span><span
+lang=EN-US><span style='vertical-align:sub'><img width=7 height=38
+id="_x0000_i1120" src="%E4%BA%8C%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F_files/image115.png"></span></span><span
+lang=EN-US> </span><span style='font-family:新細明體'>視作</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>，先求出</span><span lang=EN-US>a</span><span
+style='font-family:新細明體'>、</span><span lang=EN-US>b</span><span
+style='font-family:新細明體'>，再找出它們的倒數</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>得到</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】，</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>＝【<input type = 'text'></span><span lang=EN-US>     </span><span
+style='font-family:新細明體'></input>】，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>所以男工獨作</span><span lang=EN-US> 20</span><span
+style='font-family:新細明體'>天可以完成，女工獨作</span><span lang=EN-US>60</span><span
+style='font-family:新細明體'>天可以完成</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-family:新細明體'>練習時間</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>數學測驗共</span><span lang=EN-US>25</span><span
+style='font-family:新細明體'>題，答對一題得</span><span lang=EN-US>4</span><span
+style='font-family:新細明體'>分，答錯一題倒扣</span><span lang=EN-US>1 </span><span
+style='font-family:新細明體'>分，沒作答不記分。若有一位學生作答</span><span lang=EN-US>22</span><span
+style='font-family:新細明體'>題，得</span><span lang=EN-US>73</span><span
+style='font-family:新細明體'>分，請問這位學生答對幾題？答錯幾題？</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>（提示：一個相等條件為題數，另一個為分數）</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>五年前父親年齡是兒子的</span><span
+lang=EN-US>4</span><span style='font-family:新細明體'>倍，五年後父親年齡是兒子的</span><span
+lang=EN-US>2</span><span style='font-family:新細明體'>倍還多</span><span lang=EN-US>10</span><span
+style='font-family:新細明體'>歲，請問今年父親幾歲？兒子幾歲？</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>（設今年父親</span><span lang=EN-US>x</span><span
+style='font-family:新細明體'>歲、兒子</span><span lang=EN-US>y</span><span
+style='font-family:新細明體'>歲，五年前父親【<input type = 'text'></span><span lang=EN-US>       </span><span
+style='font-family:新細明體'></input>】歲、兒子【<input type = 'text'></span><span lang=EN-US>      </span><span
+style='font-family:新細明體'></input>】歲）</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>已知花生糖一顆</span><span lang=EN-US>2 </span><span
+style='font-family:新細明體'>元，梅子糖</span><span lang=EN-US>2</span><span
+style='font-family:新細明體'>顆</span><span lang=EN-US>1</span><span
+style='font-family:新細明體'>元，若詩詩買了</span><span lang=EN-US>60</span><span
+style='font-family:新細明體'>顆糖花了</span><span lang=EN-US>60</span><span
+style='font-family:新細明體'>元，請問她買了幾顆花生糖？幾顆梅子糖？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>某班有男女學生共</span><span lang=EN-US>50</span><span
+style='font-family:新細明體'>人，某次考試全班平均</span><span lang=EN-US>63</span><span
+style='font-family:新細明體'>分，其中男生平均</span><span lang=EN-US>60</span><span
+style='font-family:新細明體'>分，女生平均</span><span lang=EN-US>65</span><span
+style='font-family:新細明體'>分，則此班有男生幾人？女生幾人？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-family:新細明體'>（提示：第一個相等條件是人數。第二個是總分（或是平均））</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>甲乙兩人同做一題加法，甲將加數後面多寫一個</span><span
+lang=EN-US>0</span><span style='font-family:新細明體'>，結果得到的和是</span><span
+lang=EN-US>2448</span><span style='font-family:新細明體'>，乙將加數後面少寫一個</span><span
+lang=EN-US>0</span><span style='font-family:新細明體'>，所得的和是</span><span
+lang=EN-US>171</span><span style='font-family:新細明體'>，求正確的和是多少？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>羽毛球的售價分兩種：比賽用球每打</span><span
+lang=EN-US>300</span><span style='font-family:新細明體'>元，練習用球每打</span><span
+lang=EN-US>250</span><span style='font-family:新細明體'>元。創創共買了</span><span
+lang=EN-US>10</span><span style='font-family:新細明體'>打羽毛球，結帳時店員將兩種價目看反了，結果使得創創多付了</span><span
+lang=EN-US>100</span><span style='font-family:新細明體'>元。請問創創該付的正確價錢是多少元？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>若長方形的長比寬多</span><span lang=EN-US>5</span><span
+style='font-family:新細明體'>公分，而且周長為</span><span lang=EN-US>62</span><span
+style='font-family:新細明體'>公分，則長方形的面積為多少平方公分？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US> </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>實驗室有兩種酒精，其中甲酒精的濃度是</span><span
+lang=EN-US>70%</span><span style='font-family:新細明體'>，乙酒精是</span><span
+lang=EN-US>90%</span><span style='font-family:新細明體'>，現在需要調配出濃度</span><span
+lang=EN-US>84%</span><span style='font-family:新細明體'>的酒精</span><span lang=EN-US>80</span><span
+style='font-family:新細明體'>公升，請問應各取多少公升來調配？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:新細明體'>哥哥和弟弟各有數張神奇寶貝卡，已知弟弟給哥哥</span><span
+lang=EN-US>10</span><span style='font-family:新細明體'>張後，哥哥的張數就是弟弟的</span><span
+lang=EN-US>2</span><span style='font-family:新細明體'>倍；若哥哥給弟弟</span><span
+lang=EN-US>10</span><span style='font-family:新細明體'>張，兩人的張數就一樣多。請問哥哥原來有幾張？弟弟原來有幾張？</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=a style='margin-left:18.0pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-18.0pt'><span lang=EN-US>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:新細明體'>爸爸和妹妹的體重和比媽媽和哥哥的體重和多</span><span
+lang=EN-US>10</span><span style='font-family:新細明體'>公斤，已知哥哥比妹妹重</span><span
+lang=EN-US>4</span><span style='font-family:新細明體'>公斤，請問爸爸比媽媽重幾公斤？</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Calibri'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:14.0pt;font-family:新細明體'></span><span
+style='font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US>                                                                                       </span><span
+style='font-family:新細明體'></input>】</span></p>
+
+</div>
+<button class = "ui big blue button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big purple button" onclick = "location = '二元一次方程式.htm'">二元一次方程式</button><button class = "ui big purple button" onclick = "location = '直角座標.htm'">直角座標</button><button class = "ui big green button" onclick = "location = '多項式.htm'">多項式</button><br /><button class = "ui big button" onclick = "location = '一元二次方程式.htm'">一元二次方程式</button><button class = "ui big button" onclick = "location = '三角形的心.htm'">三角形的心</button><button class = "ui big button" onclick = "location = '不等式.htm'">不等式</button><button class = "ui big button" onclick = "location = '二次函數.htm'">二次函數</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '全等形.htm'">全等形</button><button class = "ui big button" onclick = "location = '函數圖形.htm'">函數圖形</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '勾股定理.htm'">勾股定理</button><button class = "ui big button" onclick = "location = '四則運算總複習.htm'">四則運算總複習</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '圓與角.htm'">圓與角</button><button class = "ui big button" onclick = "location = '尺規作圖.htm'">尺規作圖</button><button class = "ui big button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big button" onclick = "location = '幾何證明.htm'">幾何證明</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '數列與級數.htm'">數列與級數</button><button class = "ui big button" onclick = "location = '數線.htm'">數線</button><button class = "ui big button" onclick = "location = '根式運算.htm'">根式運算</button><button class = "ui big button" onclick = "location = '機率與統計.htm'">機率與統計</button><button class = "ui big button" onclick = "location = '正負分數.htm'">正負分數</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '比與比值.htm'">比與比值</button><button class = "ui big button" onclick = "location = '相似三角形.htm'">相似三角形</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>

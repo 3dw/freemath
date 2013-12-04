@@ -85,14 +85,22 @@ for root,dirs,files in os.walk(directory):
 
 			g = 4
 			G = 7
+			wikis = re.findall(r'wiki:.+', text)
+			wiki = "";
+
+			if len(wikis) > 0:
+				wiki = wikis[0].replace('wiki:','').replace(' ','')
+
+			print wiki
 
 			if (len(grade) > 0):
-				g = re.findall(r'\d', grade[0])[0]
-				G = re.findall(r'\d', grade[0])[1]
+				g = re.findall(r'\d+', grade[0])[0]
+				G = re.findall(r'\d+', grade[0])[1]
 
 			print grade
 			print g
 			print G
+
 
 			pres = re.findall(r'pre:.+', text)
 			afters = re.findall(r'after:.+', text)
@@ -116,7 +124,8 @@ for root,dirs,files in os.walk(directory):
 		#					pre = re.sub(symDir, '', pre)
 		#					if (friend.replace('.htm','') == pre):
 		#						isPre = True
-							for seg in pre.split(r'/\s/'):
+							for seg in pre.split(' '):
+		#						print seg
 								if seg == friend.replace('.htm',''):
  									isPre = True
 
@@ -129,7 +138,7 @@ for root,dirs,files in os.walk(directory):
 		#					if (friend.replace('.htm','') == rel):
 		#						isRel = True
 
-							for seg in rel.split(r'/\s/'):
+							for seg in rel.split(' '):
 								if seg == friend.replace('.htm',''):
  									isRel = True
 		#					if (rel.find(friend.replace('.htm','')) > -1 and not isPre):
@@ -141,8 +150,8 @@ for root,dirs,files in os.walk(directory):
 		#					if (friend.replace('.htm','') == after):
 		#						isAfter = True
 
-							for seg in after.split(r'/\s/'):
-								if seg == friend.replace('.htm',''):
+							for seg in after.split(' '):
+								if seg.replace(r'/[jh]/', '') == friend.replace('.htm',''):
  									isAfter = True
 		#					if (after.find(friend.replace('.htm','')) > -1 and not isRel and not isPre):
 		#						isAfter = True
@@ -161,7 +170,7 @@ for root,dirs,files in os.walk(directory):
 						buttonList.insert(leftWall+middleWall+middleWall2, thisButton)
 
 					elif isRel:
-						thisButton = '<button class = "ui big teal button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 						buttonList.insert(leftWall+middleWall, thisButton)	
@@ -212,7 +221,7 @@ for root,dirs,files in os.walk(directory):
 
 #			text = text.replace(finalAll, '')
 
-			print final
+#			print final
 
 			text = re.sub(r'</div>\s*(<br />)*?\s*(<button[.\s\S]*?</button>)?\s*</body>', '</div>\n'
 				+final
@@ -249,7 +258,7 @@ for root,dirs,files in os.walk(directory):
 #			print "and add final buttons and link with semantic ui, jquery ui css"			
 #			print "and 消掉意見回饋欄 and 加上提示語"
 
-			units.append('{ n: \'' + f.name +'\', g: ' + str(g) + ',' + 'G: ' + str(G) + '}');
+			units.append('{ n: \'' + f.name +'\', g: ' + str(g) + ',' + 'G: ' + str(G) + ',' + 'wiki: "' + str(wiki) + '"}');
 
 			f.close
 

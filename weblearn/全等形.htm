@@ -1,0 +1,1324 @@
+<html>
+
+<!--
+
+grade: 8~9
+
+pre: 幾何證明
+
+rel:
+
+after: 相似形 尺規作圖
+
+-->
+
+<head>
+<meta name=Title content="">
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>全等形</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:標楷體;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:BatangChe;}
+@font-face
+	{font-family:"MS Mincho";}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251655680'><span style='left:0px;position:
+absolute;left:56px;top:-21px;width:64px;height:55px'><img width=64 height=55
+src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image001.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>全</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251658752'><span style='left:0px;position:
+absolute;left:290px;top:-54px;width:37px;height:46px'><img width=37 height=46
+src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image002.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251659776'><span style='left:0px;position:
+absolute;left:65px;top:-54px;width:46px;height:55px'><img width=46 height=55
+src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image003.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>等</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251657728'><span style='left:0px;position:
+absolute;left:326px;top:-87px;width:73px;height:73px'><img width=73 height=73
+src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image004.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>形</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251656704'><span style='left:0px;position:
+absolute;left:2px;top:-120px;width:55px;height:55px'><img width=55 height=55
+src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image005.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=47
+id="_x0000_i1025" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image006.gif"
+alt=全等圖形></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>幾何圖形中，多邊形沒有彎曲，可說是較簡單的。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>而多邊形都是由最簡單的【<input type = 'text'></span><span
+style='font-size:14.0pt'> <span lang=EN-US>      </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】（填三角形或方形）所構成。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因此，要學習幾何證明，通常都是由三角證明入手。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>很多證明的問題，都可以化為「證明兩個三角形全等」的問題。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>兩個圖形全等的定義是，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>它們可經由「平移」、【<input type = 'text'></span><span
+style='font-size:14.0pt'> <span lang=EN-US>    </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span style='font-size:
+14.0pt'>     </span><span style='font-size:14.0pt;font-family:新細明體'></input>】三種變換之後，彼此疊合。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>（不多也不少，正好疊在一起）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=417
+height=333 id="_x0000_i1027" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image007.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>全等三角形，就是可以經由平移、【<input type = 'text'></span><span
+style='font-size:14.0pt'> <span lang=EN-US>       </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>        </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】之後，彼此疊合的兩個三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果兩個三角形三邊對應相等、三角對應相等，它們必然【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】。</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1026" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image008.gif"
+alt=全等三角形></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>前面我們利用平行線的性質，已經證明了許多和「角」有關的定理。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>不過，要處理和「邊」有關的問題，需要新的工具，就是全等三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>三角形有三個邊（</span><span
+lang=EN-US style='font-size:14.0pt'>Side, </span><span style='font-size:14.0pt;
+font-family:新細明體'>簡寫</span><span lang=EN-US style='font-size:14.0pt'>S</span><span
+style='font-size:14.0pt;font-family:新細明體'>）、三個角（</span><span lang=EN-US
+style='font-size:14.0pt'>Angle, </span><span style='font-size:14.0pt;
+font-family:新細明體'>簡寫</span><span lang=EN-US style='font-size:14.0pt'>A</span><span
+style='font-size:14.0pt;font-family:新細明體'>）。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以下幾種條件，可保證兩個三角形全等：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>三邊（</span><span
+lang=EN-US style='font-size:14.0pt'>SSS</span><span style='font-size:14.0pt;
+font-family:新細明體'>）對應相等（公理</span><span lang=EN-US style='font-size:14.0pt'>3</span><span
+style='font-size:14.0pt;font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>固定一已知邊，將另兩個【<input type = 'text'></span><span
+style='font-size:14.0pt'> <span lang=EN-US>     </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】作為半徑畫圓，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>可以唯一決定一個三角形。它也可能畫出鏡像，鏡像還是和本來全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=205
+height=173 id="_x0000_i1031" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image009.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>兩角一邊（</span><span
+lang=EN-US style='font-size:14.0pt'>AAS</span><span style='font-size:14.0pt;
+font-family:新細明體'>）或兩角一夾邊（</span><span lang=EN-US style='font-size:14.0pt'>ASA</span><span
+style='font-size:14.0pt;font-family:新細明體'>），對應相等。（公理</span><span lang=EN-US
+style='font-size:14.0pt'>4</span><span style='font-size:14.0pt;font-family:
+新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>兩角相等，第三角也必【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】。所以考慮（</span><span lang=EN-US style='font-size:14.0pt'>ASA</span><span
+style='font-size:14.0pt;font-family:新細明體'>）的情況即可。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>固定已知邊，用已知角向上延長，可以唯一決定一個的三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=205
+height=173 id="_x0000_i1032" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image010.gif"></span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>兩邊一夾角（</span><span
+lang=EN-US style='font-size:14.0pt'>SAS</span><span style='font-size:14.0pt;
+font-family:新細明體'>）對應相等（公理</span><span lang=EN-US style='font-size:14.0pt'>5</span><span
+style='font-size:14.0pt;font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>用已知角出發，向左右伸出已知的邊長，決定【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>       </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】的三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=205
+height=172 id="_x0000_i1033" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image011.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>4. </span><span
+style='font-size:14.0pt;font-family:新細明體'>直角帶兩邊（</span><span lang=EN-US
+style='font-size:14.0pt'>RHS</span><span style='font-size:14.0pt;font-family:
+新細明體'>）對應相等（公理</span><span lang=EN-US style='font-size:14.0pt'>6</span><span
+style='font-size:14.0pt;font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=205
+height=172 id="_x0000_i1034" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image012.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>用已知直角出發，向上伸出已知的邊長，再用另個已知邊長畫【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>      </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】，可以【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>       </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】決定一個三角形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>為什麼跑出</span><span
+lang=EN-US style='font-size:14.0pt'>RHS</span><span style='font-size:14.0pt;
+font-family:新細明體'>來呢？它不是【<input type = 'text'></span><span style='font-size:14.0pt'> <span
+lang=EN-US>     </span></span><span style='font-size:14.0pt;font-family:新細明體'></input>】的特例嗎？</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>下頁我們會討論一般的</span><span
+lang=EN-US style='font-size:14.0pt'>ASS</span><span style='font-size:14.0pt;
+font-family:新細明體'>情況，說明為什麼只有特例成立。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以上的說明，屬於概念性說明，相關的嚴謹證明較繁雜，這裡不細究，直接把</span><span
+lang=EN-US style='font-size:14.0pt'>SSS</span><span style='font-size:14.0pt;
+font-family:新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>AAS</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>ASA</span><span style='font-size:14.0pt;font-family:
+新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>SAS</span><span
+style='font-size:14.0pt;font-family:新細明體'>、</span><span lang=EN-US
+style='font-size:14.0pt'>RHS</span><span style='font-size:14.0pt;font-family:
+新細明體'>都當成公理，可以直接使用。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>要看到如何用更簡約的公理系統，證出這些全等條件的話，請看</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>歐幾里德的經典之作：《幾何原本／</span><span
+lang=EN-US style='font-size:14.0pt'>Elements</span><span style='font-size:14.0pt;
+font-family:新細明體'>》</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在網路上打</span><span
+lang=EN-US style='font-size:14.0pt'>Euclid Elements</span><span
+style='font-size:14.0pt;font-family:新細明體'>，即可找到《幾何原本／</span><span lang=EN-US
+style='font-size:14.0pt'>Elements</span><span style='font-size:14.0pt;
+font-family:新細明體'>》全文。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=47
+id="_x0000_i1028" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image013.gif"
+alt=對不正確的命題舉反例></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在應用全等三角形來作證明之前，先補充一下關於反例的知識。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>證明一個「所有</span><span
+lang=EN-US style='font-size:14.0pt'>…</span><span style='font-size:14.0pt;
+font-family:新細明體'>都</span><span lang=EN-US style='font-size:14.0pt'>…</span><span
+style='font-size:14.0pt;font-family:新細明體'>」的命題，需要考慮所有可能的情況，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是要推翻「所有</span><span
+lang=EN-US style='font-size:14.0pt'>…</span><span style='font-size:14.0pt;
+font-family:新細明體'>都</span><span lang=EN-US style='font-size:14.0pt'>…</span><span
+style='font-size:14.0pt;font-family:新細明體'>」的命題，只要舉出【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】個反例。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在上述全等的條件中，有</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>SSS</span><span
+style='font-size:14.0pt;font-family:新細明體'>、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>      </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】和【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>       </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>       </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】和</span><span lang=EN-US style='font-size:14.0pt'>RHS</span><span
+style='font-size:14.0pt;font-family:新細明體'>五種。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是，有兩種也是三個已知量的條件組合，沒有列入。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>它們是【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>       </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】、【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>       </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>它們未被列入全等的充份條件，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>就表示有些三角形，滿足這些對應相等，但是卻【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>錯誤命題</span><span
+lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;
+font-family:新細明體'>：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:標楷體'>三角（<span
+lang=EN-US>AAA</span>）對應相等，則兩三角形全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請作圖舉例，找出兩個三角形，滿足（</span><span
+lang=EN-US style='font-size:14.0pt'>AAA</span><span style='font-size:14.0pt;
+font-family:新細明體'>）對應相等，卻不全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>錯誤命題</span><span
+lang=EN-US style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;
+font-family:新細明體'>：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:標楷體'>兩邊一角（<span
+lang=EN-US>SSA</span>）對應相等，則兩三角形全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請作圖舉例，找出兩個三角形，滿足（</span><span
+lang=EN-US style='font-size:14.0pt'>SSA</span><span style='font-size:14.0pt;
+font-family:新細明體'>）對應相等，卻不全等。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請針對以下命題，判斷是否正確。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>正確的話請寫出證明，不正確的話請舉出反例。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>1</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>兩個四邊形有（<span lang=EN-US>AAAAS</span>）對應相等，則必然全等。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>2</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>兩個四邊形有（<span lang=EN-US>SSSSA</span>）對應相等，則必然全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>3</span>：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:標楷體'>兩個四邊形有（<span
+lang=EN-US>SASAS</span>）對應相等，則必然全等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>4</span>：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:標楷體'>兩個四邊形有（<span
+lang=EN-US>ASASS</span>）對應相等，則必然全等。</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=46
+id="_x0000_i1029" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image014.gif"
+alt=利用全等三角形作證明></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>定理<span lang=EN-US>9</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>等腰三角形兩底角相等。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=239 valign=top style='width:239.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>已知：<span lang=EN-US>AB = AC</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>求證：∠<span lang=EN-US>B = </span>∠<span
+  lang=EN-US>C</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>證明：</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1. </span><span
+  style='font-size:14.0pt;font-family:新細明體'>過<span lang=EN-US>A</span>作<span
+  lang=EN-US>BC</span>的垂線，交<span lang=EN-US>BC</span>於<span lang=EN-US>P</span>點</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2. </span><span
+  style='font-size:14.0pt;font-family:新細明體'>△<span lang=EN-US>ABP</span>和 △<span
+  lang=EN-US>ACP</span>中，</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AP
+  = AP</span><span style='font-size:14.0pt;font-family:新細明體'>（共邊）<span
+  lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AB
+  = AC</span><span style='font-size:14.0pt;font-family:新細明體'>（已知）<span
+  lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∠<span
+  lang=EN-US>APB = </span>∠<span lang=EN-US>APC = 90</span>°</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴△<span
+  lang=EN-US>ABP </span></span><span style='font-size:14.0pt;font-family:"Arial Unicode MS"'>≅</span><span
+  style='font-size:14.0pt;font-family:新細明體'> △<span lang=EN-US>ACP</span>（<span
+  lang=EN-US>RHS</span>）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴∠<span
+  lang=EN-US>B = </span>∠<span lang=EN-US>C</span>（對應角）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=187 valign=top style='width:186.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=206
+  height=172 id="_x0000_i1035" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image015.gif"></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>其中「</span><span style='font-size:
+14.0pt;font-family:"Arial Unicode MS"'>≅</span><span style='font-size:14.0pt;
+font-family:新細明體'>」代表全等，也有人用「</span><span style='font-size:14.0pt;font-family:
+新細明體'>≡</span><span style='font-size:14.0pt;font-family:新細明體'>」來代表全等。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>其實，這個定理有另一種證明方式，不需要輔助線：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=239 valign=top style='width:239.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>已知：<span lang=EN-US>AB = </span>【<input type = 'text'><span
+  lang=EN-US>      </span></input>】</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>求證：【<input type = 'text'><span lang=EN-US>            </span></input>】</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>證明：</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>△<span lang=EN-US>ABC </span>和 △<span
+  lang=EN-US>ACB</span>中，</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AB
+  = </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>
+  AC  </span></input>】（已知）<span lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AC
+  = </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>     
+  </span></input>】（已知）<span lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∠<span
+  lang=EN-US>A = </span>∠<span lang=EN-US>A</span>（共角）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴△<span
+  lang=EN-US>ABC </span></span><span style='font-size:14.0pt;font-family:"Arial Unicode MS"'>≅</span><span
+  style='font-size:14.0pt;font-family:新細明體'> △【<input type = 'text'><span lang=EN-US>      </span></input>】（<span
+  lang=EN-US>SAS</span>）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴∠<span
+  lang=EN-US>B = </span>∠<span lang=EN-US>C</span>（【<input type = 'text'><span lang=EN-US>         </span></input>】）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=187 valign=top style='width:186.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=206
+  height=172 id="_x0000_i1036" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image016.gif"></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>秘訣在於，把△<span lang=EN-US>ABC</span>和△<span
+lang=EN-US>ACB</span>看做兩個不同的三角形。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>定理<span lang=EN-US>10</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>兩底角相等的三角形，必為等腰。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=239 valign=top style='width:239.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>已知：【<input type = 'text'><span lang=EN-US>       </span></input>】</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>求證：<span lang=EN-US>AB = AC</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>證明：</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1. </span><span
+  style='font-size:14.0pt;font-family:新細明體'>過<span lang=EN-US>A</span>作<span
+  lang=EN-US>BC</span>的垂線，交<span lang=EN-US>BC</span>於<span lang=EN-US>P</span>點</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2. </span><span
+  style='font-size:14.0pt;font-family:新細明體'>△<span lang=EN-US>ABP </span>和 △<span
+  lang=EN-US>ACP</span>中，</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+  lang=EN-US>       </span></input>】<span lang=EN-US>=</span>【<input type = 'text'><span lang=EN-US>       </span></input>】（共邊）<span
+  lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+  lang=EN-US>       </span></input>】<span lang=EN-US>=</span>【<input type = 'text'><span lang=EN-US>       </span></input>】（已知）<span
+  lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span
+  lang=EN-US>       </span></input>】<span lang=EN-US>=</span>【<input type = 'text'><span lang=EN-US>       </span></input>】<span
+  lang=EN-US> = 90</span>°</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴△<span
+  lang=EN-US>ABP </span></span><span style='font-size:14.0pt;font-family:"Arial Unicode MS"'>≅</span><span
+  style='font-size:14.0pt;font-family:新細明體'> △<span lang=EN-US>ACP</span>（【<input type = 'text'><span
+  lang=EN-US>        </span></input>】）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴【<input type = 'text'><span
+  lang=EN-US>           </span></input>】（對應邊）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=187 valign=top style='width:186.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=206
+  height=172 id="_x0000_i1037" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image017.gif"></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>當然，如果使用秘訣，也可以不畫輔助線：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=239 valign=top style='width:239.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>已知：【<input type = 'text'><span lang=EN-US>       </span></input>】</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>求證：<span lang=EN-US>AB = AC</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>證明：</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>△<span lang=EN-US>ABC </span>和 △<span
+  lang=EN-US>ACB</span>中，</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∠<span
+  lang=EN-US>B = </span>【<input type = 'text'><span lang=EN-US>      </span></input>】（【<input type = 'text'> 已知 </input>】）<span
+  lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∠<span
+  lang=EN-US>C = </span>【<input type = 'text'><span lang=EN-US>      </span></input>】（【<input type = 'text'><span lang=EN-US>     
+  </span></input>】）<span lang=EN-US>,</span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∠<span
+  lang=EN-US>A = </span>∠<span lang=EN-US>A</span>（【<input type = 'text'><span lang=EN-US>      </span></input>】）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴△<span
+  lang=EN-US>ABC</span></span><span lang=EN-US style='font-size:14.0pt;
+  font-family:標楷體'> </span><span style='font-size:14.0pt;font-family:"Arial Unicode MS"'>≅</span><span
+  style='font-size:14.0pt;font-family:標楷體'> </span><span style='font-size:14.0pt;
+  font-family:新細明體'>△<span lang=EN-US>ACB</span>（【<input type = 'text'><span lang=EN-US>       </span></input>】）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+  text-indent:7.0pt'><span style='font-size:14.0pt;font-family:新細明體'>∴【<input type = 'text'><span
+  lang=EN-US>            </span></input>】（對應邊）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=187 valign=top style='width:186.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'><img width=206
+  height=172 id="_x0000_i1038" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image018.gif"></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=240 height=47
+id="_x0000_i1030" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image019.gif"
+alt=符號對稱></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>練習：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>三角形每邊中點的連線，將三角形分為彼此全等的四個小三角形。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>（假設已知中點連線和邊平行，證明詳見〈相似三角形〉單元）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'><img width=342 height=286
+id="_x0000_i1039" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image020.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>已知：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AM<sub>c</sub> = BM<sub>c</sub>, 
+BM<sub>a</sub> = CM<sub>a</sub>,  CM<sub>b</sub> = AM<sub>b</sub></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AB // M<sub>a</sub>M<sub>b</sub>,
+BC // </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>      
+</span></input>】<span lang=EN-US>,  </span>【<input type = 'text'><span lang=EN-US>     </span></input>】<span
+lang=EN-US> // M<sub>c</sub>M<sub>a</sub></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>要證四個三角形彼此全等，乍看之下很難。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>不過，仔細觀察，就會發現已知條件中<span lang=EN-US>A</span>、<span
+lang=EN-US>B</span>、<span lang=EN-US>C</span>的地位是對稱的。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>也就是說，如果能證明△<span lang=EN-US>AM<sub>b</sub>M<sub>c</sub>
+</span></span><span style='font-size:14.0pt;font-family:"MS Mincho"'>≅</span><span
+style='font-size:14.0pt;font-family:新細明體'> △<span lang=EN-US>M<sub>a</sub>M<sub>c</sub>M<sub>b</sub></span>，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>那麼用完全相同的步驟，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>只是把<span lang=EN-US>A, B, C</span>符號輪換（<span
+lang=EN-US>A</span>→<span lang=EN-US>B</span>→<span lang=EN-US>C</span>→<span
+lang=EN-US>A</span>），就可以證出</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>△<span lang=EN-US>BM<sub>c</sub>M<sub>a</sub>
+</span></span><span style='font-size:14.0pt;font-family:"MS Mincho"'>≅</span><span
+style='font-size:14.0pt;font-family:新細明體'> △<span lang=EN-US>M<sub>b</sub>M<sub>a</sub>M<sub>c</sub></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>和</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>△<span lang=EN-US>CM<sub>a</sub>M<sub>b</sub>
+</span></span><span style='font-size:14.0pt;font-family:"MS Mincho"'>≅</span><span
+style='font-size:14.0pt;font-family:新細明體'> △【<input type = 'text'><span lang=EN-US>          </span></input>】</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>這種符號上的對稱，稱為符號對稱，可以讓我們省很多力氣。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>因為只要證出一部份的問題，就能證明全部的問題。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>用部份代表整體的手法，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>稱為「不失一般性」（<span lang=EN-US>Without
+Loss of Generality, </span>簡寫<span lang=EN-US>WLOG</span>）手法。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>證明可以先加這樣一句註解，以省略重覆的過程：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>∵<span lang=EN-US>A, B, C</span>【<input type = 'text'><span
+lang=EN-US>     </span></input>】對稱</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>∴<span lang=EN-US>WLOG</span>，問題化簡為</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:24.0pt'><span style='font-size:14.0pt;font-family:
+新細明體'>求證△<span lang=EN-US>AM<sub>b</sub>M<sub>c</sub> </span></span><span
+style='font-size:14.0pt;font-family:"MS Mincho"'>≅</span><span
+style='font-size:14.0pt;font-family:新細明體'> △<span lang=EN-US>M<sub>a</sub>M<sub>c</sub>M<sub>b</sub></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>只剩一個全等要證了，現在就來證吧！</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0 width=482
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=239 valign=top style='width:239.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>已知：</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AM<sub>c</sub> = BM<sub>c</sub>, 
+  BM<sub>a</sub> = CM<sub>a</sub>,  CM<sub>b</sub> = AM<sub>b</sub></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>AB // M<sub>a</sub>M<sub>b</sub>,
+  BC // M<sub>b</sub>M<sub>c</sub>,  CA // M<sub>c</sub>M<sub>a</sub></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>求證：△<span lang=EN-US>AM<sub>b</sub>M<sub>c</sub>
+  </span></span><span style='font-size:14.0pt;font-family:"MS Mincho"'>≅</span><span
+  style='font-size:14.0pt;font-family:新細明體'> △<span lang=EN-US>M<sub>a</sub>M<sub>c</sub>M<sub>b</sub></span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>證明：</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>在△<span lang=EN-US>AM<sub>b</sub>M<sub>c</sub>
+  </span>和 △<span lang=EN-US>M<sub>a</sub>M<sub>c</sub>M<sub>b</sub></span>中，</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>∠<span lang=EN-US>AM<sub>b</sub>M<sub>c</sub> 
+  = </span>∠<span lang=EN-US>M<sub>a</sub>M<sub>c</sub>M<sub>b</sub></span>（內錯角）<span
+  lang=EN-US>, </span></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>∠<span lang=EN-US>AM<sub>c</sub>M<sub>b</sub> 
+  =</span>【<input type = 'text'> <span lang=EN-US>       </span></input>】（內錯角）</span></p>
+  </td>
+  <td width=243 valign=top style='width:243.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:標楷體'><img width=231
+  height=184 id="_x0000_i1040" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image021.gif"></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=482 colspan=2 valign=top style='width:482.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'><span lang=EN-US>       </span></input>】<span
+  lang=EN-US>=</span>【<input type = 'text'><span lang=EN-US>       </span></input>】（【<input type = 'text'><span lang=EN-US>         
+  </span></input>】）</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  style='font-size:14.0pt;font-family:新細明體'>∴【<input type = 'text'><span lang=EN-US>                      
+  </span></input>】</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span lang=EN-US>1</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>1. </span><span
+style='font-size:14.0pt;font-family:標楷體'>下圖中，已知三邊等長。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>請共圖中共有幾個正三角形？（符號不同就不是同一個）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-size:14.0pt;font-family:新細明體'><img width=148 height=116
+id="_x0000_i1041" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image022.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>2. </span><span
+style='font-size:14.0pt;font-family:標楷體'>請證明上題中，每個三角形彼此全等。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>3. </span><span
+style='font-size:14.0pt;font-family:新細明體'>下圖中，∠<span lang=EN-US>B = </span>∠<span
+lang=EN-US>C</span>，<span lang=EN-US>D</span>是<span lang=EN-US>B, C</span>中點。<span
+lang=EN-US><br>
+</span>請證明：∠<span lang=EN-US>ADB = </span>∠<span lang=EN-US>ADC = 90</span>∘</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-size:14.0pt;font-family:標楷體'><img width=184 height=143
+id="_x0000_i1042" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image023.gif"></span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請證明以下命題，遇到符號對稱可以加註解，然後省略重覆步驟。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>1</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>平行四邊形的任一對角線，將它切成兩個全等三角形</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>（平行四邊形定義為：兩對邊相互平行的四邊形）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>2</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>兩對角線相互平分的四邊形，必然是平行四邊形。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>3</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>箏形的對角線必然互相垂直。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>（箏形定義為：兩組鄰邊彼此相等的四邊形）</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-size:14.0pt;font-family:標楷體'><img width=184 height=143
+id="_x0000_i1043" src="%E5%85%A8%E7%AD%89%E5%BD%A2_files/image024.gif"></span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'>綜合練習</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>請證明以下命題，遇到符號對稱可以加註解，然後省略重覆步驟。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>1</span>：大邊對大角</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>請證明三角形<span lang=EN-US>ABC</span>中，</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>若「<span lang=EN-US>A</span>的對邊」<span
+lang=EN-US> &gt; </span>「<span lang=EN-US>B</span>的對邊」，則∠<span lang=EN-US>A
+&gt; </span>∠<span lang=EN-US>B</span>。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>2</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>兩對角線相互平分且等長的四邊形，必然是長方形。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>（長方形定義為：四個角都是直角的四邊形）</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>命題<span lang=EN-US>3</span>：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:標楷體'>對兩個凸四邊形而言，如果有（<span lang=EN-US>SSSSA</span>）對應相等，則它們必全等。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:標楷體'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:14.0pt;font-family:新細明體'></span><span style='font-size:14.0pt;
+font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                                                                   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+</div>
+<button class = "ui big blue button" onclick = "location = '幾何證明.htm'">幾何證明</button><button class = "ui big purple button" onclick = "location = '全等形.htm'">全等形</button><button class = "ui big green button" onclick = "location = '尺規作圖.htm'">尺規作圖</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '一元二次方程式.htm'">一元二次方程式</button><button class = "ui big button" onclick = "location = '三角形的心.htm'">三角形的心</button><button class = "ui big button" onclick = "location = '不等式.htm'">不等式</button><button class = "ui big button" onclick = "location = '二元一次方程式.htm'">二元一次方程式</button><button class = "ui big button" onclick = "location = '二次函數.htm'">二次函數</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '函數圖形.htm'">函數圖形</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '勾股定理.htm'">勾股定理</button><button class = "ui big button" onclick = "location = '四則運算總複習.htm'">四則運算總複習</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '圓與角.htm'">圓與角</button><button class = "ui big button" onclick = "location = '多項式.htm'">多項式</button><button class = "ui big button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '數列與級數.htm'">數列與級數</button><button class = "ui big button" onclick = "location = '數線.htm'">數線</button><button class = "ui big button" onclick = "location = '根式運算.htm'">根式運算</button><button class = "ui big button" onclick = "location = '機率與統計.htm'">機率與統計</button><button class = "ui big button" onclick = "location = '正負分數.htm'">正負分數</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '比與比值.htm'">比與比值</button><button class = "ui big button" onclick = "location = '直角座標.htm'">直角座標</button><button class = "ui big button" onclick = "location = '相似三角形.htm'">相似三角形</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>

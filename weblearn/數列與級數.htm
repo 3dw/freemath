@@ -1,0 +1,2117 @@
+<html>
+
+<!--
+
+grade: 8~11
+
+pre: 直角座標 比與比值 函數圖形
+
+rel: 多項式
+
+after: 微積分入門
+
+-->
+
+<head>
+<meta name=Title content=相>
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>數列與級數</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/jquery-ui.js"></script>
+<script src="../javascripts/underscore-min.js"></script>
+<script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/tongwen_core.js"></script>
+<script src="../javascripts/tongwen_table_pt2s.js"></script>
+<script src="../javascripts/tongwen_table_t2s.js"></script>
+<script src="../javascripts/fmDoc.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<style>
+ body {
+	background-color: #D0BAA2;
+}
+
+img {
+	border-radius: 10px;
+	min-width: 25px;
+	min-height: 50px;
+}
+
+input {
+	line-height: 18px;
+}
+
+/* Font Definitions */
+@font-face
+	{font-family:Arial;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:新細明體;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:標楷體;}
+@font-face
+	{font-family:BatangChe;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:1cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:新細明體;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Arial;}
+ /* Page Definitions */
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251655680'><span style='left:0px;position:
+absolute;left:56px;top:-21px;width:64px;height:55px'><img width=64 height=55
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image001.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>數</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251658752'><span style='left:0px;position:
+absolute;left:290px;top:-54px;width:37px;height:46px'><img width=37 height=46
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image002.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>列</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251659776'><span style='left:0px;position:
+absolute;left:65px;top:-60px;width:46px;height:55px'><img width=46 height=55
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image003.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>與</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:48.0pt;font-family:新細明體'>級</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251657728'><span style='left:0px;position:
+absolute;left:326px;top:-99px;width:73px;height:73px'><img width=73 height=73
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image004.gif"></span></span><span
+style='font-size:48.0pt;font-family:新細明體'>數</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='position:relative;z-index:251656704'><span style='left:0px;position:
+absolute;left:2px;top:-132px;width:55px;height:55px'><img width=55 height=55
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image005.gif"></span></span><span
+lang=EN-US style='font-size:48.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>姓名：　　　　</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:14.0pt;font-family:新細明體'>年齡：　　　　</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=48
+id="_x0000_i1025" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image006.gif"
+alt=把數排成一列></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>數列，顧名思義就是把數排成一列。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有些是亂排：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[8, 7, 2, 4, 2,
+  611, 76, 0, 200, 25]</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有些有秩序：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[1, 3, 5, 7, 9,
+  11, 13,</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+  style='font-size:14.0pt'> <span lang=EN-US style='color:white'>15</span><span
+  lang=EN-US> </span></span><span style='font-size:14.0pt;font-family:新細明體'></input>】</span><span
+  lang=EN-US style='font-size:14.0pt'>,</span><span style='font-size:14.0pt;
+  font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  <span
+  style='color:white'>17</span>  </span><span style='font-size:14.0pt;
+  font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>, …]</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這又太整齊了：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[3, 3, 3, 3, 3,
+  3, 3, …]</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有些只有幾個項：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[10, 12, 15, 18]</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有些則是無窮：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[2, 4, 8, 16,
+  32,</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+  style='font-size:14.0pt'>   </span><span style='font-size:14.0pt;font-family:
+  新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>, 128, 125, 512…]</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有單調上升的：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[1, 4, 9, 16,
+  25, 36, 49, 64,</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+  lang=EN-US style='font-size:14.0pt'>   </span><span style='font-size:14.0pt;
+  font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>, 100,
+  121,…]</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有單調下降的：</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=194
+  height=39 id="_x0000_i1026" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image007.gif"></span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>也有週期變化的</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[0, 1, 2, 3, 0,
+  1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, …]</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:42.55pt'>
+  <td width=122 valign=top style='width:122.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+  <td width=296 valign=top style='width:295.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:42.55pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有些秩序要仔細看才能發現</span><span
+lang=EN-US style='font-size:14.0pt'>☺</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請用你自己的話，描述以下兩個數列的秩序，再自行設計一個數列：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>A = [1, 1, 2, 3,
+5, 8, 13, 21, 34, 55, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>B = [1, 4, 9, 16,
+25, 36, 49, 64, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>C = </span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=47
+id="_x0000_i1027" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image008.gif"
+alt=描述數列的方式></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>常見的描述方式有三種，各有各的好處</span><span
+lang=EN-US style='font-size:14.0pt'>☺</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:42.55pt'>
+  <td width=77 style='width:77.4pt;border:solid windowtext 1.0pt;background:
+  #999999;padding:0cm 5.4pt 0cm 5.4pt;height:42.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+  </td>
+  <td width=170 style='width:170.35pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:42.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:14.0pt;font-family:新細明體'>範例</span></b></p>
+  </td>
+  <td width=170 style='width:170.35pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:42.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:14.0pt;font-family:新細明體'>翻譯</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:99.25pt'>
+  <td width=77 style='width:77.4pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:14.0pt;font-family:新細明體'>列舉式</span></b></p>
+  </td>
+  <td width=170 style='width:170.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>A = [0, 2, 4, 6, 8, 10,…]</span></p>
+  </td>
+  <td width=170 style='width:170.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>A</span><span style='font-size:
+  14.0pt;font-family:新細明體'>這數列，前幾項舉給你，後面依此類推。</span></p>
+  </td>
+ </tr>
+ <tr style='height:99.25pt'>
+  <td width=77 style='width:77.4pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:14.0pt;font-family:新細明體'>函數式</span></b></p>
+  </td>
+  <td width=170 style='width:170.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>a<sub>n</sub> = 2n;  n = 0, 1, 2,…</span></p>
+  </td>
+  <td width=170 style='width:170.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>A</span><span style='font-size:
+  14.0pt;font-family:新細明體'>的第<span lang=EN-US>n</span>項是<span lang=EN-US>2n</span>；</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>其中<span lang=EN-US>n</span>是從<span
+  lang=EN-US>0</span>開始數。</span></p>
+  </td>
+ </tr>
+ <tr style='height:99.25pt'>
+  <td width=77 style='width:77.4pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#CCCCCC;padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:14.0pt;font-family:新細明體'>遞迴式</span></b></p>
+  </td>
+  <td width=170 style='width:170.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>a<sub>0</sub> = 0;  a<sub>n+1</sub>
+  = a<sub>n</sub> + 2</span></p>
+  </td>
+  <td width=170 style='width:170.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:99.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:14.0pt;font-family:新細明體'>A</span><span style='font-size:
+  14.0pt;font-family:新細明體'>的第<span lang=EN-US>0</span>項是<span lang=EN-US>0</span>。</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>之後每項，</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>都是前一項加<span lang=EN-US>2</span>。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>簡單的數列，用列舉式一目瞭然。較複雜的，就要靠其他的表示法了。</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+新細明體'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>練習<span
+lang=EN-US>1</span>：</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>設<span
+lang=EN-US>A = [2, 4, 6, 8, 10, …]</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請寫出<span
+lang=EN-US>A</span>的函數式、遞迴式。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>有的數列很難寫出函數式，比較好寫遞迴式，例如<b>練習<span
+lang=EN-US>2</span>：</b></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>設<span
+lang=EN-US>F = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …]</span></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請寫出<span
+lang=EN-US>F</span>的遞迴式。<span lang=EN-US>(hint: </span>要先設首項和第二項，後面的才能遞迴<span
+lang=EN-US>)</span></span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:新細明體'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間<span
+lang=EN-US>1</span></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一、請判斷以下的數列，是有限項還是無窮項？</span></p>
+
+<p class=MsoNormal style='margin-left:168.0pt;text-indent:24.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>有沒有單調上升、下降或週期性？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>A
+= [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>B
+= [0, 1, 2, 0, 1, 2, 0, 1, 2, … ]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>C
+= [1, 2, 4, 8, 16, 32, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>二、請將語言翻譯成式子，再寫出它所描述的數列：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>甲：<span
+lang=EN-US>A</span>的首項是<span lang=EN-US>5</span>，其餘每一項比前一項多<span lang=EN-US>2</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>乙：<span
+lang=EN-US>B</span>的第<span lang=EN-US>n</span>項，就是<span lang=EN-US>n<sup>3</sup></span>，其中<span
+lang=EN-US>n</span>從<span lang=EN-US>0</span>起算。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>丙：<span
+lang=EN-US>C</span>的首項和第二項是<span lang=EN-US>1</span>和<span lang=EN-US>2</span>，其餘每項是前兩項相加</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>三、請將式子「<span
+lang=EN-US>A<sub>0</sub> = 1;  a<sub>n</sub> = n </span>×<span lang=EN-US> a<sub>n-1</sub></span>」翻譯成語言，</span></p>
+
+<p class=MsoNormal style='margin-left:240.0pt;text-indent:24.0pt'><span
+style='font-size:14.0pt;font-family:新細明體'>再寫出它所描述的數列。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>四、請將以下數列翻譯成函數式或遞迴式（可自行選擇）：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>A
+= [1, 3, 5, 7, 9, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>B
+= [1, 2, 4, 8, 16, 32, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>C
+= [1, 2, 3, 0, 1, 2, 3, 0, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=48
+id="_x0000_i1028" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image009.gif"
+alt=等差數列></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[1, 3, 5, 7, 9, …]</span><span
+style='font-size:14.0pt;font-family:新細明體'>是相當簡單的數列。等差數列都是這樣簡單。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所謂等差數列，就是前後兩項的差距是固定的。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以上面的例子來說，前後兩項的差距固定都是【<input type = 'text'></span><span
+style='font-size:14.0pt'> <span lang=EN-US style='color:white'>2</span><span
+lang=EN-US>   </span></span><span style='font-size:14.0pt;font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這個公用的差距，就稱為「公差」</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>等差數列的例子不勝枚舉：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[0, 2, 4, 6, 8, …]           </span><span
+style='font-size:14.0pt;font-family:新細明體'>首項是</span><span lang=EN-US
+style='font-size:14.0pt'>0</span><span style='font-size:14.0pt;font-family:
+新細明體'>，公差是</span><span lang=EN-US style='font-size:14.0pt'>2</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[4, 2, 0, -2, -4…]           </span><span
+style='font-size:14.0pt;font-family:新細明體'>首項是【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】，公差是</span><span lang=EN-US style='font-size:14.0pt'>-2</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[10, 9, 8, 7, …]       </span><span
+style='font-size:14.0pt;font-family:新細明體'>首項是【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】，公差是【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>從上面例子可知，等差數列的長相只跟【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】和【<input type = 'text'></span><span style='font-size:14.0pt'> </span><span
+style='font-size:14.0pt;font-family:新細明體'>公差</span><span style='font-size:14.0pt'>
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】有關。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果我們把首項稱為</span><span
+lang=EN-US style='font-size:14.0pt'>a<sub>0</sub></span><span style='font-size:
+14.0pt;font-family:新細明體'>，公差稱為</span><span lang=EN-US style='font-size:14.0pt'>d</span><sup><span
+style='font-size:14.0pt;font-family:新細明體'>註</span></sup><a href="#_ftn1"
+name="_ftnref1" title=""><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:14.0pt'><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:14.0pt;font-family:"Times New Roman"'>[1]</span></span></span></span></a><span
+style='font-size:14.0pt;font-family:新細明體'>，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>就可以用符號寫出一般的等差數列：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般化</span><span
+lang=EN-US style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;
+font-family:新細明體'>列舉式</span><span lang=EN-US style='font-size:14.0pt'>)</span><span
+style='font-size:14.0pt;font-family:新細明體'>：</span><span lang=EN-US
+style='font-size:14.0pt'>[ a<sub>0</sub>,  a<sub>0</sub>+d,  a<sub>0</sub>+</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span style='font-size:14.0pt'>
+<span lang=EN-US style='color:white'>2d</span><span lang=EN-US>  </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'>,  a<sub>0</sub>+3d, </span><span style='font-size:
+14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  <span
+style='color:white'>a<sub>0</sub>+4d</span>  </span><span style='font-size:
+14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般化</span><span
+lang=EN-US style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;
+font-family:新細明體'>函數式</span><span lang=EN-US style='font-size:14.0pt'>)</span><span
+style='font-size:14.0pt;font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   <span style='color:white'>A(n) = a<sub>0</sub>+nd        </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般化</span><span
+lang=EN-US style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;
+font-family:新細明體'>遞迴式</span><span lang=EN-US style='font-size:14.0pt'>)</span><span
+style='font-size:14.0pt;font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    <span style='color:white'>a<sub>0 = </sub>a<sub>0, 
+</sub>a<sub>n =  </sub>a<sub>n-1</sub> +d</span>            </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接下我們來看看利用符號的好處：例如，求</span><span
+lang=EN-US style='font-size:14.0pt'>1, 99</span><span style='font-size:14.0pt;
+font-family:新細明體'>兩數的等差中項</span><span lang=EN-US style='font-size:14.0pt'>x</span><span
+style='font-size:14.0pt;font-family:新細明體'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'> </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因為</span><span
+lang=EN-US style='font-size:14.0pt'>[1, x, 99]</span><span style='font-size:
+14.0pt;font-family:新細明體'>構成等差數列，可先設公差為</span><span lang=EN-US style='font-size:
+14.0pt'>d</span><span style='font-size:14.0pt;font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可知</span><span
+lang=EN-US style='font-size:14.0pt'>x = 1 + d              99 = 1 +</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>      </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>先用後面的等式解出</span><span
+lang=EN-US style='font-size:14.0pt'>d =</span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>         </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接著就可以解出</span><span
+lang=EN-US style='font-size:14.0pt'>x =</span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>         </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這種方法不只可以求中項，也可以求內分點。（在基本功操練中）</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>2</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請寫出首項是</span><span
+lang=EN-US style='font-size:14.0pt'>3</span><span style='font-size:14.0pt;
+font-family:新細明體'>，公差是</span><span lang=EN-US style='font-size:14.0pt'>-2</span><span
+style='font-size:14.0pt;font-family:新細明體'>的等差數列</span><span lang=EN-US
+style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;font-family:
+新細明體'>列舉式、函數式、遞迴式</span><span lang=EN-US style='font-size:14.0pt'>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>[5, x, 35]</span><span style='font-size:
+14.0pt;font-family:新細明體'>成一等差數列，請求出</span><span lang=EN-US style='font-size:
+14.0pt'>x</span><span style='font-size:14.0pt;font-family:新細明體'>的值</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>[a, x, b]</span><span style='font-size:
+14.0pt;font-family:新細明體'>成一等差數列，請將</span><span lang=EN-US style='font-size:
+14.0pt'>x</span><span style='font-size:14.0pt;font-family:新細明體'>寫成</span><span
+lang=EN-US style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;
+font-family:新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>b</span><span
+style='font-size:14.0pt;font-family:新細明體'>的函數</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>[0, x, y, z, 10]</span><span
+style='font-size:14.0pt;font-family:新細明體'>成一等差數列，請求出</span><span lang=EN-US
+style='font-size:14.0pt'>x, y, z</span><span style='font-size:14.0pt;
+font-family:新細明體'>的值</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若一根</span><span
+lang=EN-US style='font-size:14.0pt'>60</span><span style='font-size:14.0pt;
+font-family:新細明體'>公分長的桿子，左邊放</span><span lang=EN-US style='font-size:14.0pt'>10</span><span
+style='font-size:14.0pt;font-family:新細明體'>公斤的重物，右邊放</span><span lang=EN-US
+style='font-size:14.0pt'>5</span><span style='font-size:14.0pt;font-family:
+新細明體'>公斤的重物，支點要選在哪裡，左右才會平衝？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若一根桿子放在數線上</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>左端座標為</span><span
+lang=EN-US style='font-size:14.0pt'>a</span><span style='font-size:14.0pt;
+font-family:新細明體'>，放</span><span lang=EN-US style='font-size:14.0pt'>n</span><span
+style='font-size:14.0pt;font-family:新細明體'>公斤的重物，</span><span lang=EN-US
+style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>右邊座標為</span><span
+lang=EN-US style='font-size:14.0pt'>b</span><span style='font-size:14.0pt;
+font-family:新細明體'>，放</span><span lang=EN-US style='font-size:14.0pt'>m</span><span
+style='font-size:14.0pt;font-family:新細明體'>公斤的重物，</span><span lang=EN-US
+style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>支點要選在哪裡，左右才會平衝？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=48
+id="_x0000_i1029" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image010.gif"
+alt=等比數列></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[1, 2, 4, 8, 16,
+32, 64 …]</span><span style='font-size:14.0pt;font-family:新細明體'>是相當簡單的數列。等比數列都是這樣簡單。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所謂等比數列，就是前後兩項的比例固定。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>以上面的例子來說，「後項除以前項」固定都是【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這個公用的比例，就稱為「公比」。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般來說，等比數列和等差一樣，要嘛是單調上升，要嘛單調下降：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[1, 2, 4, 8, 16…]                                          </span><span
+style='font-size:14.0pt;font-family:新細明體'>首項是</span><span lang=EN-US
+style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;font-family:
+新細明體'>，公比是</span><span lang=EN-US style='font-size:14.0pt'>2</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-size:14.0pt'>[3,  1,  1/3,  1/9,  1/27,  1/81, …]     </span><span
+style='font-size:14.0pt;font-family:新細明體'>首項是【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】，公比是【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>但是也有不是單調上升或下降的例外（在基本功操練中）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>等差數列的首項可以是任何數，</span></p>
+
+<p class=MsoNormal style='margin-right:28.0pt'><span style='font-size:14.0pt;
+font-family:新細明體'>但等比數列，首項不可能是【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】，否則會退化為無聊數列<sup>註</sup></span><a
+href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:14.0pt'><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'>[2]</span></span></span></span></a><span
+style='font-size:14.0pt;font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果我們把首項稱為</span><span
+lang=EN-US style='font-size:14.0pt'>a<sub>0</sub></span><span style='font-size:
+14.0pt;font-family:新細明體'>，公比稱為</span><span lang=EN-US style='font-size:14.0pt'>r</span><sup><span
+style='font-size:14.0pt;font-family:新細明體'>註</span></sup><a href="#_ftn3"
+name="_ftnref3" title=""><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:14.0pt'><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:14.0pt;font-family:"Times New Roman"'>[3]</span></span></span></span></a><span
+style='font-size:14.0pt;font-family:新細明體'>，就寫出一般的等比數列：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般化</span><span
+lang=EN-US style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;
+font-family:新細明體'>列舉式</span><span lang=EN-US style='font-size:14.0pt'>)</span><span
+style='font-size:14.0pt;font-family:新細明體'>：</span><span lang=EN-US
+style='font-size:14.0pt'>[ a<sub>0</sub>,  a<sub>0</sub>r,  a<sub>0</sub>r<sup>2</sup>,
+</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>,  a<sub>0</sub>r<sup>4</sup>,
+</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般化</span><span
+lang=EN-US style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;
+font-family:新細明體'>函數式</span><span lang=EN-US style='font-size:14.0pt'>)</span><span
+style='font-size:14.0pt;font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>                        </span><span style='font-size:
+14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>一般化</span><span
+lang=EN-US style='font-size:14.0pt'>(</span><span style='font-size:14.0pt;
+font-family:新細明體'>遞迴式</span><span lang=EN-US style='font-size:14.0pt'>)</span><span
+style='font-size:14.0pt;font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>                        </span><span style='font-size:
+14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接下來，和等差一樣，可以來求等比中項、比例內分點。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>例如，求</span><span
+lang=EN-US style='font-size:14.0pt'>3,  243</span><span style='font-size:14.0pt;
+font-family:新細明體'>兩數的等比中項</span><span lang=EN-US style='font-size:14.0pt'>x</span><span
+style='font-size:14.0pt;font-family:新細明體'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>因為</span><span
+lang=EN-US style='font-size:14.0pt'>[3, x, 243]</span><span style='font-size:
+14.0pt;font-family:新細明體'>構成等比數列，可先設公比為</span><span lang=EN-US style='font-size:
+14.0pt'>r</span><span style='font-size:14.0pt;font-family:新細明體'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可知</span><span
+lang=EN-US style='font-size:14.0pt'>x =</span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>       </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'>               243 =</span><span style='font-size:
+14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>          </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>先用後面的等式解出</span><span
+lang=EN-US style='font-size:14.0pt'>r =</span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>         </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接著就可以解出</span><span
+lang=EN-US style='font-size:14.0pt'>x =</span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>         </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>3</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>[2, x, 8]</span><span style='font-size:
+14.0pt;font-family:新細明體'>成一等比數列，請求出</span><span lang=EN-US style='font-size:
+14.0pt'>x</span><span style='font-size:14.0pt;font-family:新細明體'>的值</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>[1, x, 5] </span><span style='font-size:
+14.0pt;font-family:新細明體'>成一等比數列，請求出</span><span lang=EN-US style='font-size:
+14.0pt'>x</span><span style='font-size:14.0pt;font-family:新細明體'>的值</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>[1, x, y, z, 9]</span><span
+style='font-size:14.0pt;font-family:新細明體'>成一等比數列，請求出</span><span lang=EN-US
+style='font-size:14.0pt'>x, y, z</span><span style='font-size:14.0pt;
+font-family:新細明體'>的值</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>弦樂器的弦長，每縮短一半，音高會增加</span><span
+lang=EN-US style='font-size:14.0pt'>8</span><span style='font-size:14.0pt;
+font-family:新細明體'>度</span><span lang=EN-US style='font-size:14.0pt'>(C</span><span
+style='font-size:14.0pt;font-family:新細明體'>到高音</span><span lang=EN-US
+style='font-size:14.0pt'>C)<br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>若以</span><span
+lang=EN-US style='font-size:14.0pt'>C</span><span style='font-size:14.0pt;
+font-family:新細明體'>的弦長為一單位，高音</span><span lang=EN-US style='font-size:14.0pt'>C</span><span
+style='font-size:14.0pt;font-family:新細明體'>就是</span><span lang=EN-US
+style='font-size:14.0pt'>1/2</span><span style='font-size:14.0pt;font-family:
+新細明體'>單位。</span><span lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>十二平均律，就是將</span><span
+lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;
+font-family:新細明體'>和</span><span lang=EN-US style='font-size:14.0pt'>1/2</span><span
+style='font-size:14.0pt;font-family:新細明體'>切出十二等分，但是，是用比例來切，也就是求以下等比數列中的所有未知數：</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+[1,  C#,  D,  D#,  E,  F,  F#,  G,  G#,  A,  A#,  B,  1/2]<br>
+<br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>請問</span><span
+lang=EN-US style='font-size:14.0pt'>G</span><span style='font-size:14.0pt;
+font-family:新細明體'>的弦長是幾單位？<sup>註</sup></span><a href="#_ftn4" name="_ftnref4"
+title=""><span class=MsoFootnoteReference><span lang=EN-US style='font-size:
+14.0pt'><span class=MsoFootnoteReference><span lang=EN-US style='font-size:
+14.0pt;font-family:"Times New Roman"'>[4]</span></span></span></span></a></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:14.0pt;font-family:新細明體'>請寫出一個首項是</span><span lang=EN-US
+style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;font-family:
+新細明體'>，每項都是</span><span lang=EN-US style='font-size:14.0pt'>2</span><span
+style='font-size:14.0pt;font-family:新細明體'>的等比數列，</span><span lang=EN-US
+style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>　　　　　　　　　　　　　　　　　　　再寫出它的公比。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:14.0pt;font-family:新細明體'>請寫出一個首項是</span><span lang=EN-US
+style='font-size:14.0pt'>3</span><span style='font-size:14.0pt;font-family:
+新細明體'>，每項和前一項都不同，</span><span lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>有週期性的等比數列，再寫出它的公比。</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=47
+id="_x0000_i1030" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image011.gif"
+alt=數列的作圖></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>數列作圖和函數一樣（因為數列都可看作自變數是整數的函數），</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>差別只在圖形是離散的，不是連續的。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>以下是一些例子：</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'><img width=214 height=158
+  id="_x0000_i1031" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image012.gif"></span></b></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>等差數列</span><span lang=EN-US
+  style='font-size:14.0pt'>a<sub>n</sub> = 2n</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>Geogebra</span></b><b><span
+  style='font-size:14.0pt;font-family:新細明體'>指令：</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt'>Sequence[(i, 2 i), i, 0, 50]</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'><img width=214 height=158
+  id="_x0000_i1032" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image013.gif"></span></b></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>等比數列</span><span lang=EN-US
+  style='font-size:14.0pt'>a<sub>n</sub>= 2<sup>n</sup></span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>Geogebra</span></b><b><span
+  style='font-size:14.0pt;font-family:新細明體'>指令：</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt'>Sequence[(i, 2^i), i, 0, 15]</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:209.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'><img width=194 height=144
+  id="_x0000_i1033" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image014.gif"></span></b></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>週期數列</span><span lang=EN-US
+  style='font-size:14.0pt'>a<sub>n</sub> = n mod 4</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>Geogebra</span></b><b><span
+  style='font-size:14.0pt;font-family:新細明體'>指令：</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt'>Sequence[(i, f(i)), i, 0, 50]</span></p>
+  </td>
+  <td width=209 valign=top style='width:209.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'><img width=240 height=158
+  id="_x0000_i1034" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image015.gif"></span></b></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:14.0pt;font-family:新細明體'>音律</span><span lang=EN-US
+  style='font-size:14.0pt'>a<sub>n</sub> = 2 </span><span style='font-size:
+  14.0pt;font-family:新細明體'>×</span><span lang=EN-US style='font-size:14.0pt'>
+  (1/2)<sup>(i/12)</sup> ; n = 0, 1, ..24</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+  lang=EN-US style='font-size:14.0pt'>Geogebra</span></b><b><span
+  style='font-size:14.0pt;font-family:新細明體'>指令：</span></b></p>
+  <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-US style='font-size:10.0pt'>Sequence[Segment[(i, 0), (i, 2 (1 / 2)^(i
+  / 12))], i, 0, 24]</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>上網打關鍵字</span><b><span lang=EN-US
+style='font-size:14.0pt'>Geogebra</span></b><span style='font-size:14.0pt;
+font-family:新細明體'>，可下載免費、中文化的數學自學軟體。</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:14.0pt;font-family:新細明體'>可叫電腦畫出精美的圖形</span><span lang=EN-US
+style='font-size:14.0pt'>☺</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=46
+id="_x0000_i1035" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image016.gif"
+alt=數列的運算></span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>係數運算、數列運算：</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>當我們討論數列時，就可以把它當作一個數學物件，考慮它的運算。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>例如：設</span><span
+lang=EN-US style='font-size:14.0pt'>A = [1, 2, 3, 4, …],  B = [9, 8, 7, 6…]</span><span
+style='font-size:14.0pt;font-family:新細明體'>，則：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>5 + A = [6, 7, 8,
+9, …]                     3A             =    </span><span style='font-size:
+14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>              
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>-B = [-9, -8, -7,
+-6, …]                     2B – 1   =    </span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>              
+</span><span style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>A + B = [10, 10,
+10, 10, …]              A </span><span style='font-size:14.0pt;font-family:
+新細明體'>× </span><span lang=EN-US style='font-size:14.0pt'>B  =    </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>               </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>A – B =</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>               </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>              2A
+– B  =    </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>               </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>將數列套進函數：</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>與係數運算相近的是，把數列套進函數，就等於每項分別代入：</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>例如，設</span><span
+lang=EN-US style='font-size:14.0pt'>A = [1, 2, 3, 4, …],  f(x) = 3x,  g(x) = 2<sup>x</sup></span><span
+style='font-size:14.0pt;font-family:新細明體'>。則：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>A<sup>2</sup> =
+[1, 4, 9, 16, …]                              </span><span style='font-size:
+14.0pt;font-family:新細明體'>√</span><span lang=EN-US style='font-size:14.0pt'>A =
+[ 1,</span><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'> </span><span
+style='font-size:14.0pt;font-family:新細明體'>√<span lang=EN-US>2, </span>√<span
+lang=EN-US>3, 2, …]</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>f(A) =</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>               </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>            g(A)
+=</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>                </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>加總（全和分）：</span></b><span
+style='font-size:14.0pt;font-family:新細明體'>Σ是希臘符號，讀作西格瑪，意思是「加起來」</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>設</span><span
+lang=EN-US style='font-size:14.0pt'>A = [3, 4, 5],  B = [1, 2, 3, …], f(x) = 2<sup>-x</sup></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>Σ</span><span
+lang=EN-US style='font-size:14.0pt'>A = 3+4+5 = 12          </span><span
+style='font-size:14.0pt;font-family:新細明體'>Σ</span><span lang=EN-US
+style='font-size:14.0pt'>B = 1+2+3+… = +</span><span style='font-size:14.0pt;
+font-family:新細明體'>∞</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:新細明體'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>Σ</span><span
+lang=EN-US style='font-size:14.0pt'>f(A) = 1/8 + 1/16 + 1/32         =</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span style='font-size:14.0pt'>
+ <span lang=EN-US>   </span></span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>Σ</span><span
+lang=EN-US style='font-size:14.0pt'>f(B) =</span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'> =</span><span style='font-size:14.0pt;font-family:
+新細明體'>【<input type = 'text'></span><span style='font-size:14.0pt'>  <span lang=EN-US>   </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>4</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;
+font-family:新細明體'>、</span><span lang=EN-US style='font-size:14.0pt'>B</span><span
+style='font-size:14.0pt;font-family:新細明體'>都是等差數列，那麼</span><span lang=EN-US
+style='font-size:14.0pt'>A+B</span><span style='font-size:14.0pt;font-family:
+新細明體'>一定是等差數列嗎？為什麼？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;
+font-family:新細明體'>是等差數列，那麼</span><span lang=EN-US style='font-size:14.0pt'>3A</span><span
+style='font-size:14.0pt;font-family:新細明體'>一定是等差數列嗎？為什麼？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請畫出首項是</span><span
+lang=EN-US style='font-size:14.0pt'>2</span><span style='font-size:14.0pt;
+font-family:新細明體'>，公差是</span><span lang=EN-US style='font-size:14.0pt'>0.5</span><span
+style='font-size:14.0pt;font-family:新細明體'>的等差數列圖形</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>設</span><span
+lang=EN-US style='font-size:14.0pt'>a<sub>0</sub> = 1,  a<sub>n</sub> = a<sub>n-1</sub>
+/ 2</span><span style='font-size:14.0pt;font-family:新細明體'>，請畫出數列</span><span
+lang=EN-US style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;
+font-family:新細明體'>的圖形</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>承上題，請問Σ</span><span
+lang=EN-US style='font-size:14.0pt'>A = ?</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A = [0, 1, 2, 3, 4…],   B = [1, 10, 100,
+1000, 10000, …]</span><span style='font-size:14.0pt;font-family:新細明體'>，</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>且</span><span
+lang=EN-US style='font-size:14.0pt'>f(A) = B</span><span style='font-size:14.0pt;
+font-family:新細明體'>，</span><span lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>請寫出函數</span><span
+lang=EN-US style='font-size:14.0pt'>f(x) = ? </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>承上題，若</span><span
+lang=EN-US style='font-size:14.0pt'>log(B) = A</span><span style='font-size:
+14.0pt;font-family:新細明體'>，</span><span lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>請填上函數</span><span
+lang=EN-US style='font-size:14.0pt'>log(x)</span><span style='font-size:14.0pt;
+font-family:新細明體'>的性質：</span></p>
+
+<p class=MsoNormal style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:14.0pt'>甲、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt'>log(1) = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>      </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:14.0pt'>乙、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt'>log(10) = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span></p>
+
+<p class=MsoNormal style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:14.0pt'>丙、<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt'>log(a </span><span
+style='font-size:14.0pt;font-family:新細明體'>× </span><span lang=EN-US
+style='font-size:14.0pt'>b) =</span><span style='font-size:14.0pt;font-family:
+新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>      </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'> + </span><span style='font-size:14.0pt;font-family:
+新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>       </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>（註：</span><span
+lang=EN-US style='font-size:14.0pt'>log(x)</span><span style='font-size:14.0pt;
+font-family:新細明體'>稱為常用對數，具有將乘除化為加減、節省力氣的功能）</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=239 height=47
+id="_x0000_i1036" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image017.gif"
+alt=從數列到級數></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt'><img width=191
+height=127 id="_x0000_i1037" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image018.gif"></span></b><span
+lang=EN-US style='font-size:14.0pt'><img width=191 height=127 id="_x0000_i1038"
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image019.gif"></span></p>
+
+<p class=MsoNormal style='margin-left:48.0pt;text-indent:24.0pt'><span
+style='font-size:10.0pt;font-family:新細明體'>等比數列</span><span lang=EN-US
+style='font-size:10.0pt'>                                                   </span><span
+style='font-size:10.0pt;font-family:新細明體'>等比級數</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>級數：</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以拿原本的數列從頭開始加，構造出新的數列：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>[a<sub>0,  </sub>a<sub>0</sub></span><sub><span
+style='font-size:14.0pt;font-family:新細明體'>　</span></sub><span lang=EN-US
+style='font-size:14.0pt'>+ a<sub>1</sub>,  a<sub>0 </sub>+ a<sub>1 </sub>+ a<sub>2</sub>, 
+a<sub>0</sub> + a<sub>1</sub> + a<sub>2</sub> + a<sub>3</sub>, …]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>這樣的一個新數列，稱為</span><span
+lang=EN-US style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;
+font-family:新細明體'>的<u>級數</u>，記為</span><span lang=EN-US style='font-size:14.0pt'>S(A)</span><span
+style='font-size:14.0pt;font-family:新細明體'>或</span><span lang=EN-US
+style='font-size:14.0pt'>S</span><span style='font-size:14.0pt;font-family:
+新細明體'>。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果</span><span
+lang=EN-US style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;
+font-family:新細明體'>是從</span><span lang=EN-US style='font-size:14.0pt'>0</span><span
+style='font-size:14.0pt;font-family:新細明體'>起算，</span><span lang=EN-US
+style='font-size:14.0pt'>S</span><span style='font-size:14.0pt;font-family:
+新細明體'>也就從</span><span lang=EN-US style='font-size:14.0pt'>0</span><span
+style='font-size:14.0pt;font-family:新細明體'>起算；如果</span><span lang=EN-US
+style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;font-family:
+新細明體'>從</span><span lang=EN-US style='font-size:14.0pt'>1</span><span
+style='font-size:14.0pt;font-family:新細明體'>起算，</span><span lang=EN-US
+style='font-size:14.0pt'>S</span><span style='font-size:14.0pt;font-family:
+新細明體'>也一樣。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>部份和：</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>S</span><span
+style='font-size:14.0pt;font-family:新細明體'>的第</span><span lang=EN-US
+style='font-size:14.0pt'>n</span><span style='font-size:14.0pt;font-family:
+新細明體'>項，</span><span lang=EN-US style='font-size:14.0pt'>s<sub>n</sub> = a<sub>0</sub>
++ a<sub>1</sub> + a<sub>2</sub> + … + a<sub>n</sub></span><span
+style='font-size:14.0pt;font-family:新細明體'>，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>s<sub>n</sub></span><span
+style='font-size:14.0pt;font-family:新細明體'>就稱為數列</span><span lang=EN-US
+style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;font-family:
+新細明體'>的第</span><span lang=EN-US style='font-size:14.0pt'>n</span><span
+style='font-size:14.0pt;font-family:新細明體'>個<u>部份和</u>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>練習：</span></b><span
+style='font-size:14.0pt;font-family:新細明體'>請寫出</span><span lang=EN-US
+style='font-size:14.0pt'>S(A)</span><span style='font-size:14.0pt;font-family:
+新細明體'>的遞迴式</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=208
+height=137 id="_x0000_i1039" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image020.gif"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>（</span><span
+lang=EN-US style='font-size:14.0pt'>S</span><span style='font-size:14.0pt;
+font-family:新細明體'>的圖形是樓梯形的面積，所以叫級數<sup>註</sup></span><a href="#_ftn5"
+name="_ftnref5" title=""><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:14.0pt'><span class=MsoFootnoteReference><span lang=EN-US
+style='font-size:14.0pt;font-family:"Times New Roman"'>[5]</span></span></span></span></a><span
+style='font-size:14.0pt;font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=238 height=46
+id="_x0000_i1040" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image021.gif"
+alt=等差級數></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'><img width=437 height=286 id="_x0000_i1041"
+src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image022.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>依上圖所示，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>等差級數的總和相當於樓梯形的面積，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>我們可以複製出一個全等的樓梯形，倒過來湊成一個長方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以</span><span
+lang=EN-US style='font-size:14.0pt'>s<sub>n</sub></span><span style='font-size:
+14.0pt;font-family:新細明體'>（樓梯形的面積）就等於長方形的【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>1 + 2 + 3 + …+ 6 
+= </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span><span style='font-size:14.0pt;font-family:新細明體'>×</span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>  /   2  = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>依此類推，</span><span
+lang=EN-US style='font-size:14.0pt'>1 + 2 + 3 + …+ 100 = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span><span style='font-size:14.0pt'> </span><span style='font-size:
+14.0pt;font-family:新細明體'>× 【<input type = 'text'><span lang=EN-US>    </span></input>】<span lang=EN-US> / </span>【<input type = 'text'><span
+lang=EN-US>    </span></input>】<span lang=EN-US> = </span>【<input type = 'text'><span lang=EN-US>   </span></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>再類推，</span><span
+lang=EN-US style='font-size:14.0pt'>1 + 2 + 3 + …+ n  = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>                         </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=262
+height=172 id="_x0000_i1042" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image023.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>接著我們來考慮公差不是</span><span
+lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:14.0pt;
+font-family:新細明體'>的情況。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>上例中，首項</span><span
+lang=EN-US style='font-size:14.0pt'>a<sub>1</sub> = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>   </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span><span lang=EN-US style='font-size:14.0pt'>, </span><span
+style='font-size:14.0pt;font-family:新細明體'>公差</span><span lang=EN-US
+style='font-size:14.0pt'>d = </span><span style='font-size:14.0pt;font-family:
+新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'>, </span><span style='font-size:14.0pt;font-family:
+新細明體'>項數</span><span lang=EN-US style='font-size:14.0pt'>n = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;font-family:
+新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>3 + 3.5 + 4 + 4.5
++ ... + 6.5 = </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>    </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span><span style='font-size:14.0pt'> </span><span
+style='font-size:14.0pt;font-family:新細明體'>× </span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span style='font-size:14.0pt'> <span lang=EN-US>   </span></span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'> / </span><span style='font-size:14.0pt;font-family:
+新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>  </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'>  = </span><span style='font-size:14.0pt;font-family:
+新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>    </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果我把把公式推廣到首項</span><span
+lang=EN-US style='font-size:14.0pt'>a<sub>1</sub></span><span style='font-size:
+14.0pt;font-family:新細明體'>、公差</span><span lang=EN-US style='font-size:14.0pt'>d</span><span
+style='font-size:14.0pt;font-family:新細明體'>、項數</span><span lang=EN-US
+style='font-size:14.0pt'>n </span><span style='font-size:14.0pt;font-family:
+新細明體'>都是未知的情況。</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>試試看！</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>在首項</span><span
+lang=EN-US style='font-size:14.0pt'>a<sub>1</sub></span><span style='font-size:
+14.0pt;font-family:新細明體'>、公差</span><span lang=EN-US style='font-size:14.0pt'>d</span><span
+style='font-size:14.0pt;font-family:新細明體'>、項數</span><span lang=EN-US
+style='font-size:14.0pt'>n </span><span style='font-size:14.0pt;font-family:
+新細明體'>都以符號表示時，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>照樣會有類似上圖的樓梯和長方形。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>長方形的底</span><span
+lang=EN-US style='font-size:14.0pt'> = </span><span style='font-size:14.0pt;
+font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>       </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span><span lang=EN-US
+style='font-size:14.0pt'>            </span><span style='font-size:14.0pt;
+font-family:新細明體'>長方形的高</span><span lang=EN-US style='font-size:14.0pt'> = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>       </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以，</span><span
+lang=EN-US style='font-size:14.0pt'>s<sub>n</sub></span><span style='font-size:
+14.0pt;font-family:新細明體'>（樓梯形面積）</span><span lang=EN-US style='font-size:14.0pt'>
+= </span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>                      </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>恭喜你！自己導出了等差級數公式！</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>推導的過程，比結果更重要，不是嗎？</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;font-family:標楷體'><img width=238 height=46
+id="_x0000_i1043" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image024.gif"
+alt=等比級數></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=261
+height=172 id="_x0000_i1044" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image025.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如上圖，</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>若設</span><span
+lang=EN-US style='font-size:14.0pt'>x</span><span style='font-size:14.0pt;
+font-family:新細明體'>等於一個等比級數</span><span lang=EN-US style='font-size:14.0pt'>a<sub>1</sub>
++ a<sub>1</sub>r + a<sub>1</sub>r<sup>2</sup> +a<sub>1</sub>r<sup>3</sup> + … +
+a<sub>1</sub>r<sup>n-1</sup></span><span style='font-size:14.0pt;font-family:
+新細明體'>的</span><span lang=EN-US style='font-size:14.0pt'>n</span><span
+style='font-size:14.0pt;font-family:新細明體'>項部份和</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>如果我們把</span><span
+lang=EN-US style='font-size:14.0pt'>x</span><span style='font-size:14.0pt;
+font-family:新細明體'>乘以公比</span><span lang=EN-US style='font-size:14.0pt'>r</span><span
+style='font-size:14.0pt;font-family:新細明體'>，依據乘法分配律，等於每項分別乘以</span><span
+lang=EN-US style='font-size:14.0pt'>r</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>rx   =  r (a<sub>1</sub>
++ a<sub>1</sub>r + a<sub>1</sub>r<sup>2</sup> +a<sub>1</sub>r<sup>3</sup> + … +
+a<sub>1</sub>r<sup>n-1</sup>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt'><span lang=EN-US
+style='font-size:14.0pt'>=  a<sub>1</sub>r + a<sub>1</sub>r<sup>2</sup> +a<sub>1</sub>r<sup>3</sup>
++ … + a<sub>1</sub>r<sup>n-1 </sup>+ a<sub>1</sub>r<sup>n</sup></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>部份和</span><span
+lang=EN-US style='font-size:14.0pt'>rx</span><span style='font-size:14.0pt;
+font-family:新細明體'>跟原本的部份和</span><span lang=EN-US style='font-size:14.0pt'>x</span><span
+style='font-size:14.0pt;font-family:新細明體'>相比，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>只多一了個【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】，少了一個【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>     </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】，其他竟然都一樣！</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>所以，若拿</span><span
+lang=EN-US style='font-size:14.0pt'>rx</span><span style='font-size:14.0pt;
+font-family:新細明體'>去減</span><span lang=EN-US style='font-size:14.0pt'>x</span><span
+style='font-size:14.0pt;font-family:新細明體'>，兩兩扺消，就會只留下頭和尾</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>rx – x  =  a<sub>1</sub>r<sup>n
+</sup>–</span><span style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span
+lang=EN-US style='font-size:14.0pt'>     </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>理項</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>x( r – 1)  = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>                </span><span style='font-size:14.0pt;
+font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>x  = </span><span
+style='font-size:14.0pt;font-family:新細明體'>【<input type = 'text'></span><span lang=EN-US
+style='font-size:14.0pt'>                     </span><span style='font-size:
+14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>恭喜你！自己導出了等比級數公式！</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>基本功操練時間</span></b><b><span
+lang=EN-US style='font-size:14.0pt'>5</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A = [1, 2, 3, 0, 1, 2, 3, 0, …]</span><span
+style='font-size:14.0pt;font-family:新細明體'>，請寫出</span><span lang=EN-US
+style='font-size:14.0pt'>S(A) </span><span style='font-size:14.0pt;font-family:
+新細明體'>的前五項。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>S(A) = [1, 4, 9, 16, 25, …]</span><span
+style='font-size:14.0pt;font-family:新細明體'>，請寫出</span><span lang=EN-US
+style='font-size:14.0pt'>A</span><span style='font-size:14.0pt;font-family:
+新細明體'>的前五項。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>下圖是等差級數公式的另一種看法：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'><img width=262
+height=172 id="_x0000_i1045" src="%E6%95%B8%E5%88%97%E8%88%87%E7%B4%9A%E6%95%B8_files/image026.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:新細明體'>請問上圖中的虛線代表什麼意思？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>承上題，請利用上圖證明等差級數公式的另一種寫法</span></p>
+
+<p class=MsoNormal style='margin-left:216.0pt;text-indent:24.0pt'><span
+lang=EN-US style='font-size:14.0pt'>s<sub>n</sub> = {[a<sub>1</sub> + a<sub>1</sub>
++ (n-1)d] / 2 } n</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請問</span><span
+lang=EN-US style='font-size:14.0pt'>1 + 1/2 + 1/4 + 1/8 + … + 1/23 = ?</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請問</span><span
+lang=EN-US style='font-size:14.0pt'>1 + 1/2 + 1/4 + 1/8 + …  = ?</span><span
+style='font-size:14.0pt;font-family:新細明體'>（這稱為無窮等比級數）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>綜合練習</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請舉列說明什麼是數列？什麼是數列的級數？什麼是部份和？</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請舉出一個函數式比遞迴式簡單的數列</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>請舉出一個遞迴式比函數式簡單的數列</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A = [1, -1 , 1, -1, …]</span><span
+style='font-size:14.0pt;font-family:新細明體'>，請問</span><span lang=EN-US
+style='font-size:14.0pt'>S(A) = ?</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'>來延伸挑戰吧！</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A = [1, 1/3 , 1/9, 1/27, …]</span><span
+style='font-size:14.0pt;font-family:新細明體'>，請問Σ</span><span lang=EN-US
+style='font-size:14.0pt'>A = ?</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:14.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>若</span><span
+lang=EN-US style='font-size:14.0pt'>A = [1, -1 , 1, -1, …]</span><span
+style='font-size:14.0pt;font-family:新細明體'>，請問Σ</span><span lang=EN-US
+style='font-size:14.0pt'>A = ?</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:新細明體'>（這稱為西賽羅和，參見</span><span
+lang=EN-US style='font-size:10.0pt'>http://en.wikipedia.org/wiki/Cesàro_summation</span><span
+style='font-size:10.0pt;font-family:新細明體'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;font-family:新細明體'>馬爾薩斯的模型中，糧食的產量是以等差數列上升，</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>人口的增加卻是以等比數列上升，</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>他由此推論，終究有一天糧食會不夠。</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+</span><span style='font-size:14.0pt;font-family:新細明體'>在他的模型下，這個推論正確嗎？我們如何用數學方式證明？</span><span
+lang=EN-US style='font-size:14.0pt'><br>
+<br clear=all style='page-break-before:always'>
+</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;font-family:新細明體'></span><span style='font-size:14.0pt;
+font-family:新細明體'>：【<input type = 'text'></span><span lang=EN-US style='font-size:14.0pt'>                                                                   </span><span
+style='font-size:14.0pt;font-family:新細明體'></input>】</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[1]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>公差叫</span><span lang=EN-US>d</span><span
+style='font-family:新細明體'>是因為代表差距的字</span><span lang=EN-US>difference, delta</span><span
+style='font-family:新細明體'>都是以</span><span lang=EN-US>d</span><span
+style='font-family:新細明體'>開頭</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[2]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>無聊數列就是</span><span
+lang=EN-US>[0, 0, 0, 0, …]</span></p>
+
+</div>
+
+<div id=ftn3>
+
+<p class=MsoFootnoteText><a href="#_ftnref3" name="_ftn3" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[3]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>公比叫</span><span lang=EN-US>r</span><span
+style='font-family:新細明體'>是因為代表差距的字</span><span lang=EN-US>ratio</span><span
+style='font-family:新細明體'>是以</span><span lang=EN-US>r</span><span
+style='font-family:新細明體'>開頭</span></p>
+
+</div>
+
+<div id=ftn4>
+
+<p class=MsoFootnoteText><a href="#_ftnref4" name="_ftn4" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[4]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>如果會對數，可以用對數求出近似值。</span><span
+lang=EN-US>G</span><span style='font-family:新細明體'>的近似值是</span><span lang=EN-US>0.667</span><span
+style='font-family:新細明體'>單位，接近</span><span lang=EN-US>2/3</span><span
+style='font-family:新細明體'>單位。</span></p>
+
+</div>
+
+<div id=ftn5>
+
+<p class=MsoFootnoteText><a href="#_ftnref5" name="_ftn5" title=""><span
+class=MsoFootnoteReference><span lang=EN-US><span class=MsoFootnoteReference><span
+lang=EN-US style='font-size:10.0pt;font-family:"Times New Roman"'>[5]</span></span></span></span></a><span
+lang=EN-US> </span><span style='font-family:新細明體'>「級」是階梯的意思。</span></p>
+
+</div>
+
+</div>
+<button class = "ui big blue button" onclick = "location = '直角座標.htm'">直角座標</button><button class = "ui big blue button" onclick = "location = '比與比值.htm'">比與比值</button><button class = "ui big blue button" onclick = "location = '函數圖形.htm'">函數圖形</button><button class = "ui big purple button" onclick = "location = '數列與級數.htm'">數列與級數</button><button class = "ui big purple button" onclick = "location = '多項式.htm'">多項式</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '一元二次方程式.htm'">一元二次方程式</button><button class = "ui big button" onclick = "location = '三角形的心.htm'">三角形的心</button><button class = "ui big button" onclick = "location = '不等式.htm'">不等式</button><button class = "ui big button" onclick = "location = '二元一次方程式.htm'">二元一次方程式</button><button class = "ui big button" onclick = "location = '二次函數.htm'">二次函數</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '全等形.htm'">全等形</button><button class = "ui big button" onclick = "location = '分數.htm'">分數</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '勾股定理.htm'">勾股定理</button><button class = "ui big button" onclick = "location = '四則運算總複習.htm'">四則運算總複習</button><button class = "ui big button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big button" onclick = "location = '圓與角.htm'">圓與角</button><button class = "ui big button" onclick = "location = '尺規作圖.htm'">尺規作圖</button><button class = "ui big button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big button" onclick = "location = '幾何證明.htm'">幾何證明</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '數線.htm'">數線</button><button class = "ui big button" onclick = "location = '根式運算.htm'">根式運算</button><button class = "ui big button" onclick = "location = '機率與統計.htm'">機率與統計</button><button class = "ui big button" onclick = "location = '正負分數.htm'">正負分數</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '相似三角形.htm'">相似三角形</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+
+</html>
