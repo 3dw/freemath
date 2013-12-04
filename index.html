@@ -75,7 +75,7 @@
 
 <ul>
   <li ng-repeat = "i in filtered = (Units | mathUnitsFilter:searchM) "> 
-  <a target = "_blank" href = "weblearn/{{i.n}}" >{{ i.n.split('.htm')[0] }}</a> ({{ i.g }}年級 ~ {{ i.G }}年級) 
+  <a target = "_blank" href = "weblearn/{{i.n}}" >{{ i.n.split('.htm')[0] }}</a> ({{ i.g }} ~ {{ i.G }}年級) 
   <a target = "_blank" href = "weblearn/{{i.n}}" title = "自由數學教材"> <img class="fm_logo" /></a>
   <a target = "_blank" href = "http://zh.wikipedia.org/wiki/{{i.wiki || i.n.split('.htm')[0].substr(0, 2)}}" title = "維基百科說明"> <img class="wiki" /></a>
   <a target = "_blank" href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" title = "Google圖片搜詢"> <img class="google" /></a> 
