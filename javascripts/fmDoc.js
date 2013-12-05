@@ -59,6 +59,7 @@ $(document).ready(function(){
 	    		}
 				
 				$(this).data({ key: index, "0-prev": prev, "2-next": next });
+			//	console.log(this);
 				console.log($(this).data());
 			});   // give all input an id
 
@@ -141,11 +142,20 @@ $(document).ready(function(){
 
 	    },
 
-	    showHint: function(ev){
+	    showHint: function(e){
+
+	    	console.log($(e.currentTarget).val());
+
 	    	// 提示語
-	    	var data = $(ev.currentTarget).data();
-	    	var key = data.key; delete data.key;
-	    	data['1-val'] = $(ev.currentTarget).val();
+	    	var data = $(e.currentTarget).data();
+	    	var key = data.key;
+
+	    	console.log(key);
+	    	console.log(data);
+
+	    	delete data.key;
+	    	data['1-val'] = $(e.currentTarget).val();
+
 
 	    	fire.child(key).set(data);
 
@@ -222,5 +232,16 @@ $(document).ready(function(){
 	});
 
 	var fmdoc = new DocView();
+
+	var re = /(相似|三角|數學|測量|工程|單位換算)/g; //cm|km|mm
+
+	$("img").attr("alt", "");
+	$("p").each(function( index ) {
+
+              $(this).html($(this).html()
+//                .replace(re, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/$1">$1</a>')
+  //              .replace(/(製圖)/g, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/地圖">$1</a>')
+                );
+          });
 
 });
