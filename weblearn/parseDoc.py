@@ -45,6 +45,7 @@ for root,dirs,files in os.walk(directory):
 				print "i make a title for this page:", f.name
 
 			text = re.sub(r'<head>[.\s\S]*<meta name', "<head>"
+				+'\n<meta property="og:type" content="article" />'
 				+'\n<meta property="og:url" content="http://bestian.github.io/freemath/weblearn/'+f.name+'" />'
 				+'\n<meta property="og:title" content="'+re.sub('.htm','', f.name)+'--自由數學freemath" />'
 				+'\n<meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />'
