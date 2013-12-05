@@ -44,6 +44,18 @@ $(document).ready(function(){
 
 	     	this.max = $(this.el).find("input").length
 
+			var re = /(外角定理|窮舉|量度|弧|角|區間|數線|範圍解|數列|級數|直角座標|不等式|等式|加|減|乘|圓|有理化|因式分解|有理數|根式|根號|二次函數|三角函數|指數|對數|方程式|平方|開方|勾股定理|乘法|除法|相似|三角|數學|製圖|測量|工程|單位換算|分數|通分|約分|擴分|cm|km|mm)/g;
+
+			$("img").attr("alt", "");
+			$("p").each(function( index ) {
+              $(this).html($(this).html()
+                .replace(re, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/$1">$1</a>')
+                .replace(/wiki\/製圖/g,'wiki/地圖')
+                .replace(/wiki\/約分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
+                .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
+                );
+          	});
+
 	    	$('input').each(function(index) {
 
 	    		var prev = '', next = '';
@@ -233,15 +245,5 @@ $(document).ready(function(){
 
 	var fmdoc = new DocView();
 
-	var re = /(相似|三角|數學|測量|工程|單位換算)/g; //cm|km|mm
-
-	$("img").attr("alt", "");
-	$("p").each(function( index ) {
-
-              $(this).html($(this).html()
-//                .replace(re, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/$1">$1</a>')
-  //              .replace(/(製圖)/g, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/地圖">$1</a>')
-                );
-          });
 
 });
