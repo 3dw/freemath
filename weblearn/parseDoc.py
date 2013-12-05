@@ -44,6 +44,14 @@ for root,dirs,files in os.walk(directory):
 				+'<style>' , text)
 				print "i make a title for this page:", f.name
 
+			text = re.sub(r'<head>[.\s\S]*<meta name', "<head>"
+				+'\n<meta property="og:url" content="http://bestian.github.io/freemath/" />'
+				+'\n<meta property="og:title" content="'+re.sub('.htm','', f.name)+'--自由數學freemath" />'
+				+'\n<meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />'
+				+'\n<meta name=Title content="'+re.sub('.htm','', f.name)+'">'
+				+'\n<meta name=Keywords content="'+re.sub('.htm','', f.name)+'">'
+				+'\n<meta http-equiv=Content-Type content="text/html; charset=utf-8">'
+				+"\n<meta name", text)	# open graph
 
 			text = re.sub(r'<title>.*</title>', "<title>"+re.sub('.htm','', f.name)+"</title>", text)	# 抬頭
 
