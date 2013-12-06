@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+
+<html ng-app="fmIndexApp">
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://bestian.github.io/freemath/工具軟體" />
+  <meta property="og:title" content="自由數學freemath" />
+  <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
+  <meta charset = "utf-8">
+
+  <script src="../javascripts/jquery-1.10.2.js"></script>
+  <script src="../javascripts/angular.min.js"></script>
+<head>
+  <title>工具軟體</title>
+</head>
+
+<body>
+
+
+
+
+<div ng-controller ="Ctrl">
+
+<h3>====工具====</h3>
+
+<ul>
+  <li ng-repeat = "i in ['單機閃卡','styleTester','calculator','readMe']"> <a href="{{i}}.html">{{i}}</a>
+</ul>
+
+<script type="text/javascript">
+
+var fmIndexApp = angular.module('fmIndexApp', []);
+function Ctrl($scope) {  
+}
+</script>
+
+</div>
+</body>
+</html>
