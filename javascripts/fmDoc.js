@@ -102,7 +102,15 @@ $(document).ready(function(){
 
 
 	    	$(this.el).prepend(
-				'<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1>'
+				'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;right:10px;top:15px;float: right; border-radius: 15px;">'
+				+'<map name="Map" id="Map">'
+				+'<area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />'
+				+'<area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />'
+				+'<area shape="rect" coords="300,59,389,119" href="https://www.facebook.com/groups/156709241062806/" target="_blank" />'
+				+'<area shape="rect" coords="225,131,328,190" href="http://bestian.github.io/freemath/" />'
+				+'<area shape="rect" coords="212,201,328,262" href="http://math.alearn.org.tw/" target="_blank" />'
+				+'</map>'
+				+'<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1>'
 	    		+this.intro
 	    		+'<p><button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
 	    			+'也可以上臉書「自學數學團」提問👼</button></p>'
@@ -113,7 +121,8 @@ $(document).ready(function(){
 				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成一份简体教材再开始</div>'
 				+'</div>'
 //				+'<button class = "ui  button" </button>'
-				+'</div><br /><br />');
+				+'</div>'
+				+'<br /><br />');
 
 	    	$(this.el).append('<br />'
 	    					+'<textarea id = "feedBackWords" class = "ui input" rows = "10" cols = "30" placeholder = "心得回饋與錯誤回報"></textarea>'
@@ -146,7 +155,7 @@ $(document).ready(function(){
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 1000 }, 1000);
 
-    		$(this.el).prepend('<div id="bar" class = "fixed top right item" >'
+    		$(this.el).prepend('<div id="bar" class = "fixed top right item" style ="z-index:2">'
     			+'</div>');
 
     		$("#bar").progressbar({ max: this.max ,

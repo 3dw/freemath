@@ -74,7 +74,7 @@ for root,dirs,files in os.walk(directory):
 
 
 			text = re.sub(r'<style>[.\s\S]*/\* Font Definitions \*/', '<style>\n body {'				# 樣式
-				+'\n\tbackground-color: #D0BAA2;\n}'
+				+'\n\tbackground-color: rgba(255,255,255,1);\n}'  #D0BAA2
 				+'\n\nimg {\n\tborder-radius: 10px;\n\tmin-width: 25px;\n\tmin-height: 50px;\n}'
 				+'\n\ninput {\n\tline-height: 18px;\n}'
 				+'\n\n/* Font Definitions */', text)
