@@ -109,6 +109,7 @@ $(document).ready(function(){
 				+'<area shape="rect" coords="300,59,389,119" href="https://www.facebook.com/groups/156709241062806/" target="_blank" />'
 				+'<area shape="rect" coords="225,131,328,190" href="http://bestian.github.io/freemath/" />'
 				+'<area shape="rect" coords="212,201,328,262" href="http://math.alearn.org.tw/" target="_blank" />'
+				+'<area shape="rect" coords="182,281,279,339" href="http://bestian.github.io/freemath/學習地圖/" target="_blank" />'
 				+'</map>'
 				+'<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1>'
 	    		+this.intro
