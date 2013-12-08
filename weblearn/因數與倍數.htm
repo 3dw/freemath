@@ -1,4 +1,4 @@
-<html>
+<html ng-app="fmDocApp">
 
 <!--
 
@@ -29,6 +29,7 @@ after: 數列與級數 一元二次方程式 多項式
 <script src="../javascripts/jquery-ui.js"></script>
 <script src="../javascripts/underscore-min.js"></script>
 <script src="../javascripts/backbone-min.js"></script>
+<script src="../javascripts/angular.min.js"></script>
 <script src="../javascripts/tongwen_core.js"></script>
 <script src="../javascripts/tongwen_table_pt2s.js"></script>
 <script src="../javascripts/tongwen_table_t2s.js"></script>
@@ -121,7 +122,17 @@ ul
 
 <body lang=ZH-TW style='text-justify-trim:punctuation'>
 
-
+<div ng-controller ="Ctrl">
+	<div class = "tool" style = "position:fixed; right: 50px; top: 250px; ">
+	<ul type = "none">
+		<li class = "color" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	</ul>
+	<br/>
+	</div>
+	<span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+	<canvas width="500px" height="10000px" id="canvas" drawing>
+	</canvas>
+</div>
 <div class=WordSection1 style='layout-grid:18.0pt'>
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
@@ -2918,6 +2929,78 @@ style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
 style='font-size:16.0pt;font-family:"MS Mincho"'>&nbsp;</span></p>
 
 </div>
-<button class = "ui big purple button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big purple button" onclick = "location = '分數.htm'">分數</button><button class = "ui big green button" onclick = "location = '數列與級數.htm'">數列與級數</button><button class = "ui big green button" onclick = "location = '多項式.htm'">多項式</button><button class = "ui big green button" onclick = "location = '一元二次方程式.htm'">一元二次方程式</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '三角形的心.htm'">三角形的心</button><button class = "ui big button" onclick = "location = '不等式.htm'">不等式</button><button class = "ui big button" onclick = "location = '二元一次方程式.htm'">二元一次方程式</button><button class = "ui big button" onclick = "location = '二次函數.htm'">二次函數</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '全等形.htm'">全等形</button><button class = "ui big button" onclick = "location = '函數圖形.htm'">函數圖形</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '勾股定理.htm'">勾股定理</button><button class = "ui big button" onclick = "location = '四則運算總複習.htm'">四則運算總複習</button><button class = "ui big button" onclick = "location = '圓與角.htm'">圓與角</button><button class = "ui big button" onclick = "location = '尺規作圖.htm'">尺規作圖</button><button class = "ui big button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big button" onclick = "location = '幾何證明.htm'">幾何證明</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '數線.htm'">數線</button><button class = "ui big button" onclick = "location = '根式運算.htm'">根式運算</button><button class = "ui big button" onclick = "location = '機率與統計.htm'">機率與統計</button><button class = "ui big button" onclick = "location = '正負分數.htm'">正負分數</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '比與比值.htm'">比與比值</button><button class = "ui big button" onclick = "location = '直角座標.htm'">直角座標</button><button class = "ui big button" onclick = "location = '相似三角形.htm'">相似三角形</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
+<button class = "ui big purple button" onclick = "location = '因數與倍數.htm'">因數與倍數</button><button class = "ui big purple button" onclick = "location = '分數.htm'">分數</button><button class = "ui big green button" onclick = "location = '數列與級數.htm'">數列與級數</button><button class = "ui big green button" onclick = "location = '多項式.htm'">多項式</button><button class = "ui big green button" onclick = "location = '一元二次方程式.htm'">一元二次方程式</button><br /><button class = "ui big button" onclick = "location = '一元一次方程式.htm'">一元一次方程式</button><button class = "ui big button" onclick = "location = '三角形的心.htm'">三角形的心</button><button class = "ui big button" onclick = "location = '不等式.htm'">不等式</button><button class = "ui big button" onclick = "location = '二元一次方程式.htm'">二元一次方程式</button><button class = "ui big button" onclick = "location = '二次函數.htm'">二次函數</button><button class = "ui big button" onclick = "location = '代數入門.htm'">代數入門</button><button class = "ui big button" onclick = "location = '全等形.htm'">全等形</button><button class = "ui big button" onclick = "location = '函數圖形.htm'">函數圖形</button><button class = "ui big button" onclick = "location = '分數到小數.htm'">分數到小數</button><button class = "ui big button" onclick = "location = '勾股定理.htm'">勾股定理</button><button class = "ui big button" onclick = "location = '四則運算總複習.htm'">四則運算總複習</button><button class = "ui big button" onclick = "location = '圓與角.htm'">圓與角</button><button class = "ui big button" onclick = "location = '尺規作圖.htm'">尺規作圖</button><button class = "ui big button" onclick = "location = '幾何代數_乘法公式.htm'">幾何代數_乘法公式</button><button class = "ui big button" onclick = "location = '幾何證明.htm'">幾何證明</button><button class = "ui big button" onclick = "location = '指數與對數.htm'">指數與對數</button><button class = "ui big button" onclick = "location = '指數與科學記號.htm'">指數與科學記號</button><button class = "ui big button" onclick = "location = '數線.htm'">數線</button><button class = "ui big button" onclick = "location = '根式運算.htm'">根式運算</button><button class = "ui big button" onclick = "location = '機率與統計.htm'">機率與統計</button><button class = "ui big button" onclick = "location = '正負分數.htm'">正負分數</button><button class = "ui big button" onclick = "location = '正負數.htm'">正負數</button><button class = "ui big button" onclick = "location = '比與比值.htm'">比與比值</button><button class = "ui big button" onclick = "location = '直角座標.htm'">直角座標</button><button class = "ui big button" onclick = "location = '相似三角形.htm'">相似三角形</button><button class = "ui big button" onclick = "location = '面積的估算.htm'">面積的估算</button><button class = "ui big button" onclick = "location = '體積與容積.htm'">體積與容積</button><br /><button class = "ui big button" onclick = "location = 'http://bestian.github.io/freemath/'">更多資訊，請至自由數學freemath主頁</button></body>
 
+<script>
+
+var fmDocApp = angular.module('fmDocApp', []);
+function Ctrl($scope) {
+  $scope.ranges = ["小學數學學習地圖","國中數學學習地圖","高中數學學習地圖"];
+  $scope.range = "小學數學學習地圖";
+  $scope.color = "#4bf";
+  $scope.colors = ["#4bf","#000","#880","#0f0"];
+}
+
+fmDocApp.directive("drawing", function(){
+  return {
+    restrict: "A",
+    link: function(scope, element){
+      var ctx = element[0].getContext('2d');  
+ 
+      ctx.lineWidth=1;    
+      reset();   
+
+      // variable that decides if something should be drawn on mousemove
+      var drawing = false;     
+      // the last coordinates before the current move
+      var lastX;
+      var lastY;
+
+      element.bind('dblclick', function(event){
+        reset();
+      });
+
+      element.bind('mousedown', function(event){
+        lastX = event.offsetX;
+        lastY = event.offsetY;        
+        // begins new line
+        ctx.beginPath();        
+        drawing = true;
+      });
+
+      element.bind('mousemove', function(event){
+        if(drawing){
+          // get current mouse position
+          currentX = event.offsetX;
+          currentY = event.offsetY;
+
+          draw(lastX, lastY, currentX, currentY);
+
+          // set current coordinates to last one
+          lastX = currentX;
+          lastY = currentY;
+        }        
+      });
+      element.bind('mouseup', function(event){
+        // stop drawing
+        drawing = false;
+      });        
+      // canvas reset
+      function reset(){
+          element[0].width = window.innerWidth / 2;  
+      }         
+      function draw(lX, lY, cX, cY){
+        // line from
+        ctx.moveTo(lX,lY);
+        // to
+        ctx.lineTo(cX,cY);
+        // color
+        ctx.strokeStyle = scope.color;
+        // draw it
+        ctx.stroke();
+      }
+    }
+  };
+});
+</script>
 </html>

@@ -44,6 +44,8 @@ for root,dirs,files in os.walk(directory):
 				+'<style>' , text)
 				print "i make a title for this page:", f.name
 
+			text = re.sub(r'<html>','<html ng-app="fmDocApp">', text)
+
 			text = re.sub(r'<head>[.\s\S]*<meta name', "<head>"
 				+'\n<meta property="og:type" content="article" />'
 				+'\n<meta property="og:url" content="http://bestian.github.io/freemath/weblearn/'+f.name+'" />'
@@ -65,6 +67,7 @@ for root,dirs,files in os.walk(directory):
 				+'<script src="../javascripts/jquery-ui.js"></script>\n'
 				+'<script src="../javascripts/underscore-min.js"></script>\n'
 				+'<script src="../javascripts/backbone-min.js"></script>\n'
+				+'<script src="../javascripts/angular.min.js"></script>\n'
 				+'<script src="../javascripts/tongwen_core.js"></script>\n'
 				+'<script src="../javascripts/tongwen_table_pt2s.js"></script>\n'
 				+'<script src="../javascripts/tongwen_table_t2s.js"></script>\n'
@@ -83,6 +86,23 @@ for root,dirs,files in os.walk(directory):
 			text = re.sub(r'div\.MsoNormal[\s]*{margin:0cm;', 'div.MsoNormal\n{margin:1cm;',text, re.DOTALL)	# 樣式_縮排
 
 #			text = re.sub(r'</style>[.\s.\S]*</head>', '</style>\n\n\n\n</head>', text)
+
+			text = re.sub(r'<body[.\s\S]*?<div class=WordSection1', 
+							'<body lang=ZH-TW style=\'text-justify-trim:punctuation\'>'
+							+'\n'
+							+'\n<div ng-controller ="Ctrl">'
+							+'\n\t<div class = "tool" style = "position:fixed; right: 50px; top: 250px; ">'
+							+'\n\t<ul type = "none">'
+							+'\n\t\t<li class = "color" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'
+							+'\n\t</ul>'
+							+'\n\t<br/>'
+							+'\n\t</div>'
+							+'\n\t<span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>'
+							+'\n\t<canvas width="500px" height="10000px" id="canvas" drawing>'
+							+'\n\t</canvas>'
+							+'\n</div>'
+							+'\n<div class=WordSection1', text)
+
 
 			text = re.sub(r'除錯練習時間[.\s\S]*e-mail','', text)
 			text = re.sub(r'我寫的單元是[.\s\S]*e-mail','', text)
@@ -237,16 +257,16 @@ for root,dirs,files in os.walk(directory):
 				+'</body>' ,text )
 #			text = text.replace('</button></button>','</button>')
 
+			ng = open('../javascripts/ngDoc.js', 'r')
+			ngDoc = ng.read()
+			ng.close()
 
-#			text = re.sub(r'</body>\s*pre:\s?([kejsc])?(.+)\s*after:\s?([kejsc])?(.+)\s*</html>', '</body>\n'  # 結尾程式(目前用不到)
-#				+'\n'
-#				+'<script type="text/javascript">\n'
-#				+r'\g<1>'	 # k:kindergarden, e:elementary
-#				+r'\g<2>'	 # 分數, 分數到小數,因數與倍數      split(r',\s*')
-#				+r'\g<3>'	 # j:junior, s:senior   ?: 難以分類
-#				+r'\g<2>'    # 一元一次方程式, 二元一次方程式
-#				+'</script>'
-#				+'</html>',text )
+			text = re.sub(r'</body>[.\s\S]*</html>', '</body>\n'  # 結尾程式
+				+'\n'
+				+'<script>\n'
+				+ngDoc
+				+'\n</script>'
+				+'\n</html>',text )
 
 #    先備 : 藍    後續: 綠
 

@@ -12,6 +12,8 @@
 
 $(document).ready(function(){
 
+	// backbone //
+
 	var user = '' + new Date();
 	var fire = new Firebase('https://bestian-freemath.firebaseio.com/'+document.title+'/' + user);
 	var DocView = Backbone.View.extend({ 
@@ -38,8 +40,11 @@ $(document).ready(function(){
 	    },
 
 	    render: function() {
+
+			$(window).scrollTop(0);
+			$("#canvas").select();
 	    	$("p,div").hide();
-	    	$(".first").show();
+	    	$(".first,.tool").show();
 	    	$("img").draggable().css("cursor", "move");
 
 	     	this.max = $(this.el).find("input").length
@@ -55,6 +60,9 @@ $(document).ready(function(){
                 .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
                 );
           	});
+
+//        	$("#canvasContainer").draggable();
+
 
 	    	$('input').each(function(index) {
 
@@ -102,7 +110,7 @@ $(document).ready(function(){
 
 
 	    	$(this.el).prepend(
-				'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;right:10px;top:15px;float: right; border-radius: 15px;">'
+				'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;right:150px;top:15px;float: right; border-radius: 15px;">'
 				+'<map name="Map" id="Map">'
 				+'<area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />'
 				+'<area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />'
