@@ -71,7 +71,7 @@ for root,dirs,files in os.walk(directory):
 				+'<script src="../javascripts/tongwen_core.js"></script>\n'
 				+'<script src="../javascripts/tongwen_table_pt2s.js"></script>\n'
 				+'<script src="../javascripts/tongwen_table_t2s.js"></script>\n'
-				+'<script src="../javascripts/fmDoc.js"></script>\n'
+				+'<script src="fmDoc.js"></script>\n'
 				+'<script src="https://cdn.firebase.com/v0/firebase.js"></script>\n'
 				+'<style>', text)
 
@@ -90,7 +90,7 @@ for root,dirs,files in os.walk(directory):
 			text = re.sub(r'<body[.\s\S]*?<div class=WordSection1', 
 							'<body lang=ZH-TW style=\'text-justify-trim:punctuation\'>'
 							+'\n'
-							+'\n<div ng-controller ="Ctrl">'
+							+'\n<div class = "tool" ng-controller ="Ctrl">'
 							+'\n\t<div class = "tool" style = "position:fixed; right: 50px; top: 250px; ">'
 							+'\n\t<ul type = "none">'
 							+'\n\t\t<li class = "color" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'
@@ -257,7 +257,7 @@ for root,dirs,files in os.walk(directory):
 				+'</body>' ,text )
 #			text = text.replace('</button></button>','</button>')
 
-			ng = open('../javascripts/ngDoc.js', 'r')
+			ng = open('ngDoc.js', 'r')
 			ngDoc = ng.read()
 			ng.close()
 

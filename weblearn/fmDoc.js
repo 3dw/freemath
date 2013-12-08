@@ -42,10 +42,13 @@ $(document).ready(function(){
 	    render: function() {
 
 			$(window).scrollTop(0);
-			$("#canvas").select();
+
+			h = $(window).height();
+
 	    	$("p,div").hide();
+			$("#canvas").attr("height", h).css("top", 0);
 	    	$(".first,.tool").show();
-	    	$("img").draggable().css("cursor", "move");
+	    	$("p,img,table").draggable().css("cursor", "move");
 
 	     	this.max = $(this.el).find("input").length
 
@@ -93,7 +96,7 @@ $(document).ready(function(){
 
 			var	indexFW = $("*").index(firstWhite);
 
-			$(firstWhite).html('「'+firstWhite.html()+'」&nbsp;&nbsp;&nbsp;&nbsp;👀參考而已');
+			$(firstWhite).html('「'+firstWhite.html()+'」&nbsp;&nbsp;&nbsp;&nbsp;👀');
 
 			$("*:gt("+indexFW+")").filter(function(){
 					if ($(this).hasClass('button') || $(this).hasClass('tip')) return false;
@@ -230,7 +233,7 @@ $(document).ready(function(){
 			}).hide();
 
 
-			$("html, body").animate({ scrollTop: $(window).scrollTop() + 500 }, 1000);
+		//	$("html, body").animate({ scrollTop: $(window).scrollTop() + 500 }, 1000);
 
 
 
@@ -252,10 +255,12 @@ $(document).ready(function(){
 		   	var nextP_after_nextInput = $("*:gt("+indexNextInput+")").filter("p").eq(0);
 		   	var indexNextP_after_nextInput = ($("*").index(nextP_after_nextInput));
 
-			$("*:gt("+(indexNextP_after_nextInput)+")").hide();
-			$("*:lt("+(indexNextP_after_nextInput+1)+")").show();
+//			$("*:gt("+(indexNextP_after_nextInput)+")").hide();
+//			$("*:lt("+(indexNextP_after_nextInput+1)+")").show();
 
-			if (indexNextP_after_nextInput == -1) $("*").show();
+			$("*").show();
+
+//			if (indexNextP_after_nextInput == -1) $("*").show();
 
 	    	return indexInput;
 	    }

@@ -1,10 +1,11 @@
 
-    body {     
+    body {    
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;    
     }
 
-    div {
-      z-index: 8;
-    }
 
     #map {
       z-index: 9;
@@ -102,16 +103,11 @@
       position:absolute;
       top: 100px;
       right: 0px;
+/*      left: 0px; */
       opacity:0.85;
       filter:alpha(opacity=85); /* 適用 IE8 及早期版本 */
       z-index: 5;
       cursor: sw-resize;    
-    }
-    #canvas, .tool {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
     }
 
     .tool {
