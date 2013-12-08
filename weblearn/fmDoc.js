@@ -23,7 +23,8 @@ $(document).ready(function(){
 			+'<a class = "ui small blue button" href = \'https://github.com/bestian/freemath/zipball/gh-pages\'"'
 				+'style = "margin-left:2ex">'+'下載整份Freemath文件檔'+'</a></p>'
 			+'<p>本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲</p>'
-			+'<p>有些部份需要紙筆和動手操作。請拿紙筆，當作輔助📝</p>'
+			+'<p style = "margin-left:50px">請使用瀏覽器<a href = "https://www.google.com/intl/zh-TW/chrome/" target = "_blank">Chrome</a>'+
+			'或<a href = "http://www.apple.com/tw/safari/">Safari</a>，以啟用右邊的摹擬白板。📝</p>'
 			+'<p>如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵</p>'
 			+'<p>（有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼</p>',
 
@@ -60,7 +61,7 @@ $(document).ready(function(){
                 .replace(re, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/$1">$1</a>')
                 .replace(/wiki\/製圖/g,'wiki/地圖')
                 .replace(/wiki\/約分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
-                .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
+                .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')      
                 );
           	});
 
