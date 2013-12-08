@@ -8,7 +8,9 @@
 // Todo::  add auto Facebook Like button from title... 
 // Todo::  add php that gater feedback [Star] and [Comment]...
 
-
+$(window).load(function(){
+			$(window).scrollTop(0);
+});
 
 $(document).ready(function(){
 
@@ -41,8 +43,6 @@ $(document).ready(function(){
 	    },
 
 	    render: function() {
-
-			$(window).scrollTop(0);
 
 			h = $(window).height();
 
@@ -111,10 +111,8 @@ $(document).ready(function(){
 //			});
 
 
-
-
 	    	$(this.el).prepend(
-				'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;right:150px;top:15px;float: right; border-radius: 15px;">'
+				'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;top:15px;right:150px; border-radius: 15px;">'
 				+'<map name="Map" id="Map">'
 				+'<area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />'
 				+'<area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />'
@@ -144,6 +142,7 @@ $(document).ready(function(){
 			$(this.el).find("input[type='text']").css("font-size", "2ex");
 			$(this.el).find("textarea").css("font-size", "2ex");
 
+
 //	    	$("button").show();
 	    },
 
@@ -168,12 +167,13 @@ $(document).ready(function(){
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 1000 }, 1000);
 
-    		$(this.el).prepend('<div id="bar" class = "fixed top right item" style ="z-index:2">'
+    		$(this.el).prepend('<div id="bar" class = "fixed top right item" style ="z-index:2;width:40%">'
     			+'</div>');
 
     		$("#bar").progressbar({ max: this.max ,
     							 value: this.count });
 
+    		$("#map").css("left",'0px').css("bottom", '0px').css('top','');
 	    },
 
 	    showHint: function(e){
