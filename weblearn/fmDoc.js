@@ -46,6 +46,7 @@ $(document).ready(function(){
 
 			h = $(window).height();
 
+//			$("a").css("display","block").css("position","absolute").css("z-index",99);  bug here
 	    	$("p,div").hide();
 			$("#canvas").attr("height", h).css("top", 0);
 	    	$(".first,.tool").show();
@@ -136,7 +137,7 @@ $(document).ready(function(){
 				+'<br /><br />');
 
 	    	$(this.el).append('<br />'
-	    					+'<textarea id = "feedBackWords" class = "ui input" rows = "10" cols = "30" placeholder = "心得回饋與錯誤回報"></textarea>'
+	    					+'<textarea id = "feedBackWords" class = "ui input" rows = "10" cols = "60" placeholder = "心得回饋與錯誤回報"></textarea>'
 	    					+'<input id = "feedback" class = "ui big green button" type = "submit"></input>');
 				
 			$(this.el).find("input[type='text']").css("font-size", "2ex");
@@ -150,6 +151,8 @@ $(document).ready(function(){
 	    	var words = $("#feedBackWords").val();
 	    	console.log("Feedback:"+words);
  		    fire.child("Feedback").set(words);
+ 		    $("#feedBackWords").val('');
+ 		    alert("謝謝您的回報："+words+"！");
 
 	    },
 
