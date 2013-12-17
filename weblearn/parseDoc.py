@@ -98,7 +98,7 @@ for root,dirs,files in os.walk(directory):
 							+'\n\t<br/>'
 							+'\n\t</div>'
 							+'\n\t<span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>'
-							+'\n\t<canvas width="500px" height="10000px" id="canvas" drawing>'
+							+'\n\t<canvas width="100%" height="10000px" id="canvas" drawing>'
 							+'\n\t</canvas>'
 							+'\n</div>'
 							+'\n<div class=WordSection1', text)
@@ -213,10 +213,11 @@ for root,dirs,files in os.walk(directory):
 						middleWall += 1					 			
 
 					else:
-						thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						pass
+	#					thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = thisButton
 	#					oldButton = thisButton
-						buttonList2.append(thisButton)
+	#					buttonList2.append(thisButton)
 #						rightWall += 1
 
 	#				text = text.replace(thisButton, '')
@@ -235,13 +236,13 @@ for root,dirs,files in os.walk(directory):
 #				if friend.endswith(".htm"):
 #					finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 
-			afterOld = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
-			after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemath主頁</button>'
+#			afterOld = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
+#			after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemath主頁</button>'
 
 #			text = text.replace(afterOld, '')
 #			text = text.replace(after, '')
 
-			final += after
+#			final += after
 
 				# 已解決重覆放final的問題
 #			text = text.replace(final, '') 

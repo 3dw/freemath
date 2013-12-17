@@ -45,10 +45,10 @@ $(document).ready(function(){
 	    render: function() {
 
 			h = $(window).height();
+			w = $(window).width();
 
-//			$("a").css("display","block").css("position","absolute").css("z-index",99);  bug here
-	    	$("p,div").hide();
-			$("#canvas").attr("height", h).css("top", 0);
+	    	$("p,div,canvas").hide();
+			$("#canvas").attr("height", h).attr("width", w).css("top", 0);
 	    	$(".first,.tool").show();
 	    	$("p,img,table").draggable().css("cursor", "move");
 
@@ -56,15 +56,19 @@ $(document).ready(function(){
 
 			var re = /(代數|未知數|變數|關係|函數|倍數|因數|比例|比值|盈餘|大於|小於|等於|費用|計算|公分|數量|點|直線|線段|平面|立體|外角定理|窮舉|量度|弧|角|區間|數線|範圍解|數列|級數|直角座標|不等式|等式|加|減|乘|圓|有理化|因式分解|有理數|根式|根號|二次函數|三角函數|指數|對數|方程式|平方|開方|勾股定理|乘法|除法|相似|三角|數學|製圖|測量|工程|單位換算|分數|通分|約分|擴分|cm|km|mm)/g;
 
-			$("img").attr("alt", "");
+			$("img").attr("alt", "").css("position","relative").css("z-index",9);;
 			$("p").each(function( index ) {
               $(this).html($(this).html()
                 .replace(re, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/$1">$1</a>')
                 .replace(/wiki\/製圖/g,'wiki/地圖')
                 .replace(/wiki\/約分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
-                .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')      
+                .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
+                .replace("&nbsp;</span>","</span>")      
                 );
-          	});
+          	}).children().css("position","relative").css("z-index",9);;
+
+//          $("a").css("position","relative").css("z-index",9);
+
 
 //        	$("#canvasContainer").draggable();
 
@@ -151,6 +155,12 @@ $(document).ready(function(){
 	    	var words = $("#feedBackWords").val();
 	    	console.log("Feedback:"+words);
  		    fire.child("Feedback").set(words);
+
+	    	var fire1 = new Firebase('https://bestian-freemath.firebaseio.com/feedback/' + document.title);
+	    	var user = '' + new Date();
+	    	
+ 		    fire1.child(user).set(words);
+
  		    $("#feedBackWords").val('');
  		    alert("謝謝您的回報："+words+"！");
 
@@ -170,13 +180,18 @@ $(document).ready(function(){
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 1000 }, 1000);
 
-    		$(this.el).prepend('<div id="bar" class = "fixed top right item" style ="z-index:2;width:40%">'
+			$("canvas").show();
+
+    		$(this.el).prepend('<div id="bar" class = "fixed" style ="z-index:2;width:40%">'
     			+'</div>');
 
     		$("#bar").progressbar({ max: this.max ,
     							 value: this.count });
 
-    		$("#map").css("left",'0px').css("bottom", '0px').css('top','');
+    		$("#map").css("right",'0px').css("bottom", '0px').css('top','').css('left','')
+    			.css("transform", "scale(0.8,0.8) translate(-20%,20%)")
+    			.css("-webkit-transform", "scale(0.8,0.8) translate(-20%,20%)")
+    			.css("-moz-transform", "scale(0.8,0.8) translate(-20%,20%)");
 	    },
 
 	    showHint: function(e){

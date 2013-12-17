@@ -53,7 +53,7 @@ fmDocApp.directive("drawing", function(){
       });        
       // canvas reset
       function reset(){
-          element[0].width = window.innerWidth / 2;  
+          element[0].width = window.innerWidth;  // /2  
       }         
       function draw(lX, lY, cX, cY){
         // line from
