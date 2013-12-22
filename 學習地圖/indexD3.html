@@ -15,9 +15,10 @@
 
 path.link {
   fill: none;
-  stroke: #666;
+  stroke: #3f3;
   stroke-width: 1.5px;
 }
+
 
 path.link.twofive {
   opacity: 0.25;
@@ -36,26 +37,27 @@ path.link.onezerozero {
 }
 
 circle {
-  fill: #ccc;
-  stroke: #fff;
+  fill: #3f3;
+  stroke: #333;
   stroke-width: 1.5px;
 }
 
 text {
-  fill: #000;
-  font: 12px sans-serif;
+  fill: #906;
+  font: 16px sans-serif;
   pointer-events: none;
 }
 
 li {
   margin: 15px;
   font-size: 1.2rem;
+  color: rgba(155,100,100,1);
 }
 
 </style>
 <body>
 
-<div style = "float:right; margin: 50px;">
+<div style = "float:right; margin-right: 50px;">
   <ol>
     <li>點擊圓圈，標記出您已經會的單元</li>
     <li>把已經會的標記好，就會看到哪些是接下來最近的未知單元</li>
@@ -66,7 +68,7 @@ li {
 <script>
 
 // get the data
-d3.csv("../weblearn/mathmap.csv", function(error, links) {
+d3.csv("mathmap.csv", function(error, links) {
 
 var nodes = {};
 
@@ -80,13 +82,13 @@ links.forEach(function(link) {
 });
 
 var width = 960,
-    height = 960;
+    height = 600;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
     .links(links)
     .size([width, height])
-    .linkDistance(100)
+    .linkDistance(120)
     .charge(-300)
     .on("tick", tick)
     .start();
@@ -132,8 +134,12 @@ svg.append("svg:defs").selectAll("marker")
 var path = svg.append("svg:g").selectAll("path")
     .data(force.links())
   .enter().append("svg:path")
-    .attr("class", function(d) { return "link " + d.type; })
-    .attr("marker-end", "url(#end)");
+   .attr("class", function(d) { return "link " + d.type; })
+//   .attr("marker-mid", function(d) { return "url(#" + d.type + ")"; });
+   .attr("marker-end", "url(#end)");
+
+// arrowHead color
+svg.selectAll("polygon.arrowHeads").style("fill", "steelblue");
 
 // define the nodes
 var node = svg.selectAll(".node")
@@ -146,8 +152,8 @@ var node = svg.selectAll(".node")
 
 // add the nodes
 node.append("circle")
-    .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.name; })
-    .attr("r", 5);
+  //  .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.name; })
+    .attr("r", 6);
 
 // add the text 
 node.append("text") 
@@ -205,14 +211,15 @@ function dblclick() {
       d3.select(this).select("circle").transition()
           .duration(750)
           .attr("r", 6)
-          .style("fill", "#ccc");
+          .style("fill", "#3f3")
+          .style("stroke", "#333");
       d3.select(this).select("text").transition()
           .duration(750)
           .attr("x", 12)
           .style("stroke", "none")
-          .style("fill", "black")
+          .style("fill", "#906")
           .style("stroke", "none")
-          .style("font", "12px sans-serif")
+          .style("font", "16px sans-serif")
        //   .style("text-decoration", "none")
        //   .text(function(d) { return d.name.replace('.htm',''); });
     }

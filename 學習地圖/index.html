@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 
 <html ng-app="fmIndexApp">
+<head>
   <meta property="og:type" content="article" />
   <meta property="og:url" content="http://bestian.github.io/freemath/學習地圖/" />
   <meta property="og:title" content="自由數學freemath" />
@@ -11,40 +12,45 @@
   <link rel="stylesheet" type="text/css" href="../stylesheets/fmDoc.css"</link>
 
   <script src="../javascripts/jquery-1.10.2.js"></script>
+  <script src="http://d3js.org/d3.v3.js"></script>
   <script src="../javascripts/angular.min.js"></script>
-<head>
+
   <title>學習地圖</title>
+
 </head>
 
 <body>
+
+
 
 <div ng-controller ="Ctrl">
 
   <div class = "tool" style = "position:fixed; right: 50px; top: 250px; ">
     <ul type = "none">
-      <li class = "color" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <li class = "color" ng-init = "color = '#4bf'" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </ul>
 
   <br/>
   </div>
 
-  <span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  <span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
   <canvas width="900px" height="10000px" id="canvas" drawing>
   </canvas>
 
-
   <h3>====地圖====</h3>
 
-  <Select id = "Range" name="Range"  ng-model="range"  style = "font-size:3rem">
+  <Select id = "Range" name="Range"  ng-model="range" ng-init = "range = '小學數學學習地圖'" style = "font-size:1.2rem">
   　<option ng-repeat = "r in ranges" value="{{r}}">{{r}}</option>
   </Select>
 
+  <button onclick = "location = 'indexD3.html'">前往動態地圖(Beta版)</button>
 
   <ul>
   	<li ng-repeat = "i in [0,1,2,3,4,5]">
   	  	<img src ="{{range}}/p{{i}}.jpg" style="max-width:75%"/>
   </ul>
+
 
 </div>
 
@@ -58,8 +64,6 @@ $(document).ready(function(){
 var fmIndexApp = angular.module('fmIndexApp', []);
 function Ctrl($scope) {
 	$scope.ranges = ["小學數學學習地圖","國中數學學習地圖","高中數學學習地圖"];
-	$scope.range = "小學數學學習地圖";
-	$scope.color = "#4bf";
 	$scope.colors = ["#4bf","#000","#880","#0f0"];
 }
 
@@ -128,5 +132,8 @@ fmIndexApp.directive("drawing", function(){
 </script>
 
 </div>
+
 </body>
+
+
 </html>

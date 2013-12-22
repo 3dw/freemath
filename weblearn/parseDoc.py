@@ -303,7 +303,7 @@ dataf.truncate()
 dataf.close
 
 
-dataMap = open('mathmap.csv', 'r+')
+dataMap = open('../學習地圖/mathmap.csv', 'r+')
 dataMap.seek(0)
 dataMap.write('\n'.join(mathmap))
 dataMap.truncate()
