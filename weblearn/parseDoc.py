@@ -21,6 +21,7 @@ symDir = r'[kejsc?]'
 directory = os.getcwd()
 
 units = []
+mathmap = ['source,target,value']
 
 for root,dirs,files in os.walk(directory):
     for file in files:
@@ -186,6 +187,8 @@ for root,dirs,files in os.walk(directory):
 		#						isAfter = True
 
 					if isPre:
+
+						mathmap.append(friend+','+f.name+','+ str(float(g) / 10))
 						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
@@ -290,12 +293,19 @@ for root,dirs,files in os.walk(directory):
 
 			units.append('{ n: \'' + f.name +'\', g: ' + str(g) + ',' + 'G: ' + str(G) + ',' + 'wiki: "' + str(wiki) + '"}');
 
+
+
 			f.close
 
 dataf = open('fmData.js', 'r+')
-
 dataf.seek(0)
 dataf.write('var Units = [' + ', '.join(units) + ']')
 dataf.truncate()
-
 dataf.close
+
+
+dataMap = open('mathmap.csv', 'r+')
+dataMap.seek(0)
+dataMap.write('\n'.join(mathmap))
+dataMap.truncate()
+dataMap.close

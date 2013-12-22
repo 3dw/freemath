@@ -93,7 +93,7 @@ $(document).ready(function(){
 			});   // give all input an id
 
 	    	$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER👼');
-			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼');
+			$(this.el).find("input:gt(0)").attr('placeholder', '請填答👼，請自行檢查');
 
 			var firstWhite = $("*").filter(function(){
 					if ($(this).hasClass('button') || $(this).hasClass('tip')) return false;
@@ -102,12 +102,12 @@ $(document).ready(function(){
 
 			var	indexFW = $("*").index(firstWhite);
 
-			$(firstWhite).html('「'+firstWhite.html()+'」&nbsp;&nbsp;&nbsp;&nbsp;👀');
+			$(firstWhite).html('「'+firstWhite.html()+'」我不確定你的答案對不對，請自行檢查');
 
 			$("*:gt("+indexFW+")").filter(function(){
 					if ($(this).hasClass('button') || $(this).hasClass('tip')) return false;
 					return $(this).css('color') == 'rgb(255, 255, 255)';
-				}).append('&nbsp;&nbsp;&nbsp;&nbsp;👀');
+				}).append('我不確定你的答案對不對，請自行檢查');
 
 
 
