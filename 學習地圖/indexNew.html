@@ -9,7 +9,7 @@
   <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
   <meta charset = "utf-8">
 
-
+<script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="http://d3js.org/d3.v3.js"></script>
 <style>
 
@@ -47,8 +47,22 @@ text {
   pointer-events: none;
 }
 
+li {
+  margin: 15px;
+  font-size: 1.2rem;
+}
+
 </style>
 <body>
+
+<div style = "float:right; margin: 50px;">
+  <ol>
+    <li>點擊圓圈，標記出您已經會的單元</li>
+    <li>把已經會的標記好，就會看到哪些是接下來最近的未知單元</li>
+    <li>選一個未知單元，點兩下即可進入教材了</li>
+  </ol>
+</div>
+
 <script>
 
 // get the data
@@ -139,8 +153,7 @@ node.append("circle")
 node.append("text") 
     .attr("x", 12)
     .attr("dy", ".35em")
-    .text(function(d) { return d.name; });
-
+    .text(function(d) { return d.name.replace('.htm',''); });
 
 // add the curvy lines
 function tick() {
@@ -169,7 +182,10 @@ function click() {
         .style("fill", "steelblue")
         .style("stroke", "lightsteelblue")
         .style("stroke-width", ".5px")
-        .style("font", "20px sans-serif");
+        .style("font", "20px sans-serif")
+      //  .style("text-decoration", "underline")
+      //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
+
     d3.select(this).select("circle").transition()
         .duration(750)
         .attr("r", 16)
@@ -179,24 +195,28 @@ function click() {
 // action to take on mouse double click
 function dblclick() {
 
-  console.log(this);
-//  location = '../weblearn/' + event.currentTarget.name;   bug here <--
+    console.log(this);
 
-  
-    d3.select(this).select("circle").transition()
-        .duration(750)
-        .attr("r", 6)
-        .style("fill", "#ccc");
-    d3.select(this).select("text").transition()
-        .duration(750)
-        .attr("x", 12)
-        .style("stroke", "none")
-        .style("fill", "black")
-        .style("stroke", "none")
-        .style("font", "12px sans-serif");
+    var url = d3.select(this).select("text").property("__data__").name;
+    
+    if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { location = '../weblearn/' + url }
+      else {
+
+      d3.select(this).select("circle").transition()
+          .duration(750)
+          .attr("r", 6)
+          .style("fill", "#ccc");
+      d3.select(this).select("text").transition()
+          .duration(750)
+          .attr("x", 12)
+          .style("stroke", "none")
+          .style("fill", "black")
+          .style("stroke", "none")
+          .style("font", "12px sans-serif")
+       //   .style("text-decoration", "none")
+       //   .text(function(d) { return d.name.replace('.htm',''); });
+    }
 } 
-
-}
 
 });
 

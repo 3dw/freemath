@@ -187,7 +187,6 @@ for root,dirs,files in os.walk(directory):
 		#						isAfter = True
 
 					if isPre:
-
 						mathmap.append(friend+','+f.name+','+ str(float(g) / 10))
 						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
@@ -201,7 +200,7 @@ for root,dirs,files in os.walk(directory):
 	#					oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
 						buttonList.insert(leftWall+middleWall+middleWall2, thisButton)
 
-					elif isRel:
+					elif isRel:					
 						thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
