@@ -136,6 +136,8 @@ for root,dirs,files in os.walk(directory):
 			afters = re.findall(r'after:.+', text)
 			rels = re.findall(r'rel:.+', text)
 
+    #			print pres
+
 			buttonList = []
 			buttonList2 = []
 			leftWall = 	middleWall = middleWall2 = 0

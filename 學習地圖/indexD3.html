@@ -1,13 +1,16 @@
 
 <!DOCTYPE html>
 <html>
+<head>
 <meta charset="utf-8">
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://bestian.github.io/freemath/學習地圖/" />
+  <meta property="og:url" content="http://bestian.github.io/freemath/學習地圖/indexD3.html" />
   <meta property="og:title" content="自由數學freemath" />
   <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
   <meta charset = "utf-8">
+  
+  <title>十三年一貫(小1~大1)數學地圖</title>
 
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="http://d3js.org/d3.v3.js"></script>
@@ -55,6 +58,7 @@ li {
 }
 
 </style>
+</head>
 <body>
 
 <div style = "float:right; margin-right: 50px;">
@@ -159,7 +163,9 @@ node.append("circle")
 node.append("text") 
     .attr("x", 12)
     .attr("dy", ".35em")
-    .text(function(d) { return d.name.replace('.htm',''); });
+    .text(function(d) { 
+      return d.name.indexOf('.htm') > -1 ? '*' + d.name.replace('.htm','').split('_')[0] + '*' : d.name;
+    });
 
 // add the curvy lines
 function tick() {
@@ -212,7 +218,7 @@ function dblclick() {
       }
     }
     else {
-      if (confirm("〈" + url +"〉目前尚未編創，先為您連上維基百科。您願意共筆或樂捐支持自由教材嗎?")) { 
+      if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
           window.open('http://zh.wikipedia.org/wiki/' + url.split(/與|::/)[0]);
           window.open('http://math.alearn.org.tw/join/index.html')
         }
