@@ -82,7 +82,7 @@ links.forEach(function(link) {
 });
 
 var width = 960,
-    height = 600;
+    height = 960;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
@@ -201,27 +201,40 @@ function click() {
 // action to take on mouse double click
 function dblclick() {
 
-    console.log(this);
+    console.log(this); var thisNode = this;
 
     var url = d3.select(this).select("text").property("__data__").name;
-    
-    if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { location = '../weblearn/' + url }
-      else {
 
-      d3.select(this).select("circle").transition()
+    if (url.replace('.htm','') != url) {    
+      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { location = '../weblearn/' + url }
+        else {
+          shrink(thisNode);
+      }
+    }
+    else {
+      if (confirm("〈" + url +"〉目前尚未編創，先為您連上維基百科。您願意共筆或樂捐支持自由教材嗎?")) { 
+          window.open('http://zh.wikipedia.org/wiki/' + url.split(/與|::/)[0]);
+          window.open('http://math.alearn.org.tw/join/index.html')
+        }
+        else {
+          shrink(thisNode, url);
+      }
+    }
+
+    function shrink(obj, url) {
+      d3.select(obj).select("circle").transition()
           .duration(750)
           .attr("r", 6)
           .style("fill", "#3f3")
           .style("stroke", "#333");
-      d3.select(this).select("text").transition()
+      d3.select(obj).select("text").transition()
           .duration(750)
           .attr("x", 12)
           .style("stroke", "none")
           .style("fill", "#906")
           .style("stroke", "none")
-          .style("font", "16px sans-serif")
-       //   .style("text-decoration", "none")
-       //   .text(function(d) { return d.name.replace('.htm',''); });
+          .style("font", "16px sans-serif");
+      if(url) window.open('http://zh.wikipedia.org/wiki/' + url.split(/與|::/)[0]);
     }
 } 
 

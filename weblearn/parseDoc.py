@@ -302,9 +302,13 @@ dataf.write('var Units = [' + ', '.join(units) + ']')
 dataf.truncate()
 dataf.close
 
+dataMapPart = open('../學習地圖/mathmap_part.csv', 'r')
+part = dataMapPart.read().split('\n')
+part.pop(0)
+dataMapPart.close()
 
 dataMap = open('../學習地圖/mathmap.csv', 'r+')
 dataMap.seek(0)
-dataMap.write('\n'.join(mathmap))
+dataMap.write('\n'.join(mathmap + part))
 dataMap.truncate()
 dataMap.close
