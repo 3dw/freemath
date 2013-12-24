@@ -10,11 +10,12 @@
 <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
 <meta charset = "utf-8">
   
-  <title>十三年一貫(小1~大1)數學地圖</title>
+  <title>動態數學大地圖</title>
 
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="http://d3js.org/d3.v3.js"></script>
 <style>
+
 
 path.link {
   fill: none;
@@ -24,15 +25,15 @@ path.link {
 
 
 path.link.twofive {
-  opacity: 0.25;
+  opacity: 0.7;
 }
 
 path.link.fivezero {
-  opacity: 0.50;
+  opacity: 0.8;
 }
 
 path.link.sevenfive {
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 path.link.onezerozero {
@@ -63,13 +64,48 @@ li {
 
 <div style = "float:right; margin-right: 50px;">
   <ol>
+    <li>隨意拖動，玩玩這張地圖</li>
     <li>點擊圓圈，標記出您已經會的單元</li>
-    <li>把已經會的標記好，就會看到哪些是接下來最近的未知單元</li>
+    <li>箭頭代表先後關係，您可以從已經會的，找到接下來最近的未知單元</li>
+    <li>您也可以反過來，查詢一個單元的先備知識</li>
     <li>選一個未知單元，點兩下即可進入教材了</li>
   </ol>
 </div>
 
 <script>
+
+$(window).on('hashchange', function() {
+  location.reload();
+});
+
+var m = 0.1;
+var M = Infinity;
+var cross;
+var reverse;
+
+if (!location.hash) {
+  var hash = prompt("歡迎使用動態數學地圖!!\n"
+                  +"請輸入年級範圍(例如3~6)\n"
+                  +"如果要加上跨領域，請加上~c，(例如9~11~c)\n"
+                  +"M:不設上限，m:不設下限，(例如12~M或m~3)")
+  location.hash = '#' + hash;
+}
+
+m = location.hash.replace('#','').split('~')[0] == 'm' ? -Infinity
+       : location.hash.replace('#','').split('~')[0] / 10;
+M = location.hash.replace('#','').split('~')[1] == 'M' ? Infinity
+       : location.hash.replace('#','').split('~')[1] / 10;
+cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : false;
+reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : false;
+
+
+function show(n){
+  if (n == Infinity || n == -Infinity) return '不限';
+  return n * 10;
+}
+
+document.title = '動態數學地圖：'+show(m)+' ~ '+show(M)+'年級'
+if (cross) document.title += '(跨領域)'
 
 // get the data
 d3.csv("mathmap.csv", function(error, links) {
@@ -78,11 +114,25 @@ var nodes = {};
 
 // Compute the distinct nodes from the links.
 links.forEach(function(link) {
-    link.source = nodes[link.source] || 
-        (nodes[link.source] = {name: link.source});
-    link.target = nodes[link.target] || 
-        (nodes[link.target] = {name: link.target});
-    link.value = +link.value;
+
+    console.log(link.value);
+
+    if (m <= link.value && link.value <= M) {
+      if ((link.source.indexOf('::') == -1 && link.target.indexOf('::') == -1) || cross == true) {
+
+          link.source = nodes[link.source] || 
+              (nodes[link.source] = {name: link.source});
+
+          link.target = nodes[link.target] || 
+              (nodes[link.target] = {name: link.target});
+
+          link.value = +link.value;
+
+      }
+    }
+    else {
+      // something that prevents error
+    }
 });
 
 var width = 960,
@@ -132,18 +182,23 @@ svg.append("svg:defs").selectAll("marker")
     .attr("markerHeight", 6)
     .attr("orient", "auto")
   .append("svg:path")
-    .attr("d", "M0,-5L10,0L0,5");
+    .attr("d", "M0,-8L10,0L0,5");
 
 // add the links and the arrows
 var path = svg.append("svg:g").selectAll("path")
     .data(force.links())
   .enter().append("svg:path")
    .attr("class", function(d) { return "link " + d.type; })
-//   .attr("marker-mid", function(d) { return "url(#" + d.type + ")"; });
    .attr("marker-end", "url(#end)");
 
+if (reverse) {
+   path.attr("marker-start", "url(#end)")
+        .attr("d", "M0,-5L50,0L0,5"); //  ;
+}
+
 // arrowHead color
-svg.selectAll("polygon.arrowHeads").style("fill", "steelblue");
+
+// svg.selectAll("polygon.arrowHeads").style("fill", "steelblue");
 
 // define the nodes
 var node = svg.selectAll(".node")
@@ -219,7 +274,7 @@ function dblclick() {
     }
     else {
       if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
-          window.open('http://zh.wikipedia.org/wiki/' + url.split(/與|::/)[0]);
+          window.open('http://zh.wikipedia.org/wiki/' + url.split('與')[0].split('::').reverse()[0]);
           window.open('http://math.alearn.org.tw/join/index.html')
         }
         else {
