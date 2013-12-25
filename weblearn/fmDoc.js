@@ -5,8 +5,7 @@
 // <script src="../javascripts/tongwen_core.js"></script>
 
 
-// Todo::  add auto Facebook Like button from title... 
-// Todo::  add php that gater feedback [Star] and [Comment]...
+// Todo::  faster...
 
 $(window).load(function(){
 			$(window).scrollTop(0);
@@ -52,11 +51,11 @@ $(document).ready(function(){
 	    	$(".first,.tool").show();
 	    	$("p,img,table").draggable().css("cursor", "move");
 
-	     	this.max = $(this.el).find("input").length
+	     	this.max = $(this.el).find("input").length;
 
 			var re = /(代數|未知數|變數|關係|函數|倍數|因數|比例|比值|盈餘|大於|小於|等於|費用|計算|公分|數量|點|直線|線段|平面|立體|外角定理|窮舉|量度|弧|角|區間|數線|範圍解|數列|級數|直角座標|不等式|等式|加|減|乘|圓|有理化|因式分解|有理數|根式|根號|二次函數|三角函數|指數|對數|方程式|平方|開方|勾股定理|乘法|除法|相似|三角|數學|製圖|測量|工程|單位換算|分數|通分|約分|擴分|cm|km|mm)/g;
 
-			$("img").attr("alt", "").css("position","relative").css("z-index",9);;
+			$("img").attr("alt", "");
 			$("p").each(function( index ) {
               $(this).html($(this).html()
                 .replace(re, '<a target = "_blank" href="http://zh.wikipedia.org/wiki/$1">$1</a>')
@@ -65,13 +64,10 @@ $(document).ready(function(){
                 .replace(/wiki\/通分/g,'wiki/分數#.E7.B4.84.E5.88.86.E3.80.81.E6.93.B4.E5.88.86.E5.8F.8A.E9.80.9A.E5.88.86')
                 .replace("&nbsp;</span>","</span>")      
                 );
-          	}).children().css("position","relative").css("z-index",9);;
+          	});
 
 //          $("a").css("position","relative").css("z-index",9);
-
-
 //        	$("#canvasContainer").draggable();
-
 
 	    	$('input').each(function(index) {
 

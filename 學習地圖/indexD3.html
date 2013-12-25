@@ -62,7 +62,7 @@ li {
 </head>
 <body>
 
-<div style = "float:right; margin-right: 50px;">
+<div id = "noteMain" style = "float:right; margin-right: 50px;">
   <ol>
     <li>隨意拖動，玩玩這張地圖</li>
     <li>點擊圓圈，標記出您已經會的單元</li>
@@ -74,14 +74,24 @@ li {
 
 <script>
 
+$(document).ready(function(){
+  if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g|m/)) {
+    $("#noteMain").hide();
+  }
+});
+
 $(window).on('hashchange', function() {
   location.reload();
 });
 
-var m = 0.1;
-var M = Infinity;
-var cross;
-var reverse;
+var m = 0.1, M = Infinity;
+var cross = false, reverse = false;
+
+var src = "mathmap.csv", 
+  linkSrc = "../weblearn/", 
+  yubiLinkSrc = "http://zh.wikipedia.org/wiki/", 
+  joinSrc = "http://math.alearn.org.tw/join/index.html";
+
 
 if (!location.hash) {
   var hash = prompt("歡迎使用動態數學地圖!!\n"
@@ -95,8 +105,14 @@ m = location.hash.replace('#','').split('~')[0] == 'm' ? -Infinity
        : location.hash.replace('#','').split('~')[0] / 10;
 M = location.hash.replace('#','').split('~')[1] == 'M' ? Infinity
        : location.hash.replace('#','').split('~')[1] / 10;
-cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : false;
-reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : false;
+cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : cross;
+reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : reverse;
+
+if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g/)){
+  src = "mathgame.csv";
+  linkSrc = "../realgame/"; 
+  yubiLinkSrc = "https://www.google.com.tw/search?q=";
+}
 
 
 function show(n){
@@ -105,10 +121,12 @@ function show(n){
 }
 
 document.title = '動態數學地圖：'+show(m)+' ~ '+show(M)+'年級'
-if (cross) document.title += '(跨領域)'
+if (cross) document.title += '(跨領域)';
+
+
 
 // get the data
-d3.csv("mathmap.csv", function(error, links) {
+d3.csv(src, function(error, links) {
 
 var nodes = {};
 
@@ -117,7 +135,7 @@ links.forEach(function(link) {
 
     console.log(link.value);
 
-    if (m <= link.value && link.value <= M) {
+    if ((m <= link.value || (link.value.split('~')[1] && link.value.split('~')[1] == 'M' || link.value.split('~')[1] <= m)) && (link.value <= M || link.value.split('~')[0] <= M)) {
       if ((link.source.indexOf('::') == -1 && link.target.indexOf('::') == -1) || cross == true) {
 
           link.source = nodes[link.source] || 
@@ -267,15 +285,15 @@ function dblclick() {
     var url = d3.select(this).select("text").property("__data__").name;
 
     if (url.replace('.htm','') != url) {    
-      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { location = '../weblearn/' + url }
+      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { location = linkSrc + url }
         else {
           shrink(thisNode);
       }
     }
     else {
       if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
-          window.open('http://zh.wikipedia.org/wiki/' + url.split('與')[0].split('::').reverse()[0]);
-          window.open('http://math.alearn.org.tw/join/index.html')
+          window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
+          window.open(joinSrc);
         }
         else {
           shrink(thisNode, url);
@@ -295,7 +313,7 @@ function dblclick() {
           .style("fill", "#906")
           .style("stroke", "none")
           .style("font", "16px sans-serif");
-      if(url) window.open('http://zh.wikipedia.org/wiki/' + url.split(/與|::/)[0]);
+      if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
     }
 } 
 

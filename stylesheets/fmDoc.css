@@ -120,6 +120,16 @@
       cursor: sw-resize;    
     }
 
+    p *{
+      position: relative;
+      z-index: 7;
+    }
+    
+    img {
+      position: relative;
+      z-index: 9;
+    }
+
     .tool {
       z-index: 7;
     }
