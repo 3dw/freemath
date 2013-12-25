@@ -16,13 +16,22 @@
 <script src="http://d3js.org/d3.v3.js"></script>
 <style>
 
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+div#noteMain {
+  position: fixed;
+  left: 35%;
+  bottom: 0px;
+}
 
 path.link {
   fill: none;
   stroke: #3f3;
   stroke-width: 1.5px;
 }
-
 
 path.link.twofive {
   opacity: 0.7;
@@ -53,8 +62,7 @@ text {
 }
 
 li {
-  margin: 15px;
-  font-size: 1.2rem;
+  margin: 5px;
   color: rgba(155,100,100,1);
 }
 
@@ -65,10 +73,9 @@ li {
 <div id = "noteMain" style = "float:right; margin-right: 50px;">
   <ol>
     <li>隨意拖動，玩玩這張地圖</li>
-    <li>點擊圓圈，標記出您已經會的單元</li>
-    <li>箭頭代表先後關係，您可以從已經會的，找到接下來最近的未知單元</li>
-    <li>您也可以反過來，查詢一個單元的先備知識</li>
-    <li>選一個未知單元，點兩下即可進入教材了</li>
+    <li>點擊圓圈，標記出您會的單元</li>
+    <li>箭頭代表先後關係，您可以從已經會的，往後找，也可以往前找先備知識</li>
+    <li>點兩下即可進入教材</li>
   </ol>
 </div>
 
@@ -135,7 +142,10 @@ links.forEach(function(link) {
 
     console.log(link.value);
 
-    if ((m <= link.value || (link.value.split('~')[1] && link.value.split('~')[1] == 'M' || link.value.split('~')[1] <= m)) && (link.value <= M || link.value.split('~')[0] <= M)) {
+    if ((m <= link.value || (link.value.split('~')[1] && 
+            (link.value.split('~')[1] == 'M' || m <= link.value.split('~')[1]))) && 
+        (link.value <= M || (link.value.split('~')[0] && link.value.split('~')[0] <= M))) 
+    {
       if ((link.source.indexOf('::') == -1 && link.target.indexOf('::') == -1) || cross == true) {
 
           link.source = nodes[link.source] || 
@@ -153,8 +163,10 @@ links.forEach(function(link) {
     }
 });
 
-var width = 960,
-    height = 960;
+var width = 200 + (M*10-m*10+1)*100;
+          if (width > 960) height = 960;
+    height = 200 + (M*10-m*10+1)*100;
+          if (height > 960) height = 960;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
