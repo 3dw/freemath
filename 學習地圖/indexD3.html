@@ -101,7 +101,8 @@ $(window).on('hashchange', function() {
 
 var m = 0.1, M = Infinity;
 var cross = false, reverse = false;
-var units = [], unitsPuzzle =[];  // puzzle 用
+var units = [], unitsPuzzle =[];
+var unitsNext = [], unitsPuzzleNext = [];// puzzle 用
 var mode = 'show'; 
 
 var src = "mathmap.csv", 
@@ -147,6 +148,7 @@ if (location.hash.replace('#','').split('~')[1]) {
   	case '?':	
   		mode = 'tracepuzzle';  // todo    ??  __>>  ??
   		unitsPuzzle.push(units.shift());    //pop
+      alert("要怎麼從<"+unitsPuzzle[0]+">連上<"+units.join()+">呢？點點看!");
   	//	alert(unitsPuzzle[0]); 
   		break;
   	default:
@@ -221,7 +223,18 @@ links.forEach(function(link) {
                 if ($.inArray(link.target.replace('.htm',''), units) > -1 || $.inArray(link.source.replace('.htm',''), units) > -1) showit();
                 break;
               case 'tracepuzzle':
-                if ($.inArray(link.target.replace('.htm',''), units) > -1 || $.inArray(link.source.replace('.htm',''), unitsPuzzle) > -1) showit();
+
+                var compSource = typeof(link.source) == Object ? link.source.name : link.source;
+                var compTarget = typeof(link.target) == Object ? link.target.name : link.target;
+
+                if ($.inArray(compTarget.replace('.htm',''), units) > -1) {
+                  unitsNext.push(compSource.replace('.htm',''));
+                  showit();
+                }
+                else if ($.inArray(compSource.replace('.htm',''), unitsPuzzle) > -1) {           
+                  unitsPuzzleNext.push(compTarget.replace('.htm',''));
+                  showit();
+                }
                 break;
               default:
                 showit();
@@ -250,6 +263,14 @@ if (mode.indexOf('trace') > -1) {
 	  width = 960;
 	  height = 960;
 
+    console.log(unitsNext.join());
+    console.log(unitsPuzzleNext.join());
+
+    if (unitsNext.filter(function(n) {
+        return unitsPuzzleNext.indexOf(n) > -1
+    }).length > 0) {
+      alert("恭喜你，連上了!!");
+    }
   }
 }
 
