@@ -124,6 +124,7 @@ if (location.hash.replace('#','').split('~')[1]) {
   M = location.hash.replace('#','').split('~')[1] == 'M' ? Infinity
          : location.hash.replace('#','').split('~')[1] / 10;
   cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : cross;
+
   reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : reverse;
 
 } else {
@@ -138,6 +139,7 @@ if (location.hash.replace('#','').split('~')[1]) {
   	case 't':
   	case 'b':	
   		mode = 'traceback';
+      cross = true;
   	case 'f':	
   		mode = 'traceforward';
   		break;
@@ -149,6 +151,7 @@ if (location.hash.replace('#','').split('~')[1]) {
   		break;
   	default:
   		mode = 'traceback';
+      cross = true;
   	}				  
 }
 
