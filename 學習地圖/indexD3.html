@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://bestian.github.io/freemath/學習地圖/indexD3.html" />
+<meta property="og:url" content="http://bestian.github.io/....../%E5%AD%B8....../indexD3.html" />
 <meta property="og:title" content="動態數學大地圖自由數學freemath" />
-<meta property="og:image" content="動態數學地圖：1___4年級_跨領域_.jpg" />
+<meta property="og:image" content="%E5%8B%95%E6%85%8B%E6%95%B8%E5%AD%B8%E5%9C%B0%E5%9C%96%EF%BC%9A1___4%E5%B9%B4%E7%B4%9A_%E8%B7%A8%E9%A0%98%E5%9F%9F_.jpg" />
   
   <title>動態數學大地圖</title>
 
@@ -19,6 +19,7 @@
 svg {
   display: block;
   margin: 0 auto;
+  margin-top: -15px;
 }
 
 div#noteMain {
@@ -100,6 +101,7 @@ $(window).on('hashchange', function() {
 
 var m = 0.1, M = Infinity;
 var cross = false, reverse = false;
+var units = [], mode = 'show';
 
 var src = "mathmap.csv", 
   linkSrc = "../weblearn/", 
@@ -115,12 +117,23 @@ if (!location.hash) {
   location.hash = '#' + hash;
 }
 
-m = location.hash.replace('#','').split('~')[0] == 'm' ? -Infinity
-       : location.hash.replace('#','').split('~')[0] / 10;
-M = location.hash.replace('#','').split('~')[1] == 'M' ? Infinity
-       : location.hash.replace('#','').split('~')[1] / 10;
-cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : cross;
-reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : reverse;
+if (location.hash.replace('#','').split('~')[1]) {
+  m = location.hash.replace('#','').split('~')[0] == 'm' ? -Infinity
+         : location.hash.replace('#','').split('~')[0] / 10;
+  M = location.hash.replace('#','').split('~')[1] == 'M' ? Infinity
+         : location.hash.replace('#','').split('~')[1] / 10;
+  cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : cross;
+  reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : reverse;
+
+} else {
+
+  if (!units[0]) units[0] = decodeURI(location.hash.replace('#',''));
+  
+  mode = 'traceTwoWay';
+  // mode = 'traceback';
+  // mode = 'traceforwardback';
+}
+
 
 if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g/)){
   src = "mathgame.csv";
@@ -138,23 +151,20 @@ document.title = '動態數學地圖：'+show(m)+' ~ '+show(M)+'年級'
 if (cross) document.title += '(跨領域)';
 
 
+var nodes = {}; // 共用的結點
+
+function showMap (src) {      
+
 
 // get the data
 d3.csv(src, function(error, links) {
 
-var nodes = {};
+console.log('A');
 
 // Compute the distinct nodes from the links.
 links.forEach(function(link) {
 
-    console.log(link.value);
-
-    if ((m <= link.value || (link.value.split('~')[1] && 
-            (link.value.split('~')[1] == 'M' || m <= link.value.split('~')[1]))) && 
-        (link.value <= M || (link.value.split('~')[0] && link.value.split('~')[0] <= M))) 
-    {
-      if ((link.source.indexOf('::') == -1 && link.target.indexOf('::') == -1) || cross == true) {
-
+    function showit(){
           link.source = nodes[link.source] || 
               (nodes[link.source] = {name: link.source});
 
@@ -162,18 +172,56 @@ links.forEach(function(link) {
               (nodes[link.target] = {name: link.target});
 
           link.value = +link.value;
-
-      }
     }
-    else {
+
+    if ((m <= link.value || (link.value.split('~')[1] && 
+            (link.value.split('~')[1] == 'M' || m <= link.value.split('~')[1]))) && 
+        (link.value <= M || (link.value.split('~')[0] && link.value.split('~')[0] <= M))) 
+    {
+      if ((link.source.indexOf('::') == -1 && link.target.indexOf('::') == -1) || cross == true) {
+           console.log(link.target.replace('.htm',''));
+           console.log(units);
+           console.log($.inArray(link.target.replace('.htm',''), units));
+
+           switch (mode) {
+              case 'traceback':
+                if ($.inArray(link.target.replace('.htm',''), units) > -1) showit();
+                break;
+              case 'traceback':
+                if ($.inArray(link.target.replace('.htm',''), units) > -1) showit();
+                break;
+              case 'tracefoward':
+                if ($.inArray(link.source.replace('.htm',''), units) > -1) showit();
+                break;
+              case 'traceTwoWay':
+                if ($.inArray(link.target.replace('.htm',''), units) > -1 || $.inArray(link.source.replace('.htm',''), units) > -1) showit();
+                break;
+              default:
+                showit();
+           }
+  
+
+        }
+    } else {
       // something that prevents error
     }
 });
+
+
+console.log('B');
 
 var width = 200 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
           if (width > 960) width = 960;
     height = 200 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
           if (height > 960) height = 960;
+
+if (mode == 'traceback') {
+  width = 450;
+  height = 450;
+}
+
+
+console.log('C');
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
@@ -183,6 +231,8 @@ var force = d3.layout.force()
     .charge(-300)
     .on("tick", tick)
     .start();
+
+console.log('D');
 
 // Set the range
 var  v = d3.scale.linear().range([0, 100]);
@@ -203,9 +253,19 @@ links.forEach(function(link) {
   }
 });
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+console.log('E');
+
+var svg;
+
+if ($("svg").length) { $("svg").remove() };
+
+svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+console.log('newMap');
+
+
+console.log('F');
 
 // build the arrow.
 svg.append("svg:defs").selectAll("marker")
@@ -280,20 +340,39 @@ function tick() {
 
 // action to take on mouse click
 function click() {
-    d3.select(this).select("text").transition()
+    switch (mode) {
+      case 'show':
+        d3.select(this).select("text").transition()
         .duration(750)
         .attr("x", 22)
         .style("fill", "steelblue")
         .style("stroke", "lightsteelblue")
         .style("stroke-width", ".5px")
         .style("font", "20px sans-serif")
-      //  .style("text-decoration", "underline")
-      //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
+          //  .style("text-decoration", "underline")
+          //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
 
-    d3.select(this).select("circle").transition()
-        .duration(750)
-        .attr("r", 16)
-        .style("fill", "lightsteelblue");
+        d3.select(this).select("circle").transition()
+            .duration(750)
+            .attr("r", 16)
+            .style("fill", "lightsteelblue");
+        break;
+      case 'traceback':
+        units.push(d3.select(this).select("text").property("__data__").name.replace('.htm',''));
+        showMap(src);
+        break;
+      case 'tracefoward':
+        units.push(d3.select(this).select("text").property("__data__").name.replace('.htm',''));
+        showMap(src);
+        break;
+      case 'traceTwoWay':
+        units.push(d3.select(this).select("text").property("__data__").name.replace('.htm',''));
+        showMap(src);
+        break;
+      default:
+        alert("Error: unknown mode")
+    }
+    
 }
 
 // action to take on mouse double click
@@ -337,6 +416,11 @@ function dblclick() {
 } 
 
 });
+
+};
+
+showMap(src);
+
 
 </script>
 </body>
