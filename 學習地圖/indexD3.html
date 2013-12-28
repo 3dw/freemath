@@ -515,7 +515,7 @@ function dblclick() {
     var url = d3.select(this).select("text").property("__data__").name;
 
     if (url.replace('.htm','') != url) {    
-      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { location = linkSrc + url }
+      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { window.open(linkSrc + url) }
         else {
           shrink(thisNode);
       }
