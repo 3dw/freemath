@@ -20,9 +20,9 @@ $(document).ready(function(){
 	var DocView = Backbone.View.extend({ 
 		el: $('body'),
 
-		intro: '<p>歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載文件檔'
+		intro: '<p>歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載文件檔(.doc檔在小學形成、國中形成等目錄中)'
 			+'<a class = "ui small blue button" href = \'https://github.com/bestian/freemath/zipball/gh-pages\'"'
-				+'style = "margin-left:2ex">'+'下載整份Freemath文件檔'+'</a></p>'
+				+'style = "margin-left:2ex">'+'下載全套自由數學Freemath'+'</a></p>'
 			+'<p>本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲</p>'
 			+'<p style = "margin-left:50px">請使用瀏覽器<a href = "https://www.google.com/intl/zh-TW/chrome/" target = "_blank">Chrome</a>'+
 			'或<a href = "http://www.apple.com/tw/safari/">Safari</a>，以啟用右邊的摹擬白板。📝</p>'
@@ -130,7 +130,7 @@ $(document).ready(function(){
 	    		+'<div class="ui huge buttons">'
 				+' <div id = "start" class="ui huge green button">👼線上學習'+document.title+'👼</div>'
 				+' <div class="or"></div>'
-				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成一份简体教材再开始</div>'
+				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成简体</div>'
 				+'</div>'
 //				+'<button class = "ui  button" </button>'
 				+'</div>'

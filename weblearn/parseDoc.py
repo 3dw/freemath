@@ -190,32 +190,34 @@ for root,dirs,files in os.walk(directory):
 
 					if isPre:
 						mathmap.append(friend+','+f.name+','+ str(float(g) / 10))
-						thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+					#	thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
-						buttonList.insert(0, thisButton)				
-						leftWall += 1
+					#	buttonList.insert(0, thisButton)				
+					#	leftWall += 1
 
 					elif isAfter:
-						thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						pass
+					#	thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
-						buttonList.insert(leftWall+middleWall+middleWall2, thisButton)
+					#	buttonList.insert(leftWall+middleWall+middleWall2, thisButton)
 
 					elif isRel:
 						mathmap.append(friend+','+f.name+','+ str(float(g) / 10))					
-						thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+					#	thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-						buttonList.insert(leftWall+middleWall, thisButton)	
-						middleWall2 += 1
+					#	buttonList.insert(leftWall+middleWall, thisButton)	
+					#	middleWall2 += 1
 
 					elif friend.endswith(f.name):
-						thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
+						pass
+					#	thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
 	#					thatButton = thisButton
 	#					oldButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-						buttonList.insert(leftWall, thisButton)
-						middleWall += 1					 			
+					#	buttonList.insert(leftWall, thisButton)
+					#	middleWall += 1					 			
 
 					else:
 						pass
@@ -230,8 +232,9 @@ for root,dirs,files in os.walk(directory):
 	#				text = text.replace(oldButton, '')
 
 #					final = ''					
-					final = ''.join(buttonList) + '<br />' + ''.join(buttonList2);
+				#	final = ''.join(buttonList) + '<br />' + ''.join(buttonList2);
 
+					final = '<iframe src = "../學習地圖/indexD3.html#' + f.name.replace('.htm','')+'!2' + '" width = "600" height = "600"></iframe>'
 
 #					if not friend.endswith(f.name):
 #						final += thisButton+'</button>'
@@ -258,7 +261,10 @@ for root,dirs,files in os.walk(directory):
 
 #			print final
 
-			text = re.sub(r'</div>\s*(<br />)*?\s*(<button[.\s\S]*?</button>)?\s*</body>', '</div>\n'
+			text = re.sub(r'</div>\s*(<br />)*\s*(<button[.\s\S]*?</button>)?\s*(<br />)*\s*</body>', '</div>\n'
+				+final
+				+'</body>' ,text )
+			text = re.sub(r'</div>\s*(<br />)*\s*(<iframe[.\s\S]*?</iframe>)?\s*(<br />)*\s*</body>', '</div>\n'
 				+final
 				+'</body>' ,text )
 #			text = text.replace('</button></button>','</button>')

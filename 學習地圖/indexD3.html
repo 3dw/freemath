@@ -16,11 +16,15 @@
 <script src="http://d3js.org/d3.v3.js"></script>
 <style>
 
+
+
 svg {
   display: block;
   margin: 0 auto;
   margin-top: -15px;
+
 }
+
 
 div#noteMain {
   position: fixed;
@@ -37,8 +41,9 @@ div#noteMain {
 
 path.link {
   fill: none;
-  stroke: #3f3;
- stroke-width: 1.5px;
+  stroke: #0a0;
+  stroke-width: 1.5px;
+  color: #0a0;
 }
 
 path.link.twofive {
@@ -57,14 +62,26 @@ path.link.onezerozero {
   opacity: 1.0;
 }
 
+marker#end { 
+  fill: #0a0;
+} 
+
 circle {
-  fill: #3f3;
-  stroke: #333;
+  fill: #afa;
+/*  fill: #0a0; */
+  stroke: #0a0;
   stroke-width: 1.5px;
+  cursor: pointer;
+}
+
+circle.focus {
+  fill: #faa;
+  stroke: #a66;
 }
 
 text {
-  fill: #906;
+  fill: #33f;
+  background-color: #fff;  
   font: 16px sans-serif;
   pointer-events: none;
 }
@@ -73,6 +90,7 @@ li {
   margin: 5px;
   color: rgba(155,100,100,1);
 }
+
 
 </style>
 </head>
@@ -127,12 +145,16 @@ if (location.hash.replace('#','').split('~')[1]) {
   cross = location.hash.split('~')[2] && location.hash.split('~')[2].match(/c/) ? true : cross;
 
   reverse = location.hash.split('~')[2] && location.hash.split('~')[2].match(/r/) ? true : reverse;
+  mode = "show";
+  document.title = '動態數學地圖：'+show(m)+' ~ '+show(M)+'年級';
 
 } else {
 
   if (!units[0]) {
   	units = decodeURI(location.hash.split('!')[0].replace('#','')).split('&')
   };
+
+  cross = true;
   switch (location.hash.split('!')[1]) {
   	case '2':
   		mode = 'traceTwoWay';
@@ -140,22 +162,25 @@ if (location.hash.replace('#','').split('~')[1]) {
   	case 't':
   	case 'b':	
   		mode = 'traceback';
-      cross = true;
   	case 'f':	
   		mode = 'traceforward';
   		break;
   	case 'p':
   	case '?':	
-  		mode = 'tracepuzzle';  // todo    ??  __>>  ??
+  		mode = 'tracepuzzle';
+      cross = false;
   		unitsPuzzle.push(units.shift());    //pop
       alert("要怎麼從<"+unitsPuzzle[0]+">連上<"+units.join()+">呢？點點看!");
   	//	alert(unitsPuzzle[0]); 
   		break;
   	default:
   		mode = 'traceback';
-      cross = true;
-  	}				  
+  	}
+    document.title = '動態數學地圖：'+showMode(mode,units,unitsPuzzle);
 }
+
+
+if (cross) document.title += '(跨領域)';
 
 
 if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g/)){
@@ -170,8 +195,19 @@ function show(n){
   return n * 10;
 }
 
-document.title = '動態數學地圖：'+show(m)+' ~ '+show(M)+'年級'
-if (cross) document.title += '(跨領域)';
+function showMode(mode, units, unitsPuzzle){
+  switch (mode) {
+    case 'traceback':
+      return '倒溯法：以'+ units.join() + '為中心';
+    case 'traceforward':
+      return '前推法：以'+ units.join() + '為中心';
+    case 'traceTwoWay':
+      return '以'+ units.join() + '為中心展開';
+    case 'tracepuzzle':
+      return '連連看-猜謎遊戲：從' + unitsPuzzle.join() + '到' + units.join(); 
+  }
+
+}
 
 
 var nodes = {}; // 共用的結點
@@ -329,8 +365,8 @@ svg.append("svg:defs").selectAll("marker")
     .attr("viewBox", "0 -5 10 10")
     .attr("refX", 15)
     .attr("refY", -1.5)
-    .attr("markerWidth", 6)
-    .attr("markerHeight", 6)
+    .attr("markerWidth", 8)
+    .attr("markerHeight", 8)
     .attr("orient", "auto")
   .append("svg:path")
     .attr("d", "M0,-8L10,0L0,5");
@@ -360,10 +396,21 @@ var node = svg.selectAll(".node")
     .on("dblclick", dblclick)
     .call(force.drag);
 
+console.log(units.join());
+console.log("\n");
+// console.log(unitsPuzzle.join());
+
 // add the nodes
 node.append("circle")
   //  .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.name; })
-    .attr("r", 6);
+    .attr("r", (function(d) { 
+      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? 10 : 8;
+    }))
+    .attr("class", (function(d) { 
+      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? "focus" : "normal";
+    }));
+
+
 
 // add the text 
 node.append("text") 
@@ -391,6 +438,8 @@ function tick() {
         .attr("transform", function(d) { 
         return "translate(" + d.x + "," + d.y + ")"; });
 }
+
+d3.select("arrowHead").attr("fill", "white");
 
 // action to take on mouse click
 function click() {
@@ -484,7 +533,7 @@ function dblclick() {
       d3.select(obj).select("circle").transition()
           .duration(750)
           .attr("r", 6)
-          .style("fill", "#3f3")
+          .style("fill", "#0a0")
           .style("stroke", "#333");
       d3.select(obj).select("text").transition()
           .duration(750)
