@@ -522,19 +522,21 @@ console.log(obj);
     var url = d3.select(obj).select("text").property("__data__").name;
 
     if (url.replace('.htm','') != url) {    
-      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { window.open(linkSrc + url) }
-        else {
-          shrink(thisNode);
-      }
+ //     if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
+        window.open(linkSrc + url) 
+   //   }
+     //   else {
+   //     shrink(thisNode);
+   //   }
     }
     else {
-      if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
-          window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
+   //   if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
           window.open(joinSrc);
-        }
-        else {
-          shrink(thisNode, url);
-      }
+          window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
+   //     }
+   //     else {
+   //       shrink(thisNode, url);
+   //   }
     }
 
     function shrink(obj, url) {
@@ -543,7 +545,7 @@ console.log(obj);
           .attr("r", 8)
           .attr("class", "")
 
-      if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
+  //    if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
     }
 }
 
