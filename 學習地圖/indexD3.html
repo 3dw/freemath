@@ -445,34 +445,36 @@ d3.select("arrowHead").attr("fill", "white");
 // action to take on mouse click
 function click() {
 	var reMake = true;
+  var newItem = d3.select(this).select("text").property("__data__").name;
+
+  console.log(units.join());
+
+  if ($.inArray(newItem.replace('.htm',''),units) > -1) { dbl(this); return;};
+
     switch (mode) {
       case 'show':
-        d3.select(this).select("text").transition()
-        .duration(750)
-        .attr("x", 22)
-        .style("fill", "steelblue")
-        .style("stroke", "lightsteelblue")
-        .style("stroke-width", ".5px")
-        .style("font", "20px sans-serif")
           //  .style("text-decoration", "underline")
           //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
 
         d3.select(this).select("circle").transition()
-            .duration(750)
-            .attr("r", 16)
-            .style("fill", "lightsteelblue");
+            .duration(250)
+            .attr("r",10)
+            .attr("class", function(d) { 
+              units.push(d.name.replace('.htm',''));
+              return "focus";
+            });
+
         break;
 
       case 'traceback':
       case 'traceforward':
       case 'traceTwoWay':
-        units.push(d3.select(this).select("text").property("__data__").name.replace('.htm',''));
+        units.push(newItem.replace('.htm',''));
         showMap(src);
         break;
       case 'tracepuzzle':
 
       	var isPuzzle = false;
-      	var newItem = d3.select(this).select("text").property("__data__").name;
 
       	if ($.inArray(newItem, unitsPuzzle) > -1) isPuzzle = true;
 
@@ -509,10 +511,15 @@ function click() {
 
 // action to take on mouse double click
 function dblclick() {
+    dbl(this);
+} 
 
-    console.log(this); var thisNode = this;
+function dbl(obj) {
+console.log(obj);
 
-    var url = d3.select(this).select("text").property("__data__").name;
+    var thisNode = obj;
+
+    var url = d3.select(obj).select("text").property("__data__").name;
 
     if (url.replace('.htm','') != url) {    
       if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { window.open(linkSrc + url) }
@@ -533,19 +540,12 @@ function dblclick() {
     function shrink(obj, url) {
       d3.select(obj).select("circle").transition()
           .duration(750)
-          .attr("r", 6)
-          .style("fill", "#0a0")
-          .style("stroke", "#333");
-      d3.select(obj).select("text").transition()
-          .duration(750)
-          .attr("x", 12)
-          .style("stroke", "none")
-          .style("fill", "#906")
-          .style("stroke", "none")
-          .style("font", "16px sans-serif");
+          .attr("r", 8)
+          .attr("class", "")
+
       if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
     }
-} 
+}
 
 });
 
