@@ -133,7 +133,7 @@ if (!location.hash) {
   var hash = prompt("歡迎使用動態數學地圖!!\n"
                   +"請輸入年級範圍(例如3~6)\n"
                   +"如果要加上跨領域，請加上~c，(例如9~11~c)\n"
-                  +"M:不設上限，m:不設下限，(例如12~M或m~3)", "7~12")
+                  +"M:不設上限，m:不設下限，(例如12~M或m~3)", "6~7")
   location.hash = '#' + hash;
 }
 
@@ -287,9 +287,9 @@ links.forEach(function(link) {
 
 console.log('B');
 
-var width = 200 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
+var width = 300 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
           if (width > 960) width = 960;
-    height = 200 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
+    height = 300 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
           if (height > 960) height = 960;
 
 if (mode.indexOf('trace') > -1) {
@@ -449,7 +449,7 @@ function click() {
 
   console.log(units.join());
 
-  if ($.inArray(newItem.replace('.htm',''),units) > -1) { dbl(this); return;};
+  if ($.inArray(newItem.replace('.htm',''),units) > -1 || $.inArray(newItem.replace('.htm',''), unitsPuzzle) > -1 ) { dbl(this); return};
 
     switch (mode) {
       case 'show':
