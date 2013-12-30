@@ -115,6 +115,39 @@ $(document).ready(function(){
   if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g|m/)) {
     $("#noteMain").hide();
   }
+
+
+	//get the Detial Data
+
+	var detailSrc = "mathmapDetail.csv";
+	$.ajax({
+	    type: "GET",
+	    url: detailSrc,
+	    dataType: "text",
+//	    success: function(data) {alert(data)}
+	    success: function(data) {processData(data);}
+	 });
+
+	function processData(allText) {
+	    var allTextLines = allText.split(/\r\n|\n/);
+	    var headers = allTextLines[0].split(',');
+	    var lines = [];
+
+	    for (var i=1; i<allTextLines.length; i++) {
+	        var data = allTextLines[i].split(',');
+	        if (data.length == headers.length) {
+
+	           // var tarr = [];
+	           // for (var j=0; j<headers.length; j++) {
+	         //       tarr.push(headers[j]+":"+data[j]);
+	       //     }
+	     //       lines.push(tarr);
+	            details[data[0]] = data[1];
+	        }
+	    }
+	    console.log(details);
+	}
+
 });
 
 $(window).on('hashchange', function() {
@@ -126,11 +159,13 @@ var cross = false, reverse = false;
 var units = [], unitsPuzzle =[];
 var unitsNext = [], unitsPuzzleNext = [];// puzzle 用
 var mode = 'show'; 
+var details = {};
 
 var src = "mathmap.csv", 
   linkSrc = "../weblearn/", 
   yubiLinkSrc = "http://zh.wikipedia.org/wiki/", 
   joinSrc = "http://math.alearn.org.tw/join/index.html";
+
 
 
 if (!location.hash) {
@@ -225,6 +260,10 @@ function decorateTopic(str) {
 
 
 function showMap (src) {     
+
+
+
+
 
 // get the data
 d3.csv(src, function(error, links) {
@@ -459,27 +498,31 @@ d3.select("arrowHead").attr("fill", "white");
 
 function mouseover() {
 
-
     d3.select(this).selectAll("text").text('');
     var name = d3.select(this).select("text").property("__data__").name;
-    d3.select(this).select("text").text(decorateTopic(name));
+    d3.select(this).select("text").text(decorateTopic(name))
+    	.attr("transform","translate(20,-60) rotate(45 20 20)");
 
 
-    var detail = "按我! 認識我!";
-    try { detail = data.details[name] } catch(err) {console.log(err)}
+    var detail = "按我! 認識我!"; //var margin = -5;
+    try { 
+    	if (details[name.replace('.htm','')]) {
+    	 	detail = details[name.replace('.htm','')];
+    //	 	margin = -150;
+    	}
+	} catch(err) {console.log(err)}
 
     var el = d3.select(this);
         var words = detail.split(' ');
 
         for (var i = 0; i < words.length; i++) {
-
             var j = i+1;
-
-            var pre = j +")";
+            var pre = "Q" + j + "：";
 
             var text = el.append('text')
                     .text(pre + words[i])
-                    .attr("x", 8 * j)
+                    .attr("text-anchor", 'middle')
+//                    .attr("x", margin + 8 * j)
                     .attr("dy", 0.2 + 1.2 * j+ 'em')
                     .attr("class","detail");
     }
@@ -490,7 +533,8 @@ function mouseover() {
 function mouseout(){
     d3.select(this).selectAll("text").text('');
     var name = d3.select(this).select("text").property("__data__").name;
-    d3.select(this).select("text").text(decorateTopic(name));
+    d3.select(this).select("text").text(decorateTopic(name))
+    	.attr("transform","");;
 }
 
 
