@@ -116,6 +116,10 @@ $(document).ready(function(){
     $("#noteMain").hide();
   }
 
+  else {
+    $("#noteMain").fadeOut(10000);
+  }
+
 
 	//get the Detial Data
 
@@ -170,9 +174,9 @@ var src = "mathmap.csv",
 
 if (!location.hash) {
   var hash = prompt("歡迎使用動態數學地圖!!\n"
-                  +"請輸入年級範圍(例如3~6)\n"
-                  +"如果要加上跨領域，請加上~c，(例如9~11~c)\n"
-                  +"M:不設上限，m:不設下限，(例如12~M或m~3)", "6~7")
+                  +"基本地圖:輸入年級範圍(例如「3~6」)\n"
+                  +"連連看遊戲:輸入兩個單元(例如「加法&微積分!?」)\n"
+                  +"倒溯法:輸入一個單元(例如「三角函數!t」)", "加法&微積分!?")
   location.hash = '#' + hash;
 }
 
@@ -632,7 +636,7 @@ function dbl(obj) {
     }
     else {
    //   if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
-          window.open(joinSrc);
+       //   window.open(joinSrc);
           window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
    //     }
    //     else {
