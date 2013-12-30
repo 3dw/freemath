@@ -501,13 +501,15 @@ function mouseover() {
     d3.select(this).selectAll("text").text('');
     var name = d3.select(this).select("text").property("__data__").name;
     d3.select(this).select("text").text(decorateTopic(name))
+    	.transition()
+    	.duration(950)
     	.attr("transform","translate(20,-60) rotate(45 20 20)");
 
 
-    var detail = "按我! 認識我!"; //var margin = -5;
+    var detail = "我很好用! 我可以當你的工具! 做個朋友吧! 我很漂亮喔!"; //var margin = -5;
     try { 
     	if (details[name.replace('.htm','')]) {
-    	 	detail = details[name.replace('.htm','')];
+    	 	detail += " " + details[name.replace('.htm','')];
     //	 	margin = -150;
     	}
 	} catch(err) {console.log(err)}
@@ -515,17 +517,18 @@ function mouseover() {
     var el = d3.select(this);
         var words = detail.split(' ');
 
-        for (var i = 0; i < words.length; i++) {
+        	var i = Math.floor(Math.random()*words.length);
+   //     for (var i = 0; i < words.length; i++) {
             var j = i+1;
-            var pre = "Q" + j + "：";
+            var pre = "";//"Q" + j + "：";
 
             var text = el.append('text')
                     .text(pre + words[i])
                     .attr("text-anchor", 'middle')
 //                    .attr("x", margin + 8 * j)
-                    .attr("dy", 0.2 + 1.2 * j+ 'em')
+                    .attr("dy", -2 + 'em')   //0.2+1.2 * j
                     .attr("class","detail");
-    }
+ //   }
 
 }
 
@@ -534,6 +537,8 @@ function mouseout(){
     d3.select(this).selectAll("text").text('');
     var name = d3.select(this).select("text").property("__data__").name;
     d3.select(this).select("text").text(decorateTopic(name))
+    	.transition()
+    	.duration(150)
     	.attr("transform","");;
 }
 
