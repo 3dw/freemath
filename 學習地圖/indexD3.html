@@ -81,9 +81,12 @@ circle.focus {
 
 text {
   fill: #33f;
-  background-color: #fff;  
   font: 16px sans-serif;
   pointer-events: none;
+}
+
+text.detail {
+  fill: #b60;
 }
 
 li {
@@ -106,6 +109,7 @@ li {
 </div>
 
 <script>
+
 
 $(document).ready(function(){
   if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g|m/)) {
@@ -213,8 +217,14 @@ function showMode(mode, units, unitsPuzzle){
 
 var nodes = {}; // 共用的結點
 
-function showMap (src) {      
 
+
+function decorateTopic(str) {
+    return str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
+}
+
+
+function showMap (src) {     
 
 // get the data
 d3.csv(src, function(error, links) {
@@ -384,6 +394,7 @@ if (reverse) {
         .attr("d", "M0,-5L50,0L0,5"); //  ;
 }
 
+
 // arrowHead color
 
 // svg.selectAll("polygon.arrowHeads").style("fill", "steelblue");
@@ -395,7 +406,10 @@ var node = svg.selectAll(".node")
     .attr("class", "node")
     .on("click", click)
     .on("dblclick", dblclick)
+    .on("mouseover", mouseover)
+    .on("mouseout", mouseout)
     .call(force.drag);
+
 
 console.log(units.join());
 console.log("\n");
@@ -418,7 +432,7 @@ node.append("text")
     .attr("x", 12)
     .attr("dy", ".35em")
     .text(function(d) { 
-      return d.name.indexOf('.htm') > -1 ? '*' + d.name.replace('.htm','').split('_')[0] + '*' : d.name;
+      return decorateTopic(d.name);
     });
 
 // add the curvy lines
@@ -441,6 +455,44 @@ function tick() {
 }
 
 d3.select("arrowHead").attr("fill", "white");
+
+
+function mouseover() {
+
+
+    d3.select(this).selectAll("text").text('');
+    var name = d3.select(this).select("text").property("__data__").name;
+    d3.select(this).select("text").text(decorateTopic(name));
+
+
+    var detail = "按我! 認識我!";
+    try { detail = data.details[name] } catch(err) {console.log(err)}
+
+    var el = d3.select(this);
+        var words = detail.split(' ');
+
+        for (var i = 0; i < words.length; i++) {
+
+            var j = i+1;
+
+            var pre = j +")";
+
+            var text = el.append('text')
+                    .text(pre + words[i])
+                    .attr("x", 8 * j)
+                    .attr("dy", 0.2 + 1.2 * j+ 'em')
+                    .attr("class","detail");
+    }
+
+}
+
+
+function mouseout(){
+    d3.select(this).selectAll("text").text('');
+    var name = d3.select(this).select("text").property("__data__").name;
+    d3.select(this).select("text").text(decorateTopic(name));
+}
+
 
 // action to take on mouse click
 function click() {
@@ -515,7 +567,7 @@ function dblclick() {
 } 
 
 function dbl(obj) {
-console.log(obj);
+  console.log(obj);
 
     var thisNode = obj;
 
@@ -547,7 +599,9 @@ console.log(obj);
 
   //    if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
     }
-}
+
+
+  }
 
 });
 
