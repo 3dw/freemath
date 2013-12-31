@@ -80,8 +80,13 @@ circle.focus {
 }
 
 text {
-  fill: #33f;
+  fill: #d9f;
   font: 16px sans-serif;
+  pointer-events: none;
+}
+text.focus {
+  fill: #933;
+  font: 18px sans-serif;
   pointer-events: none;
 }
 
@@ -368,13 +373,12 @@ if (mode.indexOf('trace') > -1) {
     console.log(unitsPuzzleNext.join());
 
     if (unitsNext.filter(function(n) {
-        return unitsPuzzleNext.indexOf(n) > -1
-    }).length >= 2) {
+        return unitsPuzzle.indexOf(n) > -1
+    }).length > 0) {
       alert("恭喜你，連上了!!");
     }
   }
 }
-
 
 console.log('C');
 
@@ -473,7 +477,7 @@ console.log("\n");
 node.append("circle")
   //  .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.name; })
     .attr("r", (function(d) { 
-      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? 10 : 8;
+      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? 12 : 8;
     }))
     .attr("class", (function(d) { 
       return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? "focus" : "normal";
@@ -487,7 +491,10 @@ node.append("text")
     .attr("dy", ".35em")
     .text(function(d) { 
       return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? decorateTopic(d.name) : decorateTopic(d.name,1);
-    });
+    })
+    .attr("class", (function(d) { 
+      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? "focus" : "normal";
+    }));
 
 
 
@@ -575,13 +582,15 @@ function click() {
           //  .style("text-decoration", "underline")
           //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
 
+        units.push(d.name.replace('.htm',''));
+
         d3.select(this).select("circle").transition()
             .duration(250)
-            .attr("r",10)
-            .attr("class", function(d) { 
-              units.push(d.name.replace('.htm',''));
-              return "focus";
-            });
+            .attr("r",12)
+            .attr("class", "focus");
+
+        d3.select(this).select("text")
+            .attr("class", "focus");
 
         break;
 
@@ -651,7 +660,10 @@ function dbl(obj) {
     else {
    //   if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
        //   window.open(joinSrc);
-          window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
+         if (confirm("前往〈" + url.split('與')[0].split('::').reverse()[0] +"〉?")) { 
+            window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
+          }
+          
    //     }
    //     else {
    //       shrink(thisNode, url);
