@@ -10,7 +10,7 @@
 <meta property="og:title" content="動態數學大地圖自由數學freemath" />
 <meta property="og:image" content="%E5%8B%95%E6%85%8B%E6%95%B8%E5%AD%B8%E5%9C%B0%E5%9C%96%EF%BC%9A1___4%E5%B9%B4%E7%B4%9A_%E8%B7%A8%E9%A0%98%E5%9F%9F_.jpg" />
   
-  <title>動態數學大地圖</title>
+  <title>動態數學地圖</title>
 
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="http://d3js.org/d3.v3.js"></script>
@@ -154,9 +154,11 @@ $(document).ready(function(){
 
 });
 
+// hashchange -> reload
 $(window).on('hashchange', function() {
-  location.reload();
+    setTimeOut(function(){ location.reload() }, 500);
 });
+
 
 var m = 0.1, M = Infinity;
 var cross = false, reverse = false;
@@ -177,7 +179,7 @@ if (!location.hash) {
                   +"基本地圖:輸入年級範圍(例如「3~6」)\n"
                   +"連連看遊戲:輸入兩個單元(例如「加法&微積分!?」)\n"
                   +"倒溯法:輸入一個單元(例如「三角函數!t」)", "加法&微積分!?")
-  location.hash = '#' + hash;
+  location.hash = '#' + encodeURI(hash);
 }
 
 if (location.hash.replace('#','').split('~')[1]) {
@@ -258,15 +260,16 @@ var nodes = {}; // 共用的結點
 
 
 
-function decorateTopic(str) {
-    return str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
+function decorateTopic(str, s) {
+    var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
+    
+    if (ans.substr(0,s) == '*') s += 1;
+
+    return s ? ans.substr(0,s) : ans; 
 }
 
 
 function showMap (src) {     
-
-
-
 
 
 // get the data
@@ -340,17 +343,19 @@ links.forEach(function(link) {
 
 console.log('B');
 
-var width = 300 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
-          if (width > 960) width = 960;
-    height = 300 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
+// var width = 300 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
+  //        if (width > 960) width = 960;
+
+var width = $(window).width();
+var height = 300 + (M*10-(m == -Infinity ? 0 : m)*10+1)*100;
           if (height > 960) height = 960;
 
 if (mode.indexOf('trace') > -1) {
-  width = 450;
+  width = $(window).width();
   height = 450;
   $("#noteMain").hide();
   if (mode == 'tracepuzzle') {
-	  width = 960;
+	  $(window).width();
 	  height = 960;
 
     console.log(unitsNext.join());
@@ -358,7 +363,7 @@ if (mode.indexOf('trace') > -1) {
 
     if (unitsNext.filter(function(n) {
         return unitsPuzzleNext.indexOf(n) > -1
-    }).length > 0) {
+    }).length >= 2) {
       alert("恭喜你，連上了!!");
     }
   }
@@ -475,8 +480,10 @@ node.append("text")
     .attr("x", 12)
     .attr("dy", ".35em")
     .text(function(d) { 
-      return decorateTopic(d.name);
+      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? decorateTopic(d.name) : decorateTopic(d.name,1);
     });
+
+
 
 // add the curvy lines
 function tick() {
@@ -497,7 +504,6 @@ function tick() {
         return "translate(" + d.x + "," + d.y + ")"; });
 }
 
-d3.select("arrowHead").attr("fill", "white");
 
 
 function mouseover() {
@@ -627,9 +633,9 @@ function dbl(obj) {
     var url = d3.select(obj).select("text").property("__data__").name;
 
     if (url.replace('.htm','') != url) {    
- //     if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
+      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
         window.open(linkSrc + url) 
-   //   }
+      }
      //   else {
    //     shrink(thisNode);
    //   }
@@ -661,6 +667,7 @@ function dbl(obj) {
 };
 
 showMap(src);
+
 
 
 </script>
