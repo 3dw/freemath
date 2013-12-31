@@ -115,7 +115,8 @@ li {
 <script>
 
 
-$(document).ready(function(){
+$(document).ready(function() {
+
   if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g|m/)) {
     $("#noteMain").hide();
   }
@@ -124,39 +125,40 @@ $(document).ready(function(){
     $("#noteMain").fadeOut(10000);
   }
 
-
-	//get the Detial Data
-
-	var detailSrc = "mathmapDetail.csv";
-	$.ajax({
-	    type: "GET",
-	    url: detailSrc,
-	    dataType: "text",
-//	    success: function(data) {alert(data)}
-	    success: function(data) {processData(data);}
-	 });
-
-	function processData(allText) {
-	    var allTextLines = allText.split(/\r\n|\n/);
-	    var headers = allTextLines[0].split(',');
-	    var lines = [];
-
-	    for (var i=1; i<allTextLines.length; i++) {
-	        var data = allTextLines[i].split(',');
-	        if (data.length == headers.length) {
-
-	           // var tarr = [];
-	           // for (var j=0; j<headers.length; j++) {
-	         //       tarr.push(headers[j]+":"+data[j]);
-	       //     }
-	     //       lines.push(tarr);
-	            details[data[0]] = data[1];
-	        }
-	    }
-	    console.log(details);
-	}
-
 });
+
+
+//get the Detial Data
+
+var detailSrc = "mathmapDetail.csv";
+$.ajax({
+    type: "GET",
+    url: detailSrc,
+    dataType: "text",
+//	    success: function(data) {alert(data)}
+    success: function(data) {processData(data);}
+ });
+
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+    var lines = [];
+
+    for (var i=1; i<allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+
+           // var tarr = [];
+           // for (var j=0; j<headers.length; j++) {
+         //       tarr.push(headers[j]+":"+data[j]);
+       //     }
+     //       lines.push(tarr);
+            details[data[0]] = data[1];
+        }
+    }
+    console.log(details);
+}
+
 
 // hashchange -> reload
 $(window).on('hashchange', function() {
@@ -180,10 +182,10 @@ var src = "mathmap.csv",
 
 if (!location.hash) {
   var hash = prompt("歡迎使用動態數學地圖!!\n"
-                  +"基本地圖:輸入年級範圍(例如「3~6」)\n"
-                  +"連連看遊戲:輸入兩個單元(例如「加法&微積分!?」)\n"
-                  +"遇到困難時倒溯先備知識:輸入一個單元(例如「三角函數!t」)"
-                  +"單元前後雙向展開:輸入一個單元(例如「正負數!」)"
+                  +"範圍查詢基本地圖=>輸入年級範圍(例如「3~6」)\n"
+                  +"連連看遊戲=>請輸入兩個單元(例如「加法&微積分!?」)\n"
+                  +"倒溯先備知識=>請輸入一個單元(例如「三角函數!t」)"
+                  +"雙向展開=>請直接輸入一個單元(例如「正負數」)"
                    ,"加法&微積分!?")
   location.hash = '#' + encodeURI(hash);
 }
@@ -265,7 +267,6 @@ function showMode(mode, units, unitsPuzzle){
 var nodes = {}; // 共用的結點
 
 
-
 function decorateTopic(str, s) {
     var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
     
@@ -276,7 +277,6 @@ function decorateTopic(str, s) {
 
 
 function showMap (src) {     
-
 
 // get the data
 d3.csv(src, function(error, links) {
@@ -396,7 +396,7 @@ var  v = d3.scale.linear().range([0, 100]);
 v.domain([0, d3.max(links, function(d) { return d.value; })]);
 
 // asign a type per value to encode opacity
-links.forEach(function(link) {
+links.forEach(function(link){ 
   if (v(link.value) <= 25) {
     link.type = "twofive";
   } else if (v(link.value) <= 50 && v(link.value) > 25) {
@@ -656,19 +656,18 @@ function dbl(obj) {
    //     else {
    //       shrink(thisNode, url);
    //   }
-    }
+}
 
-    function shrink(obj, url) {
+function shrink(obj, url) {
       d3.select(obj).select("circle").transition()
           .duration(750)
           .attr("r", 8)
           .attr("class", "")
-
   //    if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
-    }
+}
 
 
-  }
+}
 
 });
 
