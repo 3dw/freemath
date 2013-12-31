@@ -89,6 +89,10 @@ text.detail {
   fill: #b60;
 }
 
+text.hidden {
+  display: none;
+}
+
 li {
   margin: 5px;
   color: rgba(155,100,100,1);
@@ -178,7 +182,9 @@ if (!location.hash) {
   var hash = prompt("歡迎使用動態數學地圖!!\n"
                   +"基本地圖:輸入年級範圍(例如「3~6」)\n"
                   +"連連看遊戲:輸入兩個單元(例如「加法&微積分!?」)\n"
-                  +"倒溯法:輸入一個單元(例如「三角函數!t」)", "加法&微積分!?")
+                  +"遇到困難時倒溯先備知識:輸入一個單元(例如「三角函數!t」)"
+                  +"單元前後雙向展開:輸入一個單元(例如「正負數!」)"
+                   ,"加法&微積分!?")
   location.hash = '#' + encodeURI(hash);
 }
 
@@ -220,7 +226,7 @@ if (location.hash.replace('#','').split('~')[1]) {
   	//	alert(unitsPuzzle[0]); 
   		break;
   	default:
-  		mode = 'traceback';
+  		mode = 'traceTwoWay';
   	}
     document.title = '動態數學地圖：'+showMode(mode,units,unitsPuzzle);
 }
@@ -532,12 +538,14 @@ function mouseover() {
             var j = i+1;
             var pre = "";//"Q" + j + "：";
 
-            var text = el.append('text')
+            el.append('text')
                     .text(pre + words[i])
                     .attr("text-anchor", 'middle')
 //                    .attr("x", margin + 8 * j)
                     .attr("dy", -2 + 'em')   //0.2+1.2 * j
-                    .attr("class","detail");
+                    .attr("class","detail").transition()
+                      .duration(950)
+                      .attr("transform","translate(-30,-60)");
  //   }
 
 }
