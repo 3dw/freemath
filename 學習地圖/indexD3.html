@@ -1,5 +1,7 @@
 
 <!DOCTYPE html>
+
+<!-- TODO: 加入Firebase, 連連看記錄Hall of fame-->
 <html>
 <head>
 
@@ -186,9 +188,13 @@ var src = "mathmap.csv",
 
 
 if (!location.hash) {
+  function pickone (list) { return list[Math.floor(Math.random() * list.length)]}
+  var u1 = pickone(['加法','減法','生活經驗','除法','正負數','面積的估算']);
+  var u2 = pickone(['微積分','三角函數','向量','微分方程','資訊科學','抽象代數','實無限分析']);
+
   var hash = prompt("歡迎使用動態數學地圖!!\n"
                   +"範圍查詢基本地圖=>輸入年級範圍(例如「3~6」)\n"
-                  +"連連看遊戲=>請輸入兩個單元(例如「加法&微積分!?」)\n"
+                  +"連連看遊戲=>請輸入兩個單元(例如「"+u1+"&"+u2+"!?」)\n"
                   +"倒溯先備知識=>請輸入一個單元(例如「三角函數!t」)"
                   +"雙向展開=>請直接輸入一個單元(例如「正負數」)"
                    ,"加法&微積分!?")
@@ -276,6 +282,8 @@ function decorateTopic(str, s) {
     var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
     
     if (ans.substr(0,s) == '*') s += 1;
+
+    if (mode != 'tracepuzzle') s = undefined;
 
     return s ? ans.substr(0,s) : ans; 
 }
