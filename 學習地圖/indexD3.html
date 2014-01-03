@@ -82,9 +82,12 @@ circle.focus {
 }
 
 text {
-  fill: #d9f;
+/*  fill: #d9f; */
   font: 16px sans-serif;
   pointer-events: none;
+}
+text.normal {
+  fill: #a6c;
 }
 text.focus {
   fill: #933;
@@ -661,9 +664,9 @@ function dbl(obj) {
       if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
         window.open(linkSrc + url) 
       }
-     //   else {
-   //     shrink(thisNode);
-   //   }
+       else {
+        shrink(thisNode);
+      }
     }
     else {
    //   if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
@@ -672,20 +675,24 @@ function dbl(obj) {
             window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
           }
           
-   //     }
-   //     else {
-   //       shrink(thisNode, url);
-   //   }
+      else {
+          shrink(thisNode, url);
+      }
 }
 
 function shrink(obj, url) {
       d3.select(obj).select("circle").transition()
           .duration(750)
           .attr("r", 8)
-          .attr("class", "")
-  //    if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
-}
+          .attr("class", "");
+      d3.select(obj).select("text").transition()
+          .duration(750)
+          .attr("class", "normal");
 
+      units = $.grep(units, function(value) {
+        return value != d3.select(obj).select("text").property("__data__").name.replace('.htm','');
+      });
+}
 
 }
 
