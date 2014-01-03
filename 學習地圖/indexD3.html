@@ -590,7 +590,7 @@ function click() {
           //  .style("text-decoration", "underline")
           //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
 
-        units.push(d.name.replace('.htm',''));
+        units.push(newItem.replace('.htm',''));
 
         d3.select(this).select("circle").transition()
             .duration(250)
