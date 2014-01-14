@@ -18,7 +18,20 @@
 <script src="http://d3js.org/d3.v3.js"></script>
 <style>
 
+@media print {
+  .noPrint {
+    display: none;
+  }
+  body {
+    width: 250mm;
+  }
 
+}
+
+#doPrint {
+  float: right;
+  font-size: 150%;
+}
 
 svg {
   display: block;
@@ -110,7 +123,10 @@ li {
 </head>
 <body>
 
-<div id = "noteMain" style = "float:right; margin-right: 50px;">
+
+<button id = "doPrint" class = "noPrint" onclick = "window.print()"> 列印紙本地圖 </button>
+
+<div id = "noteMain"  class = "noPrint" style = "float:right; margin-right: 50px;">
   <ol>
     <li>隨意拖動，玩玩這張地圖</li>
     <li>點擊圓圈，標記出您會的單元</li>
@@ -169,7 +185,8 @@ function processData(allText) {
 
 // hashchange -> reload
 $(window).on('hashchange', function() {
-    setTimeOut(function(){ location.reload() }, 500);
+    setTimeout(function(){ location.reload() }, 500);
+    console.log('hashchange');
 });
 
 
@@ -197,8 +214,9 @@ if (!location.hash) {
                   +"連連看遊戲=>請輸入兩個單元(例如「"+u1+"&"+u2+"!?」)\n"
                   +"倒溯先備知識=>請輸入一個單元(例如「三角函數!t」)"
                   +"雙向展開=>請直接輸入一個單元(例如「正負數」)"
-                   ,"加法&微積分!?")
-  location.hash = '#' + encodeURI(hash);
+                   ,"加法&微積分!?");
+
+  setTimeout(function(){location.hash = encodeURI(hash)} , 500);
 }
 
 if (location.hash.replace('#','').split('~')[1]) {

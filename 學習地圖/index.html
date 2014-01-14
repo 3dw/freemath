@@ -24,6 +24,11 @@
   button, select{
     position: relative;
     z-index: 100;
+    font-size: 150%;
+  }
+
+  #doPrint {
+    float: right;
   }
 </style>
 
@@ -53,11 +58,20 @@
 
   <h3>====地圖====</h3>
 
-  <Select id = "Range" name="Range"  ng-model="range" ng-init = "range = '小學數學學習地圖'" style = "font-size:1.2rem">
-  　<option ng-repeat = "r in ranges" value="{{r}}">{{r}}</option>
-  </Select>
+  <form>
 
-  <button onclick = "location = 'indexD3.html'">前往動態地圖(Beta版)</button>
+    選擇：
+    <Select  size="2" id = "Range" name="Range"  ng-model="range" ng-init = "range= '小學數學學習地圖'">
+  　   <option ng-repeat = "r in ranges" value="{{r}}">{{r}}</option>
+    </Select>
+
+
+    <button id = "doPrint" ng-click = "printUrl(range,'.pdf')"> 列印紙本 </button>
+
+    <button onclick = "window.open('indexD3.html')">動態學習地圖(new!)</button>
+
+
+  </form>
 
   <ul>
   	<li ng-repeat = "i in [0,1,2,3,4,5]">
@@ -76,8 +90,16 @@ $(document).ready(function(){
 
 var fmIndexApp = angular.module('fmIndexApp', []);
 function Ctrl($scope) {
+  $scope.$ = jQuery;
 	$scope.ranges = ["小學數學學習地圖","國中數學學習地圖","高中數學學習地圖"];
 	$scope.colors = ["#4bf","#000","#880","#0f0"];
+  $scope.printUrl = function(title,tail) {
+        printWindow = window.open(
+          title + tail,
+          '_blank'
+          );
+        printWindow.window.print();
+  }
 }
 
 fmIndexApp.directive("drawing", function(){
