@@ -172,7 +172,7 @@ function processData(allText) {
 
 // hashchange -> reload
 $(window).on('hashchange', function() {
-    setTimeOut(function(){ location.reload() }, 500);
+    setTimeout(function(){ location.reload() }, 500);
 });
 
 
@@ -218,7 +218,8 @@ if (location.hash.replace('#','').split('~')[1]) {
 } else {
 
   if (!units[0]) {
-  	units = decodeURI(location.hash.split('!')[0].replace('#','')).split('&')
+  	units = decodeURI(location.hash.split('!')[0].replace('#','')).split('&');
+  	console.log(units.join());
   };
 
   cross = true;
@@ -282,7 +283,7 @@ var nodes = {}; // 共用的結點
 
 
 function decorateTopic(str, s) {
-    var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
+    var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').replace(/_.+/, '').split('_')[0] + '*' : str;
     
     if (ans.substr(0,1) == '*') s += 1;
 
@@ -323,31 +324,31 @@ links.forEach(function(link) {
         (link.value <= M || (link.value.split('~')[0] && link.value.split('~')[0] <= M))) 
     {
       if ((link.source.indexOf('::') == -1 && link.target.indexOf('::') == -1) || cross == true) {
-   //        console.log(link.target.replace('.htm',''));
+   //        console.log(link.target.replace('.htm','').replace(/_.+/, ''));
   //         console.log(units);
- //          console.log($.inArray(link.target.replace('.htm',''), units));
+ //          console.log($.inArray(link.target.replace('.htm','').replace(/_.+/, ''), units));
 
            switch (mode) {
               case 'traceback':
-              if ($.inArray(link.target.replace('.htm',''), units) > -1) showit();
+              if ($.inArray(link.target.replace('.htm','').replace(/_.+/, ''), units) > -1) showit();
                 break;
               case 'traceforward':
-              if ($.inArray(link.source.replace('.htm',''), units) > -1) showit();
+              if ($.inArray(link.source.replace('.htm','').replace(/_.+/, ''), units) > -1) showit();
                 break;
               case 'traceTwoWay':
-                if ($.inArray(link.target.replace('.htm',''), units) > -1 || $.inArray(link.source.replace('.htm',''), units) > -1) showit();
+                if ($.inArray(link.target.replace('.htm','').replace(/_.+/, ''), units) > -1 || $.inArray(link.source.replace('.htm','').replace(/_.+/, ''), units) > -1) showit();
                 break;
               case 'tracepuzzle':
 
                 var compSource = typeof(link.source) == Object ? link.source.name : link.source;
                 var compTarget = typeof(link.target) == Object ? link.target.name : link.target;
 
-                if ($.inArray(compTarget.replace('.htm',''), units) > -1) {
-                  unitsNext.push(compSource.replace('.htm',''));
+                if ($.inArray(compTarget.replace('.htm','').replace(/_.+/, ''), units) > -1) {
+                  unitsNext.push(compSource.replace('.htm','').replace(/_.+/, ''));
                   showit();
                 }
-                else if ($.inArray(compSource.replace('.htm',''), unitsPuzzle) > -1) {           
-                  unitsPuzzleNext.push(compTarget.replace('.htm',''));
+                else if ($.inArray(compSource.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1) {           
+                  unitsPuzzleNext.push(compTarget.replace('.htm','').replace(/_.+/, ''));
                   showit();
                 }
                 break;
@@ -488,10 +489,10 @@ console.log("\n");
 node.append("circle")
   //  .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.name; })
     .attr("r", (function(d) { 
-      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? 12 : 8;
+      return ($.inArray(d.name.replace('.htm','').replace(/_.+/, ''), units) > -1 || $.inArray(d.name.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1) ? 12 : 8;
     }))
     .attr("class", (function(d) { 
-      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? "focus" : "normal";
+      return ($.inArray(d.name.replace('.htm','').replace(/_.+/, ''), units) > -1 || $.inArray(d.name.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1) ? "focus" : "normal";
     }));
 
 
@@ -501,10 +502,10 @@ node.append("text")
     .attr("x", 12)
     .attr("dy", ".35em")
     .text(function(d) { 
-      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? decorateTopic(d.name) : decorateTopic(d.name,2);
+      return ($.inArray(d.name.replace('.htm','').replace(/_.+/, ''), units) > -1 || $.inArray(d.name.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1) ? decorateTopic(d.name) : decorateTopic(d.name,2);
     })
     .attr("class", (function(d) { 
-      return ($.inArray(d.name.replace('.htm',''), units) > -1 || $.inArray(d.name.replace('.htm',''), unitsPuzzle) > -1) ? "focus" : "normal";
+      return ($.inArray(d.name.replace('.htm','').replace(/_.+/, ''), units) > -1 || $.inArray(d.name.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1) ? "focus" : "normal";
     }));
 
 
@@ -542,8 +543,8 @@ function mouseover() {
 
     var detail = "我很好用! 我可以當你的工具! 做個朋友吧! 我很漂亮喔!"; //var margin = -5;
     try { 
-    	if (details[name.replace('.htm','')]) {
-    	 	detail += " " + details[name.replace('.htm','')];
+    	if (details[name.replace('.htm','').replace(/_.+/, '')]) {
+    	 	detail += " " + details[name.replace('.htm','').replace(/_.+/, '')];
     //	 	margin = -150;
     	}
 	} catch(err) {console.log(err)}
@@ -586,14 +587,14 @@ function click() {
 
   console.log(units.join());
 
-  if ($.inArray(newItem.replace('.htm',''),units) > -1 || $.inArray(newItem.replace('.htm',''), unitsPuzzle) > -1 ) { dbl(this); return};
+  if ($.inArray(newItem.replace('.htm','').replace(/_.+/, ''),units) > -1 || $.inArray(newItem.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1 ) { dbl(this); return};
 
     switch (mode) {
       case 'show':
           //  .style("text-decoration", "underline")
-          //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
+          //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','').replace(/_.+/, '') +'〉'; });
 
-        units.push(newItem.replace('.htm',''));
+        units.push(newItem.replace('.htm','').replace(/_.+/, ''));
 
         d3.select(this).select("circle").transition()
             .duration(250)
@@ -608,7 +609,7 @@ function click() {
       case 'traceback':
       case 'traceforward':
       case 'traceTwoWay':
-        units.push(newItem.replace('.htm',''));
+        units.push(newItem.replace('.htm','').replace(/_.+/, ''));
         showMap(src);
         break;
       case 'tracepuzzle':
@@ -622,7 +623,7 @@ function click() {
 
 	        	var n = d3.select(this).select("text").property("__data__").par[i].name;
 
-	        	if ($.inArray(n.replace('.htm',''), unitsPuzzle) > -1) {
+	        	if ($.inArray(n.replace('.htm','').replace(/_.+/, ''), unitsPuzzle) > -1) {
 	        		isPuzzle = true;
 	        	}
 
@@ -630,12 +631,12 @@ function click() {
 	    } catch(err) {	console.log(err) }
 
         if (isPuzzle) {
-        	unitsPuzzle.push(newItem.replace('.htm',''));
+        	unitsPuzzle.push(newItem.replace('.htm','').replace(/_.+/, ''));
         }
 
         else {
-        	if ($.inArray(newItem.replace('.htm',''), units) == -1) {
-        		units.push(newItem.replace('.htm',''));
+        	if ($.inArray(newItem.replace('.htm','').replace(/_.+/, ''), units) == -1) {
+        		units.push(newItem.replace('.htm','').replace(/_.+/, ''));
         	}
         		else { reMake = false } 		    
 	    }
@@ -660,8 +661,8 @@ function dbl(obj) {
 
     var url = d3.select(obj).select("text").property("__data__").name;
 
-    if (url.replace('.htm','') != url) {    
-      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
+    if (url.replace('.htm','').replace(/_.+/, '') != url) {    
+      if (confirm("前往〈" + url.replace('.htm','').replace(/_.+/, '') +"〉?")) { 
         window.open(linkSrc + url) 
       }
        else {
@@ -690,7 +691,7 @@ function shrink(obj, url) {
           .attr("class", "normal");
 
       units = $.grep(units, function(value) {
-        return value != d3.select(obj).select("text").property("__data__").name.replace('.htm','');
+        return value != d3.select(obj).select("text").property("__data__").name.replace('.htm','').replace(/_.+/, '');
       });
 }
 
