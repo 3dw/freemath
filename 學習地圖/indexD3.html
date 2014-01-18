@@ -195,6 +195,7 @@ var units = [], unitsPuzzle =[];
 var unitsNext = [], unitsPuzzleNext = [];// puzzle 用
 var mode = 'show'; 
 var details = {};
+var game;
 
 var src = "mathmap.csv", 
   linkSrc = "../weblearn/", 
@@ -266,6 +267,7 @@ if (cross) document.title += '(跨領域)';
 
 
 if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g/)){
+  game = true;
   src = "mathgame.csv";
   linkSrc = "../realgame/"; 
   yubiLinkSrc = "https://www.google.com.tw/search?q=";
@@ -554,24 +556,33 @@ function mouseover() {
     	.attr("transform","translate(20,-60) rotate(45 20 20)");
 
 
-    var detail = "我很好用! 我可以當你的工具! 做個朋友吧! 我很漂亮喔!"; //var margin = -5;
+    var detail = "";
+
+    if (!game) detail += "我很好用! 我可以當你的工具! 做個朋友吧! 我很漂亮喔! "; //var margin = -5;
+
     try { 
     	if (details[name.replace('.htm','')]) {
-    	 	detail += " " + details[name.replace('.htm','')];
+    	 	detail += details[name.replace('.htm','')];
     //	 	margin = -150;
     	}
 	} catch(err) {console.log(err)}
 
     var el = d3.select(this);
-        var words = detail.split(' ');
 
-        	var i = Math.floor(Math.random()*words.length);
+        var lines = detail.split(' ');
+        var hint;
+
+        if (!game) {
+          hint = lines[Math.floor(Math.random()*lines.length)];
+        } else {
+          hint = "玩法：" + lines.join('。 ');
+        }
+
    //     for (var i = 0; i < words.length; i++) {
-            var j = i+1;
-            var pre = "";//"Q" + j + "：";
+    //        var j = i+1;
 
             el.append('text')
-                    .text(pre + words[i])
+                    .text(hint)
                     .attr("text-anchor", 'middle')
 //                    .attr("x", margin + 8 * j)
                     .attr("dy", -2 + 'em')   //0.2+1.2 * j
@@ -604,10 +615,11 @@ function click() {
 
     switch (mode) {
       case 'show':
+
           //  .style("text-decoration", "underline")
           //  .text(function(d) { return "按兩下前往〈" + d.name.replace('.htm','') +'〉'; });
 
-        units.push(d.name.replace('.htm',''));
+        units.push(newItem.replace('.htm',''));
 
         d3.select(this).select("circle").transition()
             .duration(250)
@@ -616,6 +628,21 @@ function click() {
 
         d3.select(this).select("text")
             .attr("class", "focus");
+
+        if (game) {
+
+            var detail = "";
+
+            try { 
+              if (details[newItem.replace('.htm','')]) {
+                detail += details[newItem.replace('.htm','')];
+              }
+          } catch(err) {console.log(err)}
+
+          var a = 0;
+
+          alert(detail.split(/\s/).map(function(s){a++; return a+". "+s }).join('\n\n'));
+        }
 
         break;
 
@@ -674,25 +701,25 @@ function dbl(obj) {
 
     var url = d3.select(obj).select("text").property("__data__").name;
 
-    if (url.replace('.htm','') != url) {    
-      if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
-        window.open(linkSrc + url) 
+    if (!game) {   
+      if (url.replace('.htm','') != url) {
+       
+        if (confirm("前往〈" + url.replace('.htm','') +"〉?")) { 
+            window.open(linkSrc + url) 
+        }
+        
+      } else {
+       //   if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
+           //   window.open(joinSrc);
+             if (confirm("前往〈" + url.split('與')[0].split('::').reverse()[0] +"〉?")) { 
+                window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
+              }
+                   
       }
-     //   else {
-   //     shrink(thisNode);
-   //   }
     }
     else {
-   //   if (confirm("自由數學Freemath目前尚無〈" + url +"〉。\n您願意共筆或樂捐支持自由數學Freemath的編創嗎?")) { 
-       //   window.open(joinSrc);
-         if (confirm("前往〈" + url.split('與')[0].split('::').reverse()[0] +"〉?")) { 
-            window.open(yubiLinkSrc + url.split('與')[0].split('::').reverse()[0]);
-          }
-          
-   //     }
-   //     else {
-   //       shrink(thisNode, url);
-   //   }
+          shrink(thisNode, url);
+    }
 }
 
 function shrink(obj, url) {
@@ -700,11 +727,13 @@ function shrink(obj, url) {
           .duration(750)
           .attr("r", 8)
           .attr("class", "")
+
+      d3.select(obj).select("text")
+            .attr("class", "");
+
   //    if(url) window.open(yubiLinkSrc + url.split(/與|::/)[0]);
 }
 
-
-}
 
 });
 
