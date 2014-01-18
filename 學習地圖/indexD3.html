@@ -10,11 +10,17 @@
 <meta property="og:url" content="http://bestian.github.io/....../%E5%AD%B8....../indexD3.html" />
 <meta property="og:title" content="動態數學大地圖自由數學freemath" />
 <meta property="og:image" content="%E5%8B%95%E6%85%8B%E6%95%B8%E5%AD%B8%E5%9C%B0%E5%9C%96%EF%BC%9A1___4%E5%B9%B4%E7%B4%9A_%E8%B7%A8%E9%A0%98%E5%9F%9F_.jpg" />
+
   
   <title>動態數學地圖</title>
 
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="http://d3js.org/d3.v3.js"></script>
+
+<script type="text/javascript" src="../javascripts/jAlert/jquery.jalert.packed.js"></script>
+<link rel="stylesheet" type="text/css" href="../javascripts/jAlert/jalert.css" />
+
+
 <style>
 
 @media print {
@@ -24,6 +30,7 @@
   body {
     width: 250mm;
   }
+
 
 }
 
@@ -118,6 +125,15 @@ li {
 }
 
 
+
+.msg-box-cont {
+  position: fixed;
+}
+
+.msg-text {
+  font-size: 150%;
+}
+
 </style>
 </head>
 <body>
@@ -141,11 +157,10 @@ $(document).ready(function() {
 
   if (location.hash.split('~')[2] && location.hash.split('~')[2].match(/g|m/)) {
     $("#noteMain").hide();
-  }
-
-  else {
+  } else {
     $("#noteMain").fadeOut(10000);
   }
+
 
 });
 
@@ -643,7 +658,14 @@ function click() {
 
           var a = 0;
 
-          alert(detail.split(/\s/).map(function(s){a++; return a+". "+s }).join('\n\n'));
+          $(".msg-box-cont").remove();
+          $(document).jAlert(
+            "<b>"+newItem.replace('.htm','')+"</b>"
+            +"<hr/>"
+            +detail.split(/\s/).map(function(s){a++; return a+". "+s }).join('<br/><br/>'), "info", 'gameInfo');
+
+          $(".msg-box-cont").click(function(){ $(".msg-box-cont").remove(); });
+
         }
 
         break;

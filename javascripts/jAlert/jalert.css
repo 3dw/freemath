@@ -1,0 +1,112 @@
+/**
+* jAlert v.1.0.0
+* Copyright (c) 2008 Julian Castaneda
+* http://www.smooka.com/blog/
+* Requires: jQuery 1.2+
+*/
+
+body{
+	margin:0px;
+	padding:0px;
+}
+
+.msg-box-cont{
+	color:#000000;	
+	z-index:1014; 
+	position: absolute;
+	padding:0px;
+	margin:0px;
+	display:none;
+	top:0px;
+}
+.msg-box-cont table {
+	margin:5px;
+	padding:0px;
+	border:0px;
+}
+
+.msg-box-cont a{
+	color:#000;
+}
+
+.msg-btn{
+	width:15px;
+	height:15px;
+	cursor:pointer;
+	position:relative;
+	padding:0px;
+	margin:0px;
+	top:-4px;
+	background:url(images/msg-close-sprite.gif) no-repeat;
+}
+.msg-text{
+	font-size:12px;
+	margin-left:4px;
+	margin-right:4px;
+}
+
+.msg-icon{
+	height:16px;
+	width:16px;
+	float:left;
+	top:3px;
+	margin:0px 8px 0px 2px;
+	background:url(images/msg-icon-sprite.png) no-repeat;
+}
+
+.err_msg_cont{
+	width:100%;
+	padding:5px;
+	color:#000000;
+	margin-left:20px;
+}
+
+
+.msg-icon-success{background-position:0px 0px;}
+.msg-icon-warning{background-position:0px -16px;}
+.msg-icon-fatal{background-position:0px -32px;}
+.msg-icon-info{background-position:0px -48px;}
+
+.msg-success{
+	border:1px solid #009900;
+	background-color:#C6FFA4;
+}
+.msg-success a:hover{
+	color:#006600;
+}
+
+.msg-warning{
+	border:1px solid #FFCC00;
+	background-color:#FFFF99;
+}
+.msg-warning a:hover{
+	color:#FF3300;
+}
+
+.msg-fatal{
+	border:1px solid #DD0000;
+	background-color:#FFB7B7;
+}
+.msg-fatal a:hover{
+	color:#660000;
+}
+
+.msg-info{
+	border:1px solid #0159BA;
+	background-color:#CAD3FF;
+}
+.msg-info a:hover{
+	color:#003366;
+}
+
+.close-success{background-position:0px 0px;}
+.close-success:hover{background-position:-15px 0px;}
+
+.close-warning{background-position:0px -15px;}
+.close-warning:hover{background-position:-15px -15px;}
+
+.close-fatal{background-position:0px -30px;}
+.close-fatal:hover{background-position:-15px -30px;}
+
+.close-info{background-position:0px -45px;}
+.close-info:hover{background-position:-15px -45px;}
