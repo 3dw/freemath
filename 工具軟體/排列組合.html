@@ -114,7 +114,7 @@ var comb = function(set) {
 function take(arr, n) {
 	var ans = [];
 	arr.forEach(function(p) {
-		if (p.length == n) ans.push(p.join(""));
+		if (p.length == n) ans.push(p); //.join("")
 	});
 	return ans;
 }
@@ -129,8 +129,7 @@ mathApp.filter('showPermu', function(){
 		return ansL;
 	}
 }).filter('shuffle', function(){
-	return function(str){
-		var iList = str.split("");
+	return function(iList){
 		var ansL = [];
 			function perm(list, ret) {
 				if (list.length == 0) {			
@@ -163,7 +162,7 @@ mathApp.filter('showPermu', function(){
 
 function Ctrl ($scope) {
 
-	$scope.items = "A,B,C,D,E";
+	$scope.items = "吃飯,嚼麵,啃菜,喝湯";
 	$scope.n = 2;
 
 	$scope.fact = function(n) {
