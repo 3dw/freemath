@@ -1,8 +1,10 @@
-
 <!DOCTYPE html>
+
+<html ng-app="mathApp">
+
 <head>
 <meta charset="utf-8">
-<title>排列組合</title>
+<title>排列組合實驗室</title>
 <link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 
 <!--Author: Bestian Tang-->
@@ -14,126 +16,168 @@
 <!--Todo next: add Sequence mode -->
 
 
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/angular.min.js"></script>
+
+<style>
+	sub, sup {
+		font-size: 60%;
+	}
+
+</style>
+
 </head>
 
-<script src="../javascripts/jquery-1.10.2.js"></script>
-<script type="text/javascript">
-	
-var listData = ["1","2","3","4","5"]; var take = 3;
-//,"3","4","5"
-//var listData = ["紅","白","灰","藍","綠"];
 
+<body ng-controller="Ctrl">
 
-function hacker(val) {
-		var objs = document.getElementById('dataModify').getElementsByTagName("input");
-		var ans = [];
-		var objT = objs[val];
-		var list = objT.value.split(",");
+<div class="ui vertical segment">
 
-		for (var i = 0; i < list.length; i++) {
-			ans.push(list[i]);
-		};
+	<div class="ui center aligned header">
 
-		switch (val) {
-			case 0:
-				listData = ans;
-				break;
-			case 1:
-				take = ans;
-				break;
-		}
-//		alert(ans);
-	}
+			在<input ng-model = "items" autofocus="true">中
+			<br/>
+			<br/>
+			選取<input type = "number" ng-model = "n">個
+			<br/>
+			<hr>
 
-function superPlus (str, longStr) {
-	return str + longStr.split(',').join(','+str);
-}
+	</div>
+</div>
 
-function stringPlusList (str, list ){
-	var ans = [];
-	for (var i = 0; i < list.length; i++) {
-		ans.push(superPlus(str, list[i]));
-	};
-	return ans.join();
-}
+<div class='ui three column grid'>
 
-//permu --> Sting
-function permu(hand, list, take) {
+	<section class='column' ng-repeat = "ans in items | showPermu:n" >
 
-	var otherPermus = [];
-	var finger = hand.substr(hand.length - listData[0].length);
+      <div class="ui blue segment">
+      	<span ng-repeat = "a in ans|shuffle">
+      	 <span class="ui green button"> {{a}} </span>
+      	 &nbsp;
+      	</span>
 
-	if (take <= 0) {   // 底層
-		return finger;
-	}
-	else {
+ 	  </div>
 
-		for (var i = 0; i < list.length; i++) {
+	<section>
 
-//			if(hand.indexOf(list[i])) < maxIndex continue;   // 組合
+</div>
 
-			if (hand.indexOf(list[i]) != -1 ) {
-				continue;
-			}
-			else {
-				var item = String(hand) + list[i];
-				otherPermus.push(permu(item, list, take-1));
-			};
-		};
+<hr>
 
-		console.log(stringPlusList(finger, otherPermus));
-		return stringPlusList(finger, otherPermus);
-	}
-}
+	<div class = "ui center aligned header">
+		共有
+		<br/>
+		<br/>
 
+		P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub> 
 
-function showPermu (){
+		= {{ items.split(',').length | spreadFact:n }}
 
-	hacker(0);hacker(1);
+		= {{ items.split(',').length}}! &divide; ({{items.split(',').length}} - {{n}})! 
 
-	var row = permu('', listData, take);
-	var rowList = row.split(',');
-	var subNow =  rowList[0].substr(0, listData[0].length);
-	var shine = '';
+		= {{(items | showPermu:n).length * fact(n) }}  種排列
 
-	for (var i = 0; i < rowList.length; i++) {
-		if (rowList[i].substr(0, listData[0].length) == subNow ){
-			shine += rowList[i] + ', ';
-		}
-		else {
-			shine += '<br />' + rowList[i] + ', ';
-			subNow = rowList[i].substr(0, listData[0].length);
-		}
-	};
+		<br/>
+		<br/>
 
-	return shine; 
-}
+		C <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>
 
+		= P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>  &divide; {{n}}!
 
-function swi(obj) {
-	document.getElementById("bigans").innerHTML = showPermu();
-}
+		= {{(items | showPermu:n).length}} 種組合
 
-
-</script>
-
-
-
-
-<p id = "dataModify"></p>
-
-<p id = "bigans" class= "ui message" style="height: 50ex; font-size: 200%"></p>
-
-
-<script type="text/javascript">
-
-	
-		
-	document.getElementById('dataModify').innerHTML = "使用物件<input type='text'  class='ui input' size = '60' value = '" + listData + "'></input>" + "<button  class='ui button small teal' onclick = 'hacker(0)'>修改完畢</button>" + "<br />選取其中<input type='text'  class='ui input' size = '60' value = '" + take + "'></input>" + "<button  class='ui button small teal' onclick = 'hacker(1)'>修改完畢</button>" + "<button class='ui green smal button' onclick='swi(this)'>排列</button>";
-
-	document.getElementById('dataModify').getElementsByTagName("input")[0].focus();
-</script>
+	</div>
 
 
 
 </body>
+
+
+<script type="text/javascript">
+
+
+
+var comb = function(set) {
+	var results = (function acc(xs, set) {
+		var x = xs[0];
+		if(!x) return set;
+		for (var i = 0, l = set.length; i < l; ++i)
+			set.push(set[i].concat(x));
+			return acc(xs.slice(1), set);
+		})(set, [[]]);
+
+		return results;
+};
+	 
+function take(arr, n) {
+	var ans = [];
+	arr.forEach(function(p) {
+		if (p.length == n) ans.push(p.join(""));
+	});
+	return ans;
+}
+
+
+	
+var mathApp = angular.module('mathApp', []);
+mathApp.filter('showPermu', function(){
+	return function(items, n){
+		var iList = items.split(',');
+		var ansL = take(comb(iList), n).sort();
+		return ansL;
+	}
+}).filter('shuffle', function(){
+	return function(str){
+		var iList = str.split("");
+		var ansL = [];
+			function perm(list, ret) {
+				if (list.length == 0) {			
+					var row = ret.join(' ');
+					ansL.push(row);
+					return;
+				}
+				for (var i = 0; i < list.length; i++) {
+					var x = list.splice(i, 1);
+					ret.push(x);
+					perm(list, ret);
+					ret.pop();
+					list.splice(i, 0, x);
+				}
+			}
+		perm(iList, []);
+
+		ansL = ansL.sort();
+		return ansL;
+	}
+}).filter('spreadFact', function(){
+	return function(n, k){
+		var ansL = [];
+		for (var i = n; i > (n-k); i--) {
+			ansL.push(i);
+		};
+		return ansL.join(' × ')
+	}
+})
+
+function Ctrl ($scope) {
+
+	$scope.items = "A,B,C,D,E";
+	$scope.n = 2;
+
+	$scope.fact = function(n) {
+
+		var f = [];
+		function factorial (n) {
+		  if (n == 0 || n == 1)
+		    return 1;
+		  if (f[n] > 0)
+		    return f[n];
+		  return f[n] = factorial(n-1) * n;
+		}
+
+		return factorial(n);
+    }
+}
+
+</script>
+
+</html>
