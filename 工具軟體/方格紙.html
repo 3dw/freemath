@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html ng-app="mathApp">
+
+<head>
+<meta charset="utf-8">
+<title>排列組合實驗室</title>
+<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+
+<!--Author: Bestian Tang-->
+<!--Version: 1.0-->
+<!-- Release to Freemath, 自學數學團-->
+<!-- Right: CC0, Public Domain-->
+
+
+<script src="../javascripts/jquery-1.10.2.js"></script>
+<script src="../javascripts/angular.min.js"></script>
+
+<style>
+	/* print */
+	@media print {
+	  body {
+	    background-color: #ffffff;
+/*	    width: 210mm; */
+	  }
+	  .noPrint, .noPrint *{
+	    display: none;
+	  }
+	}
+  /*   */
+	sub, sup {
+		font-size: 60%;
+	}
+
+	table {
+		border-collapse:collapse;
+		max-width: 210mm;
+	} 
+
+	td {
+		text-align: center;
+		vertical-align: middle;
+		font-size: 150%;
+	}
+
+
+</style>
+
+</head>
+
+
+<body ng-controller="Ctrl">
+
+<br/>
+<br/>
+
+<div class="ui vertical segment">
+
+	<div class="ui center aligned header noPrint">
+
+			<select ng-model = "type" ng-init = "type = '1_1_10,1_1_10'" autofocus="true" style ="font-size:120%">
+					<option value = "1_1_10,1_1_10">空白表</option>
+					<option value = "1_1_10,0_10_90,+">百數表</option>
+					<option value = "1_1_5,1_1_5,*">五五乘法表</option>
+					<option value = "1_1_9,1_1_9,*">九九乘法表</option>
+					<option value = "1_1_12,1_1_12,*">十二十二乘法表</option>
+				</select>
+			<br/>
+			<br/>
+			寬高<input type = "number" ng-model = "wh" ng-init = "wh = 2">cm
+			<br/>
+			<br/>
+			交點<input type = "number" ng-model = "cr" ng-init = "cr = 2">cm<input type = "number" ng-model = "ci" ng-init = "ci = 35">cm
+			<br/>
+			<br/>
+			<button class = "ui blue button" onclick = "window.print()">列印</button>
+			<br/>
+			<hr>
+	</div>
+	<div class="ui">
+			<table border="8">
+				<tr ng-repeat = "r in type | countRC:0">
+					<td ng-repeat = "c in type | countRC:1" style= "width:{{wh}}cm; height:{{wh}}cm;">
+
+
+						<div id = "crossPoint" style = "border:{{cr}}px black solid; width: {{ci}}px; height: {{ci}}px; border-radius: {{cr+ci}}px;
+						position:relative; left: {{- cr - 1 - ci / 2}}px; top: {{- wh / 2 - 0.15 + 0.5}}cm;  
+						 z-index:1; overflow: hidden;" ng-hide = "r == (type | countRC:0)[0] || c == (type | countRC:1)[0]">
+
+						 <img src="../images/plain.jpg"/>
+						</div>
+
+						 <span style = "position:relative; top: {{(r == (type | countRC:0)[0] || c == (type | countRC:1)[0]) || -cr - ci / 2}}px;
+						 			color: {{( (type | op:r:c) == 'no' && 'white') || 'black'}}">
+						 	{{ type | op:r:c }}
+						 </span>
+
+
+
+					</td>
+				</tr>
+
+			</table>
+
+	</div>
+
+</div>
+
+
+
+
+</body>
+
+
+<script type="text/javascript">
+
+
+	
+var mathApp = angular.module('mathApp', []);
+
+mathApp.filter('countRC', function(){
+	return function(ty,k){
+		var ansL = [];
+		var rT = ty.split(',')[k];
+		var s = rT.split('_');
+		for (var i = parseInt(s[0]); i <= parseInt(s[2]); i+= parseInt(s[1])) {
+			ansL.push(i);
+		};
+		return ansL;
+	}
+}).filter('op', function(){
+	return function(ty,r,c){
+		var o = ty.split(',')[2];
+		console.log(""+r + o + c);
+		if (!o) return "no";
+		return eval(r + o + c);
+	}
+})
+
+function Ctrl ($scope) {
+
+}
+
+</script>
+
+</html>
