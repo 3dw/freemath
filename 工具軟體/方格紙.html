@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>排列組合實驗室</title>
+<title>自由數學Freemath--方格紙</title>
 <link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 
 <!--Author: Bestian Tang-->
@@ -25,6 +25,9 @@
 	  }
 	  .noPrint, .noPrint *{
 	    display: none;
+	  }
+	  .invisPrint {
+	  	opacity:0; filter:alpha(opacity=0); /* For IE8 and earlier */ 
 	  }
 	}
   /*   */
@@ -58,19 +61,30 @@
 
 	<div class="ui center aligned header noPrint">
 
-			<select ng-model = "type" ng-init = "type = '1_1_10,1_1_10'" autofocus="true" style ="font-size:120%">
+			<input ng-model = "type" />
+			<br/>
+			<br/>
+			<select ng-model = "type" ng-init = "type = '1_1_9,1_1_9,*'" autofocus="true" style ="font-size:120%">
 					<option value = "1_1_10,1_1_10">空白表</option>
-					<option value = "1_1_10,0_10_90,+">百數表</option>
+					<option value = "0_10_90,1_1_10,+">百數表</option>
+					<option value = "1_1_10,1_1_10,+">加法表</option>
+					<option value = "10_1_20,1_1_10,-">減法表</option>
 					<option value = "1_1_5,1_1_5,*">五五乘法表</option>
+					<option value = "1_1_7,1_1_7,*">七七乘法表</option>
 					<option value = "1_1_9,1_1_9,*">九九乘法表</option>
 					<option value = "1_1_12,1_1_12,*">十二十二乘法表</option>
-				</select>
+			</select>
 			<br/>
 			<br/>
-			寬高<input type = "number" ng-model = "wh" ng-init = "wh = 2">cm
+			進位制<input type = "number" ng-model = "m" ng-init = "m = 10">進位
 			<br/>
 			<br/>
-			交點<input type = "number" ng-model = "cr" ng-init = "cr = 2">cm<input type = "number" ng-model = "ci" ng-init = "ci = 35">cm
+			寬高<input type = "number" ng-model = "wh" ng-init = "wh = 1.6">cm
+			<br/>
+			<br/>
+			交點<input type = "number" ng-model = "cr" ng-init = "cr = 2">cm
+			<input type = "number" ng-model = "ci" ng-init = "ci = 35">cm
+			<input type = "checkbox" ng-model = "hideCorner"/>
 			<br/>
 			<br/>
 			<button class = "ui blue button" onclick = "window.print()">列印</button>
@@ -78,21 +92,30 @@
 			<hr>
 	</div>
 	<div class="ui">
-			<table border="8">
+			<table border="8" style = "margin-left: {{cr+ci}}px">
 				<tr ng-repeat = "r in type | countRC:0">
 					<td ng-repeat = "c in type | countRC:1" style= "width:{{wh}}cm; height:{{wh}}cm;">
 
 
 						<div id = "crossPoint" style = "border:{{cr}}px black solid; width: {{ci}}px; height: {{ci}}px; border-radius: {{cr+ci}}px;
 						position:relative; left: {{- cr - 1 - ci / 2}}px; top: {{- wh / 2 - 0.15 + 0.5}}cm;  
-						 z-index:1; overflow: hidden;" ng-hide = "r == (type | countRC:0)[0] || c == (type | countRC:1)[0]">
+						 z-index:1; overflow: hidden;"
 
-						 <img src="../images/plain.jpg"/>
+						 ng-hide = "hideCorner && (r == (type | countRC:0)[0] || c == (type | countRC:1)[0])"
+
+						 ng-click = "randHide((type | countRC:0), (type | countRC:1))" >
+
+						 <img src="../images/plain.jpg" />
 						</div>
 
-						 <span style = "position:relative; top: {{(r == (type | countRC:0)[0] || c == (type | countRC:1)[0]) || -cr - ci / 2}}px;
-						 			color: {{( (type | op:r:c) == 'no' && 'white') || 'black'}}">
-						 	{{ type | op:r:c }}
+						 <span style = "position:relative; top: {{(hideCorner && (r == (type | countRC:0)[0] || c == (type | countRC:1)[0])) || -cr - ci / 2}}px;
+						 			color: {{( ((type | op:r:c | carry:m) == 'no' || hide[r+'_'+c]) && 'white') || 'black'}}"
+
+						 	class = "{{( ((type | op:r:c | carry:m) == 'no' || hide[r+'_'+c]) && 'invisPrint') }}"
+
+						 	ng-click = "hide[r+'_'+c] = !hide[r+'_'+c]" >
+
+						 	{{ type | op:r:c | carry:m}}
 						 </span>
 
 
@@ -131,14 +154,48 @@ mathApp.filter('countRC', function(){
 }).filter('op', function(){
 	return function(ty,r,c){
 		var o = ty.split(',')[2];
-		console.log(""+r + o + c);
 		if (!o) return "no";
 		return eval(r + o + c);
+	}
+}).filter('carry', function(){
+	return function(n,m){
+		var ans = "";
+
+		if (n == 0) return 0;
+		if (n < 0) {n = -n ; ans = "-"};
+
+		var count = 0;
+
+		while( n > 0) {
+			var d = Math.floor(n/m);
+			var r = n % m;
+			ans = r + ans;
+			n = d;
+			count++;
+			if (count > 1000) return "no";
+		}
+
+		return ans;
 	}
 })
 
 function Ctrl ($scope) {
-
+	$scope.hide = {};
+	$scope.randHide = function(list1, list2) {
+		var ans = {};
+		var holes = (list1.length + list2.length) * 2;
+		for (var i = 0; i < holes; i++) {
+			var r = list1[Math.floor(Math.random()*list1.length)];
+			var c = list2[Math.floor(Math.random()*list2.length)];
+			ans[r+'_'+c] = true;
+		};
+		console.log(ans);
+		if ($.isEmptyObject($scope.hide)) {
+			$scope.hide = ans;	
+		} else {
+			$scope.hide = {};
+		}
+	}
 }
 
 </script>
