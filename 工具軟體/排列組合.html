@@ -66,7 +66,10 @@
 
       <div class="ui blue segment">
       	<span ng-repeat = "a in ans|shuffle">
-      	 <span class="ui green button"> {{a}} </span>
+      	 <span class="ui green button" ng-click = "hide[a] = !hide[a]" ng-hide = "hide[a]"> {{ a }} </span>
+      	 <span class="ui green button" ng-click = "hide[a] = !hide[a]" ng-show = "hide[a]">
+      	 	<span ng-repeat = "r in 0 | range:(a.length)">&emsp;&emsp;</span>
+      	 </span>
       	 &nbsp;
       	</span>
 
@@ -89,7 +92,7 @@
 
 		= {{ items.split(',').length}}! &divide; ({{items.split(',').length}} - {{n}})! 
 
-		= {{(items | showPermu:n).length * fact(n) }}  種排列
+		= <span ng-click = "hide.p2 = !hide.p2"> {{ (hide.p2 && (items | showPermu:n).length * fact(n)) ||   '【__________】'}}  種排列</span>
 
 		<br/>
 		<br/>
@@ -98,7 +101,7 @@
 
 		= P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>  &divide; {{n}}!
 
-		= {{(items | showPermu:n).length}} 種組合
+		= <span ng-click = "hide.c2 = !hide.c2">{{ (hide.c2 && (items | showPermu:n).length) || '【__________】' }} 種組合</span>
 
 	</div>
 
@@ -170,12 +173,21 @@ mathApp.filter('showPermu', function(){
 		};
 		return ansL.join(' × ')
 	}
-})
+}).filter('range', function(){
+	return function (a0, n){
+		var ansL = [];
+		for (var i = a0; i < a0+n; i++) {
+			ansL.push(i);
+		}
+		return ansL;
+	}
+});
 
 function Ctrl ($scope) {
 
 	$scope.items = "吃飯,嚼麵,啃菜,喝湯";
 	$scope.n = 2;
+	$scope.hide = {};
 
 	$scope.fact = function(n) {
 
