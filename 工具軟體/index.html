@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 
 <html ng-app="fmIndexApp">
+
+<head>
+
   <meta property="og:type" content="article" />
   <meta property="og:url" content="http://bestian.github.io/freemath/工具軟體" />
   <meta property="og:title" content="自由數學freemath" />
@@ -10,8 +13,10 @@
 
   <script src="../javascripts/jquery-1.10.2.js"></script>
   <script src="../javascripts/angular.min.js"></script>
-<head>
-  <title>工具軟體</title>
+
+  	<title>工具軟體</title>
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+
 </head>
 
 <body>
@@ -19,13 +24,22 @@
 
 
 
-<div ng-controller ="Ctrl">
+<div class="ui vertical segment"  ng-controller ="Ctrl">
 
-<h3>====工具====</h3>
+	<div class="ui center aligned header noPrint">
 
-<ul>
-  <li ng-repeat = "i in ['單機閃卡','排列組合','styleTester','calculator','readMe']"> <a href="{{i}}.html">{{i}}</a>
-</ul>
+
+			<h3>====工具====</h3>
+
+			<ul>
+			  <li ng-repeat = "i in ['單機閃卡','排列組合','方格紙','styleTester','calculator','readMe']"> <a href="{{i}}.html">{{i}}</a>
+			</ul>
+
+		</div>
+
+	</div>
+</body>
+
 
 <script type="text/javascript">
 
@@ -34,6 +48,4 @@ function Ctrl($scope) {
 }
 </script>
 
-</div>
-</body>
 </html>
