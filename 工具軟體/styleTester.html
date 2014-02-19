@@ -15,6 +15,7 @@
     <script src="../javascripts/tongwen_table_t2s.js"></script>
 	
 	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="../javascripts/news.js"></script>
 
 </head>
 
@@ -254,7 +255,7 @@ var dataS1 = {
 		      		this.addItem();
 		      	};	
 
-      	    	$(this.el).append("<button id='showResault' class = 'item ui big green button' onclick = '"+this.name+".addResault()'>看結果!!</button></p><p>");   	    	
+      	    	$(this.el).append("<button id='showResault' class = 'item ui big green button' onclick = '"+this.name+".addResault(); newsAuto20(\"學習風格自我測試\")'>看結果!!</button></p><p>");   	    	
       	    	$(this.el).children('.invis').toggle("slide");
 
       	    	if (this.simp) {

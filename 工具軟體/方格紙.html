@@ -16,6 +16,9 @@
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="../javascripts/angular.min.js"></script>
 
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="../javascripts/news.js"></script>
+
 <style>
 	/* print */
 	@media print {
@@ -87,7 +90,7 @@
 			<input type = "checkbox" ng-model = "hideCorner"/>
 			<br/>
 			<br/>
-			<button class = "ui blue button" onclick = "window.print()">列印</button>
+			<button class = "ui blue button" onclick = "newsAuto20('方格紙製造機') ; window.print()">列印</button>
 			<br/>
 			<hr>
 	</div>
