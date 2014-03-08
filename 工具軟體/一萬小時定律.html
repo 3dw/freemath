@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="autoApp">
+
+<head>
+<meta charset=utf-8 />
+<meta name="viewport" content="width=device-width">
+
+<title>計算機</title>
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/fmDoc.css" />
+	<script src="../javascripts/jquery-1.10.2.js"></script>
+	<script src="../javascripts/jquery-ui.js"></script>
+	<script src="../javascripts/angular.min.js"></script>
+
+
+</head>
+  
+<body>
+<title>test</title>
+
+<style type="text/css">
+
+body {
+  background: rgba(200,255,255,1);
+}
+
+input {
+  font-size: 1.2rem;
+  background-color: rgba(200,200,255,1);
+  border-right: rgba(200,200,255,1);
+  border-bottom: rgba(200,200,255,1);
+  margin: 3px;
+  width: 33%;
+}
+
+
+</style>
+
+</head>
+
+<body ng-controller="Ctrl">
+
+
+<h1>一萬小時定律</h1>
+
+<hr>
+
+一萬小時定律：根據許多領域達人的經驗，無論資質如何聰穎，都要在你感興趣的領域，投入大約一萬小時之後，才能進到達人的水平。
+
+<hr>
+
+我感興趣的領域是<input type = "text" ng-model = "myField" />
+<br>
+<br>
+我每週投入<input type = "number" ng-model = "week" ng-init = "week = 1"/>個小時在學習、研究、詢問、練習、創作、玩<span ng-bind = "myField"></span>上。
+<br>
+<br>
+一萬除以<span ng-bind = "week"></span> = <span ng-bind = "Math.floor(10000 / week + 0.5)"></span>
+<br>
+<br>
+需要累積<span ng-bind = "Math.floor(10000 / week + 0.5)"></span>週可達一萬小時
+<br> 
+<br>
+每年有52週，所以我大約需要<span ng-bind = "Math.floor(10000 / week / 52 + 0.5)"></span>年的努力，就能成為<span ng-bind = "myField"></span>達人。
+
+</body>
+
+<script type="text/javascript">
+
+
+var autoApp = angular.module('autoApp',[]);
+
+
+function Ctrl($scope) {
+	$scope.Math = window.Math;
+}
+
+
+</script>
+
+
+
+
