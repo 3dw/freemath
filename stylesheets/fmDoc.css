@@ -68,15 +68,16 @@
           -o-transition: all 1s ease;
           transition: all 1s ease; 
     }
-
+/*
     .item.first {    
       max-height: 120px;
     }
 
     .item.first:hover {
       max-height: 1024px;
-/*      overflow: auto; */
     }
+
+*/
 
     .item.press {    
       max-height: 120px;
