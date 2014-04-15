@@ -31,6 +31,9 @@ for root,dirs,files in os.walk(directory):
 
 			text = f.read()
 
+			if (text.find('noParse')) :
+				continue
+
 			# 填空
 			text = re.sub(r'【([.\s\S]*?)】', '【<input type = \'text\'>'+r'\g<1>'+'</input>】', text) 
 
