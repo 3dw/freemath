@@ -31,7 +31,7 @@ for root,dirs,files in os.walk(directory):
 
 			text = f.read()
 
-			if (text.find('noParse')) :
+			if (text.find('noParse') > -1) :
 				continue
 
 			# 填空
