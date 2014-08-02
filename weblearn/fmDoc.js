@@ -23,9 +23,6 @@ $(document).ready(function(){
 		intro: '<p>歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載文件檔(.doc檔在小學形成、國中形成等目錄中)'
 			+'<a class = "ui small blue button" href = \'https://github.com/bestian/freemath/zipball/gh-pages\'"'
 				+'style = "margin-left:2ex">'+'下載全套自由數學Freemath'+'</a></p>'
-			+'<p>本教材的特色在於階梯清楚、講解明確、循序漸近、平易近人，適合自學使用。🚲</p>'
-			+'<p style = "margin-left:50px">請使用瀏覽器<a href = "https://www.google.com/intl/zh-TW/chrome/" target = "_blank">Chrome</a>'+
-			'或<a href = "http://www.apple.com/tw/safari/">Safari</a>，以啟用右邊的摹擬白板。📝</p>'
 			+'<p>如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵</p>'
 			+'<p>（有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼</p>',
 
