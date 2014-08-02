@@ -24,8 +24,8 @@
 <script src="../javascripts/jquery-1.10.2.js"></script>
 <script src="../javascripts/angular.min.js"></script>
 
-<script src="https://cdn.firebase.com/v0/firebase.js"></script>
-<script src="../javascripts/news.js"></script>
+<!-- <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="../javascripts/news.js"></script> -->
 
 <style>
 	/* print */
@@ -66,15 +66,13 @@
 <body ng-controller="Ctrl">
 
 <br/>
-<br/>
 
 <div class="ui vertical segment">
 
 	<div class="ui center aligned header noPrint">
 
-			<input ng-model = "type" />
-			<br/>
-			<br/>
+			<input ng-show = "detail" ng-model = "type" />
+
 			<select ng-model = "type" ng-init = "type = '1_1_9,1_1_9,*'" autofocus="true" style ="font-size:120%">
 					<option value = "1_1_10,1_1_10">空白表</option>
 					<option value = "0_10_90,1_1_10,+">百數表</option>
@@ -85,20 +83,22 @@
 					<option value = "1_1_9,1_1_9,*">九九乘法表</option>
 					<option value = "1_1_12,1_1_12,*">十二十二乘法表</option>
 			</select>
+
+			<input type = "checkbox" ng-model = "detail"/>
+
+			<div ng-show = "detail">
+				<br/>
+				進位制<input type = "number" ng-model = "m" ng-init = "m = 10">進位
+				<br/>
+				寬高<input type = "number" ng-model = "wh" ng-init = "wh = 1.6">cm
+				<br/>
+				交點<input type = "number" ng-model = "cr" ng-init = "cr = 4">px
+				<input type = "number" ng-model = "ci" ng-init = "ci = 0">px
+				<input type = "checkbox" ng-model = "hideCorner"/>
+			</div>
 			<br/>
 			<br/>
-			進位制<input type = "number" ng-model = "m" ng-init = "m = 10">進位
-			<br/>
-			<br/>
-			寬高<input type = "number" ng-model = "wh" ng-init = "wh = 1.6">cm
-			<br/>
-			<br/>
-			交點<input type = "number" ng-model = "cr" ng-init = "cr = 4">px
-			<input type = "number" ng-model = "ci" ng-init = "ci = 0">px
-			<input type = "checkbox" ng-model = "hideCorner"/>
-			<br/>
-			<br/>
-			<button class = "ui blue button" onclick = "newsAuto20('方格紙製造機') ; window.print()">列印</button>
+			<button class = "ui blue button" onclick = "window.print()">列印</button>
 			<br/>
 			<hr>
 	</div>
@@ -119,8 +119,13 @@
 						 <img src="../images/plain.jpg" />
 						</div>
 
-						 <span style = "position:relative; top: {{(hideCorner && (r == (type | countRC:0)[0] || c == (type | countRC:1)[0])) || -cr - ci / 2}}px;
-						 			color: {{( ((type | op:r:c | carry:m) == 'no' || hide[r+'_'+c]) && 'white') || 'black'}}"
+						 <span style = "cursor:pointer;
+
+						 				position:relative;
+
+						 			 	top: {{(hideCorner && (r == (type | countRC:0)[0] || c == (type | countRC:1)[0])) || -cr - ci / 2}}px;
+
+						 				color: {{( ((type | op:r:c | carry:m) == 'no' || hide[r+'_'+c]) && 'white') || 'black'}}"
 
 						 	class = "{{( ((type | op:r:c | carry:m) == 'no' || hide[r+'_'+c]) && 'invisPrint') }}"
 
