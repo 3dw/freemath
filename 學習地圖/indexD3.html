@@ -318,9 +318,11 @@ var nodes = {}; // 共用的結點
 
 
 function decorateTopic(str, s) {
-    var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
+
+  var ans = str
+   // var ans = str.indexOf('.htm') > -1 ? '*' + str.replace('.htm','').split('_')[0] + '*' : str;
     
-    if (ans.substr(0,s) == '*') s += 1;
+ //   if (ans.substr(0,s) == '*') s += 1;
 
     if (mode != 'tracepuzzle') s = undefined;
 
