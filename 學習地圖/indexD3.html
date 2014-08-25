@@ -589,13 +589,16 @@ function mouseover() {
 
     var el = d3.select(this);
 
-        var lines = detail.split(' ');
+        var lines;
         var hint;
 
         if (!game) {
-          hint = lines[Math.floor(Math.random()*lines.length)];
+      //    hint = lines[Math.floor(Math.random()*lines.length)];
+      //  lines = detail.split(' ');
+
         } else {
           hint = "玩法：" + lines.join('。 ');
+          lines = detail.split(' ');
         }
 
    //     for (var i = 0; i < words.length; i++) {
