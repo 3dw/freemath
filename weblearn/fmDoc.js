@@ -50,7 +50,17 @@ $(document).ready(function(){
 
 	     	this.max = $(this.el).find("input").length;
 
-			var re = /(代數|未知數|變數|關係|函數|倍數|因數|比例|比值|盈餘|大於|小於|等於|費用|計算|公分|數量|點|直線|線段|平面|立體|外角定理|窮舉|量度|弧|角|區間|數線|範圍解|數列|級數|直角座標|不等式|等式|加|減|乘|圓|有理化|因式分解|有理數|根式|根號|二次函數|三角函數|指數|對數|方程式|平方|開方|勾股定理|乘法|除法|相似|三角|數學|製圖|測量|工程|單位換算|分數|通分|約分|擴分|cm|km|mm)/g;
+			var re = new RegExp('(代數|未知數|變數|關係|函數|倍數'
+				+'|因數|比例|比值|盈餘|大於|小於|等於'
+				+'|費用|計算|公分|數量|點|直線|線段|平面|立體'
+				+'|外角定理|窮舉|量度|弧|角|直角|鈍角|平角|銳角'
+				+'|區間|數線|範圍解|數列|級數'
+				+'|直角座標|不等式|等式|加|減'
+				+'|乘|圓|有理化|因式分解|有理數|根式|根號'
+				+'|二次函數|三角函數|指數|對數|方程式'
+				+'|平方|開方|勾股定理|乘法|除法|相似'
+				+'|三角|數學|製圖|測量|工程|單位換算'
+				+'|分數|通分|約分|擴分|cm|km|mm)','g');
 
 			$("img").attr("alt", "");
 			$("p").each(function( index ) {
@@ -122,25 +132,27 @@ $(document).ready(function(){
 					+'<area shape="rect" coords="182,281,279,339" href="http://bestian.github.io/freemath/學習地圖/" target="_blank" />'
 				+'</map>'  */
 
-				+'<div id = "intro" class = "item"><h1>'+document.title+'</h1>'
+				'<div id = "intro" class = "item"><h1>'
+					+ document.title
+				+'</h1>'
 	    		+this.intro
 //	    		+'<p><button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
 //	    			+'也可以上臉書「自學數學團」提問</button></p>'
 //	    		+'<br /><br />'
-	    		+'<div class="ui huge buttons">'
-					+' <div id = "start" class="ui huge green button">線上學習'+document.title+'</div>'
-					+' <div class="or"></div>'
-					+' <button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
-	    			+'上臉書「自學數學團」提問</button>'
-	//				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成简体</div>'
-				+'</div>'
+		    		+'<div class="ui huge buttons">'
+						+' <div id = "start" class="ui huge green button">線上學習'+document.title+'</div>'
+						+' <div class="or"></div>'
+						+' <button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
+		    			+'上臉書「自學數學團」提問</button>'
+		//				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成简体</div>'
+					+'</div>'
 //				+'<button class = "ui  button" </button>'
 				+'</div>'
 				+'<br /><br />');
 
-	    	$(this.el).append('<br />'
-	    					+'<textarea id = "feedBackWords" class = "ui input" rows = "10" cols = "60" placeholder = "心得回饋與錯誤回報"></textarea>'
-	    					+'<input id = "feedback" class = "ui big green button" type = "submit"></input>');
+//	    	$(this.el).append('<br />'
+//	    					+'<textarea id = "feedBackWords" class = "ui input" rows = "10" cols = "60" placeholder = "心得回饋與錯誤回報"></textarea>'
+//	    					+'<input id = "feedback" class = "ui big green button" type = "submit"></input>');
 				
 			$(this.el).find("input[type='text']").css("font-size", "2ex");
 			$(this.el).find("textarea").css("font-size", "2ex");
