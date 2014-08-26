@@ -20,11 +20,11 @@ $(document).ready(function(){
 	var DocView = Backbone.View.extend({ 
 		el: $('body'),
 
-		intro: '<p>歡迎使用「數學形成性教材」線上版！！若要紙本使用，請下載文件檔(.doc檔在小學形成、國中形成等目錄中)'
-			+'<a class = "ui small blue button" href = \'https://github.com/bestian/freemath/zipball/gh-pages\'"'
-				+'style = "margin-left:2ex">'+'下載全套自由數學Freemath'+'</a></p>'
-			+'<p>如果遇到空格【&nbsp;&nbsp;&nbsp;&nbsp;】，請想想看，填答後再按ENTER鍵</p>'
-			+'<p>（有會的人在旁邊，遇到關卡即時詢問，學習效果更佳）👼</p>',
+		intro: '<p>歡迎使用「數學形成性教材」線上預覽版！！<br/>紙本使用，請下載文件檔再印出 '
+			+'<a class = "ui huge purple button"'
+				+'href = "https://3dw.github.io/mathprint/'+ document.title +'.doc"'
+				+'style = "margin:15px">'+'立即下載'+'</a></p>'
+			+'<p>有會的人在旁邊，遇到關卡即時詢問，學習效果更佳</p>',
 
 		events :{
 			'change input' : 'showHint',
@@ -110,26 +110,29 @@ $(document).ready(function(){
 
 
 	    	$(this.el).prepend(
-				'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;top:15px;right:150px; border-radius: 15px;">'
+	/*			'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;top:15px;right:150px; border-radius: 15px;">'
 				+'<map name="Map" id="Map">'
-				+'<area shape="rect" coords="17,267,105,195" href="https://freemath.hackpad.com/yFfG4O8gKDa" target="_blank" />'
-				+'<area shape="rect" coords="337,227,445,165" href="https://freemath.hackpad.com/TFdJbbioQcN" target="_blank" />'
-				+'<area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />'
-				+'<area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />'
-				+'<area shape="rect" coords="300,59,389,119" href="https://www.facebook.com/groups/156709241062806/" target="_blank" />'
-				+'<area shape="rect" coords="225,131,328,190" href="http://bestian.github.io/freemath/" />'
-				+'<area shape="rect" coords="212,201,328,262" href="http://math.alearn.org.tw/" target="_blank" />'
-				+'<area shape="rect" coords="182,281,279,339" href="http://bestian.github.io/freemath/學習地圖/" target="_blank" />'
-				+'</map>'
-				+'<div id = "intro" class = "item"><h1>🐳'+document.title+'</h1>'
+					+'<area shape="rect" coords="17,267,105,195" href="https://freemath.hackpad.com/yFfG4O8gKDa" target="_blank" />'
+					+'<area shape="rect" coords="337,227,445,165" href="https://freemath.hackpad.com/TFdJbbioQcN" target="_blank" />'
+					+'<area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />'
+					+'<area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />'
+					+'<area shape="rect" coords="300,59,389,119" href="https://www.facebook.com/groups/156709241062806/" target="_blank" />'
+					+'<area shape="rect" coords="225,131,328,190" href="http://bestian.github.io/freemath/" />'
+					+'<area shape="rect" coords="212,201,328,262" href="http://math.alearn.org.tw/" target="_blank" />'
+					+'<area shape="rect" coords="182,281,279,339" href="http://bestian.github.io/freemath/學習地圖/" target="_blank" />'
+				+'</map>'  */
+
+				+'<div id = "intro" class = "item"><h1>'+document.title+'</h1>'
 	    		+this.intro
-	    		+'<p><button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
-	    			+'也可以上臉書「自學數學團」提問👼</button></p>'
-	    		+'<br /><br />'
+//	    		+'<p><button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
+//	    			+'也可以上臉書「自學數學團」提問</button></p>'
+//	    		+'<br /><br />'
 	    		+'<div class="ui huge buttons">'
-				+' <div id = "start" class="ui huge green button">👼線上學習'+document.title+'👼</div>'
-				+' <div class="or"></div>'
-				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成简体</div>'
+					+' <div id = "start" class="ui huge green button">線上學習'+document.title+'</div>'
+					+' <div class="or"></div>'
+					+' <button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
+	    			+'上臉書「自學數學團」提問</button>'
+	//				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成简体</div>'
 				+'</div>'
 //				+'<button class = "ui  button" </button>'
 				+'</div>'
