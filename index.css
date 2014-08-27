@@ -1,0 +1,51 @@
+body {     font-size: 18px;   }
+
+
+      input#find {
+        font-size: 22px;
+        border: 3px hsla(180,20%,75%,1) solid;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+
+      li {
+        font-size: 16px;
+      }
+
+      li a:hover, td:hover {
+        background-color: rgba(255,255,200,1);
+      }
+
+      li#data {
+        display: inline-block;
+        width: 33%;
+        height: 22px;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+
+      .note {
+        color: gray;
+        float: right;
+      }
+
+      aside#sidebar {
+        position: fixed;
+        top: 22%;
+        right: 12%;
+        background: none;
+
+      }
+
+      .repo-owner {
+        background-color: white;
+      }
+
+
+      @media only screen and (max-width: 767px) {
+        aside#sidebar {
+              display: none;
+            }
+        }

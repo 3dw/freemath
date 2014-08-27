@@ -11,19 +11,17 @@
     <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+   
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <link rel="stylesheet" type="text/css" class="ui" href="stylesheets/semantic.min.css">
-    <script src="javascripts/tongwen_core.js"></script>
-    <script src="javascripts/tongwen_table_pt2s.js"></script>
-    <script src="javascripts/tongwen_table_t2s.js"></script>
 
-  <script src="javascripts/jquery-1.10.2.js"></script>
-  <script src="javascripts/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href = "index.css" />
 
-  <script src="weblearn/fmData.js"></script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,166 +29,140 @@
 
     <title>自由數學Freemath</title>
 
-    <style type="text/css">
-
-      body {
-        font-size: 18px;
-      }
-
-    	li a:hover, td:hover {
-    		background-color: rgba(255,255,200,1);
-    	}
-    </style>
+    
 
 
   </head>
 
+
+
   <body>
     <header>
-      <div class="inner">
-        <h1>Freemath</h1>
+      <div class="inner">   
+        <h1>自由數學Freemath</h1>
 
          <!-- <h2><button class = "ui small blue button" onclick = "TongWen.trans2Simp(document)">也可转成简体字</button></h2> -->
-
-        <a href="https://github.com/bestian/freemath" class="button"><small>View project on</small>GitHub</a>
         
       </div>
     </header>
+
 
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
 
-<h3>====關於====
-<img id = "map" src="images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="float: right; border-radius: 15px;">
-<map name="Map" id="Map">
+            <h3>開放源碼(Open Source)的數學教材教法集錦</h3>
 
-
-  <area shape="rect" coords="17,267,105,195" href="https://freemath.hackpad.com/yFfG4O8gKDa" target="_blank" />
-  <area shape="rect" coords="337,227,445,165" href="https://freemath.hackpad.com/TFdJbbioQcN" target="_blank" />
-  <area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />
-  <area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />
-  <area shape="rect" coords="300,59,389,119" href="https://www.facebook.com/groups/156709241062806/" target="_blank" />
-  <area shape="rect" coords="225,131,328,190" href="http://bestian.github.io/freemath/" />
-  <area shape="rect" coords="212,201,328,262" href="http://math.alearn.org.tw/" target="_blank" />  
-  <area shape="rect" coords="182,281,279,339" href="http://bestian.github.io/freemath/學習地圖/" target="_blank" />
-</map>
-</h3>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/6NhyCXJU-IQ?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 
-<p>Freemath是助人自由的數學教材與、教法、學習方法的匯整</p>
-<p><a href = "http://math.alearn.org.tw/">瞭解更多</a></p>
+        <div ng-controller ="Ctrl">
+
+        <h3>
+          <input id ="find" type="search" ng-model="searchK" placeholder = "關鍵字"  focus="true"/>
+
+          <select ng-model = "logic" ng-init = "logic = 'and'">
+              <option>and</option>
+              <option>or</option>
+          </select>
+
+          <input id ="find" type="number"
+              min = "3" max = "11"
+
+              ng-model="searchM" placeholder = "年級"/>
+
+        </h3>
+
+          <br/>          
+
+        <ul>
+          <li id = "data"
+              ng-repeat = "u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) "> 
+
+                <a target = "_blank" href = "weblearn/{{u.n}}" >
+                  {{ u.n.split('.htm')[0] }}</a>
+
+                <span class = "note">
+                  {{ u.g }} ~ {{ u.G }}年級</a>
+           
+           <!--     
+                <a target = "_blank" href = "weblearn/{{i.n}}" title = "自由數學教材"> <img class="fm_logo" /></a>
 
 
-<h3>====線上工具====</h3>
+                <a target = "_blank" href = "http://zh.wikipedia.org/wiki/{{i.wiki || i.n.split('.htm')[0].substr(0, 2)}}" title = "維基百科說明"> <img class="wiki" /></a>
 
-<ul>
-	<li><a href = "工具軟體/GGBtester.html">GGB線上試用(含星星製造機)</a></li>
-	<li><a href = "工具軟體/單機閃卡.html">閃卡</a></li>
-	<li><a href = "工具軟體/calculator.html">超級計算機</a></li>
-	<li><a href = "工具軟體/styleTester.html">學習風格自我測試</a></li>
-</ul>
+                <a target = "_blank" href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" title = "Google圖片搜詢"> <img class="google" /></a> 
 
 
-
-<div ng-controller ="Ctrl">
-
-<h3>====教材線上瀏覽====</h3>
-
-  <br/>
-  <input type="number" ng-model="searchM" placeholder = "請輸入年級，例如5">  </input>
-
-<ul>
-  <li ng-repeat = "i in filtered = (Units | mathUnitsFilter:searchM) "> 
-  <a target = "_blank" href = "weblearn/{{i.n}}" >{{ i.n.split('.htm')[0] }}</a> ({{ i.g }} ~ {{ i.G }}年級) 
-  <a target = "_blank" href = "weblearn/{{i.n}}" title = "自由數學教材"> <img class="fm_logo" /></a>
-  <a target = "_blank" href = "http://zh.wikipedia.org/wiki/{{i.wiki || i.n.split('.htm')[0].substr(0, 2)}}" title = "維基百科說明"> <img class="wiki" /></a>
-  <a target = "_blank" href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" title = "Google圖片搜詢"> <img class="google" /></a> 
-  <a target = "_blank" href="http://www.moedict.tw/{{i.n.split('.htm')[0]}}" title = "萌典字義"><img class="3du" /> {{$eval(showImg())}}</a>
-</ul>
-
-</div>
-
-<script type="text/javascript">
-
-function showImg() {
-  $(".fm_logo").attr("src", "images/math-logo-small.png").css({height: "25px", width: "25px"});
-  $(".wiki").attr("src", "images/wikipedia-logo.png").css({height: "25px", width: "25px"});
-  $(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
-  $(".3du").attr("src", "images/3du-logo.png").css({height: "20px", width: "20px"}); 
-
-}
+                <a target = "_blank" href="http://www.moedict.tw/{{i.n.split('.htm')[0]}}" title = "萌典字義"><img class="3du" /> {{$eval(showImg())}}</a>  -->
 
 
-$(document).ready(function(){
-  showImg();
-});
-
-var fmIndexApp = angular.module('fmIndexApp', ['App.filters']);
-
-
-function Ctrl($scope) {  
-  $scope.Units = Units.sort(function(a,b){return a.g - b.g });
-  $scope.Math = window.Math;
-  $scope.showImg = showImg;
-
-}
-angular.module('App.filters', []).filter('mathUnitsFilter', function () {
-    return function (Units, searchM) {
-        if (!angular.isUndefined(Units) && !angular.isUndefined(searchM) && searchM) { 
-              var tempUnits = [];
-              angular.forEach(Units, function (unit) {
-                  if (unit.g <= searchM && searchM <= unit.G) { //angular.equals(unit.g, searchM)
-                      tempUnits.push(unit);
-                  }
-              });
-
-            return tempUnits.length > 0 ? tempUnits : Units;
-        } else {
-            console.log(Units[0].g);
-            console.log(searchM);
-            return Units;
-        }
-    };
-});
+        </ul>
 
 
 
-</script>
+          <img id = "map" src="images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/>
+            <map name="Map" id="Map">     
 
 
-<h3>===連結===</h3>
+              <area shape="rect" coords="17,267,105,195" href="https://freemath.hackpad.com/yFfG4O8gKDa" target="_blank" />
+              <area shape="rect" coords="337,227,445,165" href="https://freemath.hackpad.com/TFdJbbioQcN" target="_blank" />
+              <area shape="rect" coords="297,267,385,325" href="http://bestian.github.io/freemath/工具軟體" target="_blank" />
+              <area shape="rect" coords="219,50,296,102" href="http://zh.wikipedia.org/wiki/数学" target="_blank" />
+              <area shape="rect" coords="300,59,389,119" href="https://www.facebook.com/groups/156709241062806/" target="_blank" />
+              <area shape="rect" coords="225,131,328,190" href="http://bestian.github.io/freemath/" />
+              <area shape="rect" coords="212,201,328,262" href="http://math.alearn.org.tw/" target="_blank" />  
+              <area shape="rect" coords="182,281,279,339" href="http://bestian.github.io/freemath/學習地圖/" target="_blank" />
+            </map>
 
-<table>
-	<tr>
-		<td><a href = "http://math.alearn.org.tw/">*自由數學簡介</a></td>
-		<td><a href = "http://map.alearn.org.tw/">*自學地圖</a></td>
-		<td><a href = "http://www.geogebratube.org/">*Geogebra Tube</a></td>
-	</tr>
 
-</table>
+        </div>
 
 
-<h1></h1>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/bestian/freemath/zipball/gh-pages" class="button">
-            <small>下載</small>
-            .zip 檔
-          </a>
-          <a href="https://github.com/bestian/freemath/tarball/gh-pages" class="button">
-            <small>下載</small>
-            .tar.gz 檔
-          </a>
 
-          <p class="repo-owner"><a href="https://github.com/bestian/freemath"></a> 由 <a href="https://github.com/bestian">bestian</a>維護</p>
+    </section>
 
-        </aside>
-      </div>
-    </div>
 
+
+    <aside id="sidebar">
+
+     
+        <a href="https://github.com/bestian/freemath" class="button"><small>View project on</small>GitHub</a>
+
+
+        <a href="https://github.com/bestian/freemath/zipball/gh-pages" class="button">
+          <small>下載</small>
+          .zip 檔
+        </a>
+
+
+        <a href="https://github.com/bestian/freemath/tarball/gh-pages" class="button">
+          <small>下載</small>
+          .tar.gz 檔
+        </a>
+
+
+    <p class="repo-owner">
+      <a href="https://github.com/bestian/freemath"></a> 由 <a href="https://github.com/bestian">bestian</a>維護
+    </p>
+
+  </aside>
+
+
+
+    <!--
+
+    <script src="javascripts/tongwen_core.js"></script>
+    <script src="javascripts/tongwen_table_pt2s.js"></script>
+    <script src="javascripts/tongwen_table_t2s.js"></script> -->
+
+  <script src="javascripts/jquery-1.10.2.js"></script>
+  <script src="javascripts/angular.min.js"></script>
+  <script src="weblearn/fmData.js"></script>
+
+  <script type="text/javascript" src = "index.js"></script>
   
   </body>
 </html>
