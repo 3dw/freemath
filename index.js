@@ -22,7 +22,8 @@ function Ctrl($scope) {
 
 }
 
-angular.module('App.filters', []).filter('mathUnitsFilter', function () {
+angular.module('App.filters', [])
+  .filter('mathUnitsFilter', function () {
     return function (Units, searchM, searchK,logic) {
         searchK = ""+searchK;
 
@@ -56,7 +57,24 @@ angular.module('App.filters', []).filter('mathUnitsFilter', function () {
             return Units;
         }
     };
-}).directive('focus',
+})
+.filter('mathUnitsFilter', function () {
+    return function(us,s){
+      console.log(us);
+      console.log(s);
+      var searchK = s || '';
+      var searchM = parseInt(s);
+      return us.filter(
+                function (o) {
+                  return (
+                    (o.g <= searchM && searchM <= o.G) 
+                        || 
+                        (searchK.length && o.n.indexOf(searchK) > -1)
+                      )
+              });
+    }
+})
+.directive('focus',
 
 function($timeout) {
 

@@ -16,6 +16,7 @@
    
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <link rel="stylesheet" type="text/css" class="ui" href="stylesheets/semantic.min.css">
@@ -60,18 +61,8 @@
         <div ng-controller ="Ctrl">
 
         <h3>
-          <input id ="find" type="search" ng-model="searchK" placeholder = "關鍵字"  focus="true"/>
-
-          <select ng-model = "logic" ng-init = "logic = 'and'">
-              <option>and</option>
-              <option>or</option>
-          </select>
-
-          <input id ="find" type="number"
-              min = "3" max = "11"
-
-              ng-model="searchM" placeholder = "年級"/>
-
+          <input id ="find"
+              ng-model="searchM" placeholder = "輸入關鍵字或年級"/>
         </h3>
 
           <br/>          

@@ -1,4 +1,4 @@
-body {     font-size: 18px;   }
+      body {     font-size: 18px;   }
 
 
       input#find {
@@ -33,10 +33,11 @@ body {     font-size: 18px;   }
 
       aside#sidebar {
         position: fixed;
-        top: 22%;
-        right: 12%;
+        bottom: 0%;
+        right: 0%;
         background: none;
-
+        height: 50%;
+        min-height: 0 !important;
       }
 
       .repo-owner {
