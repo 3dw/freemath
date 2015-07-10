@@ -36,6 +36,14 @@
 		font-size: 60%;
 	}
 
+	[ng\:cloak], [ng-cloak], .ng-cloak {
+	    display: none !important;
+	}
+
+	.cl {
+		cursor: pointer;
+	}
+
 </style>
 
 </head>
@@ -81,7 +89,7 @@
 
 <hr>
 
-	<div class = "ui center aligned header">
+	<div class = "ui center aligned header" ng-cloak>
 		共有
 		<br/>
 		<br/>
@@ -92,7 +100,7 @@
 
 		= {{ items.split(',').length}}! &divide; ({{items.split(',').length}} - {{n}})! 
 
-		= <span ng-click = "hide.p2 = !hide.p2"> {{ (hide.p2 && (items | showPermu:n).length * fact(n)) ||   '【__________】'}}  種排列</span>
+		= <span class = "cl" ng-click = "hide.p2 = !hide.p2"> {{ (hide.p2 && (items | showPermu:n).length * fact(n)) ||   '【__________】'}}  種排列</span>
 
 		<br/>
 		<br/>
@@ -101,7 +109,7 @@
 
 		= P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>  &divide; {{n}}!
 
-		= <span ng-click = "hide.c2 = !hide.c2">{{ (hide.c2 && (items | showPermu:n).length) || '【__________】' }} 種組合</span>
+		= <span class = "cl" ng-click = "hide.c2 = !hide.c2">{{ (hide.c2 && (items | showPermu:n).length) || '【__________】' }} 種組合</span>
 
 	</div>
 
@@ -185,7 +193,7 @@ mathApp.filter('showPermu', function(){
 
 function Ctrl ($scope) {
 
-	$scope.items = "吃飯,嚼麵,啃菜,喝湯";
+	$scope.items = "A,B,C,D";
 	$scope.n = 2;
 	$scope.hide = {};
 
