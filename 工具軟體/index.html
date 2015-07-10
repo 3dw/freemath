@@ -17,6 +17,17 @@
   	<title>工具軟體</title>
 	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
 
+	<style type="text/css">
+
+		ul {
+			list-style-type: none; 
+		}
+		ul > li {
+			margin-top: 10px;
+		}
+
+	</style>
+
 </head>
 
 <body>
@@ -29,10 +40,10 @@
 	<div class="ui center aligned header noPrint">
 
 
-			<h3>====工具====</h3>
+			<h1>小工具</h1>
 
 			<ul>
-			  <li ng-repeat = "i in ['單機閃卡','排列組合','方格紙','styleTester','calculator','readMe','一萬小時定律']"> <a href="{{i}}.html">{{i}}</a>
+			  <li ng-repeat = "i in [['單機閃卡'],['排列組合'],['方格紙'],['學習風格自我測試','styleTester'],['一萬小時定律']]"> <a href="{{i[1] || i[0]}}.html">{{i[0]}}</a>
 			</ul>
 
 		</div>
