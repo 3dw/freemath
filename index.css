@@ -1,9 +1,11 @@
       body {     font-size: 18px;   }
 
 
+      
       input#find {
         font-size: 22px;
         border: 3px hsla(180,20%,75%,1) solid;
+        width: 350px;
       }
 
       h3 {
@@ -36,7 +38,7 @@
         bottom: 0%;
         right: 0%;
         background: none;
-        height: 50%;
+        height: 66%;
         min-height: 0 !important;
       }
 
@@ -46,6 +48,10 @@
 
       .about > img {
           margin: 15px;
+      }
+
+      #guide > li {
+        font-size: 22px;
       }
 
 
