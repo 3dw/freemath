@@ -15,6 +15,7 @@
         font-size: 18px;
       }
 
+
       
       input#find {
         font-size: 22px;
@@ -22,8 +23,17 @@
         width: 350px;
       }
 
-      h3 {
-        font-size: 22px;
+      .about > h2 {
+        font-size: 30px !important;
+      }
+      .about > h3 {
+        font-size: 26px !important;
+      }
+      hr {
+        display: block;
+        border-top: 3px gray dotted !important;       
+        margin-top: 50px;
+        margin-bottom: 50px;
       }
 
       li {
@@ -33,6 +43,8 @@
       li a:hover, td:hover {
         background-color: rgba(255,255,200,1);
       }
+
+
 
       li#data {
         display: inline-block;
@@ -56,8 +68,15 @@
         min-height: 0 !important;
       }
 
+      a.button small {
+        font-size: 18px;
+      }
+
+
       .repo-owner {
+        margin-top: 50px;
         background-color: white;
+        font-size: 18px;
       }
 
       .about > img {
@@ -66,6 +85,13 @@
 
       #guide > li {
         font-size: 22px;
+        list-style-type: circle;
+      }
+
+      p > b {
+        font-size: 120%;
+        font-weight: bold;
+        text-decoration: underline;
       }
 
 
