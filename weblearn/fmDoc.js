@@ -192,11 +192,11 @@ $(document).ready(function(){
 
 			$("canvas").show();
 
-    		$(this.el).prepend('<div id="bar" class = "fixed" style ="z-index:2;width:40%">'
-    			+'</div>');
+    	//	$(this.el).prepend('<div id="bar" class = "fixed" style ="z-index:2;width:40%">'
+    	//		+'</div>');
 
-    		$("#bar").progressbar({ max: this.max ,
-    							 value: this.count });
+    	//	$("#bar").progressbar({ max: this.max ,
+    	//						 value: this.count });
 
     		$("#map").css("right",'0px').css("bottom", '0px').css('top','').css('left','')
     			.css("transform", "scale(0.8,0.8) translate(-20%,20%)")
