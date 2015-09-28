@@ -98,7 +98,9 @@
         font-size: 36px;
         vertical-align: middle;
         border: 1px #05f solid;
-        border-radius: 50% 0px 0px 50%;       
+        border-radius: 50% 0px 0px 50%;
+        -moz-border-radius: 50% 0px 0px 50%;
+        -webkit-border-radius: 50% 0px 0px 50%;       
       }
 
       #donate img {
