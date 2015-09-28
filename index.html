@@ -7,8 +7,10 @@
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://bestian.github.io/freemath/" />
-    <meta property="og:title" content="自由數學freemath" />
+    <meta property="og:title" content="自由數學-自學數學教材集錦" />
     <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
+
+    <meta property="og:description" content = "適合自學使用的數學地圖與數學教材">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -40,7 +42,8 @@
   <body>
     <header>
       <div class="inner">   
-        <h1>自由數學Freemath</h1>
+        <h1>自由數學</h1>
+        <h2/>-適合自學的學習地圖和教材</h2>
 
          <!-- <h2><button class = "ui small blue button" onclick = "TongWen.trans2Simp(document)">也可转成简体字</button></h2> -->
         
@@ -52,14 +55,15 @@
       <div class="inner clearfix">
         <section id="main-content">
 
-            <h3>開放源碼(Open Source)的數學教材教法集錦</h3>
 
         <div ng-controller ="Ctrl">
 
         <h3>
          
           <input id ="find" type="search"
-              ng-model="searchM" placeholder = "輸入關鍵字或年級以查詢教材"/>
+              ng-model="searchM"
+              placeholder = "輸入關鍵字或年級"
+              autofocus />
         </h3>
 
           <br/>          

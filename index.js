@@ -1,18 +1,45 @@
+
+
 function showImg() {
   $(".fm_logo").attr("src", "images/math-logo-small.png").css({height: "25px", width: "25px"});
   $(".wiki").attr("src", "images/wikipedia-logo.png").css({height: "25px", width: "25px"});
   $(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
   $(".3du").attr("src", "images/3du-logo.png").css({height: "20px", width: "20px"}); 
-
 }
 
 
 $(document).ready(function(){
   showImg();
-});
+}); 
 
 
-angular.module('fmIndexApp', ['App.filters']);
+
+/**
+ * the HTML5 autofocus property can be finicky when it comes to dynamically loaded
+ * templates and such with AngularJS. Use this simple directive to
+ * tame this beast once and for all.
+ *
+ * Usage:
+ * <input type="text" autofocus>
+ * 
+ * License: MIT
+ */
+angular.module('utils.autofocus', [])
+
+.directive('autofocus', ['$timeout', function($timeout) {
+  return {
+    restrict: 'A',
+    link : function($scope, $element) {
+      $timeout(function() {
+        $element[0].focus();
+      });
+    }
+  }
+}]);
+
+
+
+angular.module('fmIndexApp', ['App.filters','utils.autofocus']);
 
 
 function Ctrl($scope) {  
