@@ -1,7 +1,8 @@
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
-/* line 6, ../sass/print.scss */
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -22,63 +23,46 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
-/* line 27, ../sass/print.scss */
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
-/* line 31, ../sass/print.scss */
 body {
   line-height: 1;
 }
-
-/* line 34, ../sass/print.scss */
 ol, ul {
   list-style: none;
 }
-
-/* line 37, ../sass/print.scss */
 blockquote, q {
   quotes: none;
 }
-
-/* line 40, ../sass/print.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
-
-/* line 45, ../sass/print.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/* line 49, ../sass/print.scss */
 body {
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.5; 
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   color: #000;
 }
 
-/* line 56, ../sass/print.scss */
 a {
   color: #d5000d;
   font-weight: bold;
 }
 
-/* line 61, ../sass/print.scss */
 header {
   padding-top: 35px;
   padding-bottom: 10px;
 }
 
-/* line 66, ../sass/print.scss */
 header h1 {
   font-weight: bold;
   letter-spacing: -1px;
@@ -87,7 +71,6 @@ header h1 {
   line-height: 1.2;
 }
 
-/* line 74, ../sass/print.scss */
 header h2 {
   letter-spacing: -1px;
   font-size: 24px;
@@ -95,18 +78,13 @@ header h2 {
   font-weight: normal;
   line-height: 1.3;
 }
-
-/* line 81, ../sass/print.scss */
 #downloads {
   display: none;
 }
-
-/* line 84, ../sass/print.scss */
 #main_content {
   padding-top: 20px;
 }
 
-/* line 88, ../sass/print.scss */
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   color: #222;
@@ -114,111 +92,97 @@ code, pre {
   font-size: 12px;
 }
 
-/* line 95, ../sass/print.scss */
 code {
   padding: 0 3px;
 }
 
-/* line 99, ../sass/print.scss */
 pre {
   border: solid 1px #ddd;
   padding: 20px;
   overflow: auto;
 }
-
-/* line 104, ../sass/print.scss */
 pre code {
   padding: 0;
 }
 
-/* line 108, ../sass/print.scss */
 ul, ol, dl {
   margin-bottom: 20px;
 }
 
+
 /* COMMON STYLES */
-/* line 115, ../sass/print.scss */
+
 table {
   width: 100%;
   border: 1px solid #ebebeb;
 }
 
-/* line 120, ../sass/print.scss */
 th {
   font-weight: 500;
 }
 
-/* line 124, ../sass/print.scss */
 td {
   border: 1px solid #ebebeb;
-  text-align: center;
+  text-align: center; 
   font-weight: 300;
 }
 
-/* line 130, ../sass/print.scss */
 form {
   background: #f2f2f2;
   padding: 20px;
+  
 }
+
 
 /* GENERAL ELEMENT TYPE STYLES */
-/* line 139, ../sass/print.scss */
+
 h1 {
   font-size: 2.8em;
-}
+} 
 
-/* line 143, ../sass/print.scss */
 h2 {
   font-size: 22px;
   font-weight: bold;
   color: #303030;
   margin-bottom: 8px;
-}
+} 
 
-/* line 150, ../sass/print.scss */
 h3 {
   color: #d5000d;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
-}
-
-/* line 157, ../sass/print.scss */
+} 
+ 
 h4 {
   font-size: 16px;
   color: #303030;
   font-weight: bold;
-}
+} 
 
-/* line 163, ../sass/print.scss */
 h5 {
   font-size: 1em;
   color: #303030;
-}
+} 
 
-/* line 168, ../sass/print.scss */
 h6 {
   font-size: .8em;
   color: #303030;
-}
+} 
 
-/* line 173, ../sass/print.scss */
 p {
   font-weight: 300;
   margin-bottom: 20px;
 }
-
-/* line 178, ../sass/print.scss */
+ 
 a {
   text-decoration: none;
 }
 
-/* line 182, ../sass/print.scss */
 p a {
   font-weight: 400;
 }
 
-/* line 186, ../sass/print.scss */
 blockquote {
   font-size: 1.6em;
   border-left: 10px solid #e9e9e9;
@@ -226,25 +190,21 @@ blockquote {
   padding: 0 0 0 30px;
 }
 
-/* line 193, ../sass/print.scss */
 ul li {
   list-style: disc inside;
   padding-left: 20px;
 }
 
-/* line 198, ../sass/print.scss */
 ol li {
   list-style: decimal inside;
   padding-left: 3px;
 }
 
-/* line 203, ../sass/print.scss */
 dl dd {
   font-style: italic;
   font-weight: 100;
 }
 
-/* line 208, ../sass/print.scss */
 footer {
   margin-top: 40px;
   padding-top: 20px;
@@ -253,13 +213,11 @@ footer {
   color: #aaa;
 }
 
-/* line 216, ../sass/print.scss */
 footer a {
   color: #666;
 }
 
 /* MISC */
-/* line 221, ../sass/print.scss */
 .clearfix:after {
   clear: both;
   content: '.';
@@ -268,17 +226,6 @@ footer a {
   height: 0;
 }
 
-/* line 229, ../sass/print.scss */
-.clearfix {
-  display: inline-block;
-}
-
-/* line 230, ../sass/print.scss */
-* html .clearfix {
-  height: 1%;
-}
-
-/* line 231, ../sass/print.scss */
-.clearfix {
-  display: block;
-}
+.clearfix {display: inline-block;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}

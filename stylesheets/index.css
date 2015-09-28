@@ -1,0 +1,223 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../sass/index.scss */
+body {
+  font-size: 18px;
+}
+
+/* line 11, ../sass/index.scss */
+header {
+  font-size: 20px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 18, ../sass/index.scss */
+header h1 {
+  font-size: 24px;
+}
+
+/* line 22, ../sass/index.scss */
+header h2 {
+  font-size: 18px;
+}
+
+/* line 28, ../sass/index.scss */
+input#find {
+  font-size: 22px;
+  border: 3px #b3cccc solid;
+  width: 350px;
+}
+
+/* line 34, ../sass/index.scss */
+.about > h2 {
+  font-size: 30px !important;
+}
+
+/* line 37, ../sass/index.scss */
+.about > h3 {
+  font-size: 26px !important;
+}
+
+/* line 40, ../sass/index.scss */
+hr {
+  display: block;
+  border-top: 3px #99f dotted !important;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* line 47, ../sass/index.scss */
+ul#textbook {
+  width: 100%;
+}
+/* line 49, ../sass/index.scss */
+ul#textbook li {
+  min-width: 250px;
+}
+/* line 51, ../sass/index.scss */
+ul#textbook li .note {
+  position: relative;
+  left: -50px;
+}
+
+/* line 58, ../sass/index.scss */
+li {
+  font-size: 16px;
+}
+/* line 60, ../sass/index.scss */
+li a:hover, li td:hover {
+  background-color: #ffffc8;
+}
+
+/* line 67, ../sass/index.scss */
+li#data {
+  display: inline-block;
+  width: 33%;
+  height: 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* line 75, ../sass/index.scss */
+.note {
+  color: gray;
+  float: right;
+}
+
+/* line 80, ../sass/index.scss */
+aside#sidebar {
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+  background: none;
+  height: 66%;
+  min-height: 0 !important;
+}
+
+/* line 89, ../sass/index.scss */
+a.button small {
+  font-size: 18px;
+}
+
+/* line 94, ../sass/index.scss */
+.repo-owner {
+  margin-top: 50px;
+  background-color: white;
+  font-size: 18px;
+}
+
+/* line 100, ../sass/index.scss */
+.about > img {
+  margin: 15px;
+}
+
+/* line 104, ../sass/index.scss */
+#guide > li {
+  font-size: 22px;
+  list-style-type: circle;
+}
+
+/* line 110, ../sass/index.scss */
+p {
+  line-height: 160%;
+}
+
+/* line 114, ../sass/index.scss */
+p > b {
+  font-size: 120%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* line 120, ../sass/index.scss */
+#donate {
+  font-size: 36px;
+  vertical-align: middle;
+  border: 1px #05f solid;
+  border-radius: 50% 0px 0px 50%;
+  -moz-border-radius: 50% 0px 0px 50%;
+  -webkit-border-radius: 50% 0px 0px 50%;
+}
+/* line 128, ../sass/index.scss */
+#donate img {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: -25px;
+}
+
+@media only screen and (max-width: 767px) {
+  /* line 139, ../sass/index.scss */
+  aside#sidebar {
+    display: none;
+  }
+}
