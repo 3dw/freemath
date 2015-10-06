@@ -50,7 +50,7 @@ function Ctrl($scope) {
 }
 
 angular.module('App.filters', [])
-  .filter('mathUnitsFilter', function () {
+/*  .filter('mathUnitsFilter', function () {
     return function (Units, searchM, searchK,logic) {
         searchK = ""+searchK;
 
@@ -63,6 +63,7 @@ angular.module('App.filters', [])
                     (unit.g <= searchM && searchM <= unit.G) 
                         || 
                         (searchK.length && unit.n.indexOf(searchK) > -1)
+
                       )
               });
 
@@ -75,6 +76,7 @@ angular.module('App.filters', [])
                       )
               });
 
+
               return tempUnits[logic];
 
          //   return tempUnits.length > 0 ? tempUnits : Units;
@@ -84,7 +86,7 @@ angular.module('App.filters', [])
             return Units;
         }
     };
-})
+}) */
 .filter('mathUnitsFilter', function () {
     return function(us,s){
       console.log(us);
@@ -97,6 +99,7 @@ angular.module('App.filters', [])
                     (o.g <= searchM && searchM <= o.G) 
                         || 
                         (searchK.length && o.n.indexOf(searchK) > -1)
+                        || !searchM
                       )
               });
     }

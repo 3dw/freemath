@@ -40,7 +40,7 @@
 
 <div ng-controller ="Ctrl">
 
-  <div class = "tool" style = "position:fixed; right: 50px; top: 250px; ">
+  <div class = "tool" ng-show = "draw" style = "position:fixed; right: 50px; top: 250px; ">
     <ul type = "none">
       <li class = "color" ng-init = "color = '#4bf'" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </ul>
@@ -53,23 +53,26 @@
   <br/>
   <br/>
 
-  <canvas width="900px" height="10000px" id="canvas" drawing>
+  <canvas width="900px" height="10000px" id="canvas" drawing ng-show = "draw">
   </canvas>
-
-  <h3>====地圖====</h3>
 
   <form>
 
     選擇：
-    <Select  size="2" id = "Range" name="Range"  ng-model="range" ng-init = "range= '小學數學學習地圖'">
+    <select  size="2" id = "Range" class="map" name="Range"  ng-model="range" ng-init = "range= '小學數學學習地圖'">
   　   <option ng-repeat = "r in ranges" value="{{r}}">{{r}}</option>
-    </Select>
+    </select>
 
 
-    <button id = "doPrint" ng-click = "printUrl(range,'.pdf')"> 列印紙本 </button>
+    <button id = "doPrint" class = "map" ng-click = "printUrl(range,'.pdf')"> 列印紙本 </button>
 
-    <button onclick = "window.open('indexD3.html')">動態學習地圖(new!)</button>
+    <button class = "map" onclick = "window.open('indexD3.html')">動態學習地圖(new!)</button>
 
+    <div id = "draw-box">
+      <input type = "checkbox" ng-model = "draw" />
+      <span ng-hide = "draw">線上繪圖</span>
+      <span ng-show = "draw">您可以隨意畫圖了，點兩下擦除筆跡</span>
+    </div>
 
   </form>
 

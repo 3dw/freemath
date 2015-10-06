@@ -67,12 +67,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 9, ../sass/index.scss */
+/* line 10, ../sass/index.scss */
 body {
   font-size: 18px;
 }
 
-/* line 11, ../sass/index.scss */
+/* line 12, ../sass/index.scss */
 header {
   font-size: 20px;
   height: 50px;
@@ -80,34 +80,34 @@ header {
   padding-bottom: 10px;
 }
 
-/* line 18, ../sass/index.scss */
+/* line 19, ../sass/index.scss */
 header h1 {
   font-size: 24px;
 }
 
-/* line 22, ../sass/index.scss */
+/* line 23, ../sass/index.scss */
 header h2 {
   font-size: 18px;
 }
 
-/* line 28, ../sass/index.scss */
+/* line 29, ../sass/index.scss */
 input#find {
   font-size: 22px;
   border: 3px #b3cccc solid;
   width: 350px;
 }
 
-/* line 34, ../sass/index.scss */
+/* line 35, ../sass/index.scss */
 .about > h2 {
   font-size: 30px !important;
 }
 
-/* line 37, ../sass/index.scss */
+/* line 38, ../sass/index.scss */
 .about > h3 {
   font-size: 26px !important;
 }
 
-/* line 40, ../sass/index.scss */
+/* line 41, ../sass/index.scss */
 hr {
   display: block;
   border-top: 3px #99f dotted !important;
@@ -115,30 +115,39 @@ hr {
   margin-bottom: 50px;
 }
 
-/* line 47, ../sass/index.scss */
+/* line 48, ../sass/index.scss */
+ul {
+  -moz-box-shadow: blue 2px 2px 10px;
+  -webkit-box-shadow: blue 2px 2px 10px;
+  box-shadow: blue 2px 2px 10px;
+  padding: 5px;
+}
+/* line 51, ../sass/index.scss */
 ul#textbook {
   width: 100%;
+  max-height: 140px;
+  overflow: auto;
 }
-/* line 49, ../sass/index.scss */
+/* line 55, ../sass/index.scss */
 ul#textbook li {
   min-width: 250px;
 }
-/* line 51, ../sass/index.scss */
+/* line 57, ../sass/index.scss */
 ul#textbook li .note {
   position: relative;
   left: -50px;
 }
 
-/* line 58, ../sass/index.scss */
+/* line 65, ../sass/index.scss */
 li {
   font-size: 16px;
 }
-/* line 60, ../sass/index.scss */
+/* line 67, ../sass/index.scss */
 li a:hover, li td:hover {
   background-color: #ffffc8;
 }
 
-/* line 67, ../sass/index.scss */
+/* line 74, ../sass/index.scss */
 li#data {
   display: inline-block;
   width: 33%;
@@ -147,13 +156,13 @@ li#data {
   overflow-y: hidden;
 }
 
-/* line 75, ../sass/index.scss */
+/* line 82, ../sass/index.scss */
 .note {
   color: gray;
   float: right;
 }
 
-/* line 80, ../sass/index.scss */
+/* line 87, ../sass/index.scss */
 aside#sidebar {
   position: fixed;
   bottom: 0%;
@@ -163,42 +172,42 @@ aside#sidebar {
   min-height: 0 !important;
 }
 
-/* line 89, ../sass/index.scss */
+/* line 96, ../sass/index.scss */
 a.button small {
   font-size: 18px;
 }
 
-/* line 94, ../sass/index.scss */
+/* line 101, ../sass/index.scss */
 .repo-owner {
   margin-top: 50px;
   background-color: white;
   font-size: 18px;
 }
 
-/* line 100, ../sass/index.scss */
+/* line 107, ../sass/index.scss */
 .about > img {
   margin: 15px;
 }
 
-/* line 104, ../sass/index.scss */
+/* line 111, ../sass/index.scss */
 #guide > li {
   font-size: 22px;
   list-style-type: circle;
 }
 
-/* line 110, ../sass/index.scss */
+/* line 117, ../sass/index.scss */
 p {
   line-height: 160%;
 }
 
-/* line 114, ../sass/index.scss */
+/* line 121, ../sass/index.scss */
 p > b {
   font-size: 120%;
   font-weight: bold;
   text-decoration: underline;
 }
 
-/* line 120, ../sass/index.scss */
+/* line 127, ../sass/index.scss */
 #donate {
   font-size: 36px;
   vertical-align: middle;
@@ -207,7 +216,7 @@ p > b {
   -moz-border-radius: 50% 0px 0px 50%;
   -webkit-border-radius: 50% 0px 0px 50%;
 }
-/* line 128, ../sass/index.scss */
+/* line 135, ../sass/index.scss */
 #donate img {
   width: 50px;
   height: 50px;
@@ -216,7 +225,7 @@ p > b {
 }
 
 @media only screen and (max-width: 767px) {
-  /* line 139, ../sass/index.scss */
+  /* line 146, ../sass/index.scss */
   aside#sidebar {
     display: none;
   }

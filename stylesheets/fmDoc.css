@@ -4,17 +4,17 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @media print {
-  /* line 10, ../sass/fmDoc.scss */
+  /* line 11, ../sass/fmDoc.scss */
   div {
     display: block;
   }
 
-  /* line 14, ../sass/fmDoc.scss */
+  /* line 15, ../sass/fmDoc.scss */
   .noPrint {
     display: none;
   }
 }
-/* line 21, ../sass/fmDoc.scss */
+/* line 22, ../sass/fmDoc.scss */
 body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -22,7 +22,7 @@ body {
   user-select: none;
 }
 
-/* line 29, ../sass/fmDoc.scss */
+/* line 30, ../sass/fmDoc.scss */
 #map {
   z-index: 9;
   -webkit-transition: all 1s ease;
@@ -32,12 +32,12 @@ body {
   transition: all 1s ease;
 }
 
-/* line 38, ../sass/fmDoc.scss */
+/* line 39, ../sass/fmDoc.scss */
 .milky {
   background-color: #D0BAA2;
 }
 
-/* line 42, ../sass/fmDoc.scss */
+/* line 43, ../sass/fmDoc.scss */
 .item {
   position: relative;
   top: 20px;
@@ -54,7 +54,7 @@ body {
   box-shadow: -5px 5px 0px 0px rgba(100, 100, 100, 0.5);
 }
 
-/* line 55, ../sass/fmDoc.scss */
+/* line 56, ../sass/fmDoc.scss */
 #bar {
   top: 20px;
   left: none;
@@ -72,7 +72,7 @@ body {
   box-shadow: -5px 5px 0px 0px rgba(100, 100, 100, 0.5);
 }
 
-/* line 68, ../sass/fmDoc.scss */
+/* line 69, ../sass/fmDoc.scss */
 .item:hover {
   top: 20px;
   left: 10px;
@@ -94,12 +94,12 @@ body {
     }
 
 */
-/* line 89, ../sass/fmDoc.scss */
+/* line 90, ../sass/fmDoc.scss */
 .item.press {
   max-height: 120px;
 }
 
-/* line 93, ../sass/fmDoc.scss */
+/* line 94, ../sass/fmDoc.scss */
 .item.press:active {
   max-height: 1024px;
   /*      overflow: auto; */
@@ -113,13 +113,13 @@ body {
 /*    p:hover {
       text-decoration: underline;
     } */
-/* line 109, ../sass/fmDoc.scss */
+/* line 110, ../sass/fmDoc.scss */
 .fixed {
   position: fixed;
   padding: 0px;
 }
 
-/* line 114, ../sass/fmDoc.scss */
+/* line 115, ../sass/fmDoc.scss */
 .ui-progressbar-value {
   border-radius: 5px;
   padding-left: 15px;
@@ -127,18 +127,18 @@ body {
   min-width: 75px;
 }
 
-/* line 121, ../sass/fmDoc.scss */
+/* line 122, ../sass/fmDoc.scss */
 .invis {
   display: none;
 }
 
-/* line 125, ../sass/fmDoc.scss */
+/* line 126, ../sass/fmDoc.scss */
 .tip {
   font-size: 66%;
   float: right;
 }
 
-/* line 130, ../sass/fmDoc.scss */
+/* line 131, ../sass/fmDoc.scss */
 #canvas {
   display: block;
   position: absolute;
@@ -152,29 +152,44 @@ body {
   cursor: sw-resize;
 }
 
-/* line 143, ../sass/fmDoc.scss */
+/* line 144, ../sass/fmDoc.scss */
 p {
   padding: 15px;
 }
 
-/* line 148, ../sass/fmDoc.scss */
+/* line 149, ../sass/fmDoc.scss */
 p * {
   position: relative;
   z-index: 7;
 }
 
-/* line 153, ../sass/fmDoc.scss */
+/* line 154, ../sass/fmDoc.scss */
 img {
   position: relative;
   z-index: 9;
 }
 
-/* line 158, ../sass/fmDoc.scss */
+/* line 159, ../sass/fmDoc.scss */
 .tool {
   z-index: 7;
 }
 
-/* line 161, ../sass/fmDoc.scss */
+/* line 162, ../sass/fmDoc.scss */
 .color {
   cursor: sw-resize;
+}
+
+/* line 166, ../sass/fmDoc.scss */
+#draw-box {
+  font-size: 16px;
+  position: relative;
+  left: 50px;
+  display: inline-block;
+}
+
+/* line 176, ../sass/fmDoc.scss */
+button.map, select.map {
+  -moz-box-shadow: blue 2px 2px 10px;
+  -webkit-box-shadow: blue 2px 2px 10px;
+  box-shadow: blue 2px 2px 10px;
 }
