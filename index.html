@@ -71,9 +71,9 @@
 
           <h3>
            
-            <input id ="find" type="number"
-                ng-model="searchM"
-                placeholder = "依年級搜尋教材，例如5"
+            <input id ="find" type="search"
+                ng-model="searchM" ng-init="searchM = ''"
+                placeholder = "輸入關鍵字或年級搜尋教材"
                 autofocus />
           </h3>
 

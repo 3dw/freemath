@@ -50,48 +50,11 @@ function Ctrl($scope) {
 }
 
 angular.module('App.filters', [])
-/*  .filter('mathUnitsFilter', function () {
-    return function (Units, searchM, searchK,logic) {
-        searchK = ""+searchK;
-
-        if (!angular.isUndefined(Units)  ) {  
-              var tempUnits = {and:[], or:[]};
-              
-              tempUnits.or = Units.filter(
-                function (unit) {
-                  return (
-                    (unit.g <= searchM && searchM <= unit.G) 
-                        || 
-                        (searchK.length && unit.n.indexOf(searchK) > -1)
-
-                      )
-              });
-
-              tempUnits.and = Units.filter(
-                function (unit) {
-                  return (
-                    (!searchM || (unit.g <= searchM && searchM <= unit.G)) 
-                        && 
-                        (searchK.length && unit.n.indexOf(searchK) > -1)
-                      )
-              });
-
-
-              return tempUnits[logic];
-
-         //   return tempUnits.length > 0 ? tempUnits : Units;
-        } else {
-            console.log(Units[0].g);
-            console.log(searchM);
-            return Units;
-        }
-    };
-}) */
-.filter('mathUnitsFilter', function () {
+  .filter('mathUnitsFilter', function () {
     return function(us,s){
       console.log(us);
       console.log(s);
-      var searchK = s || '';
+      var searchK = ("" + s) || '';
       var searchM = parseInt(s);
       return us.filter(
                 function (o) {
@@ -99,7 +62,7 @@ angular.module('App.filters', [])
                     (o.g <= searchM && searchM <= o.G) 
                         || 
                         (searchK.length && o.n.indexOf(searchK) > -1)
-                        || !searchM
+                          || !searchK
                       )
               });
     }
