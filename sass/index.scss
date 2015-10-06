@@ -24,12 +24,18 @@ header h2 {
   font-size: 18px;
 }
 
+h4.intro {
+  font-size: 18px !important;
+  margin-bottom:12px;
+  color: #66c !important;
+}
 
 
 input#find {
   font-size: 22px;
-  border: 3px hsla(180,20%,75%,1) solid;
-  width: 350px;
+  width: 350px;  
+  border: 3px hsla(180,20%,75%,1) solid;  
+  @include box-shadow(blue 2px 2px 10px);
 }
 
 .about > h2 {
