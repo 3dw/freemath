@@ -95,8 +95,8 @@ $(document).ready(function(){
 				console.log($(this).data());
 			});   // give all input an id
 
-	    	$(this.el).find("input:eq(0)").attr('placeholder', '請填答再按ENTER');
-			$(this.el).find("input:gt(0)").attr('placeholder', '請填答並自行檢查');
+	    	$(this.el).find("input:eq(0)").attr('placeholder', '');
+			$(this.el).find("input:gt(0)").attr('placeholder', '');
 
 			var firstWhite = $("*").filter(function(){
 					if ($(this).hasClass('button') || $(this).hasClass('tip')) return false;
