@@ -344,11 +344,11 @@ d3.csv(src, function(error, links) {
 
 console.log('A');
 
-// Compute the distinct nodes from the links.
-links.forEach(function(link) {
 
-    function showit(){
-          link.source = nodes[link.source] || 
+// Compute the distinct nodes from the links.
+
+function showthis(link){
+      link.source = nodes[link.source] || 
               (nodes[link.source] = {name: link.source});
 
           link.target = nodes[link.target] || 
@@ -356,12 +356,19 @@ links.forEach(function(link) {
 
           link.value = +link.value;
 
-		  if (link.source && !link.source.chi) link.source.chi = []; 
-		  if (link.target && !link.target.par) link.target.par = [];          
+      if (link.source && !link.source.chi) link.source.chi = []; 
+      if (link.target && !link.target.par) link.target.par = [];          
           
           if (link.source) link.source.chi.push(link.target);
           if (link.source) link.target.par.push(link.source);
-    }
+
+}
+
+
+
+links.forEach(function(link) {
+
+
 
     if ((m <= link.value || (link.value.split('~')[1] && 
             (link.value.split('~')[1] == 'M' || m <= link.value.split('~')[1]))) && 
@@ -374,13 +381,13 @@ links.forEach(function(link) {
 
            switch (mode) {
               case 'traceback':
-              if ($.inArray(link.target.replace('.htm',''), units) > -1) showit();
+              if ($.inArray(link.target.replace('.htm',''), units) > -1) showthis(link);
                 break;
               case 'traceforward':
-              if ($.inArray(link.source.replace('.htm',''), units) > -1) showit();
+              if ($.inArray(link.source.replace('.htm',''), units) > -1) showthis(link);
                 break;
               case 'traceTwoWay':
-                if ($.inArray(link.target.replace('.htm',''), units) > -1 || $.inArray(link.source.replace('.htm',''), units) > -1) showit();
+                if ($.inArray(link.target.replace('.htm',''), units) > -1 || $.inArray(link.source.replace('.htm',''), units) > -1) showthis(link);
                 break;
               case 'tracepuzzle':
 
@@ -389,15 +396,15 @@ links.forEach(function(link) {
 
                 if ($.inArray(compTarget.replace('.htm',''), units) > -1) {
                   unitsNext.push(compSource.replace('.htm',''));
-                  showit();
+                  showthis(link);
                 }
                 else if ($.inArray(compSource.replace('.htm',''), unitsPuzzle) > -1) {           
                   unitsPuzzleNext.push(compTarget.replace('.htm',''));
-                  showit();
+                  showthis(link);
                 }
                 break;
               default:
-                showit();
+                showthis(link);
            }
   
 
