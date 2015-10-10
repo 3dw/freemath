@@ -100,7 +100,7 @@
 
 		= {{ items.split(',').length}}! &divide; ({{items.split(',').length}} - {{n}})! 
 
-		= <span class = "cl" ng-click = "hide.p2 = !hide.p2"> {{ (hide.p2 && (items | showPermu:n).length * fact(n)) ||   '【__________】'}}  種排列</span>
+		= <span class = "cl"> {{ (items | showPermu:n).length * fact(n)}} 種排列</span>
 
 		<br/>
 		<br/>
@@ -109,7 +109,7 @@
 
 		= P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>  &divide; {{n}}!
 
-		= <span class = "cl" ng-click = "hide.c2 = !hide.c2">{{ (hide.c2 && (items | showPermu:n).length) || '【__________】' }} 種組合</span>
+		= <span class = "cl">{{ (items | showPermu:n).length  }} 種組合</span>
 
 	</div>
 
