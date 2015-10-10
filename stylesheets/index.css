@@ -199,13 +199,14 @@ a.button small {
   margin: 15px;
 }
 
-/* line 117, ../sass/index.scss */
-#guide > li {
-  font-size: 22px;
+/* line 118, ../sass/index.scss */
+#guide li, #story li {
+  font-size: 18px;
   list-style-type: circle;
+  line-height: 140%;
 }
 
-/* line 123, ../sass/index.scss */
+/* line 126, ../sass/index.scss */
 p {
   font-size: 18px;
   line-height: 140%;
@@ -214,7 +215,7 @@ p {
   max-width: 600px;
 }
 
-/* line 131, ../sass/index.scss */
+/* line 134, ../sass/index.scss */
 p > b {
   font-size: 120%;
   line-height: 200%;
@@ -222,7 +223,7 @@ p > b {
   text-decoration: underline;
 }
 
-/* line 138, ../sass/index.scss */
+/* line 141, ../sass/index.scss */
 #donate {
   font-size: 36px;
   vertical-align: middle;
@@ -231,7 +232,7 @@ p > b {
   -moz-border-radius: 50% 0px 0px 50%;
   -webkit-border-radius: 50% 0px 0px 50%;
 }
-/* line 146, ../sass/index.scss */
+/* line 149, ../sass/index.scss */
 #donate img {
   width: 50px;
   height: 50px;
@@ -240,7 +241,7 @@ p > b {
 }
 
 @media only screen and (max-width: 767px) {
-  /* line 157, ../sass/index.scss */
+  /* line 160, ../sass/index.scss */
   aside#sidebar {
     display: none;
   }

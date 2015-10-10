@@ -114,9 +114,12 @@ a.button small {
     margin: 15px;
 }
 
-#guide > li {
-  font-size: 22px;
-  list-style-type: circle;
+#guide, #story {
+  li {
+    font-size: 18px;
+    list-style-type: circle;
+    line-height:140%;
+  }
 }
 
 
