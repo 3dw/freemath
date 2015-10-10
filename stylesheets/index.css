@@ -207,17 +207,22 @@ a.button small {
 
 /* line 123, ../sass/index.scss */
 p {
-  line-height: 160%;
+  font-size: 18px;
+  line-height: 140%;
+  margin: 10px;
+  margin-top: 36px;
+  max-width: 600px;
 }
 
-/* line 127, ../sass/index.scss */
+/* line 131, ../sass/index.scss */
 p > b {
   font-size: 120%;
+  line-height: 200%;
   font-weight: bold;
   text-decoration: underline;
 }
 
-/* line 133, ../sass/index.scss */
+/* line 138, ../sass/index.scss */
 #donate {
   font-size: 36px;
   vertical-align: middle;
@@ -226,7 +231,7 @@ p > b {
   -moz-border-radius: 50% 0px 0px 50%;
   -webkit-border-radius: 50% 0px 0px 50%;
 }
-/* line 141, ../sass/index.scss */
+/* line 146, ../sass/index.scss */
 #donate img {
   width: 50px;
   height: 50px;
@@ -235,7 +240,7 @@ p > b {
 }
 
 @media only screen and (max-width: 767px) {
-  /* line 152, ../sass/index.scss */
+  /* line 157, ../sass/index.scss */
   aside#sidebar {
     display: none;
   }

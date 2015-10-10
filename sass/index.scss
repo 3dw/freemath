@@ -121,11 +121,16 @@ a.button small {
 
 
 p {
-  line-height: 160%;
+  font-size: 18px;
+  line-height: 140%;
+  margin: 10px;
+  margin-top: 36px;
+  max-width: 600px;
 }
 
 p > b {
   font-size: 120%;
+  line-height: 200%;
   font-weight: bold;
   text-decoration: underline;
 }
