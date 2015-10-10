@@ -225,14 +225,20 @@ p > b {
 
 /* line 141, ../sass/index.scss */
 #donate {
-  font-size: 36px;
+  display: block;
+  font-size: 30px;
+  line-height: 66px;
+  padding: 5px;
   vertical-align: middle;
   border: 1px #05f solid;
-  border-radius: 50% 0px 0px 50%;
   -moz-border-radius: 50% 0px 0px 50%;
-  -webkit-border-radius: 50% 0px 0px 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50% 0px 0px 50%;
+  -moz-box-shadow: blue 2px 2px 10px;
+  -webkit-box-shadow: blue 2px 2px 10px;
+  box-shadow: blue 2px 2px 10px;
 }
-/* line 149, ../sass/index.scss */
+/* line 151, ../sass/index.scss */
 #donate img {
   width: 50px;
   height: 50px;
@@ -241,7 +247,7 @@ p > b {
 }
 
 @media only screen and (max-width: 767px) {
-  /* line 160, ../sass/index.scss */
+  /* line 162, ../sass/index.scss */
   aside#sidebar {
     display: none;
   }

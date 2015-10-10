@@ -139,12 +139,14 @@ p > b {
 }
 
 #donate {
-  font-size: 36px;
+  display: block;
+  font-size: 30px;
+  line-height: 66px;
+  padding: 5px;
   vertical-align: middle;
   border: 1px #05f solid;
-  border-radius: 50% 0px 0px 50%;
-  -moz-border-radius: 50% 0px 0px 50%;
-  -webkit-border-radius: 50% 0px 0px 50%; 
+  @include border-radius(50% 0px 0px 50%);
+  @include box-shadow(blue 2px 2px 10px);
 
   img {
     width: 50px;
