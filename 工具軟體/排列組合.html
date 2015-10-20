@@ -44,6 +44,12 @@
 		cursor: pointer;
 	}
 
+	#ans {
+		margin-left: 45%;
+		line-height: 150%;
+	}
+
+
 </style>
 
 </head>
@@ -89,27 +95,31 @@
 
 <hr>
 
-	<div class = "ui center aligned header" ng-cloak>
+	<div id = "ans" class = "ui left aligned header" ng-cloak>
 		共有
 		<br/>
 		<br/>
 
 		P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub> 
 
-		= {{ items.split(',').length | spreadFact:n }}
+		<br/>= {{ items.split(',').length}}! &divide; ({{items.split(',').length}} - {{n}})! 
 
-		= {{ items.split(',').length}}! &divide; ({{items.split(',').length}} - {{n}})! 
+		<br/>= {{ items.split(',').length | spreadFact:n }}
 
-		= <span class = "cl"> {{ (items | showPermu:n).length * fact(n)}} 種排列</span>
+		<br/>= <span class = "cl"> {{ (items | showPermu:n).length * fact(n)}} 種排列</span>
 
 		<br/>
 		<br/>
 
 		C <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>
 
-		= P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>  &divide; {{n}}!
+		<br/>= P <sup>{{items.split(',').length}}</sup> <sub style = "margin-left: -1.8ex">{{n}}</sub>  &divide; {{n}}!
 
-		= <span class = "cl">{{ (items | showPermu:n).length  }} 種組合</span>
+		<br/>= {{ items.split(',').length}}! &divide; [({{items.split(',').length}} - {{n}})! {{n}}!]
+
+		<br/>= {{ items.split(',').length | spreadFact:n }} &divide; {{n}}!
+
+		<br/>= <span class = "cl">{{ (items | showPermu:n).length  }} 種組合</span>
 
 	</div>
 
