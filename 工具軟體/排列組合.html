@@ -76,10 +76,10 @@
 
 <div class='ui three column grid'>
 
-	<section class='column' ng-repeat = "ans in items | showPermu:n" >
+	<section class='column' ng-repeat = "ans in showPermu(items,n)" >
 
       <div class="ui blue segment">
-      	<span ng-repeat = "a in ans|shuffle">
+      	<span ng-repeat = "a in shuffle(ans)">
       	 <span class="ui green button" ng-click = "hide[a] = !hide[a]" ng-hide = "hide[a]"> {{ a }} </span>
       	 <span class="ui green button" ng-click = "hide[a] = !hide[a]" ng-show = "hide[a]">
       	 	<span ng-repeat = "r in 0 | range:(a.length)">&emsp;&emsp;</span>
@@ -106,7 +106,7 @@
 
 		<br/>= {{ items.split(',').length | spreadFact:n }}
 
-		<br/>= <span class = "cl"> {{ (items | showPermu:n).length * fact(n)}} 種排列</span>
+		<br/>= <span class = "cl"> {{ showPermu(items,n).length * fact(n)}} 種排列</span>
 
 		<br/>
 		<br/>
@@ -119,7 +119,7 @@
 
 		<br/>= {{ items.split(',').length | spreadFact:n }} &divide; {{n}}!
 
-		<br/>= <span class = "cl">{{ (items | showPermu:n).length  }} 種組合</span>
+		<br/>= <span class = "cl">{{ showPermu(items,n).length  }} 種組合</span>
 
 	</div>
 
@@ -155,35 +155,7 @@ function take(arr, n) {
 
 	
 var mathApp = angular.module('mathApp', []);
-mathApp.filter('showPermu', function(){
-	return function(items, n){
-		var iList = items.split(',');
-		var ansL = take(comb(iList), n).sort();
-		return ansL;
-	}
-}).filter('shuffle', function(){
-	return function(iList){
-		var ansL = [];
-			function perm(list, ret) {
-				if (list.length == 0) {			
-					var row = ret.join(' ');
-					ansL.push(row);
-					return;
-				}
-				for (var i = 0; i < list.length; i++) {
-					var x = list.splice(i, 1);
-					ret.push(x);
-					perm(list, ret);
-					ret.pop();
-					list.splice(i, 0, x);
-				}
-			}
-		perm(iList, []);
-
-		ansL = ansL.sort();
-		return ansL;
-	}
-}).filter('spreadFact', function(){
+mathApp.filter('spreadFact', function(){
 	return function(n, k){
 		var ansL = [];
 		for (var i = n; i > (n-k); i--) {
@@ -203,23 +175,56 @@ mathApp.filter('showPermu', function(){
 
 function Ctrl ($scope) {
 
-	$scope.items = "A,B,C,D";
-	$scope.n = 2;
-	$scope.hide = {};
+	angular.extend($scope,
+		{	items: "A,B,C,D",
+			n : 2,
+			hide : {}
+		});
+	
+	
 
-	$scope.fact = function(n) {
+	angular.extend($scope,
+	{fact : function(n) {
+			var f = [];
+			function factorial (n) {
+			  if (n == 0 || n == 1)
+			    return 1;
+			  if (f[n] > 0)
+			    return f[n];
+			  return f[n] = factorial(n-1) * n;
+			}
 
-		var f = [];
-		function factorial (n) {
-		  if (n == 0 || n == 1)
-		    return 1;
-		  if (f[n] > 0)
-		    return f[n];
-		  return f[n] = factorial(n-1) * n;
-		}
+			return factorial(n);
+	    },
+	 shuffle : function(iList){
+					var ansL = [];
+						function perm(list, ret) {
+							if (list.length == 0) {			
+								var row = ret.join(' ');
+								ansL.push(row);
+								return;
+							}
+							for (var i = 0; i < list.length; i++) {
+								var x = list.splice(i, 1);
+								ret.push(x);
+								perm(list, ret);
+								ret.pop();
+								list.splice(i, 0, x);
+							}
+						}
+					perm(iList, []);
 
-		return factorial(n);
-    }
+					ansL = ansL.sort();
+					return ansL;
+				},
+	  showPermu	: function(items, n) {
+						var iList = items.split(',');
+						var ansL = take(comb(iList), n).sort();
+						return ansL;
+				}
+
+	});
+
 }
 
 </script>
