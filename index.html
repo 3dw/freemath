@@ -69,17 +69,14 @@
 
         <div ng-controller ="Ctrl">
 
-          <h3>
-           
+          <h4 class = "intro">佳仁與宗浩的自編教材</h4>
             <input id ="find" type="search"
                 ng-model="searchM" ng-init="searchM = ''"
                 placeholder = "輸入關鍵字或年級搜尋教材"
                 autofocus />
-          </h3>
-
-          <hr/>          
-
-          <h4 class = "intro">佳仁與宗浩的自編教材</h4>
+          <br/>
+          <br/>
+          <i class ="sp find"></i>
 
           <ul id ="textbook" ng-cloak>
             <li id = "data"
@@ -109,6 +106,8 @@
           <hr/>
 
           <h4 class = "intro">工具、地圖與社群</h4>
+          <br/>
+          <i class = "sp tool"></i>
 
           <ul id ="guide">
               <li><a href = "http://bestian.github.io/freemath/工具軟體">工具軟體</a></li>              <li><a href="http://bestian.github.io/freemath/學習地圖/">學習地圖</a></li>
@@ -118,6 +117,8 @@
           <hr/>
 
           <h4 class = "intro">親子數學經驗分享</h4>
+          <br/>
+          <i class = "sp person"></i>
 
           <ul id = "story">             
               <li><a href = "http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記-從加法談起.doc">寬廣媽媽的親子數學筆記-從加法談起(doc檔)</a></li>
@@ -129,7 +130,8 @@
 
         <hr/>
 
-        <h4 class = "intro">編創緣起</h4>
+        <h4 class = "intro">編創緣起</h4><br/>
+        <i class = "sp tree"></i>
 
         <div class = "about">        
 
@@ -294,11 +296,11 @@
         </a> -->
 
         <a href="https://sites.google.com/site/alearn13994229/gong-yi-shi-xiang" target = "_blank" id ="donate" title = "您的支持，讓公益的成果更加豐富。">
-          <img src="images/smile.png"/>捐款支持
+          <i class = "sp plus circle"></i>捐款
         </a>
 
         <a href="mailto:bestian@gmail.com" id ="donate" title = "您的支持，讓公益的成果更加豐富。">
-          <img src="images/smile.png"/>意見回饋
+          <i class = "sp question circle"></i>意見
         </a>
 
 <!--

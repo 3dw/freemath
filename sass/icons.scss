@@ -1,0 +1,47 @@
+.sp {
+  display: inline-block !important;
+  width: 90px;
+  height: 90px;
+  @include transform(scale(0.33));
+  @include apply-origin(left top, false);
+  margin-bottom: -60px;
+  @include border-radius(15%);
+  &.circle {
+    @include border-radius(50%);
+  }
+}
+
+.find {
+  background: url("../images/icons0.png") -245px -180px;
+}
+
+.star {
+  background: url("../images/icons0.png") -779px -553px; /* 4 3 */
+}
+
+.tool {
+  background: url("../images/icons0.png") -779px -180px; /* ??  ?? */
+}
+
+.person {
+  background: url("../images/icons0.png") -645px -45px;
+}
+
+.up {
+  background: url("../images/icons0.png") -649px -423px;
+}
+
+.tree {
+  background: url("../images/icons0.png") -110px -180px; 
+}
+
+.plus {
+  background: url("../images/icons0.png") -375px -418px;
+  &.circle {
+    background-position: -378px -418px;
+  }
+}
+
+.question {
+  background: url("../images/icons0.png") -511px -553px;
+}
