@@ -1,3 +1,13 @@
+$outer_logos-sprite-dimensions: true;
+
+@import "compass/utilities/sprites";
+@import "outer_logos/*.png";
+@include all-outer_logos-sprites;
+
+@import "compass/css3";
+
+
+
 .sp {
   display: inline-block !important;
   width: 90px;

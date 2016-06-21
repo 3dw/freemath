@@ -67,7 +67,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 1, ../sass/icons.scss */
+/* line 64, outer_logos/*.png */
+.outer_logos-sprite, .outer_logos-edu-logo, .outer_logos-math-logo, .outer_logos-wikipedia-logo {
+  background-image: url('/images/outer_logos-saee2a270e1.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/sprites/_base.scss */
+.outer_logos-edu-logo {
+  background-position: 0 0;
+  height: 50px;
+  width: 50px;
+}
+
+/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/sprites/_base.scss */
+.outer_logos-math-logo {
+  background-position: 0 -50px;
+  height: 300px;
+  width: 939px;
+}
+
+/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/sprites/_base.scss */
+.outer_logos-wikipedia-logo {
+  background-position: 0 -350px;
+  height: 36px;
+  width: 36px;
+}
+
+/* line 11, ../sass/_icons.scss */
 .sp {
   display: inline-block !important;
   width: 90px;
@@ -85,55 +112,55 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-border-radius: 15%;
   border-radius: 15%;
 }
-/* line 9, ../sass/icons.scss */
+/* line 19, ../sass/_icons.scss */
 .sp.circle {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
 
-/* line 14, ../sass/icons.scss */
+/* line 24, ../sass/_icons.scss */
 .find {
   background: url("../images/icons0.png") -245px -180px;
 }
 
-/* line 18, ../sass/icons.scss */
+/* line 28, ../sass/_icons.scss */
 .star {
   background: url("../images/icons0.png") -779px -553px;
   /* 4 3 */
 }
 
-/* line 22, ../sass/icons.scss */
+/* line 32, ../sass/_icons.scss */
 .tool {
   background: url("../images/icons0.png") -779px -180px;
   /* ??  ?? */
 }
 
-/* line 26, ../sass/icons.scss */
+/* line 36, ../sass/_icons.scss */
 .person {
   background: url("../images/icons0.png") -645px -45px;
 }
 
-/* line 30, ../sass/icons.scss */
+/* line 40, ../sass/_icons.scss */
 .up {
   background: url("../images/icons0.png") -649px -423px;
 }
 
-/* line 34, ../sass/icons.scss */
+/* line 44, ../sass/_icons.scss */
 .tree {
   background: url("../images/icons0.png") -110px -180px;
 }
 
-/* line 38, ../sass/icons.scss */
+/* line 48, ../sass/_icons.scss */
 .plus {
   background: url("../images/icons0.png") -375px -418px;
 }
-/* line 40, ../sass/icons.scss */
+/* line 50, ../sass/_icons.scss */
 .plus.circle {
   background-position: -378px -418px;
 }
 
-/* line 45, ../sass/icons.scss */
+/* line 55, ../sass/_icons.scss */
 .question {
   background: url("../images/icons0.png") -511px -553px;
 }
