@@ -25,3 +25,9 @@ bin n = map(\x ->  c n x) [0..n]
 
 biN :: Integer -> [[Integer]]
 biN n = map (\x -> bin x)[0..n]
+
+
+
+main :: IO()
+main = do x <- readFile "./counting.hs"
+		
