@@ -1,12 +1,18 @@
-// <script src="../javascripts/jquery-1.10.2.js"></script>
-// <script src="../javascripts/jquery-ui.js"></script>
-// <script src="../javascripts/underscore-min.js"></script>
-// <script src="../javascripts/backbone-min.js"></script>
-// <script src="../javascripts/tongwen_core.js"></script>
-
-
 // Todo::  faster...
 
+/* Angular */
+function Ctrl($scope) {
+  $scope.ranges = ["小學數學學習地圖","國中數學學習地圖","高中數學學習地圖"];
+  $scope.range = "小學數學學習地圖";
+  $scope.color = "#4bf";
+  $scope.colors = ["#4bf","#000","#880","#0f0"];
+}
+
+var fmDocApp = angular.module('fmDocApp', []);
+fmDocApp.controller('Ctrl', ['$scope', Ctrl]);
+
+
+/* BackBone */
 $(window).load(function(){
 			$(window).scrollTop(0);
 });
@@ -44,7 +50,7 @@ $(document).ready(function(){
 			w = $(window).width();
 
 	    	$("p,div,canvas").hide();
-			$("#canvas").attr("height", h).attr("width", w).css("top", 0);
+		//	$("#canvas").attr("height", h).attr("width", w).css("top", 0);
 	    	$(".first,.tool").show();
 	    	$("p,img,table").draggable().css("cursor", "move");
 
@@ -118,6 +124,12 @@ $(document).ready(function(){
   // 				$(this).select();
 //			});
 
+			var maybeOnline = ' <div id = "start" class="ui huge green button">線上學習'+document.title+'</div>'
+						+' <div class="or"></div>';
+
+			if($("html").attr("xmlns:w") == "urn:schemas-microsoft-com:office:word")
+				maybeOnline = '';
+
 
 	    	$(this.el).prepend(
 	/*			'<img id = "map" src="../images/mindmap-all.png" width="453" height="391" border="0" usemap="#Map"/ style="position:fixed;top:15px;right:150px; border-radius: 15px;">'
@@ -140,8 +152,7 @@ $(document).ready(function(){
 //	    			+'也可以上臉書「自學數學團」提問</button></p>'
 //	    		+'<br /><br />'
 		    		+'<div class="ui huge buttons">'
-						+' <div id = "start" class="ui huge green button">線上學習'+document.title+'</div>'
-						+' <div class="or"></div>'
+						+maybeOnline
 						+' <button class = "ui small blue button" onclick = "location = \'https://www.facebook.com/groups/156709241062806/\'">'
 		    			+'上臉書「自學數學團」提問</button>'
 		//				+' <div class="ui button" onclick = "TongWen.trans2Simp(document)">转成简体</div>'
@@ -190,7 +201,7 @@ $(document).ready(function(){
 
 			$("html, body").animate({ scrollTop: $(window).scrollTop() + 1000 }, 1000);
 
-			$("canvas").show();
+		//	$("canvas").show();
 
     	//	$(this.el).prepend('<div id="bar" class = "fixed" style ="z-index:2;width:40%">'
     	//		+'</div>');
