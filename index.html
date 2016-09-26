@@ -1,331 +1,135 @@
 <!DOCTYPE html>
 <html ng-app="fmIndexApp">
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://bestian.github.io/freemath/" />
-    <meta property="og:title" content="自由數學-自學數學教材集錦" />
-    <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo-big.png" />
-
-    <meta property="og:description" content = "適合自學使用的數學地圖與數學教材">
-
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://bestian.github.io/freemath/">
+    <meta property="og:title" content="自由數學-自學數學教材集錦">
+    <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo-big.png">
+    <meta property="og:description" content="適合自學使用的數學地圖與數學教材">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-
-   
-   <!-- <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <!--
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" /> -
-    
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <link rel="stylesheet" type="text/css" class="ui" href="stylesheets/semantic.min.css"> -->
-
-
-    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-    <!--[if IE]>
-        <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href = "stylesheets/index.css" />
-
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    -->
+    <link rel="stylesheet" type="text/css" href="./bower_components/semantic/dist/semantic.min.css" class="ui">
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css">
+    <!--if IElink(href='stylesheets/ie.css', media='screen, projection', rel='stylesheet', type='text/css')
+    -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <!--if lt IE 9script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
+    -->
     <title>自由數學Freemath</title>
-
-    
-
-
   </head>
-
-
-
   <body>
     <header>
-      <div class="inner">   
-        <h1>自由數學</h1>
-        <h2/>-適合自學的學習地圖和教材</h2>
-
-         <!-- <h2><button class = "ui small blue button" onclick = "TongWen.trans2Simp(document)">也可转成简体字</button></h2> -->
-        
+      <div class="inner">
+        <h1>自由數學-自學數學教材集錦</h1>
       </div>
     </header>
-
-
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-
-
-        <div ng-controller ="Ctrl">
-
-          <h4 class = "intro">佳仁與宗浩的自編教材</h4>
-            <input id ="find" type="search"
-                ng-model="searchM" ng-init="searchM = ''"
-                placeholder = "輸入關鍵字或年級搜尋教材"
-                autofocus />
-          <br/>
-          <br/>
-          <i class ="sp find"></i>
-
-          <ul id ="textbook" ng-cloak>
-            <li id = "data"
-                ng-repeat = "u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) "> 
-
-                  <a target = "_blank" href = "weblearn/{{u.n}}" >
-                    * {{ u.n.split('.htm')[0] }}</a>
-
-                  <span class = "note">
-                    {{ u.g }} ~ {{ u.G }}年級</a>
-             
-             <!--     
-                  <a target = "_blank" href = "weblearn/{{i.n}}" title = "自由數學教材"> <img class="fm_logo" /></a>
-
-
-                  <a target = "_blank" href = "http://zh.wikipedia.org/wiki/{{i.wiki || i.n.split('.htm')[0].substr(0, 2)}}" title = "維基百科說明"> <img class="wiki" /></a>
-
-                  <a target = "_blank" href = "https://www.google.com.tw/search?q={{i.n.split('.htm')[0]}}&tbm=isch" title = "Google圖片搜詢"> <img class="google" /></a> 
-
-
-                  <a target = "_blank" href="http://www.moedict.tw/{{i.n.split('.htm')[0]}}" title = "萌典字義"><img class="3du" /> {{$eval(showImg())}}</a>  -->
-
-
-          </ul>
-
-      
-          <hr/>
-
-          <h4 class = "intro">工具、地圖與社群</h4>
-          <br/>
-          <i class = "sp tool"></i>
-
-          <ul id ="guide">
-              <li><a href = "http://bestian.github.io/freemath/工具軟體">工具軟體</a></li>              <li><a href="http://bestian.github.io/freemath/學習地圖/">學習地圖</a></li>
-              <li><a href = "https://www.facebook.com/groups/156709241062806/">自學數學團</a></li>
-          </ul>
-
-          <hr/>
-
-          <h4 class = "intro">親子數學經驗分享</h4>
-          <br/>
-          <i class = "sp person"></i>
-
-          <ul id = "story">             
-              <li><a href = "http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記-從加法談起.doc">寬廣媽媽的親子數學筆記-從加法談起(doc檔)</a></li>
-              <li><a href = "http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記廣廣6-8歲.doc">寬廣媽媽的親子數學筆記廣廣6-8歲(doc檔)</a></li>
-              <li><a href="http://www.babyhome.com.tw/note.php?mid=129571&lno=82029284" target = "_blank">更多寬廣媽媽的親子數學記錄</a>
-          </ul>
-
-        </div>
-
-        <hr/>
-
-        <h4 class = "intro">編創緣起</h4><br/>
-        <i class = "sp tree"></i>
-
-        <div class = "about">        
-
-          <h2>跟著教材思考  -  朱佳仁，自由數學共同發起人</h2>
-
-              <h3>為什麼要編教材？</h3>
-
-                <img src = "./images/for_about/Chiajen001.jpg" width = "50%" style = "float:right">
-
-                <p>當初寫這份教材，是因為市面上找不到合適的自學教材，<b>一般教科書太嚴謹、太生硬，很難讓人上手自學，而參考書又只是條列重點後，就是一堆例題。</b></p>
-
-                <p>剛好那時候父親幫康軒編了數學好小子這一套國小數學教材，以填充格讓學生能夠跟著解題思路走，就向宗浩提議合編一套國中數學教材，<b>一樣以邊閱讀邊填充的方式，增加學生參與的機會，並且配合教材合開了混齡的數學自學課程，這是起點。</b></p>
-
-                <p>後來我們的共開了幾學期的自學課程，還參入數學遊戲的部份，變成「數學練與玩」，而這套教材也在學生學習的需要下，逐漸把國中各單元編寫完成，要感謝這門課程，讓我們在學生需要的催促下，能夠完成一個又一個的單元。</p>
-
-
-              <h3>教材的取向</h3>
-
-
-                <p>很多學生到了國中後，開始懷疑這些非日常生活所需的數學，為什麼還要學？我常跟學生說，腦袋像肌肉一樣，不用就會退化，抽象思考能力如果不藉由學習更深的數學，就無法鍛鍊，<b>也許這些內容日後並不會用到，但是在學習的過程中，學到的解題思路與策略，卻是一輩子帶的走的能力。</b></p>
-
-                <p>這套教材也許並不如教科書一般嚴謹，但是<b>它希望讓學生感覺到好像有人陪著他一起想問題，並且經歷當年這些許許多多的前輩們，所面臨的掙扎、所採取的各種試驗，所以在過程中特別帶入與前後單元的連結，並配合「數學地圖」，讓學生體會到數學觀念並非孤島，而是一棵互想有連結、枝葉茂密的大樹。</b></p>
-              
-
-              <h3>編創的考驗與開源釋出的想法</h3>
-
-
-                <p>編寫教材是數學教學者最大的考驗，在課堂上，一個經驗豐富的教學者可以即時反應學生的需要，但是在編寫教材中，要想像學生在做的時候，可能會有的反應，又要兼顧讓學習的材料能夠有邏輯的呈現出來。還有挑選或是設計有代表性的例題，讓學生能夠真正的在做這些題目中，學到東西。</p>
-
-                <p>把這份教材釋出就是希望能夠讓更多人一起跟著教材思考與學習，而教材是活的，不同使用者的回饋還會讓我們去修改內容，或是以其他方式來貼近使用者的需要。<b>希望大家多多給我們回饋，並且享受一起思考、一起發現的快樂與成就。</b></p>
-
-        </div>
-
-        <hr/>
-
-        <div class = "about">
-
+          <div ng-controller="Ctrl">
+            <h4 class="intro">佳仁與宗浩的自編教材</h4>
+            <input id="find" type="search" ng-model="searchM" ng-init="searchM = ''" placeholder="輸入關鍵字或年級搜尋教材" autofocus=""><br><br><i class="sp find"></i>
+            <ul id="textbook" ng-cloak="">
+              <li id="data" ng-repeat="u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) "><a target="_blank" href="weblearn/{{u.n}}">* {{ u.n.split('.htm')[0] }}</a><span ng-bind-template="{{ u.g }} ~ {{ u.G }}年級" class="note"></span></li>
+            </ul>
+            <hr>
+            <h4 class="intro">工具、地圖與社群</h4><br><i class="sp tool"></i>
+            <ul id="guide">
+              <li><a href="http://bestian.github.io/freemath/工具軟體" target="_blank">工具軟體</a></li>
+              <li><a href="http://bestian.github.io/freemath/學習地圖/" target="_blank">學習地圖</a></li>
+              <li><a href="https://www.facebook.com/groups/156709241062806/" target="_blank">自學數學團</a></li>
+              <li><a href="https://freemath.hackpad.com/" target="_blank">Hackpad</a></li>
+            </ul>
+            <hr>
+            <h4 class="intro">親子數學經驗分享</h4><br><i class="sp person"></i>
+            <ul id="story">
+              <li><a href="http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記-從加法談起.doc">寬廣媽媽的親子數學筆記-從加法談起(doc檔)</a></li>
+              <li><a href="http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記廣廣6-8歲.doc">寬廣媽媽的親子數學筆記廣廣6-8歲(doc檔)</a></li>
+              <li><a href="http://www.babyhome.com.tw/note.php?mid=129571&amp;lno=82029284" target="_blank">更多寬廣媽媽的親子數學記錄</a></li>
+            </ul>
+          </div>
+          <hr>
+          <h4 class="intro">編創緣起</h4><br><i class="sp tree"></i>
+          <div class="about">
+            <h2>跟著教材思考  -  朱佳仁，自由數學共同發起人</h2>
+            <h3>為什麼要編教材？</h3><img src="./images/for_about/Chiajen001.jpg" width="50%" style="float:right">
+            <p>當初寫這份教材，是因為市面上找不到合適的自學教材，<b>一般教科書太嚴謹、太生硬，很難讓人上手自學，而參考書又只是條列重點後，就是一堆例題。</b></p>
+            <p>剛好那時候父親幫康軒編了數學好小子這一套國小數學教材，以填充格讓學生能夠跟著解題思路走，就向宗浩提議合編一套國中數學教材，<b>一樣以邊閱讀邊填充的方式，增加學生參與的機會，並且配合教材合開了混齡的數學自學課程，這是起點。</b></p>
+            <p>後來我們的共開了幾學期的自學課程，還參入數學遊戲的部份，變成「數學練與玩」，而這套教材也在學生學習的需要下，逐漸把國中各單元編寫完成，要感謝這門課程，讓我們在學生需要的催促下，能夠完成一個又一個的單元。</p>
+            <h3>教材的取向</h3>
+            <p>很多學生到了國中後，開始懷疑這些非日常生活所需的數學，為什麼還要學？我常跟學生說，腦袋像肌肉一樣，不用就會退化，抽象思考能力如果不藉由學習更深的數學，就無法鍛鍊，<b>也許這些內容日後並不會用到，但是在學習的過程中，學到的解題思路與策略，卻是一輩子帶的走的能力。</b></p>
+            <p>這套教材也許並不如教科書一般嚴謹，但是<b>它希望讓學生感覺到好像有人陪著他一起想問題，並且經歷當年這些許許多多的前輩們，所面臨的掙扎、所採取的各種試驗，所以在過程中特別帶入與前後單元的連結，並配合「數學地圖」，讓學生體會到數學觀念並非孤島，而是一棵互想有連結、枝葉茂密的大樹。</b></p>
+            <h3>編創的考驗與開源釋出的想法</h3>
+            <p>編寫教材是數學教學者最大的考驗，在課堂上，一個經驗豐富的教學者可以即時反應學生的需要，但是在編寫教材中，要想像學生在做的時候，可能會有的反應，又要兼顧讓學習的材料能夠有邏輯的呈現出來。還有挑選或是設計有代表性的例題，讓學生能夠真正的在做這些題目中，學到東西。</p>
+            <p>把這份教材釋出就是希望能夠讓更多人一起跟著教材思考與學習，而教材是活的，不同使用者的回饋還會讓我們去修改內容，或是以其他方式來貼近使用者的需要。<b>希望大家多多給我們回饋，並且享受一起思考、一起發現的快樂與成就。</b></p>
+          </div>
+          <hr>
+          <div class="about">
             <h2>教材不是萬能，沒教材萬萬不能  -  唐宗浩，自由數學共同發起人</h2>
-
-                <h3>為什麼要編教材？</h3>
-
-                <img src = "./images/for_about/Bestian001.jpg" width = "50%" style = "float:right">
-
-                <p>其實，一開始我和許多教育工作者一樣，只是在教自己班上的學生，有需要時，會自編一些學習單而已，沒想過會去編整套的教材。</p>
-
-                <p>那時我總認為編整套的教材，是有人力、有財力的出版社，或是公益的基金會，才做的事。</p>
-
-                <p>後來是因為教材不夠用，我為了要找一套，可以自學用的教材，去賣參考書的書店逛。</p>
-                
-                <p><b>結果，我被看到的一切嚇到了。找了很久，找不到一本有完整交代觀念的。它們都把重點放在後面的練習題。</b></p>
-
-                <p>這意味著，學生不能用這些教材自學，甚至無法邊學邊問，甚至在觀念還不清楚的情況下，就被埋入大量的習題之中。
-
-                <p><b>這不是我要的。我要學生可以拿來自己學會的。</b></p>
-                
-                <p>事實上，很多學生在課堂上不會完全聽懂，聽懂也可能會忘，教材應該具有學習和複習的功能，尤其是先備知識有洞的學生，更需要適合程度的教材來補洞。</p>
-
-                <p>例如對一個「分數」概念不清的學生，你給他二十題分數的「計算」練習，並不能幫他澄清概念。很多人以為學生數學不好就是練習不夠，其實不一定，很多時候是觀念不清。練習也重要，但不能本末倒置。</p>
-
-                <p>沒有完整引入觀念的教材，只能說是公式與題目集錦，只能當額外練習，完完全全不適合學生自學。</p>
-                
-                <p><b>那時我十分沮喪。後來升起一個念頭：既然，我要的教材不存在，那就只好自己去編了。</b></p>
-
-              <h3>和佳仁老師合作</h3>
-
-                <p>佳仁是我在教育界的前輩，也是我在小學時的理化老師，後來我在自主培力學園任教時，她也給過很多教學方面的指導。</p>
-
-                <p>佳仁在自主培力學園請產假的那一學年，我大學還沒畢業，就接下了代課的任務。</p>
-              
-                <p>代佳仁的課，一開始壓力很大，因為佳仁的課很精彩，也很紮實，而且自主培力學園是挑戰很高的班級。</p>
-
-
-                <p>培力學園專收不想上學的國高中生，重建他們的學習動力。那時我第一次帶混齡、學生個別差異大，包含符號障礙、閱讀障礙、受過不當教學、受過霸凌的學生時，為了重新建立成功經驗、啟動思考實驗的勇氣與能力、讓學生重新喜歡數學，就用了全部的心思和能力。</p>
-                
-                <p>雖然學生的能力和態度進步明顯，但是很多在學校的考試上，仍沒有能激起成就感的成績進步。</p>
-                
-                <p>我原本是要他們拿學校課本來自己練。我以為在思考和學習能力進步後，看課本自修應該不難。</p>
-
-                <p><b>但是，當我看到當前的課本編輯方式，我就瞭解為什麼他們沒辦法看課本自修。不要說困難的學生，一般生也很難看那種課本來自修。課本編輯的方式，和以前我中學時大大不同，竟然忽略讓人形成概念的「原始問題」，而是從名詞、符號、公式與例題講起。</b></p>
-
-                <p>那樣的課本，完全只能在課堂中，當作一個索引和練習，非常不適合自己唸。</p>
-
-                <p><b>我也嘗試找過其他坊間的教材、參考書、包括體制外的教材…凡是一般家庭找得到的教材，我大概都接觸過。但是，都沒有一套既包含了課本的軸線，又適合自己唸的。</b></p>
-
-                <p>正好那時佳仁回來，我們就商量自編「形成性教材」，也就是可以自修來形成概念，可以當課本用的教材。</p>
-
-                <p>其實，如果不是佳仁決定一起合作，我自己一個人可能不敢著手去編。</p>
-                
+            <h3>為什麼要編教材？</h3><img src="./images/for_about/Bestian001.jpg" width="50%" style="float:right">
+            <p>其實，一開始我和許多教育工作者一樣，只是在教自己班上的學生，有需要時，會自編一些學習單而已，沒想過會去編整套的教材。</p>
+            <p>那時我總認為編整套的教材，是有人力、有財力的出版社，或是公益的基金會，才做的事。</p>
+            <p>後來是因為教材不夠用，我為了要找一套，可以自學用的教材，去賣參考書的書店逛。</p>
+            <p><b>結果，我被看到的一切嚇到了。找了很久，找不到一本有完整交代觀念的。它們都把重點放在後面的練習題。</b></p>
+            <p>這意味著，學生不能用這些教材自學，甚至無法邊學邊問，甚至在觀念還不清楚的情況下，就被埋入大量的習題之中。</p>
+            <p><b>這不是我要的。我要學生可以拿來自己學會的。</b></p>
+            <p>事實上，很多學生在課堂上不會完全聽懂，聽懂也可能會忘，教材應該具有學習和複習的功能，尤其是先備知識有洞的學生，更需要適合程度的教材來補洞。</p>
+            <p>例如對一個「分數」概念不清的學生，你給他二十題分數的「計算」練習，並不能幫他澄清概念。很多人以為學生數學不好就是練習不夠，其實不一定，很多時候是觀念不清。練習也重要，但不能本末倒置。</p>
+            <p>沒有完整引入觀念的教材，只能說是公式與題目集錦，只能當額外練習，完完全全不適合學生自學。</p>
+            <p><b>那時我十分沮喪。後來升起一個念頭：既然，我要的教材不存在，那就只好自己去編了。</b></p>
+            <h3>和佳仁老師合作</h3>
+            <p>佳仁是我在教育界的前輩，也是我在小學時的理化老師，後來我在自主培力學園任教時，她也給過很多教學方面的指導。</p>
+            <p>佳仁在自主培力學園請產假的那一學年，我大學還沒畢業，就接下了代課的任務。</p>
+            <p>代佳仁的課，一開始壓力很大，因為佳仁的課很精彩，也很紮實，而且自主培力學園是挑戰很高的班級。</p>
+            <p>培力學園專收不想上學的國高中生，重建他們的學習動力。那時我第一次帶混齡、學生個別差異大，包含符號障礙、閱讀障礙、受過不當教學、受過霸凌的學生時，為了重新建立成功經驗、啟動思考實驗的勇氣與能力、讓學生重新喜歡數學，就用了全部的心思和能力。</p>
+            <p>雖然學生的能力和態度進步明顯，但是很多在學校的考試上，仍沒有能激起成就感的成績進步。</p>
+            <p>我原本是要他們拿學校課本來自己練。我以為在思考和學習能力進步後，看課本自修應該不難。</p>
+            <p><b>但是，當我看到當前的課本編輯方式，我就瞭解為什麼他們沒辦法看課本自修。不要說困難的學生，一般生也很難看那種課本來自修。課本編輯的方式，和以前我中學時大大不同，竟然忽略讓人形成概念的「原始問題」，而是從名詞、符號、公式與例題講起。</b></p>
+            <p>那樣的課本，完全只能在課堂中，當作一個索引和練習，非常不適合自己唸。</p>
+            <p><b>我也嘗試找過其他坊間的教材、參考書、包括體制外的教材…凡是一般家庭找得到的教材，我大概都接觸過。但是，都沒有一套既包含了課本的軸線，又適合自己唸的。</b></p>
+            <p>正好那時佳仁回來，我們就商量自編「形成性教材」，也就是可以自修來形成概念，可以當課本用的教材。</p>
+            <p>其實，如果不是佳仁決定一起合作，我自己一個人可能不敢著手去編。</p>
             <h3>編教材的過程</h3>
-
-                <p>編一份教材的過程，並沒有想像中簡單。並不是把自己會的，寫出來就好。</p>
-
-                <p>形成性教材，是把課堂上的引入、講述、探問、深化、綜合、練習等過程，用紙本呈現。</p>
-
-                <p>課堂上，同一個概念可以用三四種不同的角度切入，可以跟學生持續對話，直到他懂為止。教材就沒有辦法，同一個概念大約只能用一兩個例子和代表性的圖解，來做引入，所以設計的過程就必須格外小心。如果弄偏了，學生自己唸的時候就會看不懂。</p>
-
-                <p><b>還有要考量的就是文字的量。對於閱讀障礙的學生，不管內容這是什麼，字太多、排版太緊，就會沒辦法讀。</b>既然教材要讓閱讀障礙的學生也能使用（當然難免還是會有些吃力），就必須在脈絡清楚的前提下，將字數精簡、將版面簡化、也不宜放太多花俏的裝飾。</p>
-
-                <p>對我來說，<b>編一份搭配上課的輔助教材，大約要一個小時，但是編一份可以自修用的形成性教材，大約要一個星期。</b></p>
-
-                <p>兩者的難度，是天壤之別。</p>
-
-
+            <p>編一份教材的過程，並沒有想像中簡單。並不是把自己會的，寫出來就好。</p>
+            <p>形成性教材，是把課堂上的引入、講述、探問、深化、綜合、練習等過程，用紙本呈現。</p>
+            <p>課堂上，同一個概念可以用三四種不同的角度切入，可以跟學生持續對話，直到他懂為止。教材就沒有辦法，同一個概念大約只能用一兩個例子和代表性的圖解，來做引入，所以設計的過程就必須格外小心。如果弄偏了，學生自己唸的時候就會看不懂。</p>
+            <p><b>還有要考量的就是文字的量。對於閱讀障礙的學生，不管內容這是什麼，字太多、排版太緊，就會沒辦法讀。</b>既然教材要讓閱讀障礙的學生也能使用（當然難免還是會有些吃力），就必須在脈絡清楚的前提下，將字數精簡、將版面簡化、也不宜放太多花俏的裝飾。</p>
+            <p>對我來說，<b>編一份搭配上課的輔助教材，大約要一個小時，但是編一份可以自修用的形成性教材，大約要一個星期。</b></p>
+            <p>兩者的難度，是天壤之別。</p>
             <h3>學習地圖</h3>
-
-                <p>學習地圖原本的初始想法，其實只是一份打勾用的清單，把各單元依年段列上去。</p>
-
-                <p>後來決定嘗試用先備後續的關係，畫成有向圖、拉出學習地圖，上面也標註各單元被排入的年級，這樣學生不一定要依年段來唸，可以依主題領域去自修。有些學生喜歡深入掌握一個主題，例如幾何，先把國中各個幾何的單位弄通，再去碰代數，而不是依照課本進度，一個年級各碰一些。</p>
-
-                <p><b>有這樣一張地圖，無論是想照年級去自修，或是想照主題領域去自修的學生，都可以各得其所。</b></p>
-
-                <p>等到編小學學習地圖時，發現這個結構不適用，因為小學很多都是交互相關、適合用浸泡式、整合在一起學習。</p>
-
-                <p>而且小學的領域也不大適合完全自修，所以地圖的編法是以親子數學為基本，給家長看的。</p>
-
-                <p>至於高中地圖，目前還沒有編得很完善。不過初步可以看出，高中的單元幾乎都是為了大學的數學做準備，有些是截取其中一小角來教，並不真的很必要。</p>
-
-                <p>像微積分、線性代數、機率、統計、離散數學都是這樣，被截取一角放入高中課程。因此在地圖上就標出它們原本來自哪裡，如果有興趣的學生，可以自己去找原初的知識領域，完整學起來，瞭解更高的整體，回頭來看被選入高中課程的片段，就會覺得有脈絡可循而比較簡單了。</p>
-
-
+            <p>學習地圖原本的初始想法，其實只是一份打勾用的清單，把各單元依年段列上去。</p>
+            <p>後來決定嘗試用先備後續的關係，畫成有向圖、拉出學習地圖，上面也標註各單元被排入的年級，這樣學生不一定要依年段來唸，可以依主題領域去自修。有些學生喜歡深入掌握一個主題，例如幾何，先把國中各個幾何的單位弄通，再去碰代數，而不是依照課本進度，一個年級各碰一些。</p>
+            <p><b>有這樣一張地圖，無論是想照年級去自修，或是想照主題領域去自修的學生，都可以各得其所。</b></p>
+            <p>等到編小學學習地圖時，發現這個結構不適用，因為小學很多都是交互相關、適合用浸泡式、整合在一起學習。</p>
+            <p>而且小學的領域也不大適合完全自修，所以地圖的編法是以親子數學為基本，給家長看的。</p>
+            <p>至於高中地圖，目前還沒有編得很完善。不過初步可以看出，高中的單元幾乎都是為了大學的數學做準備，有些是截取其中一小角來教，並不真的很必要。</p>
+            <p>像微積分、線性代數、機率、統計、離散數學都是這樣，被截取一角放入高中課程。因此在地圖上就標出它們原本來自哪裡，如果有興趣的學生，可以自己去找原初的知識領域，完整學起來，瞭解更高的整體，回頭來看被選入高中課程的片段，就會覺得有脈絡可循而比較簡單了。</p>
             <h3>開源的想法</h3>
-
-                <p><b>事實上，一開始我對開源也很陌生，是不是作品白白讓人家拿去用？</b></p>
-
-                <p>但是，後來我覺得，不必為了防止少數人可能濫用，就去阻止多數人善用它的機會。而且，這套教材如果一直留在我們自己的檔案庫中，很可能一直都是半成品。</p>
-
-                <p><b>那些沒編完的單元，尤其是高中部份，需要畫大量的圖解，其實不是只靠兩名各自有家庭、有工作的人，用課餘的時間，在接下來的三五年內，能夠完成的。</b></p>
-
-                <p>如果開源出去，說不定會影響一些人加入協作吧？說不定會有其他的親子數學實踐家長，和適性教學的老師，參與一起開發吧？光是為了這個可能，就值得了。</p>
-
-                <p><b>另一個原因是最近收到愈來愈多的公益教材使用申請，回信也回得有點手軟，不如把放上網路，想用的人直接下載，</b>討論和錯誤回報直接在Github平台上進行，也不必申請和等待了。</p>
-
-                <p>很高興一開始分享，就收到了寬廣媽媽分享的親子數學互動記錄。這記錄對於剛開始從事親子數學活動的人，是很寶貴的。</p>
-
-                <p>希望自由數學Freemath愈來愈豐富，不只有好的教材，也有好的教法，也有好的互動記錄。</p>
-
-              
-                <p><b>然後，當好的教材不用錢，而且親師生都可以取得，大家就可以把力氣放在學習方法、教學方法等難以言詮的地方，而不會再為教材煩惱</b>。早日脫離「沒教材萬萬不能」，早日進入「教材不是萬能」的境地，把著眼點放在學習、互動與創造上。</p>
-
-        </div>
-
-
-        <br/><br/><br/><br/>
-
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/6NhyCXJU-IQ?rel=0" frameborder="0" allowfullscreen></iframe>
-
-    </section>
-
-
-
-    <aside id="sidebar">
-
-     
-
-<!--
-        <a href="https://github.com/bestian/freemath" class="button"><small>開啟專案於</small>GitHub</a>
-
-
-        <a href="https://github.com/bestian/freemath/zipball/gh-pages" class="button">
-          <small>下載</small>
-          .zip 檔
-        </a> -->
-
-        <a href="https://sites.google.com/site/alearn13994229/gong-yi-shi-xiang" target = "_blank" id ="donate" title = "您的支持，讓公益的成果更加豐富。">
-          <i class = "sp plus circle"></i>捐款
-        </a>
-
-        <a href="mailto:bestian@gmail.com" id ="donate" title = "您的支持，讓公益的成果更加豐富。">
-          <i class = "sp question circle"></i>意見
-        </a>
-
-<!--
-    <p class="repo-owner">
-      <a href="https://github.com/bestian/freemath"></a> <br/> <a href="mailto:besitan@gmail.com">錯誤回報請按此</a>
-    </p> -->
-
-  </aside>
-
-
-
-    <!--
-
-    <script src="javascripts/tongwen_core.js"></script>
-    <script src="javascripts/tongwen_table_pt2s.js"></script>
-    <script src="javascripts/tongwen_table_t2s.js"></script> -->
-
-  <script src="javascripts/jquery-1.10.2.js"></script>
-  <script src="javascripts/angular.min.js"></script>
-  <script src="weblearn/fmData.js"></script>
-
-  <script type="text/javascript" src = "ga.js"></script>
-
-  <script type="text/javascript" src = "index.js"></script>
-
-  
+            <p><b>事實上，一開始我對開源也很陌生，是不是作品白白讓人家拿去用？</b></p>
+            <p>但是，後來我覺得，不必為了防止少數人可能濫用，就去阻止多數人善用它的機會。而且，這套教材如果一直留在我們自己的檔案庫中，很可能一直都是半成品。</p>
+            <p><b>那些沒編完的單元，尤其是高中部份，需要畫大量的圖解，其實不是只靠兩名各自有家庭、有工作的人，用課餘的時間，在接下來的三五年內，能夠完成的。</b></p>
+            <p>如果開源出去，說不定會影響一些人加入協作吧？說不定會有其他的親子數學實踐家長，和適性教學的老師，參與一起開發吧？光是為了這個可能，就值得了。</p>
+            <p><b>另一個原因是最近收到愈來愈多的公益教材使用申請，回信也回得有點手軟，不如把放上網路，想用的人直接下載，</b>討論和錯誤回報直接在Github平台上進行，也不必申請和等待了。</p>
+            <p>很高興一開始分享，就收到了寬廣媽媽分享的親子數學互動記錄。這記錄對於剛開始從事親子數學活動的人，是很寶貴的。</p>
+            <p>希望自由數學Freemath愈來愈豐富，不只有好的教材，也有好的教法，也有好的互動記錄。</p>
+            <p><b>然後，當好的教材不用錢，而且親師生都可以取得，大家就可以把力氣放在學習方法、教學方法等難以言詮的地方，而不會再為教材煩惱</b>。早日脫離「沒教材萬萬不能」，早日進入「教材不是萬能」的境地，把著眼點放在學習、互動與創造上。</p>
+          </div><br><br><br><br>
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/6NhyCXJU-IQ?rel=0" frameborder="0" allowfullscreen=""></iframe>
+        </section>
+        <aside id="sidebar"><a href="http://map.alearn.org.tw/donate.html" target="_blank" title="您的支持，讓公益的成果更加豐富。"><i class="gift icon"></i>捐款</a><a href="https://freemath.hackpad.com/FAQ-VMHKCmL6DDp" target="_blank" title="常見問答"><i class="comment icon"></i>FAQ</a><a href="mailto:bestian@gmail.com" target="_blank" title="您的支持，讓公益的成果更加豐富。"><i class="mail icon"></i>意見</a></aside>
+        <script src="javascripts/jquery-1.10.2.js"></script>
+        <script src="javascripts/angular.min.js"></script>
+        <script src="weblearn/fmData.js"></script>
+        <script type="text/javascript" src="ga.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+      </div>
+    </div>
   </body>
 </html>

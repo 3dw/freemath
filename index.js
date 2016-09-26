@@ -1,17 +1,5 @@
 
 
-function showImg() {
-  $(".fm_logo").attr("src", "images/math-logo-small.png").css({height: "25px", width: "25px"});
-  $(".wiki").attr("src", "images/wikipedia-logo.png").css({height: "25px", width: "25px"});
-  $(".google").attr("src", "images/google_box.png").css({height: "20px", width: "20px"});
-  $(".3du").attr("src", "images/3du-logo.png").css({height: "20px", width: "20px"}); 
-}
-
-
-$(document).ready(function(){
-  showImg();
-}); 
-
 
 
 /**
@@ -25,7 +13,6 @@ $(document).ready(function(){
  * License: MIT
  */
 angular.module('utils.autofocus', [])
-
 .directive('autofocus', ['$timeout', function($timeout) {
   return {
     restrict: 'A',
@@ -45,15 +32,13 @@ angular.module('fmIndexApp', ['App.filters','utils.autofocus']);
 function Ctrl($scope) {  
   $scope.Units = Units.sort(function(a,b){return a.g - b.g });
   $scope.Math = window.Math;
-  $scope.showImg = showImg;
-
 }
 
 angular.module('App.filters', [])
   .filter('mathUnitsFilter', function () {
     return function(us,s){
-      console.log(us);
-      console.log(s);
+//      console.log(us);
+//      console.log(s);
       var searchK = ("" + s) || '';
       var searchM = parseInt(s);
       return us.filter(
@@ -66,36 +51,4 @@ angular.module('App.filters', [])
                       )
               });
     }
-})
-.directive('focus',
-
-function($timeout) {
-
-return {
-
-scope : {
-
- trigger : '@focus'
-
- },
-
- link : function(scope, element) {
- 
- scope.$watch('trigger', function(value) {
-  
-  if (value === "true") {
-   
-   $timeout(function() {
-   
-   element[0].focus();
-
-   });
-  }
- });
-   }
-
-  };
-
- }
-
-);
+});

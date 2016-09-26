@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -73,21 +73,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
 }
 
-/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .outer_logos-edu-logo {
   background-position: 0 0;
   height: 50px;
   width: 50px;
 }
 
-/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .outer_logos-math-logo {
   background-position: 0 -50px;
   height: 300px;
   width: 939px;
 }
 
-/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .outer_logos-wikipedia-logo {
   background-position: 0 -350px;
   height: 36px;
@@ -170,7 +170,7 @@ body {
   font-size: 18px;
 }
 
-/* line 13, ../sass/index.scss */
+/* line 15, ../sass/index.scss */
 header {
   font-size: 20px;
   height: 50px;
@@ -178,24 +178,24 @@ header {
   padding-bottom: 10px;
 }
 
-/* line 20, ../sass/index.scss */
+/* line 22, ../sass/index.scss */
 header h1 {
   font-size: 24px;
 }
 
-/* line 24, ../sass/index.scss */
+/* line 26, ../sass/index.scss */
 header h2 {
   font-size: 18px;
 }
 
-/* line 28, ../sass/index.scss */
+/* line 30, ../sass/index.scss */
 h4.intro {
   font-size: 18px !important;
   margin-bottom: 12px;
   color: #66c !important;
 }
 
-/* line 35, ../sass/index.scss */
+/* line 37, ../sass/index.scss */
 input#find {
   font-size: 22px;
   width: 350px;
@@ -205,17 +205,17 @@ input#find {
   box-shadow: blue 2px 2px 10px;
 }
 
-/* line 42, ../sass/index.scss */
+/* line 44, ../sass/index.scss */
 .about > h2 {
   font-size: 30px !important;
 }
 
-/* line 45, ../sass/index.scss */
+/* line 47, ../sass/index.scss */
 .about > h3 {
   font-size: 26px !important;
 }
 
-/* line 48, ../sass/index.scss */
+/* line 50, ../sass/index.scss */
 hr {
   display: block;
   border-top: 3px #99f dotted !important;
@@ -223,39 +223,39 @@ hr {
   margin-bottom: 50px;
 }
 
-/* line 55, ../sass/index.scss */
+/* line 57, ../sass/index.scss */
 ul {
   -moz-box-shadow: blue 2px 2px 10px;
   -webkit-box-shadow: blue 2px 2px 10px;
   box-shadow: blue 2px 2px 10px;
   padding: 5px;
 }
-/* line 58, ../sass/index.scss */
+/* line 60, ../sass/index.scss */
 ul#textbook {
   width: 100%;
   max-height: 140px;
   overflow: auto;
 }
-/* line 62, ../sass/index.scss */
+/* line 64, ../sass/index.scss */
 ul#textbook li {
   min-width: 250px;
 }
-/* line 64, ../sass/index.scss */
+/* line 66, ../sass/index.scss */
 ul#textbook li .note {
   position: relative;
   left: -50px;
 }
 
-/* line 72, ../sass/index.scss */
+/* line 74, ../sass/index.scss */
 li {
   font-size: 16px;
 }
-/* line 74, ../sass/index.scss */
+/* line 76, ../sass/index.scss */
 li a:hover, li td:hover {
   background-color: #ffffc8;
 }
 
-/* line 81, ../sass/index.scss */
+/* line 83, ../sass/index.scss */
 li#data {
   display: inline-block;
   width: 33%;
@@ -264,13 +264,13 @@ li#data {
   overflow-y: hidden;
 }
 
-/* line 89, ../sass/index.scss */
+/* line 91, ../sass/index.scss */
 .note {
   color: gray;
   float: right;
 }
 
-/* line 94, ../sass/index.scss */
+/* line 96, ../sass/index.scss */
 aside#sidebar {
   position: fixed;
   bottom: 0%;
@@ -280,31 +280,31 @@ aside#sidebar {
   min-height: 0 !important;
 }
 
-/* line 103, ../sass/index.scss */
+/* line 105, ../sass/index.scss */
 a.button small {
   font-size: 18px;
 }
 
-/* line 108, ../sass/index.scss */
+/* line 110, ../sass/index.scss */
 .repo-owner {
   margin-top: 50px;
   background-color: white;
   font-size: 18px;
 }
 
-/* line 114, ../sass/index.scss */
+/* line 116, ../sass/index.scss */
 .about > img {
   margin: 15px;
 }
 
-/* line 119, ../sass/index.scss */
+/* line 121, ../sass/index.scss */
 #guide li, #story li {
   font-size: 18px;
   list-style-type: circle;
   line-height: 140%;
 }
 
-/* line 127, ../sass/index.scss */
+/* line 129, ../sass/index.scss */
 p {
   font-size: 18px;
   line-height: 140%;
@@ -313,7 +313,7 @@ p {
   max-width: 600px;
 }
 
-/* line 135, ../sass/index.scss */
+/* line 137, ../sass/index.scss */
 p > b {
   font-size: 120%;
   line-height: 200%;
@@ -321,12 +321,13 @@ p > b {
   text-decoration: underline;
 }
 
-/* line 142, ../sass/index.scss */
-#donate {
+/* line 145, ../sass/index.scss */
+#sidebar a {
   display: block;
   font-size: 30px;
-  line-height: 66px;
+  line-height: 220%;
   padding: 5px;
+  text-align: center;
   vertical-align: middle;
   border: 1px #05f solid;
   -moz-border-radius: 50% 0px 0px 50%;
@@ -336,16 +337,21 @@ p > b {
   -webkit-box-shadow: blue 2px 2px 10px;
   box-shadow: blue 2px 2px 10px;
 }
-/* line 152, ../sass/index.scss */
-#donate img {
+/* line 155, ../sass/index.scss */
+#sidebar a img {
   width: 50px;
   height: 50px;
   position: relative;
   left: -25px;
 }
+/* line 161, ../sass/index.scss */
+#sidebar a .icon {
+  position: relative;
+  top: -15px;
+}
 
 @media only screen and (max-width: 767px) {
-  /* line 163, ../sass/index.scss */
+  /* line 171, ../sass/index.scss */
   aside#sidebar {
     display: none;
   }
