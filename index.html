@@ -35,7 +35,7 @@
         <section id="main-content">
           <div ng-controller="Ctrl">
             <h4 class="intro">佳仁與宗浩的自編教材</h4>
-            <input id="find" type="search" ng-model="searchM" ng-init="searchM = ''" placeholder="輸入關鍵字或年級搜尋教材" autofocus=""><br><br><i class="sp find"></i>
+            <input id="find" type="text" ng-model="searchM" placeholder="輸入關鍵字或年級搜尋教材" autofocus=""><br><br><i class="sp find"></i>
             <ul id="textbook" ng-cloak="">
               <li id="data" ng-repeat="u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) "><a target="_blank" href="weblearn/{{u.n}}">* {{ u.n.split('.htm')[0] }}</a><span ng-bind-template="{{ u.g }} ~ {{ u.G }}年級" class="note"></span></li>
             </ul>

@@ -32,6 +32,7 @@ angular.module('fmIndexApp', ['App.filters','utils.autofocus']);
 function Ctrl($scope) {  
   $scope.Units = Units.sort(function(a,b){return a.g - b.g });
   $scope.Math = window.Math;
+  $scope.searchM ='';
 }
 
 angular.module('App.filters', [])
@@ -41,6 +42,8 @@ angular.module('App.filters', [])
 //      console.log(s);
       var searchK = ("" + s) || '';
       var searchM = parseInt(s);
+      console.log(searchK);
+      console.log(searchM);
       return us.filter(
                 function (o) {
                   return (
