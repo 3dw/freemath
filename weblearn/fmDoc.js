@@ -26,7 +26,7 @@ $(document).ready(function(){
 	var DocView = Backbone.View.extend({ 
 		el: $('body'),
 
-		intro: '<p>歡迎使用「數學形成性教材」線上預覽版！！<br/>紙本使用，請下載文件檔再印出 '
+		intro: '<p>歡迎使用「數學形成性教材」！！<br/>紙本使用，請下載文件檔再印出 '
 			+'<a class = "ui huge purple button"'
 				+'href = "https://3dw.github.io/mathprint/'+ document.title +'.doc"'
 				+'style = "margin:15px">'+'立即下載'+'</a></p>'

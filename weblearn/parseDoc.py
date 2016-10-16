@@ -25,7 +25,9 @@ mathmap = ['source,target,value']
 
 for root,dirs,files in os.walk(directory):
     for file in files:
-        if file.endswith(".htm") and (not file.endswith("index.htm") or file.endswith("index.html")):
+        if file.endswith(".htm") and (not (file.endswith("index.htm") or file.endswith("index.html") or re.match("^_", file))):
+
+            print(file)
 
             if file == "header.htm":
                 continue
@@ -42,13 +44,7 @@ for root,dirs,files in os.walk(directory):
             text = re.sub(r'<input type = \'text\'><input type = \'text\'>([.\s\S]*?)</input></input>',
              '<input type = \'text\'>'+r'\g<1>'+'</input>', text) 
 
-
-            if (text.find('</title>') == -1) :
-                text = re.sub(r'[\s]*<style>', '\n'
-                +'<title>AAA</title>\n'
-                +'<style>' , text)
-                print "i make a title for this page:", f.name
-
+            text = re.sub(r'<html>','<html ng-app="fmDocApp">', text)
             text = re.sub(r'<html ','<html ng-app="fmDocApp" ', text)
             text = re.sub(r'<html.* ng-app="fmDocApp">', '<html ng-app="fmDocApp">', text)
             text = re.sub(r'ng-app=.*"fmDocApp"','ng-app="fmDocApp"', text)
@@ -94,21 +90,9 @@ for root,dirs,files in os.walk(directory):
 
             text = re.sub(r'div\.MsoNormal[\s]*{margin:0cm;', 'div.MsoNormal\n{margin:1cm;',text, re.DOTALL)    # 樣式_縮排
 
-#           text = re.sub(r'</style>[.\s.\S]*</head>', '</style>\n\n\n\n</head>', text)
-
             text = re.sub(r'<body[.\s\S]*?<div class=WordSection1', 
                             '<body ng-cloak ="" lang=ZH-TW style=\'text-justify-trim:punctuation\'>'
                             +'\n'
-                        #   +'\n<div class = "tool" ng-controller ="Ctrl">'
-                        #   +'\n\t<div class = "tool noPrint" style = "position:fixed; right: 50px; top: 250px; ">'
-                        #   +'\n\t<ul type = "none">'
-                        #   +'\n\t\t<li class = "color" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'
-                        #   +'\n\t</ul>'
-                        #   +'\n\t<br/>'
-                        #   +'\n\t</div>'
-                        #   +'\n\t<span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>'
-                        #   +'\n\t<canvas width="100%" height="5000px" id="canvas" drawing>'
-                        #   +'\n\t</canvas>'
                             +'\n</div>'
                             +'\n<div class=WordSection1', text)
 
@@ -129,15 +113,15 @@ for root,dirs,files in os.walk(directory):
             if len(wikis) > 0:
                 wiki = wikis[0].replace('wiki:','').replace(' ','')
 
-            print wiki
+    #        print wiki
 
             if (len(grade) > 0):
                 g = re.findall(r'\d+', grade[0])[0]
                 G = re.findall(r'\d+', grade[0])[1]
 
-            print grade
-            print g
-            print G
+    #        print grade
+    #        print g
+    #        print G
 
 
             pres = re.findall(r'pre:.+', text)
@@ -160,114 +144,48 @@ for root,dirs,files in os.walk(directory):
                     if (not friend == f.name):
 
                         for pre in pres:
-        #                   pre = pre.replace('pre:','').replace(' ','').replace('-->','')
-        #                   pre = re.sub(symDir, '', pre)
-        #                   if (friend.replace('.htm','') == pre):
-        #                       isPre = True
+
                             for seg in pre.split(' '):
         #                       print seg
                                 if seg == friend.replace('.htm',''):
                                     isPre = True
 
-        #                       if (pre.find(friend.replace('.htm','')) > -1):
-        #                           isPre = True
 
                         for rel in rels:
-        #                   rel = rel.replace('rel:','').replace(' ','').replace('-->','')
-        #                   rel = re.sub(symDir, '', rel)
-        #                   if (friend.replace('.htm','') == rel):
-        #                       isRel = True
+
 
                             for seg in rel.split(' '):
                                 if seg == friend.replace('.htm',''):
                                     isRel = True
-        #                   if (rel.find(friend.replace('.htm','')) > -1 and not isPre):
-        #                       isRel = True
+
 
                         for after in afters:
-        #                   after = after.replace('after:','').replace(' ','').replace('-->','')
-        #                   after = re.sub(symDir, '', after)
-        #                   if (friend.replace('.htm','') == after):
-        #                       isAfter = True
+
 
                             for seg in after.split(' '):
                                 if seg.replace(r'/[jh]/', '') == friend.replace('.htm',''):
                                     isAfter = True
-        #                   if (after.find(friend.replace('.htm','')) > -1 and not isRel and not isPre):
-        #                       isAfter = True
+
 
                     if isPre:
                         mathmap.append(friend+','+f.name+','+ str(float(g) / 10))
-                    #   thisButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   oldButton = '<button class = "ui big blue button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">先備知識</sup></button>'
-                    #   buttonList.insert(0, thisButton)                
-                    #   leftWall += 1
+ 
 
                     elif isAfter:
                         pass
-                    #   thisButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'<sup class = "tip">後續知識</sup></button>'
-                    #   buttonList.insert(leftWall+middleWall+middleWall2, thisButton)
-
+        
                     elif isRel:
                         mathmap.append(friend+','+f.name+','+ str(float(g) / 10))                   
-                    #   thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   thatButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   oldButton = '<button class = "ui big green button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-                    #   buttonList.insert(leftWall+middleWall, thisButton)  
-                    #   middleWall2 += 1
+ 
 
                     elif friend.endswith(f.name):
-                        pass
-                    #   thisButton = '<button class = "ui big purple button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   thatButton = thisButton
-    #                   oldButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-                    #   buttonList.insert(leftWall, thisButton)
-                    #   middleWall += 1                             
+                        pass                           
 
                     else:
                         pass
-    #                   thisButton = '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-    #                   thatButton = thisButton
-    #                   oldButton = thisButton
-    #                   buttonList2.append(thisButton)
-#                       rightWall += 1
-
-    #               text = text.replace(thisButton, '')
-    #               text = text.replace(thatButton, '')
-    #               text = text.replace(oldButton, '')
-
-#                   final = ''                  
-                #   final = ''.join(buttonList) + '<br />' + ''.join(buttonList2);
 
                     final = '<iframe src = "../學習地圖/indexD3.html#' + f.name.replace('.htm','')+'!2' + '" width = "600" height = "600"></iframe>'
 
-#                   if not friend.endswith(f.name):
-#                       final += thisButton+'</button>'
-
-# 之後還可以把先備後續存進一個.js中，用來生地圖
-
-#               if friend.endswith(".htm"):
-#                   finalAll += '<button class = "ui big button" onclick = "location = \''+friend+'\'">'+friend.replace('.htm','')+'</button>'
-
-#           afterOld = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemth主頁</button>'
-#           after = '<br /><button class = "ui big button" onclick = "location = \'http://bestian.github.io/freemath/\'">更多資訊，請至自由數學freemath主頁</button>'
-
-#           text = text.replace(afterOld, '')
-#           text = text.replace(after, '')
-
-#           final += after
-
-                # 已解決重覆放final的問題
-#           text = text.replace(final, '') 
-
-                #這段改成逐一拿掉button, 來防止新加入成員造成混亂   well-done
-
-#           text = text.replace(finalAll, '')
-
-#           print final
 
             text = re.sub(r'</div>\s*(<br />)*\s*(<button[.\s\S]*?</button>)?\s*(<br />)*\s*</body>', '</div>\n'
                 +final
@@ -275,51 +193,29 @@ for root,dirs,files in os.walk(directory):
             text = re.sub(r'</div>\s*(<br />)*\s*(<iframe[.\s\S]*?</iframe>)?\s*(<br />)*\s*</body>', '</div>\n'
                 +final
                 +'</body>' ,text )
-#           text = text.replace('</button></button>','</button>')
-
-#           ng = open('ngDoc.js', 'r')
-#           ngDoc = ng.read()
-#            ng.close()
-
-#            text = re.sub(r'</body>[.\s\S]*</html>', '</body>\n'  # 結尾程式
-#                +'\n'
-#               +'<script>\n'
-#                +ngDoc
-#                +'\n</script>'
-#                +'\n</html>',text )
-
-
 
 #    先備 : 藍    後續: 綠
 
-
             #特殊cases
             text = re.sub(r"</span></span><span style='font-size:14.0pt;font-family:\s*新細明體;color:white'>", '', text)
-
 
             f.seek(0)
             f.write(text)
             f.truncate()
 
-            print "I have parsed the file: ", f.name
-#           print "and replaced all【__sonthing__】to <input type = 'text'>__something__</input>"
-#           print "and changed title to: ", f.name
-#           print "and changed margin to: 1cm"
-#           print "and set background-color: #D0BAA2"
-#           print "and add final buttons and link with semantic ui, jquery ui css"          
-#           print "and 消掉意見回饋欄 and 加上提示語"
-
             units.append('{ n: \'' + f.name +'\', g: ' + str(g) + ',' + 'G: ' + str(G) + ',' + 'wiki: "' + str(wiki) + '"}');
 
 
-
             f.close
+
 
 dataf = open('fmData.js', 'r+')
 dataf.seek(0)
 dataf.write('var Units = [' + ', '.join(units) + ']')
 dataf.truncate()
 dataf.close
+
+
 
 dataMapPart = open('../學習地圖/mathmap_part.csv', 'r')
 part = dataMapPart.read().split('\n')
