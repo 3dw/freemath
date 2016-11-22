@@ -75,6 +75,9 @@
 		left: 10px;
 	}
 
+	#show {
+		white-space: pre;
+	}
 
 </style>
 
@@ -104,6 +107,9 @@
 	    <div class="menu">
 	      <div class="item">
 					生成公式<input type="text" ng-model = "type" />
+				</div>
+	      <div class="item">
+	      	<span id="show" ng-bind="type | show"></span>
 				</div>
     		<div class="divider"></div>
 				<div class="item">
@@ -228,7 +234,20 @@
 	
 var mathApp = angular.module('mathApp', []);
 
-mathApp.filter('countRC', function(){
+mathApp.filter('show', function(){
+	return function(ty){
+		var ts = ty.split(',');
+		var fst = ts[0].split('_');
+		var snd = ts[1].split('_');
+
+		var ans1 = '「從'+fst[0]+'起，間隔'+fst[1]+'，不超過'+fst[2]+'」的串列';
+		var ans2 = '「從'+snd[0]+'起，間隔'+snd[1]+'不超過'+snd[2]+'」的串列';
+		var ans3 = ts[2];
+
+		return ans1+'\n與'+ans2+'\n以「'+ans3+'」為運算生成';
+
+	}
+}).filter('countRC', function(){
 	return function(ty,k){
 		var ansL = [];
 		var rT = ty.split(',')[k];
