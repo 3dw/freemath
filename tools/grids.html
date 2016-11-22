@@ -12,7 +12,7 @@
   <meta property="og:image" content="http://math.alearn.org/images/math-logo.png" />
 
 
-	<title>方格紙製造機</title>
+	<title>方格紙產生器</title>
 
 	<link rel="stylesheet" type="text/css" class="ui" href="../bower_components/semantic/dist/semantic.min.css">
 
@@ -43,6 +43,8 @@
 	table {
 		border-collapse:collapse;
 		max-width: 210mm;
+		margin-left: auto;
+		margin-right: auto;
 	} 
 
 	td {
@@ -59,6 +61,23 @@
 		transform: scale(3);
 	}
 
+	#setting {
+		margin-top: auto;
+	}
+
+	input {
+		margin:2px;
+	}
+
+	input[type="number"], input[type="text"] {
+		margin-left: 5px;
+	}
+
+	.breadcrumb {
+		position: relative;
+		left: 10px;
+	}
+
 
 </style>
 
@@ -68,29 +87,41 @@
 <body ng-controller="Ctrl">
 
 
-<nav class="ui menu noPrint">
-	<div class="right menu">
-		<a class="item" href="https://freemath.hackpad.com/8HWAfG4IEWy">
-			<i class="circular question icon" title="玩法說明"></i>			
+<nav class="ui inverted labeled icon menu noPrint">
+	<a class="item" href="../index.html">
+		<i class="home icon" title="首頁"></i>	
+		首頁
+	</a>
+		<div class="right menu">
+		<a class="item" target="_blank" href="https://freemath.hackpad.com/8HWAfG4IEWy">
+			<i class="question icon" title="玩法說明"></i>	
+			玩法說明
 		</a>
 		<a class="item" ng-click="randHide((type | countRC:0), (type | countRC:1))" title="隨機挖洞">
-			<i class="circular erase icon"></i>			
+			<i class="erase icon"></i>
+			隨機挖洞
 		</a>
-		<div class="ui simple dropdown item" title="設定">
+		<div id ="setting" class="ui simple dropdown item" title="設定">
 			<i class="setting icon"></i>
-	    <i class="dropdown icon"></i>
+			設定
 	    <div class="menu">
 	      <div class="item">
-					<input ng-model = "type" />
+					生成公式<input type="text" ng-model = "type" />
 				</div>
+    		<div class="divider"></div>
 				<div class="item">
 					<input type = "number" ng-model = "m" ng-init = "m = 10">進位
 				</div>
+    		<div class="divider"></div>
 				<div class="item">
 					格子大小<input type = "number" ng-model = "wh" ng-init = "wh = 1.6" step="0.1">公分
-				</div>		
+				</div>
+    		<div class="divider"></div>		
 				<div class="item">
-					<input type = "checkbox" ng-model = "showDots" ng-init="showDots=false"/>顯示交點
+					<div class="ui checkbox">
+						<input type = "checkbox" ng-model = "showDots" ng-init="showDots=false"/>
+						<label>顯示交點</label>
+					</div>
 				</div>				
 				<div class="item">
 					交點組細<input type = "number" ng-model = "cr" ng-init = "cr = 4" min="0">畫素
@@ -104,15 +135,25 @@
 				<div class="item">
 					交點垂直校正<input type = "number" ng-model = "cTop" ng-init = "cTop = 0" step="0.1">公分
 				</div>				
-				<div class="item">
-					<input type = "checkbox" ng-model = "hideCorner"/>隱藏左上邊角
+				<div class="item" ng-show="showDots">
+					<div class="ui checkbox">
+						<input type = "checkbox" ng-model = "hideCorner"/>
+						<label>隱藏左上邊角</label>
+					</div>					
 				</div>
 	    </div>
 	  </div>	
 	</div>
 </nav>
 
-<br/>
+<div class="ui breadcrumb">
+  <a class="section" href="../index.html">白由數學</a>
+  <div class="divider"> / </div>
+  <a class="section" href="./index.html">工具</a>
+  <div class="divider"> / </div>
+  <div class="active section">方格紙產生器</div>
+</div>
+
 
 <div class="ui vertical segment">
 
@@ -121,9 +162,9 @@
 			<select ng-model = "type" ng-init = "type = '0_10_90,1_1_10,+'" autofocus="true" style ="font-size:120%">
 					<option value = "1_1_10,1_1_10">空白表</option>
 					<option value = "0_10_90,1_1_10,+">百數表</option>
-					<option value = "1_1_10,1_1_10,+">加法表</option>
-					<option value = "10_1_20,1_1_10,-">減法表</option>
-<!--					<option value = "1_1_5,1_1_5,*">五五乘法表</option>
+					<option value = "0_1_10,0_1_10,+">加法表</option>
+	<!--				<option value = "10_1_20,1_1_10,-">減法表</option>
+					<option value = "1_1_5,1_1_5,*">五五乘法表</option>
 					<option value = "1_1_7,1_1_7,*">七七乘法表</option> -->
 					<option value = "1_1_9,1_1_9,*">九九乘法表</option>
 					<option value = "1_1_12,1_1_12,*">十二乘法表</option>
@@ -138,7 +179,7 @@
 			<hr>
 	</div>
 	<div class="ui">
-			<table border="8" style = "margin-left: {{cr+ci}}px">
+			<table border="8">
 				<tr ng-repeat = "r in type | countRC:0">
 					<td ng-repeat = "c in type | countRC:1" style= "width:{{wh}}cm; height:{{wh}}cm;">
 
