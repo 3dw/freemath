@@ -29,7 +29,7 @@
 /*	    width: 210mm; */
 	  }
 	  .noPrint, .noPrint *{
-	    display: none;
+	    display: none !important;
 	  }
 	  .invisPrint {
 	  	opacity:0; filter:alpha(opacity=0); /* For IE8 and earlier */ 
@@ -68,12 +68,15 @@
 <body ng-controller="Ctrl">
 
 
-<nav class="ui menu">
+<nav class="ui menu noPrint">
 	<div class="right menu">
 		<a class="item" href="https://freemath.hackpad.com/8HWAfG4IEWy">
-			<i class="circular question icon"></i>			
+			<i class="circular question icon" title="玩法說明"></i>			
 		</a>
-		<div class="ui simple dropdown item">
+		<a class="item" ng-click="randHide((type | countRC:0), (type | countRC:1))" title="隨機挖洞">
+			<i class="circular erase icon"></i>			
+		</a>
+		<div class="ui simple dropdown item" title="設定">
 			<i class="setting icon"></i>
 	    <i class="dropdown icon"></i>
 	    <div class="menu">
@@ -87,7 +90,7 @@
 					格子大小<input type = "number" ng-model = "wh" ng-init = "wh = 1.6" step="0.1">公分
 				</div>		
 				<div class="item">
-					<input type = "checkbox" ng-model = "showDots" ng-init="showDots=true"/>顯示交點
+					<input type = "checkbox" ng-model = "showDots" ng-init="showDots=false"/>顯示交點
 				</div>				
 				<div class="item">
 					交點組細<input type = "number" ng-model = "cr" ng-init = "cr = 4" min="0">畫素
@@ -115,7 +118,7 @@
 
 	<div class="ui center aligned header noPrint">
 
-			<select ng-model = "type" ng-init = "type = '1_1_9,1_1_9,*'" autofocus="true" style ="font-size:120%">
+			<select ng-model = "type" ng-init = "type = '0_10_90,1_1_10,+'" autofocus="true" style ="font-size:120%">
 					<option value = "1_1_10,1_1_10">空白表</option>
 					<option value = "0_10_90,1_1_10,+">百數表</option>
 					<option value = "1_1_10,1_1_10,+">加法表</option>
