@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+
+<html ng-app="fmIndexApp">
+
+<head>
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://bestian.github.io/freemath/工具軟體" />
+  <meta property="og:title" content="自由數學freemath" />
+  <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
+  <meta charset = "utf-8">
+
+  <script src="../javascripts/jquery-1.10.2.js"></script>
+  <script src="../javascripts/angular.min.js"></script>
+
+  	<title>工具軟體</title>
+	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+
+	<style type="text/css">
+
+		ul {
+			list-style-type: none; 
+		}
+		ul > li {
+			margin-top: 10px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="ui container">
+	<div class="ui segment"  ng-controller ="Ctrl">
+		<div class="ui center aligned header noPrint">
+			<h1 class="ui header">小工具</h1>
+			<div class="ui list">
+			  <div class = "ui item" ng-repeat = "t in tools">
+			  	<a href="{{t.h}}.html">{{t.n}}</a>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+var fmIndexApp = angular.module('fmIndexApp', []);
+function Ctrl($scope) {  
+	$scope.tools = [
+		{n:'方格紙', h:'grids', d:'可視需求生成不同的方格紙並印出'}
+	]
+}
+</script>
+
+</html>
