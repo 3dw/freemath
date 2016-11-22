@@ -67,6 +67,11 @@
 		margin-top: auto;
 	}
 
+	.ui.simple.dropdown.item > .menu {
+		transition: opacity 0.8s;
+		-webkit-transition: opacity 0.8s;
+	}
+
 	input {
 		margin:2px;
 	}
@@ -82,6 +87,7 @@
 
 	#show {
 		white-space: pre;
+		color: grey;
 	}
 
 </style>
@@ -249,7 +255,7 @@ mathApp.filter('show', function(){
 		var ans2 = '「從'+snd[0]+'起，間隔'+snd[1]+'不超過'+snd[2]+'」的串列';
 		var ans3 = ts[2];
 
-		return ans1+'\n與'+ans2+'\n以「'+ans3+'」為運算生成';
+		return ans1+'\n'+ans2+'\n\n逐項配對後\n以「'+ans3+'」為運算生成';
 
 	}
 }).filter('countRC', function(){
