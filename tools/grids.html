@@ -131,16 +131,16 @@
 						<label>顯示交點</label>
 					</div>
 				</div>				
-				<div class="item">
+				<div class="item" ng-show="showDots">
 					交點組細<input type = "number" ng-model = "cr" ng-init = "cr = 4" min="0">畫素
 				</div>				
-				<div class="item">
+				<div class="item" ng-show="showDots">
 					交點大小<input type = "number" ng-model = "ci" ng-init = "ci = 0" min="0">畫素
 				</div>				
-				<div class="item">
+				<div class="item" ng-show="showDots">
 					交點水平校正<input type = "number" ng-model = "cLeft" ng-init = "cLeft = 0">畫素
 				</div>				
-				<div class="item">
+				<div class="item" ng-show="showDots">
 					交點垂直校正<input type = "number" ng-model = "cTop" ng-init = "cTop = 0" step="0.1">公分
 				</div>				
 				<div class="item" ng-show="showDots">
