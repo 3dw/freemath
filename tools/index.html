@@ -4,27 +4,22 @@
 <html ng-app="fmIndexApp">
 
 <head>
+  <meta charset = "utf-8" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://bestian.github.io/freemath/工具軟體" />
+  <meta property="og:url" content="http://math.alearn.org.tw/tools/grids.html" />
   <meta property="og:title" content="自由數學freemath" />
-  <meta property="og:image" content="http://bestian.github.io/freemath/images/math-logo.png" />
-  <meta charset = "utf-8">
+  <meta property="og:image" content="http://math.alearn.org/images/math-logo.png" />
 
-  <script src="../javascripts/jquery-1.10.2.js"></script>
-  <script src="../javascripts/angular.min.js"></script>
 
-  	<title>工具軟體</title>
-	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css">
+ 	<title>工具軟體</title>
+
+<!--	<link rel="stylesheet" type="text/css" class="ui" href="../stylesheets/semantic.min.css"> -->
+
+	<link rel="stylesheet" type="text/css" class="ui" href="../bower_components/semantic/dist/semantic.min.css">
 
 	<style type="text/css">
 
-		ul {
-			list-style-type: none; 
-		}
-		ul > li {
-			margin-top: 10px;
-		}
 
 	</style>
 
@@ -48,6 +43,12 @@
 </body>
 
 
+
+<!-- <script src="../javascripts/jquery-1.10.2.js"></script> -->
+
+<script src="../javascripts/angular.min.js"></script>
+
+
 <script type="text/javascript">
 
 var fmIndexApp = angular.module('fmIndexApp', []);
@@ -57,5 +58,7 @@ function Ctrl($scope) {
 	]
 }
 </script>
+
+
 
 </html>
