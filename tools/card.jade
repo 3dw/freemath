@@ -11,75 +11,7 @@ html(ng-app='mathApp')
 		meta(property='og:description', content='多功能的數學閃卡')
 		title 數學閃卡
 		link.ui(rel='stylesheet', type='text/css', href='../bower_components/semantic/dist/semantic.min.css')
-		style.
-			html {
-				font-size: 2vm;
-				font-size: 2vmin;
-			}
-			nav {
-				border-radius: 0 0 0 0 !important;
-			}
-			.breadcrumb {
-				position: relative;
-				left: 10px;
-				padding-bottom: 20px;
-			}
-			[clickable] {
-				cursor: pointer;
-			}
-			#main.segment {
-				position: relative;
-				height: 50vh;
-				min-height: 300px;
-				padding: 0;
-				border-radius: 2rem;
-				overflow: hidden;
-			}
-			#question, #answer {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				height: 100%;
-				margin: 0 !important;
-				background-color: #eee;
-				text-shadow: 0 3px 0 white, 3px 3px 0 white;
-			}
-			#question {
-				color: red;
-				font-size: 5rem;
-			}
-			#answer {
-				color: blue;
-				font-size: 8rem;
-			}
-			.glass {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				z-index:1;
-				background-color: transparent;
-			}
-			.welcome {
-				display: flex;
-				position: absolute;
-				align-items: center;
-				justify-content: center;
-				font-size: 2.5rem;
-				font-size: 2.5rem;
-				height: 5rem;
-				width:100%;
-			}
-			input, select {
-				margin: 0 0.5em;
-			}
-			input[type='number'] {
-				padding: 0 0.2em;
-				min-width: 60px;
-				width: 4em;
-			}
-			select {
-				min-width: 4em;
-			}
+		link.ui(rel='stylesheet', type='text/css', href='./card.css')
 	body(ng-controller='Ctrl', ng-keydown="onKeydown($event)")
 		nav.ui.inverted.labeled.icon.menu.noPrint
 			a.item(href='../index.html')
@@ -95,23 +27,24 @@ html(ng-app='mathApp')
 					.menu
 						.item
 							span 首數範圍:
-							input(type="number" ng-model="minN1")
+							input(type="number" ng-model="c.minN1")
 							span ~ 
-							input(type="number" ng-model="maxN1")
+							input(type="number" ng-model="c.maxN1")
 						.item
 							span 末數範圍:
-							input(type="number" ng-model="minN1")
+							input(type="number" ng-model="c.minN1")
 							span ~ 
-							input(type="number" ng-model="maxN2")
+							input(type="number" ng-model="c.maxN2")
 						.divider
 						.item
 							span 使用算符:
-							select.ui.select(ng-model='op', ng-options='o as o.t for o in ops')
+							select.ui.select(ng-model='c.op', ng-options='o as o.t for o in ops')
+								option(value="") 選擇一項
 						.divider
 						.item
 						.divider
 						.item
-							input(type="checkbox").ui.checkbox(ng-model="rememberMe")
+							input(type="checkbox").ui.checkbox(ng-model="c.rememberMe")
 							span 記住我的設定
 		.ui.breadcrumb
 			a.section(href='../index.html') 自由數學
@@ -124,82 +57,10 @@ html(ng-app='mathApp')
 			#main.ui.segment(clickable, ng-click="flipCard()")
 				.glass
 					.welcome(ng-if="welcome") {{welcome}}
-				h1#question(ng-if="!flip") {{n1 | renderNagtive}} {{op.t}} {{n2 | renderNagtive}}
-				h1#answer(ng-if="flip") {{$eval(n1 + op.s + n2) | renderQuotient | renderInf}}
-		script(src='../javascripts/jquery-1.10.2.js')
-		script(src='../javascripts/angular.min.js')
-		script(type='text/javascript').
-			var app = angular.module('mathApp', []);
-			app.filter('renderNagtive', function(){
-				return function(n){
-					return n < 0 ? '('+ n +')': '' + n;
-				}
-			})
-			app.filter('renderQuotient', function(){
-				return function(n){
-					var s = (''+n);
-					if ((s.indexOf('.') > -1 && s.length) > 5) {
-							return s.slice(0,5) + '...';
-					} else { return s}
-				}
-			})
-			app.filter('renderInf', function(){
-				return function(s){
-					s = s == 'Infinity' ? '∞' : s;
-					s = s == 'NaN' ? '𝕌' : s;
-					return s;
-				}
-			})
-			app.controller('Ctrl', ['$scope', function($scope) {
-				angular.extend($scope, {
-				rememberMe: true,
-				welcome: '按Enter或點擊卡片開始',
-				n1: 3,
-				n2: 8,
-				minN1: 0,
-				maxN1: 30,
-				minN2: 0,
-				maxN2: 15,
-				flip: false,
-				ops: [
-					{
-						s: '+',
-						t: ' + '
-					},
-					{
-						s: '-',
-						t: ' - '
-					},
-					{
-						s: '*',
-						t: ' × '
-					},
-					{
-						s: '/',
-						t: ' ÷ '
-					},
-				],
-				})
-				$scope.op = $scope.ops[0];
-
-				angular.extend($scope, {
-					flipCard: function() {
-						this.welcome = '';
-					 	this.flip = !this.flip;
-					 	if (!this.flip) {
-						 	this.n1 = this.randNum(this.minN1, this.maxN1);
-						 	this.n2 = this.randNum(this.minN2, this.maxN2);
-						}
-					},
-					randNum: function(min, max){
-						return Math.floor(min + Math.random() * max)
-					},
-					onKeydown: function(e) {
-						console.log(e.keyCode);
-						if (e.keyCode == 13) {
-							this.flipCard();
-						}
-					}
-				});
-			}])
+				h1#question(ng-if="!flip") {{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}
+				h1#answer(ng-if="flip") {{$eval(n1 + c.op.s + n2) | renderQuotient | renderInf}}
+		script(src='../bower_components/angular/angular.min.js')
+		script(src='../bower_components/ngstorage/ngStorage.min.js')
+		script(src='../bower_components/jquery/dist/jquery.min.js')
+		script(type='text/javascript', src="./card.js")
 		script(type='text/javascript', src=' ../ga.js')

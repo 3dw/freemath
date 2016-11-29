@@ -11,76 +11,7 @@
     <meta property="og:description" content="多功能的數學閃卡">
     <title>數學閃卡</title>
     <link rel="stylesheet" type="text/css" href="../bower_components/semantic/dist/semantic.min.css" class="ui">
-    <style>
-      html {
-      	font-size: 2vm;
-      	font-size: 2vmin;
-      }
-      nav {
-      	border-radius: 0 0 0 0 !important;
-      }
-      .breadcrumb {
-      	position: relative;
-      	left: 10px;
-      	padding-bottom: 20px;
-      }
-      [clickable] {
-      	cursor: pointer;
-      }
-      #main.segment {
-      	position: relative;
-      	height: 50vh;
-      	min-height: 300px;
-      	padding: 0;
-      	border-radius: 2rem;
-      	overflow: hidden;
-      }
-      #question, #answer {
-      	display: flex;
-      	align-items: center;
-      	justify-content: center;
-      	height: 100%;
-      	margin: 0 !important;
-      	background-color: #eee;
-      	text-shadow: 0 3px 0 white, 3px 3px 0 white;
-      }
-      #question {
-      	color: red;
-      	font-size: 5rem;
-      }
-      #answer {
-      	color: blue;
-      	font-size: 8rem;
-      }
-      .glass {
-      	position: absolute;
-      	width: 100%;
-      	height: 100%;
-      	z-index:1;
-      	background-color: transparent;
-      }
-      .welcome {
-      	display: flex;
-      	position: absolute;
-      	align-items: center;
-      	justify-content: center;
-      	font-size: 2.5rem;
-      	font-size: 2.5rem;
-      	height: 5rem;
-      	width:100%;
-      }
-      input, select {
-      	margin: 0 0.5em;
-      }
-      input[type='number'] {
-      	padding: 0 0.2em;
-      	min-width: 60px;
-      	width: 4em;
-      }
-      select {
-      	min-width: 4em;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./card.css" class="ui">
   </head>
   <body ng-controller="Ctrl" ng-keydown="onKeydown($event)">
     <nav class="ui inverted labeled icon menu noPrint"><a href="../index.html" class="item"><i title="首頁" class="home icon"></i>		首頁</a>
@@ -88,22 +19,24 @@
         <div id="setting" title="設定" class="ui simple dropdown item"><i class="setting icon"></i>			設定
           <div class="menu">
             <div class="item"><span>首數範圍:</span>
-              <input type="number" ng-model="minN1"><span>~ </span>
-              <input type="number" ng-model="maxN1">
+              <input type="number" ng-model="c.minN1"><span>~ </span>
+              <input type="number" ng-model="c.maxN1">
             </div>
             <div class="item"><span>末數範圍:</span>
-              <input type="number" ng-model="minN1"><span>~ </span>
-              <input type="number" ng-model="maxN2">
+              <input type="number" ng-model="c.minN1"><span>~ </span>
+              <input type="number" ng-model="c.maxN2">
             </div>
             <div class="divider"></div>
             <div class="item"><span>使用算符:</span>
-              <select ng-model="op" ng-options="o as o.t for o in ops" class="ui select"></select>
+              <select ng-model="c.op" ng-options="o as o.t for o in ops" class="ui select">
+                <option value="">選擇一項</option>
+              </select>
             </div>
             <div class="divider"></div>
             <div class="item"></div>
             <div class="divider"></div>
             <div class="item">
-              <input type="checkbox" ng-model="rememberMe" class="ui checkbox"><span>記住我的設定</span>
+              <input type="checkbox" ng-model="c.rememberMe" class="ui checkbox"><span>記住我的設定</span>
             </div>
           </div>
         </div>
@@ -119,87 +52,14 @@
         <div class="glass">
           <div ng-if="welcome" class="welcome">{{welcome}}</div>
         </div>
-        <h1 id="question" ng-if="!flip">{{n1 | renderNagtive}} {{op.t}} {{n2 | renderNagtive}}</h1>
-        <h1 id="answer" ng-if="flip">{{$eval(n1 + op.s + n2) | renderQuotient | renderInf}}</h1>
+        <h1 id="question" ng-if="!flip">{{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}</h1>
+        <h1 id="answer" ng-if="flip">{{$eval(n1 + c.op.s + n2) | renderQuotient | renderInf}}</h1>
       </div>
     </div>
-    <script src="../javascripts/jquery-1.10.2.js"></script>
-    <script src="../javascripts/angular.min.js"></script>
-    <script type="text/javascript">
-      var app = angular.module('mathApp', []);
-      app.filter('renderNagtive', function(){
-      	return function(n){
-      		return n < 0 ? '('+ n +')': '' + n;
-      	}
-      })
-      app.filter('renderQuotient', function(){
-      	return function(n){
-      		var s = (''+n);
-      		if ((s.indexOf('.') > -1 && s.length) > 5) {
-      				return s.slice(0,5) + '...';
-      		} else { return s}
-      	}
-      })
-      app.filter('renderInf', function(){
-      	return function(s){
-      		s = s == 'Infinity' ? '∞' : s;
-      		s = s == 'NaN' ? '𝕌' : s;
-      		return s;
-      	}
-      })
-      app.controller('Ctrl', ['$scope', function($scope) {
-      	angular.extend($scope, {
-      	rememberMe: true,
-      	welcome: '按Enter或點擊卡片開始',
-      	n1: 3,
-      	n2: 8,
-      	minN1: 0,
-      	maxN1: 30,
-      	minN2: 0,
-      	maxN2: 15,
-      	flip: false,
-      	ops: [
-      		{
-      			s: '+',
-      			t: ' + '
-      		},
-      		{
-      			s: '-',
-      			t: ' - '
-      		},
-      		{
-      			s: '*',
-      			t: ' × '
-      		},
-      		{
-      			s: '/',
-      			t: ' ÷ '
-      		},
-      	],
-      	})
-      	$scope.op = $scope.ops[0];
-      
-      	angular.extend($scope, {
-      		flipCard: function() {
-      			this.welcome = '';
-      		 	this.flip = !this.flip;
-      		 	if (!this.flip) {
-      			 	this.n1 = this.randNum(this.minN1, this.maxN1);
-      			 	this.n2 = this.randNum(this.minN2, this.maxN2);
-      			}
-      		},
-      		randNum: function(min, max){
-      			return Math.floor(min + Math.random() * max)
-      		},
-      		onKeydown: function(e) {
-      			console.log(e.keyCode);
-      			if (e.keyCode == 13) {
-      				this.flipCard();
-      			}
-      		}
-      	});
-      }])
-    </script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./card.js"></script>
     <script type="text/javascript" src=" ../ga.js"></script>
   </body>
 </html>
