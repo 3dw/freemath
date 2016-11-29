@@ -42,9 +42,12 @@ html(ng-app='mathApp')
 								option(value="") 選擇一項
 						.divider
 						.item
+							span 表徵:
+							select.ui.select(ng-model='c.rep', ng-options='r as r.t for r in reps')
+								option(value="") 選擇一項
 						.divider
 						.item
-							input(type="checkbox").ui.checkbox(ng-model="c.rememberMe")
+							input.ui.checkbox(type="checkbox", ng-model="c.rememberMe")
 							span 記住我的設定
 		.ui.breadcrumb
 			a.section(href='../index.html') 自由數學
@@ -57,8 +60,26 @@ html(ng-app='mathApp')
 			#main.ui.segment(clickable, ng-click="flipCard()")
 				.glass
 					.welcome(ng-if="welcome") {{welcome}}
-				h1#question(ng-if="!flip") {{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}
-				h1#answer(ng-if="flip") {{$eval(n1 + c.op.s + n2) | renderQuotient | renderInf}}
+				#number(ng-if="!c.rep.s")
+					h1.q(ng-if="!flip") {{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}
+					h1.q(ng-if="flip")
+							span(ng-if="!useRem") {{ans() | renderQuotient | renderInf}}
+							//span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem")
+								{{qr}}
+				#dots(ng-if="c.rep.s == '.'")
+					h1.q-dot(ng-if="!flip")
+						span.dot(ng-repeat="d in numToDots(n1) track by $index")
+							| {{d}}
+							br(ng-show = "($index+1) % 10 == 0")
+						br
+						span {{c.op.t}}
+						br
+						span.dot(ng-repeat="d in numToDots(n2) track by $index")
+							| {{d}}
+							br(ng-show = "($index+1) % 10 == 0")
+					h1.a-dot(ng-if="flip")
+						.dot(ng-repeat="d in numToDots(ans()) track by $index")
+
 		script(src='../bower_components/angular/angular.min.js')
 		script(src='../bower_components/ngstorage/ngStorage.min.js')
 		script(src='../bower_components/jquery/dist/jquery.min.js')

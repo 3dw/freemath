@@ -33,7 +33,11 @@
               </select>
             </div>
             <div class="divider"></div>
-            <div class="item"></div>
+            <div class="item"><span>表徵:</span>
+              <select ng-model="c.rep" ng-options="r as r.t for r in reps" class="ui select">
+                <option value="">選擇一項</option>
+              </select>
+            </div>
             <div class="divider"></div>
             <div class="item">
               <input type="checkbox" ng-model="c.rememberMe" class="ui checkbox"><span>記住我的設定</span>
@@ -52,8 +56,19 @@
         <div class="glass">
           <div ng-if="welcome" class="welcome">{{welcome}}</div>
         </div>
-        <h1 id="question" ng-if="!flip">{{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}</h1>
-        <h1 id="answer" ng-if="flip">{{$eval(n1 + c.op.s + n2) | renderQuotient | renderInf}}</h1>
+        <div id="number" ng-if="!c.rep.s">
+          <h1 ng-if="!flip" class="q">{{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}</h1>
+          <h1 ng-if="flip" class="q"><span ng-if="!useRem">{{ans() | renderQuotient | renderInf}}</span>
+            <!--span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem"){{qr}}
+            -->
+          </h1>
+        </div>
+        <div id="dots" ng-if="c.rep.s == '.'">
+          <h1 ng-if="!flip" class="q-dot"><span ng-repeat="d in numToDots(n1) track by $index" class="dot">{{d}}<br ng-show="($index+1) % 10 == 0"></span><br><span>{{c.op.t}}</span><br><span ng-repeat="d in numToDots(n2) track by $index" class="dot">{{d}}<br ng-show="($index+1) % 10 == 0"></span></h1>
+          <h1 ng-if="flip" class="a-dot">
+            <div ng-repeat="d in numToDots(ans()) track by $index" class="dot"></div>
+          </h1>
+        </div>
       </div>
     </div>
     <script src="../bower_components/angular/angular.min.js"></script>

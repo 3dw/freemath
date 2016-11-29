@@ -21,7 +21,8 @@ nav {
 	border-radius: 2rem;
 	overflow: hidden;
 }
-#question, #answer {
+
+.q, .a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -30,13 +31,18 @@ nav {
 	background-color: #eee;
 	text-shadow: 0 3px 0 white, 3px 3px 0 white;
 }
-#question {
+.q {
 	color: red;
 	font-size: 5rem;
 }
-#answer {
+.a {
 	color: blue;
 	font-size: 8rem;
+}
+.q-dot .dot { font-size: 4rem }
+.a-dot .dot { font-size: 6rem }
+.dot {
+	color: #aa0;
 }
 .glass {
 	position: absolute;

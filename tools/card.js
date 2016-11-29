@@ -21,6 +21,14 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 				s: '/',		t: ' ÷ '
 			},
 		],
+		reps: [
+			{
+				s: '',		t: '阿拉伯數字'
+			},
+			{
+				s: '.',		t: '點點'
+			},
+		]
 	})
 
 	$scope.defaultC = {
@@ -29,17 +37,20 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		maxN1: 30,
 		minN2: 0,
 		maxN2: 15,
-		op: $scope.ops[0]
+		op: $scope.ops[0],
+		rep: $scope.reps[0]
 	}
 
 	$scope.c = angular.copy($scope.defaultC);
-	$scope.storage = $localStorage.$default(
+	angular.extend($scope, {
+		storage: $localStorage.$default(
       {
       	mathcard: {
       		c: $scope.c
       	}
-      }
-  );
+      })
+		}
+	);
 
   if ($scope.storage.mathcard.c.rememberMe) {
   	$scope.c = angular.copy($scope.storage.mathcard.c);
@@ -55,6 +66,9 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 
 
 	angular.extend($scope, {
+		ans: function() {
+			return this.$eval(this.n1 + this.c.op.s + this.n2);
+		},
 		flipCard: function() {
 			this.welcome = '';
 		 	this.flip = !this.flip;
@@ -70,6 +84,14 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 			if (e.keyCode == 13) {
 				this.flipCard();
 			}
+		},
+		numToDots: function(n){
+			var ans = [];
+			for (var i = 0; i < Math.abs(n); i++) {
+				ans.push('.')
+			}
+			console.log(ans);
+			return ans;
 		}
 	});
 }]);
