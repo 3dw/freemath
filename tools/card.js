@@ -2,6 +2,7 @@ var app = angular.module('mathApp', ['ngStorage']);
 app.controller('Ctrl', ['$scope', '$localStorage', 
 	function($scope, $localStorage) {
 	angular.extend($scope, {
+		Math: Math,
 		welcome: '按Enter或點擊卡片開始',
 		n1: 3,
 		n2: 8,

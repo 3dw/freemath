@@ -27,14 +27,14 @@ html(ng-app='mathApp')
 					.menu
 						.item
 							span 首數範圍:
-							input(type="number" ng-model="c.minN1")
+							input(type="number", ng-model="c.minN1", step="10")
 							span ~ 
-							input(type="number" ng-model="c.maxN1")
+							input(type="number", ng-model="c.maxN1", step="10")
 						.item
 							span 末數範圍:
-							input(type="number" ng-model="c.minN1")
+							input(type="number", ng-model="c.minN2", step="5")
 							span ~ 
-							input(type="number" ng-model="c.maxN2")
+							input(type="number", ng-model="c.maxN2", step="5")
 						.divider
 						.item
 							span 使用算符:
