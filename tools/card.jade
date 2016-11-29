@@ -111,7 +111,8 @@ html(ng-app='mathApp')
 						.item
 						.divider
 						.item
-							.ui.checkbox
+							input(type="checkbox").ui.checkbox(ng-model="rememberMe")
+							span 記住我的設定
 		.ui.breadcrumb
 			a.section(href='../index.html') 自由數學
 			.divider  / 
@@ -124,7 +125,7 @@ html(ng-app='mathApp')
 				.glass
 					.welcome(ng-if="welcome") {{welcome}}
 				h1#question(ng-if="!flip") {{n1 | renderNagtive}} {{op.t}} {{n2 | renderNagtive}}
-				h1#answer(ng-if="flip") {{$eval(n1 + op.s + n2)}}
+				h1#answer(ng-if="flip") {{$eval(n1 + op.s + n2) | renderQuotient | renderInf}}
 		script(src='../javascripts/jquery-1.10.2.js')
 		script(src='../javascripts/angular.min.js')
 		script(type='text/javascript').
@@ -134,8 +135,24 @@ html(ng-app='mathApp')
 					return n < 0 ? '('+ n +')': '' + n;
 				}
 			})
+			app.filter('renderQuotient', function(){
+				return function(n){
+					var s = (''+n);
+					if ((s.indexOf('.') > -1 && s.length) > 5) {
+							return s.slice(0,5) + '...';
+					} else { return s}
+				}
+			})
+			app.filter('renderInf', function(){
+				return function(s){
+					s = s == 'Infinity' ? '∞' : s;
+					s = s == 'NaN' ? '𝕌' : s;
+					return s;
+				}
+			})
 			app.controller('Ctrl', ['$scope', function($scope) {
 				angular.extend($scope, {
+				rememberMe: true,
 				welcome: '按Enter或點擊卡片開始',
 				n1: 3,
 				n2: 8,

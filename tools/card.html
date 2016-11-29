@@ -103,7 +103,7 @@
             <div class="item"></div>
             <div class="divider"></div>
             <div class="item">
-              <div class="ui checkbox"></div>
+              <input type="checkbox" ng-model="rememberMe" class="ui checkbox"><span>記住我的設定</span>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@
           <div ng-if="welcome" class="welcome">{{welcome}}</div>
         </div>
         <h1 id="question" ng-if="!flip">{{n1 | renderNagtive}} {{op.t}} {{n2 | renderNagtive}}</h1>
-        <h1 id="answer" ng-if="flip">{{$eval(n1 + op.s + n2)}}</h1>
+        <h1 id="answer" ng-if="flip">{{$eval(n1 + op.s + n2) | renderQuotient | renderInf}}</h1>
       </div>
     </div>
     <script src="../javascripts/jquery-1.10.2.js"></script>
@@ -132,8 +132,24 @@
       		return n < 0 ? '('+ n +')': '' + n;
       	}
       })
+      app.filter('renderQuotient', function(){
+      	return function(n){
+      		var s = (''+n);
+      		if ((s.indexOf('.') > -1 && s.length) > 5) {
+      				return s.slice(0,5) + '...';
+      		} else { return s}
+      	}
+      })
+      app.filter('renderInf', function(){
+      	return function(s){
+      		s = s == 'Infinity' ? '∞' : s;
+      		s = s == 'NaN' ? '𝕌' : s;
+      		return s;
+      	}
+      })
       app.controller('Ctrl', ['$scope', function($scope) {
       	angular.extend($scope, {
+      	rememberMe: true,
       	welcome: '按Enter或點擊卡片開始',
       	n1: 3,
       	n2: 8,
