@@ -1,0 +1,85 @@
+doctype html
+html(ng-app='mathApp')
+	head
+		meta(charset='utf-8')
+		meta(property='og:type', content='website')
+		meta(property='og:url', content='http://math.alearn.org.tw/tools/card.html')
+		meta(property='og:title', content='自由數學freemath')
+		meta(property='og:image', content='http://bestian.github.io/freemath/tools/card.jpg')
+		meta(property='og:image:width', content='??')
+		meta(property='og:image:height', content='??')
+		meta(property='og:description', content='多功能的數學閃卡')
+		title 數學閃卡
+		link.ui(rel='stylesheet', type='text/css', href='../bower_components/semantic/dist/semantic.min.css')
+		style.
+			.breadcrumb {
+				position: relative;
+				left: 10px;
+				padding-bottom: 20px;
+			}
+			[clickable] {
+				cursor: pointer;
+			}
+			.segment {
+				min-height: 50vh;
+			}
+	body(ng-controller='Ctrl')
+		nav.ui.inverted.labeled.icon.menu.noPrint
+			a.item(href='../index.html')
+				i.home.icon(title='首頁')
+				| 		首頁
+			.right.menu
+				a.item(target='_blank', href='https://freemath.hackpad.com/8HWAfG4IEWy')
+					i.question.icon(title='玩法說明')
+					| 			玩法說明
+				#setting.ui.simple.dropdown.item(title='設定')
+					i.setting.icon
+					| 			設定
+					.menu
+						.item
+						.item
+						.divider
+						.item
+							select(ng-model='op', ng-options='o as o.t for o in ops')
+						.divider
+						.item
+						.divider
+						.item
+							.ui.checkbox
+		.ui.breadcrumb
+			a.section(href='../index.html') 自由數學
+			.divider  / 
+			a.section(href='./index.html') 工具
+			.divider  / 
+			.active.section 閃卡
+
+		.ui.container
+			.ui.segment(clickable, ng-click="flip = !flip")
+				.ui
+					h1.center.aligned.ui.header(ng-hide="flip") 
+						| {{n1}}{{op.t}}{{n2}}
+					h1.center.aligned.ui.header(ng-show="flip") 
+						| {{$eval(n1 + op.s + n2)}}
+		script(src='../javascripts/jquery-1.10.2.js')
+		script(src='../javascripts/angular.min.js')
+		script(type='text/javascript').
+			var mathApp = angular.module('mathApp', []);
+			mathApp.controller('Ctrl', ['$scope', function($scope) {
+			angular.extend($scope, {
+			n1: 3,
+			n2: 8,
+			flip: false,
+			ops: [
+				{
+					s: '+',
+					t:'+'
+				},
+				{
+					s: '*',
+					t:'×'
+				},
+			],
+			})
+			$scope.op = $scope.ops[0];
+			}])
+		script(type='text/javascript', src=' ../ga.js')
