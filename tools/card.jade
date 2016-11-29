@@ -12,6 +12,13 @@ html(ng-app='mathApp')
 		title 數學閃卡
 		link.ui(rel='stylesheet', type='text/css', href='../bower_components/semantic/dist/semantic.min.css')
 		style.
+			html {
+				font-size: 2vm;
+				font-size: 2vmin;
+			}
+			nav {
+				border-radius: 0 0 0 0 !important;
+			}
 			.breadcrumb {
 				position: relative;
 				left: 10px;
@@ -20,16 +27,66 @@ html(ng-app='mathApp')
 			[clickable] {
 				cursor: pointer;
 			}
-			.segment {
-				min-height: 50vh;
+			#main.segment {
+				position: relative;
+				height: 50vh;
+				min-height: 300px;
+				padding: 0;
+				border-radius: 2rem;
+				overflow: hidden;
 			}
-	body(ng-controller='Ctrl')
+			#question, #answer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				margin: 0 !important;
+				background-color: #eee;
+				text-shadow: 0 3px 0 white, 3px 3px 0 white;
+			}
+			#question {
+				color: red;
+				font-size: 5rem;
+			}
+			#answer {
+				color: blue;
+				font-size: 8rem;
+			}
+			.glass {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index:1;
+				background-color: transparent;
+			}
+			.welcome {
+				display: flex;
+				position: absolute;
+				align-items: center;
+				justify-content: center;
+				font-size: 2.5rem;
+				font-size: 2.5rem;
+				height: 5rem;
+				width:100%;
+			}
+			input, select {
+				margin: 0 0.5em;
+			}
+			input[type='number'] {
+				padding: 0 0.2em;
+				min-width: 60px;
+				width: 4em;
+			}
+			select {
+				min-width: 4em;
+			}
+	body(ng-controller='Ctrl', ng-keydown="onKeydown($event)")
 		nav.ui.inverted.labeled.icon.menu.noPrint
 			a.item(href='../index.html')
 				i.home.icon(title='首頁')
 				| 		首頁
 			.right.menu
-				a.item(target='_blank', href='https://freemath.hackpad.com/8HWAfG4IEWy')
+				a.item(target='_blank', href='https://freemath.hackpad.com/z9XTu9Rwf2P')
 					i.question.icon(title='玩法說明')
 					| 			玩法說明
 				#setting.ui.simple.dropdown.item(title='設定')
@@ -37,10 +94,19 @@ html(ng-app='mathApp')
 					| 			設定
 					.menu
 						.item
+							span 首數範圍:
+							input(type="number" ng-model="minN1")
+							span ~ 
+							input(type="number" ng-model="maxN1")
 						.item
+							span 末數範圍:
+							input(type="number" ng-model="minN1")
+							span ~ 
+							input(type="number" ng-model="maxN2")
 						.divider
 						.item
-							select(ng-model='op', ng-options='o as o.t for o in ops')
+							span 使用算符:
+							select.ui.select(ng-model='op', ng-options='o as o.t for o in ops')
 						.divider
 						.item
 						.divider
@@ -54,32 +120,69 @@ html(ng-app='mathApp')
 			.active.section 閃卡
 
 		.ui.container
-			.ui.segment(clickable, ng-click="flip = !flip")
-				.ui
-					h1.center.aligned.ui.header(ng-hide="flip") 
-						| {{n1}}{{op.t}}{{n2}}
-					h1.center.aligned.ui.header(ng-show="flip") 
-						| {{$eval(n1 + op.s + n2)}}
+			#main.ui.segment(clickable, ng-click="flipCard()")
+				.glass
+					.welcome(ng-if="welcome") {{welcome}}
+				h1#question(ng-if="!flip") {{n1 | renderNagtive}} {{op.t}} {{n2 | renderNagtive}}
+				h1#answer(ng-if="flip") {{$eval(n1 + op.s + n2)}}
 		script(src='../javascripts/jquery-1.10.2.js')
 		script(src='../javascripts/angular.min.js')
 		script(type='text/javascript').
-			var mathApp = angular.module('mathApp', []);
-			mathApp.controller('Ctrl', ['$scope', function($scope) {
-			angular.extend($scope, {
-			n1: 3,
-			n2: 8,
-			flip: false,
-			ops: [
-				{
-					s: '+',
-					t:'+'
-				},
-				{
-					s: '*',
-					t:'×'
-				},
-			],
+			var app = angular.module('mathApp', []);
+			app.filter('renderNagtive', function(){
+				return function(n){
+					return n < 0 ? '('+ n +')': '' + n;
+				}
 			})
-			$scope.op = $scope.ops[0];
+			app.controller('Ctrl', ['$scope', function($scope) {
+				angular.extend($scope, {
+				welcome: '按Enter或點擊卡片開始',
+				n1: 3,
+				n2: 8,
+				minN1: 0,
+				maxN1: 30,
+				minN2: 0,
+				maxN2: 15,
+				flip: false,
+				ops: [
+					{
+						s: '+',
+						t: ' + '
+					},
+					{
+						s: '-',
+						t: ' - '
+					},
+					{
+						s: '*',
+						t: ' × '
+					},
+					{
+						s: '/',
+						t: ' ÷ '
+					},
+				],
+				})
+				$scope.op = $scope.ops[0];
+
+				angular.extend($scope, {
+					flipCard: function() {
+						this.welcome = '';
+					 	this.flip = !this.flip;
+					 	if (!this.flip) {
+						 	this.n1 = this.randNum(this.minN1, this.maxN1);
+						 	this.n2 = this.randNum(this.minN2, this.maxN2);
+						}
+					},
+					randNum: function(min, max){
+						return Math.floor(min + Math.random() * max)
+					},
+					onKeydown: function(e) {
+						console.log(e.keyCode);
+						if (e.keyCode == 13) {
+							this.flipCard();
+						}
+					}
+				});
 			}])
 		script(type='text/javascript', src=' ../ga.js')
