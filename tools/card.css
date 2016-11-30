@@ -3,7 +3,7 @@ html {
 	font-size: 2vmin;
 }
 body {
-	background-image: url(http://lorempixel.com/600/600/sports/);	
+	background-image: url(http://lorempixel.com/400/320/sports/);	
 	background-size: cover;
 }
 nav {
@@ -13,6 +13,7 @@ nav {
 	position: relative;
 	left: 10px;
 	padding-bottom: 20px;
+	text-shadow: 0 1px 0 white;
 }
 [clickable] {
 	cursor: pointer;
@@ -92,13 +93,76 @@ span.op {
 	display: block;
 	position: relative;
 	top: .4rem;
+	left: -3rem;
 	font-size: 4rem;
 	padding: 1rem 0;
+	text-align: left;
 }
 span.space {
 	display: inline-block;
 	width: 1.8rem;
 }
+.q-coin, .a-coin {
+	text-align: right;
+}
+.coin-stack {
+	display: inline-flex;
+	flex-direction: column;
+}
+.coin {
+	margin-bottom: -2rem; 
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	border-radius: 50%;
+	background-size: cover;
+	text-shadow: 0 2px 0 white;
+}
+.coin.c1000s {
+	background-image: url(./c1000.jpg);
+	height: 6rem;
+	width: 13rem;
+	border-radius: 0;
+	margin-left: -4rem;
+}
+.coin.c500s {
+	background-image: url(./c500.jpg);
+	height: 6rem;
+	width: 13rem;
+	border-radius: 0;
+	margin-left: -4rem;
+}
+.coin.c100s {
+	background-image: url(./c100.jpg);
+	height: 6rem;
+	width: 13rem;
+	border-radius: 0;
+	margin-left: -4rem;
+}
+.coin.c50s {
+	background-image: url(./c50.jpg);
+	height: 6.2rem;
+	width: 6.2rem;
+}
+.coin.c10s {
+	background-image: url(./c10.jpg);
+	height: 6rem;
+	width: 6rem;
+}
+.coin.c5s {
+	background-image: url(./c5.jpeg);
+	height: 5rem;
+	width: 5rem;
+}
+.coin.c1s {
+	background-image: url(./c1.png);	
+	height: 4rem;
+	width: 4rem;
+}
+
+
+
 .glass {
 	position: absolute; top:0; left:0;
 	width: 100%;
@@ -112,7 +176,7 @@ span.space {
 	top: 10rem;
 	align-items: center;
 	justify-content: center;
-	background-color: white;
+	background-color: rgba(255,255,255,0.7);
 	font-size: 2.5rem;
 	font-size: 2.5rem;
 	height: 5rem;

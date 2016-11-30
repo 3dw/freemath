@@ -70,8 +70,8 @@
           <div ng-if="flip" class="a-dot"><span ng-repeat="d in numToDots(ans()) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span></div>
         </div>
         <div id="coins" ng-if="c.rep.s == '$'">
-          <div ng-if="!flip" class="q-coin"><span ng-repeat="t in coinTypes"><span ng-repeat="d in numToCoins(n1)[t] track by $index">{{d}}</span></span><br><span class="op">{{c.op.t}}</span><br><span ng-repeat="t in coinTypes"><span ng-repeat="d in numToCoins(n2)[t] track by $index">{{d}}</span></span></div>
-          <div ng-if="!flip" class="a-coin"><span ng-repeat="t in coinTypes"><span ng-repeat="d in numToCoins(ans())[t] track by $index">{{d}}</span></span></div>
+          <div ng-if="!flip" class="q-coin"><span ng-repeat="t in coinTypes" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n1)[t] track by $index" class="coin">{{d}}</span></span><br><span class="op">{{c.op.t}}</span><br><span ng-repeat="t in coinTypes" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n2)[t] track by $index" class="coin">{{d}}</span></span></div>
+          <div ng-if="flip" class="a-coin"><span ng-repeat="t in coinTypes" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(ans())[t] track by $index" class="coin">{{d}}</span></span></div>
         </div>
       </div>
     </div>
