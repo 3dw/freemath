@@ -15,9 +15,8 @@ nav {
 }
 #main.segment {
 	position: relative;
-	height: 50vh;
-	min-height: 300px;
-	padding: 0;
+	min-height: 50vh;
+	padding: 2rem 4rem;
 	border-radius: 2rem;
 	overflow: hidden;
 }
@@ -39,10 +38,56 @@ nav {
 	color: blue;
 	font-size: 8rem;
 }
-.q-dot .dot { font-size: 4rem }
-.a-dot .dot { font-size: 6rem }
+#dots {
+	position: relative;
+	z-index: 2;
+}
+.q-dot, .a-dot {
+	margin-left: 1rem;
+}
+.q-dot .dot { 
+	color: transparent; 
+	background-color: #faa;
+	border: 1px solid black;
+}
+.a-dot .dot { 
+	color: transparent;
+	background-color: #66f;
+	border: 1px solid gold;
+}
 .dot {
-	color: #aa0;
+	font-size: 1rem; 
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin: -0.2rem 0;
+	box-shadow: 0 3px 1px grey;	
+}
+.dot:hover {
+	color: #333; 
+	border-width: 5px;
+}
+.a-dot .dot:hover {
+	color: gold; 
+	border-width: 5px;
+}
+.dot.negative {
+	background-color: #999;
+}
+span.op {
+	display: block;
+	position: relative;
+	top: .4rem;
+	font-size: 4rem;
+	padding: 1rem 0;
+}
+span.space {
+	display: inline-block;
+	width: 1.8rem;
 }
 .glass {
 	position: absolute;
@@ -56,6 +101,7 @@ nav {
 	position: absolute;
 	align-items: center;
 	justify-content: center;
+	background-color: white;
 	font-size: 2.5rem;
 	font-size: 2.5rem;
 	height: 5rem;

@@ -87,10 +87,7 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		},
 		numToDots: function(n){
 			var ans = [];
-			for (var i = 0; i < Math.abs(n); i++) {
-				ans.push('.')
-			}
-			console.log(ans);
+			for (var i = 1; i <= Math.abs(n); i++) { ans.push(i * Math.sign(n))  }
 			return ans;
 		}
 	});

@@ -19,8 +19,8 @@
         <div id="setting" title="設定" class="ui simple dropdown item"><i class="setting icon"></i>			設定
           <div class="menu">
             <div class="item"><span>首數範圍:</span>
-              <input type="number" ng-model="c.minN1" step="10"><span>~ </span>
-              <input type="number" ng-model="c.maxN1" step="10">
+              <input type="number" ng-model="c.minN1" step="5" min="-5000" max="5000"><span>~ </span>
+              <input type="number" ng-model="c.maxN1" step="5" min="-5000" max="5000">
             </div>
             <div class="item"><span>末數範圍:</span>
               <input type="number" ng-model="c.minN2" step="5"><span>~ </span>
@@ -59,15 +59,15 @@
         <div id="number" ng-if="!c.rep.s">
           <h1 ng-if="!flip" class="q">{{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}</h1>
           <h1 ng-if="flip" class="q"><span ng-if="!useRem">{{ans() | renderQuotient | renderInf}}</span>
-            <!--span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem"){{qr}}
+            <!--span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem")
+            {{qr}}
+            
             -->
           </h1>
         </div>
         <div id="dots" ng-if="c.rep.s == '.'">
-          <h1 ng-if="!flip" class="q-dot"><span ng-repeat="d in numToDots(n1) track by $index" class="dot">{{d}}<br ng-show="($index+1) % 10 == 0"></span><br><span>{{c.op.t}}</span><br><span ng-repeat="d in numToDots(n2) track by $index" class="dot">{{d}}<br ng-show="($index+1) % 10 == 0"></span></h1>
-          <h1 ng-if="flip" class="a-dot">
-            <div ng-repeat="d in numToDots(ans()) track by $index" class="dot"></div>
-          </h1>
+          <div ng-if="!flip" class="q-dot"><span ng-repeat="d in numToDots(n1) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span><br><span class="op">{{c.op.t}}</span><br><span ng-repeat="d in numToDots(n2) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span></div>
+          <div ng-if="flip" class="a-dot"><span ng-repeat="d in numToDots(ans()) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span></div>
         </div>
       </div>
     </div>

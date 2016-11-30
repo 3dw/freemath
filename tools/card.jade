@@ -27,9 +27,9 @@ html(ng-app='mathApp')
 					.menu
 						.item
 							span 首數範圍:
-							input(type="number", ng-model="c.minN1", step="10")
+							input(type="number", ng-model="c.minN1", step="5", min = "-5000", max = "5000")
 							span ~ 
-							input(type="number", ng-model="c.maxN1", step="10")
+							input(type="number", ng-model="c.maxN1", step="5", min = "-5000", max = "5000")
 						.item
 							span 末數範圍:
 							input(type="number", ng-model="c.minN2", step="5")
@@ -66,19 +66,26 @@ html(ng-app='mathApp')
 							span(ng-if="!useRem") {{ans() | renderQuotient | renderInf}}
 							//span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem")
 								{{qr}}
+
 				#dots(ng-if="c.rep.s == '.'")
-					h1.q-dot(ng-if="!flip")
-						span.dot(ng-repeat="d in numToDots(n1) track by $index")
-							| {{d}}
+					.q-dot(ng-if="!flip")
+						span(ng-repeat="d in numToDots(n1) track by $index")
+							span.dot(ng-class="{negative: Math.sign(d) == -1}") {{d}}
+							span.space(ng-show = "($index+1) % 5 == 0")
 							br(ng-show = "($index+1) % 10 == 0")
 						br
-						span {{c.op.t}}
+						span.op {{c.op.t}}
 						br
-						span.dot(ng-repeat="d in numToDots(n2) track by $index")
-							| {{d}}
+						span(ng-repeat="d in numToDots(n2) track by $index")
+							span.dot(ng-class="{negative: Math.sign(d) == -1}") {{d}}
+							span.space(ng-show = "($index+1) % 5 == 0")
 							br(ng-show = "($index+1) % 10 == 0")
-					h1.a-dot(ng-if="flip")
-						.dot(ng-repeat="d in numToDots(ans()) track by $index")
+
+					.a-dot(ng-if="flip")
+						span(ng-repeat="d in numToDots(ans()) track by $index")
+							span.dot(ng-class="{negative: Math.sign(d) == -1}") {{d}}
+							span.space(ng-show = "($index+1) % 5 == 0")
+							br(ng-show = "($index+1) % 10 == 0")
 
 		script(src='../bower_components/angular/angular.min.js')
 		script(src='../bower_components/ngstorage/ngStorage.min.js')
