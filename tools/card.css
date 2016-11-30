@@ -50,7 +50,7 @@ nav {
 }
 #dots {
 	position: relative;
-	z-index: 2;
+	z-index: 10;
 }
 .q-dot, .a-dot {
 	margin-left: 1rem;
