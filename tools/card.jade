@@ -62,7 +62,7 @@ html(ng-app='mathApp')
 					.welcome(ng-if="welcome") {{welcome}}
 				#number(ng-if="!c.rep.s")
 					h1.q(ng-if="!flip") {{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}
-					h1.q(ng-if="flip")
+					h1.a(ng-if="flip")
 							span(ng-if="!useRem") {{ans() | renderQuotient | renderInf}}
 							//span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem")
 								{{qr}}

@@ -58,7 +58,7 @@
         </div>
         <div id="number" ng-if="!c.rep.s">
           <h1 ng-if="!flip" class="q">{{n1 | renderNagtive}} {{c.op.t}} {{n2 | renderNagtive}}</h1>
-          <h1 ng-if="flip" class="q"><span ng-if="!useRem">{{ans() | renderQuotient | renderInf}}</span>
+          <h1 ng-if="flip" class="a"><span ng-if="!useRem">{{ans() | renderQuotient | renderInf}}</span>
             <!--span(ng-if="useRem", ng-repeat="qr in ans() | renderQuotRem")
             {{qr}}
             
