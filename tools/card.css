@@ -2,6 +2,10 @@ html {
 	font-size: 2vm;
 	font-size: 2vmin;
 }
+body {
+	background-image: url(http://lorempixel.com/600/600/sports/);	
+	background-size: cover;
+}
 nav {
 	border-radius: 0 0 0 0 !important;
 }
@@ -14,10 +18,14 @@ nav {
 	cursor: pointer;
 }
 #main.segment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: relative;
-	min-height: 50vh;
+	min-height: 75vh;
 	padding: 2rem 4rem;
 	border-radius: 2rem;
+	background-color: rgba(255,255,255,0.8);
 	overflow: hidden;
 }
 
@@ -27,7 +35,9 @@ nav {
 	justify-content: center;
 	height: 100%;
 	margin: 0 !important;
-	background-color: #eee;
+	padding: 1rem;
+	border-radius: 3rem;
+	background-color: rgba(255,255,255,0.8);
 	text-shadow: 0 3px 0 white, 3px 3px 0 white;
 }
 .q {
@@ -90,22 +100,23 @@ span.space {
 	width: 1.8rem;
 }
 .glass {
-	position: absolute;
+	position: absolute; top:0; left:0;
 	width: 100%;
 	height: 100%;
-	z-index:1;
+	z-index:-1;
 	background-color: transparent;
 }
 .welcome {
 	display: flex;
 	position: absolute;
+	top: 10rem;
 	align-items: center;
 	justify-content: center;
 	background-color: white;
 	font-size: 2.5rem;
 	font-size: 2.5rem;
 	height: 5rem;
-	width:100%;
+	width: 100%;
 }
 input, select {
 	margin: 0 0.5em;
