@@ -87,6 +87,20 @@ html(ng-app='mathApp')
 							span.space(ng-show = "($index+1) % 5 == 0")
 							br(ng-show = "($index+1) % 10 == 0")
 
+				#coins(ng-if="c.rep.s == '$'")
+					.q-coin(ng-if="!flip")
+						span(ng-repeat="t in coinTypes")
+							span(ng-repeat="d in numToCoins(n1)[t] track by $index") {{d}}
+						br
+						span.op {{c.op.t}}
+						br
+						span(ng-repeat="t in coinTypes")
+							span(ng-repeat="d in numToCoins(n2)[t] track by $index") {{d}}
+					.a-coin(ng-if="!flip")
+						span(ng-repeat="t in coinTypes")
+							span(ng-repeat="d in numToCoins(ans())[t] track by $index") {{d}}
+
+
 		script(src='../bower_components/angular/angular.min.js')
 		script(src='../bower_components/ngstorage/ngStorage.min.js')
 		script(src='../bower_components/jquery/dist/jquery.min.js')

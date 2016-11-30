@@ -28,6 +28,21 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 			{
 				s: '.',		t: '點點'
 			},
+			{
+				s: '$',		t: '錢幣'
+			},
+		],
+		modes: [
+			'閃卡模式', '挑戰模式', '挫折模式'
+		],
+		coinTypes: [
+			'c1000s', 
+			'c500s',
+			'c100s',
+			'c50s',
+			'c10s',
+			'c5s',
+			'c1s'
 		]
 	})
 
@@ -89,6 +104,35 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 			var ans = [];
 			for (var i = 1; i <= Math.abs(n); i++) { ans.push(i * Math.sign(n))  }
 			return ans;
+		},
+		numToCoins: function(n){
+			var ans = [];
+			n = Math.abs(n);
+
+			var r;
+			var c1000 = Math.floor(n / 1000); r = n - c1000 * 1000;
+			var c500 = Math.floor(r / 500); r = r - c500 * 500;
+			var c100 = Math.floor(r / 100); r = r - c100 * 100;
+			var c50 = Math.floor(r / 50); r = r - c50 * 50;
+			var c10 = Math.floor(r / 10); r = r - c10 * 10;
+			var c5 = Math.floor(r / 5); r = r - c5 * 5;
+			var c1 = r;
+
+			function toList(c, $$) {
+				var ans = [];
+				for (var i = 1; i <= c; i++) { ans.push($$)  }	
+				return ans;			
+			}
+
+			return {
+				c1000s: toList(c1000, 1000),
+				c500s: toList(c500, 500),
+				c100s: toList(c100, 100),
+				c50s: toList(c50, 50),
+				c10s: toList(c10, 10),
+				c5s: toList(c5, 5),
+				c1s: toList(c1, 1),
+			}
 		}
 	});
 }]);
