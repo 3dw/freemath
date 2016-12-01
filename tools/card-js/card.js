@@ -8,22 +8,13 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		n2: 8,
 		flip: false,
 		ops: [
-			{
-				s: '+',		t: ' + '
-			},
-			{
-				s: '-',		t: ' - '
-			},
-			{
-				s: '*',		t: ' × '
-			},
-//			{
-	//			s: '/',		t: ' ÷ (包含)', tShow:' ÷ ', type: 'include'
-	//		},
-//			{
-	//			s: '/',		t: ' ÷ (等分, 取餘數)', tShow:' ÷ ', type: 'divide', rem: true
-//			},
+			{	s: '+',		t: ' + ' },
+			{	s: '-',		t: ' - '	},
+			{	s: '*',		t: ' × '},
+//		  {	s: '/',		t: ' ÷ '},
 		],
+		workType: 'include', // ['include', 'divide']
+		remType: 'get', // ['get', 'throw', 'fill', 'cut']
 		reps: [
 			{
 				s: '',		t: '阿拉伯數字'

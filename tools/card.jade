@@ -65,8 +65,8 @@ html(ng-app='mathApp')
 				#number(ng-if="!c.rep.s")
 					h1.q(ng-if="!flip") {{n1 | renderNagtive}} {{c.op.tShow || c.op.t}} {{n2 | renderNagtive}}
 					h1.a(ng-if="flip")
-							span(ng-if="!c.op.rem") {{ans() | renderQuotient | renderInf}}
-							span(ng-if="c.op.rem", ng-repeat="qr in countQuotRem(n1, n2) track by $index")
+							span(ng-if="!c.remType=='get'") {{ans() | renderQuotient | renderInf}}
+							span(ng-if="c.remType=='get'", ng-repeat="qr in countQuotRem(n1, n2) track by $index")
 								span.quot(ng-if="$index == 0") {{qr}}...
 								span.rem(ng-if="$index == 1") {{qr}}
 
@@ -85,12 +85,12 @@ html(ng-app='mathApp')
 							br(ng-show = "($index+1) % 10 == 0")
 
 					.a-dot(ng-if="flip")
-						span(ng-if="!c.op.rem", ng-repeat="d in numToDots(ans()) track by $index")
+						span(ng-if="!c.remType=='get'", ng-repeat="d in numToDots(ans()) track by $index")
 							span.dot(ng-class="{negative: Math.sign(d) == -1}") {{d}}
 							span.space(ng-show = "($index+1) % 5 == 0")
 							br(ng-show = "($index+1) % 10 == 0")
 
-						span(ng-if="c.op.rem", ng-repeat="qr in countQuotRem(n1, n2) track by $index")
+						span(ng-if="c.remType=='get'", ng-repeat="qr in countQuotRem(n1, n2) track by $index")
 							span.quot(ng-if="$index == 0") {{qr}}...
 							span.rem(ng-if="$index == 1") {{qr}}
 
@@ -100,12 +100,12 @@ html(ng-app='mathApp')
 						span.coin-stack(ng-repeat="t in coinTypes", ng-class="{negative: Math.sign(n1) == -1}")
 							span.coin(ng-class="t", ng-repeat="d in numToCoins(n1)[t] track by $index") {{d}}
 						br
-						span.op {{c.op.tShow || c.op.t}}
+						span.op {{c.op.t}}
 						br
 
-						span.coin-stack(ng-if="c.op.s != '*' && c.op.type != 'divide'", ng-repeat="t in coinTypes", ng-class="{negative: Math.sign(n2) == -1}")
+						span.coin-stack(ng-if="c.op.s != '*' && c.workType != 'divide'", ng-repeat="t in coinTypes", ng-class="{negative: Math.sign(n2) == -1}")
 							span.coin(ng-class="t", ng-repeat="d in numToCoins(n2)[t] track by $index") {{d}}
-						span.box-stack(ng-if="c.op.s == '*' || c.op.type == 'divide'")
+						span.box-stack(ng-if="c.op.s == '*' || c.workType == 'divide'")
 							.box(ng-repeat="d in numToDots(n2) track by $index")
 
 					.a-coin(ng-if="flip")
