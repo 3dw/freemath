@@ -17,9 +17,12 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 			{
 				s: '*',		t: ' × '
 			},
-			{
-				s: '/',		t: ' ÷ '
-			},
+//			{
+	//			s: '/',		t: ' ÷ (包含)', tShow:' ÷ ', type: 'include'
+	//		},
+//			{
+	//			s: '/',		t: ' ÷ (等分, 取餘數)', tShow:' ÷ ', type: 'divide', rem: true
+//			},
 		],
 		reps: [
 			{
@@ -99,7 +102,7 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 			}
 		},
 		randNum: function(min, max){
-			return Math.floor(min + Math.random() * max)
+			return Math.floor(min + Math.random() * (max-min))
 		},
 		onKeydown: function(e) {
 			if (e.keyCode == 13) {
@@ -139,6 +142,12 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 				c5s: toList(c5, 5),
 				c1s: toList(c1, 1),
 			}
+		},
+		countQuotRem: function(f, s){
+			var q = Math.floor(f / s);
+			var r = f % s;
+			var ans = [q,r];
+			return ans;
 		}
 	});
 }]);

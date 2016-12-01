@@ -1,10 +1,18 @@
 .q-coin, .a-coin {
-	text-align: right;
+	text-align: center;
 }
-.coin-stack {
+.coin-stack, .box-stack {
 	display: inline-flex;
-	flex-direction: column;
+	max-height: 15rem;
 }
+.coin-stack {	
+	flex-flow: column nowrap;
+}
+.box-stack {
+	min-width: 50vw;
+	flex-flow: column wrap;
+}
+
 .coin-stack.negative > .coin {
   transform: rotate(180deg);
 	text-shadow: 0 2px 0 black;
@@ -21,43 +29,55 @@
 	text-shadow: 0 2px 0 white;
 }
 .coin.c1000s {
-	background-image: url(./c1000.jpg);
+	background-image: url(../card-images/c1000.jpg);
 	height: 6rem;
 	width: 13rem;
 	border-radius: 0;
 	margin-left: -4rem;
 }
 .coin.c500s {
-	background-image: url(./c500.jpg);
+	background-image: url(../card-images/c500.jpg);
 	height: 6rem;
 	width: 13rem;
 	border-radius: 0;
 	margin-left: -4rem;
 }
 .coin.c100s {
-	background-image: url(./c100.jpg);
+	background-image: url(../card-images/c100.jpg);
 	height: 6rem;
 	width: 13rem;
 	border-radius: 0;
 	margin-left: -4rem;
 }
 .coin.c50s {
-	background-image: url(./c50.jpg);
+	background-image: url(../card-images/c50.jpg);
 	height: 6.2rem;
 	width: 6.2rem;
 }
 .coin.c10s {
-	background-image: url(./c10.jpg);
+	background-image: url(../card-images/c10.jpg);
 	height: 6rem;
 	width: 6rem;
 }
 .coin.c5s {
-	background-image: url(./c5.jpeg);
+	background-image: url(../card-images/c5.jpeg);
 	height: 5rem;
 	width: 5rem;
 }
 .coin.c1s {
-	background-image: url(./c1.png);	
+	background-image: url(../card-images/c1.png);	
 	height: 4rem;
 	width: 4rem;
+}
+
+.box {
+	margin: 0 -1.5rem;
+	box-shadow: 1px solid grey;
+	flex: 1;
+	display: box;
+	height: 3rem;
+	width: 6rem;
+	background-image: url(../card-images/treasure-box.jpg);		
+	background-size: cover;
+	background-position: center -1.1rem;
 }
