@@ -53,7 +53,8 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		minN2: 0,
 		maxN2: 15,
 		op: $scope.ops[0],
-		rep: $scope.reps[0]
+		rep: $scope.reps[0],
+		mode: $scope.modes[0]
 	}
 
 	$scope.c = angular.copy($scope.defaultC);
@@ -69,14 +70,19 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 
   if ($scope.storage.mathcard.c.rememberMe) {
   	$scope.c = angular.copy($scope.storage.mathcard.c);
+//  	console.log($scope.c)
   } else {
   	$scope.c.rememberMe = angular.copy($scope.storage.mathcard.c.rememberMe);
   }
 
+	$scope.c.op = $scope.ops.filter(function(o){return o.t == $scope.c.op.t})[0];
+	$scope.c.rep = $scope.reps.filter(function(o){return o.t == $scope.c.rep.t})[0];
+	$scope.c.mode = $scope.modes.filter(function(t){return t == $scope.c.mode})[0];
+
 
   $scope.$watch('c', function(newVal, oldVal){
   	$scope.storage.mathcard.c = angular.copy($scope.c);
-  	console.log($scope.storage.mathcard);
+ // 	console.log($scope.storage.mathcard);
   }, true);
 
 

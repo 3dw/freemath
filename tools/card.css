@@ -49,46 +49,6 @@ nav {
 	color: blue;
 	font-size: 8rem;
 }
-#dots {
-	position: relative;
-	z-index: 10;
-}
-.q-dot, .a-dot {
-	margin-left: 1rem;
-}
-.q-dot .dot { 
-	color: transparent; 
-	background-color: #faa;
-	border: 1px solid black;
-}
-.a-dot .dot { 
-	color: transparent;
-	background-color: #66f;
-	border: 1px solid gold;
-}
-.dot {
-	font-size: 1rem; 
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	overflow: hidden;
-	width: 2.5rem;
-	height: 2.5rem;
-	margin: -0.2rem 0;
-	box-shadow: 0 3px 1px grey;	
-}
-.dot:hover {
-	color: #333; 
-	border-width: 5px;
-}
-.a-dot .dot:hover {
-	color: gold; 
-	border-width: 5px;
-}
-.dot.negative {
-	background-color: #999;
-}
 span.op {
 	display: block;
 	position: relative;
@@ -102,66 +62,6 @@ span.space {
 	display: inline-block;
 	width: 1.8rem;
 }
-.q-coin, .a-coin {
-	text-align: right;
-}
-.coin-stack {
-	display: inline-flex;
-	flex-direction: column;
-}
-.coin {
-	margin-bottom: -2rem; 
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 2rem;
-	border-radius: 50%;
-	background-size: cover;
-	text-shadow: 0 2px 0 white;
-}
-.coin.c1000s {
-	background-image: url(./c1000.jpg);
-	height: 6rem;
-	width: 13rem;
-	border-radius: 0;
-	margin-left: -4rem;
-}
-.coin.c500s {
-	background-image: url(./c500.jpg);
-	height: 6rem;
-	width: 13rem;
-	border-radius: 0;
-	margin-left: -4rem;
-}
-.coin.c100s {
-	background-image: url(./c100.jpg);
-	height: 6rem;
-	width: 13rem;
-	border-radius: 0;
-	margin-left: -4rem;
-}
-.coin.c50s {
-	background-image: url(./c50.jpg);
-	height: 6.2rem;
-	width: 6.2rem;
-}
-.coin.c10s {
-	background-image: url(./c10.jpg);
-	height: 6rem;
-	width: 6rem;
-}
-.coin.c5s {
-	background-image: url(./c5.jpeg);
-	height: 5rem;
-	width: 5rem;
-}
-.coin.c1s {
-	background-image: url(./c1.png);	
-	height: 4rem;
-	width: 4rem;
-}
-
-
 
 .glass {
 	position: absolute; top:0; left:0;

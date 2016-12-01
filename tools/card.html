@@ -12,6 +12,8 @@
     <title>數學閃卡</title>
     <link rel="stylesheet" type="text/css" href="../bower_components/semantic/dist/semantic.min.css" class="ui">
     <link rel="stylesheet" type="text/css" href="./card.css" class="ui">
+    <link rel="stylesheet" type="text/css" href="./card-dot.css" class="ui">
+    <link rel="stylesheet" type="text/css" href="./card-coin.css" class="ui">
   </head>
   <body ng-controller="Ctrl" ng-keydown="onKeydown($event)">
     <nav class="ui inverted labeled icon menu noPrint"><a href="../index.html" class="item"><i title="首頁" class="home icon"></i>		首頁</a>
@@ -29,13 +31,13 @@
             <div class="divider"></div>
             <div class="item"><span>使用算符:</span>
               <select ng-model="c.op" ng-options="o as o.t for o in ops" class="ui select">
-                <option value="">選擇一項</option>
+                <!--option(value="") 選擇一項-->
               </select>
             </div>
             <div class="divider"></div>
             <div class="item"><span>表徵:</span>
               <select ng-model="c.rep" ng-options="r as r.t for r in reps" class="ui select">
-                <option value="">選擇一項</option>
+                <!--option(value="") 選擇一項-->
               </select>
             </div>
             <div class="divider"></div>
@@ -70,8 +72,8 @@
           <div ng-if="flip" class="a-dot"><span ng-repeat="d in numToDots(ans()) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span></div>
         </div>
         <div id="coins" ng-if="c.rep.s == '$'">
-          <div ng-if="!flip" class="q-coin"><span ng-repeat="t in coinTypes" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n1)[t] track by $index" class="coin">{{d}}</span></span><br><span class="op">{{c.op.t}}</span><br><span ng-repeat="t in coinTypes" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n2)[t] track by $index" class="coin">{{d}}</span></span></div>
-          <div ng-if="flip" class="a-coin"><span ng-repeat="t in coinTypes" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(ans())[t] track by $index" class="coin">{{d}}</span></span></div>
+          <div ng-if="!flip" class="q-coin"><span ng-repeat="t in coinTypes" ng-class="{negative: Math.sign(n1) == -1}" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n1)[t] track by $index" class="coin">{{d}}</span></span><br><span class="op">{{c.op.t}}</span><br><span ng-repeat="t in coinTypes" ng-class="{negative: Math.sign(n2) == -1}" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n2)[t] track by $index" class="coin">{{d}}</span></span></div>
+          <div ng-if="flip" class="a-coin"><span ng-repeat="t in coinTypes" ng-class="{negative: Math.sign(ans()) == -1}" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(ans())[t] track by $index" class="coin">{{d}}</span></span></div>
         </div>
       </div>
     </div>
