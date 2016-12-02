@@ -18,18 +18,67 @@
   <title>學習地圖</title>
 
 <style>
+	a {
+		cursor: pointer;
+	}
   img {
     z-index: 2;
   }
   button, select{
     position: relative;
     z-index: 100;
-    font-size: 150%;
+    font-size: 1.2em;
   }
+
+  .d3map {
+  	display: inline-block;
+  	margin: 0 2vw;
+  	padding: 1vw;
+  	font-size: 3vm;
+  	font-size: 3vmin;
+  	text-shadow: 0 1px 0 black;
+  	text-decoration: none;
+  	transition: all 3s;
+  	-webkit-transition: all 3s;
+  	border: 1px dotted blue;
+  }
+  .d3map:hover {
+  	transform: rotate(360deg);
+  	-webkit-transform: rotate(360deg);
+  	transition: all .6s;
+  	-webkit-transition: all .6s;
+  }
+
+ 	.divider {
+ 		display: block;
+ 		margin: 25vh 0;
+ 	}
+
+ 	img {
+ 		padding: 5vh;
+  	border: 1px dotted blue;
+ 	}
 
   #doPrint {
     float: right;
   }
+
+  #draw-box {
+  	color: red;
+  	padding: 1vw;
+  	font-size: 1.5em;
+  	border: 1px dotted blue;
+  	transition: all 2s;
+  	-webkit-transition: all 2s;
+  }
+
+  #draw-box:hover {
+  	transform: scaleX(.5);
+  	-webkit-transform: scaleX(.5);
+  	transition: all .6s;
+  	-webkit-transition: all .6s;
+  }
+
 </style>
 
 </head>
@@ -40,15 +89,11 @@
 
 <div ng-controller ="Ctrl">
 
-  <div class = "tool" ng-show = "draw" style = "position:fixed; right: 50px; top: 250px; ">
-    <ul type = "none">
-      <li class = "color" ng-init = "color = '#4bf'" ng-repeat = "c in colors" style = "background-color: {{c}}; font-size:2rem;" ng-click="$parent.color = c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </ul>
-
-  <br/>
+  <div class = "tool" ng-show = "draw" style = "position:fixed; left: 0; top: 0; bottom: 0; width: 50vw; height: 3vh">
+    <div class = "color" ng-init = "color = '#4bf'" ng-repeat = "c in colors" style = "background-color: {{c}}; opacity: 0.5; font-size:2rem; height: 25vh; width: 5vw; z-index: 5;" ng-click="$parent.color = c" onclick="alert('換色成功')">
+    </div>
   </div>
 
-  <span id = "cc" style = "position:fixed; right: 50px; top: 50px; background-color: {{color}};">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
   <br/>
   <br/>
@@ -59,26 +104,28 @@
   <form>
 
     選擇：
-    <select  size="2" id = "Range" class="map" name="Range"  ng-model="range" ng-init = "range= '小學數學學習地圖'">
+    <select  size="1" id = "Range" class="map" name="Range"  ng-model="range" ng-init = "range= '小學數學地圖'">
   　   <option ng-repeat = "r in ranges" value="{{r}}">{{r}}</option>
     </select>
 
 
-    <button id = "doPrint" class = "map" ng-click = "printUrl(range,'.pdf')"> 列印紙本 </button>
+    <button id = "doPrint" class = "map" ng-click = "printUrl(range,'.pdf')"> 友善列印 </button>
 
-    <button class = "map" onclick = "window.open('indexD3.html')">動態學習地圖</button>
+    <a class = "d3map" href="indexD3.html" target="_blank" )">動態地圖</a>
 
-    <div id = "draw-box">
-      <input type = "checkbox" ng-model = "draw" />
-      <span ng-hide = "draw">線上繪圖</span>
-      <span ng-show = "draw">您可以隨意畫圖了，點兩下擦除筆跡</span>
-    </div>
+    <a id = "draw-box" ng-click="draw = !draw">
+      <span ng-hide = "draw">繪圖</span>
+      <span ng-show = "draw">隨意畫，點兩下擦筆跡</span>
+    </a>
 
   </form>
 
   <ul>
   	<li ng-repeat = "i in [0,1,2,3,4,5]">
-  	  	<img src ="{{range}}/p{{i}}.jpg" style="max-width:75%"/>
+  	<a ng-href="{{range}}/p{{i}}.jpg">
+  		<img src ="{{range}}/p{{i}}.jpg" style="max-width:75%"/>
+  	</a>
+  	<div class="divider"></div></li>
   </ul>
 
 
@@ -94,14 +141,14 @@ $(document).ready(function(){
 var fmIndexApp = angular.module('fmIndexApp', []);
 function Ctrl($scope) {
   $scope.$ = jQuery;
-	$scope.ranges = ["小學數學學習地圖","國中數學學習地圖","高中數學學習地圖"];
+	$scope.ranges = ["小學數學地圖","國中數學地圖","高中數學地圖"];
 	$scope.colors = ["#4bf","#000","#880","#0f0"];
   $scope.printUrl = function(title,tail) {
         printWindow = window.open(
           title + tail,
           '_blank'
           );
-        printWindow.window.print();
+        // printWindow.window.print();
   }
 }
 
