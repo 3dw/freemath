@@ -20,6 +20,12 @@
       <div class="right menu"><a target="_blank" href="https://freemath.hackpad.com/z9XTu9Rwf2P" class="item"><i title="玩法說明" class="question icon"></i>			玩法說明</a>
         <div id="setting" title="設定" class="ui simple dropdown item"><i class="setting icon"></i>			設定
           <div class="menu">
+            <div class="item"><span>模式:</span>
+              <select ng-model="c.mode" ng-options="m as m for m in modes" class="ui select">
+                <option value="">選擇一項</option>
+              </select>
+            </div>
+            <div class="divider"></div>
             <div class="item"><span>首數範圍:</span>
               <input type="number" ng-model="c.minN1" step="5" min="5" max="5000"><span>~ </span>
               <input type="number" ng-model="c.maxN1" step="5" min="5" max="5000">
@@ -60,11 +66,11 @@
         </div>
         <div id="number" ng-if="!c.rep.s">
           <h1 ng-if="!flip" class="q">{{n1 | renderNagtive}} {{c.op.tShow || c.op.t}} {{n2 | renderNagtive}}</h1>
-          <h1 ng-if="flip" class="a"><span ng-if="!c.remType=='get'">{{ans() | renderQuotient | renderInf}}</span><span ng-if="c.remType=='get'" ng-repeat="qr in countQuotRem(n1, n2) track by $index"><span ng-if="$index == 0" class="quot">{{qr}}...</span><span ng-if="$index == 1" class="rem">{{qr}}</span></span></h1>
+          <h1 ng-if="flip" class="a"><span ng-if="c.remType!=='get'">{{ans() | renderQuotient | renderInf}}</span><span ng-if="c.remType=='get'" ng-repeat="qr in countQuotRem(n1, n2) track by $index"><span ng-if="$index == 0" class="quot">{{qr}}...</span><span ng-if="$index == 1" class="rem">{{qr}}</span></span></h1>
         </div>
         <div id="dots" ng-if="c.rep.s == '.'">
           <div ng-if="!flip" class="q-dot"><span ng-repeat="d in numToDots(n1) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span><br><span class="op">{{c.op.tShow || c.op.t}}</span><br><span ng-repeat="d in numToDots(n2) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span></div>
-          <div ng-if="flip" class="a-dot"><span ng-if="!c.remType=='get'" ng-repeat="d in numToDots(ans()) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span><span ng-if="c.remType=='get'" ng-repeat="qr in countQuotRem(n1, n2) track by $index"><span ng-if="$index == 0" class="quot">{{qr}}...</span><span ng-if="$index == 1" class="rem">{{qr}}</span></span></div>
+          <div ng-if="flip" class="a-dot"><span ng-if="c.remType!=='get'" ng-repeat="d in numToDots(ans()) track by $index"><span ng-class="{negative: Math.sign(d) == -1}" class="dot">{{d}}</span><span ng-show="($index+1) % 5 == 0" class="space"></span><br ng-show="($index+1) % 10 == 0"></span><span ng-if="c.remType=='get'" ng-repeat="qr in countQuotRem(n1, n2) track by $index"><span ng-if="$index == 0" class="quot">{{qr}}...</span><span ng-if="$index == 1" class="rem">{{qr}}</span></span></div>
         </div>
         <div id="coins" ng-if="c.rep.s == '$'">
           <div ng-if="!flip" class="q-coin"><span ng-repeat="t in coinTypes" ng-class="{negative: Math.sign(n1) == -1}" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n1)[t] track by $index" class="coin">{{d}}</span></span><br><span class="op">{{c.op.t}}</span><br><span ng-if="c.op.s != '*' &amp;&amp; c.workType != 'divide'" ng-repeat="t in coinTypes" ng-class="{negative: Math.sign(n2) == -1}" class="coin-stack"><span ng-class="t" ng-repeat="d in numToCoins(n2)[t] track by $index" class="coin">{{d}}</span></span><span ng-if="c.op.s == '*' || c.workType == 'divide'" class="box-stack">

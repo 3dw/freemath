@@ -28,6 +28,11 @@ html(ng-app='mathApp')
 					| 			設定
 					.menu
 						.item
+							span 模式:
+							select.ui.select(ng-model='c.mode', ng-options='m as m for m in modes')
+								option(value="") 選擇一項
+						.divider
+						.item
 							span 首數範圍:
 							input(type="number", ng-model="c.minN1", step="5", min = "5", max = "5000")
 							span ~ 
@@ -65,7 +70,7 @@ html(ng-app='mathApp')
 				#number(ng-if="!c.rep.s")
 					h1.q(ng-if="!flip") {{n1 | renderNagtive}} {{c.op.tShow || c.op.t}} {{n2 | renderNagtive}}
 					h1.a(ng-if="flip")
-							span(ng-if="!c.remType=='get'") {{ans() | renderQuotient | renderInf}}
+							span(ng-if="c.remType!=='get'") {{ans() | renderQuotient | renderInf}}
 							span(ng-if="c.remType=='get'", ng-repeat="qr in countQuotRem(n1, n2) track by $index")
 								span.quot(ng-if="$index == 0") {{qr}}...
 								span.rem(ng-if="$index == 1") {{qr}}
@@ -85,7 +90,7 @@ html(ng-app='mathApp')
 							br(ng-show = "($index+1) % 10 == 0")
 
 					.a-dot(ng-if="flip")
-						span(ng-if="!c.remType=='get'", ng-repeat="d in numToDots(ans()) track by $index")
+						span(ng-if="c.remType!=='get'", ng-repeat="d in numToDots(ans()) track by $index")
 							span.dot(ng-class="{negative: Math.sign(d) == -1}") {{d}}
 							span.space(ng-show = "($index+1) % 5 == 0")
 							br(ng-show = "($index+1) % 10 == 0")

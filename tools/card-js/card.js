@@ -27,7 +27,7 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 			},
 		],
 		modes: [
-			'閃卡模式', '挑戰模式', '挫折模式'
+			'閃卡模式', '挑戰模式', // '挫折模式'
 		],
 		coinTypes: [
 			'c1000s', 
@@ -84,12 +84,31 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		ans: function() {
 			return this.$eval(this.n1 + this.c.op.s + this.n2);
 		},
+		nextQ: function(){
+		 	this.n1 = this.randNum(this.c.minN1, this.c.maxN1);
+		 	this.n2 = this.randNum(this.c.minN2, this.c.maxN2);
+		},
 		flipCard: function() {
 			this.welcome = '';
-		 	this.flip = !this.flip;
-		 	if (!this.flip) {
-			 	this.n1 = this.randNum(this.c.minN1, this.c.maxN1);
-			 	this.n2 = this.randNum(this.c.minN2, this.c.maxN2);
+
+			if (this.mode == '閃卡模式') {
+			 	this.flip = !this.flip;
+			 	if (!this.flip) this.nextQ();
+			}
+			if (this.mode !== '閃卡模式') {
+				if (!this.flip) {
+					var userAns = window.prompt("請作答");
+					if (userAns == this.ans()) {
+						window.alert("答對了，你真強!");
+						this.flip = true;
+					} else {
+						window.alert("沒關係，再接再勵");
+					 	return;
+					}
+				} else {
+					this.flip = false;
+					this.nextQ();
+				}
 			}
 		},
 		randNum: function(min, max){
