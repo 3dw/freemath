@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2016-12-31 05:17:56 +0000</string>
+	<string>2016-12-31 07:55:13 +0000</string>
 	<key>Modifier</key>
 	<string>Bestian_Tang</string>
 	<key>NotesVisible</key>
@@ -226,7 +226,7 @@
 			<key>RowSpacing</key>
 			<real>36</real>
 			<key>SheetTitle</key>
-			<string>記號標註</string>
+			<string>使用說明</string>
 			<key>UniqueID</key>
 			<integer>2</integer>
 			<key>VPages</key>
@@ -2579,7 +2579,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{255.95626831054688, 419}, {213.60000000000002, 46.666666666666671}}</string>
+					<string>{{255.95626831054685, 419}, {213.60000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -9570,7 +9570,7 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>5</integer>
+		<integer>3</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -9594,7 +9594,7 @@
 		<key>ZoomValues</key>
 		<array>
 			<array>
-				<string>記號標註</string>
+				<string>使用說明</string>
 				<real>1</real>
 				<real>1</real>
 			</array>
