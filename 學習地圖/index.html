@@ -146,7 +146,7 @@
 
   <ul class = "print">
   	<li ng-repeat = "i in [0,1,2,3,4,5]", ng-show="$index < myRange.p">
-  	<a ng-href="{{myRange.t}}/p{{i}}.jpg">
+  	<a ng-href="{{myRange.t}}/p{{i}}.jpg" target="_blank">
   		<img src ="{{myRange.t}}/p{{i}}.jpg" style="max-width:75vw" alt = ""/>
   	</a>
   	<div class="divider"></div></li>
@@ -166,7 +166,7 @@ var fmIndexApp = angular.module('fmIndexApp', []);
 function Ctrl($scope) {
   $scope.$ = jQuery;
 	$scope.ranges = [
-    {t: "小學數學地圖", p: 5},
+    {t: "小學數學地圖", p: 6},
     {t: "國中數學地圖", p: 6},
     {t: "高中數學地圖", p: 6}
   ];
