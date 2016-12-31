@@ -145,7 +145,7 @@
   </form>
 
   <ul class = "print">
-  	<li ng-repeat = "i in [0,1,2,3,4,5]", ng-show="1 || $index < myRange.p">
+  	<li ng-repeat = "i in [0,1,2,3,4,5]", ng-show="$index < myRange.p">
   	<a ng-href="{{myRange.t}}/p{{i}}.jpg">
   		<img src ="{{myRange.t}}/p{{i}}.jpg" style="max-width:75vw" alt = ""/>
   	</a>
