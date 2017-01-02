@@ -4,15 +4,15 @@
 <dict>
 	<key>ApplicationVersion</key>
 	<array>
-		<string>com.omnigroup.OmniGrafflePro</string>
-		<string>139.16.0.171715</string>
+		<string>com.omnigroup.OmniGraffle6</string>
+		<string>156.1.0.195588</string>
 	</array>
 	<key>CreationDate</key>
 	<string>2012-07-15 02:04:32 +0000</string>
 	<key>Creator</key>
 	<string>bestian</string>
 	<key>GraphDocumentVersion</key>
-	<integer>8</integer>
+	<integer>11</integer>
 	<key>GuidesLocked</key>
 	<string>NO</string>
 	<key>GuidesVisible</key>
@@ -26,9 +26,9 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-01-02 07:37:54 +0000</string>
+	<string>2017-01-02 10:46:31 +0000</string>
 	<key>Modifier</key>
-	<string>Bestian_Tang</string>
+	<string>唐宗浩</string>
 	<key>NotesVisible</key>
 	<string>NO</string>
 	<key>OriginVisible</key>
@@ -60,12 +60,12 @@
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{842, 595}</string>
+			<string>{841.8900146484375, 595.28997325897217}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
-			<string>int</string>
-			<string>0</string>
+			<string>coded</string>
+			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG</string>
 		</array>
 		<key>NSRightMargin</key>
 		<array>
@@ -90,18 +90,13 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {806, 536}}</string>
+				<string>{{0, 0}, {805.8900146484375, 536.28997325897217}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
 				<integer>2</integer>
 				<key>Style</key>
 				<dict>
-					<key>shadow</key>
-					<dict>
-						<key>Draws</key>
-						<string>NO</string>
-					</dict>
 					<key>stroke</key>
 					<dict>
 						<key>Draws</key>
@@ -118,7 +113,7 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1.0000 in</string>
+			<string>1 in = 1.00000 in</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
@@ -148,21 +143,22 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;\f1\fnil\fcharset136 STXingkaiTC-Light;\f2\fnil\fcharset136 HannotateTC-W5;
-\f3\fnil\fcharset136 STYuanti-TC-Regular;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;\f1\fnil\fcharset136 PingFangTC-Regular;\f2\fswiss\fcharset0 Helvetica;
+\f3\fnil\fcharset136 HannotateTC-W5;\f4\fnil\fcharset136 STYuanti-TC-Regular;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f1\i\fs72 \cf0 \'c3\'6b\'a9\'a5\'a6\'a1\
-\'a4\'70\'be\'c7\'bc\'c6\'be\'c7\'aa\'be\'c3\'d1\'a6\'61\'b9\'cf
-\f2\i0 \
+\f1\fs72 \cf0 \'c3\'6b\'a9\'a5\'a6\'a1
+\f2\i \
 
-\f3 \'a8\'cf\'a5\'ce\'bb\'a1\'a9\'fa
+\f1\i0 \'a4\'70\'be\'c7\'bc\'c6\'be\'c7\'aa\'be\'c3\'d1\'a6\'61\'b9\'cf
+\f3 \
+
+\f4 \'a8\'cf\'a5\'ce\'bb\'a1\'a9\'fa
 \f0\fs28 \
 \
 \
@@ -174,7 +170,7 @@
 \fs36 \cf0 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading300\pardirnatural
 
-\f2 \cf0 1. \'bc\'d0\'b0\'4f\'a5\'58\'a4\'77\'b7\'7c\'a1\'42\'b1\'4e\'b7\'7c\'a1\'42\'a4\'a3\'b7\'7c\'aa\'ba\'a6\'61\'b0\'cf\
+\f3 \cf0 1. \'bc\'d0\'b0\'4f\'a5\'58\'a4\'77\'b7\'7c\'a1\'42\'b1\'4e\'b7\'7c\'a1\'42\'a4\'a3\'b7\'7c\'aa\'ba\'a6\'61\'b0\'cf\
 2. \'a7\'e4\'a8\'ec\'b0\'5f\'c2\'49\'a9\'4d\'a5\'d8\'bc\'d0\'a1\'41\'bc\'75\'a9\'ca\'bf\'ef\'be\'dc\'b6\'69\'b5\'7b\
 3. \'b9\'4a\'a8\'ec\'a7\'78\'c3\'f8\'a5\'69\'a6\'56\'ab\'65\'ad\'cb\'b7\'b9\'a1\'41\'ad\'ab\'ab\'d8\'a5\'fd\'b3\'c6\'aa\'be\'c3\'d1\
 4. \'a5\'75\'ad\'6e\'be\'c7\'b7\'7c\'aa\'fe\'aa\'f1\'aa\'ba\'b3\'e6\'a4\'b8\'a1\'41\'b4\'4e\'a5\'69\'a5\'48\'a9\'b9\'a4\'57\'aa\'a6(\'a4\'a3\'a5\'b2\'a5\'fe\'b3\'a1\'be\'c7\'a7\'b9)
@@ -212,6 +208,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -240,18 +238,13 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {806, 536}}</string>
+				<string>{{0, 0}, {805.8900146484375, 536.28997325897217}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
 				<integer>2</integer>
 				<key>Style</key>
 				<dict>
-					<key>shadow</key>
-					<dict>
-						<key>Draws</key>
-						<string>NO</string>
-					</dict>
 					<key>stroke</key>
 					<dict>
 						<key>Draws</key>
@@ -268,7 +261,7 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1.0000 in</string>
+			<string>1 in = 1.00000 in</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
@@ -336,10 +329,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -411,10 +403,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -423,7 +414,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{664.12501831054669, 223.65750122070312}, {120.125, 28}}</string>
+					<string>{{626.58749999999998, 278.70575046539307}, {120.125, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -486,10 +477,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -498,7 +488,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{472.9000244140625, 177.3070233662923}, {192.20000000000002, 46.666666666666671}}</string>
+					<string>{{472.90002441406244, 177.3070233662923}, {192.20000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -561,10 +551,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -636,10 +625,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -712,10 +700,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -724,7 +711,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{646, 34.000000953674316}, {101.00000000000001, 28}}</string>
+					<string>{{662.4938049316404, 34.559999227523804}, {101.00000000000001, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -787,10 +774,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -842,10 +828,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'bc\'c6\'bb\'50\'ad\'70\'ba\'e2}</string>
@@ -853,7 +838,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{597.199951171875, 125.36662801106769}, {170, 46.666666666666671}}</string>
+					<string>{{613.6937561035154, 125.92662628491718}, {170, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -916,10 +901,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -991,10 +975,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1066,10 +1049,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1141,10 +1123,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1216,10 +1197,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1291,10 +1271,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1366,10 +1345,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1378,7 +1356,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{512.199951171875, 391.63987731933594}, {272, 46.666666666666671}}</string>
+					<string>{{490.4499633789062, 402.79363012313843}, {272, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1441,10 +1419,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1516,10 +1493,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1528,7 +1504,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{703.5, 192.55752166112262}, {80.75, 28}}</string>
+					<string>{{646.27499999999998, 248.35676088333128}, {80.75, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1591,10 +1567,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1603,7 +1578,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{610.79998779296875, 297.90098724365237}, {195.20000000000002, 46.666666666666671}}</string>
+					<string>{{589.04999999999995, 309.05474004745486}, {195.20000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1666,10 +1641,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1678,7 +1652,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{673.6875, 97.366621732711792}, {101.00000000000001, 28}}</string>
+					<string>{{681.7500122070312, 97.926626284917177}, {101.00000000000001, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1741,10 +1715,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1816,10 +1789,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1891,10 +1863,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -1966,10 +1937,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2041,10 +2011,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2116,10 +2085,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2191,10 +2159,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2266,10 +2233,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2341,10 +2307,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2416,10 +2381,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2491,10 +2455,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2503,7 +2466,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{580.199951171875, 344.97321319580078}, {204, 46.666666666666671}}</string>
+					<string>{{558.4499633789062, 356.12696599960327}, {204, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2566,10 +2529,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2578,7 +2540,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{267.92628479003901, 424.64825439453125}, {213.60000000000002, 46.666666666666671}}</string>
+					<string>{{267.92628479003906, 424.64825439453125}, {213.60000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2641,10 +2603,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2716,10 +2677,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2791,10 +2751,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -2839,10 +2798,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'b2\'60\
@@ -2891,10 +2849,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'bc\'73\'ab\'d7}</string>
@@ -2999,6 +2956,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -3027,18 +2986,13 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {806, 536}}</string>
+				<string>{{0, 0}, {805.8900146484375, 536.28997325897217}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
 				<integer>2</integer>
 				<key>Style</key>
 				<dict>
-					<key>shadow</key>
-					<dict>
-						<key>Draws</key>
-						<string>NO</string>
-					</dict>
 					<key>stroke</key>
 					<dict>
 						<key>Draws</key>
@@ -3055,7 +3009,7 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1.0000 in</string>
+			<string>1 in = 1.00000 in</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
@@ -3123,10 +3077,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3198,10 +3151,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3253,10 +3205,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'bc\'c6\'b7\'50\'bb\'50\'b6\'71\'b7\'50}</string>
@@ -3327,10 +3278,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3402,10 +3352,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3477,10 +3426,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3553,10 +3501,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3628,10 +3575,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3703,10 +3649,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3778,10 +3723,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3854,10 +3798,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -3929,10 +3872,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4005,10 +3947,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4080,10 +4021,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4155,10 +4095,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4230,10 +4169,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4305,10 +4243,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4380,10 +4317,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4455,10 +4391,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4530,10 +4465,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4605,10 +4539,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4680,10 +4613,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4755,10 +4687,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4830,10 +4761,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4905,10 +4835,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -4953,10 +4882,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'b2\'60\
@@ -5005,10 +4933,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'bc\'73\'ab\'d7}</string>
@@ -5113,6 +5040,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -5141,18 +5070,13 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {806, 536}}</string>
+				<string>{{0, 0}, {805.8900146484375, 536.28997325897217}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
 				<integer>2</integer>
 				<key>Style</key>
 				<dict>
-					<key>shadow</key>
-					<dict>
-						<key>Draws</key>
-						<string>NO</string>
-					</dict>
 					<key>stroke</key>
 					<dict>
 						<key>Draws</key>
@@ -5169,12 +5093,12 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1.0000 in</string>
+			<string>1 in = 1.00000 in</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{306.71993637084961, 399.81269169616701}, {95.312480926513672, 28}}</string>
+					<string>{{277.19999380409718, 322.9916407956282}, {95.312480926513672, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5237,10 +5161,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5249,7 +5172,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{244, 314.33333333333331}, {204, 46.666666666666671}}</string>
+					<string>{{195.27531178295612, 273.29737810357409}, {204, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5312,10 +5235,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5324,7 +5246,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{437.987548828125, 174.66667683919269}, {170, 46.666666666666671}}</string>
+					<string>{{414.08999674022198, 200.97890866065038}, {106.25, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5341,7 +5263,7 @@
 						<key>Font</key>
 						<string>STHeitiTC-Light</string>
 						<key>NSKern</key>
-						<real>0.0</real>
+						<string>0</string>
 						<key>Size</key>
 						<real>17</real>
 					</dict>
@@ -5350,7 +5272,7 @@
 					<key>Layer</key>
 					<integer>0</integer>
 					<key>Shape</key>
-					<string>VerticalTriangle</string>
+					<string>RoundRect</string>
 					<key>Style</key>
 					<dict>
 						<key>shadow</key>
@@ -5387,10 +5309,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5399,7 +5320,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{595.99998092651367, 133.87413088989257}, {149.98447418212891, 28}}</string>
+					<string>{{522.88999801874161, 186.32361226280543}, {88.86000269651413, 46}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5462,19 +5383,19 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
-\'a6\'68\'c3\'e4\'a7\'ce\'a4\'ba\'a8\'a4\'a9\'4d}</string>
+\'a6\'68\'c3\'e4\'a7\'ce\
+\'a4\'ba\'a8\'a4\'a9\'4d}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{540, 221.33334273529056}, {233.15000915527344, 46.666666666666671}}</string>
+					<string>{{350.63999216258526, 228.97890866065038}, {233.15000915527344, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5537,10 +5458,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5549,7 +5469,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{162.2239990234375, 141.10099792480469}, {208.5, 46.666666666666671}}</string>
+					<string>{{267.11993725597858, 149.06645413303374}, {130.3125, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5566,7 +5486,7 @@
 						<key>Font</key>
 						<string>STHeitiTC-Light</string>
 						<key>NSKern</key>
-						<real>0.0</real>
+						<string>0</string>
 						<key>Size</key>
 						<real>17</real>
 					</dict>
@@ -5575,7 +5495,7 @@
 					<key>Layer</key>
 					<integer>0</integer>
 					<key>Shape</key>
-					<string>VerticalTriangle</string>
+					<string>RoundRect</string>
 					<key>Style</key>
 					<dict>
 						<key>shadow</key>
@@ -5612,19 +5532,18 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
-\'a4\'54\'a8\'a4\'a7\'ce\'ad\'b1\'bf\'6e}</string>
+\'af\'53\'ae\'ed\'a4\'54\'a8\'a4\'a7\'ce}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{146.00004565429708, 240.59938812255859}, {285, 46.666666666666671}}</string>
+					<string>{{114.27531178295612, 223.73312079970043}, {285, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5687,10 +5606,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5699,7 +5617,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{76, 361}, {248.01242065429688, 46.666666666666671}}</string>
+					<string>{{84.239998117089272, 320.20294298394521}, {248.01242065429688, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5762,10 +5680,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5774,7 +5691,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{11.400146484375, 284.22141619873048}, {239.97515869140625, 46.666666666666671}}</string>
+					<string>{{53.999998793005943, 262.77962042697266}, {239.97515869140625, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5837,10 +5754,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5849,7 +5765,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{313, 58.568990071614564}, {90, 46}}</string>
+					<string>{{251.37531089782715, 37.414911270141602}, {90, 46}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5912,10 +5828,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -5988,10 +5903,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6001,7 +5915,229 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{396.42498779296875, 115.20745976765949}, {127, 46.666666666666671}}</string>
+					<string>{{419.55875627696514, 275.64557532731698}, {95.312480926513672, 28}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>Vertical</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>STHeitiTC-Light</string>
+						<key>NSKern</key>
+						<string>0</string>
+						<key>Size</key>
+						<real>17</real>
+					</dict>
+					<key>ID</key>
+					<integer>650</integer>
+					<key>Layer</key>
+					<integer>1</integer>
+					<key>Shape</key>
+					<string>RoundRect</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.2</string>
+								<key>g</key>
+								<string>0.4</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+							<key>Fuzziness</key>
+							<real>2.2515850067138672</real>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.2</string>
+								<key>g</key>
+								<string>0.4</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+							<key>CornerRadius</key>
+							<real>15</real>
+							<key>Width</key>
+							<real>3</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs34 \cf0 \expnd0\expndtw0\kerning0
+\'a4\'54\'a8\'a4\'a7\'ce}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{177.83999602496624, 177.06645413303374}, {208.5, 46.666666666666671}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>Vertical</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>STHeitiTC-Light</string>
+						<key>NSKern</key>
+						<real>0.0</real>
+						<key>Size</key>
+						<real>17</real>
+					</dict>
+					<key>ID</key>
+					<integer>649</integer>
+					<key>Layer</key>
+					<integer>1</integer>
+					<key>Shape</key>
+					<string>VerticalTriangle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.2</string>
+								<key>g</key>
+								<string>0.4</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+							<key>Fuzziness</key>
+							<real>2.2515850067138672</real>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.2</string>
+								<key>g</key>
+								<string>0.4</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+							<key>CornerRadius</key>
+							<real>15</real>
+							<key>Width</key>
+							<real>3</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs34 \cf0 \expnd0\expndtw0\kerning0
+\'a4\'54\'a8\'a4\'a7\'ce\'ad\'b1\'bf\'6e}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{477.35998933017254, 67.14467684427899}, {149.98447418212891, 28}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>Vertical</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>STHeitiTC-Light</string>
+						<key>NSKern</key>
+						<real>0.0</real>
+						<key>Size</key>
+						<real>17</real>
+					</dict>
+					<key>ID</key>
+					<integer>648</integer>
+					<key>Layer</key>
+					<integer>1</integer>
+					<key>Shape</key>
+					<string>RoundRect</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.2</string>
+								<key>g</key>
+								<string>0.4</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+							<key>Fuzziness</key>
+							<real>2.2515850067138672</real>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<string>0.2</string>
+								<key>g</key>
+								<string>0.4</string>
+								<key>r</key>
+								<string>0.6</string>
+							</dict>
+							<key>CornerRadius</key>
+							<real>15</real>
+							<key>Width</key>
+							<real>3</real>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs34 \cf0 \expnd0\expndtw0\kerning0
+\'b6\'ea}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{631.43998588621616, 125.45557190116257}, {127, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6064,10 +6200,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6076,7 +6211,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{359.03750610351562, 439.68955612182617}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{401.04998583793622, 408.8601459228197}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6139,10 +6274,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6194,10 +6328,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'b4\'58\'a6\'f3\'b1\'c0\'b2\'7a}</string>
@@ -6205,7 +6338,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{86.789058685302734, 442.65800571441656}, {209.42188262939453, 28}}</string>
+					<string>{{287.93553957939139, 428.14844802649816}, {209.42188262939453, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6268,10 +6401,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6280,7 +6412,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{391.58593521118166, 263.47780354817706}, {180, 76.666666666666671}}</string>
+					<string>{{659.4299860149622, 216.03785619274782}, {112.5, 46}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6297,7 +6429,7 @@
 						<key>Font</key>
 						<string>STHeitiTC-Light</string>
 						<key>NSKern</key>
-						<real>0.0</real>
+						<string>0</string>
 						<key>Size</key>
 						<real>17</real>
 					</dict>
@@ -6306,7 +6438,7 @@
 					<key>Layer</key>
 					<integer>1</integer>
 					<key>Shape</key>
-					<string>VerticalTriangle</string>
+					<string>RoundRect</string>
 					<key>Style</key>
 					<dict>
 						<key>shadow</key>
@@ -6343,10 +6475,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6356,7 +6487,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{447.99534225463867, 46.414914449055985}, {149.98447418212891, 28}}</string>
+					<string>{{435.59999026358128, 39.144676844278976}, {149.98447418212891, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6419,10 +6550,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6431,7 +6561,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{596, 53}, {170, 46.666666666666671}}</string>
+					<string>{{542.8249959051609, 25.685145696004213}, {170, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6494,10 +6624,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6506,7 +6635,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{549, 340.14447784423828}, {164.199951171875, 46.666666666666671}}</string>
+					<string>{{476.24595907330513, 262.03785619274782}, {164.199951171875, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6569,10 +6698,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6581,7 +6709,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{414.17187118530273, 365.99130757649738}, {134.82812881469727, 28}}</string>
+					<string>{{509.49685702323904, 379.46559674374259}, {134.82812881469727, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6644,19 +6772,18 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
-\'a7\'ce\'aa\'ac\'bb\'50\'c4\'dd\'a9\'ca}</string>
+\'a7\'ce\'aa\'ac\'bb\'50\'a5\'5c\'af\'e0}</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{347.99999694824214, 193.93272908528644}, {127, 46.666666666666671}}</string>
+					<string>{{652.1799860149622, 172.12223856782924}, {127, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6719,10 +6846,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -6767,10 +6893,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'b2\'60\
@@ -6819,10 +6944,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'bc\'73\'ab\'d7}</string>
@@ -6927,6 +7051,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -6955,18 +7081,13 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {806, 536}}</string>
+				<string>{{0, 0}, {805.8900146484375, 536.28997325897217}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
 				<integer>2</integer>
 				<key>Style</key>
 				<dict>
-					<key>shadow</key>
-					<dict>
-						<key>Draws</key>
-						<string>NO</string>
-					</dict>
 					<key>stroke</key>
 					<dict>
 						<key>Draws</key>
@@ -6983,12 +7104,12 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1.0000 in</string>
+			<string>1 in = 1.00000 in</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{237.1562339782715, 142.66084988911945}, {184.1250076293945, 28}}</string>
+					<string>{{244.07999454438686, 254.23196347554523}, {184.1250076293945, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7049,10 +7170,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7061,7 +7181,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{503.5875244140625, 32.478328704833984}, {238, 46.666666666666671}}</string>
+					<string>{{531, 84.265401204427064}, {238, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7122,10 +7242,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7134,7 +7253,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{595.63751220703125, 239.46603393554688}, {197.5000122070312, 46.666666666666671}}</string>
+					<string>{{551.2499938964844, 236.43275366465252}, {197.5000122070312, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7195,10 +7314,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7255,10 +7373,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'b8\'d1\'c3\'44\'b5\'a6\'b2\'a4}</string>
@@ -7266,7 +7383,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{387.81256103515625, 286.84400113423663}, {112.5, 28}}</string>
+					<string>{{373.75315326452255, 314.33523972829181}, {112.5, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7327,10 +7444,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7339,7 +7455,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{407.125, 102.93206787109375}, {196.5625, 28}}</string>
+					<string>{{383.8468422293663, 139.54666459063691}, {196.5625, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7400,10 +7516,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7473,10 +7588,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7485,7 +7599,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{235.62499618530273, 397.66665649414062}, {61.875, 28}}</string>
+					<string>{{211.33749389648438, 411.9754376411438}, {61.875, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7546,10 +7660,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7558,7 +7671,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{63.299991607666016, 451.97831726074219}, {61.875, 28}}</string>
+					<string>{{87.587493896484375, 440.36047490437824}, {61.875, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7619,10 +7732,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7631,7 +7743,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{171.96875, 59.678361892700195}, {314.5, 46.666666666666671}}</string>
+					<string>{{187.19999581575394, 205.75834528605139}, {314.5, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7692,10 +7804,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7704,7 +7815,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{41, 340.41116333007812}, {136, 76.666666666666671}}</string>
+					<string>{{41, 251.62023641417423}, {136, 76.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7765,10 +7876,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7778,7 +7888,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{239.8125, 336.32748413085938}, {144.375, 28}}</string>
+					<string>{{229.37815326452255, 314.33523972829181}, {144.375, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7839,10 +7949,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7851,7 +7960,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{213.71875, 231.16023087501526}, {231, 46.666666666666671}}</string>
+					<string>{{169.91999620199203, 92.879997923970222}, {231, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7912,10 +8021,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7924,7 +8032,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{130.89999389648438, 50.345024108886719}, {95, 46.666666666666671}}</string>
+					<string>{{156.95999649167061, 69.181450843810993}, {95, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7985,10 +8093,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -7997,7 +8104,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{611.88751220703125, 375.61103057861328}, {165, 46.666666666666671}}</string>
+					<string>{{581.7599869966507, 374.86137683232624}, {165, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8058,10 +8165,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8070,7 +8176,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{41.375, 267.9999996185303}, {196.5625, 28}}</string>
+					<string>{{202.13999296724796, 284.03891499837238}, {112.5, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8131,10 +8237,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8143,7 +8248,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{402.8125, 364.74450047810871}, {129.375, 28}}</string>
+					<string>{{383.8468422293663, 342.33523972829181}, {129.375, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8204,10 +8309,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8216,7 +8320,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{300.875, 440.46604709625245}, {106.25, 28}}</string>
+					<string>{{380.21875, 370.84400113423663}, {106.25, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8277,10 +8381,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8289,7 +8392,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{418, 442.64501190185547}, {99, 46.666666666666671}}</string>
+					<string>{{307.54998779296875, 387.23366723378501}, {99, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8350,10 +8453,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8362,7 +8464,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{491, 431.02714157104492}, {207, 46.666666666666671}}</string>
+					<string>{{491.03998902440071, 412.62761649449675}, {207, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8423,10 +8525,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8435,7 +8536,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{176.0625, 199.67251014709473}, {61.875, 28}}</string>
+					<string>{{264.23999409377575, 389.07782999674481}, {61.875, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8496,10 +8597,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8508,7 +8608,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{541, 321.46742757161456}, {123.4375076293945, 28}}</string>
+					<string>{{537.40000008046627, 346.86137683232624}, {123.4375076293945, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8569,10 +8669,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8581,7 +8680,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{427.9625244140625, 184.46603393554688}, {201.5625, 28}}</string>
+					<string>{{542.20000185072422, 318.86137683232624}, {136, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8642,10 +8741,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8654,7 +8752,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{603.68749999999955, 117.97818756103516}, {181.40002441406273, 46.666666666666671}}</string>
+					<string>{{440.3668031543491, 169.16708631813529}, {181.40002441406273, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8715,10 +8813,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8727,7 +8824,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{481.7125244140625, 245.95959162712097}, {133.75, 28}}</string>
+					<string>{{314.63999296724796, 284.91409104029339}, {133.75, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8788,10 +8885,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs34 \cf0 \expnd0\expndtw0\kerning0
@@ -8834,10 +8930,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'a9\'e2\
@@ -8886,10 +8981,9 @@
 						<key>Pad</key>
 						<integer>0</integer>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs30 \cf0 \'c2\'b2\'a4\'c6\'ab\'c2\'a4\'4f }</string>
@@ -8980,6 +9074,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -9008,18 +9104,13 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {806, 536}}</string>
+				<string>{{0, 0}, {805.8900146484375, 536.28997325897217}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
 				<integer>2</integer>
 				<key>Style</key>
 				<dict>
-					<key>shadow</key>
-					<dict>
-						<key>Draws</key>
-						<string>NO</string>
-					</dict>
 					<key>stroke</key>
 					<dict>
 						<key>Draws</key>
@@ -9036,7 +9127,7 @@
 			<key>ColumnSpacing</key>
 			<real>36</real>
 			<key>DisplayScale</key>
-			<string>1 0/72 in = 1.0000 in</string>
+			<string>1 in = 1.00000 in</string>
 			<key>GraphicsList</key>
 			<array>
 				<dict>
@@ -9073,10 +9164,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'a6\'a8\'b4\'4e}</string>
@@ -9116,10 +9206,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'b3\'d0\'b3\'79}</string>
@@ -9159,10 +9248,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'b0\'d1\'bb\'50}</string>
@@ -9202,10 +9290,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'c0\'b3\'a5\'ce}</string>
@@ -9245,10 +9332,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'b2\'7a\'b8\'d1}</string>
@@ -9288,10 +9374,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'ad\'70\'ba\'e2}</string>
@@ -9336,10 +9421,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 STSongti-TC-Regular;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'aa\'be\'c3\'d1}</string>
@@ -9384,10 +9468,9 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 HannotateTC-W5;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
 \f0\fs48 \cf0 \'b7\'50\'a8\'fc}</string>
@@ -9425,13 +9508,12 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STXingkaiTC-Light;}
+						<string>{\rtf1\ansi\ansicpg950\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset136 PingFangTC-Regular;}
 {\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\i\fs72 \cf0 \'b3\'c6\'bd\'d2\'ad\'6e\'c2\'49}</string>
+\f0\fs72 \cf0 \'b3\'c6\'bd\'d2\'ad\'6e\'c2\'49}</string>
 					</dict>
 				</dict>
 			</array>
@@ -9464,6 +9546,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -9493,26 +9577,24 @@
 	<false/>
 	<key>WindowInfo</key>
 	<dict>
+		<key>BottomSlabHeight</key>
+		<real>134</real>
 		<key>CurrentSheet</key>
-		<integer>2</integer>
-		<key>ExpandedCanvases</key>
+		<integer>1</integer>
+		<key>Expanded_Canvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{582, 170}, {1019, 774}}</string>
-		<key>ListView</key>
+		<string>{{74, 81}, {1319, 774}}</string>
+		<key>ShowInfo</key>
 		<true/>
-		<key>OutlineWidth</key>
-		<integer>142</integer>
-		<key>RightSidebar</key>
-		<false/>
 		<key>ShowRuler</key>
 		<true/>
 		<key>Sidebar</key>
 		<true/>
 		<key>SidebarWidth</key>
-		<integer>120</integer>
+		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{-39, -48}, {884, 632}}</string>
+		<string>{{34, -46}, {772, 629}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
