@@ -8,11 +8,9 @@
 		<string>139.16.0.171715</string>
 	</array>
 	<key>CreationDate</key>
-	<string>2010-01-15 04:41:07 +0000</string>
+	<string>2012-07-15 02:04:32 +0000</string>
 	<key>Creator</key>
 	<string>bestian</string>
-	<key>FileType</key>
-	<string>flat</string>
 	<key>GraphDocumentVersion</key>
 	<integer>8</integer>
 	<key>GuidesLocked</key>
@@ -20,7 +18,7 @@
 	<key>GuidesVisible</key>
 	<string>YES</string>
 	<key>ImageCounter</key>
-	<integer>3</integer>
+	<integer>1</integer>
 	<key>LinksVisible</key>
 	<string>NO</string>
 	<key>MagnetsVisible</key>
@@ -28,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-01-02 07:28:48 +0000</string>
+	<string>2017-01-09 07:26:59 +0000</string>
 	<key>Modifier</key>
 	<string>Bestian_Tang</string>
 	<key>NotesVisible</key>
@@ -36,7 +34,7 @@
 	<key>OriginVisible</key>
 	<string>NO</string>
 	<key>PageBreaks</key>
-	<string>NO</string>
+	<string>YES</string>
 	<key>PrintInfo</key>
 	<dict>
 		<key>NSBottomMargin</key>
@@ -54,15 +52,20 @@
 			<string>float</string>
 			<string>18</string>
 		</array>
+		<key>NSOrientation</key>
+		<array>
+			<string>coded</string>
+			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwGG</string>
+		</array>
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{595, 842}</string>
+			<string>{842, 595}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
-			<string>int</string>
-			<string>0</string>
+			<string>coded</string>
+			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG</string>
 		</array>
 		<key>NSRightMargin</key>
 		<array>
@@ -87,7 +90,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1118, 783}}</string>
+				<string>{{0, 0}, {806, 536}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -158,8 +161,9 @@
 \f1\i\fs72 \cf0 \'c3\'6b\'a9\'a5\'a6\'a1\
 \'b0\'ea\'a4\'a4\'bc\'c6\'be\'c7\'aa\'be\'c3\'d1\'a6\'61\'b9\'cf
 \f2\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f3 \'a8\'cf\'a5\'ce\'bb\'a1\'a9\'fa
+\f3 \cf0 \'a8\'cf\'a5\'ce\'bb\'a1\'a9\'fa
 \f0\fs28 \
 \
 \
@@ -183,7 +187,7 @@
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -225,7 +229,7 @@
 			<key>SheetTitle</key>
 			<string>使用說明</string>
 			<key>UniqueID</key>
-			<integer>6</integer>
+			<integer>8</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -237,7 +241,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1118, 783}}</string>
+				<string>{{0, 0}, {806, 536}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -495,7 +499,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{728.760009765625, 165.71781158447266}, {92, 28}}</string>
+					<string>{{630.239990234375, 104.10513814290364}, {92, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -720,7 +724,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{641, 137.71781158447266}, {133.5, 28}}</string>
+					<string>{{542.47998046875, 76.105138142903641}, {133.5, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -795,7 +799,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{595.260009765625, 165.71781158447266}, {133.5, 28}}</string>
+					<string>{{496.739990234375, 104.10513814290364}, {133.5, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -870,7 +874,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{485, 195.57131767272949}, {213.60000000000002, 46.666666666666671}}</string>
+					<string>{{386.47998046875, 133.95864423116046}, {213.60000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -945,7 +949,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{378, 72.512982686360672}, {249.44001464843751, 46.666666666666671}}</string>
+					<string>{{279.47998046875, 10.900309244791657}, {249.44001464843751, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1020,7 +1024,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{454.41997070312505, 119.05114491780596}, {213.60000000000002, 46.666666666666671}}</string>
+					<string>{{355.89995117187505, 57.438471476236941}, {213.60000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1095,7 +1099,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{332, 132.84525299072266}, {161, 28}}</string>
+					<string>{{233.47998046875, 71.232579549153641}, {161, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1320,7 +1324,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{339.52001953125, 160.84525299072266}, {255.739990234375, 76.666666666666671}}</string>
+					<string>{{241, 99.232579549153641}, {255.739990234375, 76.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1923,7 +1927,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{206.29996337890623, 441.99999165534973}, {213.60000000000002, 46.666666666666671}}</string>
+					<string>{{206.2999633789062, 441.99999165534973}, {213.60000000000002, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -2363,7 +2367,7 @@
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -2415,7 +2419,7 @@
 			<key>SheetTitle</key>
 			<string>數與計算</string>
 			<key>UniqueID</key>
-			<integer>7</integer>
+			<integer>9</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -2427,7 +2431,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1118, 783}}</string>
+				<string>{{0, 0}, {806, 536}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -4024,7 +4028,7 @@
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -4076,7 +4080,7 @@
 			<key>SheetTitle</key>
 			<string>數感量感</string>
 			<key>UniqueID</key>
-			<integer>11</integer>
+			<integer>10</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -4088,7 +4092,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1118, 783}}</string>
+				<string>{{0, 0}, {806, 536}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -4121,7 +4125,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{416.99997558593759, 305.36022281646729}, {166.99999999999997, 28}}</string>
+					<string>{{354.09997558593761, 262.86445319652557}, {166.99999999999997, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4196,7 +4200,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{709.66257324218759, 304.36460208892822}, {129.58438110351562, 28}}</string>
+					<string>{{646.76257324218761, 261.86883246898651}, {129.58438110351562, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4271,7 +4275,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{580.07816162109384, 304.36460208892822}, {129.58438110351562, 28}}</string>
+					<string>{{517.17816162109386, 261.86883246898651}, {129.58438110351562, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4646,7 +4650,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{409, 217.7153434753418}, {207.33500976562502, 46.666666666666671}}</string>
+					<string>{{367.99533691406214, 177.41092300415039}, {207.33500976562502, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4721,7 +4725,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{247.45860595703084, 175.31246692004305}, {129.58438110351562, 28}}</string>
+					<string>{{206.45394287109298, 135.00804644885164}, {129.58438110351562, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4796,7 +4800,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{277.89999999999998, 268.06678569316864}, {267.19999999999999, 46.666666666666671}}</string>
+					<string>{{215, 225.57101607322693}, {267.19999999999999, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4871,7 +4875,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{451.42496337890634, 332.99168491363525}, {173.35934448242188, 28}}</string>
+					<string>{{388.52496337890636, 290.49591529369354}, {173.35934448242188, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4946,7 +4950,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{482.87033691406259, 363.50000095367432}, {173.35934448242188, 28}}</string>
+					<string>{{419.97033691406261, 321.0042313337326}, {173.35934448242188, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5021,7 +5025,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{512.61957397460947, 119.72558085123694}, {190, 28}}</string>
+					<string>{{471.6149108886716, 79.421160380045535}, {190, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5096,7 +5100,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{444.57326049804692, 254.56253814697266}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{416.79695434570283, 211.6955623626709}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5171,7 +5175,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{142.54532470703089, 83.403785705566406}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{101.54066162109302, 43.099365234375}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5246,7 +5250,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{135.99533691406214, 130.07045237223309}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{94.990673828124272, 89.766031901041686}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5610,7 +5614,7 @@
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -5662,7 +5666,7 @@
 			<key>SheetTitle</key>
 			<string>幾何推理</string>
 			<key>UniqueID</key>
-			<integer>9</integer>
+			<integer>11</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -5674,7 +5678,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1118, 783}}</string>
+				<string>{{0, 0}, {806, 536}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -6232,7 +6236,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{125.5843505859375, 420.22646331787109}, {122.58437347412109, 28}}</string>
+					<string>{{125.58435058593749, 420.22646331787109}, {122.58437347412109, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6382,7 +6386,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{377, 64.483378728230775}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{324.5843505859375, 43.573630650838197}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6457,7 +6461,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{317, 138.11960919698078}, {122.58437347412109, 28}}</string>
+					<string>{{264.5843505859375, 117.2098611195882}, {122.58437347412109, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6532,7 +6536,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{633.54998779296875, 152.48336855570471}, {163, 28}}</string>
+					<string>{{581.13433837890625, 131.57362047831214}, {163, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6607,7 +6611,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{484, 180.46124331156409}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{431.5843505859375, 159.55149523417151}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6682,7 +6686,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{437.41563262939462, 199.12789471944171}, {122.58437347412109, 28}}</string>
+					<string>{{384.99998321533212, 178.21814664204913}, {122.58437347412109, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6757,7 +6761,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{437, 227.12791951497394}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{384.5843505859375, 206.21817143758136}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -6832,7 +6836,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{219, 166.11961364746088}, {359.55000000000018, 46.666666666666671}}</string>
+					<string>{{166.5843505859375, 145.2098655700683}, {359.55000000000018, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7121,7 +7125,7 @@
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -7173,7 +7177,7 @@
 			<key>SheetTitle</key>
 			<string>解題策略</string>
 			<key>UniqueID</key>
-			<integer>10</integer>
+			<integer>12</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -7185,7 +7189,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1118, 783}}</string>
+				<string>{{0, 0}, {806, 536}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -7603,19 +7607,19 @@
 					<dict>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg950\cocoartf1504\cocoasubrtf600
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 STXingkaiTC-Light;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset136 PingFangTC-Regular;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;\csgray\c100000;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\i\fs72 \cf0 \'b3\'c6\'bd\'d2\'ad\'6e\'c2\'49}</string>
+\f0\fs72 \cf0 \'b3\'c6\'bd\'d2\'ad\'6e\'c2\'49}</string>
 					</dict>
 				</dict>
 			</array>
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -7641,6 +7645,8 @@
 				<real>0.0</real>
 				<key>layoutEngine</key>
 				<string>dot</string>
+				<key>neatoLineLength</key>
+				<real>0.20000000298023224</real>
 				<key>neatoSeparation</key>
 				<real>0.0</real>
 				<key>twopiSeparation</key>
@@ -7657,7 +7663,7 @@
 			<key>SheetTitle</key>
 			<string>備課要點</string>
 			<key>UniqueID</key>
-			<integer>8</integer>
+			<integer>7</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -7671,34 +7677,36 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>5</integer>
+		<integer>0</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{501, 218}, {1284, 783}}</string>
+		<string>{{627, 185}, {1319, 774}}</string>
 		<key>ListView</key>
 		<false/>
 		<key>OutlineWidth</key>
-		<integer>143</integer>
+		<integer>142</integer>
 		<key>RightSidebar</key>
+		<false/>
+		<key>ShowRuler</key>
 		<true/>
 		<key>Sidebar</key>
 		<true/>
 		<key>SidebarWidth</key>
-		<integer>137</integer>
+		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{1, 1}, {989, 671}}</string>
+		<string>{{-134, -48}, {1074, 632}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
-				<string>使用說明</string>
+				<string>備課要點</string>
 				<real>1</real>
 				<real>1</real>
 			</array>
 			<array>
-				<string>備課要點</string>
+				<string>使用說明</string>
 				<real>1</real>
 				<real>1</real>
 			</array>
@@ -7708,12 +7716,12 @@
 				<real>1</real>
 			</array>
 			<array>
-				<string>幾何推理</string>
+				<string>解題策略</string>
 				<real>1</real>
 				<real>1</real>
 			</array>
 			<array>
-				<string>解題策略</string>
+				<string>幾何推理</string>
 				<real>1</real>
 				<real>1</real>
 			</array>
