@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-01-02 10:46:31 +0000</string>
+	<string>2017-01-09 09:36:47 +0000</string>
 	<key>Modifier</key>
 	<string>唐宗浩</string>
 	<key>NotesVisible</key>
@@ -164,7 +164,6 @@
 \
 \
 \
-\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading300\pardirnatural\qc
 
 \fs36 \cf0 \
@@ -173,7 +172,8 @@
 \f3 \cf0 1. \'bc\'d0\'b0\'4f\'a5\'58\'a4\'77\'b7\'7c\'a1\'42\'b1\'4e\'b7\'7c\'a1\'42\'a4\'a3\'b7\'7c\'aa\'ba\'a6\'61\'b0\'cf\
 2. \'a7\'e4\'a8\'ec\'b0\'5f\'c2\'49\'a9\'4d\'a5\'d8\'bc\'d0\'a1\'41\'bc\'75\'a9\'ca\'bf\'ef\'be\'dc\'b6\'69\'b5\'7b\
 3. \'b9\'4a\'a8\'ec\'a7\'78\'c3\'f8\'a5\'69\'a6\'56\'ab\'65\'ad\'cb\'b7\'b9\'a1\'41\'ad\'ab\'ab\'d8\'a5\'fd\'b3\'c6\'aa\'be\'c3\'d1\
-4. \'a5\'75\'ad\'6e\'be\'c7\'b7\'7c\'aa\'fe\'aa\'f1\'aa\'ba\'b3\'e6\'a4\'b8\'a1\'41\'b4\'4e\'a5\'69\'a5\'48\'a9\'b9\'a4\'57\'aa\'a6(\'a4\'a3\'a5\'b2\'a5\'fe\'b3\'a1\'be\'c7\'a7\'b9)
+4. \'a5\'75\'ad\'6e\'be\'c7\'b7\'7c\'aa\'fe\'aa\'f1\'aa\'ba\'b3\'e6\'a4\'b8\'a1\'41\'b4\'4e\'a5\'69\'a5\'48\'a9\'b9\'a4\'57\'aa\'a6(\'a4\'a3\'a5\'b2\'a5\'fe\'b3\'a1\'be\'c7\'a7\'b9)\
+5. \'a8\'43\'ad\'d3\'b3\'e6\'a4\'b8\'a7\'a1\'a5\'69\'b7\'ed\'c3\'f6\'c1\'e4\'a6\'72\'a4\'57\'ba\'f4\'ac\'64\'b8\'df\'b2\'d3\'b8\'60
 \f0 \
 }</string>
 					</dict>
@@ -7109,7 +7109,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{244.07999454438686, 254.23196347554523}, {184.1250076293945, 28}}</string>
+					<string>{{244.07999454438684, 254.23196347554523}, {184.1250076293945, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -7253,7 +7253,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{551.2499938964844, 236.43275366465252}, {197.5000122070312, 46.666666666666671}}</string>
+					<string>{{551.24999389648428, 236.43275366465252}, {197.5000122070312, 46.666666666666671}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -9580,11 +9580,11 @@
 		<key>BottomSlabHeight</key>
 		<real>134</real>
 		<key>CurrentSheet</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>Expanded_Canvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{74, 81}, {1319, 774}}</string>
+		<string>{{448, -111}, {1319, 774}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>ShowRuler</key>
@@ -9594,7 +9594,7 @@
 		<key>SidebarWidth</key>
 		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{34, -46}, {772, 629}}</string>
+		<string>{{0, -46}, {772, 629}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
