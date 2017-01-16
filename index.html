@@ -34,22 +34,31 @@
       <div class="inner clearfix">
         <section id="main-content">
           <div ng-controller="Ctrl">
-            <h4 class="intro">佳仁與宗浩的自編教材</h4>
-            <input id="find" type="text" ng-model="searchM" placeholder="輸入關鍵字或年級搜尋教材" autofocus=""><br><br><i class="sp find"></i>
-            <ul id="textbook" ng-cloak="">
-              <li id="data" ng-repeat="u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) "><a target="_blank" href="weblearn/{{u.n}}">* {{ u.n.split('.htm')[0] }}</a><span ng-bind-template="{{ u.g }} ~ {{ u.G }}年級" class="note"></span></li>
+            <h4 class="intro">知識地圖<i class="print icon"></i></h4>
+            <ul id="map">
+              <li><a href="http://bestian.github.io/freemath/學習地圖">攀岩地圖<i class="print icon"></i><i class="ui tiny yellow label">New</i></a></li>
+              <li> <a href="http://bestian.github.io/freemath/學習地圖/indexD3.html">動態地圖</a></li>
             </ul>
             <hr>
-            <h4 class="intro">工具、地圖與社群</h4><br><i class="sp tool"></i>
+            <h4 class="intro">自學教材<i class="print icon"></i></h4>
+            <input id="find" type="text" ng-model="searchM" placeholder="輸入關鍵字或年級搜尋教材" autofocus=""><br><br>
+            <ul id="textbook" ng-cloak="">
+              <li id="data" ng-repeat="u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) "><a target="_blank" href="weblearn/{{u.n}}">{{ u.n.split('.htm')[0] }}<i class="print icon"></i><span ng-bind-template=": {{ u.g }}年級以上"></span></a></li>
+            </ul>
+            <hr>
+            <h4 class="intro">社群<i class="users icon"></i></h4>
+            <ul id="community">
+              <li><a href="https://www.facebook.com/groups/156709241062806/" target="_blank">自學數學團<i class="facebook icon"></i></a></li>
+              <li><a href="https://freemath.hackpad.com/" target="_blank">自由數學Hackpad協作論壇<i class="edit icon"></i></a></li>
+            </ul>
+            <hr>
+            <h4 class="intro">工具              <i class="lab icon"></i></h4>
             <ul id="guide">
               <li><a href="http://bestian.github.io/freemath/工具軟體" target="_blank">工具軟體</a></li>
-              <li><a href="./tools/index.html" target="_blank">新版工具軟體(beta)           </a></li>
-              <li><a href="http://bestian.github.io/freemath/學習地圖/" target="_blank">學習地圖</a></li>
-              <li><a href="https://www.facebook.com/groups/156709241062806/" target="_blank">自學數學團</a></li>
-              <li><a href="https://freemath.hackpad.com/" target="_blank">Hackpad</a></li>
+              <li><a href="./tools/index.html" target="_blank">新版工具軟體<i class="ui tiny blue label">beta</i></a></li>
             </ul>
             <hr>
-            <h4 class="intro">親子數學經驗分享</h4><br><i class="sp person"></i>
+            <h4 class="intro">親子數學經驗分享<i class="heartbeat icon"></i></h4>
             <ul id="story">
               <li><a href="http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記-從加法談起.doc">寬廣媽媽的親子數學筆記-從加法談起(doc檔)</a></li>
               <li><a href="http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記廣廣6-8歲.doc">寬廣媽媽的親子數學筆記廣廣6-8歲(doc檔)</a></li>
@@ -57,7 +66,7 @@
             </ul>
           </div>
           <hr>
-          <h4 class="intro">編創緣起</h4><br><i class="sp tree"></i>
+          <h4 class="intro">編創緣起</h4>
           <div class="about">
             <h2>跟著教材思考  -  朱佳仁，自由數學共同發起人</h2>
             <h3>為什麼要編教材？</h3><img src="./images/for_about/Chiajen001.jpg" width="50%" style="float:right">

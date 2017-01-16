@@ -31,35 +31,51 @@ html(ng-app='fmIndexApp')
       .inner.clearfix
         section#main-content
           div(ng-controller='Ctrl')
-            h4.intro 佳仁與宗浩的自編教材
+            h4.intro 知識地圖
+              i.print.icon
+            ul#map
+              li
+                a(href="http://bestian.github.io/freemath/學習地圖") 攀岩地圖
+                  i.print.icon
+                  i.ui.tiny.yellow.label New
+              li 
+                a(href="http://bestian.github.io/freemath/學習地圖/indexD3.html") 動態地圖
+            hr
+
+            h4.intro 自學教材
+              i.print.icon
             input#find(type='text', ng-model='searchM' placeholder='輸入關鍵字或年級搜尋教材', autofocus='')
             br
             br
-            i.sp.find
             ul#textbook(ng-cloak='')
               li#data(ng-repeat='u in filtered = (Units | mathUnitsFilter:searchM:searchK:logic) ')
                 a(target='_blank', href='weblearn/{{u.n}}')
-                  | * {{ u.n.split('.htm')[0] }}
-                span.note(ng-bind-template='{{ u.g }} ~ {{ u.G }}年級')
+                  | {{ u.n.split('.htm')[0] }}
+                  i.print.icon
+                  span(ng-bind-template=': {{ u.g }}年級以上')
             hr
-            h4.intro 工具、地圖與社群
-            br
-            i.sp.tool
+            h4.intro 社群
+              i.users.icon
+            ul#community
+              li
+                a(href='https://www.facebook.com/groups/156709241062806/' target="_blank") 自學數學團
+                  i.facebook.icon
+              li
+                a(href='https://freemath.hackpad.com/' target="_blank") 自由數學Hackpad協作論壇
+                  i.edit.icon
+            
+            hr
+            h4.intro 工具              
+              i.lab.icon
             ul#guide
               li
                 a(href='http://bestian.github.io/freemath/工具軟體' target="_blank") 工具軟體
               li
-                a(href='./tools/index.html' target="_blank") 新版工具軟體(beta)           
-              li
-                a(href='http://bestian.github.io/freemath/學習地圖/' target="_blank") 學習地圖
-              li
-                a(href='https://www.facebook.com/groups/156709241062806/' target="_blank") 自學數學團
-              li
-                a(href='https://freemath.hackpad.com/' target="_blank") Hackpad
+                a(href='./tools/index.html' target="_blank") 新版工具軟體
+                  i.ui.tiny.blue.label beta
             hr
             h4.intro 親子數學經驗分享
-            br
-            i.sp.person
+              i.heartbeat.icon
             ul#story
               li
                 a(href='http://bestian.github.io/freemath/互動記錄/寬廣媽媽的親子數學筆記-從加法談起.doc') 寬廣媽媽的親子數學筆記-從加法談起(doc檔)
@@ -69,8 +85,6 @@ html(ng-app='fmIndexApp')
                 a(href='http://www.babyhome.com.tw/note.php?mid=129571&lno=82029284', target='_blank') 更多寬廣媽媽的親子數學記錄
           hr
           h4.intro 編創緣起
-          br
-          i.sp.tree
           .about
             h2 跟著教材思考  -  朱佳仁，自由數學共同發起人
             h3 為什麼要編教材？
