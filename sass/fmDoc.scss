@@ -43,26 +43,26 @@
     .item {
       position: relative;
       top: 20px; left: 10px;
-      border: white 3px ridge; /*  方塊邊界顏色   */
+      border: white 3px ridge;
       padding: 10px;
       border-radius: 15px;
       width: 50%;
       min-width: 420px;
       overflow: hidden;
-      background: #E0CAB2;  /*  方塊底色   */
+      background: #E0CAB2;
       box-shadow: -5px 5px 0px 0px rgba(100,100,100,0.5);
     }
 
     #bar {    
       top: 20px; left: none; right: 20px;
-      border: white 3px ridge; /*  方塊邊界顏色   */
+      border: white 3px ridge;
       padding: 10px;
       border-radius: 15px;
       width: 50%;
       height: 20px;
       min-width: 420px;
       overflow: hidden;
-      background: #E0CAB2;  /*  方塊底色   */
+      background: #E0CAB2;
       box-shadow: -5px 5px 0px 0px rgba(100,100,100,0.5);
     }
 
@@ -135,7 +135,7 @@
       right: 0px;
 /*      left: 0px; */
       opacity:0.85;
-      filter:alpha(opacity=85); /* 適用 IE8 及早期版本 */
+      filter:alpha(opacity=85); 
       z-index: 5;
       cursor: sw-resize;    
     }

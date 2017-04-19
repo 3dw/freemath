@@ -1,45 +1,189 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@media print {
+  /* line 11, ../sass/fmDoc.scss */
+  div {
+    display: block;
+  }
+
+  /* line 15, ../sass/fmDoc.scss */
+  .noPrint {
+    display: none;
+  }
+}
+/* line 22, ../sass/fmDoc.scss */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 30, ../sass/fmDoc.scss */
+#map {
+  z-index: 9;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* line 39, ../sass/fmDoc.scss */
+.milky {
+  background-color: #D0BAA2;
+}
+
+/* line 43, ../sass/fmDoc.scss */
+.item {
+  position: relative;
+  top: 20px;
+  left: 10px;
+  border: white 3px ridge;
+  padding: 10px;
+  border-radius: 15px;
+  width: 50%;
+  min-width: 420px;
+  overflow: hidden;
+  background: #E0CAB2;
+  box-shadow: -5px 5px 0px 0px rgba(100, 100, 100, 0.5);
+}
+
+/* line 56, ../sass/fmDoc.scss */
+#bar {
+  top: 20px;
+  left: none;
+  right: 20px;
+  border: white 3px ridge;
+  padding: 10px;
+  border-radius: 15px;
+  width: 50%;
+  height: 20px;
+  min-width: 420px;
+  overflow: hidden;
+  background: #E0CAB2;
+  box-shadow: -5px 5px 0px 0px rgba(100, 100, 100, 0.5);
+}
+
+/* line 69, ../sass/fmDoc.scss */
+.item:hover {
+  top: 20px;
+  left: 10px;
+  box-shadow: 0px 5px 3px 0px rgba(50, 50, 255, 0.5), 0px 10px 3px 0px rgba(50, 50, 255, 0.5);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
 /*
-Error: Invalid CP950 character "\xE6"
-        on line 46 of C:/Users/admin/Documents/GitHub/freemath/sass/fmDoc.scss
+    .item.first {    
+      max-height: 120px;
+    }
 
-41:     }
-42: 
-43:     .item {
-44:       position: relative;
-45:       top: 20px; left: 10px;
-46:       border: white 3px ridge; /*  方塊邊界顏色   *\/
-47:       padding: 10px;
-48:       border-radius: 15px;
-49:       width: 50%;
-50:       min-width: 420px;
-51:       overflow: hidden;
+    .item.first:hover {
+      max-height: 1024px;
+    }
 
-Backtrace:
-C:/Users/admin/Documents/GitHub/freemath/sass/fmDoc.scss:46
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1297:in `block in find_encoding_error'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each_with_index'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `find_encoding_error'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:905:in `check_sass_encoding'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:436:in `check_encoding!'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:392:in `_to_tree'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:281:in `render'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CP950 character \"\xE6\"\A         on line 46 of C:/Users/admin/Documents/GitHub/freemath/sass/fmDoc.scss\A \A 41:     }\A 42: \A 43:     .item {\A 44:       position: relative;\A 45:       top: 20px; left: 10px;\A 46:       border: white 3px ridge; /*  方塊邊界顏色   */\A 47:       padding: 10px;\A 48:       border-radius: 15px;\A 49:       width: 50%;\A 50:       min-width: 420px;\A 51:       overflow: hidden;"; }
+/* line 90, ../sass/fmDoc.scss */
+.item.press {
+  max-height: 120px;
+}
+
+/* line 94, ../sass/fmDoc.scss */
+.item.press:active {
+  max-height: 1024px;
+  /*      overflow: auto; */
+  -webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -ms-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  transition: all 3s ease;
+}
+
+/*    p:hover {
+      text-decoration: underline;
+    } */
+/* line 110, ../sass/fmDoc.scss */
+.fixed {
+  position: fixed;
+  padding: 0px;
+}
+
+/* line 115, ../sass/fmDoc.scss */
+.ui-progressbar-value {
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-top: 5px;
+  min-width: 75px;
+}
+
+/* line 122, ../sass/fmDoc.scss */
+.invis {
+  display: none;
+}
+
+/* line 126, ../sass/fmDoc.scss */
+.tip {
+  font-size: 66%;
+  float: right;
+}
+
+/* line 131, ../sass/fmDoc.scss */
+#canvas {
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  /*      left: 0px; */
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  z-index: 5;
+  cursor: sw-resize;
+}
+
+/* line 144, ../sass/fmDoc.scss */
+p {
+  padding: 15px;
+}
+
+/* line 149, ../sass/fmDoc.scss */
+p * {
+  position: relative;
+  z-index: 7;
+}
+
+/* line 154, ../sass/fmDoc.scss */
+img {
+  position: relative;
+  z-index: 9;
+}
+
+/* line 159, ../sass/fmDoc.scss */
+.tool {
+  z-index: 7;
+}
+
+/* line 162, ../sass/fmDoc.scss */
+.color {
+  cursor: sw-resize;
+}
+
+/* line 166, ../sass/fmDoc.scss */
+#draw-box {
+  font-size: 16px;
+  position: relative;
+  left: 50px;
+  display: inline-block;
+}
+
+/* line 176, ../sass/fmDoc.scss */
+button.map, select.map {
+  -moz-box-shadow: blue 2px 2px 10px;
+  -webkit-box-shadow: blue 2px 2px 10px;
+  box-shadow: blue 2px 2px 10px;
+}
