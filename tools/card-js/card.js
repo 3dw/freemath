@@ -48,7 +48,7 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		maxN2: 15,
 		op: $scope.ops[0],
 		rep: $scope.reps[0],
-		mode: $scope.modes[0]
+		mode: '閃卡模式'
 	}
 
 	$scope.c = angular.copy($scope.defaultC);
@@ -90,12 +90,15 @@ app.controller('Ctrl', ['$scope', '$localStorage',
 		},
 		flipCard: function() {
 			this.welcome = '';
+			console.log('閃卡模式?');
+			console.log(this.c.mode);
 
-			if (this.mode == '閃卡模式') {
+			if (this.c.mode == '閃卡模式') {
 			 	this.flip = !this.flip;
 			 	if (!this.flip) this.nextQ();
+			 	console.log('閃卡模式');
 			}
-			if (this.mode !== '閃卡模式') {
+			if (this.c.mode !== '閃卡模式') {
 				if (!this.flip) {
 					var userAns = window.prompt("請作答");
 					if (userAns == this.ans()) {
