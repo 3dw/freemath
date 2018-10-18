@@ -12,10 +12,10 @@
         <tr><th>單元</th><th>年級</th></tr>
         <tr class="item" v-for="(u, index) in units" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
           <td>
-            <a target="_blank" :href="'https://3dw.github.io/mathprint/'+u.n">{{ u.n }}</a>
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n)">{{ u.n }}</a>
           </td>
           <td>            
-            <a target="_blank" :href="'https://3dw.github.io/mathprint/'+u.n"><i class="print icon"></i><span>{{ u.g }}~{{ u.G }}年級</span></a>
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n)"><i class="print icon"></i><span>{{ u.g }}~{{ u.G }}年級</span></a>
           </td>
         </tr>
       </table>
@@ -30,39 +30,39 @@ export default {
     return {
       s: '',
       units: [
-        {n: '分數.doc', g: 3, G: 5, wiki: ''},
-        {n: '分數到小數.doc', g: 5, G: 6, wiki: '小數'},
-        {n: '數線.doc', g: 4, G: 7, wiki: ''},
-        {n: '時間的計算.doc', g: 4, G: 5, wiki: ''},
-        {n: '四則運算總複習.doc', g: 5, G: 7, wiki: ''},
-        {n: '因數與倍數.doc', g: 5, G: 7, wiki: ''},
-        {n: '一元一次方程式.doc', g: 7, G: 8, wiki: '方程式'},
-        {n: '一元二次方程式.doc', g: 8, G: 9, wiki: ''},
-        {n: '勾股定理.doc', g: 8, G: 9, wiki: ''},
-        {n: '不等式.doc', g: 7, G: 8, wiki: ''},
-        {n: '二元一次方程式.doc', g: 7, G: 8, wiki: ''},
-        {n: '二次函數.doc', g: 9, G: 10, wiki: '二次函數'},
-        {n: '代數入門.doc', g: 4, G: 6, wiki: '代數入門'},
-        {n: '全等形.doc', g: 8, G: 9, wiki: ''},
-        {n: '三角形的心.doc', g: 8, G: 9, wiki: ''},
-        {n: '函數圖形.doc', g: 7, G: 8, wiki: '函數'},
-        {n: '多項式.doc', g: 9, G: 10, wiki: '多項式'},
-        {n: '幾何證明.doc', g: 8, G: 9, wiki: '證明'},
-        {n: '圓與角.doc', g: 8, G: 9, wiki: '圓'},
-        {n: '尺規作圖.doc', g: 8, G: 9, wiki: ''},
-        {n: '幾何代數_乘法公式.doc', g: 7, G: 8, wiki: ''},
-        {n: '指數與對數.doc', g: 10, G: 11, wiki: ''},
-        {n: '指數與科學記號.doc', g: 7, G: 8, wiki: ''},
-        {n: '數列與級數.doc', g: 8, G: 9, wiki: ''},
-        {n: '根式運算.doc', g: 8, G: 9, wiki: ''},
-        {n: '機率與統計.doc', g: 9, G: 11, wiki: ''},
-        {n: '正負分數.doc', g: 7, G: 7, wiki: '有理數'},
-        {n: '正負數.doc', g: 6, G: 7, wiki: ''},
-        {n: '比與比值.doc', g: 7, G: 8, wiki: '比值'},
-        {n: '直角座標.doc', g: 7, G: 8, wiki: '座標'},
-        {n: '相似三角形.doc', g: 8, G: 10, wiki: ''},
-        {n: '面積的估算.doc', g: 3, G: 5, wiki: ''},
-        {n: '體積與容積.doc', g: 5, G: 6, wiki: ''}
+        {n: '分數', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing'},
+        {n: '面積的估算', g: 3, G: 5, wiki: ''},
+        {n: '數線', g: 4, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing'},
+        {n: '時間的計算', g: 4, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1JL9UD-98xEmqcOnKNCdXML_btUNbAY2J_1FL_DV8awQ/edit?usp=sharing'},
+        {n: '體積與容積', g: 5, G: 6, wiki: ''},
+        {n: '代數入門', g: 4, G: 6, wiki: '代數入門', url: 'https://docs.google.com/document/d/1LVcw277KiS3CHgle0b-LG5uMA6NN2HO6y_0rLZPvQe8/edit?usp=sharing'},
+        {n: '分數到小數', g: 5, G: 6, wiki: '小數', url: 'https://docs.google.com/document/d/1xr9bhw0qcsio0R3FU9gUOIjW8Ir2mQpAh0fjJh4cnu0/edit?usp=sharing'},
+        {n: '四則運算總複習', g: 5, G: 7, wiki: '', url: 'https://docs.google.com/document/d/11-ouXYWYIfawLMPGOSkXtC_AclO2A6SBHryXfr3NKng/edit?usp=sharing'},
+        {n: '因數與倍數', g: 5, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1RcZy2CN6HSP-wsXb1g61A-Sq0QWjwY3TCJVRWTq3fTQ/edit?usp=sharing'},
+        {n: '正負數', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing'},
+        {n: '正負分數', g: 7, G: 7, wiki: '有理數', url: 'https://docs.google.com/document/d/1tD4_6l1spXg7p6M7bRBb8wNwIJcCSfQIPh_LNu-rfjE/edit?usp=sharing'},
+        {n: '比與比值', g: 7, G: 8, wiki: '比值', url: 'https://docs.google.com/document/d/1jzeGGHqUmgEWZDvywl4xXUNoVPzUoTa_w1J0JzoUk8o/edit?usp=sharing'},
+        {n: '一元一次方程式', g: 7, G: 8, wiki: '方程式', url: 'https://docs.google.com/document/d/1GLAu6BaheHxIGMqUVmz4CfgHJEVJxrP-cc_SaJI3jow/edit?usp=sharing'},
+        {n: '不等式', g: 7, G: 8, wiki: 'https://docs.google.com/document/d/1KjWUKOMWFHBqlnx6NfZHWb_T8EeMA2GJsvZMmZA5C7k/edit?usp=sharing'},
+        {n: '指數與科學記號', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1j5tdf0TirLjFHTLIcWy4lgSe1oIFh7NshM6GDHCOduE/edit?usp=sharing'},
+        {n: '二元一次方程式', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1v80VUYFsiW5V_jEOwPdOAHya5V75XQRzvRfbwnwpPLI/edit?usp=sharing'},
+        {n: '直角座標', g: 7, G: 8, wiki: '座標', url: 'https://docs.google.com/document/d/1ghJHjgS5YUNBjjfkpyQtAX0Njx9npQnzIj-4--_11tw/edit?usp=sharing'},
+        {n: '函數圖形', g: 7, G: 8, wiki: '函數', url: 'https://docs.google.com/document/d/163OdWL9EwW4LxRTHIIzpVCnohcg4f3vpebXe2nfFT8E/edit?usp=sharing'},
+        {n: '一元二次方程式', g: 8, G: 9, wiki: 'https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing'},
+        {n: '幾何代數_乘法公式', g: 7, G: 8, wiki: 'https://docs.google.com/document/d/1kjy84i-d_j_pnEp8bXqjkL8zQN6fDZ6kHpZCfY_lqHY/edit?usp=sharing'},
+        {n: '勾股定理', g: 8, G: 9, wiki: 'https://docs.google.com/document/d/1rPovRRDJ_JBPpQ-MVasmb3s1tXdDcZKGCKLc0TW5fCI/edit?usp=sharing'},
+        {n: '全等形', g: 8, G: 9, wiki: 'https://docs.google.com/document/d/1oPIdcpSMcYED93EK8pTIwLbqg6tRZz0RyQXKp5HtkI8/edit?usp=sharing'},
+        {n: '三角形的心', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1G3oG30oKd--F8t-IH2KKhEthAawf2e0C6SEGDbs2yP8/edit?usp=sharing'},
+        {n: '二次函數', g: 9, G: 10, wiki: '二次函數', url: 'https://docs.google.com/document/d/14WG9W2YWzH8t-8BjDBOEcOoJCXErI1qx1tz9geLKY3Q/edit?usp=sharing'},
+        {n: '多項式', g: 9, G: 10, wiki: '多項式', url: 'https://docs.google.com/document/d/1wFxpNIhsG2GyA-WLfrtlbqUxrnCKdVnDZ4HjsSw2vVI/edit?usp=sharing'},
+        {n: '幾何證明', g: 8, G: 9, wiki: '證明', url: 'https://docs.google.com/document/d/13clfEdnC5OZ3fp-NOWqO5HSOAEHMwxJN7BpKM1qkz7g/edit?usp=sharing'},
+        {n: '圓與角', g: 8, G: 9, wiki: '圓', url: 'https://docs.google.com/document/d/1PShmOOnanz_iykeu9MEpjISHTMLXmBEMsR9otBYOlj4/edit?usp=sharing'},
+        {n: '尺規作圖', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1n3BiAVTJXojaYzwV7RjosJinobehwgJQ5IvZNeCAjnY/edit?usp=sharing'},
+        {n: '數列與級數', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1PSA7GuKDr2MFHbnzHgBduq-YwGykAzL866EB_yXZuk8/edit?usp=sharing'},
+        {n: '根式運算', g: 8, G: 9, wiki: '', url: ''},
+        {n: '機率與統計', g: 9, G: 11, wiki: '', url: ''},
+        {n: '相似三角形', g: 8, G: 10, wiki: '', url: ''},
+        {n: '指數與對數', g: 10, G: 11, wiki: '', url: ''}
       ]
     }
   },
