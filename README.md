@@ -1,4 +1,4 @@
-# vue.freemath
+# freemath
 
 > A Vue.js project
 
