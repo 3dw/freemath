@@ -12,10 +12,10 @@
         <tr><th>單元</th><th>年級</th></tr>
         <tr class="item" v-for="(u, index) in units" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
           <td>
-            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n)">{{ u.n }}</a>
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">{{ u.n }}</a>
           </td>
           <td>            
-            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n)"><i class="print icon"></i><span>{{ u.g }}~{{ u.G }}年級</span></a>
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')"><i class="print icon"></i><span>{{ u.g }}~{{ u.G }}年級</span></a>
           </td>
         </tr>
       </table>
