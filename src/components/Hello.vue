@@ -29,6 +29,7 @@ export default {
   data () {
     return {
       s: '',
+      news: ['2018.10.全部教材搬上GOOGLE雲端硬碟, 改為GOOGLE DOC'],
       units: [
         {n: '分數', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing'},
         {n: '面積的估算', g: 3, G: 5, wiki: ''},
