@@ -30,11 +30,14 @@
         <tr><th>單元</th><th>年級</th><th>進度</th></tr>
         <tr class="item" v-for="(u, index) in units" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
           <td>
-            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">{{ u.n }}</a>
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
+              <img :src="'https://www.google.com/s2/favicons?domain='+u.url" />{{ u.n }}</a>
           </td>
           <td>            
             <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
-              <span>{{ u.g }}~{{ u.G }}年級</span></a>
+              <span v-show="u.g <= 0">學齡前</span>
+              <span v-show="u.g > 0">{{ u.g }}~{{ u.G }}年級</span>
+            </a>
           </td>
           <td>            
             <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
@@ -56,7 +59,12 @@ export default {
       s: '',
       news: ['2018.10.全部教材搬上GOOGLE雲端硬碟, 改為GOOGLE DOC'],
       units: [
+        {n: '分類', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1zh0qWv_D0Mic8X2UslTk965WSOgjGKswPsyb4-wZlxU/edit?usp=sharing', edit: true},
+        {n: '誰比較多', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1WK98nFb9Z3T6vNfh34ROGfZGt21QccXRABWc_AJZhEc/edit?usp=sharing', edit: true},
+        {n: '認識數字', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1AH1j0rQzsNsVUW4Papgq4vAVZgEIDiQCREXVD9LbsgM/edit?usp=sharing', edit: true},
+        {n: '數氣球', g: -3, G: -1, url: 'https://scratch.mit.edu/studios/1895336/'},
         {n: '百數表', g: 1, G: 3, url: 'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc'},
+        {n: '認識十進位', g: 1, G: 2, url: 'https://docs.google.com/drawings/d/1jS6GPgAOGorEcSHUlJaHYYB6RB43l9v5JzxPlWwDbPY/edit?usp=sharing', edit: true},
         {n: '乘法A~D', g: 2, G: 4, url: 'https://docs.google.com/document/d/15YqUGEehxC63GfYXMrihKvbT_w93nx-H4m0ZuFkpbjo/edit?usp=sharing', edit: true},
         {n: '乘法E~F', g: 3, G: 5, url: 'https://docs.google.com/document/d/1zUE7ROOqhaIALC3k0rimZPv8Fo1lf8-gYORG1Wr6eXg/edit?usp=sharing', edit: true},
         {n: '除法', g: 3, G: 5, url: 'https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing', edit: true},
@@ -75,15 +83,15 @@ export default {
         {n: '正負分數', g: 7, G: 7, wiki: '有理數', url: 'https://docs.google.com/document/d/1tD4_6l1spXg7p6M7bRBb8wNwIJcCSfQIPh_LNu-rfjE/edit?usp=sharing'},
         {n: '比與比值', g: 7, G: 8, wiki: '比值', url: 'https://docs.google.com/document/d/1jzeGGHqUmgEWZDvywl4xXUNoVPzUoTa_w1J0JzoUk8o/edit?usp=sharing'},
         {n: '一元一次方程式', g: 7, G: 8, wiki: '方程式', url: 'https://docs.google.com/document/d/1GLAu6BaheHxIGMqUVmz4CfgHJEVJxrP-cc_SaJI3jow/edit?usp=sharing'},
-        {n: '不等式', g: 7, G: 8, wiki: 'https://docs.google.com/document/d/1KjWUKOMWFHBqlnx6NfZHWb_T8EeMA2GJsvZMmZA5C7k/edit?usp=sharing'},
+        {n: '不等式', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1KjWUKOMWFHBqlnx6NfZHWb_T8EeMA2GJsvZMmZA5C7k/edit?usp=sharing'},
         {n: '指數與科學記號', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1j5tdf0TirLjFHTLIcWy4lgSe1oIFh7NshM6GDHCOduE/edit?usp=sharing'},
         {n: '二元一次方程式', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1v80VUYFsiW5V_jEOwPdOAHya5V75XQRzvRfbwnwpPLI/edit?usp=sharing'},
         {n: '直角座標', g: 7, G: 8, wiki: '座標', url: 'https://docs.google.com/document/d/1ghJHjgS5YUNBjjfkpyQtAX0Njx9npQnzIj-4--_11tw/edit?usp=sharing'},
         {n: '函數圖形', g: 7, G: 8, wiki: '函數', url: 'https://docs.google.com/document/d/163OdWL9EwW4LxRTHIIzpVCnohcg4f3vpebXe2nfFT8E/edit?usp=sharing'},
-        {n: '一元二次方程式', g: 8, G: 9, wiki: 'https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing'},
-        {n: '幾何代數_乘法公式', g: 7, G: 8, wiki: 'https://docs.google.com/document/d/1kjy84i-d_j_pnEp8bXqjkL8zQN6fDZ6kHpZCfY_lqHY/edit?usp=sharing'},
-        {n: '勾股定理', g: 8, G: 9, wiki: 'https://docs.google.com/document/d/1rPovRRDJ_JBPpQ-MVasmb3s1tXdDcZKGCKLc0TW5fCI/edit?usp=sharing'},
-        {n: '全等形', g: 8, G: 9, wiki: 'https://docs.google.com/document/d/1oPIdcpSMcYED93EK8pTIwLbqg6tRZz0RyQXKp5HtkI8/edit?usp=sharing'},
+        {n: '一元二次方程式', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing'},
+        {n: '幾何代數_乘法公式', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1kjy84i-d_j_pnEp8bXqjkL8zQN6fDZ6kHpZCfY_lqHY/edit?usp=sharing'},
+        {n: '勾股定理', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1rPovRRDJ_JBPpQ-MVasmb3s1tXdDcZKGCKLc0TW5fCI/edit?usp=sharing'},
+        {n: '全等形', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1oPIdcpSMcYED93EK8pTIwLbqg6tRZz0RyQXKp5HtkI8/edit?usp=sharing'},
         {n: '三角形的心', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1G3oG30oKd--F8t-IH2KKhEthAawf2e0C6SEGDbs2yP8/edit?usp=sharing'},
         {n: '二次函數', g: 9, G: 10, wiki: '二次函數', url: 'https://docs.google.com/document/d/14WG9W2YWzH8t-8BjDBOEcOoJCXErI1qx1tz9geLKY3Q/edit?usp=sharing'},
         {n: '多項式', g: 9, G: 10, wiki: '多項式', url: 'https://docs.google.com/document/d/1wFxpNIhsG2GyA-WLfrtlbqUxrnCKdVnDZ4HjsSw2vVI/edit?usp=sharing'},
