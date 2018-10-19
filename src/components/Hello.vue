@@ -42,7 +42,7 @@
           <td>            
             <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
               <span v-show="u.edit"><i class="edit icon"></i>草稿協作中(歡迎共筆)</span>
-              <span v-show="!u.edit"><i class="print icon"></i>完稿</span>
+              <span v-show="!u.edit"><i class="print icon"></i>完稿(歡迎留言提問與校誤)</span>
             </a>
           </td>
         </tr>
