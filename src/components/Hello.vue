@@ -12,7 +12,7 @@
           自學練功
         </div>
         <div class="item">
-          遇到問題可上
+          遇到問題可以直接在GOOGLE文件上留言提問，也可上
           <a class="item" href="https://www.facebook.com/groups/156709241062806/" target="_blank">
             <i class="facebook icon" />自學數學團
           </a>提問

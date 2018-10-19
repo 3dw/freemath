@@ -31,9 +31,6 @@
         <router-link class = 'item ' to='/donate' exact=''>
           <i class="gift icon" />出錢出力
         </router-link>
-        <div class="item">
-          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&mobile_iframe=false&appId=485195848253155&width=77&height=20" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-        </div>
       </div>
     </div>
     <main>
