@@ -1,6 +1,24 @@
 <template>
   <div class="hello">
     <h1>自由數學-高相容性的數學教材集錦</h1>
+    <h3>最新消息{{news[0]}}</h3>
+    <div class="ui segment container no-print">
+      <h1 class="ui header">如何使用：</h1>
+      <div class="ui large ordered list">
+        <div class="item">
+          選擇單元下載教材
+        </div>
+        <div class="item">
+          自學練功
+        </div>
+        <div class="item">
+          遇到問題可上
+          <a class="item" href="https://www.facebook.com/groups/156709241062806/" target="_blank">
+            <i class="facebook icon" />自學數學團
+          </a>提問
+        </div>
+      </div>
+    </div><!-- Segment END -->
     <div class = "ui container">
       <div class="ui input">
         <input id="find" type="text" v-model="s" placeholder="輸入關鍵字或年級" autofocus="">

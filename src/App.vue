@@ -10,7 +10,7 @@
       <router-link class = 'item ' to='/maps' exact=''>
         <i class="map icon" />學習地圖
       </router-link>
-      <div class="ui simple dropdown item">
+      <div class="ui simple dropdown item fat-only">
         <i class="dropdown icon"></i>
         小工具
         <div class="menu">
@@ -24,13 +24,16 @@
           <a class="item" href="http://elder.game.tw" target="_blank">認照片遊戲</a>
         </div>
       </div>
-      <div class="right menu">
+      <div class="right menu fat-only">
         <a class="item" href="https://www.facebook.com/groups/156709241062806/" target="_blank">
           <i class="facebook icon" />自學數學團
         </a>
         <a class="item" href="http://map.alearn.org.tw/donate.html#/" target="_blank">
           <i class="gift icon" />樂捐支持
         </a>
+        <div class="item">
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&mobile_iframe=false&appId=485195848253155&width=77&height=20" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </div>
       </div>
     </div>
     <main>
