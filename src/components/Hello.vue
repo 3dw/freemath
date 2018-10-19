@@ -27,13 +27,20 @@
         <tr><th colspan="2">
           自學教材
         </th>
-        <tr><th>單元</th><th>年級</th></tr>
+        <tr><th>單元</th><th>年級</th><th>進度</th></tr>
         <tr class="item" v-for="(u, index) in units" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
           <td>
             <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">{{ u.n }}</a>
           </td>
           <td>            
-            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')"><i class="print icon"></i><span>{{ u.g }}~{{ u.G }}年級</span></a>
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
+              <span>{{ u.g }}~{{ u.G }}年級</span></a>
+          </td>
+          <td>            
+            <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
+              <span v-show="u.edit"><i class="edit icon"></i>草稿協作中(歡迎共筆)</span>
+              <span v-show="!u.edit"><i class="print icon"></i>完稿</span>
+            </a>
           </td>
         </tr>
       </table>
@@ -56,9 +63,11 @@ export default {
         {n: '體積與容積', g: 5, G: 6, wiki: '', url: 'https://docs.google.com/document/d/1YDhE2j3YfOvlIbQxry-EKBz7LxeQiVt7mM-eCcwL-nE/edit?usp=sharing'},
         {n: '代數入門', g: 4, G: 6, wiki: '代數入門', url: 'https://docs.google.com/document/d/1LVcw277KiS3CHgle0b-LG5uMA6NN2HO6y_0rLZPvQe8/edit?usp=sharing'},
         {n: '分數到小數', g: 5, G: 6, wiki: '小數', url: 'https://docs.google.com/document/d/1xr9bhw0qcsio0R3FU9gUOIjW8Ir2mQpAh0fjJh4cnu0/edit?usp=sharing'},
+        {n: '物理量與單位換算', g: 5, G: 6, url: 'https://docs.google.com/document/d/12R1oi-Jia84mYixQBys83TIiM_eMCJfNzQLtXgrLLis/edit', edit: true},
         {n: '四則運算總複習', g: 5, G: 7, wiki: '', url: 'https://docs.google.com/document/d/11-ouXYWYIfawLMPGOSkXtC_AclO2A6SBHryXfr3NKng/edit?usp=sharing'},
         {n: '因數與倍數', g: 5, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1RcZy2CN6HSP-wsXb1g61A-Sq0QWjwY3TCJVRWTq3fTQ/edit?usp=sharing'},
         {n: '正負數', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing'},
+        {n: '國中數學自學指南', g: 7, G: 9, url: 'https://docs.google.com/document/d/1FvN7AO-CuDDy5zdfnJrYNvGy3YkjM0m0b72HAz49VFw/edit?usp=sharing', edit: true},
         {n: '正負分數', g: 7, G: 7, wiki: '有理數', url: 'https://docs.google.com/document/d/1tD4_6l1spXg7p6M7bRBb8wNwIJcCSfQIPh_LNu-rfjE/edit?usp=sharing'},
         {n: '比與比值', g: 7, G: 8, wiki: '比值', url: 'https://docs.google.com/document/d/1jzeGGHqUmgEWZDvywl4xXUNoVPzUoTa_w1J0JzoUk8o/edit?usp=sharing'},
         {n: '一元一次方程式', g: 7, G: 8, wiki: '方程式', url: 'https://docs.google.com/document/d/1GLAu6BaheHxIGMqUVmz4CfgHJEVJxrP-cc_SaJI3jow/edit?usp=sharing'},
