@@ -3,7 +3,7 @@
     <h1>自由數學<span class="fat-only">-高相容性的數學教材集錦</span></h1>
     <h3>最新消息: {{news[0]}}</h3>
     <div class="ui segment container no-print">
-      <h1 class="ui header">如何使用：</h1>
+      <h3 class="ui header">如何使用：</h3>
       <div class="ui large ordered list">
         <div class="item">
           選擇單元下載教材
