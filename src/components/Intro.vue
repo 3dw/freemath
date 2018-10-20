@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <br class="fat-only"/>
     <h1>編創緣起</h1>
     <div class="ui grid">
       <div class="two column doubling row">
