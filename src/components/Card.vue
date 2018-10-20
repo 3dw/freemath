@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <br/> 
     <h1>閃卡</h1>    
     <div class="ui labeled input">
       <div class="ui label">上限</div>

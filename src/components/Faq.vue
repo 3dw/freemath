@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <br class="fat-only"/>
+    <br/>
     <h1>常見問題</h1>
     <div class="ui segment container">
       <h2>教材架構</h2>

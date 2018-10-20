@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <br class="fat-only"/>
+    <br/>
     <h1 class="ui center aligned header no-print">方格紙產生器</h1>
     <div class="ui vertical segment">
       <div class="ui center aligned header no-print">

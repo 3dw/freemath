@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <br class="fat-only"/> 
+    <br/> 
     <div class="ui grid">
       <div class="ui two column row">
         <div class="ui segment column">
@@ -80,7 +80,7 @@ export default {
         '2018.10.新功能：您可以直接在教材頁面上留言提問與校誤',
         '2018.10.全部教材搬上GOOGLE雲端硬碟, 改為GOOGLE DOC'],
       units: [
-        {n: '分類', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1zh0qWv_D0Mic8X2UslTk965WSOgjGKswPsyb4-wZlxU/edit?usp=sharing', edit: true, p: 20},
+        {n: '分類', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1zh0qWv_D0Mic8X2UslTk965WSOgjGKswPsyb4-wZlxU/edit?usp=sharing', edit: true, p: 80},
         {n: '誰比較多', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1WK98nFb9Z3T6vNfh34ROGfZGt21QccXRABWc_AJZhEc/edit?usp=sharing', edit: true, p: 60},
         {n: '認識數字', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1AH1j0rQzsNsVUW4Papgq4vAVZgEIDiQCREXVD9LbsgM/edit?usp=sharing', edit: true, p: 80},
         {n: '數氣球', g: -3, G: -1, url: 'https://scratch.mit.edu/studios/1895336/'},

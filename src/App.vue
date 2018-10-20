@@ -86,10 +86,6 @@ a, button, .clickable {
   cursor: pointer !important;
 }
 
-.ui.card {
-  box-shadow: grey 0px 1px 5px 1px;
-}
-
 @media screen and (max-width: 600px) {
   .fat-only {
     display: none !important;

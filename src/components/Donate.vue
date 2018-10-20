@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <br class="fat-only"/>
+    <br/>
     <h1>您可以讓自由數學更好</h1>
     <div class="ui grid">
       <div class="two column doubling row">
