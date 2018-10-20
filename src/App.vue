@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="ui labeled icon fixed top menu no-print">
+    <div class="ui labeled icon menu no-print">
       <router-link class = 'item ' to='/' exact=''>
         <i class="home icon" />回首頁
       </router-link>
@@ -24,13 +24,16 @@
           <a class="item" href="http://elder.game.tw" target="_blank">認照片遊戲</a>
         </div>
       </div>
-      <div class="right menu fat-only">        
-        <router-link class = 'item ' to='/faq' exact=''>
-          <i class="comment icon" />常見問題
-        </router-link>
-        <router-link class = 'item ' to='/donate' exact=''>
-          <i class="gift icon" />出錢出力
-        </router-link>
+      <div class="right menu fat-only">
+        <a class="item" href="https://www.facebook.com/groups/156709241062806/" target="_blank">
+          <i class="facebook icon" />自學數學團
+        </a>
+        <a class="item" href="http://map.alearn.org.tw/donate.html#/" target="_blank">
+          <i class="gift icon" />樂捐支持
+        </a>
+        <div class="item">
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&mobile_iframe=false&appId=485195848253155&width=77&height=20" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </div>
       </div>
     </div>
     <main>
