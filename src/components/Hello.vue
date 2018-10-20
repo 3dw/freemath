@@ -59,8 +59,8 @@
           </td>
           <td>
             <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
-              {{(u.p || (u.edit && 50) || 100) + '%'}}
-         <!--     <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p || (u.edit && 50) || 100" :label="(u.p || (u.edit && 50) || 100) + '%'" /> -->
+         <!--     {{(u.p || (u.edit && 50) || 100) + '%'}} -->
+              <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p || (u.edit && 50) || 100" :label="(u.p || (u.edit && 50) || 100) + '%'" />
             </a>
           </td>
         </tr>
