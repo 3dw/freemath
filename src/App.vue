@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="ui labeled icon menu no-print">
+    <div class="ui labeled icon fixed top menu no-print">
       <router-link class = 'item ' to='/' exact=''>
         <i class="home icon" />回首頁
       </router-link>

@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
+    <br class="fat-only"/>
     <h1>常見問題</h1>
-    <div class="ui segment">
+    <div class="ui segment container">
       <h2>教材架構</h2>
       <h4>Q: 自由數學的攀岩地圖和學校課綱的結構一樣嗎？如何對照？</h4>
       <p>不同。自由數學的攀岩地圖不只是依年紀分，還有「知識叢集」的概念，如分數與小數叢集，包含完整的分數與小數概念、計算方式，跨越課本近三個年級的範圍。</p>
