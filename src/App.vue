@@ -11,17 +11,15 @@
         <i class="map icon" />學習地圖
       </router-link>
       <div class="ui simple dropdown item fat-only">
-        <i class="dropdown icon"></i>
+        <i class="angle double down icon"></i>
         小工具
         <div class="menu">
-          <a class="item" href="https://scratch.mit.edu/studios/1895336/" target="_blank">數氣球</a>
           <router-link  class="item" to='/card' exact=''>
             <i class="file outline icon" />閃卡
           </router-link>
           <router-link class = 'item ' to='/grid' exact=''>
             <i class="expand icon" />方格紙產生器
           </router-link>
-          <a class="item" href="http://elder.game.tw" target="_blank">認照片遊戲</a>
         </div>
       </div>
       <div class="right menu fat-only">        
@@ -113,6 +111,11 @@ a, button, .clickable {
 
 .invisible {
   color: transparent !important;
+}
+
+p {
+    text-align: left;
+    line-height: 1.6;
 }
 
 </style>

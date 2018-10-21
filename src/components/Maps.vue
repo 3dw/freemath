@@ -24,15 +24,26 @@
           </a>提問
         </div>
       </div>
+
       <div class="ui form no-print">
-        <div class="field">
-          <select id = "Range" class="map" name="Range" v-model="myRange">
-            <option v-for="r in ranges" v-bind:value="r">{{r.t}}</option>
-          </select>
-          <button class = "ui large green button" id = "doPrint" @click = "printUrl(myRange.t,'.pdf')"> 友善列印
-          </button>
+        <div class="inline fields">
+          <label>選擇年段：</label>
+          <div class="field" v-for="r in ranges">
+            <div class="ui radio checkbox">
+              <input type="radio" name="year" :checked="myRange == r" v-bind:value="r" v-model = "myRange">
+              <label class="clickable" @click = "myRange = r">{{r.t}}</label>
+            </div>
+          </div>
+          <div class="field">
+      <!--      <select id = "Range" class="map" name="Range" v-model="myRange">
+              <option v-for="r in ranges" v-bind:value="r">{{r.t}}</option>
+            </select> -->
+            <button class = "ui large green button" id = "doPrint" @click = "printUrl(myRange.t,'.pdf')"> 友善列印
+            </button>
+          </div>
         </div>
       </div>
+
     </div><!-- Segment END -->
     <ul class = "print">
       <li v-for = "(i, index) in [1,2,3,4,0,5]">

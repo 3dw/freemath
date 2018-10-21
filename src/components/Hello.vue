@@ -7,7 +7,7 @@
           <h3 class="ui header">最新消息：</h3>
           <div class="ui large bulleted list">
             <div class="item" v-for="n in news.slice(0,3)">
-              {{n}}
+              <span v-html="n"></span>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
           <td>            
             <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
               <span v-show="u.edit"><i class="edit icon"></i>草稿(歡迎共筆)</span>
-              <span v-show="!u.edit"><i class="print icon"></i>完稿(歡迎留言)</span>
+              <span v-show="!u.edit"><i class="comments icon"></i>完稿(歡迎留言)</span>
             </a>
           </td>
           <td>
@@ -78,7 +78,7 @@ export default {
       news: [
         '2018.10.自由數學更新版上線，歡迎使用、協作、樂捐支持！',
         '2018.10.新功能：您可以直接在教材頁面上留言提問與校誤',
-        '2018.10.全部教材搬上GOOGLE雲端硬碟, 改為GOOGLE DOC'],
+        '2018.10.全部教材搬上<a href="https://drive.google.com/drive/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc" target="_blank">GOOGLE雲端硬碟</a>, 改為GOOGLE DOC'],
       units: [
         {n: '分類', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1zh0qWv_D0Mic8X2UslTk965WSOgjGKswPsyb4-wZlxU/edit?usp=sharing', edit: true, p: 80},
         {n: '誰比較多', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1WK98nFb9Z3T6vNfh34ROGfZGt21QccXRABWc_AJZhEc/edit?usp=sharing', edit: true, p: 60},
@@ -89,6 +89,9 @@ export default {
         {n: '乘法A~D', g: 2, G: 4, url: 'https://docs.google.com/document/d/15YqUGEehxC63GfYXMrihKvbT_w93nx-H4m0ZuFkpbjo/edit?usp=sharing', edit: true, p: 90},
         {n: '乘法E~F', g: 3, G: 5, url: 'https://docs.google.com/document/d/1zUE7ROOqhaIALC3k0rimZPv8Fo1lf8-gYORG1Wr6eXg/edit?usp=sharing', edit: true, p: 90},
         {n: '除法', g: 3, G: 5, url: 'https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing', edit: true, p: 5},
+        {n: '除法直式的意涵', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=RvP7ICoxRGs'},
+        {n: '除法直式精熟', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=o73K7oUH_-4'},
+        {n: '餘量的處理', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=falQiyDLL50'},
         {n: '分數', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing'},
         {n: '面積的估算', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1LLNZQY4JSUc_pZ4K2LPHRA0pnJCfRdPE8Oqxejk29hI/edit?usp=sharing'},
         {n: '數線', g: 4, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing'},
