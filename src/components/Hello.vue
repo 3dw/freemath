@@ -80,8 +80,8 @@ export default {
         '2018.10.新功能：您可以直接在教材頁面上留言提問與校誤',
         '2018.10.全部教材搬上<a href="https://drive.google.com/drive/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc" target="_blank">GOOGLE雲端硬碟</a>, 改為GOOGLE DOC'],
       units: [
-        {n: '分類', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1zh0qWv_D0Mic8X2UslTk965WSOgjGKswPsyb4-wZlxU/edit?usp=sharing', edit: true, p: 80},
-        {n: '誰比較多', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1WK98nFb9Z3T6vNfh34ROGfZGt21QccXRABWc_AJZhEc/edit?usp=sharing', edit: true, p: 60},
+        {n: '分類', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/11FQ7urzmBNkfD8yeGPCw2PEq_1cqqpDRf-mDFCjQ5l0/edit?usp=sharing', edit: true, p: 80},
+        {n: '誰比較多', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/1afPtB_fNvTb2J58gWLlwAbtkXTdG589wquaq9vzJfZE/edit?usp=sharing', edit: true, p: 80},
         {n: '認識數字', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1AH1j0rQzsNsVUW4Papgq4vAVZgEIDiQCREXVD9LbsgM/edit?usp=sharing', edit: true, p: 80},
         {n: '數氣球', g: -3, G: -1, url: 'https://scratch.mit.edu/studios/1895336/'},
         {n: '百數表', g: 1, G: 3, url: 'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc'},
