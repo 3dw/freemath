@@ -17,7 +17,7 @@
             </div>
             <h3>如何捐錢？</h3>
             <p>
-                請點選<a class="item" href="http://map.alearn.org.tw/donate.html#/gift" target="_blank">
+                請點選<a class="item" href="http://map.alearn.org.tw/#/doner/gift" target="_blank">
                     <i class="gift icon" />樂捐支持
                  </a>，內有詳細的說明。
              </p>
