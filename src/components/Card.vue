@@ -13,7 +13,7 @@
       <label>選擇算法：</label>
       <div class="field" v-for="o in ops">
         <div class="ui radio checkbox">
-          <input type="radio" name="year" :checked="op == o.v" v-bind:value="o.v" v-model = "op">
+          <input type="radio" name="year"v-bind:value="o.v" v-model = "op">
           <label class="clickable" @click = "op = o.v">{{o.t}}</label>
         </div>
       </div>
