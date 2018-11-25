@@ -1,5 +1,5 @@
 {
-  "name": "vue.freemath",
+  "name": "freemath",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Bestian Tang 唐宗浩 <besitan@gmail.com>",
@@ -16,6 +16,13 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "babel-polyfill": "^6.26.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "lodash": "^4.17.11",
+    "lodash.assign": "^4.2.0",
+    "lodash.clonedeep": "^4.5.0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-vue": "^0.5.0",
     "vue": "^2.5.2",
