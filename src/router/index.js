@@ -41,7 +41,7 @@ export default new Router({
     {
       path: '/outer',
       name: 'Outer',
-      component: Grid
+      component: Outer
     },
     {
       path: '/card',

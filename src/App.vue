@@ -23,7 +23,7 @@
         </div>
       </div>
       <router-link class = 'item fat-only' to='/outer' exact=''>
-        <i class="map icon" />外部資源
+        <i class="user add icon" />外部資源
       </router-link>
       <div class="right menu fat-only">        
         <router-link class = 'item ' to='/faq' exact=''>
