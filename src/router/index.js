@@ -7,6 +7,7 @@ import Donate from '@/components/Donate'
 import Faq from '@/components/Faq'
 import Card from '@/components/Card'
 import Grid from '@/components/Grid'
+import Outer from '@/components/Outer'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/faq',
       name: 'Faq',
       component: Faq
+    },
+    {
+      path: '/outer',
+      name: 'Outer',
+      component: Grid
     },
     {
       path: '/card',
