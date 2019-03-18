@@ -24,6 +24,19 @@
            
         </div>
       </div>
+      <div class = 'ui card'>
+        <h1>網路學習資源</h1>
+        <div class="ui list">
+          <div class="item">
+            <a href="https://www.khanacademy.org/math" target="_blank">
+              河汗學院
+            </a>
+          </div>
+          <div class="item">
+            <a href="https://www.junyiacademy.org/exercisedashboard" target="_blank">均一平台</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
