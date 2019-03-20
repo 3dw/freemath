@@ -4,7 +4,7 @@
       <input id="find" type="text" v-model="s" placeholder="輸入關鍵字或年級" autofocus="">
     </div>
     <a class="stone" v-bind:class = "{ checked: my.indexOf('_' + u.n) > -1 }" v-for="u in units" v-bind:style = "{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)" @click="check(u)" @dblclick="goto(u)">
-      <a :href = "url"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /></a>
+      <a :href = "u.url"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /></a>
       {{ u.n }}
     </a>
   </div>
