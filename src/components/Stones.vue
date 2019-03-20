@@ -32,7 +32,6 @@ export default {
         this.my = this.my.replace(',' + '_' + u.n + '_', '')
         this.my = this.my.replace('_' + u.n + '_', '')
       }
-      this.my = this.my.replace('_,', '')
       this.my = this.my.replace('_undefined', '')
       this.$router.push('/stones/' + this.my)
     }
