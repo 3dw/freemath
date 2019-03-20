@@ -5,7 +5,7 @@
     </div>
     <div class = "stone" v-bind:class = "{ checked: my.indexOf('_' + u.n + '_') > -1 }" v-for="u in units" v-bind:style = "{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
       <a :href = "u.url" target="_blank"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /></a>
-      <a @click="check(u)" @dblclick="goto(u)">
+      <a @click="check(u)">
       {{ u.n }}</a>
     </div>
   </div>
@@ -59,8 +59,8 @@ export default {
   padding: 1vw;
   width: 15vw;
   border-radius: 15px;
-  border: 3px gold ridge;
-  background-color: white; 
+  background-color: white;
+  border: 3px gray ridge;
 }
 
 .stone:hover {
@@ -69,6 +69,7 @@ export default {
 
 .stone.checked {
   background-color: #9f9;
+  border: 3px gold ridge;
 }
 
 .ui input {
