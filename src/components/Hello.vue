@@ -36,6 +36,9 @@
       <div class="ui input">
         <input id="find" type="text" v-model="s" placeholder="輸入關鍵字或年級" autofocus="">
       </div>
+      <router-link class = 'item' to='/stones' exact=''>
+        <i class="map icon" />摸石頭
+      </router-link>
       <table class="ui celled striped table">
         <tr><th colspan="4">
           自學教材
