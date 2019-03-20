@@ -13,15 +13,50 @@
         <div class="ui list">
           <div class="item"v-for ="(o, idx) in oldtests">
              <a :href="o.h" target="_blank">
+              <img :src="'https://www.google.com/s2/favicons?domain=' + o.h" />
               {{o.n}}
              </a>
              <span class="space"></span>
              <a :href="o.a" target="_blank">
+              <img :src="'https://www.google.com/s2/favicons?domain=' + o.a" />
               解答
              </a>
           </div>
-          <br/>
-           
+          <br/>     
+        </div>
+      </div>
+      <div class = 'ui card'>
+        <h1>大學考試考古題詳解</h1>
+        <div class="ui list">
+          <div class="item">
+             <a href="http://www.grandeast.com.tw/Math/PastExam?T=45" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45"/>
+              學科能力測驗
+             </a>
+          </div>
+          <div class="item">
+             <a href="http://www.grandeast.com.tw/Math/PastExam?T=46" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45"/>
+              指定科目考試
+             </a>
+          </div>
+          <div class="item">
+             <a href="http://www.grandeast.com.tw/Math/PastExam?T=47" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45"/>
+              四技二專統測
+             </a>
+          </div>
+        </div>
+      </div>
+      <div class = 'ui card'>
+        <h1>相關書籍</h1>
+        <div class="ui list">
+          <div class="item" v-for="b in books">
+            <a :href="b.h" target="_blank">
+              <img :src="'https://www.google.com/s2/favicons?domain=' + b.h"/>
+              {{ b.n }}
+            </a>
+          </div>
         </div>
       </div>
       <div class = 'ui card'>
@@ -29,11 +64,15 @@
         <div class="ui list">
           <div class="item">
             <a href="https://www.khanacademy.org/math" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=https://www.khanacademy.org/math" />
               河汗學院
             </a>
           </div>
           <div class="item">
-            <a href="https://www.junyiacademy.org/exercisedashboard" target="_blank">均一平台</a>
+            <a href="https://www.junyiacademy.org/exercisedashboard" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=https://www.junyiacademy.org/exercisedashboard"/>
+              均一平台
+            </a>
           </div>
         </div>
       </div>
@@ -47,6 +86,14 @@ export default {
   name: 'Outer',
   data () {
     return {
+      books: [
+        { n: '數學教育的藝術與實務─另類教與學',
+          h: 'https://www.books.com.tw/products/0010079574'
+        },
+        { n: '跟孩子一起玩數學',
+          h: 'https://www.books.com.tw/products/0010687205'
+        }
+      ],
       oldtests: [
         { n: '107國中會考考古題',
           h: 'https://cap.nace.edu.tw/exam/107/107P_Math.pdf',
