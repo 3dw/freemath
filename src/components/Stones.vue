@@ -3,7 +3,7 @@
     <div class="ui input">
       <input id="find" type="text" v-model="s" placeholder="輸入關鍵字或年級" autofocus="">
     </div>
-    <div class = "stone" v-bind:class = "{ checked: my.indexOf('_' + u.n) > -1 }" v-for="u in units" v-bind:style = "{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
+    <div class = "stone" v-bind:class = "{ checked: my.indexOf('_' + u.n + '_') > -1 }" v-for="u in units" v-bind:style = "{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
       <a :href = "u.url" target="_blank"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /></a>
       <a @click="check(u)" @dblclick="goto(u)">
       {{ u.n }}</a>
@@ -26,11 +26,11 @@ export default {
       window.open(u.url)
     },
     check (u) {
-      if (this.my.indexOf('_' + u.n) === -1) {
-        this.my = this.my + ',' + '_' + u.n
+      if (this.my.indexOf('_' + u.n + '_') === -1) {
+        this.my = this.my + ',' + '_' + u.n + '_'
       } else {
-        this.my = this.my.replace(',' + '_' + u.n, '')
-        this.my = this.my.replace('_' + u.n, '')
+        this.my = this.my.replace(',' + '_' + u.n + '_', '')
+        this.my = this.my.replace('_' + u.n + '_', '')
       }
       this.my = this.my.replace('_,', '')
       this.my = this.my.replace('_undefined', '')
