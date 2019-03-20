@@ -35,6 +35,11 @@ export default new Router({
       component: Stones
     },
     {
+      path: '/stones/:my',
+      name: 'Stones',
+      component: Stones
+    },
+    {
       path: '/donate',
       name: 'Donate',
       component: Donate
