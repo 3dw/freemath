@@ -76,6 +76,34 @@
           </div>
         </div>
       </div>
+      <div class = 'ui card'>
+        <h1>延伸學習資源</h1>
+        <div class="ui list">
+          <div class="item">
+            <a href="https://arxiv.org/archive/math" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=https://arxiv.org/archive/math" />
+              arXiv.org學術平台
+            </a>
+          </div>
+          <div class="item">
+            <a href="https://proofwiki.org/wiki/Main_Page" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=https://proofwiki.org/wiki/Main_Page" />
+              維基證明
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class = 'ui card'>
+        <h1>工具軟體</h1>
+        <div class="ui list">
+          <div class="item">
+            <a href="https://www.geogebra.org/" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=https://www.geogebra.org/" />
+              geogebra算術繪圖
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

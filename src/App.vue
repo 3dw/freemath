@@ -41,6 +41,7 @@
       <transition name='fade' mode='out-in'>
         <router-view :units="units"></router-view>
       </transition>
+      <div class="fb-comments" data-href="http://math.alearn.org.tw" data-numposts="5"></div>
     </main>
   </div>
 
