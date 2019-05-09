@@ -6,7 +6,9 @@
     .ui.segment.container
       .ui.horizontal.list
         .item
-          h1(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ") 目前數字： {{ myNum[0]['.value'] }}
+          h1(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ")
+            span(v-if = "myNum[0]['.value']") 目前數字： {{ myNum[0]['.value'] }}
+            span(v-else) 先按一個數字開始
     .ui.four.cards()
       .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']")
         a.ui.top.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '+')") +{{c['.value']}}
