@@ -11,6 +11,7 @@ import Card from '@/components/Card'
 import Play12 from '@/components/Play12'
 import Grid from '@/components/Grid'
 import Outer from '@/components/Outer'
+import Tools from '@/components/Tools'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/outer',
       name: 'Outer',
       component: Outer
+    },
+    {
+      path: '/tools',
+      name: 'Tools',
+      component: Tools
     },
     {
       path: '/card',

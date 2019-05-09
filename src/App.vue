@@ -7,27 +7,13 @@
       <router-link class = 'item ' to='/intro' exact=''>
         <i class="book icon" />編創緣起
       </router-link>
-      <router-link class = 'item ' to='/maps' exact=''>
+      <router-link class = 'item' to='/maps' exact=''>
         <i class="map icon" />學習地圖
       </router-link>
-      <div class="ui simple dropdown item fat-only">
+      <router-link class = 'item' to='/tools' exact=''>
         <i class="angle double down icon"></i>
         小工具
-        <div class="menu">
-          <router-link  class="item" to='/card' exact=''>
-            <i class="file outline icon" />閃卡
-          </router-link>
-          <router-link class = 'item' to='/grid' exact=''>
-            <i class="expand icon" />方格紙產生器
-          </router-link>
-          <router-link class = 'item' to='/stones' exact=''>
-            <i class="map icon" />摸石頭
-          </router-link>
-          <router-link class = 'item' to='/play12' exact=''>
-            <i class="random icon" />湊12
-          </router-link>
-        </div>
-      </div>
+      </router-link>
       <router-link class = 'item fat-only' to='/outer' exact=''>
         <i class="user add icon" />外部資源
       </router-link>
