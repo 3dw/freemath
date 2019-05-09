@@ -7,6 +7,7 @@ import Stones from '@/components/Stones'
 import Donate from '@/components/Donate'
 import Faq from '@/components/Faq'
 import Card from '@/components/Card'
+import Play12 from '@/components/Play12'
 import Grid from '@/components/Grid'
 import Outer from '@/components/Outer'
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/card',
       name: 'Card',
       component: Card
+    },
+    {
+      path: '/play12',
+      name: 'Play12',
+      component: Play12
     },
     {
       path: '/grid',

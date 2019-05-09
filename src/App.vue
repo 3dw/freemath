@@ -23,6 +23,9 @@
           <router-link class = 'item' to='/stones' exact=''>
             <i class="map icon" />摸石頭
           </router-link>
+          <router-link class = 'item' to='/play12' exact=''>
+            <i class="random icon" />湊12
+          </router-link>
         </div>
       </div>
       <router-link class = 'item fat-only' to='/outer' exact=''>

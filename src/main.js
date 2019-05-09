@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import SuiVue from 'semantic-ui-vue'
 import '@babel/polyfill'
+import './firebase'
+import VueFire from 'vuefire'
+
+Vue.use(VueFire)
 
 require('semantic-ui-css/semantic.css')
 
