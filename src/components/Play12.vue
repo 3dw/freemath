@@ -3,9 +3,23 @@
     .ui.segment.container
       a(@click="change()")
         h1 加減乘除湊 {{ max[0]['.value'] == 6 ? 12 : 24 }}
-    .ui.four.cards
-      a.ui.card(v-for = "c in cards", @click="rand(max[0]['.value'])")
-        h1 {{c['.value']}}
+    .ui.segment.container
+      .ui.horizontal.list
+        .item
+          h1(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ") 目前數字： {{ myNum[0]['.value'] }}
+    .ui.four.cards()
+      .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']")
+        a.ui.top.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '+')") +{{c['.value']}}
+        a.ui.top.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '-')") -{{c['.value']}}
+        a.ui.bottom.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '*')") ×{{c['.value']}}
+        a.ui.bottom.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '/')") ÷{{c['.value']}}
+        a(v-if = "myNum[0]['.value'] == 0" @click = "use($index, c['.value'])")
+          h1 {{c['.value']}}
+        span(v-else)
+          h1 {{c['.value']}}
+    .ui.segment.container
+      a.ui.green.button(@click="rand(max[0]['.value'])")
+        h2 再來!
     br
     br
     br
@@ -24,14 +38,24 @@ export default {
   firebase: {
     cards: {
       source: db.ref('cards'),
-      // Optional, allows you to handle any errors.
       cancelCallback (err) {
         console.error(err)
       }
     },
     max: {
       source: db.ref('max'),
-      // Optional, allows you to handle any errors.
+      cancelCallback (err) {
+        console.error(err)
+      }
+    },
+    myNum: {
+      source: db.ref('myNum'),
+      cancelCallback (err) {
+        console.error(err)
+      }
+    },
+    unused: {
+      source: db.ref('unused'),
       cancelCallback (err) {
         console.error(err)
       }
@@ -45,6 +69,9 @@ export default {
         list[i] = r
       }
       db.ref('cards/').update((list))
+      db.ref('myNum/').update([0])
+      db.ref('unused/').update([true, true, true, true])
+      this.$forceUpdate()
     },
     change: function () {
       if (this.max[0]['.value'] === 6) {
@@ -52,6 +79,20 @@ export default {
       } else {
         db.ref('max/').update([6])
       }
+    },
+    use: function (i, n, op) {
+      if (!op) {
+        db.ref('myNum/').update([n])
+      } else {
+        if (op === '+') { db.ref('myNum/').update([this.myNum[0]['.value'] + n]) }
+        if (op === '-') { db.ref('myNum/').update([this.myNum[0]['.value'] - n]) }
+        if (op === '*') { db.ref('myNum/').update([this.myNum[0]['.value'] * n]) }
+        if (op === '/') { db.ref('myNum/').update([this.myNum[0]['.value'] / n]) }
+      }
+
+      var list = this.unused.map(function (o) { return o['.value'] })
+      list[i] = false
+      db.ref('unused/').update((list))
     }
   }
 }
@@ -68,6 +109,10 @@ a {
   color: #35495E;
 }
 
+.label {
+  font-size: 1.5em;
+}
+
 h1 {
   font-size: 4em !important;
 }
@@ -75,6 +120,11 @@ h1 {
 .card {
   height: 50vh;
   justify-content: center;
+}
+
+.good {
+  color: green;
+  background-color: pink;
 }
 
 </style>

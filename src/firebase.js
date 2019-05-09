@@ -12,4 +12,3 @@ const app = initializeApp({
 })
 
 export const db = app.database()
-export const cardsRef = db.ref('cards')
