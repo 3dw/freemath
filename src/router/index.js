@@ -5,6 +5,7 @@ import Intro from '@/components/Intro'
 import Maps from '@/components/Maps'
 import Stones from '@/components/Stones'
 import Donate from '@/components/Donate'
+import Vedio from '@/components/Vedio'
 import Faq from '@/components/Faq'
 import Card from '@/components/Card'
 import Play12 from '@/components/Play12'
@@ -44,6 +45,11 @@ export default new Router({
       path: '/donate',
       name: 'Donate',
       component: Donate
+    },
+    {
+      path: '/vedio',
+      name: 'Vedio',
+      component: Vedio
     },
     {
       path: '/faq',

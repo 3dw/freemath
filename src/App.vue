@@ -32,6 +32,9 @@
         <i class="user add icon" />外部資源
       </router-link>
       <div class="right menu fat-only">        
+        <router-link class = 'item ' to='/vedio' exact=''>
+          <i class="play icon" />影片導覽
+        </router-link>        
         <router-link class = 'item ' to='/faq' exact=''>
           <i class="comment icon" />常見問題
         </router-link>        
