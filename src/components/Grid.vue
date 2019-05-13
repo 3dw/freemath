@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
     <br/>
-    <h1 class="ui center aligned header no-print">方格紙產生器</h1>
+    <h1 class="ui center aligned header noPrint">方格紙產生器</h1>
     <div class="ui vertical segment">
-      <div class="ui center aligned header no-print">
+      <div class="ui center aligned header noPrint">
         <select v-model = "type" autofocus="true" style ="font-size:120%">
             <option value = "1_1_10,1_1_10">空白表</option>
             <option value = "0_10_90,1_1_10,+">百數表</option>
@@ -15,8 +15,12 @@
             <option value = "1_1_9,1_1_9,*">九九乘法表</option>
             <option value = "1_1_12,1_1_12,*">十二乘法表</option>
         </select>
-        <a class="ui green button" @click="randHide(countRC(type,0), countRC(type,1))">隨機挖洞</a>
-
+        <div class="ui button group">
+          <a class="ui green button" @click="randHide(countRC(type,0), countRC(type,1))">隨機挖洞</a>
+          <button class="ui teal button" onclick="window.print()">友善列印</button>
+        </div>
+      </div>
+      <div>
         <div class="ui">
           <table border="8">
             <tr v-for = "r in countRC(type,0)">
