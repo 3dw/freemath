@@ -4,8 +4,8 @@
       <input id="find" type="text" v-model="s" placeholder="點擊圖示可打開教材" autofocus="">
     </div>
     <div class = "stone" v-bind:class = "{ checked: my.indexOf('_' + u.n + '_') > -1 }" v-for="u in units" v-bind:style = "{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
-      <a :href = "u.url" target="_blank"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /></a>
-      <a @click="check(u)">
+      <a :href = "u.url" target="_blank"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /><!--</a>
+      <a @click="check(u)"> -->
       {{ u.n }}</a>
     </div>
   </div>
