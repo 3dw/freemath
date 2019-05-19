@@ -83,12 +83,16 @@ export default {
       }
     },
     makeCard: function () {
-      var idx = this.unused.indexOf(false)
+      var idx = this.unused.map((o) => o['.value']).indexOf(false)
       var v = this.myNum[0]['.value']
-      db.ref('myNum/').update(0)
+      db.ref('myNum/').update([0])
       var list = this.cards.map(function (o) { return o['.value'] })
       list[idx] = v
       db.ref('cards/').update((list))
+
+      list = this.unused.map(function (o) { return o['.value'] })
+      list[idx] = true
+      db.ref('unused/').update((list))
     },
     use: function (i, n, op) {
       if (!op) {
