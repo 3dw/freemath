@@ -7,7 +7,7 @@
       .ui.horizontal.list
         .item
           h1(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ")
-            span(v-if = "myNum[0]['.value']") 目前數字： {{ myNum[0]['.value'] }}
+            a(v-if = "myNum[0]['.value']" @click="makeCard()") 目前數字： {{ myNum[0]['.value'] }}
             span(v-else) 先按一個數字開始
     .ui.four.cards()
       .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']")
@@ -81,6 +81,14 @@ export default {
       } else {
         db.ref('max/').update([6])
       }
+    },
+    makeCard: function () {
+      var idx = this.unused.indexOf(false)
+      var v = this.myNum[0]['.value']
+      db.ref('myNum/').update(0)
+      var list = this.cards.map(function (o) { return o['.value'] })
+      list[idx] = v
+      db.ref('cards/').update((list))
     },
     use: function (i, n, op) {
       if (!op) {
