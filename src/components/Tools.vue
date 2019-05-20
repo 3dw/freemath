@@ -1,18 +1,34 @@
 <template lang="jade">
   .hello
-    .ui.bulleted.list
-      router-link.item(to='/card' exact='')
-        i.file.outline.icon
-        | 閃卡
-      router-link.item(to='/grid' exact='')
-        i.expand.icon
-        | 方格紙產生器
-      router-link.item(to='/stones' exact='')
-        i.map.icon
-        | 摸石頭
-      router-link.item(to='/play12' exact='')
-        i.random.icon
-        | 湊12
+    .ui.container
+      .ui.two.stackable.cards
+        .ui.card
+          router-link.item(to='/card' exact='')
+            .image
+              img(src = "../assets/閃卡.png")
+            | 閃卡
+          .description 自動產生算式和答案
+        .ui.card
+          router-link.item(to='/grid' exact='')
+            .image
+              img(src = "../assets/方格紙產生器.png")
+            | 方格紙產生器
+          .description
+           | 生成百數表、乘法表等，還可以隨機挖洞
+        .ui.card
+          router-link.item(to='/stones' exact='')
+            .image
+              img(src = "../assets/摸石頭.png")
+            | 摸石頭
+          .description
+           | 將教材排列整齊，易於查詢
+        .ui.card
+          router-link.item(to='/play12' exact='')
+            .image
+              img(src = "../assets/湊12.png")
+            | 湊12
+          .description
+           | 四張牌，加減乘除湊12，可以和別人連線一起解謎
 </template>
 
 <script>
@@ -36,7 +52,22 @@ export default {
 }
 
 .item {
-  font-size: 3em;
+  font-size: 2em;
+  margin: .5em;
+}
+
+.card {
+  min-height: 200px !important;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 200px;
+}
+
+.image {
+  margin: .5em;
 }
 
 </style>

@@ -1,24 +1,28 @@
 <template lang="jade">
   .hello
     .ui.segment.container
-      a(@click="change()")
-        h1 加減乘除湊 {{ max[0]['.value'] == 6 ? 12 : 24 }}
+      h2(v-if = "max[0]['.value'] == 6") ~~加減乘除湊 12~~
+      a(v-else).ui.green.button(@click="change()") 改成湊 12
+      h2(v-if = "max[0]['.value'] == 9") ~~加減乘除湊 24~~
+      a(v-else).ui.green.button(@click="change()") 改成湊 24
     .ui.segment.container
       .ui.horizontal.list
         .item
-          h1(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ")
-            a(v-if = "myNum[0]['.value']" @click="makeCard()") 目前數字： {{ myNum[0]['.value'] }}
+          h2(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ")
+            a(v-if = "myNum[0]['.value']" @click="makeCard()") 目前數字：
+              span.good {{ myNum[0]['.value'] }}
             span(v-else) 先按一個數字開始
-    .ui.four.cards()
-      .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']")
-        a.ui.top.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '+')") +{{c['.value']}}
-        a.ui.top.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '-')") -{{c['.value']}}
-        a.ui.bottom.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '*')") ×{{c['.value']}}
-        a.ui.bottom.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '/')") ÷{{c['.value']}}
-        a(v-if = "myNum[0]['.value'] == 0" @click = "use($index, c['.value'])")
-          h1 {{c['.value']}}
-        span(v-else)
-          h1 {{c['.value']}}
+    .ui.container
+      .ui.four.doubling.cards
+        .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']", :class="$index % 2 == 0 ? 'green' : 'pink'")
+          a.ui.green.top.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '+')") +{{c['.value']}}
+          a.ui.blue.top.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '-')") -{{c['.value']}}
+          a.ui.teal.bottom.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '*')") ×{{c['.value']}}
+          a.ui.purple.bottom.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '/')") ÷{{c['.value']}}
+          a(v-if = "myNum[0]['.value'] == 0" @click = "use($index, c['.value'])")
+            h1 {{c['.value']}}
+          span(v-else)
+            h1 {{c['.value']}}
     .ui.segment.container
       a.ui.green.button(@click="rand(max[0]['.value'])")
         h2 再來!
@@ -134,11 +138,18 @@ h1 {
 .card {
   height: 50vh;
   justify-content: center;
+  background-color: #fcc !important;  
+}
+
+.card.green {
+  background-color: #cfc !important;    
 }
 
 .good {
   color: green;
   background-color: pink;
+  padding: .5em;
+  border-radius: 15px;
 }
 
 </style>
