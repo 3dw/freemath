@@ -102,6 +102,12 @@
               geogebra算術繪圖
             </a>
           </div>
+          <div class="item">
+            <a href="https://scratch.mit.edu/" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=https://scratch.mit.edu/" />
+              scratch拼圖寫程式
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -179,4 +185,15 @@ span.space {
   width: 3em;
 }
 
+a {
+  position: relative;
+  left: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+a:hover {
+  position: relative;
+  left: -1em;
+}
 </style>

@@ -224,7 +224,7 @@ main {
 }
 
 #logo img {
-  width: 33vw;
+  width: 10vw;
 }
 
 .menu .item {
