@@ -5,7 +5,7 @@
     <div class="ui grid">
       <div class="two column doubling row">
         <div class="column">
-          <div class="ui segment">
+          <div class="ui segment container">
             <h2><i class="gift icon"/>出錢</h2>
             <h3>為什麼要捐錢？</h3>
             <p>支持研發與維護公益開放教材的老師</p>

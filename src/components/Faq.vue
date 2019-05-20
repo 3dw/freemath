@@ -2,6 +2,10 @@
   <div class="hello">
     <br/>
     <h1>常見問題</h1>
+    <h4>
+      請先參考
+      <a href = "https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>
+    </h4>
     <div class="ui grid container">
       <div class="ui two column row">
         <div class="ui segment column">
