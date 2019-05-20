@@ -215,10 +215,20 @@ main {
   right: 0;
   z-index: 999999;
   background-color: transparent !important;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+#logo:hover {
+  right: 1em;
 }
 
 #logo img {
   width: 33vw;
+}
+
+.menu .item {
+  justify-content: center;
 }
 
 

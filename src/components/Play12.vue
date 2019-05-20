@@ -152,4 +152,8 @@ h1 {
   border-radius: 15px;
 }
 
+.button {
+  color: black !important;
+}
+
 </style>

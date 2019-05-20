@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <br/> 
-    <div class="ui grid">
+    <div class="ui grid container">
       <div class="ui one column row">
         <div class="ui segment column">
           <h1>學想問練玩。自主學習。</h1>
@@ -39,11 +39,8 @@
     </div><!-- grid END -->
     <div class = "ui container">
       <div class="ui input">
-        <input id="find" type="text" v-model="s" placeholder="輸入關鍵字或年級" autofocus="">
+        <input id="find" type="text" v-model="s" placeholder="以關鍵字或年級查詢" autofocus="">
       </div>
-      <router-link class = 'item' to='/stones' exact=''>
-        <i class="map icon" />摸石頭
-      </router-link>
       <div class="ui stackable grid">
         <div class="ui row">
           <div class="ui ten wide column">

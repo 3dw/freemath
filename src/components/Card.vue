@@ -1,30 +1,36 @@
 <template>
   <div class="hello">
     <br/> 
-    <h1>閃卡</h1>    
-    <h3>按ENTER鍵開始</h3>
+    <h2>閃卡</h2>    
+    <h3>（按任意鍵翻牌）</h3>
     <div class="ui form container no-print">
-      <div class="field">
-        <div class="ui labeled input">
-          <div class="ui label">上限</div>
-          <input id="r" type="number" v-model="range" step = "5" autofocus="">
+      <div class="inline fields">
+        <div class="field">
+          <div class="ui labeled input">
+            <div class="ui label">數字下限</div>
+            <input id="r" type="number" v-model="min" step = "5">
+            <div class="ui label">數字上限</div>
+            <input id="r" type="number" v-model="range" step = "5" autofocus="">
+          </div>
         </div>
       </div>
-      <label>選擇算法：</label>
-      <div class="field" v-for="o in ops">
-        <div class="ui radio checkbox">
-          <input type="radio" name="year"v-bind:value="o.v" v-model = "op">
-          <label class="clickable" @click = "op = o.v">{{o.t}}</label>
+      <div class="inline fields">
+        <label>選擇算法：</label>
+        <div class="field" v-for="o in ops">
+          <div class="ui radio checkbox">
+            <input type="radio" name="year"v-bind:value="o.v" v-model = "op">
+            <label class="clickable" @click = "op = o.v">{{o.t}}</label>
+          </div>
         </div>
       </div>
     </div>    
     
-    <div class="ui centered card clickable" v-show="!flip" @click="flipCard()">
-      <h1 class="ui header" v-if = "op == '+'">{{ n1 }} + {{ n2 }}</h1>
-      <h1 class="ui header" v-if = "op == '-'">{{ n1 }} - {{ n2 }}</h1>
-      <h1 class="ui header" v-if = "op == '*'">{{ n1 }} × {{ n2 }}</h1>
+    <div class="ui centered pink card clickable" v-show="!flip" @click="flipCard()">
+      <h1 class="ui header" v-if = "op == '+'">{{ n1 }} + {{ n2 }} = ?</h1>
+      <h1 class="ui header" v-if = "op == '-'">{{ n1 }} - {{ n2 }} = ?</h1>
+      <h1 class="ui header" v-if = "op == '*'">{{ n1 }} × {{ n2 }} = ?</h1>
     </div>   
-    <div class="ui centered card clickable" v-show="flip" @click="flipCard()">
+    <div class="ui centered green card clickable" v-show="flip" @click="flipCard()">
       <h1 class="ui blue header" v-if = "op == '+'">{{ n1 + n2 }}</h1>
       <h1 class="ui blue header"  v-if = "op == '-'">{{ n1 - n2 }}</h1>
       <h1 class="ui blue header"  v-if = "op == '*'">{{ n1 * n2 }}</h1>
@@ -46,6 +52,7 @@ export default {
       ],
       n1: 0,
       n2: 0,
+      min: 0,
       range: 10
     }
   },
@@ -59,8 +66,8 @@ export default {
       }
     },
     reset: function () {
-      this.n1 = Math.floor(Math.random() * this.range)
-      this.n2 = Math.floor(Math.random() * this.range)
+      this.n1 = Math.floor(Math.random() * (this.range - this.min)) + Number(this.min)
+      this.n2 = Math.floor(Math.random() * (this.range - this.min)) + Number(this.min)
     }
   },
   mounted () {
@@ -97,6 +104,14 @@ h1 {
 .card {
   height: 50vh;
   justify-content: center;
+}
+
+.pink {
+  background-color: #fcc !important;
+}
+
+.green {
+  background-color: #cfc !important;
 }
 
 </style>

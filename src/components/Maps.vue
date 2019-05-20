@@ -2,7 +2,7 @@
   <div class="hello">
     <br/>
     <h1>攀岩式學習地圖</h1>
-    <div class="ui segment container no-print">
+    <div class="ui left aligned segment container no-print">
       <h3 class="ui header">如何使用：</h3>
       <div class="ui large ordered list">
         <div class="item">
