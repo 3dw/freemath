@@ -31,7 +31,7 @@
           </div>
         </div><!-- Segment END -->
       </div>
-    </div>
+    </div><!-- grid END -->
     <div class = "ui container">
       <div class="ui input">
         <input id="find" type="text" v-model="s" placeholder="輸入關鍵字或年級" autofocus="">
@@ -76,7 +76,7 @@
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true" width="320" height="1775" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
           </div>
         </div>
-    </div>
+    </div> <!-- container END -->
     <div class="fb-comments no-print" data-href="http://math.alearn.org.tw" data-numposts="5"></div>
   </div>
 </template>
