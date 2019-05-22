@@ -15,10 +15,10 @@
     .ui.container
       .ui.four.doubling.cards
         .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']", :class="$index % 2 == 0 ? 'green' : 'pink'")
-          a.ui.green.top.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '+')") +{{c['.value']}}
-          a.ui.blue.top.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '-')") -{{c['.value']}}
-          a.ui.teal.bottom.left.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '*')") ×{{c['.value']}}
-          a.ui.purple.bottom.right.attached.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '/')") ÷{{c['.value']}}
+          a.ui.green.top.left.attached.big.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '+')") +{{c['.value']}}
+          a.ui.blue.top.right.attached.big.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '-')") -{{c['.value']}}
+          a.ui.teal.bottom.left.attached.big.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '*')") ×{{c['.value']}}
+          a.ui.purple.bottom.right.attached.big.label(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '/')") ÷{{c['.value']}}
           a(v-if = "myNum[0]['.value'] == 0" @click = "use($index, c['.value'])")
             h1 {{c['.value']}}
           span(v-else)
