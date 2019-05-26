@@ -9,6 +9,10 @@
           <div class="ui labeled input">
             <div class="ui label">數字下限</div>
             <input id="r" type="number" v-model="min" step = "5">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui labeled input">
             <div class="ui label">數字上限</div>
             <input id="r" type="number" v-model="range" step = "5" autofocus="">
           </div>
@@ -25,12 +29,13 @@
       </div>
     </div>    
     
-    <div class="ui centered pink card clickable" v-show="!flip" @click="flipCard()">
+    <div class="ui centered red card clickable" v-if="!flip" @click="flipCard()">
       <h1 class="ui header" v-if = "op == '+'">{{ n1 }} + {{ n2 }} = ?</h1>
       <h1 class="ui header" v-if = "op == '-'">{{ n1 }} - {{ n2 }} = ?</h1>
       <h1 class="ui header" v-if = "op == '*'">{{ n1 }} × {{ n2 }} = ?</h1>
-    </div>   
-    <div class="ui centered green card clickable" v-show="flip" @click="flipCard()">
+    </div>
+
+    <div class="ui centered orange fliped card clickable" v-else @click="flipCard()">
       <h1 class="ui blue header" v-if = "op == '+'">{{ n1 + n2 }}</h1>
       <h1 class="ui blue header"  v-if = "op == '-'">{{ n1 - n2 }}</h1>
       <h1 class="ui blue header"  v-if = "op == '*'">{{ n1 * n2 }}</h1>
@@ -106,12 +111,16 @@ h1 {
   justify-content: center;
 }
 
-.pink {
+.card.orange {
+  background-color: #fc9 !important;
+}
+
+.card.red {
   background-color: #fcc !important;
 }
 
-.green {
-  background-color: #cfc !important;
+.card.fliped .header {
+  font-size: 10em !important;
 }
 
 </style>

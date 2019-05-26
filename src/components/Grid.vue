@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <br/>
-    <h1 class="ui center aligned header noPrint">方格紙產生器</h1>
+    <h1 class="ui center aligned header noPrint">方格紙</h1>
     <div class="ui vertical segment">
       <div class="ui center aligned header noPrint">
         <select v-model = "type" autofocus="true" style ="font-size:120%">
