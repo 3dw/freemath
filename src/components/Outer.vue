@@ -74,6 +74,11 @@
               均一平台
             </a>
           </div>
+          <div class="item">
+            <a href="https://www.4tests.com/sat" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=https://www.4tests.com/sat">SAT線上測驗
+            </a>
+          </div>
         </div>
       </div>
       <div class = 'ui card'>
