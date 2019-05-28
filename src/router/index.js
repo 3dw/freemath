@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Intro from '@/components/Intro'
 import Maps from '@/components/Maps'
-import Stones from '@/components/Stones'
+import Table from '@/components/Table'
 import Donate from '@/components/Donate'
 import Vedio from '@/components/Vedio'
 import Faq from '@/components/Faq'
@@ -33,14 +33,9 @@ export default new Router({
       component: Maps
     },
     {
-      path: '/stones',
-      name: 'Stones',
-      component: Stones
-    },
-    {
-      path: '/stones/:my',
-      name: 'Stones',
-      component: Stones
+      path: '/table',
+      name: 'Table',
+      component: Table
     },
     {
       path: '/donate',

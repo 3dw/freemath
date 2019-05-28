@@ -15,11 +15,18 @@
             | 方格紙產生器
           .description
            | 生成百數表、乘法表等，還可以隨機挖洞
-        .ui.card
+        //.ui.card
           router-link.item(to='/stones' exact='')
             .image
               img(src = "../assets/摸石頭.png")
             | 摸石頭
+          .description
+           | 將教材排列整齊，易於查詢
+        .ui.card
+          router-link.item(to='/table' exact='')
+            .image
+              img(src = "../assets/教材列表.png")
+            | 教材列表
           .description
            | 將教材排列整齊，易於查詢
         .ui.card
