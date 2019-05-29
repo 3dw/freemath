@@ -7,7 +7,7 @@
         <div class="ui left aligned segment column">
           <h3 class="ui header">最新集資目標：</h3>
           <div class="item" v-for="u in us.slice(0, 1)">
-            <h1>{{u.n}}</h1>
+            <h2>{{u.n}}</h2>
             <h3 v-html="u.demo"></h3>
             <h4>集資目標：$NT{{u.goal}}</h4>
             <h4>現已集資：$NT{{u.current}}</h4>
