@@ -2,7 +2,22 @@
   <div class="hello">
     <br/>
     <h1>您可以讓自由數學更好</h1>
-    <div class="ui grid">
+    <div class="ui grid container">
+      <div class="ui row">
+        <div class="ui left aligned segment column">
+          <h3 class="ui header">最新集資目標：</h3>
+          <div class="item" v-for="u in us.slice(0, 1)">
+            <h1>{{u.n}}</h1>
+            <h3 v-html="u.demo"></h3>
+            <h4>集資目標：$NT{{u.goal}}</h4>
+            <h4>現已集資：$NT{{u.current}}</h4>
+            <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p" :label="u.p + '%'" />
+            <a class="ui green big button" href="http://map.alearn.org.tw/#/doner/gift" target="_blank">
+                    <i class="gift icon" />樂捐支持
+                 </a>
+          </div>
+        </div>
+      </div>
       <div class="two column doubling row">
         <div class="column">
           <div class="ui segment container">
@@ -62,6 +77,15 @@ export default {
   name: 'donate',
   data () {
     return {
+      us: [
+        { n: '在每份教材上加目錄頁',
+          demo: '樣品〈一元二次方程式〉：這是<a href="https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing" target="_blank">修改後版本</a>與<a href="https://docs.google.com/document/d/1Z8f0p6Coqz4NxhQk8y045LoF6ZA-ciOsXTtlp_ESNqI/edit?usp=sharing" target="_blank">未修改前版本</a>，您可以比較兩版本的差異',
+          edit: true,
+          p: 0,
+          goal: 20000,
+          current: 0
+        }
+      ]
     }
   }
 }
