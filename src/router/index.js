@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Intro from '@/components/Intro'
 import Maps from '@/components/Maps'
 import Table from '@/components/Table'
+import StonesLog from '@/components/StonesLog'
 import Donate from '@/components/Donate'
 import Vedio from '@/components/Vedio'
 import Faq from '@/components/Faq'
@@ -36,6 +37,11 @@ export default new Router({
       path: '/table',
       name: 'Table',
       component: Table
+    },
+    {
+      path: '/log/:my',
+      name: 'StonesLog',
+      component: StonesLog
     },
     {
       path: '/donate',
