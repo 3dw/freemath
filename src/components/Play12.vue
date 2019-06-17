@@ -25,7 +25,15 @@
     .ui.segment.container
       a.ui.yellow.button(@click="rand(max[0]['.value'])")
         h2 再來!
-    br
+    .ui.segment.container
+      h3 湊12手機App
+      .ui.buttons
+        a.ui.green.button(href="https://play.google.com/store/apps/details?id=tw.bestian.play12", target="_blank")
+          i.google.play.icon
+          | Google Play下載
+        a.ui.orange.button(href="https://apps.apple.com/us/app/湊12/id1467667119?l=zh&ls=1", target="_blank")
+          i.app.store.icon
+          | App Store下載
     br
     br
 </template>
