@@ -39,7 +39,18 @@
       <h1 class="ui blue header" v-if = "op == '+'">{{ n1 + n2 }}</h1>
       <h1 class="ui blue header"  v-if = "op == '-'">{{ n1 - n2 }}</h1>
       <h1 class="ui blue header"  v-if = "op == '*'">{{ n1 * n2 }}</h1>
-    </div>     
+    </div> 
+    <div class = "ui segment container">
+      <h3>閃卡手機App</h3>
+      <div class="ui buttons">
+        <a class="ui green button" href="https://play.google.com/store/apps/details?id=tw.bestian.flashcard" target="_blank">
+          <i class = "google play icon" />
+          Google Play下載</a>
+        <a class="ui orange button" href="https://apps.apple.com/us/app/自由數學閃卡/id1468723833?l=zh&ls=1" target="_blank">
+          <i class = "app store icon"/>
+          App Store下載</a>
+      </div>
+    </div>    
   </div>
 </template>
 
