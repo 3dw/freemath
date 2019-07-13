@@ -76,7 +76,7 @@ export default {
         {n: '因數與倍數', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1RcZy2CN6HSP-wsXb1g61A-Sq0QWjwY3TCJVRWTq3fTQ/edit?usp=sharing', left: 0},
         {n: '正負數', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing', left: 1},
         {n: '比與比值', g: 6, G: 8, wiki: '比值', url: 'https://docs.google.com/document/d/1jzeGGHqUmgEWZDvywl4xXUNoVPzUoTa_w1J0JzoUk8o/edit?usp=sharing', left: 2},
-        {n: '國中數學自學指南', g: 6, G: 9, url: 'https://docs.google.com/document/d/1FvN7AO-CuDDy5zdfnJrYNvGy3YkjM0m0b72HAz49VFw/edit?usp=sharing', edit: true, p: 50, left: 2},
+        {n: '國中數學自學指南', g: 6, G: 9, url: 'https://docs.google.com/document/d/1FvN7AO-CuDDy5zdfnJrYNvGy3YkjM0m0b72HAz49VFw/edit?usp=sharing', edit: true, p: 50, left: 3},
         {n: '正負分數', g: 7, G: 7, wiki: '有理數', url: 'https://docs.google.com/document/d/1tD4_6l1spXg7p6M7bRBb8wNwIJcCSfQIPh_LNu-rfjE/edit?usp=sharing', left: 0},
         {n: '一元一次方程式', g: 7, G: 8, wiki: '方程式', url: 'https://docs.google.com/document/d/1GLAu6BaheHxIGMqUVmz4CfgHJEVJxrP-cc_SaJI3jow/edit?usp=sharing', left: 0.5},
         {n: '不等式', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1KjWUKOMWFHBqlnx6NfZHWb_T8EeMA2GJsvZMmZA5C7k/edit?usp=sharing', left: 1},
