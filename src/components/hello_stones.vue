@@ -61,7 +61,7 @@ export default {
   width: 15vw;
   border-radius: 15px;
   background-color: white;
-  border: 3px gray ridge;
+  border: 3px #090 solid;
 }
 
 .stone:hover {
