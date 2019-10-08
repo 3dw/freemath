@@ -14,7 +14,12 @@
       <h1 v-if = "wrong">不對喔，請再加油！</h1>
       <hr/>
       <div>
-        <div class="ui green huge button" @click="reset()">隨機測驗！</div>
+        <div class="ui buttons">
+            <a class="ui blue huge button" @click="reset()">隨機測驗！
+            </a>
+            <a class="ui green huge button" v-if ="myLev < 3" @click="levup()">升級測驗！
+            </a>
+        </div>
       </div>
   </div>
 </template>
@@ -29,6 +34,7 @@ export default {
       myA: undefined,
       win: false,
       wrong: false,
+      myLev: 1,
       quizs: [
         {c: '加法', l: 1, q: '2+3 = ?', as: [3, 4, 5, 6], t: 5},
         {c: '加法', l: 1, q: '1+4 = ?', as: [3, 4, 5, 6], t: 5},
@@ -40,16 +46,27 @@ export default {
         {c: '加法', l: 3, q: '11+7 = ?', as: [18, 19, 20, 21], t: 18},
         {c: '加法', l: 3, q: '13+6 = ?', as: [18, 19, 20, 21], t: 19},
         {c: '加法', l: 3, q: '9+11 = ?', as: [18, 19, 20, 21], t: 20}
-      ]
+      ],
+      myQuizs: []
     }
   },
   methods: {
     reset () {
-      this.myQ = this.quizs[Math.floor(Math.random() * this.quizs.length)]
+      this.myLev = Math.floor(Math.random() * 3) + 1
+      this.resetO()
+    },
+    resetO () {
+      var lev = this.myLev
+      this.myQuizs = this.quizs.filter(function (o) { return o.l === lev })
+      this.myQ = this.myQuizs[Math.floor(Math.random() * this.myQuizs.length)]
       this.win = false
       this.wrong = false
       this.myA = undefined
       this.$forceUpdate()
+    },
+    levup () {
+      this.myLev++
+      this.resetO()
     },
     check (a, b) {
       console.log(a)
