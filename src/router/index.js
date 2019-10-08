@@ -13,6 +13,7 @@ import Play12 from '@/components/Play12'
 import Grid from '@/components/Grid'
 import Outer from '@/components/Outer'
 import Tools from '@/components/Tools'
+import Quiz from '@/components/Quiz'
 
 Vue.use(Router)
 
@@ -82,6 +83,11 @@ export default new Router({
       path: '/grid',
       name: 'Grid',
       component: Grid
+    },
+    {
+      path: '/quiz',
+      name: 'Quiz',
+      component: Quiz
     }
   ]
 })
