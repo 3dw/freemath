@@ -7,6 +7,9 @@
       <router-link class = 'item' to='/maps' exact=''>
         <i class="map icon" />學習地圖
       </router-link>
+      <router-link class = 'item' to='/quiz' exact=''>
+        <i class="question icon" />小測驗
+      </router-link>
       <router-link class = 'item' to='/tools' exact=''>
         <i class="angle double down icon"></i>
         小工具
