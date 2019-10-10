@@ -17,7 +17,7 @@
         <div class="ui buttons">
             <a class="ui teal huge button" v-if = "myQ" @click="resetO()">同級測驗
             </a>
-            <a class="ui orange huge button" v-if = "myQ && myLev < 3" @click="levup()">升級測驗
+            <a class="ui orange huge button" v-if = "myQ && myLev < 4" @click="levup()">升級測驗
             </a>
         </div>
       </div>
@@ -77,7 +77,8 @@ export default {
         {c: '乘法', l: 2, q: '6×7 = ?', as: [40, 41, 42, 43], t: 42},
         {c: '乘法', l: 3, q: '17×2 = ?', as: [33, 34, 35, 36], t: 34},
         {c: '乘法', l: 3, q: '28×3 = ?', as: [53, 54, 55, 56], t: 54},
-        {c: '乘法', l: 3, q: '21×9 = ?', as: [189, 190, 191, 192], t: 189}
+        {c: '乘法', l: 3, q: '21×9 = ?', as: [189, 190, 191, 192], t: 189},
+        {c: '除法', l: 1, q: '有15顆糖,平均分配給三個人,每人可得幾顆呢?', as: [3, 4, 5, 6], t: 5}
       ],
       myQuizs: [],
       myCs: ['加法', '減法', '乘法']
