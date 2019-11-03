@@ -58,9 +58,10 @@ export default {
   data () {
     return {
       news: [
-        '2019.06<a href="http://math.alearn.org.tw/#/play12" target="_blank">湊12的手機App版</a>上線了！',
-        '2019.05<a href="https://docs.google.com/document/d/14KB9cukNH3pF3ZYNGG79w8WMD77EYb7dxGEQ7vzxeGc/edit?usp=sharing" target="_blank">數學學習診斷是什麼？</a>上線了！',
-        '2019.05<a href="https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>上線了！',
+        '2019.11.<a href="https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing" target="_blank">除法</a>教材編創完成',
+        '2019.06.<a href="http://math.alearn.org.tw/#/play12" target="_blank">湊12的手機App版</a>上線了！',
+        '2019.05.<a href="https://docs.google.com/document/d/14KB9cukNH3pF3ZYNGG79w8WMD77EYb7dxGEQ7vzxeGc/edit?usp=sharing" target="_blank">數學學習診斷是什麼？</a>上線了！',
+        '2019.05.<a href="https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>上線了！',
         '2018.10.自由數學更新版上線，歡迎使用、協作、樂捐支持！',
         '2018.10.新功能：您可以直接在教材頁面上留言提問與校誤',
         '2018.10.全部教材搬上<a href="https://drive.google.com/drive/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc" target="_blank">GOOGLE雲端硬碟</a>, 改為GOOGLE DOC']
