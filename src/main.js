@@ -9,7 +9,23 @@ import 'isomorphic-fetch'
 import './firebase'
 import VueFire from 'vuefire'
 import promise from 'es6-promise'
+import VueAnalytics from 'vue-analytics'
+
 promise.polyfill()
+
+const isProd = process.env.NODE_ENV === 'production'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-26178243-4',
+  router,
+  debug: {
+    enabled: !isProd,
+    sendHitTask: isProd
+  },
+  autoTracking: {
+    pageviewOnLoad: false
+  }
+})
 
 Vue.use(VueFire)
 
