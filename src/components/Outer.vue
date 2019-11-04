@@ -96,6 +96,12 @@
               維基證明
             </a>
           </div>
+          <div class="item">
+            <a href="http://www.mathland.idv.tw/mathtest/exambody.htm" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=http://www.mathland.idv.tw/mathtest/exambody.htm" />
+              國中各單元複習題庫
+            </a>
+          </div>
         </div>
       </div>
       <div class = 'ui card'>
