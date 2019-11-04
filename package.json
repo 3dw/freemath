@@ -29,7 +29,6 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-vue": "^0.5.0",
     "vue": "^2.5.2",
-    "vue-analytics": "^5.17.2",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5"
   },
