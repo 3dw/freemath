@@ -72,7 +72,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency',
       serviceWorkerLoader: `<script>${loadMinified(path.join(__dirname,
-        './service-worker-prod.js'))}</script>`
+        './service-worker-prod.js'))}</script>`,
+      ga: env.GA
     }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
