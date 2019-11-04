@@ -102,6 +102,12 @@
               國中各單元複習題庫
             </a>
           </div>
+          <div class="item">
+            <a href="https://sites.google.com/site/jsjhmath/home/bu-jiu-jiao-xue-juan" target="_blank">
+              <img src= "https://www.google.com/s2/favicons?domain=https://sites.google.com/site/jsjhmath/home/bu-jiu-jiao-xue-juan" />
+              國中各單元複習卷II
+            </a>
+          </div>
         </div>
       </div>
       <div class = 'ui card'>
