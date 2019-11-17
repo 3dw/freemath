@@ -79,6 +79,16 @@
               <img src="https://www.google.com/s2/favicons?domain=https://www.4tests.com/sat">SAT線上測驗
             </a>
           </div>
+          <div class="item">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=https://www.w3schools.com/">w3school程式學習網
+            </a>
+          </div>
+          <div class="item">
+            <a href="https://tryhaskell.org/" target="_blank">
+              <img src="https://www.google.com/s2/favicons?domain=https://tryhaskell.org/">Try Haskell
+            </a>
+          </div>
         </div>
       </div>
       <div class = 'ui card'>
