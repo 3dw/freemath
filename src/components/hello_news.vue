@@ -3,14 +3,14 @@
     <div class="ui grid container">
       <div class="ui one column row fat-only">
         <div class="ui segment column">
-          <h1>學想問練玩。自主學習。</h1>
+          <h1>學想問練玩。自主學習</h1>
         </div>
       </div>
       <div class="ui two column row">
         <div class="ui left aligned segment column">
           <h3 class="ui header">如何使用：</h3>
           <div class="ui large ordered list">
-            <div class="item">可參考
+            <div class="item">參考
               <a href="https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit" target="_blank">
                 給家長的教學引導
               </a>
