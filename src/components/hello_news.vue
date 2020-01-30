@@ -3,7 +3,7 @@
     <div class="ui grid container">
       <div class="ui one column row fat-only">
         <div class="ui segment column">
-          <h1>學想問練玩。自主學習</h1>
+          <h1>學想問練玩。自主學習。</h1>
         </div>
       </div>
       <div class="ui two column row">
