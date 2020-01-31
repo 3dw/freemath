@@ -58,7 +58,9 @@ export default {
   data () {
     return {
       news: [
-        '2010.01.<a href="https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing" target="_blank">一元二次方程式教材加入黃金比例簡介</a>',
+        '2020.01.<a href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit?usp=sharing" target="_blank">國中數學精華</a>教材編創完成',
+        '2020.01.<a href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=sharing" target="_blank">小學數學觀念精華</a>教材編創完成',
+        '2020.01.<a href="https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing" target="_blank">一元二次方程式教材加入黃金比例簡介</a>',
         '2019.11.<a href="https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing" target="_blank">除法</a>教材編創完成',
         '2019.06.<a href="http://math.alearn.org.tw/#/play12" target="_blank">湊12的手機App版</a>上線了！',
         '2019.05.<a href="https://docs.google.com/document/d/14KB9cukNH3pF3ZYNGG79w8WMD77EYb7dxGEQ7vzxeGc/edit?usp=sharing" target="_blank">數學學習診斷是什麼？</a>上線了！',
