@@ -1,50 +1,41 @@
-<template>
-  <div id="app">
-    <div class="ui labeled icon fixed top inverted menu no-print">
-      <router-link class = 'item ' to='/' exact=''>
-        <i class="home icon" /> 首頁
-      </router-link>
-      <router-link class = 'item' to='/maps' exact=''>
-        <i class="map icon" />學習地圖
-      </router-link>
-      <router-link class = 'item' to='/quiz' exact=''>
-        <i class="question icon" />小測驗
-      </router-link>
-      <router-link class = 'item' to='/tools' exact=''>
-        <i class="angle double down icon"></i>
-        小工具
-      </router-link>
-      <router-link class = 'item fat-only' to='/outer' exact=''>
-        <i class="user add icon" />外部資源
-      </router-link>
-      <div class="right menu">        
-        <router-link class = 'item fat-only' to='/vedio' exact=''>
-          <i class="play icon" />導覽
-        </router-link>        
-        <router-link class = 'item ' to='/faq' exact=''>
-          <i class="comment icon" />常見問題
-        </router-link>      
-        <router-link class = 'item fat-only' to='/intro' exact=''>
-          <i class="book icon" />編創緣起
-        </router-link>       
-        <router-link class = 'item ' to='/donate' exact=''>
-          <i class="gift icon" />出錢出力
-        </router-link>
-        <div class="item fat-only">
-          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-        </div>
-      </div>
-    </div>
-    <main>
-      <router-link to = "/" id="logo">
-        <img src="./assets/logo.png">
-      </router-link>
-      <transition name='fade' mode='out-in'>
-        <router-view :units="units"></router-view>
-      </transition>
-    </main>
-  </div>
-
+<template lang="pug">
+  #app
+    .ui.labeled.icon.fixed.top.inverted.menu.no-print
+      router-link.item(to='/' exact='')
+        i.home.icon
+        | 首頁
+      router-link.item(to='/maps' exact='')
+        i.map.icon
+        | 地圖
+      router-link.item.fat-only(to='/quiz' exact='')
+        i.question.icon
+        | 小測驗
+      router-link.item(to='/tools' exact='')
+        i.angle.double.down.icon
+        | 小工具
+      router-link.item.fat-only(to='/outer' exact='')
+        i.user.add.icon
+        | 外部資源
+      .right.menu
+        router-link.item.fat-only(to='/vedio' exact='')
+          i.play.icon
+          | 導覽
+        router-link.item(to='/faq' exact='')
+          i.comment.icon
+          | 常見問題
+        router-link.item.fat-only(to='/intro' exact='')
+          i.book.icon
+          | 編創源起
+        router-link.item(to='/donate' exact='')
+          i.gift.icon
+          | 出錢出力
+        .item.fat-only
+          iframe(src='https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20' width='77' height='20' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
+    main
+      router-link#logo(to='/')
+        img(src='./assets/logo.png')
+      transition(name='fade' mode='out-in')
+        router-view(:units='units')
 </template>
 
 <script>

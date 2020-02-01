@@ -1,144 +1,100 @@
-<template>
-  <div class="hello">
-    <br />
-    <br />
-    <div class="ui two doubling cards container">
-      <div class = 'ui card'>
-        <h1>會考考古題</h1>
-        <h4>
-          寫的時候就照著時限(80分鐘)，來測試自己的速度
-          <br/>
-          最好寫完還有20分鐘以上可以檢查一遍~
-        </h4>
-        <div class="ui list">
-          <div class="item"v-for ="(o, idx) in oldtests">
-             <a :href="o.h" target="_blank">
-              <img :src="'https://www.google.com/s2/favicons?domain=' + o.h" />
-              {{o.n}}
-             </a>
-             <span class="space"></span>
-             <a :href="o.a" target="_blank">
-              <img :src="'https://www.google.com/s2/favicons?domain=' + o.a" />
-              解答
-             </a>
-          </div>
-          <br/>     
-        </div>
-      </div>
-      <div class = 'ui card'>
-        <h1>大學考試考古題詳解</h1>
-        <div class="ui list">
-          <div class="item">
-             <a href="http://www.grandeast.com.tw/Math/PastExam?T=45" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45"/>
-              學科能力測驗
-             </a>
-          </div>
-          <div class="item">
-             <a href="http://www.grandeast.com.tw/Math/PastExam?T=46" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45"/>
-              指定科目考試
-             </a>
-          </div>
-          <div class="item">
-             <a href="http://www.grandeast.com.tw/Math/PastExam?T=47" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45"/>
-              四技二專統測
-             </a>
-          </div>
-        </div>
-      </div>
-      <div class = 'ui card'>
-        <h1>相關書籍</h1>
-        <div class="ui list">
-          <div class="item" v-for="b in books">
-            <a :href="b.h" target="_blank">
-              <img :src="'https://www.google.com/s2/favicons?domain=' + b.h"/>
-              {{ b.n }}
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class = 'ui card'>
-        <h1>網路學習資源</h1>
-        <div class="ui list">
-          <div class="item">
-            <a href="https://www.khanacademy.org/math" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=https://www.khanacademy.org/math" />
-              河汗學院
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://www.junyiacademy.org/exercisedashboard" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=https://www.junyiacademy.org/exercisedashboard"/>
-              均一平台
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://www.4tests.com/sat" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=https://www.4tests.com/sat">SAT線上測驗
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://www.w3schools.com/" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=https://www.w3schools.com/">w3school程式學習網
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://tryhaskell.org/" target="_blank">
-              <img src="https://www.google.com/s2/favicons?domain=https://tryhaskell.org/">Try Haskell
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class = 'ui card'>
-        <h1>延伸學習資源</h1>
-        <div class="ui list">
-          <div class="item">
-            <a href="https://arxiv.org/archive/math" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=https://arxiv.org/archive/math" />
-              arXiv.org學術平台
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://proofwiki.org/wiki/Main_Page" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=https://proofwiki.org/wiki/Main_Page" />
-              維基證明
-            </a>
-          </div>
-          <div class="item">
-            <a href="http://www.mathland.idv.tw/mathtest/exambody.htm" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=http://www.mathland.idv.tw/mathtest/exambody.htm" />
-              國中各單元複習題庫
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://sites.google.com/site/jsjhmath/home/bu-jiu-jiao-xue-juan" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=https://sites.google.com/site/jsjhmath/home/bu-jiu-jiao-xue-juan" />
-              國中各單元複習卷
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class = 'ui card'>
-        <h1>工具軟體</h1>
-        <div class="ui list">
-          <div class="item">
-            <a href="https://www.geogebra.org/" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=https://www.geogebra.org/" />
-              geogebra算術繪圖
-            </a>
-          </div>
-          <div class="item">
-            <a href="https://scratch.mit.edu/" target="_blank">
-              <img src= "https://www.google.com/s2/favicons?domain=https://scratch.mit.edu/" />
-              scratch拼圖寫程式
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .hello
+    br
+    br
+    .ui.two.doubling.cards.container
+      .ui.card
+        h1 會考考古題
+        h4
+          | 寫的時候就照著時限(80分鐘)，來測試自己的速度
+          br
+          |           最好寫完還有20分鐘以上可以檢查一遍~
+        .ui.list
+          .item(v-for='(o, idx) in oldtests')
+            a(:href='o.h', target='_blank')
+              img(:src="'https://www.google.com/s2/favicons?domain=' + o.h")
+              |               {{o.n}}
+            span.space
+            a(:href='o.a', target='_blank')
+              img(:src="'https://www.google.com/s2/favicons?domain=' + o.a")
+              |               解答
+          br
+      .ui.card
+        h1 大學考試考古題詳解
+        .ui.list
+          .item
+            a(href='http://www.grandeast.com.tw/Math/PastExam?T=45', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
+              | 學科能力測驗
+          .item
+            a(href='http://www.grandeast.com.tw/Math/PastExam?T=46', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
+              | 指定科目考試
+          .item
+            a(href='http://www.grandeast.com.tw/Math/PastExam?T=47', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
+              | 四技二專統測
+      .ui.card
+        h1 相關書籍
+        .ui.list
+          .item(v-for='b in books')
+            a(:href='b.h', target='_blank')
+              img(:src="'https://www.google.com/s2/favicons?domain=' + b.h")
+              | {{ b.n }}
+      .ui.card
+        h1 網路學習資源
+        .ui.list
+          .item
+            a(href='https://www.khanacademy.org/math', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://www.khanacademy.org/math')
+              | 可汗學院
+          .item
+            a(href='https://www.junyiacademy.org/exercisedashboard', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://www.junyiacademy.org/exercisedashboard')
+              | 均一平台
+          .item
+            a(href='https://www.4tests.com/sat', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://www.4tests.com/sat')
+              | SAT線上測驗
+          .item
+            a(href='https://www.w3schools.com/', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://www.w3schools.com/')
+              | w3school程式學習網
+          .item
+            a(href='https://tryhaskell.org/', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://tryhaskell.org/')
+              | Try Haskell
+      .ui.card
+        h1 延伸學習資源
+        .ui.list
+          .item
+            a(href='https://arxiv.org/archive/math', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://arxiv.org/archive/math')
+              |               arXiv.org學術平台
+          .item
+            a(href='https://proofwiki.org/wiki/Main_Page', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://proofwiki.org/wiki/Main_Page')
+              |               維基證明
+          .item
+            a(href='http://www.mathland.idv.tw/mathtest/exambody.htm', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.mathland.idv.tw/mathtest/exambody.htm')
+              |               國中各單元複習題庫
+          .item
+            a(href='https://sites.google.com/site/jsjhmath/home/bu-jiu-jiao-xue-juan', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://sites.google.com/site/jsjhmath/home/bu-jiu-jiao-xue-juan')
+              |               國中各單元複習卷
+      .ui.card
+        h1 工具軟體
+        .ui.list
+          .item
+            a(href='https://www.geogebra.org/', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://www.geogebra.org/')
+              |               geogebra算術繪圖
+          .item
+            a(href='https://scratch.mit.edu/', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://scratch.mit.edu/')
+              |               scratch拼圖寫程式
+
 </template>
 
 <script>

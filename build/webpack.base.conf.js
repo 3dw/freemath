@@ -52,6 +52,10 @@ module.exports = {
         loader: 'sass-loader',
       },
       {
+        test: /\.pug$/,
+        use: ['html-loader', 'pug-html-loader']
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]

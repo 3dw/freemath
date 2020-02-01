@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   .hello
     .ui.segment.container
       h2(v-if = "max[0]['.value'] == 6") ~~加減乘除湊 12~~

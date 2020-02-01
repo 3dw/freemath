@@ -1,57 +1,58 @@
-<template>
-  <div class="hello">
-    <div class = "ui container">
-      <div class="ui input">
-        <input id="find" type="text" v-model="s" placeholder="以關鍵字或年級查詢" autofocus="">
-      </div>
-      <div class="ui stackable grid">
-        <div class="ui row">
-          <div class="ui ten wide column">
-            <table class="ui celled striped table">
-              <tr><th colspan="4">             
-                <h4>
-                  請先參考
-                  <a href = "https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>
-                </h4>
-              </th></tr>
-              <tr><th colspan="4">
-                自學教材
-              </th></tr>
-              <tr><th>單元</th><th>狀態</th><th>編輯進程<br/>（歡迎    
-              <router-link class = 'item ' to='/donate' exact=''>
-                <i class="gift icon" />出錢出力
-              </router-link>）來加速</th></tr>
-              <tr class="item" v-for="(u, index) in units" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
-                <td>
-                  <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
-                    <img :src="'https://www.google.com/s2/favicons?domain='+u.url" />{{ u.n }}(
-                    <span v-show="u.g <= 0 && u.G <=0">學齡前</span>
-                    <span v-show="u.g <= 0 && u.G > 0">學齡前~{{ u.G }}年級</span>
-                    <span v-show="u.g > 0 && u.G > 0">{{ u.g }}~{{ u.G }}年級</span>)</a>
-                </td>
-                <td>            
-                  <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
-                    <span v-show="u.edit"><i class="edit icon"></i>草稿(歡迎共筆)</span>
-                    <span v-show="!u.edit"><i class="comments icon"></i>完稿(歡迎留言)</span>
-                  </a>
-                </td>
-                <td>
-                  <a target="_blank" :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')">
-               <!--     {{(u.p || (u.edit && 50) || 100) + '%'}} -->
-                    <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p || (u.edit && 50) || 100" :label="(u.p || (u.edit && 50) || 100) + '%'" />
-                  </a>
-                </td>
-              </tr>
-            </table>
-            </div>
-            <div class="ui six wide column">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true" width="320" height="1775" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-            </div>
-          </div>
-        </div>
-    </div> <!-- container END -->
-    <div class="fb-comments no-print" data-href="http://math.alearn.org.tw" data-numposts="5"></div>
-  </div>
+<template lang="pug">
+  .hello
+    .ui.container
+      .ui.input
+        input#find(type='text', v-model='s', placeholder='以關鍵字或年級查詢', autofocus='')
+      .ui.stackable.grid
+        .ui.row
+          .ui.ten.wide.column
+            table.ui.celled.striped.table
+              tbody
+                tr
+                  th(colspan='4')
+                    h4
+                      | 請先參考
+                      a(href='https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing', target='_blank') 給家長的教學引導
+                tr
+                  th(colspan='4')
+                    | 自學教材
+                tr
+                  th 單元
+                  th 狀態
+                  th
+                    | 編輯進程
+                    br
+                    | （歡迎    
+                    router-link.item(to='/donate', exact='')
+                      i.gift.icon
+                        | 出錢出力
+                    i.gift.icon ）來加速
+                tr.item(v-for='(u, index) in units', v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
+                  td
+                    a(target='_blank', :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')")
+                      img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
+                      | {{ u.n }}(
+                      span(v-show='u.g <= 0 && u.G <=0') 學齡前
+                      span(v-show='u.g <= 0 && u.G > 0') 學齡前~{{ u.G }}年級
+                      span(v-show='u.g > 0 && u.G > 0') {{ u.g }}~{{ u.G }}年級
+                      | )
+                  td
+                    a(target='_blank', :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')")
+                      span(v-show='u.edit')
+                        i.edit.icon
+                        | 草稿(歡迎共筆)
+                      span(v-show='!u.edit')
+                        i.comments.icon
+                        | 完稿(歡迎留言)
+                  td
+                    a(target='_blank', :href="u.url || ('https://3dw.github.io/mathprint/'+u.n+'.doc')")
+                      // {{(u.p || (u.edit && 50) || 100) + '%'}}
+                      sui-progress(:state="u.edit ? 'warning' : 'success'", :percent='u.p || (u.edit && 50) || 100', :label="(u.p || (u.edit && 50) || 100) + '%'")
+          .ui.six.wide.column
+            iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='320', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
+    // container END
+    .fb-comments.no-print(data-href='http://math.alearn.org.tw', data-numposts='5')
+
 </template>
 
 <script>

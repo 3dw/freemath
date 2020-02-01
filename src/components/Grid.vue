@@ -1,40 +1,32 @@
-<template>
-  <div class="hello">
-    <br/>
-    <h1 class="ui center aligned header noPrint">方格紙</h1>
-    <div class="ui vertical segment">
-      <div class="ui center aligned header noPrint">
-        <select v-model = "type" autofocus="true" style ="font-size:120%">
-            <option value = "1_1_10,1_1_10">空白表</option>
-            <option value = "0_10_90,1_1_10,+">百數表</option>
-    <!--        <option value = "0_10_90,0_1_9,+">百數表*</option>-->
-            <option value = "0_1_10,0_1_10,+">加法表</option>
-    <!--    <option value = "10_1_20,1_1_10,-">減法表</option>
+<template lang="pug">
+  .hello
+    br
+    h1.ui.center.aligned.header.noPrint 方格紙
+    .ui.vertical.segment
+      .ui.center.aligned.header.noPrint
+        select(v-model='type', autofocus='true', style='font-size:120%')
+          option(value='1_1_10,1_1_10') 空白表
+          option(value='0_10_90,1_1_10,+') 百數表
+          // <option value = "0_10_90,0_1_9,+">百數表*</option>
+          option(value='0_1_10,0_1_10,+') 加法表
+          //
+            <option value = "10_1_20,1_1_10,-">減法表</option>
             <option value = "1_1_5,1_1_5,*">五五乘法表</option>
-            <option value = "1_1_7,1_1_7,*">七七乘法表</option> -->
-            <option value = "1_1_9,1_1_9,*">九九乘法表</option>
-            <option value = "1_1_12,1_1_12,*">十二乘法表</option>
-        </select>
-        <div class="ui button group">
-          <a class="ui green button" @click="randHide(countRC(type,0), countRC(type,1))">隨機挖洞</a>
-          <button class="ui teal button" onclick="window.print()">友善列印</button>
-        </div>
-      </div>
-      <div>
-        <div class="ui">
-          <table border="8">
-            <tr v-for = "r in countRC(type,0)">
-              <td v-for = "c in countRC(type,1)" v-bind:style= "{width: wh+'cm', height: wh + 'cm'}">
-                <a class = "black" @click = "noHide(r, c)">
-                 <span v-bind:class="{invisible: hide[r+'_'+c]}">{{ op(type,r,c) }}</span>
-                </a>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
+            <option value = "1_1_7,1_1_7,*">七七乘法表</option>
+          option(value='1_1_9,1_1_9,*') 九九乘法表
+          option(value='1_1_12,1_1_12,*') 十二乘法表
+        .ui.button.group
+          a.ui.green.button(@click='randHide(countRC(type,0), countRC(type,1))') 隨機挖洞
+          button.ui.teal.button(onclick='window.print()') 友善列印
+      div
+        .ui
+          table(border='8')
+            tbody
+              tr(v-for='r in countRC(type,0)')
+                td(v-for='c in countRC(type,1)', v-bind:style="{width: wh+'cm', height: wh + 'cm'}")
+                  a.black(@click='noHide(r, c)')
+                    span(v-bind:class="{invisible: hide[r+'_'+c]}") {{ op(type,r,c) }}
+
 </template>
 
 <script>

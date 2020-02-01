@@ -1,57 +1,41 @@
-<template>
-  <div class="hello">
-    <br/> 
-    <h2>閃卡</h2>    
-    <h3>（按任意鍵翻牌）</h3>
-    <div class="ui form container no-print">
-      <div class="inline fields">
-        <div class="field">
-          <div class="ui labeled input">
-            <div class="ui label">數字下限</div>
-            <input id="r" type="number" v-model="min" step = "5">
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui labeled input">
-            <div class="ui label">數字上限</div>
-            <input id="r" type="number" v-model="range" step = "5" autofocus="">
-          </div>
-        </div>
-      </div>
-      <div class="inline fields">
-        <label>選擇算法：</label>
-        <div class="field" v-for="o in ops">
-          <div class="ui radio checkbox">
-            <input type="radio" name="year"v-bind:value="o.v" v-model = "op">
-            <label class="clickable" @click = "op = o.v">{{o.t}}</label>
-          </div>
-        </div>
-      </div>
-    </div>    
-    
-    <div class="ui centered red card clickable" v-if="!flip" @click="flipCard()">
-      <h1 class="ui header" v-if = "op == '+'">{{ n1 }} + {{ n2 }} = ?</h1>
-      <h1 class="ui header" v-if = "op == '-'">{{ n1 }} - {{ n2 }} = ?</h1>
-      <h1 class="ui header" v-if = "op == '*'">{{ n1 }} × {{ n2 }} = ?</h1>
-    </div>
-
-    <div class="ui centered orange fliped card clickable" v-else @click="flipCard()">
-      <h1 class="ui blue header" v-if = "op == '+'">{{ n1 + n2 }}</h1>
-      <h1 class="ui blue header"  v-if = "op == '-'">{{ n1 - n2 }}</h1>
-      <h1 class="ui blue header"  v-if = "op == '*'">{{ n1 * n2 }}</h1>
-    </div> 
-    <div class = "ui segment container">
-      <h3>閃卡手機App</h3>
-      <div class="ui buttons">
-        <a class="ui green button" href="https://play.google.com/store/apps/details?id=tw.bestian.flashcard" target="_blank">
-          <i class = "google play icon" />
-          Google Play下載</a>
-        <a class="ui orange button" href="https://apps.apple.com/us/app/自由數學閃卡/id1468723833?l=zh&ls=1" target="_blank">
-          <i class = "app store icon"/>
-          App Store下載</a>
-      </div>
-    </div>    
-  </div>
+<template lang="pug">
+  .hello
+    br
+    h2 閃卡
+    h3 （按任意鍵翻牌）
+    .ui.form.container.no-print
+      .inline.fields
+        .field
+          .ui.labeled.input
+            .ui.label 數字下限
+            input#r(type='number' v-model='min' step='5')
+        .field
+          .ui.labeled.input
+            .ui.label 數字上限
+            input#r(type='number' v-model='range' step='5' autofocus='')
+      .inline.fields
+        label 選擇算法：
+        .field(v-for='o in ops')
+          .ui.radio.checkbox
+            input(type='radio' name='year' v-bind:value='o.v' v-model='op')
+            label.clickable(@click='op = o.v') {{o.t}}
+    .ui.centered.red.card.clickable(v-if='!flip' @click='flipCard()')
+      h1.ui.header(v-if="op == '+'") {{ n1 }} + {{ n2 }} = ?
+      h1.ui.header(v-if="op == '-'") {{ n1 }} - {{ n2 }} = ?
+      h1.ui.header(v-if="op == '*'") {{ n1 }} &times; {{ n2 }} = ?
+    .ui.centered.orange.fliped.card.clickable(v-else='' @click='flipCard()')
+      h1.ui.blue.header(v-if="op == '+'") {{ n1 + n2 }}
+      h1.ui.blue.header(v-if="op == '-'") {{ n1 - n2 }}
+      h1.ui.blue.header(v-if="op == '*'") {{ n1 * n2 }}
+    .ui.segment.container
+      h3 閃卡手機App
+      .ui.buttons
+        a.ui.green.button(href='https://play.google.com/store/apps/details?id=tw.bestian.flashcard' target='_blank')
+          i.google.play.icon
+            | Google Play下載
+        a.ui.orange.button(href='https://apps.apple.com/us/app/自由數學閃卡/id1468723833?l=zh&ls=1' target='_blank')
+          i.app.store.icon
+            | App Store下載
 </template>
 
 <script>

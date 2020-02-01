@@ -1,15 +1,13 @@
-<template>
-  <div class="river">
-    <div class="ui input">
-      <input id="find" type="text" v-model="s" placeholder="依關鍵字或年級搜詢" autofocus="">
-    </div>
-    <div class = "stone" v-bind:class = "{ checked: my.indexOf('_' + u.n + '_') > -1 }" v-for="u in units" v-bind:style = "{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }" v-show="!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)">
-      <a :href = "u.url" target="_blank"><img :src="'https://www.google.com/s2/favicons?domain='+u.url" /></a>
-      <a @click="check(u)">
-      {{ u.n }}</a>
-    </div>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true" width="400" height="1775" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-  </div>
+<template lang="pug">
+  .river
+    .ui.input
+      input#find(type='text', v-model='s', placeholder='依關鍵字或年級搜詢', autofocus='')
+    .stone(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
+      a(:href='u.url', target='_blank')
+        img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
+      a(@click='check(u)')
+        | {{ u.n }}
+    iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
 
 <script>
