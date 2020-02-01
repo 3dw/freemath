@@ -1,9 +1,8 @@
-<template>
-  <div class="hello">
-    <br/> 
-    <news></news>
-    <stones :units="units"></stones>
-  </div>
+<template lang="pug">
+  .hello
+    br
+    news
+    stones(:units='units')
 </template>
 
 <script>

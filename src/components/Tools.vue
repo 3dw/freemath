@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   .hello
     .ui.container
       .ui.two.stackable.cards

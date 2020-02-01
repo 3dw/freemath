@@ -12,9 +12,7 @@
             <h4>集資目標：$NT{{u.goal}}</h4>
             <h4>現已集資：$NT{{u.current}}</h4>
             <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p" :label="u.p + '%'" />
-            <a class="ui green big button" href="http://map.alearn.org.tw/#/doner/gift" target="_blank">
-                    <i class="gift icon" />樂捐支持
-                 </a>
+            <a class="ui green big button" href="http://map.alearn.org.tw/#/doner/gift" target="_blank"><i class="gift icon" />樂捐支持</a>
           </div>
         </div>
       </div>
