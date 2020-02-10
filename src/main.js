@@ -9,12 +9,10 @@ import 'isomorphic-fetch'
 import './firebase'
 import VueFire from 'vuefire'
 import promise from 'es6-promise'
+
 promise.polyfill()
-
 Vue.use(VueFire)
-
 require('semantic-ui-css/semantic.css')
-
 Vue.use(SuiVue)
 
 Vue.config.productionTip = false

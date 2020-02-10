@@ -1,9 +1,6 @@
 <template lang="pug">
   .hello
     .ui.grid.container
-      .ui.one.column.row.fat-only
-        .ui.segment.column
-          h1 學想問練玩。自主學習。
       .ui.two.column.row
         .ui.left.aligned.segment.column
           h3.ui.header 如何使用：

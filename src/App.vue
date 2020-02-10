@@ -1,29 +1,29 @@
 <template lang="pug">
   #app
-    .ui.labeled.icon.fixed.top.inverted.menu.no-print
+    .ui.labeled.icon.fixed.inverted.vertical.menu.no-print
       router-link.item(to='/' exact='')
         i.home.icon
         | 首頁
       router-link.item(to='/maps' exact='')
         i.map.icon
         | 地圖
-      router-link.item.fat-only(to='/quiz' exact='')
+      router-link.item(to='/quiz' exact='')
         i.question.icon
         | 小測驗
       router-link.item(to='/tools' exact='')
         i.angle.double.down.icon
         | 小工具
-      router-link.item.fat-only(to='/outer' exact='')
+      router-link.item(to='/outer' exact='')
         i.user.add.icon
         | 外部資源
       .right.menu
-        router-link.item.fat-only(to='/vedio' exact='')
+        router-link.item(to='/vedio' exact='')
           i.play.icon
           | 導覽
         router-link.item(to='/faq' exact='')
           i.comment.icon
           | 常見問題
-        router-link.item.fat-only(to='/intro' exact='')
+        router-link.item(to='/intro' exact='')
           i.book.icon
           | 編創源起
         router-link.item(to='/donate' exact='')
@@ -31,11 +31,11 @@
           | 出錢出力
         .item.fat-only
           iframe(src='https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20' width='77' height='20' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
-    main
-      router-link#logo(to='/')
-        img(src='./assets/logo.png')
+    main#main
       transition(name='fade' mode='out-in')
         router-view(:units='units')
+      router-link#logo(to='/')
+        img(src='./assets/logo.png')
 </template>
 
 <script>
@@ -183,8 +183,11 @@ body {
 }
 
 main {
+  width: calc(100vw - 100px);
+  position: absolute !important;
+  right: 0;
   text-align: center;
-  margin-top: 40px;
+  margin: 0;
 }
 
 .print-only {
