@@ -33,7 +33,9 @@
     "semantic-ui-vue": "^0.5.1",
     "vue": "^2.5.2",
     "vue-autofocus-directive": "^1.0.4",
+    "vue-gallery-slideshow": "^1.5.0",
     "vue-router": "^3.0.1",
+    "vue-runtime-helpers": "^1.1.2",
     "vuefire": "^1.4.5"
   },
   "devDependencies": {

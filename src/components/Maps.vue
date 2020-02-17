@@ -40,28 +40,58 @@
           </div>
         </div>
       </div>
-
     </div><!-- Segment END -->
-    <ul class = "print">
+
+    <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
+    <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+
+   <!-- <ul class = "print">
       <li v-for = "(i, index) in [1,2,3,4,0,5]">
         <a :href="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" target="_blank">
           <img :src ="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" style="max-width:75vw" alt = ""/>
         </a>
       <div class="divider"></div></li>
-    </ul>  
+    </ul>   -->
   </div>
 </template>
 
 <script>
+
+import VueGallerySlideshow from 'vue-gallery-slideshow'
+
 export default {
   name: 'maps',
+  components: {
+    VueGallerySlideshow
+  },
   data () {
     return {
+      index: undefined,
       myRange: {t: '小學數學地圖', p: 6},
       ranges: [
         {t: '小學數學地圖', p: 6},
         {t: '國中數學地圖', p: 6},
         {t: '高中數學地圖', p: 6}
+      ],
+      images: [
+        '/static/maps/小學數學地圖/p0.jpg',
+        '/static/maps/小學數學地圖/p1.jpg',
+        '/static/maps/小學數學地圖/p2.jpg',
+        '/static/maps/小學數學地圖/p3.jpg',
+        '/static/maps/小學數學地圖/p4.jpg',
+        '/static/maps/小學數學地圖/p5.jpg',
+        '/static/maps/國中數學地圖/p0.jpg',
+        '/static/maps/國中數學地圖/p1.jpg',
+        '/static/maps/國中數學地圖/p2.jpg',
+        '/static/maps/國中數學地圖/p3.jpg',
+        '/static/maps/國中數學地圖/p4.jpg',
+        '/static/maps/國中數學地圖/p5.jpg',
+        '/static/maps/高中數學地圖/p0.jpg',
+        '/static/maps/高中數學地圖/p1.jpg',
+        '/static/maps/高中數學地圖/p2.jpg',
+        '/static/maps/高中數學地圖/p3.jpg',
+        '/static/maps/高中數學地圖/p4.jpg',
+        '/static/maps/高中數學地圖/p5.jpg'
       ]
     }
   },
@@ -95,4 +125,10 @@ li {
 a {
   color: #35495E;
 }
+
+.image {
+  cursor: pointer;
+  width: 16%
+}
+
 </style>
