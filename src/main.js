@@ -10,6 +10,9 @@ import './firebase'
 import VueFire from 'vuefire'
 import promise from 'es6-promise'
 
+import autofocus from 'vue-autofocus-directive'
+Vue.directive('autofocus', autofocus)
+
 promise.polyfill()
 Vue.use(VueFire)
 require('semantic-ui-css/semantic.css')

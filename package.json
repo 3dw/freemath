@@ -32,6 +32,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-vue": "^0.5.1",
     "vue": "^2.5.2",
+    "vue-autofocus-directive": "^1.0.4",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5"
   },
