@@ -1,6 +1,16 @@
 <template lang="pug">
   #app
-    .ui.labeled.icon.fixed.inverted.vertical.menu.no-print
+    .ui.menu.top.thin-only
+      router-link.item(to='/' exact='')
+        i.home.icon
+        | 首頁
+      router-link.item(to='/maps' exact='')
+        i.map.icon
+        | 地圖
+      router-link.item(to='/tools' exact='')
+        i.angle.double.down.icon
+        | 小工具
+    .ui.labeled.icon.fixed.inverted.vertical.menu.no-print.fat-only
       router-link.item(to='/' exact='')
         i.home.icon
         | 首頁
@@ -182,7 +192,7 @@ body {
   color: #2c3e50;
 }
 
-main {
+#main {
   width: calc(100vw - 100px);
   position: absolute !important;
   right: 0;
@@ -243,6 +253,9 @@ a, button, .clickable {
   }
   .button {
     max-width: 100% !important;
+  }
+  #main {
+    width: 100%;
   }
 }
 

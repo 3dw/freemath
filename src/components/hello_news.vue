@@ -5,17 +5,15 @@
         .ui.left.aligned.segment.column
           h3.ui.header 如何使用：
           .ui.large.ordered.list
-            .item
+            //.item
               | 參考
               a(href='https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit', target='_blank')
                 | 給家長的教學引導
             router-link.item(to='/maps')
               | 使用〈學習地圖〉(可列印出紙本)
             .item
-              | 選擇單元進入教材
-            .item
-              | 自學練功(可列印出紙本)
-            .item
+              | 選擇單元進入教材，自學練功(可列印出紙本)
+            //.item
               | 遇到問題可以直接在
               a(href='https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc', target='_blank') GOOGLE文件
               | 上留言提問
@@ -32,7 +30,7 @@
         .ui.left.aligned.segment.column
           h3.ui.header 最新消息：
           .ui.large.bulleted.list
-            .item(v-for='n in news.slice(0, 5)')
+            .item(v-for='n in news.slice(0, 3)')
               span(v-html='n')
 
 </template>
