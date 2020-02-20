@@ -44,6 +44,16 @@ webpackJsonp([1],{
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'app',
@@ -97,8 +107,6 @@ webpackJsonp([1],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
 //
 //
 //
@@ -1490,7 +1498,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(328);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7bfa0144_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_25a5a0b0_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(450);
 function injectStyle (ssrContext) {
   __webpack_require__(448)
 }
@@ -1510,7 +1518,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7bfa0144_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_25a5a0b0_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1533,7 +1541,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('div',{staticClass:"ui labeled icon fixed inverted vertical menu no-print"},[_c('router-link',{staticClass:"item",attrs:{"to":"/","exact":""}},[_c('i',{staticClass:"home icon"}),_vm._v("首頁")]),_c('router-link',{staticClass:"item",attrs:{"to":"/maps","exact":""}},[_c('i',{staticClass:"map icon"}),_vm._v("地圖")]),_c('router-link',{staticClass:"item",attrs:{"to":"/quiz","exact":""}},[_c('i',{staticClass:"question icon"}),_vm._v("小測驗")]),_c('router-link',{staticClass:"item",attrs:{"to":"/tools","exact":""}},[_c('i',{staticClass:"angle double down icon"}),_vm._v("小工具")]),_c('router-link',{staticClass:"item",attrs:{"to":"/outer","exact":""}},[_c('i',{staticClass:"user add icon"}),_vm._v("外部資源")]),_c('div',{staticClass:"right menu"},[_c('router-link',{staticClass:"item",attrs:{"to":"/vedio","exact":""}},[_c('i',{staticClass:"play icon"}),_vm._v("導覽")]),_c('router-link',{staticClass:"item",attrs:{"to":"/faq","exact":""}},[_c('i',{staticClass:"comment icon"}),_vm._v("常見問題")]),_c('router-link',{staticClass:"item",attrs:{"to":"/intro","exact":""}},[_c('i',{staticClass:"book icon"}),_vm._v("編創源起")]),_c('router-link',{staticClass:"item",attrs:{"to":"/donate","exact":""}},[_c('i',{staticClass:"gift icon"}),_vm._v("出錢出力")]),_vm._m(0)],1)],1),_c('main',{attrs:{"id":"main"}},[_c('transition',{attrs:{"name":"fade","mode":"out-in"}},[_c('router-view',{attrs:{"units":_vm.units}})],1),_c('router-link',{attrs:{"id":"logo","to":"/"}},[_c('img',{attrs:{"src":__webpack_require__(451)}})])],1)])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('div',{staticClass:"ui menu top thin-only"},[_c('router-link',{staticClass:"item",attrs:{"to":"/","exact":""}},[_c('i',{staticClass:"home icon"}),_vm._v("首頁")]),_c('router-link',{staticClass:"item",attrs:{"to":"/maps","exact":""}},[_c('i',{staticClass:"map icon"}),_vm._v("地圖")]),_c('router-link',{staticClass:"item",attrs:{"to":"/tools","exact":""}},[_c('i',{staticClass:"angle double down icon"}),_vm._v("小工具")])],1),_c('div',{staticClass:"ui labeled icon fixed inverted vertical menu no-print fat-only"},[_c('router-link',{staticClass:"item",attrs:{"to":"/","exact":""}},[_c('i',{staticClass:"home icon"}),_vm._v("首頁")]),_c('router-link',{staticClass:"item",attrs:{"to":"/maps","exact":""}},[_c('i',{staticClass:"map icon"}),_vm._v("地圖")]),_c('router-link',{staticClass:"item",attrs:{"to":"/quiz","exact":""}},[_c('i',{staticClass:"question icon"}),_vm._v("小測驗")]),_c('router-link',{staticClass:"item",attrs:{"to":"/tools","exact":""}},[_c('i',{staticClass:"angle double down icon"}),_vm._v("小工具")]),_c('router-link',{staticClass:"item",attrs:{"to":"/outer","exact":""}},[_c('i',{staticClass:"user add icon"}),_vm._v("外部資源")]),_c('div',{staticClass:"right menu"},[_c('router-link',{staticClass:"item",attrs:{"to":"/vedio","exact":""}},[_c('i',{staticClass:"play icon"}),_vm._v("導覽")]),_c('router-link',{staticClass:"item",attrs:{"to":"/faq","exact":""}},[_c('i',{staticClass:"comment icon"}),_vm._v("常見問題")]),_c('router-link',{staticClass:"item",attrs:{"to":"/intro","exact":""}},[_c('i',{staticClass:"book icon"}),_vm._v("編創源起")]),_c('router-link',{staticClass:"item",attrs:{"to":"/donate","exact":""}},[_c('i',{staticClass:"gift icon"}),_vm._v("出錢出力")]),_vm._m(0)],1)],1),_c('main',{attrs:{"id":"main"}},[_c('transition',{attrs:{"name":"fade","mode":"out-in"}},[_c('router-view',{attrs:{"units":_vm.units}})],1),_c('router-link',{attrs:{"id":"logo","to":"/"}},[_c('img',{attrs:{"src":__webpack_require__(451)}})])],1)])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item fat-only"},[_c('iframe',{staticStyle:{"border":"none","overflow":"hidden"},attrs:{"src":"https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20","width":"77","height":"20","scrolling":"no","frameborder":"0","allowtransparency":"true","allow":"encrypted-media"}})])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -1699,7 +1707,7 @@ var Component = normalizeComponent(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_hello_news_vue__ = __webpack_require__(330);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e27625ae_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_hello_news_vue__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_485fcfd4_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_hello_news_vue__ = __webpack_require__(458);
 function injectStyle (ssrContext) {
   __webpack_require__(457)
 }
@@ -1714,12 +1722,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-e27625ae"
+var __vue_scopeId__ = "data-v-485fcfd4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_hello_news_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e27625ae_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_hello_news_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_485fcfd4_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_hello_news_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1742,8 +1750,8 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',{staticClass:"ui grid container"},[_c('div',{staticClass:"ui two column row"},[_c('div',{staticClass:"ui left aligned segment column"},[_c('h3',{staticClass:"ui header"},[_vm._v("如何使用：")]),_c('div',{staticClass:"ui large ordered list"},[_vm._m(0),_c('router-link',{staticClass:"item",attrs:{"to":"/maps"}},[_vm._v("使用〈學習地圖〉(可列印出紙本)")]),_c('div',{staticClass:"item"},[_vm._v("選擇單元進入教材")]),_c('div',{staticClass:"item"},[_vm._v("自學練功(可列印出紙本)")]),_vm._m(1),_vm._m(2)],1)]),_c('div',{staticClass:"ui left aligned segment column"},[_c('h3',{staticClass:"ui header"},[_vm._v("最新消息：")]),_c('div',{staticClass:"ui large bulleted list"},_vm._l((_vm.news.slice(0, 5)),function(n){return _c('div',{staticClass:"item"},[_c('span',{domProps:{"innerHTML":_vm._s(n)}})])}))])])])])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_vm._v("參考"),_c('a',{attrs:{"href":"https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit","target":"_blank"}},[_vm._v("給家長的教學引導")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_vm._v("遇到問題可以直接在"),_c('a',{attrs:{"href":"https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc","target":"_blank"}},[_vm._v("GOOGLE文件")]),_vm._v("上留言提問")])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_vm._v("卡關時可上"),_c('a',{attrs:{"href":"https://www.facebook.com/groups/156709241062806/","target":"_blank"}},[_c('i',{staticClass:"facebook icon"}),_vm._v("自學數學團\n提問")]),_c('div',{staticClass:"item"},[_vm._v("亦可參考"),_c('a',{attrs:{"href":"https://docs.google.com/document/d/14KB9cukNH3pF3ZYNGG79w8WMD77EYb7dxGEQ7vzxeGc/edit?usp=sharing","target":"_blank"}},[_vm._v("數學學習診斷是什麼？")])])])}]
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',{staticClass:"ui grid container"},[_c('div',{staticClass:"ui two column row"},[_c('div',{staticClass:"ui left aligned segment column"},[_c('h3',{staticClass:"ui header"},[_vm._v("如何使用：")]),_c('div',{staticClass:"ui large ordered list"},[_c('router-link',{staticClass:"item",attrs:{"to":"/maps"}},[_vm._v("使用〈學習地圖〉(可列印出紙本)")]),_c('div',{staticClass:"item"},[_vm._v("選擇單元進入教材，自學練功(可列印出紙本)")]),_vm._m(0)],1)]),_c('div',{staticClass:"ui left aligned segment column"},[_c('h3',{staticClass:"ui header"},[_vm._v("最新消息：")]),_c('div',{staticClass:"ui large bulleted list"},_vm._l((_vm.news.slice(0, 3)),function(n){return _c('div',{staticClass:"item"},[_c('span',{domProps:{"innerHTML":_vm._s(n)}})])}))])])])])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_vm._v("卡關時可上"),_c('a',{attrs:{"href":"https://www.facebook.com/groups/156709241062806/","target":"_blank"}},[_c('i',{staticClass:"facebook icon"}),_vm._v("自學數學團\n提問")]),_c('div',{staticClass:"item"},[_vm._v("亦可參考"),_c('a',{attrs:{"href":"https://docs.google.com/document/d/14KB9cukNH3pF3ZYNGG79w8WMD77EYb7dxGEQ7vzxeGc/edit?usp=sharing","target":"_blank"}},[_vm._v("數學學習診斷是什麼？")])])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
@@ -2806,4 +2814,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },[384]);
-//# sourceMappingURL=app.c32819caa4e428d1df53.js.map
+//# sourceMappingURL=app.0e4df1c1c4d04b0728ce.js.map
