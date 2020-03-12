@@ -44,26 +44,10 @@
       .ui.card
         h1 網路學習資源
         .ui.list
-          .item
-            a(href='https://www.khanacademy.org/math', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=https://www.khanacademy.org/math')
-              | 可汗學院
-          .item
-            a(href='https://www.junyiacademy.org/exercisedashboard', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=https://www.junyiacademy.org/exercisedashboard')
-              | 均一平台
-          .item
-            a(href='https://www.4tests.com/sat', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=https://www.4tests.com/sat')
-              | SAT線上測驗
-          .item
-            a(href='https://www.w3schools.com/', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=https://www.w3schools.com/')
-              | w3school程式學習網
-          .item
-            a(href='https://tryhaskell.org/', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=https://tryhaskell.org/')
-              | Try Haskell
+          .item(v-for="w in webs")
+            a(:href='w.h', target='_blank')
+              img(:src="'https://www.google.com/s2/favicons?domain=' + w.h")
+              | {{ w.n }}
       .ui.card
         h1 延伸學習資源
         .ui.list
@@ -103,6 +87,16 @@ export default {
   name: 'Outer',
   data () {
     return {
+      webs: [
+        { n: '高中數學@零時黑板',
+          h: 'http://goban.tw/#/see/%E9%AB%98%E4%B8%AD%E6%95%B8%E5%AD%B8/0/0'},
+        { n: 'Math@可汗學院',
+          h: 'https://www.khanacademy.org/math'},
+        { n: '均一平台',
+          h: 'https://www.junyiacademy.org/exercisedashboard'},
+        { n: 'SAT線上測驗',
+          h: 'https://www.4tests.com/sat'}
+      ],
       books: [
         { n: '數學教育的藝術與實務─另類教與學',
           h: 'https://www.books.com.tw/products/0010079574'

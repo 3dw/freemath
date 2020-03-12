@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    .ui.menu.top.thin-only
+    .ui.menu.top.thin-only.no-print
       router-link.item(to='/' exact='')
         i.home.icon
         | 首頁
