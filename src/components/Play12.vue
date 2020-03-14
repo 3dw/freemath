@@ -1,29 +1,29 @@
 <template lang="pug">
   .hello
     .ui.segment.container
-      h2(v-if = "max[0]['.value'] == 6") ~~加減乘除湊 12~~
-      a.ui.yellow.button(v-else, @click="change()") 改成湊 12
-      h2(v-if = "max[0]['.value'] == 9") ~~加減乘除湊 24~~
-      a.ui.yellow.button(v-else, @click="change()") 改成湊 24
+      h2(v-if = "play12.max[0] == 6") ~~加減乘除湊 12~~
+      a.ui.yellow.button(v-else, @click="changeCards()") 改成湊 12
+      h2(v-if = "play12.max[0] == 9") ~~加減乘除湊 24~~
+      a.ui.yellow.button(v-else, @click="changeCards()") 改成湊 24
     .ui.segment.container
       .ui.horizontal.list
         .item
-          h2(:class = "(max[0]['.value'] == 6 && myNum[0]['.value'] == 12) || (max[0]['.value'] == 9 && myNum[0]['.value'] == 24) ? 'good' : 'bad' ")
-            a(v-if = "myNum[0]['.value']" @click="makeCard()") 目前數字：
-              .ui.yellow.huge.button {{ myNum[0]['.value'] }}
+          h2(:class = "(play12.max[0] == 6 && play12.myNum[0] == 12) || (play12.max[0] == 9 && play12.myNum[0] == 24) ? 'good' : 'bad' ")
+            a(v-if = "play12.myNum[0]" @click="makeCard()") 目前數字：
+              .ui.yellow.huge.button {{ play12.myNum[0] }}
             span(v-else) 先按一個數字開始
     .ui.container
       .ui.four.cards
-        .ui.card(v-for = "(c, $index) in cards" v-show = "unused[$index]['.value']", :class="$index % 2 == 0 ? 'orange' : 'yellow'")
-          .ui.vertical.buttons(v-if = "myNum[0]['.value'] != 0")
-              a.ui.huge.orange.button(@click = "use($index, c['.value'], '+')") +{{c['.value']}}
-              a.ui.huge.yellow.button(@click = "use($index, c['.value'], '-')") -{{c['.value']}}
-              a.ui.huge.orange.button(@click = "use($index, c['.value'], '*')") ×{{c['.value']}}
-              a.ui.huge.yellow.button(v-show = "myNum[0]['.value'] != 0" @click = "use($index, c['.value'], '/')") ÷{{c['.value']}}
-          a(v-if = "myNum[0]['.value'] == 0" @click = "use($index, c['.value'])")
-            h1 {{c['.value']}}
-    .ui.segment.container
-      a.ui.yellow.button(@click="rand(max[0]['.value'])")
+        .ui.card(v-for = "(c, $index) in play12.cards" :class="$index % 2 == 0 ? 'orange' : 'yellow'")
+          .ui.vertical.buttons(v-if = "play12.myNum[0] != 0 && play12.unused[$index]")
+              a.ui.huge.orange.button(@click = "useC($index, c, '+')") +{{c}}
+              a.ui.huge.yellow.button(@click = "useC($index, c, '-')") -{{c}}
+              a.ui.huge.orange.button(@click = "useC($index, c, '*')") ×{{c}}
+              a.ui.huge.yellow.button(v-show = "play12.myNum[0] != 0" @click = "use($index, c, '/')") ÷{{c}}
+          a(v-if = "play12.myNum[0] == 0" @click = "useC($index, c)")
+            h1 {{c}}
+    .ui.segment.container(v-if = "play12")
+      a.ui.yellow.button(@click="rand(play12.max[0])")
         h2 再來!
     .ui.segment.container
       h3 湊12手機App
@@ -40,84 +40,25 @@
 
 <script>
 
-import {db} from '../firebase'
-
 export default {
   name: 'play12',
+  props: ['play12'],
   data () {
     return {
     }
   },
-  firebase: {
-    cards: {
-      source: db.ref('cards'),
-      cancelCallback (err) {
-        console.error(err)
-      }
-    },
-    max: {
-      source: db.ref('max'),
-      cancelCallback (err) {
-        console.error(err)
-      }
-    },
-    myNum: {
-      source: db.ref('myNum'),
-      cancelCallback (err) {
-        console.error(err)
-      }
-    },
-    unused: {
-      source: db.ref('unused'),
-      cancelCallback (err) {
-        console.error(err)
-      }
-    }
-  },
   methods: {
     rand: function (max) {
-      var list = []
-      for (var i = 0; i < this.cards.length; i++) {
-        var r = Math.floor(Math.random() * max) + 1
-        list[i] = r
-      }
-      db.ref('cards/').update((list))
-      db.ref('myNum/').update([0])
-      db.ref('unused/').update([true, true, true, true])
-      this.$forceUpdate()
+      this.$emit('rand', max)
     },
-    change: function () {
-      if (this.max[0]['.value'] === 6) {
-        db.ref('max/').update([9])
-      } else {
-        db.ref('max/').update([6])
-      }
+    changeCards: function () {
+      this.$emit('changeCards')
     },
     makeCard: function () {
-      var idx = this.unused.map((o) => o['.value']).indexOf(false)
-      var v = this.myNum[0]['.value']
-      db.ref('myNum/').update([0])
-      var list = this.cards.map(function (o) { return o['.value'] })
-      list[idx] = v
-      db.ref('cards/').update((list))
-
-      list = this.unused.map(function (o) { return o['.value'] })
-      list[idx] = true
-      db.ref('unused/').update((list))
+      this.$emit('makeCard')
     },
-    use: function (i, n, op) {
-      if (!op) {
-        db.ref('myNum/').update([n])
-      } else {
-        if (op === '+') { db.ref('myNum/').update([this.myNum[0]['.value'] + n]) }
-        if (op === '-') { db.ref('myNum/').update([this.myNum[0]['.value'] - n]) }
-        if (op === '*') { db.ref('myNum/').update([this.myNum[0]['.value'] * n]) }
-        if (op === '/') { db.ref('myNum/').update([this.myNum[0]['.value'] / n]) }
-      }
-
-      var list = this.unused.map(function (o) { return o['.value'] })
-      list[i] = false
-      db.ref('unused/').update((list))
+    useC: function (i, n, op) {
+      this.$emit('useC', i, n, op)
     }
   }
 }

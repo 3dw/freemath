@@ -14,6 +14,7 @@ import Grid from '@/components/Grid'
 import Outer from '@/components/Outer'
 import Tools from '@/components/Tools'
 import Quiz from '@/components/Quiz'
+import Chat from '@/components/Chat'
 
 Vue.use(Router)
 
@@ -88,6 +89,11 @@ export default new Router({
       path: '/quiz',
       name: 'Quiz',
       component: Quiz
+    },
+    {
+      path: '/chat',
+      name: 'Chat',
+      component: Chat
     }
   ]
 })

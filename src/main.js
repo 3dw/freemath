@@ -6,15 +6,15 @@ import router from './router'
 import SuiVue from 'semantic-ui-vue'
 import '@babel/polyfill/noConflict'
 import 'isomorphic-fetch'
-import './firebase'
-import VueFire from 'vuefire'
+import { rtdbPlugin } from 'vuefire'
 import promise from 'es6-promise'
 
 import autofocus from 'vue-autofocus-directive'
 Vue.directive('autofocus', autofocus)
 
 promise.polyfill()
-Vue.use(VueFire)
+Vue.use(rtdbPlugin)
+
 require('semantic-ui-css/semantic.css')
 Vue.use(SuiVue)
 

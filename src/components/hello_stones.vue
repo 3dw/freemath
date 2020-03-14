@@ -1,7 +1,7 @@
 <template lang="pug">
   .river
     .ui.input
-      input#find(v-autofocus="dynamicvalue", type='text', v-model='s', placeholder='依關鍵字或年級搜詢', autofocus='')
+      input#find(v-autofocus="", type='text', v-model='s', placeholder='依關鍵字或年級搜詢', autofocus='')
     .stone(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
       a(:href='u.url', target='_blank')
         img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
@@ -77,7 +77,7 @@ export default {
   position: absolute;
   top: 10px;
   left: 33vw;
-  width: 300px !important;
+  width: 40vw !important;
   z-index: 999;
 }
 

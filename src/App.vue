@@ -1,23 +1,26 @@
 <template lang="pug">
   #app
-    .ui.menu.top.thin-only.no-print
+    .ui.top.menu.no-print.thin-only
       router-link.item(to='/' exact='')
         i.home.icon
-        | 首頁
       router-link.item(to='/maps' exact='')
         i.map.icon
-        | 地圖
       router-link.item(to='/tools' exact='')
         i.angle.double.down.icon
-        | 小工具
-    .ui.labeled.icon.fixed.inverted.vertical.menu.no-print.fat-only
+      router-link.item(to='/outer' exact='')
+        i.user.add.icon
+      router-link.item(to='/faq' exact='')
+        i.question.icon
+      //a.item(href = "www.github.com/bestian/freemath", target="_blank")
+        i.github.icon
+    .ui.top.labeled.icon.menu.no-print.fat-only
       router-link.item(to='/' exact='')
         i.home.icon
         | 首頁
       router-link.item(to='/maps' exact='')
         i.map.icon
-        | 地圖
-      router-link.item(to='/quiz' exact='')
+        | 學習地圖
+      //router-link.item(to='/quiz' exact='')
         i.question.icon
         | 小測驗
       router-link.item(to='/tools' exact='')
@@ -27,32 +30,43 @@
         i.user.add.icon
         | 外部資源
       .right.menu
-        router-link.item(to='/vedio' exact='')
+        //router-link.item(to='/vedio' exact='')
           i.play.icon
           | 導覽
         router-link.item(to='/faq' exact='')
-          i.comment.icon
+          i.question.icon
           | 常見問題
-        router-link.item(to='/intro' exact='')
+        //router-link.item(to='/intro' exact='')
           i.book.icon
           | 編創源起
-        router-link.item(to='/donate' exact='')
+        //router-link.item(to='/donate' exact='')
           i.gift.icon
           | 出錢出力
+        router-link.item(to='/chat' exact='')
+          i.chat.icon
+          | 留言板
+        a.item(href = "www.github.com/bestian/freemath")
+          i.github.icon
+          | 原始碼
         .item.fat-only
           iframe(src='https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20' width='77' height='20' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
     main#main
       transition(name='fade' mode='out-in')
-        router-view(:units='units')
+        router-view(:units='units', :play12="play12", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
       router-link#logo(to='/')
         img(src='./assets/logo.png')
 </template>
 
 <script>
+
+import { play12Ref, chatsRef } from './firebase/db'
+
 export default {
   name: 'app',
   data () {
     return {
+      play12: undefined,
+      chats: undefined,
       units: [
         {n: '分類', g: -1, G: -1, url: 'https://docs.google.com/presentation/d/11FQ7urzmBNkfD8yeGPCw2PEq_1cqqpDRf-mDFCjQ5l0/edit?usp=sharing', edit: true, p: 80, left: 2},
         {n: '誰比較多', g: -1, G: -1, url: 'https://docs.google.com/presentation/d/1afPtB_fNvTb2J58gWLlwAbtkXTdG589wquaq9vzJfZE/edit?usp=sharing', edit: true, p: 80, left: 3},
@@ -112,6 +126,77 @@ export default {
         {n: '實無限與微分', g: 12, G: 12, url: 'https://docs.google.com/document/d/1W-lzb6HtaYWLU1S2ypVwmxP6jckXSe7n4oRxJiL52gw/edit?usp=sharing', edit: true, p: 80, left: 1},
         {n: '實無限與積分', g: 12, G: 12, url: 'https://docs.google.com/document/d/1rWVyaTU31Wy4NFvwCtDpTlmEmNCRwqL4YOTpLHhfyi0/edit?usp=sharing', edit: true, p: 50, left: 2}
       ]
+    }
+  },
+  firebase: {
+    play12: play12Ref,
+    chats: chatsRef
+  },
+  methods: {
+    submit: function (n, email, t) {
+      var o = {
+        n: n,
+        email: email,
+        t: t,
+        time: (new Date()).getTime()
+      }
+      if (t) {
+        this.$firebaseRefs.chats.push(o)
+        window.alert('留言已送出')
+      } else {
+        window.alert('請輸入留言')
+      }
+    },
+    rand: function (max) {
+      var list = []
+      for (var i = 0; i < this.play12.cards.length; i++) {
+        var r = Math.floor(Math.random() * max) + 1
+        list[i] = r
+      }
+      play12Ref.child('cards').update((list))
+      play12Ref.child('myNum').update({0: 0})
+      play12Ref.child('unused').update([true, true, true, true])
+      this.$forceUpdate()
+    },
+    changeCards: function () {
+      console.log(play12Ref)
+      if (this.play12.max[0] === 6) {
+        play12Ref.child('max').update({
+          0: 9
+        })
+      } else {
+        play12Ref.child('max').update({
+          0: 6
+        })
+      }
+    },
+    makeCard: function () {
+      var idx = this.play12.unused.map((o) => o).indexOf(false)
+      var v = this.play12.myNum[0]
+      play12Ref.child('myNum').update({0: 0})
+      var list = this.play12.cards.map(function (o) { return o })
+      list[idx] = v
+      play12Ref.child('cards').update((list))
+
+      list = this.unused.map(function (o) { return o })
+      list[idx] = true
+      play12Ref.child('unused').update((list))
+    },
+    useC: function (i, n, op) {
+      console.log(n)
+      var ans = this.play12.myNum[0]
+      if (!op) {
+        play12Ref.child('myNum').update({ 0: n })
+      } else {
+        if (op === '+') { play12Ref.child('myNum').update({0: ans + n}) }
+        if (op === '-') { play12Ref.child('myNum').update({0: ans - n}) }
+        if (op === '*') { play12Ref.child('myNum').update({0: ans * n}) }
+        if (op === '/') { play12Ref.child('myNum').update({0: ans / n}) }
+      }
+
+      var list = this.play12.unused.map(function (o) { return o })
+      list[i] = false
+      play12Ref.child('unused').update((list))
     }
   },
   mounted () {
@@ -192,14 +277,6 @@ body {
   color: #2c3e50;
 }
 
-#main {
-  width: calc(100vw - 100px);
-  position: absolute !important;
-  right: 0;
-  text-align: center;
-  margin: 0;
-}
-
 .print-only {
   visibility: hidden !important;
   display: none !important;
@@ -250,12 +327,6 @@ a, button, .clickable {
 @media screen and (max-width: 600px) {
   .fat-only {
     display: none !important;
-  }
-  .button {
-    max-width: 100% !important;
-  }
-  #main {
-    width: 100%;
   }
 }
 
