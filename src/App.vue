@@ -355,4 +355,8 @@ p {
     line-height: 1.6;
 }
 
+.gray {
+  color: gray
+}
+
 </style>

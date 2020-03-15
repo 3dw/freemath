@@ -2,13 +2,15 @@
   .river
     .ui.input
       input#find(v-autofocus="", type='text', v-model='s', placeholder='依關鍵字或年級搜詢', autofocus='')
-    .stone(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
+    .stone(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 80 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
       a(:href='u.url', target='_blank')
         img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
         //
           </a>
             <a @click="check(u)">
         | {{ u.n }}
+        br
+        span.fat-only.gray {{ countGrade(u.g, u.G) }} 
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
 
@@ -23,6 +25,22 @@ export default {
     }
   },
   methods: {
+    countGrade (g, G) {
+      var min = g
+      if (g <= 0) {
+        min = '學前'
+      }
+      var ans = G + '年級'
+      if (G <= 0) {
+        ans = '學前'
+      }
+      if (ans === min) {
+        return ans
+      } else {
+        ans = min + '~' + ans
+      }
+      return ans
+    },
     goto (u) {
       window.open(u.url)
     },
@@ -51,7 +69,7 @@ export default {
   left: 0;
   height: 500vh;
   width: 100vw;
-  background-color: black;
+  background-color: #c9c9ff;
 }
 
 .stone {
@@ -61,7 +79,7 @@ export default {
   width: 15vw;
   border-radius: 15px;
   background-color: white;
-  border: 3px #090 solid;
+  border: 2px #090 ridge;
 }
 
 .stone:hover {
