@@ -15,15 +15,21 @@ import Outer from '@/components/Outer'
 import Tools from '@/components/Tools'
 import Quiz from '@/components/Quiz'
 import Chat from '@/components/Chat'
+import New from '@/components/New'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hello',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/',
+      name: 'New',
+      component: New
     },
     {
       path: '/intro',
