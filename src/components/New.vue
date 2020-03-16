@@ -4,10 +4,10 @@
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.button.group
-        router-link.ui.huge.green.button(to="/hello", @click="trackButton('search')")
+        a.ui.huge.green.button(@click="trackButton('search'); goto('hello')")
           i.search.icon
           | 查詢教材
-        router-link.ui.huge.orange.button(to="/faq", @click="trackButton('faq')")
+        a.ui.huge.orange.button(to="/faq", @click="trackButton('faq'); goto('faq')")
           i.question.icon
           | 常見問題
       .ui.button.group
@@ -31,12 +31,15 @@ export default {
   },
   methods: {
     trackButton (t) {
-      this.$ga.event({
-        eventCategory: 'button',
-        eventAction: 'action',
-        eventLabel: t,
-        eventValue: t
+      this.$gtag.event('action', {
+        event_category: t,
+        event_action: t,
+        event_label: t,
+        value: t
       })
+    },
+    goto (h) {
+      this.$router.push(h)
     }
   }
 }
