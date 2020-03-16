@@ -4,17 +4,17 @@
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.button.group
-        router-link.ui.huge.green.button(to="/hello")
+        router-link.ui.huge.green.button(to="/hello", @click="trackButton('search')")
           i.search.icon
           | 查詢教材
-        router-link.ui.huge.orange.button(to="/faq")
+        router-link.ui.huge.orange.button(to="/faq", @click="trackButton('faq')")
           i.question.icon
           | 常見問題
       .ui.button.group
-        a.ui.huge.purple.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank")
+        a.ui.huge.purple.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary')")
           i.user.icon
           | 小學數學
-        a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank")
+        a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior')")
           i.users.icon
           | 國中數學
 </template>
@@ -27,6 +27,16 @@ export default {
   components: { },
   data () {
     return {
+    }
+  },
+  methods: {
+    trackButton (t) {
+      this.$ga.event({
+        eventCategory: 'button',
+        eventAction: 'action',
+        eventLabel: t,
+        eventValue: t
+      })
     }
   }
 }
