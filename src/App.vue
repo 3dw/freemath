@@ -201,6 +201,18 @@ export default {
   },
   mounted () {
     this.units.sort(function (a, b) { return a.g - b.g })
+  },
+  watch: {
+    $route (to, from) {
+      console.log(from.path)
+      console.log(to.path)
+      this.$gtag.event('action', {
+        event_category: 'navigate',
+        event_action: 'from:' + from.path + ' to:' + to.path,
+        event_label: 'from:' + from.path + ' to:' + to.path,
+        value: 'from:' + from.path + ' to:' + to.path
+      })
+    }
   }
 }
 </script>
@@ -271,7 +283,11 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif,
+               'Microsoft JhengHei',
+                'Microsoft YaHei',
+                'STHeiti',
+                'Apple LiGothic Medium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
