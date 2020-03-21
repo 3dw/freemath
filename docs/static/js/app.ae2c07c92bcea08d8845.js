@@ -2631,7 +2631,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue__ = __webpack_require__(283);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_760928af_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__ = __webpack_require__(610);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_62066283_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__ = __webpack_require__(610);
 function injectStyle (ssrContext) {
   __webpack_require__(609)
 }
@@ -2646,12 +2646,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-760928af"
+var __vue_scopeId__ = "data-v-62066283"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_760928af_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_62066283_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -2675,7 +2675,7 @@ var Component = normalizeComponent(
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('br'),_c('h2',[_vm._v("閃卡")]),_c('h3',[_vm._v("（按任意鍵翻牌）")]),_c('div',{staticClass:"ui form container no-print"},[_c('div',{staticClass:"inline fields"},[_c('div',{staticClass:"field"},[_c('div',{staticClass:"ui labeled input"},[_c('div',{staticClass:"ui label"},[_vm._v("數字下限")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.min),expression:"min"}],attrs:{"id":"r","type":"number","step":"5"},domProps:{"value":(_vm.min)},on:{"input":function($event){if($event.target.composing){ return; }_vm.min=$event.target.value}}})])]),_c('div',{staticClass:"field"},[_c('div',{staticClass:"ui labeled input"},[_c('div',{staticClass:"ui label"},[_vm._v("數字上限")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.range),expression:"range"}],attrs:{"id":"r","type":"number","step":"5","autofocus":""},domProps:{"value":(_vm.range)},on:{"input":function($event){if($event.target.composing){ return; }_vm.range=$event.target.value}}})])])]),_c('div',{staticClass:"inline fields"},[_c('label',[_vm._v("選擇算法：")]),_vm._l((_vm.ops),function(o){return _c('div',{staticClass:"field"},[_c('div',{staticClass:"ui radio checkbox"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.op),expression:"op"}],attrs:{"type":"radio","name":"year"},domProps:{"value":o.v,"checked":_vm._q(_vm.op,o.v)},on:{"change":function($event){_vm.op=o.v}}}),_c('label',{staticClass:"clickable",on:{"click":function($event){_vm.op = o.v}}},[_vm._v(_vm._s(o.t))])])])})],2)]),(!_vm.flip)?_c('div',{staticClass:"ui centered red card clickable",on:{"click":function($event){_vm.flipCard()}}},[(_vm.op == '+')?_c('h1',{staticClass:"ui header"},[_vm._v(_vm._s(_vm.n1)+" + "+_vm._s(_vm.n2)+" = ?")]):_vm._e(),(_vm.op == '-')?_c('h1',{staticClass:"ui header"},[_vm._v(_vm._s(_vm.n1)+" - "+_vm._s(_vm.n2)+" = ?")]):_vm._e(),(_vm.op == '*')?_c('h1',{staticClass:"ui header"},[_vm._v(_vm._s(_vm.n1)+" × "+_vm._s(_vm.n2)+" = ?")]):_vm._e()]):_c('div',{staticClass:"ui centered orange fliped card clickable",on:{"click":function($event){_vm.flipCard()}}},[(_vm.op == '+')?_c('h1',{staticClass:"ui blue header"},[_vm._v(_vm._s(_vm.n1 + _vm.n2))]):_vm._e(),(_vm.op == '-')?_c('h1',{staticClass:"ui blue header"},[_vm._v(_vm._s(_vm.n1 - _vm.n2))]):_vm._e(),(_vm.op == '*')?_c('h1',{staticClass:"ui blue header"},[_vm._v(_vm._s(_vm.n1 * _vm.n2))]):_vm._e()]),_vm._m(0)])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ui segment container"},[_c('h3',[_vm._v("閃卡手機App")]),_c('div',{staticClass:"ui buttons"},[_c('a',{staticClass:"ui green button",attrs:{"href":"https://play.google.com/store/apps/details?id=tw.bestian.flashcard","target":"_blank"}},[_c('i',{staticClass:"google play icon"},[_vm._v("Google Play下載")])]),_c('a',{staticClass:"ui orange button",attrs:{"href":"https://apps.apple.com/us/app/自由數學閃卡/id1468723833?l=zh&ls=1","target":"_blank"}},[_c('i',{staticClass:"app store icon"},[_vm._v("App Store下載")])])])])}]
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ui segment container"},[_c('h3',[_vm._v("閃卡手機App")]),_c('div',{staticClass:"ui two buttons group"},[_c('a',{staticClass:"ui green huge button",attrs:{"href":"https://play.google.com/store/apps/details?id=tw.bestian.flashcard","target":"_blank"}},[_c('i',{staticClass:"google play icon"}),_vm._v("Google Play下載")]),_c('a',{staticClass:"ui orange huge button",attrs:{"href":"https://apps.apple.com/us/app/自由數學閃卡/id1468723833?l=zh&ls=1","target":"_blank"}},[_c('i',{staticClass:"app store icon"}),_vm._v("App Store下載")])])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
@@ -3058,7 +3058,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_New_vue__ = __webpack_require__(296);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f414933_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_New_vue__ = __webpack_require__(643);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_9b68c9f4_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_New_vue__ = __webpack_require__(643);
 function injectStyle (ssrContext) {
   __webpack_require__(642)
 }
@@ -3073,12 +3073,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-9b68c9f4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_New_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f414933_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_New_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_9b68c9f4_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_New_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -3109,4 +3109,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },[360]);
-//# sourceMappingURL=app.dc8611e072d107824499.js.map
+//# sourceMappingURL=app.ae2c07c92bcea08d8845.js.map

@@ -46,12 +46,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped="">
 
 .hello {
   text-align: center;
   height: 100vh;
-  background-image: url(/static/img/bg-img.jpeg);
 }
 
 .ui.segment {
