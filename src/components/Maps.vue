@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <br/>
-    <h1>攀岩式學習地圖</h1>
     <div class="ui left aligned segment container no-print">
+      <h1>攀岩式學習地圖</h1>
       <h3 class="ui header">如何使用：</h3>
       <div class="ui large ordered list">
         <div class="item">
@@ -14,8 +14,8 @@
         <div class="item">
           用筆圈出不太會的單元(可打問號)
         </div>
-        <router-link class = 'item ' to='/' exact=''>
-          <i class="home icon" />回首頁下載相關教材
+        <router-link class = 'item' to='/hello' exact=''>
+          <i class="home icon" />下載相關教材
         </router-link>
         <div class="item">
           遇到問題可上
@@ -42,9 +42,6 @@
       </div>
     </div><!-- Segment END -->
 
-    <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
-    <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
-
    <!-- <ul class = "print">
       <li v-for = "(i, index) in [1,2,3,4,0,5]">
         <a :href="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" target="_blank">
@@ -57,13 +54,8 @@
 
 <script>
 
-import VueGallerySlideshow from 'vue-gallery-slideshow'
-
 export default {
   name: 'maps',
-  components: {
-    VueGallerySlideshow
-  },
   data () {
     return {
       index: undefined,

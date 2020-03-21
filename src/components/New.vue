@@ -10,6 +10,7 @@
         a.ui.huge.orange.button(to="/faq", @click="trackButton('faq'); goto('faq')")
           i.question.icon
           | 常見問題
+      .ui.divider
       .ui.button.group
         a.ui.huge.purple.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary')")
           i.user.icon
@@ -51,6 +52,8 @@ export default {
 .hello {
   text-align: center;
   height: 100vh;
+  background-image: url(/static/img/bg-img.jpeg);
+  background-repeat: repeat;
 }
 
 .ui.segment {
