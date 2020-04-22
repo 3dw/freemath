@@ -1351,6 +1351,11 @@ module.exports = __webpack_require__.p + "static/img/logo.38ad27e.png";
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -1368,6 +1373,7 @@ module.exports = __webpack_require__.p + "static/img/logo.38ad27e.png";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+//
 //
 //
 //
@@ -2627,7 +2633,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Tools_vue__ = __webpack_require__(293);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_29ebc782_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Tools_vue__ = __webpack_require__(627);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c10c3a2e_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Tools_vue__ = __webpack_require__(627);
 function injectStyle (ssrContext) {
   __webpack_require__(626)
 }
@@ -2642,12 +2648,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-29ebc782"
+var __vue_scopeId__ = "data-v-c10c3a2e"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Tools_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_29ebc782_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Tools_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c10c3a2e_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Tools_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -2670,7 +2676,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',{staticClass:"ui container"},[_c('div',{staticClass:"ui two stackable cards"},[_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/card","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(628)}})]),_vm._v("閃卡")]),_c('div',{staticClass:"description"},[_vm._v("自動產生算式和答案")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/grid","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(629)}})]),_vm._v("方格紙產生器")]),_c('div',{staticClass:"description"},[_vm._v("生成百數表、乘法表等，還可以隨機挖洞")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/log/_","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(630)}})]),_vm._v("摸石頭")]),_c('div',{staticClass:"description"},[_vm._v("以摸石頭的介面做學習記錄")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/table","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(631)}})]),_vm._v("教材列表")]),_c('div',{staticClass:"description"},[_vm._v("將教材排列整齊，易於查詢")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/play12","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(632)}})]),_vm._v("湊12")]),_c('div',{staticClass:"description"},[_vm._v("四張牌，加減乘除湊12，可以和別人連線一起解謎")])],1)])])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',{staticClass:"ui container"},[_c('div',{staticClass:"ui two stackable cards"},[_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/card","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(628)}})]),_vm._v("閃卡")]),_c('div',{staticClass:"description"},[_vm._v("自動產生算式和答案")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/grid","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(629)}})]),_vm._v("方格紙產生器")]),_c('div',{staticClass:"description"},[_vm._v("生成百數表、乘法表等，還可以隨機挖洞")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/log/_","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(630)}})]),_vm._v("摸石頭")]),_c('div',{staticClass:"description"},[_vm._v("以摸石頭的介面做學習記錄")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/table","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(631)}})]),_vm._v("教材列表")]),_c('div',{staticClass:"description"},[_vm._v("將教材排列整齊，易於查詢")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/play12","exact":""}},[_c('div',{staticClass:"image"},[_c('img',{attrs:{"src":__webpack_require__(632)}})]),_vm._v("湊12")]),_c('div',{staticClass:"description"},[_vm._v("四張牌，加減乘除湊12，可以和別人連線一起解謎")])],1),_c('div',{staticClass:"ui card"},[_c('router-link',{staticClass:"item",attrs:{"to":"/quiz","exact":""}},[_vm._v("小測驗")]),_c('div',{staticClass:"description"},[_vm._v("隨機題庫小測驗")])],1)])])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -2718,7 +2724,7 @@ module.exports = __webpack_require__.p + "static/img/湊12.00703c4.png";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Quiz_vue__ = __webpack_require__(294);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7491b27e_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Quiz_vue__ = __webpack_require__(635);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b65d672_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Quiz_vue__ = __webpack_require__(635);
 function injectStyle (ssrContext) {
   __webpack_require__(634)
 }
@@ -2733,12 +2739,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-7491b27e"
+var __vue_scopeId__ = "data-v-3b65d672"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Quiz_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7491b27e_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Quiz_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b65d672_hasScoped_true_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_Quiz_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -2761,7 +2767,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[(_vm.myQ)?_c('div',[_c('h1',{staticClass:"ui header"}),_c('h4',{staticClass:"sub header"},[_vm._v(_vm._s(_vm.myQ.c)+"(等級"+_vm._s(_vm.myQ.l)+")")]),_vm._v("            "+_vm._s(_vm.myQ.q)),_c('div',{staticClass:"ui buttons"},_vm._l((_vm.myQ.as),function(a){return _c('a',{staticClass:"ui huge button",class:_vm.myA == a ? 'green' : 'gray',on:{"click":function($event){_vm.myA = a; _vm.check(a, _vm.myQ.t)}}},[_vm._v(_vm._s(a))])}))]):_vm._e(),(_vm.win)?_c('h1',[_vm._v("你答對了！")]):_vm._e(),(_vm.wrong)?_c('h1',[_vm._v("不對喔，請再加油！")]):_vm._e(),_c('hr'),_c('div',[_c('div',{staticClass:"ui buttons"},[(_vm.myQ)?_c('a',{staticClass:"ui teal huge button",on:{"click":function($event){_vm.resetO()}}},[_vm._v("同級測驗")]):_vm._e(),(_vm.myQ && _vm.myLev < 3)?_c('a',{staticClass:"ui orange huge button",on:{"click":function($event){_vm.levup()}}},[_vm._v("升級測驗")]):_vm._e()])]),_c('hr'),_c('div',[_c('h3',[_vm._v("選擇單元")]),_c('div',{staticClass:"ui buttons"},[_vm._l((_vm.myCs),function(c){return _c('a',{staticClass:"ui huge button",class:_vm.myC == c ? 'green' : 'gray',on:{"click":function($event){_vm.setC(c)}}},[_vm._v(_vm._s(c))])}),_c('a',{staticClass:"ui huge button",on:{"click":function($event){_vm.reset()}}},[_vm._v("隨機")])],2)])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',{staticClass:"ui container"},[(_vm.myQ)?_c('div',[_c('h1',{staticClass:"ui header"},[_vm._v(_vm._s(_vm.myQ.q))]),_c('h4',{staticClass:"sub header"},[_vm._v(_vm._s(_vm.myQ.c)+"(等級"+_vm._s(_vm.myQ.l)+")")]),_c('div',{staticClass:"ui buttons"},_vm._l((_vm.myQ.as),function(a){return _c('a',{staticClass:"ui huge button",class:_vm.myA == a ? 'green' : 'gray',on:{"click":function($event){_vm.myA = a; _vm.check(a, _vm.myQ.t)}}},[_vm._v(_vm._s(a))])}))]):_vm._e(),(_vm.win)?_c('h1',[_vm._v("你答對了！")]):_vm._e(),(_vm.wrong)?_c('h1',[_vm._v("不對喔，請再加油！")]):_vm._e(),_c('hr'),_c('div',[_c('div',{staticClass:"ui buttons"},[(_vm.myQ)?_c('a',{staticClass:"ui teal huge button",on:{"click":function($event){_vm.resetO()}}},[_vm._v("同級測驗")]):_vm._e(),(_vm.myQ && _vm.myLev < 3)?_c('a',{staticClass:"ui orange huge button",on:{"click":function($event){_vm.levup()}}},[_vm._v("升級測驗")]):_vm._e()])]),_c('hr'),_c('div',[_c('h3',[_vm._v("選擇單元")]),_c('div',{staticClass:"ui buttons"},[_vm._l((_vm.myCs),function(c){return _c('a',{staticClass:"ui huge button",class:_vm.myC == c ? 'green' : 'gray',on:{"click":function($event){_vm.setC(c)}}},[_vm._v(_vm._s(c))])}),_c('a',{staticClass:"ui huge button",on:{"click":function($event){_vm.reset()}}},[_vm._v("隨機")])],2)])])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -2881,4 +2887,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },[360]);
-//# sourceMappingURL=app.135d8c80bdd2dc69b70f.js.map
+//# sourceMappingURL=app.54c51b036d2dc8d6ed6e.js.map
