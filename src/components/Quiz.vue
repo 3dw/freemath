@@ -1,29 +1,30 @@
 <template lang="pug">
   .hello
-    div(v-if='myQ')
-      h1.ui.header
-      h4.sub.header {{myQ.c}}(等級{{myQ.l}})
-      |             {{myQ.q}}
-      .ui.buttons
-        a.ui.huge.button(:class="myA == a ? 'green' : 'gray'", v-for='a in myQ.as', @click='myA = a; check(a, myQ.t)')
-          | {{a}}
-    h1(v-if='win') 你答對了！
-    h1(v-if='wrong') 不對喔，請再加油！
-    hr
-    div
-      .ui.buttons
-        a.ui.teal.huge.button(v-if='myQ', @click='resetO()')
-          | 同級測驗
-        a.ui.orange.huge.button(v-if='myQ && myLev < 3', @click='levup()')
-          | 升級測驗
-    hr
-    div
-      h3 選擇單元
-      .ui.buttons
-        a.ui.huge.button(:class="myC == c ? 'green' : 'gray'", v-for='c in myCs', @click='setC(c)')
-          | {{c}}
-        a.ui.huge.button(@click='reset()')
-          | 隨機
+    .ui.container
+      div(v-if='myQ')
+        h1.ui.header
+          | {{myQ.q}}
+        h4.sub.header {{myQ.c}}(等級{{myQ.l}})
+        .ui.buttons
+          a.ui.huge.button(:class="myA == a ? 'green' : 'gray'", v-for='a in myQ.as', @click='myA = a; check(a, myQ.t)')
+            | {{a}}
+      h1(v-if='win') 你答對了！
+      h1(v-if='wrong') 不對喔，請再加油！
+      hr
+      div
+        .ui.buttons
+          a.ui.teal.huge.button(v-if='myQ', @click='resetO()')
+            | 同級測驗
+          a.ui.orange.huge.button(v-if='myQ && myLev < 3', @click='levup()')
+            | 升級測驗
+      hr
+      div
+        h3 選擇單元
+        .ui.buttons
+          a.ui.huge.button(:class="myC == c ? 'green' : 'gray'", v-for='c in myCs', @click='setC(c)')
+            | {{c}}
+          a.ui.huge.button(@click='reset()')
+            | 隨機
 
 </template>
 
