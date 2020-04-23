@@ -72,7 +72,10 @@ export default {
   },
   mounted () {
     this.reset()
-    window.addEventListener('keydown', this.flipCard)
+    window.addEventListener('keyup', this.flipCard)
+  },
+  beforeDestroy () {
+    window.removeEventListener('keyup', this.keyH)
   }
 }
 </script>
