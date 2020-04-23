@@ -19,7 +19,7 @@ Vue.use(VueAxios, axios)
 
 Vue.use(VueGtag, {
   config: { id: 'UA-26178243-4' }
-})
+}, router)
 
 promise.polyfill()
 Vue.use(rtdbPlugin)

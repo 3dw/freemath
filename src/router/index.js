@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import Hello from '@/components/Hello'
 import Intro from '@/components/Intro'
 import Maps from '@/components/Maps'
@@ -17,9 +17,9 @@ import Quiz from '@/components/Quiz'
 import Chat from '@/components/Chat'
 import New from '@/components/New'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
   routes: [
     {
       path: '/hello',
