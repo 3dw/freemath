@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
     "es6-promise": "^4.2.6",
     "firebase": "^7.11.0",
@@ -34,6 +35,7 @@
     "vue": "^2.5.2",
     "vue-analytics": "^5.22.1",
     "vue-autofocus-directive": "^1.0.4",
+    "vue-axios": "^2.1.5",
     "vue-gallery-slideshow": "^1.5.0",
     "vue-gtag": "^1.6.2",
     "vue-router": "^3.0.1",
