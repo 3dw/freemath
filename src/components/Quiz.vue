@@ -2,7 +2,7 @@
   .hello
     .ui.container
       h1(v-if = "err") {{err}}
-      div(v-if='myQ')
+      div(v-if='myQ.q')
         h1.ui.header
           | {{myQ.q}}
         h4.sub.header {{myQ.c}}(等級{{myQ.l}})
@@ -12,14 +12,16 @@
       h1(v-if='win') 你答對了！
         img.good(src="../assets/th.jpg")
       h1(v-if='wrong') 不對喔，請再加油！
-      hr(v-if="myQ")
+      hr(v-if="myQ.q")
       div
         .ui.buttons
-          a.ui.teal.huge.button(v-if='myQ', @click='resetO()')
+          a.ui.red.huge.button(v-if='myQ.q && myLev > 1', @click='resetO()')
+            | 降級測驗
+          a.ui.teal.huge.button(v-if='myQ.q', @click='resetO()')
             | 同級測驗
-          a.ui.orange.huge.button(v-if='myQ && myLev < maxLev', @click='levup()')
+          a.ui.orange.huge.button(v-if='myQ.q && myLev < maxLev', @click='levup()')
             | 升級測驗
-      hr(v-if="myQ")
+      hr(v-if="myQ.q")
       div
         h3 選擇單元
         .ui.buttons
@@ -37,7 +39,7 @@ export default {
   data () {
     return {
       err: null,
-      myQ: undefined,
+      myQ: {q: ''},
       myA: undefined,
       win: false,
       wrong: false,
@@ -60,11 +62,17 @@ export default {
       this.resetO()
     },
     resetO () {
+      const lastQ = this.myQ || {q: ''}
       var lev = this.myLev
       var c = this.myC
-      this.myQuizs = this.quizs.filter((o) => { return o.l === lev && o.c === c })
       this.maxLev = this.quizs.filter((o) => { return o.c === c }).map((o) => { return o.l }).sort((a, b) => { return b - a })[0]
-      this.myQ = this.myQuizs[Math.floor(Math.random() * this.myQuizs.length)]
+      if (lev > this.maxLev) {
+        lev = this.maxLev
+      }
+      this.myQuizs = this.quizs.filter((o) => { return o.l === lev && o.c === c })
+      while (lastQ.q === this.myQ.q) {
+        this.myQ = this.myQuizs[Math.floor(Math.random() * this.myQuizs.length)]
+      }
       this.win = false
       this.wrong = false
       this.myA = undefined
