@@ -1,6 +1,9 @@
 <template lang="pug">
   .hello
     .ui.container
+      //.ui.segment
+        p(v-for = "q in quizs", :key = "q.q")
+          | {{ q.q }} {{ q.as }} {{q.t}}
       h1(v-if = "err") {{err}}
       div(v-if='myQ.q')
         h1.ui.header
@@ -72,6 +75,7 @@ export default {
       var lev = this.myLev
       var c = this.myC
       this.maxLev = this.quizs.filter((o) => { return o.c === c }).map((o) => { return o.l }).sort((a, b) => { return b - a })[0]
+
       if (lev > this.maxLev) {
         lev = this.maxLev
       }
@@ -89,7 +93,7 @@ export default {
       this.resetO()
     },
     check (a, b) {
-      if (a === b) {
+      if (a === Number(b)) {
         this.win = true
         this.wrong = false
       } else {
@@ -100,10 +104,38 @@ export default {
     }
   },
   mounted () {
-    this.$http.get('/static/quizs.json').then(response => {
+    var vm = this
+    for (let i = 0; i < this.myCs.length; i++) {
+      let c = this.myCs[i]
+      this.$http.get('/static/' + c + '.md').then(response => {
+        let list = response.data.split('\n')
+        let lev = 1
+        for (let k = 0; k < list.length; k++) {
+          let line = list[k]
+          let qa = line.split('? ')
+          if (qa.length === 1) {
+            lev++
+          } else {
+            let obj = {
+              c: c,
+              l: lev,
+              q: qa[0],
+              as: [],
+              t: qa[1]
+            }
+            let r = Math.floor(Math.random() * 4)
+            for (let a = qa[1] - r; a < qa[1] - r + 4; a++) {
+              obj.as.push(a)
+            }
+            vm.quizs.push(obj)
+          }
+        }
+      })
+    }
+    /* this.$http.get('/static/quizs.json').then(response => {
       if (typeof response.data !== 'object') { this.err = 'error: 資料格式錯誤' }
       this.quizs = response.data
-    })
+    }) */
     window.addEventListener('keyup', this.keyH)
   },
   beforeDestroy () {
