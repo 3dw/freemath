@@ -19,11 +19,11 @@
       hr(v-if="myQ.q")
       div
         .ui.buttons
-          a.ui.red.large.basic.button(v-if='myQ.q && myLev > 1', @click='resetO()')
+          a.ui.red.large.basic.button(v-if='myQ.q && myLev > 1', @click='levup(-1)')
             | 降級測驗
           a.ui.green.large.button(v-if='myQ.q', @click='resetO()')
             | 同級測驗
-          a.ui.orange.large.basic.button(v-if='myQ.q && myLev < maxLev', @click='levup()')
+          a.ui.orange.large.basic.button(v-if='myQ.q && myLev < maxLev', @click='levup(1)')
             | 升級測驗
       hr(v-if="myQ.q")
       div
@@ -88,8 +88,8 @@ export default {
       this.myA = undefined
       this.$forceUpdate()
     },
-    levup () {
-      this.myLev++
+    levup (n) {
+      this.myLev += n
       this.resetO()
     },
     check (a, b) {
@@ -112,7 +112,7 @@ export default {
         let lev = -1
         for (let k = 0; k < list.length; k++) {
           let line = list[k]
-          let qa = line.split('? ')
+          let qa = line.split(/[?？]\s+/)
           if (qa.length === 1) {
             lev++
           } else {
