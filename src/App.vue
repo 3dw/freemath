@@ -45,7 +45,7 @@
         router-link.item(to='/chat' exact='')
           i.chat.icon
           | 留言板
-        a.item(href = "www.github.com/bestian/freemath")
+        a.item(href = "https://www.github.com/bestian/freemath")
           i.github.icon
           | 原始碼
         .item.fat-only
