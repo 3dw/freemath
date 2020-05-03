@@ -61,7 +61,7 @@ export default {
       this.resetO()
     },
     reset () {
-      this.myLev = Math.floor(Math.random() * 3) + 1
+      this.myLev = 1
       this.myC = this.myCs[Math.floor(Math.random() * this.myCs.length)]
       this.resetO()
     },
