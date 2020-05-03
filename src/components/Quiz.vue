@@ -109,7 +109,7 @@ export default {
       let c = this.myCs[i]
       this.$http.get('/static/' + c + '.md').then(response => {
         let list = response.data.split('\n')
-        let lev = 0
+        let lev = -1
         for (let k = 0; k < list.length; k++) {
           let line = list[k]
           let qa = line.split('? ')
