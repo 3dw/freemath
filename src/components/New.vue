@@ -60,4 +60,8 @@ export default {
   background-color: #c9ffc9;
 }
 
+.ui.button.group {
+  background-color: #c9ffc9;
+}
+
 </style>

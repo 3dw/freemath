@@ -33,12 +33,12 @@
         //router-link.item(to='/vedio' exact='')
           i.play.icon
           | 導覽
+        router-link.item(to='/intro' exact='')
+          i.book.icon
+          | 編創源起
         router-link.item(to='/faq' exact='')
           i.question.icon
           | 常見問題
-        //router-link.item(to='/intro' exact='')
-          i.book.icon
-          | 編創源起
         //router-link.item(to='/donate' exact='')
           i.gift.icon
           | 出錢出力
@@ -290,6 +290,7 @@ body {
                 'Apple LiGothic Medium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
 }
 

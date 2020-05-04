@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="ui segment">
-      <a href="mailto:bestian@gmail.com"><i class ="mail icon"/>有其他問題嗎？歡迎寫信給宗浩</a>
+      <a href="mailto:bestian@gmail.com"><i class ="mail icon"/>有其他問題嗎？歡迎寫信給Bestian</a>
     </div>
   </div>
 </template>
