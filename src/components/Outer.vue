@@ -106,6 +106,12 @@ export default {
         }
       ],
       oldtests: [
+        { n: '109國中會考考古題',
+          h: 'https://drive.google.com/file/d/1WOPUIoTY5vUvLWwCgW_sddjdocHFsJFQ/view',
+          a: 'http://chu246.blogspot.com/2020/05/109.html'},
+        { n: '108國中會考考古題',
+          h: 'https://cap.rcpet.edu.tw/exam/108/108P_Math150DPI.pdf',
+          a: 'http://chu246.blogspot.com/2019/05/108.html'},
         { n: '107國中會考考古題',
           h: 'https://cap.nace.edu.tw/exam/107/107P_Math.pdf',
           a: 'http://chu246.blogspot.com/2018/05/107.html'
