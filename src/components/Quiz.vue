@@ -13,7 +13,7 @@
           a.ui.huge.orange.button(:class="myA == a ? 'green' : 'gray'", v-for='a in myQ.as', @click='myA = a; check(a, myQ.t)')
             | {{a}}
       h1(v-if='win')
-        a(@click='resetO()') 你答對了！按Enter鍵繼續...
+        a(@click='resetO()') 你答對了！按Enter鍵或點這裡繼續...
           img.good(src="../assets/th.jpg")
       h1(v-if='wrong') 不對喔，請再加油！
       hr(v-if="myQ.q")
