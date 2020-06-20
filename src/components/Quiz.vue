@@ -6,7 +6,7 @@
           | {{ q.q }} {{ q.as }} {{q.t}}
       h1(v-if = "err") {{err}}
       div(v-if='myQ.q')
-        img(v-if = "myQ.img", :src="myQ.img")
+        img.q(v-if = "myQ.img", :src="myQ.img")
         h1.ui.header
           | {{myQ.q}}
           h4.sub.header {{myQ.c}}(等級{{myQ.l}})
@@ -150,7 +150,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-img {
+img.q {
   width: 300px;
 }
 
