@@ -117,7 +117,7 @@ export default {
           if (qa.length === 1) {
             lev++
           } else {
-            /![如圖]\((.*)\)/.test(qa[0])
+            /!\[如圖\]\((.*)\)/.test(qa[0])
             let obj = {
               c: c,
               l: lev,
