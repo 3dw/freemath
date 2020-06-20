@@ -52,7 +52,7 @@ export default {
       maxLev: 3,
       quizs: [],
       myQuizs: [],
-      myCs: ['加法', '減法', '乘法', '除法', '正負數']
+      myCs: ['加法', '減法', '乘法', '除法', '正負數', '圓與角']
     }
   },
   methods: {
