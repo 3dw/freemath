@@ -107,6 +107,7 @@ export default {
   mounted () {
     var vm = this
     for (let i = 0; i < this.myCs.length; i++) {
+      var d = 1
       let c = this.myCs[i]
       this.$http.get('/static/' + c + '.md').then(response => {
         let list = response.data.split('\n')
@@ -127,8 +128,11 @@ export default {
               img: RegExp.$1
             }
             let r = Math.floor(Math.random() * 4)
-            var d = qa[2] || 1
-            for (let a = qa[1] - r; a < qa[1] - r + 4 * d; a += d) {
+            d = parseInt(qa[2])
+            if (!d || d === 0 || isNaN(d)) {
+              d = 1
+            }
+            for (let a = parseInt(qa[1]) - r * d; a < qa[1] - r * d + 4 * d; a += d) {
               obj.as.push(a)
             }
             vm.quizs.push(obj)
