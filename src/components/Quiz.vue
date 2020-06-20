@@ -127,7 +127,8 @@ export default {
               img: RegExp.$1
             }
             let r = Math.floor(Math.random() * 4)
-            for (let a = qa[1] - r; a < qa[1] - r + 4; a++) {
+            let d = qa[2] || 1
+            for (let a = qa[1] - r; a < qa[1] - r + 4 * d; a += d) {
               obj.as.push(a)
             }
             vm.quizs.push(obj)
