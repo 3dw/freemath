@@ -117,7 +117,7 @@ export default {
           if (qa.length === 1) {
             lev++
           } else {
-            qa[0] = qa[0].replace(/!\[如圖\]\((.*)\)/, '如圖')
+            qa[0] = qa[0].replace(/!\[如圖\]\((.*png)(.*)\)/, '如圖')
             let obj = {
               c: c,
               l: lev,
