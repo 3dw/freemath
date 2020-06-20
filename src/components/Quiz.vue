@@ -117,7 +117,7 @@ export default {
           if (qa.length === 1) {
             lev++
           } else {
-            /!\[如圖\]\((.*)\)/.test(qa[0])
+            qa[0] = qa[0].replace(/!\[如圖\]\((.*)\)/, '如圖')
             let obj = {
               c: c,
               l: lev,
@@ -149,6 +149,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+img {
+  width: 300px;
+}
+
 .hello {
 
 }
