@@ -6,6 +6,7 @@
           | {{ q.q }} {{ q.as }} {{q.t}}
       h1(v-if = "err") {{err}}
       div(v-if='myQ.q')
+        img(v-if = "myQ.img", :src="myQ.img")
         h1.ui.header
           | {{myQ.q}}
           h4.sub.header {{myQ.c}}(等級{{myQ.l}})
@@ -116,12 +117,14 @@ export default {
           if (qa.length === 1) {
             lev++
           } else {
+            /![如圖]\((.*)\)/.test(qa[0])
             let obj = {
               c: c,
               l: lev,
               q: qa[0],
               as: [],
-              t: qa[1]
+              t: qa[1],
+              img: RegExp.$1
             }
             let r = Math.floor(Math.random() * 4)
             for (let a = qa[1] - r; a < qa[1] - r + 4; a++) {
