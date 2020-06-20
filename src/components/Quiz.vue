@@ -11,7 +11,7 @@
           | {{myQ.q}}
           h4.sub.header {{myQ.c}}(等級{{myQ.l}})
         .ui.buttons
-          a.ui.huge.orange.button(:class="myA == a ? 'green' : 'gray'", v-for='a in myQ.as', @click='myA = a; check(a, myQ.t)')
+          a.ui.huge.button(:class="myA == a ? 'green' : 'gray'", v-for='a in myQ.as', @click='myA = a; check(a, myQ.t)')
             | {{a}}
       h1(v-if='win')
         a(@click='resetO()') 你答對了！按Enter鍵或點這裡繼續...
@@ -19,7 +19,7 @@
       h1(v-if='wrong') 不對喔，請再加油！
       hr(v-if="myQ.q")
       div
-        .ui.buttons
+        .ui.vertical.buttons
           a.ui.red.large.basic.button(v-if='myQ.q && myLev > 1', @click='levup(-1)')
             | 降級測驗
           a.ui.green.large.button(v-if='myQ.q', @click='resetO()')
@@ -29,7 +29,7 @@
       hr(v-if="myQ.q")
       div
         h3 選擇單元
-        .ui.buttons
+        .ui.vertical.buttons
           a.ui.large.button(:class="myC == c ? 'green' : 'gray'", v-for='c in myCs', @click='setC(c)')
             | {{c}}
           a.ui.large.blue.button(@click='reset()')
