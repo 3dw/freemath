@@ -132,8 +132,12 @@ export default {
             if (!d || d === 0 || isNaN(d)) {
               d = 1
             }
-            for (let a = parseInt(qa[1]) - r * d; a < qa[1] - r * d + 4 * d; a += d) {
-              obj.as.push(a)
+            if (qa[1].split('*').length > 1) {
+              obj.as = qa[1].split('*')
+            } else {
+              for (let a = parseInt(qa[1]) - r * d; a < qa[1] - r * d + 4 * d; a += d) {
+                obj.as.push(a)
+              }
             }
             vm.quizs.push(obj)
           }
