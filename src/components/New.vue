@@ -23,7 +23,7 @@
 <script>
 
 export default {
-  name: 'new',
+  name: '首頁',
   props: [],
   components: { },
   data () {

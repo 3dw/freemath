@@ -1,5 +1,6 @@
 <template lang="pug">
   #app
+    vue-headful(:title="$route.name +'@自由數學'")
     .ui.top.menu.no-print.thin-only
       router-link.item(to='/' exact='')
         i.home.icon

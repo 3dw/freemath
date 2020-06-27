@@ -12,11 +12,10 @@ import autofocus from 'vue-autofocus-directive'
 import VueGtag from 'vue-gtag'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+import vueHeadful from 'vue-headful'
+Vue.component('vue-headful', vueHeadful)
 Vue.directive('autofocus', autofocus)
-
 Vue.use(VueAxios, axios)
-
 Vue.use(VueGtag, {
   config: { id: 'UA-26178243-4' }
 }, router)

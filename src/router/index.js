@@ -23,82 +23,82 @@ export default new VueRouter({
   routes: [
     {
       path: '/hello',
-      name: 'Hello',
+      name: '查詢教材',
       component: Hello
     },
     {
       path: '/',
-      name: 'New',
+      name: '首頁',
       component: New
     },
     {
       path: '/intro',
-      name: 'Intro',
+      name: '介紹',
       component: Intro
     },
     {
       path: '/maps',
-      name: 'Maps',
+      name: '學習地圖',
       component: Maps
     },
     {
       path: '/table',
-      name: 'Table',
+      name: '教材表',
       component: Table
     },
     {
       path: '/log/:my',
-      name: 'StonesLog',
+      name: '摸石頭',
       component: StonesLog
     },
     {
       path: '/donate',
-      name: 'Donate',
+      name: '樂捐',
       component: Donate
     },
     {
       path: '/vedio',
-      name: 'Vedio',
+      name: '影片',
       component: Vedio
     },
     {
       path: '/faq',
-      name: 'Faq',
+      name: '常見問題',
       component: Faq
     },
     {
       path: '/outer',
-      name: 'Outer',
+      name: '外部資源',
       component: Outer
     },
     {
       path: '/tools',
-      name: 'Tools',
+      name: '小工具',
       component: Tools
     },
     {
       path: '/card',
-      name: 'Card',
+      name: '閃卡',
       component: Card
     },
     {
       path: '/play12',
-      name: 'Play12',
+      name: '湊12',
       component: Play12
     },
     {
       path: '/grid',
-      name: 'Grid',
+      name: '方格紙',
       component: Grid
     },
     {
       path: '/quiz',
-      name: 'Quiz',
+      name: '小測驗',
       component: Quiz
     },
     {
       path: '/chat',
-      name: 'Chat',
+      name: '留言版',
       component: Chat
     }
   ]

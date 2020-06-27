@@ -38,6 +38,7 @@
     "vue-axios": "^2.1.5",
     "vue-gallery-slideshow": "^1.5.0",
     "vue-gtag": "^1.6.2",
+    "vue-headful": "^2.1.0",
     "vue-router": "^3.1.6",
     "vue-runtime-helpers": "^1.1.2",
     "vuefire": "^2.2.1"
