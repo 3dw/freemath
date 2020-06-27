@@ -27,13 +27,20 @@
           a.ui.orange.large.basic.button(v-if='myQ.q && myLev < maxLev', @click='levup(1)')
             | 升級測驗
       hr(v-if="myQ.q")
-      div
-        h3 選擇單元
-        .ui.vertical.buttons
-          a.ui.large.button(:class="myC == c ? 'green' : 'gray'", v-for='c in myCs', @click='setC(c)')
-            | {{c}}
-          a.ui.large.blue.button(@click='reset()')
-            | 隨機
+      .ui.grid.container
+        .ui.stackable.row
+          .eight.wide.column(v-if="myQ.q")
+            h3 參考教材
+            span(v-for = "u in units")
+              a(:href="u.url", v-if="u.n === myC", target="_blank")
+                  | {{u.n}}
+          .column(:class="myQ.q ? 'eight wide' : 'sixteen wide'")
+            h3 選擇單元
+            .ui.vertical.buttons
+              a.ui.large.button(:class="myC == c ? 'green' : 'gray'", v-for='c in myCs', @click='setC(c)')
+                | {{c}}
+              a.ui.large.blue.button(@click='reset()')
+                | 隨機
 
 </template>
 
@@ -41,6 +48,7 @@
 
 export default {
   name: 'Quiz',
+  props: ['units'],
   data () {
     return {
       err: null,

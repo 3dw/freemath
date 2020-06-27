@@ -38,6 +38,8 @@
            | 四張牌，加減乘除湊12，可以和別人連線一起解謎
         .ui.card
           router-link.item(to='/quiz' exact='')
+            .image
+              img(src = "../assets/quiz.png")
             | 小測驗
           .description
            | 隨機題庫小測驗
