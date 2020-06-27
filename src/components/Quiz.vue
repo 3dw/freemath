@@ -94,7 +94,7 @@ export default {
       this.resetO()
     },
     check (a, b) {
-      if (a === Number(b)) {
+      if (a === Number(b) || a === b) {
         this.win = true
         this.wrong = false
       } else {
@@ -118,7 +118,7 @@ export default {
           if (qa.length === 1) {
             lev++
           } else {
-            qa[0] = qa[0].replace(/!\[如圖\]\((.*png)(.*)\)/, '如圖')
+            qa[0] = qa[0].replace(/!\[如圖\]\((.*g)(.*)\)/, '如圖')
             let obj = {
               c: c,
               l: lev,
@@ -133,7 +133,10 @@ export default {
               d = 1
             }
             if (qa[1].split('*').length > 1) {
-              obj.as = qa[1].split('*')
+              obj.t = qa[1].split('*')[0]
+              obj.as = qa[1].split('*').slice().sort(function () {
+                return Math.random() - 0.5
+              })
             } else {
               for (let a = parseInt(qa[1]) - r * d; a < qa[1] - r * d + 4 * d; a += d) {
                 obj.as.push(a)
