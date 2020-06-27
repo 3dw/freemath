@@ -42,13 +42,13 @@
       </div>
     </div><!-- Segment END -->
 
-   <!-- <ul class = "print">
+   <ul class = "print">
       <li v-for = "(i, index) in [1,2,3,4,0,5]">
         <a :href="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" target="_blank">
           <img :src ="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" style="max-width:75vw" alt = ""/>
         </a>
       <div class="divider"></div></li>
-    </ul>   -->
+    </ul>
   </div>
 </template>
 
