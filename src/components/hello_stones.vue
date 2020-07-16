@@ -1,16 +1,17 @@
 <template lang="pug">
-  .river
-    .ui.input
-      input#find(v-autofocus="", type='text', v-model='s', placeholder='依關鍵字或年級搜詢', autofocus='')
-    .stone(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 80 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
-      a(:href='u.url', target='_blank')
-        img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
-        //
-          </a>
-            <a @click="check(u)">
-        | {{ u.n }}
-        br
-        span.fat-only.gray {{ countGrade(u.g, u.G) }} 
+  .hello
+    .ui.form.container
+      .ui.input
+        input(v-model="s", v-autofocus="", placeholder="以關鍵字或年級查詢")
+    br
+    .ui.grid.container
+      .four.column.doubling.row
+        .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
+          a(:href="u.url", target="_blank")
+            img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
+            | {{ u.n }} 
+            br.thin-only
+            span.gray {{ countGrade(u.g, u.G) }} 
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
 
@@ -63,50 +64,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.river {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 500vh;
-  width: 100vw;
-  background-color: #c9c9ff;
+
+.column#col {
+  text-align: left;
+  margin: 1em 0;
 }
 
-.stone {
-  font-size: 15px;
-  position: absolute;
-  padding: 1vw;
-  width: 15vw;
-  border-radius: 15px;
-  background-color: white;
-  border: 2px #090 ridge;
+.ui.button.group {
+  background-color: #c9ffc9;
 }
 
-.stone:hover {
-  z-index: 999;
-}
-
-.stone.checked {
-  background-color: #9f9;
-  border: 3px gold ridge;
-}
-
-.ui.input {
-  position: absolute;
-  top: 10px;
-  left: 33vw;
-  width: 40vw !important;
-  z-index: 999;
-}
-
-#find {
-  width: 250px !important;
-}
-
-iframe {
-  position: absolute;
-  top: 300vmin;
-  left: 15vw;
+a img {
+  filter: grayscale(100%);
+  margin: 0 3px;
 }
 
 </style>

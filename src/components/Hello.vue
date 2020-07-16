@@ -1,7 +1,7 @@
 <template lang="pug">
   .hello
-    br
     news
+    br
     stones(:units='units')
 </template>
 
