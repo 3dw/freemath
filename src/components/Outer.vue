@@ -35,7 +35,7 @@
               img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
               | 四技二專統測
           .item
-            a(herf='https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57')
+            a(href='https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57', target='_blank')
               img(src='https://www.google.com/s2/favicons?domain=https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57')
               | 高中同等學力鑑定
       .ui.card
