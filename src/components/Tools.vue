@@ -43,6 +43,13 @@
             | 小測驗
           .description
            | 隨機題庫小測驗
+        .ui.card
+          a.item(href = "https://github.com/bestian/mathquiz", target="_blank")
+            .image
+              img(src = "../assets/mathquiz.jpg")
+            | 隨機題目生成器
+          .description
+           | 隨機題目生成器，以Haskell編寫
 </template>
 
 <script>
