@@ -80,6 +80,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped="">
 
+.ui.header {
+  margin-top: 1em;
+}
+
 .hello {
   text-align: center;
   height: 100vh;
