@@ -337,6 +337,9 @@ body {
   justify-content: center;
 }
 
+.ui.menu {
+  margin: 0;
+}
 
 a, button, .clickable {
   cursor: pointer !important;
