@@ -25,11 +25,12 @@
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
-          a(@click = "op(u.url, u.n)" target="_blank")
+          a(@click = "op(u.url, u.n, u.pro)" target="_blank")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
-            | {{ u.n }} 
+            | {{ u.n }}
             br.thin-only
-            span.gray {{ countGrade(u.g, u.G) }} 
+            span.gray {{ countGrade(u.g, u.G) }}
+            span(v-show="u.pro") (pro) 
     
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
@@ -46,12 +47,31 @@ export default {
     }
   },
   methods: {
-    op (url, name) {
-      this.$gtag.query('event', 'view', {
+    op (url, name, pro) {
+      this.$gtag.query('event', 'view' + name, {
         name: name,
-        url: url
+        url: url,
+        pro: pro
       })
-      window.open(url)
+      if (!pro) {
+        window.open(url)
+      } else {
+        if (window.confirm('贊助會員專區-您願意成為贊助會員嗎？')) {
+          this.$gtag.query('event', 'donate' + name, {
+            name: name,
+            url: url,
+            pro: pro
+          })
+          window.open(url)
+          setTimeout(() => { window.open('https://sites.google.com/view/autoalearn/%E9%97%9C%E6%96%BC%E6%9C%AC%E6%9C%83/%E6%88%90%E7%82%BA%E8%B4%8A%E5%8A%A9%E6%9C%83%E5%93%A1') }, 500)
+        } else {
+          this.$gtag.query('event', 'not_donate' + name, {
+            name: name,
+            url: url,
+            pro: pro
+          })
+        }
+      }
     },
     countGrade (g, G) {
       var min = g
