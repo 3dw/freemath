@@ -25,7 +25,7 @@
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
-          a(:href="u.url", target="_blank")
+          a(@click = "op(u.url, u.n)" target="_blank")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
             | {{ u.n }} 
             br.thin-only
@@ -46,6 +46,13 @@ export default {
     }
   },
   methods: {
+    op (url, name) {
+      this.$gtag.query('event', 'view', {
+        name: name,
+        url: url
+      })
+      window.open(url)
+    },
     countGrade (g, G) {
       var min = g
       if (g <= 0) {
