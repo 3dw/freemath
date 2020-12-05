@@ -3,7 +3,7 @@
     h1.ui.header 歡迎使用自由數學
     .ui.divider
     .ui.segment.container.center.aligned
-      .ui.buttons
+      .ui.vertical.buttons
         a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')")
           i.search.icon
           | 查詢教材
@@ -11,7 +11,7 @@
           i.question.icon
           | 常見問題
       .ui.divider
-      .ui.buttons
+      .ui.vertical.buttons
         a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)")
           i.user.icon
           | 小學數學
@@ -30,7 +30,7 @@
             | {{ u.n }}
             br.thin-only
             span.gray {{ countGrade(u.g, u.G) }}
-            span(v-show="u.pro") (pro) 
+            .ui.teal.tag.label(v-show="u.pro") pro
     
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
