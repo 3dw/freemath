@@ -12,7 +12,7 @@
             <h4>集資目標：$NT{{u.goal}}</h4>
             <h4>現已集資：$NT{{u.current}}</h4>
             <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p" :label="u.p + '%'" />
-            <a class="ui green big button" href="http://map.alearn.org.tw/#/doner/gift" target="_blank"><i class="gift icon" />樂捐支持</a>
+            <a class="ui green big button" href="http://map.alearn.org.tw/#/donate" target="_blank"><i class="gift icon" />樂捐支持</a>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
             </div>
             <h3>如何捐錢？</h3>
             <p>
-                請點選<a class="item" href="http://map.alearn.org.tw/#/doner/gift" target="_blank">
+                請點選<a class="item" href="http://map.alearn.org.tw/#/donate target="_blank">
                     <i class="gift icon" />樂捐支持
                  </a>，內有詳細的說明。
              </p>

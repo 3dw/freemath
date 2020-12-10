@@ -40,7 +40,7 @@
         router-link.item(to='/faq' exact='')
           i.question.icon
           | 常見問題
-        //router-link.item(to='/donate' exact='')
+        router-link.item(to='/donate' exact='')
           i.gift.icon
           | 出錢出力
         router-link.item(to='/chat' exact='')

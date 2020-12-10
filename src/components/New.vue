@@ -62,7 +62,7 @@ export default {
             url: url,
             pro: pro
           })
-          window.open(url)
+          window.alert('請填表註冊，完全手續後，發e-mail至: bestian@gmail.com申請免費教材，謝謝!')
           setTimeout(() => { window.open('https://sites.google.com/view/autoalearn/%E9%97%9C%E6%96%BC%E6%9C%AC%E6%9C%83/%E6%88%90%E7%82%BA%E8%B4%8A%E5%8A%A9%E6%9C%83%E5%93%A1') }, 500)
         } else {
           this.$gtag.query('event', 'not_donate' + name, {
