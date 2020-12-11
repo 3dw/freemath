@@ -6,7 +6,7 @@
       <div class="ui row">
         <div class="ui left aligned segment column">
           <h3 class="ui header">最新集資目標：</h3>
-          <div class="item" v-for="u in us.slice(0, 1)">
+          <div class="item" v-for="u in us.slice(0, 1)" :key="u.n">
             <h2>{{u.n}}</h2>
             <h3 v-html="u.demo"></h3>
             <h4>集資目標：$NT{{u.goal}}</h4>
@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="two column doubling row">
+      <!-- <div class="two column doubling row">
         <div class="column">
           <div class="ui segment container">
             <h2><i class="gift icon"/>出錢</h2>
@@ -30,7 +30,7 @@
             </div>
             <h3>如何捐錢？</h3>
             <p>
-                請點選<a class="item" href="http://map.alearn.org.tw/#/donate target="_blank">
+                請點選<a class="item" href="http://map.alearn.org.tw/#/donate"  target="_blank">
                     <i class="gift icon" />樂捐支持
                  </a>，內有詳細的說明。
              </p>
@@ -62,7 +62,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="ui segment">
       <a href="mailto:bestian@gmail.com"><i class ="mail icon"/>有其他問題嗎？歡迎寫信給宗浩</a>

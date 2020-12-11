@@ -28,9 +28,9 @@
       <div class="ui form no-print">
         <div class="inline fields">
           <label>選擇年段：</label>
-          <div class="field" v-for="r in ranges">
+          <div class="field" v-for="r in ranges" :key="r">
             <div class="ui radio checkbox">
-              <input type="radio" name="year"v-bind:value="r" v-model = "myRange">
+              <input type="radio" name="year" v-bind:value="r" v-model = "myRange">
               <label class="clickable" @click = "myRange = r">{{r.t}}</label>
             </div>
           </div>
@@ -43,7 +43,7 @@
     </div><!-- Segment END -->
 
    <ul class = "print">
-      <li v-for = "(i, index) in [1,2,3,4,0,5]">
+      <li v-for = "i in [1,2,3,4,0,5]" :key="i">
         <a :href="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" target="_blank">
           <img :src ="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" style="max-width:75vw" alt = ""/>
         </a>

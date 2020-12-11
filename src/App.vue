@@ -52,8 +52,7 @@
         .item.fat-only
           iframe(src='https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20' width='77' height='20' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
     main#main
-      transition(name='fade' mode='out-in')
-        router-view(:units='units', :play12="play12", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
+      router-view(:units='units', :play12="play12", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
       router-link#logo(to='/')
         img(src='./assets/logo.png')
 </template>
@@ -219,64 +218,19 @@ export default {
 </script>
 
 
-<style lang="scss">
-
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }  
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }  
-    @keyframes #{$animation-name} {
-        @content;
-    }
-}
-
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};      
-}
-
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
-}
-
-@mixin transform($transforms) {
-     -moz-transform: $transforms;
-       -o-transform: $transforms;
-      -ms-transform: $transforms;
-  -webkit-transform: $transforms;
-          transform: $transforms;
-}
+<style>
 
 .fade-leave {  }
 
 .fade-leave-active {
-  @include transition(all .3s ease);
   opacity: 0;
 }
 
 .fade-enter {
   opacity: 0;
-  @include transform(rotateY(45deg));
 }
 
 .fade-enter-active {
-  @include transition(all .5s ease-in);
 }
 
 body {
