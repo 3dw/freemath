@@ -43,7 +43,7 @@ export default {
   components: { },
   data () {
     return {
-      s: ''
+      s: '',
     }
   },
   methods: {
