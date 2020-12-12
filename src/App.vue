@@ -49,7 +49,9 @@
         a.item(href = "https://www.github.com/bestian/freemath")
           i.github.icon
           | 原始碼
-        a.item(@click = "share=true" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alear.org.tw'" target="_blank") FB分享
+        a.item(@click = "share=true" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank") 
+          i.facebook.icon
+          | FB分享
     main#main
       p {{ share }}
       router-view(:units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
