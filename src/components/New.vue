@@ -40,10 +40,11 @@
 export default {
   name: '首頁',
   props: ['units'],
+  share: false 
   components: { },
   data () {
     return {
-      s: ''
+      s: '',
     }
   },
   methods: {
