@@ -53,7 +53,6 @@
           i.facebook.icon
           | FB分享
     main#main
-      p {{ share }}
       router-view(:units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
       router-link#logo(to='/')
         img(src='./assets/logo.png')
