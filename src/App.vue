@@ -49,9 +49,9 @@
         a.item(href = "https://www.github.com/bestian/freemath")
           i.github.icon
           | 原始碼
-        .item(@click="share = true")
-          iframe(src='https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fmath.alearn.org.tw&layout=button_count&size=small&appId=485195848253155&width=77&height=20' width='77' height='20' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
+        a.item(@click = "share=true" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alear.org.tw'" target="_blank") FB分享
     main#main
+      p {{ share }}
       router-view(:units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
       router-link#logo(to='/')
         img(src='./assets/logo.png')
