@@ -11,6 +11,7 @@ import VueGtag from 'vue-gtag'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import vueHeadful from 'vue-headful'
+import './registerServiceWorker'
 Vue.component('vue-headful', vueHeadful)
 Vue.directive('autofocus', autofocus)
 Vue.use(VueAxios, axios)
