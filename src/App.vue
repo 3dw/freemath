@@ -10,10 +10,8 @@
         i.angle.double.down.icon
       router-link.item(to='/outer' exact='')
         i.user.add.icon
-      router-link.item(to='/faq' exact='')
-        i.question.icon
-      //a.item(href = "www.github.com/bestian/freemath", target="_blank")
-        i.github.icon
+      a.item(@click = "share=true" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank")
+        i.facebook.icon
     .ui.top.labeled.icon.menu.no-print.fat-only
       router-link.item(to='/' exact='')
         i.home.icon
@@ -37,13 +35,13 @@
         router-link.item(to='/intro' exact='')
           i.book.icon
           | 編創源起
-        router-link.item(to='/faq' exact='')
+        // router-link.item(to='/faq' exact='')
           i.question.icon
           | 常見問題
-        router-link.item(to='/donate' exact='')
+        // router-link.item(to='/donate' exact='')
           i.gift.icon
           | 出錢出力
-        router-link.item(to='/chat' exact='')
+        // router-link.item(to='/chat' exact='')
           i.chat.icon
           | 留言板
         a.item(href = "https://www.github.com/bestian/freemath")
