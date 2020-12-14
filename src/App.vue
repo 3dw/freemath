@@ -52,16 +52,19 @@
           | FB分享
     main#main
       router-view(:units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
-      router-link#logo(to='/')
+      // router-link#logo(to='/')
         img(src='./assets/logo.png')
+      ad
 </template>
 
 <script>
 
 import { play12Ref, chatsRef } from './firebase/db'
+import Ad from './components/Ad-Be.vue';
 
 export default {
   name: 'app',
+  components: { Ad },
   data () {
     return {
       share: false,
