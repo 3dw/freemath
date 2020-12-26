@@ -53,7 +53,7 @@
 <script>
 export default {
   name: 'hello',
-  props: ['units'],
+  props: ['units', 'share'],
   data () {
     return {
       s: '',
@@ -72,7 +72,7 @@ export default {
         url: url,
         pro: pro
       })
-      if (!pro) {
+      if (!pro || this.share) {
         window.open(url)
       } else {
         if (window.confirm('會員專區-您可以按臉書分享單次解鎖，或加入會員。您願意成為贊助會員嗎？')) {

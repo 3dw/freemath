@@ -2,7 +2,7 @@
   .hello
     news
     br
-    stones(:units='units')
+    stones(:units='units', :share="share")
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import stones from './hello_stones'
 
 export default {
   name: 'hello',
-  props: ['units'],
+  props: ['units',' share'],
   components: { news, stones },
   data () {
     return {
