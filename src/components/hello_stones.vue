@@ -36,7 +36,7 @@ export default {
       if (!pro) {
         window.open(url)
       } else {
-        if (window.confirm('贊助會員專區-您願意成為贊助會員嗎？')) {
+        if (window.confirm('會員專區-您可以按臉書分享單次解鎖，或加入會員。您願意成為贊助會員嗎？')) {
           this.$gtag.query('event', 'donate' + name, {
             name: name,
             url: url,
@@ -50,6 +50,7 @@ export default {
             url: url,
             pro: pro
           })
+          window.alert('請按臉書分享單次解鎖')
         }
       }
     },
