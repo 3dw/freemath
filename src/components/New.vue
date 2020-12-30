@@ -1,33 +1,33 @@
 <template lang="pug">
   .hello
-    h1.ui.header 歡迎使用自由數學
+    h1.ui.header {{ sify('歡迎使用自由數學')}}
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.vertical.buttons
         a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')")
           i.search.icon
-          | 查詢教材
+          | {{ sify('查詢教材')}}
         a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')")
           i.question.icon
-          | 常見問題
+          | {{ sify('常見問題')}}
       .ui.divider
       .ui.vertical.buttons
         a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)")
           i.user.icon
-          | 小學數學
+          | {{ sify('小學數學')}}
         a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)")
           i.users.icon
-          | 國中數學
+          | {{ sify('國中數學')}}
     .ui.form.container
       .ui.input
-        input(v-model="s", v-autofocus="", placeholder="以關鍵字或年級查詢")
+        input(v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
     br
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
-            | {{ u.n }}
+            | {{ sify(u.n) }}
             br.thin-only
             span.gray {{ countGrade(u.g, u.G) }}
             .ui.teal.tag.label(v-show="u.pro") pro
@@ -37,9 +37,11 @@
 
 <script>
 
+import {sify} from 'chinese-conv'
+
 export default {
   name: '首頁',
-  props: ['units', 'share'],
+  props: ['units', 'share', 'si'],
   components: { },
   data () {
     return {
@@ -47,6 +49,13 @@ export default {
     }
   },
   methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
+      }
+    },
     op (url, name, pro) {
       this.$gtag.query('event', 'view' + name, {
         name: name,

@@ -3,15 +3,28 @@
   #ad
     a(href="https://hack.bestian.tw", target="_blank")
       img.ad(src="/ad-be.jpg")
-      | 本站由Bestian製作，歡迎學習架網站
+      | {{ sify('本站由Bestian製作，歡迎學習架網站') }}
 </template>
 
 <script>
+
+import {sify} from 'chinese-conv'
+
 export default {
   name: 'Ad',
+  props: ['si'],
   data() {
     return { };
   },
+  methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
+      }
+    }
+  }
 };
 </script>
 

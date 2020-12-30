@@ -10,31 +10,31 @@
         i.angle.double.down.icon
       router-link.item(to='/outer' exact='')
         i.user.add.icon
-      a.item(@click = "share=true" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank")
+      a.item(@click = "share=true; trackButton('share', 1)" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank")
         i.facebook.icon
     .ui.top.labeled.icon.menu.no-print.fat-only
       router-link.item(to='/' exact='')
         i.home.icon
-        | 首頁
+        | {{ sify('首頁') }}
       router-link.item(to='/maps' exact='')
         i.map.icon
-        | 學習地圖
+        | {{ sify('學習地圖') }}
       //router-link.item(to='/quiz' exact='')
         i.question.icon
         | 小測驗
       router-link.item(to='/tools' exact='')
         i.angle.double.down.icon
-        | 小工具
+        | {{ sify('小工具') }}
       router-link.item(to='/outer' exact='')
         i.user.add.icon
-        | 外部資源
+        | {{ sify('外部資源') }}
       .right.menu
         //router-link.item(to='/vedio' exact='')
           i.play.icon
           | 導覽
         router-link.item(to='/intro' exact='')
           i.book.icon
-          | 編創源起
+          | {{ sify('編創源起') }}
         // router-link.item(to='/faq' exact='')
           i.question.icon
           | 常見問題
@@ -44,29 +44,37 @@
         // router-link.item(to='/chat' exact='')
           i.chat.icon
           | 留言板
+        a.item(v-if = "!si", @click="si = true")
+          i.edit.icon
+          | {{ sify('簡体') }}
+        a.item(v-else, @click="si = false")
+          i.edit.icon
+          | {{ sify('正體') }}
         a.item(href = "https://www.github.com/bestian/freemath")
           i.github.icon
-          | 原始碼
-        a.item(@click = "share=true" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank") 
+          | {{ sify('原始碼') }}
+        a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank") 
           i.facebook.icon
-          | 臉書分享
+          | {{ sify('臉書分享') }}
     main#main
-      router-view(:units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
+      router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
       // router-link#logo(to='/')
         img(src='./assets/logo.png')
-      ad
+      ad(:si="si")
 </template>
 
 <script>
 
 import { play12Ref, chatsRef } from './firebase/db'
-import Ad from './components/Ad-Be.vue';
+import Ad from './components/Ad-Be.vue'
+import {sify} from 'chinese-conv'
 
 export default {
   name: 'app',
   components: { Ad },
   data () {
     return {
+      si: false,
       share: false,
       play12: undefined,
       chats: undefined,
@@ -136,6 +144,21 @@ export default {
     chats: chatsRef
   },
   methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
+      }
+    },
+    trackButton (t, v) {
+      this.$gtag.event('action', {
+        event_category: t,
+        event_action: t,
+        event_label: t,
+        value: v
+      })
+    },
     submit: function (n, email, t) {
       var o = {
         n: n,
@@ -203,6 +226,9 @@ export default {
     }
   },
   mounted () {
+    if (navigator.language === 'zh-cn' || navigator.language === 'zh-CN' || navigator.userLanguage === 'zh-cn') {
+      this.si = true
+    }
     this.units.sort(function (a, b) { return a.g - b.g })
   },
   watch: {

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "chinese-conv": "^1.0.1",
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
     "firebase": "^8.1.2",

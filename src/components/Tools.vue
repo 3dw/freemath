@@ -6,61 +6,71 @@
           router-link.item(to='/card' exact='')
             .image
               img(src = "../assets/閃卡.png")
-            | 閃卡
-          .description 自動產生算式和答案
+            | {{ sify('閃卡') }}
+          .description {{ sify('自動產生算式和答案' )}}
         .ui.card
           router-link.item(to='/grid' exact='')
             .image
               img(src = "../assets/方格紙產生器.png")
-            | 方格紙產生器
+            | {{ sify('方格紙產生器') }}
           .description
-           | 生成百數表、乘法表等，還可以隨機挖洞
+           | {{ sify('生成百數表、乘法表等，還可以隨機挖洞') }}
         .ui.card
           router-link.item(to='/log/_' exact='')
             .image
               img(src = "../assets/摸石頭.png")
-            | 摸石頭
+            | {{ sify('摸石頭') }}
           .description
-           | 以摸石頭的介面做學習記錄
+           | {{ sify('以摸石頭的介面做學習記錄') }}
         .ui.card
           router-link.item(to='/table' exact='')
             .image
               img(src = "../assets/教材列表.png")
-            | 教材列表
+            | {{ sify('教材列表') }}
           .description
-           | 將教材排列整齊，易於查詢
+           | {{ sify('將教材排列整齊，易於查詢') }}
         .ui.card
           router-link.item(to='/play12' exact='')
             .image
               img(src = "../assets/湊12.png")
-            | 湊12
+            | {{ sify('湊12') }}
           .description
-           | 四張牌，加減乘除湊12，可以和別人連線一起解謎
+           | {{ sify('四張牌，加減乘除湊12，可以和別人連線一起解謎') }}
         .ui.card
           router-link.item(to='/quiz' exact='')
             .image
               img(src = "../assets/quiz.png")
-            | 小測驗
+            | {{ sify('小測驗') }}
           .description
-           | 隨機題庫小測驗
+           | {{ sify('隨機題庫小測驗') }}
         .ui.card
           a.item(href = "https://github.com/bestian/mathquiz", target="_blank")
             .image
               img(src = "../assets/mathquiz.jpg")
-            | 隨機題目生成器
+            | {{ sify('隨機題目生成器') }}
           .description
-           | 隨機題目生成器，以Haskell編寫
+           | {{ sify('隨機題目生成器，以Haskell編寫') }}
 </template>
 
 <script>
 
+import {sify} from 'chinese-conv'
+
 export default {
   name: 'Outer',
+  props: ['si'],
   data () {
     return {
     }
   },
   methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
+      }
+    }
   }
 }
 </script>
