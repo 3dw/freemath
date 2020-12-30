@@ -10,7 +10,7 @@
         i.angle.double.down.icon
       router-link.item(to='/outer' exact='')
         i.user.add.icon
-      a.item(@click = "share=true; trackButton('share', 1)" :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank")
+      a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer")
         i.facebook.icon
     .ui.top.labeled.icon.menu.no-print.fat-only
       router-link.item(to='/' exact='')
@@ -53,7 +53,7 @@
         a.item(href = "https://www.github.com/bestian/freemath")
           i.github.icon
           | {{ sify('原始碼') }}
-        a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'" target="_blank") 
+        a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer") 
           i.facebook.icon
           | {{ sify('臉書分享') }}
     main#main

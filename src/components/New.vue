@@ -20,13 +20,14 @@
           | {{ sify('國中數學')}}
     .ui.form.container
       .ui.input
-        input(v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
+        input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
+        label(for = "s") -
     br
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
-          a(@click = "op(u.url, u.n, u.pro)" target="_blank")
-            img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
+          a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
+            img(:src="'https://www.google.com/s2/favicons?domain='+u.url" :alt="sify(u.n)")
             | {{ sify(u.n) }}
             br.thin-only
             span.gray {{ countGrade(u.g, u.G) }}

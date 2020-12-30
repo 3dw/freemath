@@ -1,8 +1,8 @@
 <template lang="pug">
 .hello
   #ad
-    a(href="https://hack.bestian.tw", target="_blank")
-      img.ad(src="/ad-be.jpg")
+    a(href="https://hack.bestian.tw", target="_blank", rel="noopener noreferrer")
+      img.ad(src="/ad-be.jpg" :alt="sify('本站由Bestian製作，歡迎學習架網站')")
       | {{ sify('本站由Bestian製作，歡迎學習架網站') }}
 </template>
 
