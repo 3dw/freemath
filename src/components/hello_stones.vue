@@ -2,14 +2,14 @@
   .hello
     .ui.form.container
       .ui.input
-        input(v-model="s", v-autofocus="", placeholder="以關鍵字或年級查詢")
+        input(v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
     br
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" , target="_blank")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url")
-            | {{ u.n }} 
+            | {{ sify(u.n) }} 
             br.thin-only
             span.gray {{ countGrade(u.g, u.G) }}
             .ui.teal.tag.label(v-show="u.pro") pro
@@ -17,9 +17,11 @@
 </template>
 
 <script>
+import {sify} from 'chinese-conv'
+
 export default {
   name: 'stones',
-  props: ['units', 'share'],
+  props: ['units', 'share', 'si'],
   data () {
     return {
       s: '',
@@ -27,6 +29,13 @@ export default {
     }
   },
   methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
+      }
+    },
     op (url, name, pro) {
       this.$gtag.query('event', 'view' + name, {
         name: name,

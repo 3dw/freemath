@@ -6,34 +6,47 @@
           h3.ui.header 最新消息：
           .ui.large.bulleted.list
             .item(v-for='n in news.slice(0, 3)')
-              span(v-html='n')
+              span(v-html="sify(n)")
         .ui.left.aligned.segment.column
-          h3.ui.header 如何使用：
+          h3.ui.header {{sify('如何使用：') }}
           .ui.large.ordered.list
             //.item
               | 參考
               a(href='https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit', target='_blank')
                 | 給家長的教學引導
             router-link.item(to='/maps')
-              | 使用〈學習地圖〉
+              | {{sify('使用〈學習地圖〉') }}
             .item
-              | 選擇單元進入教材，自學練功
+              | {{sify('選擇單元進入教材，自學練功') }}
             .item
-              | 卡關時可上
+              | {{sify('卡關時可上') }}
               a(href='https://www.facebook.com/groups/156709241062806/', target='_blank')
                 i.facebook.icon
-                | 自學數學團
-              | 提問
+                | {{sify('自學數學團') }}
+              | {{sify('提問') }}
             .item
-              | 亦可參考
+              | {{sify('亦可參考') }}
               a(href='https://docs.google.com/document/d/14KB9cukNH3pF3ZYNGG79w8WMD77EYb7dxGEQ7vzxeGc/edit?usp=sharing', target='_blank')
-                | 數學學習診斷是什麼？
+                | {{sify('數學學習診斷是什麼？') }}
 
 </template>
 
 <script>
+
+import {sify} from 'chinese-conv'
+
 export default {
   name: 'news',
+  props: ['si'],
+  methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
+      }
+    }
+  },
   data () {
     return {
       news: [

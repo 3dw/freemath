@@ -1,8 +1,8 @@
 <template lang="pug">
   .hello
-    news
+    news(:si="si")
     br
-    stones(:units='units', :share="share")
+    stones(:units='units', :share="share", :si="si")
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import stones from './hello_stones'
 
 export default {
   name: 'hello',
-  props: ['units',' share'],
+  props: ['units',' share', 'si'],
   components: { news, stones },
   data () {
     return {
