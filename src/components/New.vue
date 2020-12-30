@@ -4,18 +4,18 @@
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.vertical.buttons
-        a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')")
+        a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')", rel="noopener noreferrer")
           i.search.icon
           | {{ sify('查詢教材')}}
-        a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')")
+        a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
       .ui.divider
       .ui.vertical.buttons
-        a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)")
+        a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)", rel="noopener noreferrer")
           i.user.icon
           | {{ sify('小學數學')}}
-        a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)")
+        a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)", rel="noopener noreferrer")
           i.users.icon
           | {{ sify('國中數學')}}
     .ui.form.container
@@ -33,7 +33,7 @@
             span.gray {{ countGrade(u.g, u.G) }}
             .ui.teal.tag.label(v-show="u.pro") pro
     
-    iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
+    iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0' title="Form") Loading...
 </template>
 
 <script>

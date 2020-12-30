@@ -13,26 +13,26 @@
       a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer")
         i.facebook.icon
     .ui.top.labeled.icon.menu.no-print.fat-only
-      router-link.item(to='/' exact='')
+      router-link.item(to='/', exact='', name="home")
         i.home.icon
         | {{ sify('首頁') }}
-      router-link.item(to='/maps' exact='')
+      router-link.item(to='/maps', exact='', name="maps")
         i.map.icon
         | {{ sify('學習地圖') }}
-      //router-link.item(to='/quiz' exact='')
+      //router-link.item(to='/quiz', exact='')
         i.question.icon
         | 小測驗
-      router-link.item(to='/tools' exact='')
+      router-link.item(to='/tools', exact='', name="tools")
         i.angle.double.down.icon
         | {{ sify('小工具') }}
-      router-link.item(to='/outer' exact='')
+      router-link.item(to='/outer', exact='', name="outer")
         i.user.add.icon
         | {{ sify('外部資源') }}
       .right.menu
-        //router-link.item(to='/vedio' exact='')
+        //router-link.item(to='/vedio', exact='')
           i.play.icon
           | 導覽
-        router-link.item(to='/intro' exact='')
+        router-link.item(to='/intro', exact='', name="intro")
           i.book.icon
           | {{ sify('編創源起') }}
         // router-link.item(to='/faq' exact='')
@@ -44,16 +44,16 @@
         // router-link.item(to='/chat' exact='')
           i.chat.icon
           | 留言板
-        a.item(v-if = "!si", @click="si = true")
+        a.item(v-if = "!si", @click="si = true", name="sify")
           i.edit.icon
           | {{ sify('簡体') }}
-        a.item(v-else, @click="si = false")
+        a.item(v-else, @click="si = false", name="tify")
           i.edit.icon
           | {{ sify('正體') }}
-        a.item(href = "https://www.github.com/bestian/freemath")
+        a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
           i.github.icon
           | {{ sify('原始碼') }}
-        a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer") 
+        a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer", name="Share") 
           i.facebook.icon
           | {{ sify('臉書分享') }}
     main#main
