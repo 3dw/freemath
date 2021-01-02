@@ -16,6 +16,9 @@ import Tools from '@/components/Tools'
 import Quiz from '@/components/Quiz'
 import Chat from '@/components/Chat'
 import New from '@/components/New'
+import One1 from '@/components/One1'
+import One2 from '@/components/One2'
+import One3 from '@/components/One3'
 
 Vue.use(VueRouter)
 
@@ -100,6 +103,21 @@ export default new VueRouter({
       path: '/chat',
       name: '留言版',
       component: Chat
+    },
+    {
+      path: '/one1',
+      name: '倒溯法',
+      component: One1
+    },
+    {
+      path: '/one2',
+      name: '前推法',
+      component: One2
+    },
+    {
+      path: '/one3',
+      name: '具體經驗',
+      component: One3
     }
   ]
 })

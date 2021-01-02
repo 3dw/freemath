@@ -18,11 +18,22 @@
         a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)", rel="noopener noreferrer")
           i.users.icon
           | {{ sify('國中數學')}}
+    .ui.grid.container
+      .four.column.doubling.row
+        .column
+          h3
+            router-link(to = "/one1") {{ sify('一、倒溯法')}}
+        .column
+          h3
+            router-link(to = "/one2") {{ sify('二、前推法')}}
+        .column
+          h3
+            router-link(to = "/one3") {{ sify('三、具體經驗')}}
+    br
     .ui.form.container
       .ui.input
         input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
-        label(for = "s") -
-    br
+        label(for = "s") _
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
