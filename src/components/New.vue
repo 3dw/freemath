@@ -21,19 +21,21 @@
     .ui.grid.container
       .four.column.doubling.row
         .column
-          h3
+          h1
             router-link(to = "/one1") {{ sify('一、倒溯法')}}
         .column
-          h3
+          h1
             router-link(to = "/one2") {{ sify('二、前推法')}}
         .column
-          h3
+          h1
             router-link(to = "/one3") {{ sify('三、具體經驗')}}
     br
     .ui.form.container
       .ui.input
         input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
         label(for = "s") _
+    br
+    br
     .ui.grid.container
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
@@ -78,18 +80,20 @@ export default {
         window.open(url)
       } else {
         if (window.confirm('會員專區-您可以按臉書分享單次解鎖，或加入會員。您願意成為贊助會員嗎？')) {
-          this.$gtag.query('event', 'donate' + name, {
-            name: name,
-            url: url,
-            pro: pro
+          this.$gtag.event('action', {
+            event_category: 'donate' + name,
+            event_action:  'donate' + name,
+            event_label:  'donate' + name,
+            value: 50
           })
           window.alert('請填表註冊，完全手續後，發e-mail至: bestian@gmail.com申請免費教材，謝謝!')
           setTimeout(() => { window.open('https://sites.google.com/view/autoalearn/%E9%97%9C%E6%96%BC%E6%9C%AC%E6%9C%83/%E6%88%90%E7%82%BA%E8%B4%8A%E5%8A%A9%E6%9C%83%E5%93%A1') }, 500)
         } else {
-          this.$gtag.query('event', 'not_donate' + name, {
-            name: name,
-            url: url,
-            pro: pro
+          this.$gtag.event('action', {
+            event_category: 'not_donate' + name,
+            event_action:  'not_donate' + name,
+            event_label:  'not_donate' + name,
+            value: 50
           })
           window.alert('請按臉書分享單次解鎖')
         }

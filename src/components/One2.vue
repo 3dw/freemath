@@ -55,13 +55,13 @@
     .ui.grid.container
       .four.column.doubling.row
         .column
-          h3
+          h1
             router-link(to = "/one1") {{ sify('一、倒溯法')}}
         .column
-          h3
+          h1
             router-link(to = "/one2") {{ sify('二、前推法')}}
         .column
-          h3
+          h1
             router-link(to = "/one3") {{ sify('三、具體經驗')}}
 
 </template>
