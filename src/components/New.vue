@@ -3,7 +3,14 @@
     h1.ui.header {{ sify('歡迎使用自由數學')}}
     .ui.divider
     .ui.segment.container.center.aligned
-      .ui.vertical.buttons
+      .ui.buttons.fat-only
+        a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')", rel="noopener noreferrer")
+          i.search.icon
+          | {{ sify('查詢教材')}}
+        a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
+          i.question.icon
+          | {{ sify('常見問題')}}
+      .ui.vertical.buttons.thin-only
         a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')", rel="noopener noreferrer")
           i.search.icon
           | {{ sify('查詢教材')}}
@@ -11,7 +18,14 @@
           i.question.icon
           | {{ sify('常見問題')}}
       .ui.divider
-      .ui.vertical.buttons
+      .ui.buttons.fat-only
+        a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)", rel="noopener noreferrer")
+          i.user.icon
+          | {{ sify('小學數學')}}
+        a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)", rel="noopener noreferrer")
+          i.users.icon
+          | {{ sify('國中數學')}}
+      .ui.vertical.buttons.thin-only
         a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)", rel="noopener noreferrer")
           i.user.icon
           | {{ sify('小學數學')}}
@@ -19,16 +33,28 @@
           i.users.icon
           | {{ sify('國中數學')}}
     .ui.grid.container
-      .four.column.doubling.row
+      .ui.row
+        .column.center.aligned
+          h1 一對一系列
+      .ui.three.column.doubling.row
         .column
-          h1
-            router-link(to = "/one1") {{ sify('一、倒溯法')}}
+          router-link(to = "/one1") {{ sify('一、倒溯法')}}
         .column
-          h1
-            router-link(to = "/one2") {{ sify('二、前推法')}}
+          router-link(to = "/one2") {{ sify('二、前推法')}}
         .column
-          h1
-            router-link(to = "/one3") {{ sify('三、具體經驗')}}
+          router-link(to = "/one3") {{ sify('三、具體經驗')}}
+        .column
+          router-link(to = "/one4") {{ sify('四、繞道法--渡過心理障礙')}}
+        .column
+          router-link(to = "/one5") {{ sify('五、主客易位法')}}
+        .column
+          router-link(to = "/one6") {{ sify('六、面對錯誤')}}
+        .column
+          router-link(to = "/one7") {{ sify('七、適度的練習')}}
+        .column
+          router-link(to = "/one8") {{ sify('八、互為主體、交互佈題法')}}
+        .column
+          router-link(to = "/one9") {{ sify('數學學習診斷是什麼？')}}
     br
     .ui.form.container
       .ui.input
@@ -37,6 +63,9 @@
     br
     br
     .ui.grid.container
+      .ui.row
+        .column.center.aligned
+          h1 開放教材
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
@@ -151,6 +180,10 @@ export default {
 .column#col {
   text-align: left;
   margin: 1em 0;
+}
+
+.column {
+  text-align: left;
 }
 
 .ui.button.group {

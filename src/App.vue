@@ -249,6 +249,10 @@ export default {
 
 <style>
 
+html, body {
+  padding-top: 0
+}
+
 .fade-leave {  }
 
 .fade-leave-active {
@@ -321,7 +325,7 @@ body {
 }
 
 .ui.menu {
-  margin: 0;
+  margin-top: 0 !important;
 }
 
 a, button, .clickable {
@@ -357,6 +361,7 @@ a, button, .clickable {
 p {
     text-align: left;
     line-height: 1.6;
+    font-size: 18px;
 }
 
 .gray {

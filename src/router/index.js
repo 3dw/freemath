@@ -19,6 +19,12 @@ import New from '@/components/New'
 import One1 from '@/components/One1'
 import One2 from '@/components/One2'
 import One3 from '@/components/One3'
+import One4 from '@/components/One4'
+import One5 from '@/components/One5'
+import One6 from '@/components/One6'
+import One7 from '@/components/One7'
+import One8 from '@/components/One8'
+import One9 from '@/components/One9'
 
 Vue.use(VueRouter)
 
@@ -118,6 +124,36 @@ export default new VueRouter({
       path: '/one3',
       name: '具體經驗',
       component: One3
+    },
+    {
+      path: '/one4',
+      name: '繞道法',
+      component: One4
+    },
+    {
+      path: '/one5',
+      name: '主客易位法',
+      component: One5
+    },
+    {
+      path: '/one6',
+      name: '面對錯誤',
+      component: One6
+    },
+    {
+      path: '/one7',
+      name: '適度的練習',
+      component: One7
+    },
+    {
+      path: '/one8',
+      name: '互為主體、交互佈題法',
+      component: One8
+    },
+    {
+      path: '/one9',
+      name: '數學學習診斷是什麼？',
+      component: One9
     }
   ]
 })

@@ -45,16 +45,25 @@
               li.item {{ sify('請查找「質因數分解」需要的所有先備知識') }}
               li.item {{ sify('請查找「二元一次方程式」需要的所有先備知識') }}
     .ui.grid.container
-      .four.column.doubling.row
+      .three.column.doubling.row
         .column
-          h1
-            router-link(to = "/one1") {{ sify('一、倒溯法')}}
+          router-link(to = "/one1") {{ sify('一、倒溯法')}}
         .column
-          h1
-            router-link(to = "/one2") {{ sify('二、前推法')}}
+          router-link(to = "/one2") {{ sify('二、前推法')}}
         .column
-          h1
-            router-link(to = "/one3") {{ sify('三、具體經驗')}}
+          router-link(to = "/one3") {{ sify('三、具體經驗')}}
+        .column
+          router-link(to = "/one4") {{ sify('四、繞道法--渡過心理障礙')}}
+        .column
+          router-link(to = "/one5") {{ sify('五、主客易位法')}}
+        .column
+          router-link(to = "/one6") {{ sify('六、面對錯誤')}}
+        .column
+          router-link(to = "/one7") {{ sify('七、適度的練習')}}
+        .column
+          router-link(to = "/one8") {{ sify('八、互為主體、交互佈題法')}}
+        .column
+          router-link(to = "/one9") {{ sify('數學學習診斷是什麼？')}}
 
 </template>
 
@@ -83,4 +92,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.column {
+  text-align: left;
+}
 </style>
