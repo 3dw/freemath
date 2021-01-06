@@ -122,9 +122,20 @@ export default {
             event_category: 'not_donate' + name,
             event_action:  'not_donate' + name,
             event_label:  'not_donate' + name,
-            value: 50
+            value: 0
           })
-          window.alert('請按臉書分享單次解鎖')
+          if (window.confirm('您願意在臉書分享自由數學，以單次解鎖教材嗎？')) {
+              this.$gtag.event('action', {
+                event_category: 'share' + name,
+                event_action:  'share' + name,
+                event_label:  'share' + name,
+                value: 30
+              })
+              this.$emit('shared')
+              window.open('https://www.facebook.com/sharer/sharer.php?u=https://math.alearn.org.tw')
+          } else {
+            //
+          }
         }
       }
     },

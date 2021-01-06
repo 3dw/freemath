@@ -57,7 +57,7 @@
           i.facebook.icon
           | {{ sify('臉書分享') }}
     main#main
-      router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC")
+      router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared")
       // router-link#logo(to='/')
         img(src='./assets/logo.png')
       ad(:si="si")
@@ -144,6 +144,9 @@ export default {
     chats: chatsRef
   },
   methods: {
+    shared () {
+      this.share = true
+    },
     sify (t) {
       if (this.si) {
         return sify(t)
