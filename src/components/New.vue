@@ -4,9 +4,6 @@
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.buttons.fat-only
-        a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')", rel="noopener noreferrer")
-          i.search.icon
-          | {{ sify('查詢教材')}}
         a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
