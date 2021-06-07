@@ -8,9 +8,6 @@
           i.question.icon
           | {{ sify('常見問題')}}
       .ui.vertical.buttons.thin-only
-        a.ui.huge.orange.button(@click="trackButton('search', 1); goto('hello')", rel="noopener noreferrer")
-          i.search.icon
-          | {{ sify('查詢教材')}}
         a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
@@ -56,7 +53,7 @@
     .ui.form.container
       .ui.input
         input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
-        label(for = "s") _
+        label(for = "s")
     br
     br
     .ui.grid.container
@@ -69,7 +66,7 @@
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url" :alt="sify(u.n)")
             | {{ sify(u.n) }}
             br.thin-only
-            span.gray {{ countGrade(u.g, u.G) }}
+            span.floated.right.gray {{ countGrade(u.g, u.G) }}
             .ui.teal.tag.label(v-show="u.pro") pro
     
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0' title="Form") Loading...
@@ -201,6 +198,10 @@ export default {
 a img {
   filter: grayscale(100%);
   margin: 0 3px;
+}
+
+.floated.right {
+  float: right;
 }
 
 </style>
