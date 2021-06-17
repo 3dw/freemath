@@ -25,6 +25,7 @@ import One6 from '@/components/One6'
 import One7 from '@/components/One7'
 import One8 from '@/components/One8'
 import One9 from '@/components/One9'
+import Login from '@/components/Login'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ export default new VueRouter({
       path: '/',
       name: '首頁',
       component: New
+    },
+    {
+      path: '/login',
+      name: '登入',
+      component: Login
     },
     {
       path: '/intro',

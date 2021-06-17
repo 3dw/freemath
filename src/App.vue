@@ -62,7 +62,7 @@
           i.facebook.icon
           | {{ sify('臉書分享') }}
     main#main
-      router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared")
+      router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
       // router-link#logo(to='/')
         img(src='./assets/logo.png')
       ad(:si="si")
@@ -165,9 +165,12 @@ export default {
       for (var i = 0; i < this.users.length; i++) {
         const u = this.users[i];
         if (u[0] == mail && u[1] == id) {
-          this.shared = true
+          this.share = true
+          window.alert('登入成功')
+          return
         }
       }
+      window.alert('登入失敗: e-mail或id不正確')
     },
     sify (t) {
       if (this.si) {
