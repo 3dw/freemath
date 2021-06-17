@@ -4,6 +4,8 @@
     .ui.top.menu.no-print.thin-only
       router-link.item(to='/' exact='')
         i.home.icon
+      router-link.item(to='/login' exact='')
+        i.user.icon
       router-link.item(to='/maps' exact='')
         i.map.icon
       router-link.item(to='/tools' exact='')
@@ -16,6 +18,9 @@
       router-link.item(to='/', exact='', name="home")
         i.home.icon
         | {{ sify('首頁') }}
+      router-link.item(to='/login' exact='')
+        i.user.icon
+        | {{ sify('登入') }}
       router-link.item(to='/maps', exact='', name="maps")
         i.map.icon
         | {{ sify('學習地圖') }}
@@ -74,6 +79,15 @@ export default {
   components: { Ad },
   data () {
     return {
+      users: [
+          ["bestian@gmail.com" , "A127704964"],
+          ["jng387@gmail.com" , "D120233992"],
+          ["lingchieh.chen@gmail.com" , "G221198111"],
+          ["dumplingtang11@gmail.com" , "F222396441"],
+          ["tennu.pygli@gmail.com" , "TZ1023163 "],
+          ["dkny1126dk@yahoo.com.tw" , "N124199702"],
+          ["fernandochen20399@gmail.com" , "F123444435"]
+      ],
       si: false,
       share: false,
       play12: undefined,
@@ -144,8 +158,16 @@ export default {
     chats: chatsRef
   },
   methods: {
-    shared () {
+    shared() {
       this.share = true
+    },
+    login(mail,id) {
+      for (var i = 0; i < this.users.length; i++) {
+        const u = this.users[i];
+        if (u[0] == mail && u[1] == id) {
+          this.shared = true
+        }
+      }
     },
     sify (t) {
       if (this.si) {
