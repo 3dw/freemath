@@ -231,6 +231,7 @@ export default {
           this.share = true
           this.user = mail
           window.alert('登入成功')
+          this.$router.push('/')
           return
         }
       }
