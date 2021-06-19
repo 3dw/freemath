@@ -20,7 +20,8 @@
         | {{ sify('首頁') }}
       router-link.item(to='/login' exact='')
         i.user.icon
-        | {{ sify('登入') }}
+        span(v-if="!user") {{ sify('登入') }}
+        span(v-else) {{ sify('歡迎') }}
       router-link.item(to='/maps', exact='', name="maps")
         i.map.icon
         | {{ sify('學習地圖') }}
@@ -79,6 +80,7 @@ export default {
   components: { Ad },
   data () {
     return {
+      user: null,
       users: [
           ["bestian@gmail.com" , "A127704964"],
           ["jng387@gmail.com" , "D120233992"],
@@ -166,6 +168,7 @@ export default {
         const u = this.users[i];
         if (u[0] == mail && u[1] == id) {
           this.share = true
+          this.user = mail
           window.alert('登入成功')
           return
         }
