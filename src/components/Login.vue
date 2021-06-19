@@ -8,7 +8,7 @@
           input(type="e-mail", placeholder="e-mail", v-model="mail")
       .fieid
         .ui.input
-          input(type="password", placeholder="身份證字號", v-model="id")
+          input(type="text", placeholder="手機號碼", v-model="phone", @keyup.enter="login()")
       .ui.huge.green.button(@click = "login()") {{ sify('登入') }}
 
 </template>
@@ -23,7 +23,7 @@ export default {
   data () {
     return {
       mail: null,
-      id: null
+      phone: null
     }
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
       }
     },
     login(){
-      this.$emit('login', this.mail, this.id)
+      this.$emit('login', this.mail, this.phone)
     }
   }
 }
