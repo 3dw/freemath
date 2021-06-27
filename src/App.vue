@@ -83,6 +83,7 @@ export default {
       user: null,
       users: [
           ["bestian@gmail.com" , "0975202717"],
+          ["khyi1017@gmail.com", "0923218331"],
           ["jng387@gmail.com" , "0919117149"],
           ["lingchieh.chen@gmail.com" , "04941804"],
           ["dumplingtang11@gmail.com" , "0912718749"],
