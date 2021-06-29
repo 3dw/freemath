@@ -176,6 +176,7 @@ export default {
         {n: '除法直式精熟', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=o73K7oUH_-4', left: 1},
         {n: '餘量的處理', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=falQiyDLL50', left: 2},
         {n: '倍數著色', g: 3, G: 5, url: 'https://bestian.github.io/color-math/', left: 3},
+        {n: '分數影片', g: 4, G: 5, url: 'https://www.youtube.com/watch?v=DHoxJ3sfVLY', left: 0},
         {n: '分數', g: 4, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing', left: 0},
         {n: '面積的估算', g: 4, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1LLNZQY4JSUc_pZ4K2LPHRA0pnJCfRdPE8Oqxejk29hI/edit?usp=sharing', left: 1},
         {n: '數線', g: 4, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing', left: 2},

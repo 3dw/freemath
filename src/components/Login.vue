@@ -2,6 +2,7 @@
   .hello
     br.fat-only
     h1 {{ sify('登入') }}
+    h3 {{ sify('自主學習促進會會員和贊助會員可登入下載會員專區教材') }}
     .ui.form.container
       .field
         .ui.input
