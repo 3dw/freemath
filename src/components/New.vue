@@ -1,8 +1,11 @@
 <template lang="pug">
   .hello
-    h1.ui.header {{ sify('歡迎使用自由數學')}}
+    h1.ui.header {{ sify('自由數學，應用數學')}}
+      .sub.header {{ sify('以應用為導向的自學教材，培養解決問題的思維與基本工具能力')}}
     .ui.divider
     .ui.segment.container.center.aligned
+      iframe(width="560", height="315", src="https://www.youtube.com/embed/mJha4ls1MfM", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",  allowfullscreen)
+      .ui.divider
       .ui.buttons.fat-only
         a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
@@ -64,10 +67,11 @@
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url" :alt="sify(u.n)")
+            i.download.icon
             | {{ sify(u.n) }}
             br.thin-only
             span.floated.right.gray {{ countGrade(u.g, u.G) }}
-            .ui.teal.tag.label(v-show="u.pro") pro
+            .ui.teal.label(v-show="u.pro") pro
     
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0' title="Form") Loading...
 </template>
