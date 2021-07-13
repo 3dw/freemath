@@ -35,23 +35,41 @@
           h1 一對一系列
       .ui.three.column.doubling.row
         .column
-          router-link(to = "/one1") {{ sify('一、倒溯法')}}
+          router-link(to = "/one1") 
+           i.users.icon
+           | {{ sify('一、倒溯法')}}
         .column
-          router-link(to = "/one2") {{ sify('二、前推法')}}
+          router-link(to = "/one2") 
+           i.users.icon
+           |{{ sify('二、前推法')}}
         .column
-          router-link(to = "/one3") {{ sify('三、具體經驗')}}
+          router-link(to = "/one3") 
+           i.users.icon
+           |{{ sify('三、具體經驗')}}
         .column
-          router-link(to = "/one4") {{ sify('四、繞道法--渡過心理障礙')}}
+          router-link(to = "/one4") 
+           i.users.icon
+           |{{ sify('四、繞道法--渡過心理障礙')}}
         .column
-          router-link(to = "/one5") {{ sify('五、主客易位法')}}
+          router-link(to = "/one5") 
+           i.users.icon
+           |{{ sify('五、主客易位法')}}
         .column
-          router-link(to = "/one6") {{ sify('六、面對錯誤')}}
+          router-link(to = "/one6") 
+           i.users.icon
+           |{{ sify('六、面對錯誤')}}
         .column
-          router-link(to = "/one7") {{ sify('七、適度的練習')}}
+          router-link(to = "/one7") 
+           i.users.icon
+           |{{ sify('七、適度的練習')}}
         .column
-          router-link(to = "/one8") {{ sify('八、互為主體、交互佈題法')}}
+          router-link(to = "/one8") 
+           i.users.icon
+           |{{ sify('八、互為主體、交互佈題法')}}
         .column
-          router-link(to = "/one9") {{ sify('數學學習診斷是什麼？')}}
+          router-link(to = "/one9") 
+           i.users.icon
+           |{{ sify('數學學習診斷是什麼？')}}
     br
     .ui.form.container
       .ui.input
