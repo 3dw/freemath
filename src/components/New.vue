@@ -72,6 +72,8 @@
             br.thin-only
             span.floated.right.gray {{ countGrade(u.g, u.G) }}
             .ui.teal.label(v-show="u.pro") pro
+            br(v-if="u.d")
+            span.gray(v-if="u.d") -{{ sify(u.d) }}
     
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0' title="Form") Loading...
 </template>
