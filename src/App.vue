@@ -150,9 +150,7 @@ export default {
           ["jacker21066@gmail.com" , "0926196992"],
           ["eve28@ms17.hinet.net" , "0958494789"],
           ["tonesamwang@gmail.com" , "0986486659"],
-          ["chingyu.shen81@gmail.com" , "0928003686"],
-          ["evalokuo@gmail.com","0922939179"],
-          ["text@gmail.com","0922939179"]
+          ["chingyu.shen81@gmail.com" , "0928003686"]
       ],
       si: false,
       share: false,
