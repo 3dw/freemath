@@ -51,6 +51,7 @@
       </div>
     </div>
     <div class="ui segment">
+      <iframe src="https://app.sli.do/event/ctH2yJtwGtBSx7HQjH7ddu/live/polls" width="600" height="350"></iframe>
       <a href="mailto:bestian@gmail.com"><i class ="mail icon"/>有其他問題嗎？歡迎寫信給Bestian</a>
     </div>
   </div>

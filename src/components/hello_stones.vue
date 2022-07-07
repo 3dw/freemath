@@ -13,7 +13,7 @@
             br.thin-only
             span.gray {{ countGrade(u.g, u.G) }}
             .ui.teal.tag.label(v-show="u.pro") pro
-    iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
+    iframe(src='https://app.sli.do/event/ctH2yJtwGtBSx7HQjH7ddu/live/polls', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
 
 <script>
