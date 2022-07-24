@@ -2,8 +2,8 @@
 .hello
   #ad
     a(href="https://hack.bestian.tw", target="_blank", rel="noopener noreferrer")
-      img.ad(src="/ad-be.jpg" :alt="sify('本站由Bestian製作，歡迎學習架網站')")
-      | {{ sify('本站由Bestian製作，歡迎學習架網站') }}
+      img.ad(src="/ad-be.jpg" :alt="sify('本站由Bestian製作')")
+      | {{ sify('本站由Bestian製作') }}
 </template>
 
 <script>

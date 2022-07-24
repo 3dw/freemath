@@ -80,7 +80,10 @@
     .ui.grid.container
       .ui.row
         .column.center.aligned
-          h1 開放教材
+          h1 {{ sify('開放教材')}}
+          h3 {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
+          br
+          img.tiny(src="../assets/cc-by-sa.png")
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
@@ -226,6 +229,10 @@ a img {
 
 .floated.right {
   float: right;
+}
+
+.tiny {
+  width: 200px;
 }
 
 </style>
