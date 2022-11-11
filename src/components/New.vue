@@ -4,8 +4,6 @@
       .sub.header {{ sify('以應用為導向的自學教材，培養解決問題的思維與基本工具能力')}}
     .ui.divider
     .ui.segment.container.center.aligned
-      iframe(width="560", height="350", src="https://app.sli.do/event/ctH2yJtwGtBSx7HQjH7ddu/live/polls", title="Slido", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",  allowfullscreen)
-      .ui.divider
       .ui.buttons.fat-only
         a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
