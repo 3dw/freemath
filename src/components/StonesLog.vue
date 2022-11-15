@@ -30,7 +30,7 @@ export default {
       if (!pro || this.share) {
         window.open(url)
       } else {
-        if (window.confirm('會員專區-您可以按臉書分享單次解鎖，或加入會員。您願意成為贊助會員嗎？')) {
+        if (window.confirm('會員專區-您可以加入會員。您願意成為贊助會員嗎？')) {
           this.$gtag.query('event', 'donate' + name, {
             name: name,
             url: url,
@@ -38,13 +38,6 @@ export default {
           })
           window.alert('請填表註冊，完全手續後，發e-mail至: bestian@gmail.com申請免費教材，謝謝!')
           setTimeout(() => { window.open('https://sites.google.com/view/autoalearn/%E9%97%9C%E6%96%BC%E6%9C%AC%E6%9C%83/%E6%88%90%E7%82%BA%E8%B4%8A%E5%8A%A9%E6%9C%83%E5%93%A1') }, 500)
-        } else {
-          this.$gtag.query('event', 'not_donate' + name, {
-            name: name,
-            url: url,
-            pro: pro
-          })
-          window.alert('請按臉書分享單次解鎖')
         }
       }
     },

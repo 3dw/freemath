@@ -45,7 +45,7 @@ export default {
       if (!pro || this.share) {
         window.open(url)
       } else {
-        if (window.confirm('會員專區-您可以按臉書分享單次解鎖，或加入會員。您願意成為贊助會員嗎？')) {
+        if (window.confirm('會員專區-您可以加入會員。您願意成為贊助會員嗎？')) {
           this.$gtag.event('action', {
             event_category: 'donate' + name,
             event_action:  'donate' + name,
@@ -61,18 +61,6 @@ export default {
             event_label:  'not_donate' + name,
             value: 0
           })
-          if (window.confirm('您願意在臉書分享自由數學，以單次解鎖教材嗎？')) {
-              this.$gtag.event('action', {
-                event_category: 'share' + name,
-                event_action:  'share' + name,
-                event_label:  'share' + name,
-                value: 30
-              })
-              this.$emit('shared')
-              window.open('https://www.facebook.com/sharer/sharer.php?u=https://math.alearn.org.tw')
-          } else {
-            //
-          }
         }
       }
     },
