@@ -18,14 +18,17 @@
         .ui.button.group
           a.ui.green.button(@click='randHide(countRC(type,0), countRC(type,1))') 隨機挖洞
           button.ui.teal.button(onclick='window.print()') 友善列印
+          // input(type="checkbox" v-model="pretty")
+          // span &nbsp;&nbsp;&nbsp;特效
       div
         .ui
           table(border='8')
             tbody
               tr(v-for='r in countRC(type,0)')
-                td(v-for='c in countRC(type,1)', v-bind:style="{width: wh+'cm', height: wh + 'cm'}")
-                  a.black(@click='noHide(r, c)')
+                td(v-for='c in countRC(type,1)', v-bind:style="{width: wh+'cm', height: wh + 'cm'}", :class="{pretty: pretty}")
+                  a.black(@click='toggleHide(r, c)')
                     span(v-bind:class="{invisible: hide[r+'_'+c]}") {{ op(type,r,c) }}
+                      // img.tiny(v-if="pretty", src="../assets/grass.png", alt="grass", :style="{height: rndH(), width: rndH()}")
 
 </template>
 
@@ -34,6 +37,7 @@ export default {
   name: 'grid',
   data () {
     return {
+      pretty: false,
       type: '0_10_90,1_1_10,+',
       wh: 1.6,
       hide: {}
@@ -70,8 +74,15 @@ export default {
         this.hide = {}
       }
     },
-    noHide: function (r, c) {
-      this.hide[r + '_' + c] = false
+    toggleHide: function (r, c) {
+      if (!this.hide[r + '_' + c]) {
+        this.hide[r + '_' + c] = false
+      }
+      this.hide[r + '_' + c] = !this.hide[r + '_' + c]
+      this.$forceUpdate()
+    },
+    rndH () {
+      return Math.floor(Math.random() * 28 + 6) + 'px'
     }
   }
 }
@@ -152,5 +163,20 @@ export default {
 
   .black {
     color: black;
+  }
+
+  .pretty {
+    background-color: #6F3B00;
+  }
+
+  .pretty a.black {
+    color: #5F2B00;
+    display: inline-block;
+    border-top: 2px solid gray;
+    border-radius: 20px;
+  }
+
+  .tiny {
+    width: 1.2em;
   }
 </style>
