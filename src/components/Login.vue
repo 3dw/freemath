@@ -4,12 +4,16 @@
     h1 {{ sify('登入') }}
     h3 {{ sify('自主學習促進會會員和贊助會員可登入下載會員專區教材') }}
     .ui.form.container
-      .field
-        .ui.input
-          input(type="e-mail", placeholder="e-mail", v-model="mail")
-      .fieid
-        .ui.input
-          input(type="text", placeholder="手機號碼", v-model="phone", @keyup.enter="login()")
+      .ui.two.fields
+        .field
+          .ui.labeled.input
+            .ui.label Email
+            input(type="e-mail", placeholder="e-mail", v-model="mail")
+        .fieid
+          .ui.labeled.input
+            .ui.label 手機號碼
+            input(type="text", placeholder="手機號碼", v-model="phone", @keyup.enter="login()")
+      br
       .ui.huge.green.button(@click = "login()") {{ sify('登入') }}
 
 </template>
@@ -44,4 +48,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+  .field {
+    text-align: left;
+    padding: 0 !important;
+  }
+
+  .ui.input {
+    max-width: 350px;
+    min-width: 280px;
+  }
+
+  input {
+
+  }
 </style>

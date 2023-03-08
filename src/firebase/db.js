@@ -14,3 +14,4 @@ export const db = firebase.initializeApp({
 
 export const play12Ref = db.ref('play12')
 export const chatsRef = db.ref('chats')
+export const usersRef = db.ref('users')

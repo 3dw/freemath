@@ -102,7 +102,7 @@
 import {sify} from 'chinese-conv'
 
 export default {
-  name: '首頁',
+  name: 'Home',
   props: ['units', 'share', 'si'],
   components: { },
   data () {

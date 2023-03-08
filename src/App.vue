@@ -71,7 +71,7 @@
 
 <script>
 
-import { play12Ref, chatsRef } from './firebase/db'
+import { play12Ref, chatsRef, usersRef } from './firebase/db'
 import Ad from './components/Ad-Be.vue'
 import {sify} from 'chinese-conv'
 
@@ -81,78 +81,7 @@ export default {
   data () {
     return {
       user: null,
-      users: [
-          ["bestian@gmail.com" , "0975202717"],
-          ["khyi1017@gmail.com", "0923218331"],
-          ["jng387@gmail.com" , "0919117149"],
-          ["lingchieh.chen@gmail.com" , "04941804"],
-          ["dumplingtang11@gmail.com" , "0912718749"],
-          ["tennu.pygli@gmail.com" , "0966565534"],
-          ["dkny1126dk@yahoo.com.tw" , "0918923202"],
-          ["fernandochen20399@gmail.com" , "0921811105"],
-          ["water5127@gmail.com" , "0974136965"],
-          ["naturetang@gmail.com" , "0975002749"],
-          ["chu.chiajen@gmail.com" , "0915165369"],
-          ["iviv229@gmail.com" , "0910639429"],
-          ["chadch6@gmail.tw" , "0928217012"],
-          ["fleshuangyan@gmail.com" , "0937816326"],
-          ["schellingok@yahoo.com.tw" , "0919836829"],
-          ["syjcome@yahoo.com.tw" , "0922188349"],
-          ["dcwy829@yahoo.com" , "23418623"],
-          ["tsy6449@yahoo.com.tw" , "0930936710"],
-          ["tea388@gmail.com" , "0932452886"],
-          ["hsinyi.ok@gmail.com" , "0975201967"],
-          ["fridaywutw@hotmail.com" , "0916875997"],
-          ["yuhuikao@gmail.com" , "0935728127"],
-          ["cjsu301@gmail.com" , "0920707206"],
-          ["zona12370388@gmail.com" , "0975622513"],
-          ["yunegh@gmail.com" , "0919973133"],
-          ["lchuang@nccu.edu.tw" , "0919292457"],
-          ["mei1213y@yahoo.com.tw" , "0933045396"],
-          ["dyulin729@gmail.com" , "0912034523"],
-          ["chenhsuan@gmail.com" , "0988760124"],
-          ["tangmeix2@gmail.com" , "0919980077"],
-          ["anteo8@gmail.com" , "0912096821"],
-          ["freshcolon@yahoo.com.tw" , "27181446"],
-          ["roger.tsai6@msa.hinet.net" , "29375056"],
-          ["cindytang99@yahoo.com" , "0937111912"],
-          ["ttcc222@hotmail.com" , "0910390316"],
-          ["finding.never.land@hotmail.com" , "0975285579"],
-          ["grace96261@yahoo.com.tw" , "0916062697"],
-          ["wanita4304@gmail.com" , "0921998859"],
-          ["cytangx@gmail.com" , "0925800806"],
-          ["lihuang0325@gmail.com" , "0928115144"],
-          ["trini.tsai@gmail.com" , "0919979804"],
-          ["tim@chen-wernik.net" , "0910919044"],
-          ["debbie.mh@msa.hinet.net" , "0926837168"],
-          ["Sally916.hsieh@gmail.com" , "0927709906"],
-          ["romasangelo@hotmail.com" , "0982112424"],
-          ["wanchi100@gmail.com" , "0939737917"],
-          ["maxingarden@gmail.com" , "0926157783"],
-          ["kueiyuchen@gmail.com" , "0988319348"],
-          ["pinkmotree@gmail.com" , "0971123552"],
-          ["sepnine@gmail.com" , "0912480917"],
-          ["yichun0522@yahoo.com.tw" , "0922939179"],
-          ["gidadu@gmail.com" , "0912656044"],
-          ["meichingtang@gmail.com" , "0939360955"],
-          ["weiying_t@yahoo.com.tw" , "0937874422"],
-          ["eva0035@hotmail.com" , "0922652797"],
-          ["kathywu.van@gmail.com" , "0989544513"],
-          ["stin.cheng@gmail.com" , "0920127055"],
-          ["chiakueijacqueline@gmail.com" , "0919589459"],
-          ["jinyu0701@gmail.com" , "0912505391"],
-          ["summer200224@gmail.com" , "0953009201"],
-          ["lingyu197701@gmail.com" , "0919860968"],
-          ["catstyle3127@hotmail.com" , "0932520773"],
-          ["sibyl0707@gmail.com" , "0922903661"],
-          ["elisa0824@gmail.com" , "0920591806"],
-          ["ariel700603@gmail.com" , "0987181885"],
-          ["jacker21066@gmail.com" , "0926196992"],
-          ["eve28@ms17.hinet.net" , "0958494789"],
-          ["tonesamwang@gmail.com" , "0986486659"],
-          ["chingyu.shen81@gmail.com" , "0928003686"],
-          ["evakuo@gmail.com","0922939179"]   
-      ],
+      users: [],
       si: false,
       share: false,
       play12: undefined,
@@ -224,13 +153,15 @@ export default {
   },
   firebase: {
     play12: play12Ref,
-    chats: chatsRef
+    chats: chatsRef,
+    users: usersRef
   },
   methods: {
     shared() {
       this.share = true
     },
     login(mail,phone) {
+      // console.log(this.users)
       for (var i = 0; i < this.users.length; i++) {
         const u = this.users[i];
         if (u[0] == mail && u[1].replace('-', '') == phone.replace('-', '')) {
