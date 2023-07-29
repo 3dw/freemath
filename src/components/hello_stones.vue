@@ -42,9 +42,9 @@ export default {
         url: url,
         pro: pro
       })
-      if (!pro || this.share) {
+      // if (!pro || this.share) {
         window.open(url)
-      } else {
+      /* } else {
         if (window.confirm('會員專區-您可以加入會員。您願意成為贊助會員嗎？')) {
           this.$gtag.event('action', {
             event_category: 'donate' + name,
@@ -62,7 +62,7 @@ export default {
             value: 0
           })
         }
-      }
+      } */
     },
     countGrade (g, G) {
       var min = g

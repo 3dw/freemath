@@ -49,7 +49,7 @@ export default {
   },
   data () {
     return {
-      news: [
+    news: [
         '2020.07.介面翻新',
         '2020.01.<a href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit?usp=sharing" target="_blank">國中數學觀念精華</a>教材編創完成',
         '2020.01.<a href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=sharing" target="_blank">小學數學觀念精華</a>教材編創完成',

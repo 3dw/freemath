@@ -18,7 +18,7 @@
       router-link.item(to='/', exact='', name="home")
         i.home.icon
         | {{ sify('首頁') }}
-      router-link.item(v-show="!user", to='/login' exact='')
+      // router-link.item(v-show="!user", to='/login' exact='')
         i.user.icon
         span(v-if="!user") {{ sify('登入') }}
         span(v-else) {{ sify('歡迎') }}

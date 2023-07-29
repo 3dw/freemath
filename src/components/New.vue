@@ -90,7 +90,7 @@
             | {{ sify(u.n) }}
             br.thin-only
             span.floated.right.gray {{ countGrade(u.g, u.G) }}
-            .ui.teal.label(v-show="u.pro") pro
+            // .ui.teal.label(v-show="u.pro") pro
             br(v-if="u.d")
             span.gray(v-if="u.d") -{{ sify(u.d) }}
     
@@ -124,9 +124,9 @@ export default {
         url: url,
         pro: pro
       })
-      if (!pro || this.share) {
+      // if (!pro || this.share) {
         window.open(url)
-      } else {
+      /* } else {
         if (window.confirm('會員專區-您可以加入會員。您願意成為贊助會員嗎？')) {
           this.$gtag.event('action', {
             event_category: 'donate' + name,
@@ -144,7 +144,7 @@ export default {
             value: 0
           })
         }
-      }
+      } */
     },
     countGrade (g, G) {
       var min = g
