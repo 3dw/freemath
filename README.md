@@ -1,4 +1,7 @@
-# freemath
+# 自由數學freemath
+
+學習數學，讓思想跟自由而不是更受限制。
+新手上[由此進](https://github.com/bestian/freemath/wiki)
 
 ## Project setup
 ```
