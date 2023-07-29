@@ -38,9 +38,9 @@
         <div class="ui segment column">
           <h2>自學過程</h2>
           <h4>Q: 教材中有些空格是需要學生自行填寫的，如果不知道該填入什麼或是不確定填入的答案是否正確時該怎麼辦呢？</h4>
-          <p>A: 如果遇到不知如何填寫，可以直接在文件上留言提問，也可上臉書
-            <a class="item" href="https://www.facebook.com/groups/156709241062806/" target="_blank">
-              <i class="facebook icon" />自學數學團
+          <p>A: 如果遇到不知如何填寫，可以直接在文件上留言提問，也可上Github
+            <a class="item" href="https://github.com/bestian/freemath/milestone/5" target="_blank" rel="noopener norefferer">
+              <i class="github icon" />自由數學議題區
             </a>提問，可將卡住的部份拍照上傳，並寫一些目前的想法與疑問，就會有人回答了。</p>
           <p></p>
           <h4>Q: 觀念性空格的答案何不附在最後面？</h4>
@@ -49,10 +49,6 @@
           <p>如果在教學時發現有標準答案的版本較符合需求，可以在google docs中複製出您自己的版本來改。</p>
         </div>
       </div>
-    </div>
-    <div class="ui segment">
-      <iframe src="https://app.sli.do/event/ctH2yJtwGtBSx7HQjH7ddu/live/polls" width="600" height="350"></iframe>
-      <a href="mailto:bestian@gmail.com"><i class ="mail icon"/>有其他問題嗎？歡迎寫信給Bestian</a>
     </div>
   </div>
 </template>

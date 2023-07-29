@@ -1,26 +1,44 @@
 <template lang="pug">
   .hello
-    h1.ui.header {{ sify('自由數學，應用數學')}}
-      .sub.header {{ sify('以應用為導向的自學教材，培養解決問題的思維與基本工具能力')}}
+    h1.ui.header {{ sify('自由數學')}}
+      .sub.header {{ sify('學習數學，在於秩序。讓思想自由，而不是更受限制。')}}
     .ui.divider
     .ui.segment.container.center.aligned
-      .ui.buttons.fat-only
-        a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
+      .ui.large.buttons.fat-only
+        a.ui.green.button(href="https://github.com/bestian/freemath/wiki" rel="noopener noreferrer")
+          i.blind.icon
+          | {{ sify('新手上路')}}
+        router-link.ui.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
-      .ui.vertical.buttons.thin-only
-        a.ui.huge.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
+        a.ui.red.button(href="https://github.com/bestian/freemath/issues" rel="noopener noreferrer")
+          i.bell.icon
+          | {{ sify('回報問題')}}
+        a.ui.purple.button(href="https://github.com/bestian/freemath/" rel="noopener noreferrer")
+          i.adjust.icon
+          | {{ sify('參與貢獻')}}
+      .ui.vertical.large.buttons.thin-only
+        a.ui.green.button(href="https://github.com/bestian/freemath/wiki" rel="noopener noreferrer")
+          i.blind.icon
+          | {{ sify('新手上路')}}
+        router-link.ui.huge.blue.button(to="/faq", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
-      .ui.divider
-      .ui.buttons.fat-only
+        a.ui.red.button(href="https://github.com/bestian/freemath/issues", rel="noopener noreferrer")
+          i.bell.icon
+          | {{ sify('回報問題')}}
+        a.ui.purple.button(href="https://github.com/bestian/freemath/", rel="noopener noreferrer")
+          i.adjust.icon
+          | {{ sify('參與貢獻')}}
+      // .ui.divider
+      // .ui.buttons.fat-only
         a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)", rel="noopener noreferrer")
           i.user.icon
           | {{ sify('小學數學')}}
         a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)", rel="noopener noreferrer")
           i.users.icon
           | {{ sify('國中數學')}}
-      .ui.vertical.buttons.thin-only
+      // .ui.vertical.buttons.thin-only
         a.ui.huge.green.button(href="https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=drive_web&ouid=109123650148645242011", target="_blank", @click="trackButton('elemantary', 5)", rel="noopener noreferrer")
           i.user.icon
           | {{ sify('小學數學')}}
@@ -69,19 +87,22 @@
            i.users.icon
            |{{ sify('數學學習診斷是什麼？')}}
     br
-    .ui.form.container
-      .ui.input
-        input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
-        label(for = "s")
-    br
     br
     .ui.grid.container
       .ui.row
         .column.center.aligned
-          h1 {{ sify('開放教材')}}
+          a.big.link(@click="scrollDown(100)", title="請按此")     
+            h1 {{ sify('開放教材')}}
+             i.ui.chevron.down.icon
           h3 {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
           br
           img.tiny(src="../assets/cc-by-sa.png")
+      .ui.row 
+        .ui.form.container
+          .ui.input
+            input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
+            label(for = "s")
+        br
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
@@ -172,6 +193,9 @@ export default {
     },
     goto (h) {
       this.$router.push(h)
+    },
+    scrollDown (n) {
+      window.scrollTo(0, n)
     }
   }
 }
