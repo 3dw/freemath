@@ -1,7 +1,9 @@
 <template lang="pug">
   .hello
     h1.ui.header {{ sify('自由數學')}}
-      .sub.header {{ sify('學習數學，在於秩序。讓思想自由，而不是更受限制。')}}
+      .sub.header {{ sify('學習數學，在於秩序。')}}
+      br.thin-only
+      .sub.header {{ sify('讓思想自由，而不是更受限制。')}}
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.large.buttons.fat-only
@@ -48,8 +50,12 @@
     .ui.grid.container
       .ui.row
         .column.center.aligned
-          h1 一對一系列
-      .ui.three.column.doubling.row
+          h1 
+          a.big.link(@click="show1 = !show1", title="請按此")     
+            h1 {{ sify('一對一系列')}}
+             i.ui.chevron.down.icon
+          
+      .ui.three.column.stackable.row(v-show="show1")
         .column
           router-link(to = "/one1") 
            i.users.icon
@@ -98,10 +104,11 @@
           br
           img.tiny(src="../assets/cc-by-sa.png")
       .ui.row 
-        .ui.form.container
-          .ui.input
-            input(id = "s" v-model="s", v-autofocus="", :placeholder="sify('以關鍵字或年級查詢')")
-            label(for = "s")
+        .column.center.aligned
+          .ui.search
+            .ui.icon.input.rel-left
+              input.prompt(v-model="s" type="text", :placeholder="sify('以關鍵字或年級查詢')")
+              i.search.icon
         br
       .four.column.doubling.row
         .column#col(v-for="u in units", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
@@ -129,6 +136,7 @@ export default {
   data () {
     return {
       s: '',
+      show1: false
     }
   },
   methods: {
@@ -243,6 +251,12 @@ a img {
 
 .tiny {
   width: 200px;
+}
+
+.rel-left {
+  position: relative;
+  left: 15vw;
+  width: 60vw !important;
 }
 
 </style>

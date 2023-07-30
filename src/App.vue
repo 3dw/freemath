@@ -12,8 +12,8 @@
         i.angle.double.down.icon
       router-link.item(to='/outer' exact='')
         i.user.add.icon
-      a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer")
-        i.facebook.icon
+      a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
+        i.github.icon
     .ui.top.labeled.icon.menu.no-print.fat-only
       router-link.item(to='/', exact='', name="home")
         i.home.icon
@@ -59,9 +59,6 @@
         a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
           i.github.icon
           | {{ sify('原始碼') }}
-        a.item(@click = "share=true; trackButton('share', 1)", :href="'https://www.facebook.com/sharer/sharer.php?u=http://math.alearn.org.tw'", target="_blank", rel="noopener noreferrer", name="Share") 
-          i.facebook.icon
-          | {{ sify('臉書分享') }}
     main#main
       router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
       // router-link#logo(to='/')
