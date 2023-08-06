@@ -3,7 +3,7 @@
     h1.ui.header {{ sify('自由數學')}}
       .sub.header {{ sify('學習數學，在於秩序。')}}
       br.thin-only
-      .sub.header {{ sify('讓思想自由，而不是更受限制。')}}
+      .sub.header {{ sify('擺脫幻象與迷惑，透過學習，每日10分鐘，讓思想自由。')}}
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.large.buttons.fat-only
