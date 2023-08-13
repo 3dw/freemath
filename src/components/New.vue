@@ -1,9 +1,10 @@
 <template lang="pug">
   .hello
     h1.ui.header {{ sify('自由數學')}}
-      .sub.header {{ sify('學習數學，在於秩序。')}}
-      br.thin-only
-      .sub.header {{ sify('擺脫幻象與迷惑，透過學習，每日10分鐘，讓思想自由。')}}
+      .sub.header
+        span {{ sify('學習數學，在於秩序。')}}
+        br.thin-only.one-line-only
+        span {{ sify('擺脫幻象與迷惑，每日10分鐘，讓思想自由。')}}
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.large.buttons.fat-only
@@ -122,7 +123,10 @@
             br(v-if="u.d")
             span.gray(v-if="u.d") -{{ sify(u.d) }}
     
-    iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSfH1kiD9W2IEekfC_nCEFtIjLsJTPiw8nDzIPAmOiUkbwIx8A/viewform?embedded=true", width="640" height="1371", frameborder="0", marginheight="0", marginwidth="0") 載入中…
+    // iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSfH1kiD9W2IEekfC_nCEFtIjLsJTPiw8nDzIPAmOiUkbwIx8A/viewform?embedded=true", width="640" height="1371", frameborder="0", marginheight="0", marginwidth="0") 載入中…
+    
+    // MAKE A NEW FORM
+
 </template>
 
 <script>

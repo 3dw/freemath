@@ -63,7 +63,7 @@
       router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
       // router-link#logo(to='/')
         img(src='./assets/logo.png')
-      ad(:si="si")
+      ad#ad(:si="si")
 </template>
 
 <script>
@@ -363,6 +363,11 @@ a, button, .clickable {
   .fat-only {
     display: none !important;
   }
+  #ad {
+    position: fixed;
+    bottom: 0;
+    right: 0 !important;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -393,6 +398,10 @@ p {
 
 .gray {
   color: gray
+}
+
+brbr.thin-only.one-line-only {
+  height: .2em !important;
 }
 
 </style>

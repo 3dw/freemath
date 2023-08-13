@@ -1,9 +1,9 @@
 <template lang="pug">
 .hello
   #ad
-    a(href="https://hack.bestian.tw", target="_blank", rel="noopener noreferrer")
-      img.ad(src="/ad-be.jpg" :alt="sify('本站由自主學習進促進會製作')")
-      | {{ sify('本站由自主學習進促進會製作') }}
+    a(href="https://www.alearn.org.tw", target="_blank", rel="noopener noreferrer")
+      img.ad(src="/ad-be.jpg" :alt="sify('按此瞭解更多')")
+      | {{ sify('自主學習進促進會製作') }}
 </template>
 
 <script>
