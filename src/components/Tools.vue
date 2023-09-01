@@ -1,13 +1,7 @@
 <template lang="pug">
   .hello
     .ui.container
-      .ui.two.stackable.cards
-        .ui.card
-          router-link.item(to='/card' exact='')
-            .image
-              img(src = "../assets/閃卡.png")
-            | {{ sify('閃卡') }}
-          .description {{ sify('自動產生算式和答案' )}}
+      .ui.two.doubling.stackable.cards
         .ui.card
           router-link.item(to='/grid' exact='')
             .image
@@ -15,6 +9,12 @@
             | {{ sify('方格紙產生器') }}
           .description
            | {{ sify('生成百數表、乘法表等，還可以隨機挖洞') }}
+        .ui.card
+          router-link.item(to='/card' exact='')
+            .image
+              img(src = "../assets/閃卡.png")
+            | {{ sify('閃卡') }}
+          .description {{ sify('自動產生算式和答案' )}}
         .ui.card
           router-link.item(to='/log/_' exact='')
             .image
@@ -111,6 +111,21 @@ a {
 a:hover {
   position: relative;
   top: -5px;
+}
+
+
+.ui.two.doubling.stackable.cards
+  .description {
+    padding: 1em 1em;
+  }
+
+.ui.two.doubling.stackable.cards
+  .ui.card .image {
+    display: flex !important;
+    width: 100%;
+    margin: 1em 0;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>

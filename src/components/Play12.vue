@@ -25,7 +25,7 @@
     .ui.segment.container(v-if = "play12")
       a.ui.yellow.button(@click="rand(play12.max[0])")
         h2 再來!
-    .ui.segment.container
+    // .ui.segment.container
       h3 湊12手機App
       .ui.buttons
         a.ui.green.button(href="https://play.google.com/store/apps/details?id=tw.bestian.play12", target="_blank")

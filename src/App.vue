@@ -212,7 +212,7 @@ export default {
       this.$forceUpdate()
     },
     changeCards: function () {
-      console.log(play12Ref)
+      // console.log(play12Ref)
       if (this.play12.max[0] === 6) {
         play12Ref.child('max').update({
           0: 9
@@ -236,7 +236,7 @@ export default {
       play12Ref.child('unused').update((list))
     },
     useC: function (i, n, op) {
-      console.log(n)
+      // console.log(n)
       var ans = this.play12.myNum[0]
       if (!op) {
         play12Ref.child('myNum').update({ 0: n })
@@ -260,8 +260,8 @@ export default {
   },
   watch: {
     $route (to, from) {
-      console.log(from.path)
-      console.log(to.path)
+      // console.log(from.path)
+      // console.log(to.path)
       this.$gtag.event('action', {
         event_category: 'navigate',
         event_action: 'from:' + from.path + ' to:' + to.path,
