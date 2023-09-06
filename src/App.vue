@@ -404,4 +404,14 @@ brbr.thin-only.one-line-only {
   height: .2em !important;
 }
 
+.shadow, .shadow input {
+  background-color: transparent !important;
+}
+
+.shadow {
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
 </style>

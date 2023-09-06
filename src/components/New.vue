@@ -100,19 +100,18 @@
         .column.center.aligned
           a.big.link(@click="scrollDown(200); showMaterials = !showMaterials", title="按此切換顯示")     
             h1 {{ sify('開放教材')}}
-             i.ui.chevron.down.icon(v-if="showMaterials")
+             i.ui.chevron.down.icon(v-if="!showMaterials")
              i.ui.chevron.up.icon(v-else)
           h3 {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
           br
           img.tiny(src="../assets/cc-by-sa.png")
       .ui.row 
         .column.center.aligned
-          .ui.search
-            .ui.icon.input.rel-left
-              input.prompt(v-model="s" type="text", :placeholder="sify('以關鍵字或年級查詢')")
-              i.search.icon
+          .ui.icon.input.rel-left.shadow
+            input.prompt(v-model="s" type="text", :placeholder="sify('關鍵字查詢')")
+            i.search.icon
         br
-      .four.column.doubling.row
+      .ui.four.column.doubling.row
         .column#col(v-for="u in lazyShow(units, showMaterials, s)", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url" :alt="sify(u.n)")
@@ -123,6 +122,10 @@
             // .ui.teal.label(v-show="u.pro") pro
             br(v-if="u.d")
             span.gray(v-if="u.d") -{{ sify(u.d) }}
+      .ui.row.flex.flex-center(v-if="!showMaterials && !s", @click="showMaterials = true")
+        .ui.large.green.button 按此看更多
+          i.ui.chevron.right.icon
+
     
     // iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSfH1kiD9W2IEekfC_nCEFtIjLsJTPiw8nDzIPAmOiUkbwIx8A/viewform?embedded=true", width="640" height="1371", frameborder="0", marginheight="0", marginwidth="0") 載入中…
     
