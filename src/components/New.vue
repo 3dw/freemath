@@ -122,9 +122,9 @@
             // .ui.teal.label(v-show="u.pro") pro
             br(v-if="u.d")
             span.gray(v-if="u.d") -{{ sify(u.d) }}
-      .ui.row.flex.flex-center(v-if="!showMaterials && !s", @click="showMaterials = true")
-        .ui.large.green.button 按此看更多
-          i.ui.chevron.right.icon
+        .column#col(v-if="!showMaterials && !s")
+          button.ui.large.green.button(@click="showMaterials = true") 按此看更多
+            i.ui.chevron.right.icon
 
     
     // iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSfH1kiD9W2IEekfC_nCEFtIjLsJTPiw8nDzIPAmOiUkbwIx8A/viewform?embedded=true", width="640" height="1371", frameborder="0", marginheight="0", marginwidth="0") 載入中…
