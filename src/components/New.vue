@@ -8,29 +8,29 @@
     .ui.divider
     .ui.segment.container.center.aligned
       .ui.large.buttons.fat-only
-        a.ui.green.button(href="https://github.com/bestian/freemath/wiki" rel="noopener noreferrer")
+        a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
           | {{ sify('新手上路')}}
         router-link.ui.blue.button(to="/faq", @click="trackButton('faq', 1); goto('faq')", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
-        a.ui.red.button(href="https://github.com/bestian/freemath/issues" rel="noopener noreferrer")
+        a.ui.red.button(href="https://github.com/3dw/freemath/issues/new" rel="noopener noreferrer")
           i.bell.icon
           | {{ sify('回報問題')}}
-        a.ui.purple.button(href="https://github.com/bestian/freemath/" rel="noopener noreferrer")
+        a.ui.purple.button(href="https://github.com/3dw/freemath/" rel="noopener noreferrer")
           i.adjust.icon
           | {{ sify('參與貢獻')}}
       .ui.vertical.large.buttons.thin-only
-        a.ui.green.button(href="https://github.com/bestian/freemath/wiki" rel="noopener noreferrer")
+        a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
           | {{ sify('新手上路')}}
         router-link.ui.huge.blue.button(to="/faq", rel="noopener noreferrer")
           i.question.icon
           | {{ sify('常見問題')}}
-        a.ui.red.button(href="https://github.com/bestian/freemath/issues", rel="noopener noreferrer")
+        a.ui.red.button(href="https://github.com/3dw/freemath/issues/new", rel="noopener noreferrer")
           i.bell.icon
           | {{ sify('回報問題')}}
-        a.ui.purple.button(href="https://github.com/bestian/freemath/", rel="noopener noreferrer")
+        a.ui.purple.button(href="https://github.com/3dw/freemath/", rel="noopener noreferrer")
           i.adjust.icon
           | {{ sify('參與貢獻')}}
       // .ui.divider
