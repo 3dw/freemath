@@ -258,7 +258,7 @@ export default {
 }
 
 a img {
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
   margin: 0 3px;
 }
 
