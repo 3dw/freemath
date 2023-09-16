@@ -12,7 +12,10 @@
         i.angle.double.down.icon
       router-link.item(to='/outer' exact='')
         i.user.add.icon
-      a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
+
+      button.item(@click="copyLink()")
+        i.linkify.icon
+      //a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
         i.github.icon
     .ui.top.labeled.icon.menu.no-print.fat-only
       router-link.item(to='/', exact='', name="home")
@@ -56,7 +59,11 @@
         a.item(v-else, @click="si = false", name="tify")
           i.edit.icon
           | {{ sify('正體') }}
-        a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
+
+        button.item(@click="copyLink()")
+          i.linkify.icon
+          span.fat-only {{ sify('複製連結') }}
+        // a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
           i.github.icon
           | {{ sify('原始碼') }}
     main#main
@@ -235,6 +242,22 @@ export default {
       list[idx] = true
       play12Ref.child('unused').update((list))
     },
+    copyLink () {
+      if (!document.hasFocus()) {
+        alert("Document does not have focus, cannot copy text.");
+        return;
+      }
+      console.log(this.$route);
+      const copyText = 'https://math.alearn.org.tw/#/' + this.$route.path;
+      navigator.clipboard.writeText(copyText)
+        .then(() => {
+          window.alert("Copied the text: " + copyText);
+        })
+        .catch(err => {
+          console.error('Could not copy text: ', err);
+        });
+      this.$forceUpdate();
+    },
     useC: function (i, n, op) {
       // console.log(n)
       var ans = this.play12.myNum[0]
@@ -412,6 +435,10 @@ brbr.thin-only.one-line-only {
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.ui.menu button.item {
+  border: none;
 }
 
 </style>
