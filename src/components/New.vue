@@ -7,6 +7,7 @@
         span {{ sify('擺脫幻象與迷惑，每日10分鐘，讓思想自由。')}}
     .ui.divider
     .ui.segment.container.center.aligned
+      p(v-for="(c, idx) in changelogs". :key="idx") {{c}}
       .ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
@@ -105,25 +106,33 @@
           h3 {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
           br
           img.tiny(src="../assets/cc-by-sa.png")
-      .ui.row 
-        .column.center.aligned
-          .ui.icon.input.rel-left.shadow
+      .ui.stackable.row
+        .eight.wide.column.center.aligned
+          .ui.toggle.checkbox
+            input(type="checkbox", v-model="useAge")
+            label 年齡查詢
+              span(v-show="useAge") ：
+          .ui.icon.input.shadow(v-show="useAge")
+            input.prompt(type="number", v-model="age", min = "3" max ="18" step="1" :placeholder="sify('3歲~18歲')")
+            i.search.icon
+        .eight.wide.column.center.aligned
+          .ui.icon.input.shadow
             input.prompt(v-model="s" type="text", :placeholder="sify('關鍵字查詢')")
             i.search.icon
         br
       .ui.four.column.doubling.row
-        .column#col(v-for="u in lazyShow(units, showMaterials, s)", v-show="u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)")
+        .column#col(v-for="(u, idx) in lazyShow(units, showMaterials, s, useAge, age)" :key="idx")
           a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
             img(:src="'https://www.google.com/s2/favicons?domain='+u.url" :alt="sify(u.n)")
-            i.download.icon
+            //i.download.icon
             | {{ sify(u.n) }}
             br.thin-only
             span.floated.right.gray {{ countGrade(u.g, u.G) }}
             // .ui.teal.label(v-show="u.pro") pro
             br(v-if="u.d")
             span.gray(v-if="u.d") -{{ sify(u.d) }}
-        .column#col(v-if="!showMaterials && !s")
-          button.ui.large.green.button(@click="showMaterials = true") 按此看更多
+        .column#col(v-if="!showMaterials && !s && !useAge")
+          button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
             i.ui.chevron.right.icon
 
     
@@ -143,8 +152,15 @@ export default {
   components: { },
   data () {
     return {
+      chagelogs: [
+        '2023-09-17：將年齡查詢與關鍵字查詢區隔',
+        '2023-09-17：分享按鈕從臉書脫勾，改為複製超連結',
+        '2023-09-15：將教育圖示純化，並且取消灰階，利與查詢',
+      ],
       showMaterials: false,
       s: '',
+      useAge: false,
+      age: 9,
       show1: true
     }
   },
@@ -157,9 +173,11 @@ export default {
       }
     },
     // Array => Bool => String => Array 
-    lazyShow(units, showMaterials, s) {
-      if (showMaterials || s) {
-        return units
+    lazyShow(units, showMaterials, s, useAge, age) {
+      if (showMaterials || s || useAge) {
+        return units.filter((o) => {
+          return this.showOrNot(o, s, useAge, age)
+        })
       } else {
         return units.slice(0,10)
       }
@@ -191,6 +209,23 @@ export default {
           })
         }
       } */
+    },
+    showOrNot(u, s, useAge, age) {
+      var ans = true
+      if (useAge) {
+        console.log('age')
+        console.log(age - 6)
+        console.log(u.g)
+        console.log(u.G)
+        console.log(age - 6 < u.g || age - 6 > u.G)
+        if (age - 6 < u.g || age - 6 > u.G) {
+          ans = false
+        }
+      }
+      if (s && u.n.indexOf(s) == -1) {
+        ans = false
+      }
+      return ans
     },
     countGrade (g, G) {
       var min = g
