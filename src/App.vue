@@ -67,7 +67,7 @@
           i.github.icon
           | {{ sify('原始碼') }}
     main#main
-      router-view(:si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
+      router-view(:changelogs="changelogs", :si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
       // router-link#logo(to='/')
         img(src='./assets/logo.png')
       ad#ad(:si="si")
@@ -90,38 +90,62 @@ export default {
       share: false,
       play12: undefined,
       chats: undefined,
+      changelogs: [
+        '2023-09-18：介面優化及除錯',
+        '2023-09-17：將年齡查詢與關鍵字查詢區隔',
+        '2023-09-17：分享按鈕從臉書脫勾，改為複製超連結',
+        '2023-09-15：將教育圖示純化，並且取消灰階，利與查詢',
+      ],
       units: [
         {n: '分類', d:'學習如何將物品與圖形分門別類', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/11FQ7urzmBNkfD8yeGPCw2PEq_1cqqpDRf-mDFCjQ5l0/edit?usp=sharing', edit: true, p: 80, left: 2},
         {n: '誰比較多', d:'從數量的比較培養數感和量感', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/1afPtB_fNvTb2J58gWLlwAbtkXTdG589wquaq9vzJfZE/edit?usp=sharing', edit: true, p: 80, left: 3},
         {n: '認識數字', d:'學習阿拉拍數字', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1AH1j0rQzsNsVUW4Papgq4vAVZgEIDiQCREXVD9LbsgM/edit?usp=sharing', edit: true, p: 80, left: 0},
         {n: '數氣球', d:'一個數數和加法的練習小遊戲', g: -3, G: -1, url: 'https://scratch.mit.edu/studios/1895336/', left: 1},
+
         {n: '加法影片', d:'加法教材的導覽影片', g: 0, G:2, url: 'https://www.youtube.com/watch?v=wATHWDkCYN0', edit: false, p:100, left: 0},
+
         {n: '加法', d:'從頭開始學習加法', g: 0, G: 2, url: 'https://docs.google.com/document/d/18xrId9-15sm5VCdFY5cHZtygNRvKu6ZOi1XFY_k-2mw/edit?usp=sharing', edit: true, p: 50, left: 0},
+
         {n: '湊十釣魚', d:'練習湊十的小遊戲', g: 0, G: 2, url: 'https://bestian.github.io/fishing-10/', edit: false, p: 100, left: 1},
+
         {n: '減法影片', d:'減法教材的導覽影片', g: 1, G: 2, url: 'https://www.youtube.com/watch?v=Htzb84EbFzY', edit: false, p: 100, left: 1},
+
         {n: '減法', d:'從頭開始學習減法', g: 1, G: 2, url: 'https://docs.google.com/document/d/1xrxA_OfzcXkIgMInwXTXy3FAEkkDy4NRTUOkvFnvDMk/edit?usp=sharing', edit: true, p: 50, left: 1},
+
         {n: '百數表', d:'透過百數表，觀察百以內的數字的秩序', g: 1, G: 3, url: 'https://drive.google.com/file/d/0B-3AeNXITt7ZeElLZXdxczF2TTVud0VTLXg2eFhMT2htT2FN/view', left: 2},
+
         {n: '認識十進位', d:'學習阿拉拍數字的十進位規律', g: 1, G: 2, url: 'https://docs.google.com/drawings/d/1jS6GPgAOGorEcSHUlJaHYYB6RB43l9v5JzxPlWwDbPY/edit?usp=sharing', edit: true, p: 20, left: 0},
+
         {n: '乘法影片', d:'乘法教材的導覽影片', g: 2, G: 4, url: 'https://www.youtube.com/watch?v=04oIeiBHaqg', edit: false, p: 100, left: 0},
+
         {n: '乘法A~D', d:'從頭開始學習乘法', g: 2, G: 4, url: 'https://docs.google.com/document/d/15YqUGEehxC63GfYXMrihKvbT_w93nx-H4m0ZuFkpbjo/edit?usp=sharing', edit: true, p: 90, left: 0},
+
         {n: '乘法E~F', d:'乘法直式的學習', g: 2, G: 5, url: 'https://docs.google.com/document/d/1zUE7ROOqhaIALC3k0rimZPv8Fo1lf8-gYORG1Wr6eXg/edit?usp=sharing', edit: true, p: 90, left: 1, pro: true},
+
         {n: '除法', d:'從頭開始學習除法', g: 2, G: 5, url: 'https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing', edit: true, p: 90, left: 2},
+
         {n: '除法直式的意涵', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=RvP7ICoxRGs', left: 0},
+
         {n: '除法直式精熟', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=o73K7oUH_-4', left: 1},
+
         {n: '餘量的處理', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=falQiyDLL50', left: 2},
+
         {n: '倍數著色', d:'透過百數表，觀察百以內的數字的倍數圖象秩序', g: 3, G: 5, url: 'https://bestian.github.io/color-math/', left: 3},
+
         {n: '分數影片', d:'分數教材的導覽影片', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=DHoxJ3sfVLY', left: 0},
-        {n: '分數', d:'從頭開始學習分數', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing', left: 0},
-        {n: '面積的估算', d:'學習面積的意義和估計與計算，簡易的圖形面積算法', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1LLNZQY4JSUc_pZ4K2LPHRA0pnJCfRdPE8Oqxejk29hI/edit?usp=sharing', left: 1},
-        {n: '數線', d:'學習用數線表示數字', g: 3, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing', left: 2},
-        {n: '時間的計算', d:'學習時間的加減法，以及六十進位制', g: 3, G: 5, wiki: '', url: 'https://docs.google.com/document/d/1fjnXcv0yHUCObK3_yRxLtrrDjBKIv_DSqEb_xkswiF8/edit?usp=sharing', edit: true, p: 90, left: 3},
+
+        {n: '分數', d:'從頭開始學習分數', g: 3, G: 5, wiki: '分數', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing', left: 0},
+
+        {n: '面積的估算', d:'學習面積的意義和估計與計算，簡易的圖形面積算法', g: 3, G: 5, wiki: '面積', url: 'https://docs.google.com/document/d/1LLNZQY4JSUc_pZ4K2LPHRA0pnJCfRdPE8Oqxejk29hI/edit?usp=sharing', left: 1},
+        {n: '數線', d:'學習用數線表示數字', g: 3, G: 7, wiki: '數線', url: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing', left: 2},
+        {n: '時間的計算', d:'學習時間的加減法，以及六十進位制', g: 3, G: 5, wiki: '時間', url: 'https://docs.google.com/document/d/1fjnXcv0yHUCObK3_yRxLtrrDjBKIv_DSqEb_xkswiF8/edit?usp=sharing', edit: true, p: 90, left: 3},
         {n: '體積與容積', d:'學習體積與容積的相關知識', g: 4, G: 6, wiki: '', url: 'https://docs.google.com/document/d/1YDhE2j3YfOvlIbQxry-EKBz7LxeQiVt7mM-eCcwL-nE/edit?usp=sharing', left: 0, pro: true},
-        {n: '代數入門', d:'學習用符號代表數，以及用代數解決數學問題', g: 5, G: 6, wiki: '代數入門', url: 'https://docs.google.com/document/d/1LVcw277KiS3CHgle0b-LG5uMA6NN2HO6y_0rLZPvQe8/edit?usp=sharing', left: 1},
+        {n: '代數入門', d:'學習用符號代表數，以及用代數解決數學問題', g: 5, G: 6, wiki: '代數', url: 'https://docs.google.com/document/d/1LVcw277KiS3CHgle0b-LG5uMA6NN2HO6y_0rLZPvQe8/edit?usp=sharing', pdf:'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc?resourcekey=0-avzsApkGijsw-DrgNqNYyA', left: 1},
         {n: '分數到小數', d:'從分數延伸學習，建立小數的概念', g: 5, G: 6, wiki: '小數', url: 'https://docs.google.com/document/d/1xr9bhw0qcsio0R3FU9gUOIjW8Ir2mQpAh0fjJh4cnu0/edit?usp=sharing', left: 2, pro: true},
         {n: '物理量與單位換算', d:'從單位換算學習比例', g: 5, G: 6, url: 'https://docs.google.com/document/d/12R1oi-Jia84mYixQBys83TIiM_eMCJfNzQLtXgrLLis/edit', edit: true, p: 30, left: 3, pro: true},
         {n: '四則運算總複習', d:'複習小學的四則運算', g: 5, G: 7, wiki: '', url: 'https://docs.google.com/document/d/11-ouXYWYIfawLMPGOSkXtC_AclO2A6SBHryXfr3NKng/edit?usp=sharing', left: 4},
         {n: '因數與倍數', d:'瞭解因倍數和公因數、公倍數，質因數分解等', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1RcZy2CN6HSP-wsXb1g61A-Sq0QWjwY3TCJVRWTq3fTQ/edit?usp=sharing', left: 0, pro: true},
-        {n: '正負數', d:'透過減法，進入負數的領域', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing', left: 1},
+        {n: '正負數', d:'透過減法，進入負數的領域', g: 6, G: 7, wiki: '負責', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing', pdf:'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc?resourcekey=0-avzsApkGijsw-DrgNqNYyA', left: 1},
         {n: '比與比值', d:'學習比與比值和相關的應用問題', g: 6, G: 8, wiki: '比值', url: 'https://docs.google.com/document/d/1jzeGGHqUmgEWZDvywl4xXUNoVPzUoTa_w1J0JzoUk8o/edit?usp=sharing', left: 2},
         {n: '小學數學觀念精華', d:'一次複習所有小學的重要單元', g: 6, G: 9, url: 'https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=sharing', p: 100, left: 3, pro: true},
         {n: '正負分數', d:'透過減法和除法，進入負分數的領域', g: 7, G: 7, wiki: '有理數', url: 'https://docs.google.com/document/d/1tD4_6l1spXg7p6M7bRBb8wNwIJcCSfQIPh_LNu-rfjE/edit?usp=sharing', left: 0, pro: true},
@@ -300,7 +324,8 @@ export default {
 <style>
 
 html, body {
-  padding-top: 0
+  padding-top: 0;
+  font-size: 16px !important;
 }
 
 .fade-leave {  }
@@ -330,6 +355,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.text-center  {
+  text-align: center;
 }
 
 .print-only {

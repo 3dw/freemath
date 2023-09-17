@@ -88,6 +88,11 @@
               | {{ sify('把這份教材釋出就是希望能夠讓更多人一起跟著教材思考與學習，而教材是活的，不同使用者的回饋還會讓我們去修改內容，或是以其他方式來貼近使用者的需要。') }}
               b {{ sify('希望大家多多給我們回饋，並且享受一起思考、一起發現的快樂與成就。') }}
             iframe(width='90%', height='360', src='https://www.youtube.com/embed/6NhyCXJU-IQ?rel=0', frameborder='0', allowfullscreen='')
+          .ui.segment.container
+            p.fluid.text-center 本專案原始碼位於
+              a(href="https://www.github.com/3dw/freemath", target="_blank", rel="noopener noreferrer")
+                i.github.icon
+                | https://www.github.com/3dw/freemath
         .column
           .ui.segment.container
             h2 教材不是萬能，沒教材萬萬不能  -  唐宗浩，自由數學共同發起人

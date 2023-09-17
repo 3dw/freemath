@@ -25,25 +25,28 @@
         </div>
       </div>
 
-      <div class="ui form no-print">
-        <div class="inline fields">
-          <label>選擇年段：</label>
-          <div class="field" v-for="r in ranges" :key="r">
+      <div class="ui divider"></div>
+
+      <div class="ui grid no-print">
+        <label>選擇年段：
+          <br class="thin-only" /></label>
+        <div class="ui stackable row">
+          <div class="four wide column" v-for="(r, l) in ranges" :key="'range' + l">
             <div class="ui radio checkbox">
               <input type="radio" name="year" v-bind:value="r" v-model = "myRange">
               <label class="clickable" @click = "myRange = r">{{r.t}}</label>
             </div>
           </div>
-          <div class="field">
-            <button class = "ui large green button" id = "doPrint" @click = "printUrl(myRange.t,'.pdf')"> 友善列印
-            </button>
-          </div>
+        </div>
+        <div class="ui row text-center">
+          <button class = "ui large green button" id = "doPrint" @click = "printUrl(myRange.t,'.pdf')"> 友善列印
+          </button>
         </div>
       </div>
     </div><!-- Segment END -->
 
    <ul class = "print">
-      <li v-for = "i in [1,2,3,4,0,5]" :key="i">
+      <li v-for = "i in [1,2,3,4,0,5]" :key="'print' + i">
         <a :href="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" target="_blank">
           <img :src ="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" style="max-width:75vw" alt = ""/>
         </a>

@@ -7,7 +7,8 @@
         span {{ sify('擺脫幻象與迷惑，每日10分鐘，讓思想自由。')}}
     .ui.divider
     .ui.segment.container.center.aligned
-      p(v-for="(c, idx) in changelogs". :key="idx") {{c}}
+      h3.ui.header {{ sify('版本更新公告')}}
+        .sub.header(v-for="(c, idx) in changelogs.slice(0, 3)", :key="idx") {{c}}
       .ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
@@ -55,7 +56,8 @@
           h1 
           a.big.link(@click="show1 = !show1", title="請按此")     
             h1 {{ sify('一對一系列')}}
-             i.ui.chevron.down.icon
+             i.ui.chevron.up.icon(v-if="show1")
+             i.ui.chevron.down.icon(v-else)
           
       .ui.three.column.stackable.row(v-show="show1")
         .column
@@ -148,15 +150,10 @@ import {sify} from 'chinese-conv'
 
 export default {
   name: 'Home',
-  props: ['units', 'share', 'si'],
+  props: ['units', 'share', 'si', 'changelogs'],
   components: { },
   data () {
     return {
-      chagelogs: [
-        '2023-09-17：將年齡查詢與關鍵字查詢區隔',
-        '2023-09-17：分享按鈕從臉書脫勾，改為複製超連結',
-        '2023-09-15：將教育圖示純化，並且取消灰階，利與查詢',
-      ],
       showMaterials: false,
       s: '',
       useAge: false,
@@ -179,7 +176,7 @@ export default {
           return this.showOrNot(o, s, useAge, age)
         })
       } else {
-        return units.slice(0,10)
+        return units.slice(0,7)
       }
     },
     op (url, name, pro) {
