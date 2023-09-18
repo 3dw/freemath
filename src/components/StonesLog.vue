@@ -2,11 +2,11 @@
   .river
     .ui.input
       input#find(type='text', v-model='s', placeholder='依關鍵字或年級搜詢', autofocus='')
-    .stone(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)')
-      a(@click = "op(u.url, u.n, u.pro)", target='_blank')
+    .stone.clickable(v-bind:class="{ checked: my.indexOf('_' + u.n + '_') > -1 }", v-for='u in units', v-bind:style="{top: u.g * 50 + 200 + 'px', left: u.left * 20 + 'vw' }", v-show='!s || u.n.indexOf(s) > -1 || (s >= u.g && s <= u.G)', @click='check(u)')
+      // a(@click = "op(u.url, u.n, u.pro)", target='_blank')
         .ui.teal.tag.label(v-show="u.pro") pro
-      a(@click='check(u)')
-        | {{ u.n }}
+      
+      | {{ u.n }}
     iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='400', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
 </template>
 
@@ -27,19 +27,7 @@ export default {
         url: url,
         pro: pro
       })
-      if (!pro || this.share) {
-        window.open(url)
-      } else {
-        if (window.confirm('會員專區-您可以加入會員。您願意成為贊助會員嗎？')) {
-          this.$gtag.query('event', 'donate' + name, {
-            name: name,
-            url: url,
-            pro: pro
-          })
-          window.alert('請填表註冊，完全手續後，發e-mail至: bestian@gmail.com申請免費教材，謝謝!')
-          setTimeout(() => { window.open('https://sites.google.com/view/autoalearn/%E9%97%9C%E6%96%BC%E6%9C%AC%E6%9C%83/%E6%88%90%E7%82%BA%E8%B4%8A%E5%8A%A9%E6%9C%83%E5%93%A1') }, 500)
-        }
-      }
+      window.open(url)
     },
     goto (u) {
       window.open(u.url)
