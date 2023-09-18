@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Hello from '@/components/Hello'
 import Intro from '@/components/Intro'
 import Maps from '@/components/Maps'
 import Table from '@/components/Table'
@@ -32,11 +31,6 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
   routes: [
-    {
-      path: '/hello',
-      name: '查詢教材',
-      component: Hello
-    },
     {
       path: '/',
       name: '首頁',
