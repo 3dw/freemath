@@ -24,10 +24,10 @@
 
             h4 例題一：「3x+x  >=  -1  >= 1-3x」
             h5 錯誤解法一
-            p {{ sify('直接計算
-            p {{ sify('4x  >=  -1  >= 1-3x
-            p {{ sify('x  >=  -1/4  >= （1-3x）/4
-            p {{ sify('然後卡在這一步
+            p {{ sify('直接計算')}}
+            p {{ sify('4x  >=  -1  >= 1-3x')}}
+            p {{ sify('x  >=  -1/4  >= （1-3x）/4')}}
+            p {{ sify('然後卡在這一步')}}
             h5 解析一
 
             p {{ sify('這種連續兩個不等號的式子，其實是兩個不等式聯立。') }}
@@ -201,5 +201,9 @@ export default {
 <style scoped>
 .column {
   text-align: left;
+}
+
+a {
+  text-decoration: underline;
 }
 </style>

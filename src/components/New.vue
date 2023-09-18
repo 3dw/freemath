@@ -55,7 +55,7 @@
         .column.center.aligned
           h1 
           a.big.link(@click="show1 = !show1", title="請按此")     
-            h1 {{ sify('一對一系列')}}
+            h1 {{ sify('給家長：一對一系列')}}
              i.ui.chevron.up.icon(v-if="show1")
              i.ui.chevron.down.icon(v-else)
           
@@ -102,7 +102,7 @@
       .ui.row
         .column.center.aligned
           a.big.link(@click="scrollDown(200); showMaterials = !showMaterials", title="按此切換顯示")     
-            h1 {{ sify('開放教材')}}
+            h1 {{ sify('給同學：開放教材')}}
              i.ui.chevron.down.icon(v-if="!showMaterials")
              i.ui.chevron.up.icon(v-else)
           h3 {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
