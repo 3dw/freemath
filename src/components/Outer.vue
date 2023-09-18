@@ -92,14 +92,12 @@ export default {
   data () {
     return {
       webs: [
-        { n: '高中數學@零時黑板',
-          h: 'http://goban.tw/#/see/%E9%AB%98%E4%B8%AD%E6%95%B8%E5%AD%B8/0/0'},
+        { n: '數學@維基百科',
+          h: 'https://zh.wikipedia.org/zh-tw/%E6%95%B0%E5%AD%A6'},
         { n: 'Math@可汗學院',
           h: 'https://www.khanacademy.org/math'},
-        { n: '均一平台',
-          h: 'https://www.junyiacademy.org/exercisedashboard'},
         { n: 'SAT線上測驗',
-          h: 'https://www.4tests.com/sat'}
+          h: 'https://www.4tests.com/sat'},
       ],
       books: [
         { n: '數學教育的藝術與實務─另類教與學',
