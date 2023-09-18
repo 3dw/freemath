@@ -37,6 +37,11 @@
       router-link.item(to='/outer', exact='', name="outer")
         i.user.add.icon
         | {{ sify('外部資源') }}
+
+      router-link.item(to='/changelogs', exact='', name="intro")
+        i.sort.amount.up.icon
+        | {{ sify('更新紀錄') }}
+        
       .right.menu
         //router-link.item(to='/vedio', exact='')
           i.play.icon
@@ -44,6 +49,8 @@
         router-link.item(to='/intro', exact='', name="intro")
           i.book.icon
           | {{ sify('編創源起') }}
+
+
         // router-link.item(to='/faq' exact='')
           i.question.icon
           | 常見問題
@@ -91,6 +98,7 @@ export default {
       play12: undefined,
       chats: undefined,
       changelogs: [
+        '2023-09-18：新增更新記錄頁面',
         '2023-09-18：介面優化及除錯',
         '2023-09-17：將年齡查詢與關鍵字查詢區隔',
         '2023-09-17：分享按鈕從臉書脫勾，改為複製超連結',
@@ -326,6 +334,10 @@ export default {
 html, body {
   padding-top: 0;
   font-size: 16px !important;
+}
+
+.ui.menu .item {
+    padding: 0.92857143em 0.64285714em !important;
 }
 
 .fade-leave {  }

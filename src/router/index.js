@@ -26,6 +26,7 @@ import One7 from '@/components/One7'
 import One8 from '@/components/One8'
 import One9 from '@/components/One9'
 import Login from '@/components/Login'
+import Changelogs from '@/components/Changelogs'
 
 Vue.use(VueRouter)
 
@@ -50,6 +51,11 @@ export default new VueRouter({
       path: '/intro',
       name: '介紹',
       component: Intro
+    },
+    {
+      path: '/changelogs',
+      name: '修訂記錄',
+      component: Changelogs
     },
     {
       path: '/maps',
