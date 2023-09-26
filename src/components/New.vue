@@ -109,7 +109,11 @@
           br
           img.tiny(src="../assets/cc-by-sa.png")
       .ui.stackable.row
-        .eight.wide.column.center.aligned
+        .five.wide.column.center.aligned
+          .ui.toggle.checkbox
+            input(type="checkbox", v-model="useWiki")
+            label 切換維基百科
+        .five.wide.column.center.aligned
           .ui.toggle.checkbox
             input(type="checkbox", v-model="useAge")
             label 年齡查詢
@@ -117,23 +121,25 @@
           .ui.icon.input.shadow(v-show="useAge")
             input.prompt(type="number", v-model="age", min = "3" max ="18" step="1" :placeholder="sify('3歲~18歲')")
             i.search.icon
-        .eight.wide.column.center.aligned
+        .six.wide.column.center.aligned
           .ui.icon.input.shadow
             input.prompt(v-model="s" type="text", :placeholder="sify('關鍵字查詢')")
             i.search.icon
         br
       .ui.four.column.doubling.row
-        .column#col(v-for="(u, idx) in lazyShow(units, showMaterials, s, useAge, age)" :key="idx")
-          a(@click = "op(u.url, u.n, u.pro)" target="_blank" rel="noopener noreferrer")
-            img(:src="'https://www.google.com/s2/favicons?domain='+u.url" :alt="sify(u.n)")
+        .column#col(v-for="(u, idx) in lazyShow(units, showMaterials, s, useAge, age, useWiki)" :key="idx")
+          a(@click = "op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
+            img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
+            img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)  
             //i.download.icon
-            | {{ sify(u.n) }}
+            span(v-if="!useWiki") {{ sify(u.n) }}
+            span(v-else) {{sify(u.wiki)}}
             br.thin-only
-            span.floated.right.gray {{ countGrade(u.g, u.G) }}
+            span.floated.right.gray(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
             // .ui.teal.label(v-show="u.pro") pro
             br(v-if="u.d")
             span.gray(v-if="u.d") -{{ sify(u.d) }}
-        .column#col(v-if="!showMaterials && !s && !useAge")
+        .column#col(v-if="!showMaterials && !s && !useAge && !useWiki")
           button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
             i.ui.chevron.right.icon
 
@@ -156,6 +162,7 @@ export default {
     return {
       showMaterials: false,
       s: '',
+      useWiki: false,
       useAge: false,
       age: 9,
       show1: true
@@ -170,23 +177,27 @@ export default {
       }
     },
     // Array => Bool => String => Array 
-    lazyShow(units, showMaterials, s, useAge, age) {
-      if (showMaterials || s || useAge) {
+    lazyShow(units, showMaterials, s, useAge, age, useWiki) {
+      if (showMaterials || s || useAge || useWiki) {
         return units.filter((o) => {
-          return this.showOrNot(o, s, useAge, age)
+          return this.showOrNot(o, s, useAge, age, useWiki)
         })
       } else {
-        return units.slice(0,7)
+        return units.slice(0,24)
       }
     },
-    op (url, name, pro) {
+    op (url, name, pro, wiki) {
       this.$gtag.query('event', 'view' + name, {
         name: name,
         url: url,
         pro: pro
       })
-      // if (!pro || this.share) {
+      if (!this.useWiki) {
         window.open(url)
+      } else {
+        window.open('https://zh.wikipedia.org/wiki/' + wiki)
+      }
+      // if (!pro || this.share) {
       /* } else {
         if (window.confirm('會員專區-您可以加入會員。您願意成為贊助會員嗎？')) {
           this.$gtag.event('action', {
@@ -207,7 +218,7 @@ export default {
         }
       } */
     },
-    showOrNot(u, s, useAge, age) {
+    showOrNot(u, s, useAge, age, useWiki) {
       var ans = true
       if (useAge) {
         console.log('age')
@@ -220,6 +231,9 @@ export default {
         }
       }
       if (s && u.n.indexOf(s) == -1) {
+        ans = false
+      }
+      if (useWiki && !u.wiki) {
         ans = false
       }
       return ans

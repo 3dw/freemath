@@ -98,6 +98,7 @@ export default {
       play12: undefined,
       chats: undefined,
       changelogs: [
+        '2023-09-26：引入「切換維基百科」模式，引介學習者至各單位對應的維基百科條目',
         '2023-09-19：改版摸石頭學習記錄頁面',
         '2023-09-18：新增更新記錄頁面',
         '2023-09-18：介面優化及除錯',
@@ -106,85 +107,113 @@ export default {
         '2023-09-15：將教育圖示純化，並且取消灰階，利與查詢',
       ],
       units: [
-        {n: '分類', d:'學習如何將物品與圖形分門別類', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/11FQ7urzmBNkfD8yeGPCw2PEq_1cqqpDRf-mDFCjQ5l0/edit?usp=sharing', edit: true, p: 80, left: 2},
-        {n: '誰比較多', d:'從數量的比較培養數感和量感', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/1afPtB_fNvTb2J58gWLlwAbtkXTdG589wquaq9vzJfZE/edit?usp=sharing', edit: true, p: 80, left: 3},
+        {n: '分類', d:'學習如何將物品與圖形分門別類', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/11FQ7urzmBNkfD8yeGPCw2PEq_1cqqpDRf-mDFCjQ5l0/edit?usp=sharing', edit: true, p: 80, left: 2, wiki: '分類'},
+        {n: '誰比較多', d:'從數量的比較培養數感和量感', g: -3, G: -1, url: 'https://docs.google.com/presentation/d/1afPtB_fNvTb2J58gWLlwAbtkXTdG589wquaq9vzJfZE/edit?usp=sharing', edit: true, p: 80, left: 3, wiki: '比較'},
         {n: '認識數字', d:'學習阿拉拍數字', g: -3, G: -1, url: 'https://docs.google.com/drawings/d/1AH1j0rQzsNsVUW4Papgq4vAVZgEIDiQCREXVD9LbsgM/edit?usp=sharing', edit: true, p: 80, left: 0},
         {n: '數氣球', d:'一個數數和加法的練習小遊戲', g: -3, G: -1, url: 'https://scratch.mit.edu/studios/1895336/', left: 1},
 
-        {n: '加法影片', d:'加法教材的導覽影片', g: 0, G:2, url: 'https://www.youtube.com/watch?v=wATHWDkCYN0', edit: false, p:100, left: 0},
+        {n: '加法影片', d:'加法教材的導覽影片', g: 0, G:2, url: 'https://www.youtube.com/watch?v=wATHWDkCYN0', edit: false, p:100, left: 0, wiki: '加法'},
 
-        {n: '加法', d:'從頭開始學習加法', g: 0, G: 2, url: 'https://docs.google.com/document/d/18xrId9-15sm5VCdFY5cHZtygNRvKu6ZOi1XFY_k-2mw/edit?usp=sharing', edit: true, p: 50, left: 0},
+        {n: '加法', d:'從頭開始學習加法', g: 0, G: 2, url: 'https://docs.google.com/document/d/18xrId9-15sm5VCdFY5cHZtygNRvKu6ZOi1XFY_k-2mw/edit?usp=sharing', edit: true, p: 50, left: 0, wiki: '加法'},
 
-        {n: '湊十釣魚', d:'練習湊十的小遊戲', g: 0, G: 2, url: 'https://bestian.github.io/fishing-10/', edit: false, p: 100, left: 1},
+        {n: '湊十釣魚', d:'練習湊十的小遊戲', g: 0, G: 2, url: 'https://bestian.github.io/fishing-10/', edit: false, p: 100, left: 1, wiki: '十進位'},
 
-        {n: '減法影片', d:'減法教材的導覽影片', g: 1, G: 2, url: 'https://www.youtube.com/watch?v=Htzb84EbFzY', edit: false, p: 100, left: 1},
+        {n: '減法影片', d:'減法教材的導覽影片', g: 1, G: 2, url: 'https://www.youtube.com/watch?v=Htzb84EbFzY', edit: false, p: 100, left: 1, wiki: '減法'},
 
-        {n: '減法', d:'從頭開始學習減法', g: 1, G: 2, url: 'https://docs.google.com/document/d/1xrxA_OfzcXkIgMInwXTXy3FAEkkDy4NRTUOkvFnvDMk/edit?usp=sharing', edit: true, p: 50, left: 1},
+        {n: '減法', d:'從頭開始學習減法', g: 1, G: 2, url: 'https://docs.google.com/document/d/1xrxA_OfzcXkIgMInwXTXy3FAEkkDy4NRTUOkvFnvDMk/edit?usp=sharing', edit: true, p: 50, left: 1, wiki: '減法'},
 
-        {n: '百數表', d:'透過百數表，觀察百以內的數字的秩序', g: 1, G: 3, url: 'https://drive.google.com/file/d/0B-3AeNXITt7ZeElLZXdxczF2TTVud0VTLXg2eFhMT2htT2FN/view', left: 2},
+        {n: '百數表', d:'透過百數表，觀察百以內的數字的秩序', g: 1, G: 3, url: 'https://drive.google.com/file/d/0B-3AeNXITt7ZeElLZXdxczF2TTVud0VTLXg2eFhMT2htT2FN/view', left: 2, wiki: '數字'},
 
-        {n: '認識十進位', d:'學習阿拉拍數字的十進位規律', g: 1, G: 2, url: 'https://docs.google.com/drawings/d/1jS6GPgAOGorEcSHUlJaHYYB6RB43l9v5JzxPlWwDbPY/edit?usp=sharing', edit: true, p: 20, left: 0},
+        {n: '認識十進位', d:'學習阿拉拍數字的十進位規律', g: 1, G: 2, url: 'https://docs.google.com/drawings/d/1jS6GPgAOGorEcSHUlJaHYYB6RB43l9v5JzxPlWwDbPY/edit?usp=sharing', edit: true, p: 20, left: 0, wiki: '十進位'},
 
-        {n: '乘法影片', d:'乘法教材的導覽影片', g: 2, G: 4, url: 'https://www.youtube.com/watch?v=04oIeiBHaqg', edit: false, p: 100, left: 0},
+        {n: '乘法影片', d:'乘法教材的導覽影片', g: 2, G: 4, url: 'https://www.youtube.com/watch?v=04oIeiBHaqg', edit: false, p: 100, left: 0, wiki: '乘法'},
 
-        {n: '乘法A~D', d:'從頭開始學習乘法', g: 2, G: 4, url: 'https://docs.google.com/document/d/15YqUGEehxC63GfYXMrihKvbT_w93nx-H4m0ZuFkpbjo/edit?usp=sharing', edit: true, p: 90, left: 0},
+        {n: '乘法A~D', d:'從頭開始學習乘法', g: 2, G: 4, url: 'https://docs.google.com/document/d/15YqUGEehxC63GfYXMrihKvbT_w93nx-H4m0ZuFkpbjo/edit?usp=sharing', edit: true, p: 90, left: 0, wiki: '乘法'},
 
-        {n: '乘法E~F', d:'乘法直式的學習', g: 2, G: 5, url: 'https://docs.google.com/document/d/1zUE7ROOqhaIALC3k0rimZPv8Fo1lf8-gYORG1Wr6eXg/edit?usp=sharing', edit: true, p: 90, left: 1, pro: true},
+        {n: '乘法E~F', d:'乘法直式的學習', g: 2, G: 5, url: 'https://docs.google.com/document/d/1zUE7ROOqhaIALC3k0rimZPv8Fo1lf8-gYORG1Wr6eXg/edit?usp=sharing', edit: true, p: 90, left: 1, pro: true, wiki: '乘法'},
 
-        {n: '除法', d:'從頭開始學習除法', g: 2, G: 5, url: 'https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing', edit: true, p: 90, left: 2},
+        {n: '除法', d:'從頭開始學習除法', g: 2, G: 5, url: 'https://docs.google.com/document/d/1uXxQuYTiBDUR5F-bTNXAS3yLma-i9f0yZey5Ck109o4/edit?usp=sharing', edit: true, p: 90, left: 2, wiki: '除法'},
 
-        {n: '除法直式的意涵', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=RvP7ICoxRGs', left: 0},
+        {n: '除法直式的意涵', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=RvP7ICoxRGs', left: 0, wiki: '長除法', d: '直式除法，是小學數學中，按部就班 計算的重點，每一個步驟和位置都有它的意義。'},
 
-        {n: '除法直式精熟', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=o73K7oUH_-4', left: 1},
+        {n: '除法直式精熟', g: 3, G: 4, url: 'https://www.youtube.com/watch?v=o73K7oUH_-4', left: 1, wiki: '長除法', d: '直式除法不需要死背，但是需要足夠的練習。'},
 
-        {n: '餘量的處理', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=falQiyDLL50', left: 2},
+        {n: '餘量的處理', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=falQiyDLL50', left: 2, wiki: '餘數', d: '在不同的應用問題當中，餘數會有不同的處理方法。 這是值得我們留意的。'},
 
-        {n: '倍數著色', d:'透過百數表，觀察百以內的數字的倍數圖象秩序', g: 3, G: 5, url: 'https://bestian.github.io/color-math/', left: 3},
+        {n: '倍數著色', d:'透過百數表，觀察百以內的數字的倍數圖象秩序', g: 3, G: 5, url: 'https://bestian.github.io/color-math/', left: 3, wiki: '倍數',},
 
-        {n: '分數影片', d:'分數教材的導覽影片', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=DHoxJ3sfVLY', left: 0},
+        {n: '分數影片', d:'分數教材的導覽影片', g: 3, G: 5, url: 'https://www.youtube.com/watch?v=DHoxJ3sfVLY', left: 0, wiki: '分數'},
 
         {n: '分數', d:'從頭開始學習分數', g: 3, G: 5, wiki: '分數', url: 'https://docs.google.com/document/d/1c1ufnqICyQy0UcsZTqpkIBpBkCPDyQQsH1CB1Bj84_g/edit?usp=sharing', left: 0},
 
         {n: '面積的估算', d:'學習面積的意義和估計與計算，簡易的圖形面積算法', g: 3, G: 5, wiki: '面積', url: 'https://docs.google.com/document/d/1LLNZQY4JSUc_pZ4K2LPHRA0pnJCfRdPE8Oqxejk29hI/edit?usp=sharing', left: 1},
         {n: '數線', d:'學習用數線表示數字', g: 3, G: 7, wiki: '數線', url: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing', left: 2},
         {n: '時間的計算', d:'學習時間的加減法，以及六十進位制', g: 3, G: 5, wiki: '時間', url: 'https://docs.google.com/document/d/1fjnXcv0yHUCObK3_yRxLtrrDjBKIv_DSqEb_xkswiF8/edit?usp=sharing', edit: true, p: 90, left: 3},
-        {n: '體積與容積', d:'學習體積與容積的相關知識', g: 4, G: 6, wiki: '', url: 'https://docs.google.com/document/d/1YDhE2j3YfOvlIbQxry-EKBz7LxeQiVt7mM-eCcwL-nE/edit?usp=sharing', left: 0, pro: true},
+
+        {n: '體積與容積', d:'學習體積與容積的相關知識', g: 4, G: 6, wiki: '體積', url: 'https://docs.google.com/document/d/1YDhE2j3YfOvlIbQxry-EKBz7LxeQiVt7mM-eCcwL-nE/edit?usp=sharing', left: 0, pro: true},
+
         {n: '代數入門', d:'學習用符號代表數，以及用代數解決數學問題', g: 5, G: 6, wiki: '代數', url: 'https://docs.google.com/document/d/1LVcw277KiS3CHgle0b-LG5uMA6NN2HO6y_0rLZPvQe8/edit?usp=sharing', pdf:'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc?resourcekey=0-avzsApkGijsw-DrgNqNYyA', left: 1},
+
         {n: '分數到小數', d:'從分數延伸學習，建立小數的概念', g: 5, G: 6, wiki: '小數', url: 'https://docs.google.com/document/d/1xr9bhw0qcsio0R3FU9gUOIjW8Ir2mQpAh0fjJh4cnu0/edit?usp=sharing', left: 2, pro: true},
-        {n: '物理量與單位換算', d:'從單位換算學習比例', g: 5, G: 6, url: 'https://docs.google.com/document/d/12R1oi-Jia84mYixQBys83TIiM_eMCJfNzQLtXgrLLis/edit', edit: true, p: 30, left: 3, pro: true},
-        {n: '四則運算總複習', d:'複習小學的四則運算', g: 5, G: 7, wiki: '', url: 'https://docs.google.com/document/d/11-ouXYWYIfawLMPGOSkXtC_AclO2A6SBHryXfr3NKng/edit?usp=sharing', left: 4},
-        {n: '因數與倍數', d:'瞭解因倍數和公因數、公倍數，質因數分解等', g: 6, G: 7, wiki: '', url: 'https://docs.google.com/document/d/1RcZy2CN6HSP-wsXb1g61A-Sq0QWjwY3TCJVRWTq3fTQ/edit?usp=sharing', left: 0, pro: true},
-        {n: '正負數', d:'透過減法，進入負數的領域', g: 6, G: 7, wiki: '負責', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing', pdf:'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc?resourcekey=0-avzsApkGijsw-DrgNqNYyA', left: 1},
+
+        {n: '物理量與單位換算', d:'從單位換算學習比例', wiki: '單位換算',
+          g: 5, G: 6, url: 'https://docs.google.com/document/d/12R1oi-Jia84mYixQBys83TIiM_eMCJfNzQLtXgrLLis/edit', edit: true, p: 30, left: 3, pro: true},
+
+        {n: '四則運算總複習', d:'複習小學的四則運算', g: 5, G: 7, wiki: '四則運算', url: 'https://docs.google.com/document/d/11-ouXYWYIfawLMPGOSkXtC_AclO2A6SBHryXfr3NKng/edit?usp=sharing', left: 4},
+
+        {n: '因數與倍數', d:'瞭解因倍數和公因數、公倍數，質因數分解等', g: 6, G: 7, wiki: '因數', url: 'https://docs.google.com/document/d/1RcZy2CN6HSP-wsXb1g61A-Sq0QWjwY3TCJVRWTq3fTQ/edit?usp=sharing', left: 0, pro: true},
+
+        {n: '正負數', d:'透過減法，進入負數的領域', g: 6, G: 7, wiki: '負數', url: 'https://docs.google.com/document/d/1Agtn1WeZ1QELg3wDHAibw4q2IDyEHU3X1pwj0qaKA-Q/edit?usp=sharing', pdf:'https://drive.google.com/drive/u/0/folders/0B-3AeNXITt7ZaExCaDkxNlZxUXc?resourcekey=0-avzsApkGijsw-DrgNqNYyA', left: 1},
         {n: '比與比值', d:'學習比與比值和相關的應用問題', g: 6, G: 8, wiki: '比值', url: 'https://docs.google.com/document/d/1jzeGGHqUmgEWZDvywl4xXUNoVPzUoTa_w1J0JzoUk8o/edit?usp=sharing', left: 2},
+
         {n: '小學數學觀念精華', d:'一次複習所有小學的重要單元', g: 6, G: 9, url: 'https://docs.google.com/document/d/1xUDSZPP1lmReEpAOhCXKUEln105MrVjFo05E4FcpMx0/edit?usp=sharing', p: 100, left: 3, pro: true},
+
         {n: '正負分數', d:'透過減法和除法，進入負分數的領域', g: 7, G: 7, wiki: '有理數', url: 'https://docs.google.com/document/d/1tD4_6l1spXg7p6M7bRBb8wNwIJcCSfQIPh_LNu-rfjE/edit?usp=sharing', left: 0, pro: true},
+
         {n: '一元一次方程式', d:'學習一元一次方程式的列式和解題', g: 7, G: 8, wiki: '方程式', url: 'https://docs.google.com/document/d/1GLAu6BaheHxIGMqUVmz4CfgHJEVJxrP-cc_SaJI3jow/edit?usp=sharing', left: 0.5},
-        {n: '不等式', d:'學習一元一次不等式的列式和解題', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1KjWUKOMWFHBqlnx6NfZHWb_T8EeMA2GJsvZMmZA5C7k/edit?usp=sharing', left: 1},
-        {n: '指數與科學記號', d:'學習指數、指數律與科學記號', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1j5tdf0TirLjFHTLIcWy4lgSe1oIFh7NshM6GDHCOduE/edit?usp=sharing', left: 1.5, pro: true},
-        {n: '二元一次方程式', d:'學習二元一次方程式的列式和解題', g: 7, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1v80VUYFsiW5V_jEOwPdOAHya5V75XQRzvRfbwnwpPLI/edit?usp=sharing', left: 2, pro: true},
+
+        {n: '不等式', d:'學習一元一次不等式的列式和解題', g: 7, G: 8, wiki: '不等式', url: 'https://docs.google.com/document/d/1KjWUKOMWFHBqlnx6NfZHWb_T8EeMA2GJsvZMmZA5C7k/edit?usp=sharing', left: 1},
+
+        {n: '指數與科學記號', d:'學習指數、指數律與科學記號', g: 7, G: 8, wiki: '科學記號', url: 'https://docs.google.com/document/d/1j5tdf0TirLjFHTLIcWy4lgSe1oIFh7NshM6GDHCOduE/edit?usp=sharing', left: 1.5, pro: true},
+
+        {n: '二元一次方程式', d:'學習二元一次方程式的列式和解題', g: 7, G: 8, wiki: '一次方程#二元一次方程组', url: 'https://docs.google.com/document/d/1v80VUYFsiW5V_jEOwPdOAHya5V75XQRzvRfbwnwpPLI/edit?usp=sharing', left: 2, pro: true},
+
         {n: '直角座標', d:'學習直角座標上的點和線如何表示', g: 7, G: 8, wiki: '座標', url: 'https://docs.google.com/document/d/1ghJHjgS5YUNBjjfkpyQtAX0Njx9npQnzIj-4--_11tw/edit?usp=sharing', left: 2.5},
+
         {n: '函數圖形', d:'學習直角座標上的函數圖形如何表示', g: 7, G: 8, wiki: '函數', url: 'https://docs.google.com/document/d/163OdWL9EwW4LxRTHIIzpVCnohcg4f3vpebXe2nfFT8E/edit?usp=sharing', left: 3, pro: true},
-        {n: '一元二次方程式', d:'學習一元二次方程式的列式和解題', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing', left: 0, pro: true},
-        {n: '幾何代數_乘法公式', d:'學習用圖形解決代數問題，以及主要的乘法公式', g: 8, G: 8, wiki: '', url: 'https://docs.google.com/document/d/1kjy84i-d_j_pnEp8bXqjkL8zQN6fDZ6kHpZCfY_lqHY/edit?usp=sharing', left: 0.5},
-        {n: '勾股定理', d:'學習勾股定理及其應用和證明', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1rPovRRDJ_JBPpQ-MVasmb3s1tXdDcZKGCKLc0TW5fCI/edit?usp=sharing', left: 1, pro: true},
-        {n: '根式運算', d:'學習根式運算的各種技巧', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/10oB3rrEhC0yvLlilr8vjAu-Q9LuS6IzRLea4flzYNAo/edit?usp=sharing', left: 1.5, pro: true},
+
+        {n: '一元二次方程式', d:'學習一元二次方程式的列式和解題', g: 8, G: 9, wiki: '一元二次方程式', url: 'https://docs.google.com/document/d/16fwpdw89fssKH4rpN5Ihc93zU-YCubBhzDUXs30wKcI/edit?usp=sharing', left: 0, pro: true},
+
+        {n: '幾何代數_乘法公式', d:'學習用圖形解決代數問題，以及主要的乘法公式', g: 8, G: 8, wiki: '乘法公式', url: 'https://docs.google.com/document/d/1kjy84i-d_j_pnEp8bXqjkL8zQN6fDZ6kHpZCfY_lqHY/edit?usp=sharing', left: 0.5},
+
+        {n: '勾股定理', d:'學習勾股定理及其應用和證明', g: 8, G: 9, wiki: '勾股定理', url: 'https://docs.google.com/document/d/1rPovRRDJ_JBPpQ-MVasmb3s1tXdDcZKGCKLc0TW5fCI/edit?usp=sharing', left: 1, pro: true},
+
+        {n: '根式運算', d:'學習根式運算的各種技巧', g: 8, G: 9, wiki: '平方根', url: 'https://docs.google.com/document/d/10oB3rrEhC0yvLlilr8vjAu-Q9LuS6IzRLea4flzYNAo/edit?usp=sharing', left: 1.5, pro: true},
+
         {n: '幾何證明', d:'學習幾何證明的各種技巧', g: 8, G: 9, wiki: '證明', url: 'https://docs.google.com/document/d/13clfEdnC5OZ3fp-NOWqO5HSOAEHMwxJN7BpKM1qkz7g/edit?usp=sharing', left: 2},
-        {n: '全等形', d:'學習利用全等形作幾何證明', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1oPIdcpSMcYED93EK8pTIwLbqg6tRZz0RyQXKp5HtkI8/edit?usp=sharing', left: 2.5, pro: true},
-        {n: '尺規作圖', d:'學習基本的尺規作圖技巧', g: 8, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1n3BiAVTJXojaYzwV7RjosJinobehwgJQ5IvZNeCAjnY/edit?usp=sharing', left: 3, pro: true},
-        {n: '數列與級數', d:'學習等差、等比數列與級數及其公式', g: 9, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1PSA7GuKDr2MFHbnzHgBduq-YwGykAzL866EB_yXZuk8/edit?usp=sharing', left: 0},
+        {n: '全等形', d:'學習利用全等形作幾何證明', g: 8, G: 9, wiki: '全等', url: 'https://docs.google.com/document/d/1oPIdcpSMcYED93EK8pTIwLbqg6tRZz0RyQXKp5HtkI8/edit?usp=sharing', left: 2.5, pro: true},
+        {n: '尺規作圖', d:'學習基本的尺規作圖技巧', g: 8, G: 9, wiki: '尺規作圖', url: 'https://docs.google.com/document/d/1n3BiAVTJXojaYzwV7RjosJinobehwgJQ5IvZNeCAjnY/edit?usp=sharing', left: 3, pro: true},
+        {n: '數列與級數', d:'學習等差、等比數列與級數及其公式', g: 9, G: 9, wiki: '數列', url: 'https://docs.google.com/document/d/1PSA7GuKDr2MFHbnzHgBduq-YwGykAzL866EB_yXZuk8/edit?usp=sharing', left: 0},
         {n: '多項式', d:'學習基本的多項式運算', g: 9, G: 10, wiki: '多項式', url: 'https://docs.google.com/document/d/1wFxpNIhsG2GyA-WLfrtlbqUxrnCKdVnDZ4HjsSw2vVI/edit?usp=sharing', left: 1, pro: true},
-        {n: '機率與統計', d:'學習基本的機率與統計概念', g: 9, G: 11, wiki: '', url: 'https://docs.google.com/document/d/1L2gtHUKAe-pANjFS6XE1fAHVYvjgs20MLOFY3ElYYfM/edit?usp=sharing', left: 1, pro: true},
+        {n: '機率與統計', d:'學習基本的機率與統計概念', g: 9, G: 11, wiki: '機率', url: 'https://docs.google.com/document/d/1L2gtHUKAe-pANjFS6XE1fAHVYvjgs20MLOFY3ElYYfM/edit?usp=sharing', left: 1, pro: true},
         {n: '二次函數', d:'學習二次函數的作圖和計算', g: 9, G: 10, wiki: '二次函數', url: 'https://docs.google.com/document/d/14WG9W2YWzH8t-8BjDBOEcOoJCXErI1qx1tz9geLKY3Q/edit?usp=sharing', left: 1.5, pro: true},
         {n: '圓與角', d:'學習用圓和角作幾何證明', g: 9, G: 9, wiki: '圓', url: 'https://docs.google.com/document/d/1PShmOOnanz_iykeu9MEpjISHTMLXmBEMsR9otBYOlj4/edit?usp=sharing', left: 2},
-        {n: '三角形的心', d:'認識三角形的三顆心和相關的幾何證明', g: 9, G: 9, wiki: '', url: 'https://docs.google.com/document/d/1G3oG30oKd--F8t-IH2KKhEthAawf2e0C6SEGDbs2yP8/edit?usp=sharing', left: 2.5, pro: true},
-        {n: '相似三角形', d:'學習用相似三角形作幾何證明', g: 9, G: 10, wiki: '', url: 'https://docs.google.com/document/d/1bLdm7nF8N4-JeyP0ODdVNUK1oos1OYiYCPnVkgoBhso/edit?usp=sharing', left: 3, pro: true},
-        {n: '球體的體積', d:'學習球體體積公式的證明過程', g: 9, G: 10, wiki: '', url: 'https://docs.google.com/document/d/1nSZuUmEuVyqwBQJIv61zQ_vxLm15GfmcmLSaBVHCtDc/edit#', edit: true, p: 10, left: 4, pro: true},
-        {n: '指數與對數', d:'學習指數律、對數概念和對數律', g: 10, G: 11, wiki: '', url: 'https://docs.google.com/document/d/1NqKwWmTtMcFS8B5zYrVsqoJhY7Jh6YaiAwhnpONGzug/edit?usp=sharing', left: 1},
-        {n: '極座標', d:'學習用極座標表示點和曲線', g: 10, G: 11, wiki: '', url: 'https://docs.google.com/document/d/1nSckL7Ge66iC9XHd7tp0VMmLiDdtT78SFKZmTiSYlEw/edit?usp=sharing', edit: true, p: 80, left: 2, pro: true},
+        {n: '三角形的心', d:'認識三角形的三顆心和相關的幾何證明', g: 9, G: 9, wiki: '三角形的心', url: 'https://docs.google.com/document/d/1G3oG30oKd--F8t-IH2KKhEthAawf2e0C6SEGDbs2yP8/edit?usp=sharing', left: 2.5, pro: true},
+
+        {n: '相似三角形', d:'學習用相似三角形作幾何證明', g: 9, G: 10, wiki: '相似三角形', url: 'https://docs.google.com/document/d/1bLdm7nF8N4-JeyP0ODdVNUK1oos1OYiYCPnVkgoBhso/edit?usp=sharing', left: 3, pro: true},
+
+        {n: '球體的體積', d:'學習球體體積公式的證明過程', g: 9, G: 10, wiki: '球體', url: 'https://docs.google.com/document/d/1nSZuUmEuVyqwBQJIv61zQ_vxLm15GfmcmLSaBVHCtDc/edit#', edit: true, p: 10, left: 4, pro: true},
+
+        {n: '指數與對數', d:'學習指數律、對數概念和對數律', g: 10, G: 11, wiki: '對數', url: 'https://docs.google.com/document/d/1NqKwWmTtMcFS8B5zYrVsqoJhY7Jh6YaiAwhnpONGzug/edit?usp=sharing', left: 1},
+
+        {n: '極座標', d:'學習用極座標表示點和曲線', g: 10, G: 11, wiki: '極座標', url: 'https://docs.google.com/document/d/1nSckL7Ge66iC9XHd7tp0VMmLiDdtT78SFKZmTiSYlEw/edit?usp=sharing', edit: true, p: 80, left: 2, pro: true},
+
         {n: '國中數學觀念精華', d:'一次複習所有國中的重要單元', g: 10, G: 11, wiki: '', url: 'https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit?usp=sharing', p: 80, left: 3, pro: true},
-        {n: '三角函數', d:'認識三角函數及其應用', g: 11, G: 12, wiki: '', url: 'https://docs.google.com/document/d/1W1ZhNi-rbMmB8im9RTJRPfjtw1a6EJSgo3An4d11Dl0/edit?usp=sharing', edit: true, p: 50, left: 3, pro: true},
-        {n: '實無限與微分', d:'認識實無限、微分及其應用', g: 12, G: 12, url: 'https://docs.google.com/document/d/1W-lzb6HtaYWLU1S2ypVwmxP6jckXSe7n4oRxJiL52gw/edit?usp=sharing', edit: true, p: 80, left: 1, pro: true},
-        {n: '實無限與積分', d:'認識實無限、積分及其應用', g: 12, G: 12, url: 'https://docs.google.com/document/d/1rWVyaTU31Wy4NFvwCtDpTlmEmNCRwqL4YOTpLHhfyi0/edit?usp=sharing', edit: true, p: 50, left: 2, pro: true}
+
+        {n: '三角函數', d:'認識三角函數及其應用', g: 11, G: 12, wiki: '三角函數', url: 'https://docs.google.com/document/d/1W1ZhNi-rbMmB8im9RTJRPfjtw1a6EJSgo3An4d11Dl0/edit?usp=sharing', edit: true, p: 50, left: 3, pro: true},
+
+        {n: '實無限與微分', d:'認識實無限、微分及其應用', wiki: '無窮小量', g: 12, G: 12, url: 'https://docs.google.com/document/d/1W-lzb6HtaYWLU1S2ypVwmxP6jckXSe7n4oRxJiL52gw/edit?usp=sharing', edit: true, p: 80, left: 1, pro: true},
+        {n: '實無限與積分', d:'認識實無限、積分及其應用', wiki: '非標準分析', g: 12, G: 12, url: 'https://docs.google.com/document/d/1rWVyaTU31Wy4NFvwCtDpTlmEmNCRwqL4YOTpLHhfyi0/edit?usp=sharing', edit: true, p: 50, left: 2, pro: true}
       ]
     }
   },
