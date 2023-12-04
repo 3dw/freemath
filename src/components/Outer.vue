@@ -3,41 +3,7 @@
     br
     br
     .ui.two.doubling.cards.container
-      .ui.card
-        h1 會考考古題
-        h4
-          | 寫的時候就照著時限(80分鐘)，來測試自己的速度
-          br
-          |           最好寫完還有20分鐘以上可以檢查一遍~
-        .ui.list
-          .item(v-for='(o, idx) in oldtests')
-            a(:href='o.h', target='_blank')
-              img(:src="'https://www.google.com/s2/favicons?domain=' + o.h")
-              |               {{o.n}}
-            span.space
-            a(:href='o.a', target='_blank')
-              img(:src="'https://www.google.com/s2/favicons?domain=' + o.a")
-              |               解答
-          br
-      .ui.card
-        h1 大學考試考古題詳解
-        .ui.list
-          .item
-            a(href='http://www.grandeast.com.tw/Math/PastExam?T=45', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
-              | 學科能力測驗
-          .item
-            a(href='http://www.grandeast.com.tw/Math/PastExam?T=46', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
-              | 指定科目考試
-          .item
-            a(href='http://www.grandeast.com.tw/Math/PastExam?T=47', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
-              | 四技二專統測
-          .item
-            a(href='https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57', target='_blank')
-              img(src='https://www.google.com/s2/favicons?domain=https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57')
-              | 高中同等學力鑑定
+      
       .ui.card
         h1 相關書籍
         .ui.list
@@ -82,7 +48,41 @@
             a(href='https://scratch.mit.edu/', target='_blank')
               img(src='https://www.google.com/s2/favicons?domain=https://scratch.mit.edu/')
               |               scratch拼圖寫程式
-
+              .ui.card
+        h1 會考考古題
+        h4
+          | 寫的時候就照著時限(80分鐘)，來測試自己的速度
+          br
+          |           最好寫完還有20分鐘以上可以檢查一遍~
+        .ui.list
+          .item(v-for='(o, idx) in (oldtests || []).slice(0,3)')
+            a(:href='o.h', target='_blank')
+              img(:src="'https://www.google.com/s2/favicons?domain=' + o.h")
+              |               {{o.n}}
+            span.space
+            a(:href='o.a', target='_blank')
+              img(:src="'https://www.google.com/s2/favicons?domain=' + o.a")
+              |               解答
+          br
+      .ui.card
+        h1 大學考試考古題詳解
+        .ui.list
+          .item
+            a(href='http://www.grandeast.com.tw/Math/PastExam?T=45', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
+              | 學科能力測驗
+          .item
+            a(href='http://www.grandeast.com.tw/Math/PastExam?T=46', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
+              | 指定科目考試
+          .item
+            a(href='http://www.grandeast.com.tw/Math/PastExam?T=47', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=http://www.grandeast.com.tw/Math/PastExam?T=45')
+              | 四技二專統測
+          .item
+            a(href='https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57', target='_blank')
+              img(src='https://www.google.com/s2/favicons?domain=https://www.k12ea.gov.tw/Tw/SingleWindow/QuizList?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57')
+              | 高中同等學力鑑定
 </template>
 
 <script>
@@ -98,6 +98,8 @@ export default {
           h: 'https://www.khanacademy.org/math'},
         { n: 'SAT線上測驗',
           h: 'https://www.4tests.com/sat'},
+        { n: 'chatGPT',
+          h: 'https://chat.openai.com/'},
       ],
       books: [
         { n: '數學教育的藝術與實務─另類教與學',
