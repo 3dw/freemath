@@ -105,7 +105,7 @@ export default {
         { n: '數學教育的藝術與實務─另類教與學',
           h: 'https://www.books.com.tw/products/0010079574'
         },
-        { n: '跟孩子一起玩數學',
+        { n: '跟孩子一起玩數學(原名:數學學習診斷法)',
           h: 'https://www.books.com.tw/products/0010687205'
         }
       ],
