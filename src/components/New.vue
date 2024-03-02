@@ -8,7 +8,10 @@
     .ui.divider
     .ui.segment.container.center.aligned
       h3.ui.header {{ sify('版本更新公告')}}
-        .sub.header(v-for="(c, idx) in changelogs.slice(0, 3)", :key="idx") {{c}}
+        div(v-for="(c, idx) in changelogs.slice(0, 3)", :key="idx")
+          router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
+          a(v-else-if="c.h", :to="c.h") {{c.text}}
+          span(v-else) {{c.text}}
       .ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
