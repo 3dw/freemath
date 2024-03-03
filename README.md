@@ -4,26 +4,22 @@
 新手嗎？請[由此進](https://github.com/bestian/freemath/wiki)
 
 
+
 ## 給工程師的部份(新手可略)
 
 ## Project setup
 ```
-npm install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+yarn serve
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn lint
 ```
 
 ### Customize configuration
