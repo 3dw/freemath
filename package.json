@@ -10,7 +10,6 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "axios": "^0.21.0",
-    "caniuse-lite": "^1.0.30001431",
     "chinese-conv": "^1.0.1",
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
