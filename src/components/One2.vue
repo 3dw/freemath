@@ -49,9 +49,9 @@
             p {{ sify('例如，自由數學裡的學習地圖，就是一個實用的工具。') }}
             h3 {{ sify('練習') }}
             ol.ui.ordered.list
-              li.item {{ sify('請查找「分數」的後績知識') }}
-              li.item {{ sify('請查找「因數與倍數」的後績知識') }}
-              li.item {{ sify('請查找「正負數」的後績知識') }}
+              li.item {{ sify('請查找「分數」的後續知識') }}
+              li.item {{ sify('請查找「因數與倍數」的後續知識') }}
+              li.item {{ sify('請查找「正負數」的後續知識') }}
     .ui.grid.container
       .three.column.doubling.row
         .column
