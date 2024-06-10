@@ -12,6 +12,17 @@
           router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
           a.sub.header(v-else-if="c.h", :to="c.h") {{c.text}}
           span.sub.header(v-else) {{c.text}}
+          // 在此處嵌入 YouTube 影片
+      iframe(
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/KMCPvosv-Uo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen)
+
+
+
       .ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
