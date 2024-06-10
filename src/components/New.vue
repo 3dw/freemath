@@ -14,8 +14,8 @@
           span.sub.header(v-else) {{c.text}}
           // 在此處嵌入 YouTube 影片
       iframe(
-        width="560"
-        height="315"
+        width="500"
+        height="300"
         src="https://www.youtube.com/embed/yMlfYi4nDS4"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
