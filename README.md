@@ -22,5 +22,13 @@ yarn serve
 yarn lint
 ```
 
+### Build & Deploy
+
+Mac:
+``` sh deploy.sh ```
+
+Windows:
+``` bash deploy.sh ```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
