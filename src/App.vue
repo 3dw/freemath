@@ -98,7 +98,7 @@ export default {
       play12: undefined,
       chats: undefined,
       changelogs: [
-        {text:'2024-06-13：更新《數線》單元，語句流暢化，符號整齊化，加入大綱', h: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing'}
+        {text:'2024-06-13：更新《數線》單元，語句流暢化，符號整齊化，加入大綱', h: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing'},
         {text:'2024-03-02：引入《跟孩子一起玩數學》原名《數學學習診斷法》', r: '/outer'},
         {text: '2023-09-26：引入「切換維基百科」模式，引介學習者至各單位對應的維基百科條目'},
         {text: '2023-09-19：改版摸石頭學習記錄頁面', r:'/log/_'},
