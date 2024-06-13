@@ -10,7 +10,7 @@
       h3.ui.header {{ sify('版本更新公告')}}
         div(v-for="(c, idx) in changelogs.slice(0, 3)", :key="idx")
           router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
-          a.sub.header(v-else-if="c.h", :to="c.h") {{c.text}}
+          a.sub.header(v-else-if="c.h", :href="c.h", target="_blank", rel="noopener noreferrer") {{c.text}}
           span.sub.header(v-else) {{c.text}}
       .ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
@@ -309,6 +309,10 @@ export default {
 a img {
   /* filter: grayscale(100%); */
   margin: 0 3px;
+}
+
+a.sub.header {
+  color: #00f !important;
 }
 
 .floated.right {
