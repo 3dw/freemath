@@ -77,7 +77,7 @@
       router-view(:changelogs="changelogs", :si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
       // router-link#logo(to='/')
         img(src='./assets/logo.png')
-      ad#ad(:si="si")
+      ad#ad.fat-only(:si="si")
 </template>
 
 <script>
