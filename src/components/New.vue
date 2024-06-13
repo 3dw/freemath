@@ -2,9 +2,11 @@
   .hello
     h1.ui.header {{ sify('自由數學')}}
       .sub.header
-        span {{ sify('學習數學，在於秩序。')}}
+        span
+          Tips(:si="si")
         br.thin-only.one-line-only
-        span {{ sify('擺脫幻象與迷惑，每日10分鐘，讓思想自由。')}}
+        span 
+          Tips(:si="si")
     .ui.divider
     .ui.segment.container.center.aligned
       h3.ui.header {{ sify('版本更新公告')}}
@@ -156,11 +158,14 @@
 <script>
 
 import {sify} from 'chinese-conv'
+import Tips from './Tips.vue'
 
 export default {
   name: 'Home',
   props: ['units', 'share', 'si', 'changelogs'],
-  components: { },
+  components: {
+    Tips
+  },
   data () {
     return {
       showMaterials: false,
