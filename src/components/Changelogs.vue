@@ -1,12 +1,12 @@
 <template lang="pug">
   .hello
     h1.ui.header {{ sify('自由數學')}}
-    .ui.segment.container.center.aligned
+    .ui.segment.container.left.aligned
       h3.ui.header {{ sify('版本更新公告')}}
         div(v-for="(c, idx) in changelogs", :key="idx")
           router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
-          a(v-else-if="c.h", :to="c.h") {{c.text}}
-          span(v-else) {{c.text}}
+          a.sub.header(v-else-if="c.h", :to="c.h") {{c.text}}
+          span.sub.header(v-else) {{c.text}}
 
 </template>
 
@@ -73,6 +73,11 @@ export default {
 a img {
   /* filter: grayscale(100%); */
   margin: 0 3px;
+}
+
+a.sub.header {
+  color: blue !important;
+  text-decoration: underline;
 }
 
 .floated.right {
