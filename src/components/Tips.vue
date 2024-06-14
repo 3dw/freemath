@@ -20,6 +20,7 @@ export default {
         '桌上遊戲和紙牌遊戲都是很好的數學思維活動',
         '各種有秩序的手工藝都和數學相關',
         '廚房是很好的數學教室',
+        '按「切換維基百科」鈕可以將各單元連結到百科',
         '參考<a href="https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/" target="_blank" rel="noopener norefferer">給家長的教學引導</a>',
         '參考<a href="https://www.youtube.com/watch?v=Hnmtv4TKBtc&t=254s" target="_blank" rel="noopener norefferer">數理思維與設計思維</a>'
       ],
