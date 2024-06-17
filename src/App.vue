@@ -98,6 +98,7 @@ export default {
       play12: undefined,
       chats: undefined,
       changelogs: [
+        {text: '2024-06-17。更新《減法》單元，加入20以內的減法練習' , h: 'https://docs.google.com/document/d/1xrxA_OfzcXkIgMInwXTXy3FAEkkDy4NRTUOkvFnvDMk/edit?usp=sharing'},
         {text:'2024-06-14：首頁改版，加入隨機小秘訣。'},
         {text:'2024-06-13：更新《數線》單元，語句流暢化，符號整齊化，加入大綱', h: 'https://docs.google.com/document/d/1zZIt-DV6TRzENoDAFX3B-_EPISEGL91KCXd7JIofOx0/edit?usp=sharing'},
         {text:'2024-03-02：引入《跟孩子一起玩數學》原名《數學學習診斷法》', r: '/outer'},
