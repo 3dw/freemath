@@ -25,6 +25,7 @@
     "vue": "^2.6.11",
     "vue-autofocus-directive": "^1.0.4",
     "vue-axios": "^3.2.0",
+    "vue-d3-network": "^0.1.28",
     "vue-gtag": "^1.10.0",
     "vue-headful": "^2.1.0",
     "vue-router": "^3.2.0",

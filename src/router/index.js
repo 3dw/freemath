@@ -26,6 +26,7 @@ import One8 from '@/components/One8'
 import One9 from '@/components/One9'
 import Login from '@/components/Login'
 import Changelogs from '@/components/Changelogs'
+import TraceBack from '@/views/TraceBack'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ export default new VueRouter({
       path: '/',
       name: '首頁',
       component: New
+    },
+    {
+      path: '/trace_back',
+      name: '倒溯程式',
+      component: TraceBack
     },
     {
       path: '/login',
