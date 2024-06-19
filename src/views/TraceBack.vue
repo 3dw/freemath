@@ -4,7 +4,9 @@
       ref='net',
       :net-nodes="nodes",
       :net-links="links"  
-      :options="options"
+      :options="options",
+
+      style="width: 100%; height: 100%;"
     )
 </template>
 
@@ -56,11 +58,12 @@
       },
       options() {
         return {
-          force: 400,
+          force: 600,
           size: { w: 800, h: 600 }, // 這裡直接設置寬高
           nodeSize: this.nodeSize,
           nodeLabels: true,
           linkLabels: true,
+          linkWidth: 3,
           canvas: this.canvas
         }
       }
