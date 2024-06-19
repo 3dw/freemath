@@ -95,8 +95,8 @@
       },
       options() {
         return {
-          force: 1200,
-          size: { w: 300, h: 420 },
+          force: 600,
+          size: { w: 320, h: 420 },
           nodeSize: this.nodeSize,
           nodeLabels: true,
           fontSize: 18, // 這裡設置節點標籤的字級大小,
