@@ -470,4 +470,9 @@ brbr.thin-only.one-line-only {
   border: none;
 }
 
+svg path {
+  color: blue !important;
+  stroke-width: 3 !important;
+}
+
 </style>
