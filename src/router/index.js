@@ -38,7 +38,7 @@ export default new VueRouter({
       component: New
     },
     {
-      path: '/trace_back',
+      path: '/trace',
       name: '倒溯程式',
       component: TraceBack
     },
