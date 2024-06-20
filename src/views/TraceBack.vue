@@ -6,6 +6,37 @@
     option(:value="null", selected) 選擇一個單元
     option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
   .ui.divider
+  .ui.grid
+    .ui.stackable.row(v-if="selectedUnit")
+      .six.wide.padded.column
+        a(@click = "op(units[selectedUnit].url, units[selectedUnit].n, units[selectedUnit].pro, units[selectedUnit].wiki)" target="_blank" rel="noopener noreferrer")
+          img(:src="'https://www.google.com/s2/favicons?domain='+units[selectedUnit].url", :alt="sify(units[selectedUnit].n)")
+          //i.download.icon
+          span.orange(v-if="!useWiki") {{ sify(units[selectedUnit].n) }}
+          span.orange(v-else) {{sify(units[selectedUnit].wiki)}}
+          br.thin-only
+          span.floated.right.gray(v-show="!useWiki") {{ countGrade(units[selectedUnit].g, units[selectedUnit].G) }}
+          // .ui.teal.label(v-show="u.pro") pro
+          br(v-if="units[selectedUnit].d")
+          span.gray(v-if="units[selectedUnit].d") -{{ sify(units[selectedUnit].d) }}
+      
+      .ten.wide.padded.column
+        h4.ui.purple.header 先備知識
+        .ui.list
+          .item(v-for = "u in units", :key="u.id", v-show = "true" )
+            a(@click = "op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
+              img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
+              img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)  
+              //i.download.icon
+              span(v-if="!useWiki") {{ sify(u.n) }}
+              span(v-else) {{sify(u.wiki)}}
+              br.thin-only
+              span.floated.right.gray(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
+              // .ui.teal.label(v-show="u.pro") pro
+              br(v-if="u.d")
+              span.gray(v-if="u.d") -{{ sify(u.d) }}
+
+  .ui.divider
   d3-network(
     v-show="selectedUnit",
     ref='net',
@@ -17,6 +48,9 @@
 </template>
   
 <script>
+
+import {sify} from 'chinese-conv'
+  import { backs } from '../data/backs.js'; 
   import D3Network from 'vue-d3-network';
 
   export default {
@@ -27,24 +61,12 @@
     props: ['units'],
     data() {
       return {
+        useWiki: false,
         logic: 'backward',
-        backs: [
-          { from: '分類', to: ['誰比較多', '加法', '數氣球', '認識數字']},
-          { from: '誰比較多', to: ['減法']},
-          { from: '數氣球', to: ['加法', '減法']},
-          { from: '加法', to: ['減法', '乘法A~D', '認識十進位', '百數表'] },
-          { from: '減法', to: ['除法', '正負數', '認識十進位'] },
-          { from: '百數表', to: ['乘法A~D', '因數與倍數'] },
-          { from: '乘法A~D', to: ['乘法E~F', '除法'] },
-          { from: '乘法E~F', to: ['除法', '代數入門'] },
-          { from: '除法', to: ['分數', '因數與倍數', '代數入門'] },
-          { from: '分數', to: ['因數與倍數', '代數入門', '正負分數'] },
-          { from: '數線', to: ['不等式', '正負數', '代數入門', '直角座標'] },
-          { from: '代數入門', to: ['一元一次方程式'] }
-        ],
+        backs: backs,
         selectedUnit: null, // 預設為 null
         nodeSize: 20,
-        canvas: true
+        canvas: false
       }
     },
     computed: {
@@ -88,15 +110,15 @@
         if (this.selectedUnit === null) return this.links;
         const selectedUnitName = this.units.find(u => u.id === this.selectedUnit).n;
         return this.links.filter(link => {
-          const sourceNode = this.nodes.find(node => node.id === link.sid).name;
+          // const sourceNode = this.nodes.find(node => node.id === link.sid).name;
           const targetNode = this.nodes.find(node => node.id === link.tid).name;
-          return targetNode === selectedUnitName || sourceNode === selectedUnitName;
+          return targetNode === selectedUnitName; // || sourceNode === selectedUnitName;
         });
       },
       options() {
         return {
           force: 600,
-          size: { w: 320, h: 420 },
+          size: { w: window.innerWidth, h: 420 },
           nodeSize: this.nodeSize,
           nodeLabels: true,
           fontSize: 18, // 這裡設置節點標籤的字級大小,
@@ -107,12 +129,47 @@
       }
     },
     methods: {
+      sify (t) {
+        if (this.si) {
+          return sify(t)
+        } else {
+          return t
+        }
+      },
       getIdByName(name) {
         const unit = (this.units || []).find(u => u.n === name);
         return unit ? unit.id : -1;
       },
       onSelectUnit(event) {
         this.selectedUnit = parseInt(event.target.value, 10);
+      },
+      op (url, name, pro, wiki) {
+        this.$gtag.query('event', 'view' + name, {
+          name: name,
+          url: url,
+          pro: pro
+        })
+        if (!this.useWiki) {
+          window.open(url)
+        } else {
+          window.open('https://zh.wikipedia.org/wiki/' + wiki)
+        }
+      },
+      countGrade (g, G) {
+        var min = g
+        if (g <= 0) {
+          min = '學前'
+        }
+        var ans = G + '年級'
+        if (G <= 0) {
+          ans = '學前'
+        }
+        if (ans === min) {
+          return ans
+        } else {
+          ans = min + '~' + ans
+        }
+        return ans
       }
     }
   }
