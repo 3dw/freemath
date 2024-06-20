@@ -403,4 +403,8 @@ svg path {
   stroke-width: 3 !important;
 }
 
+.padded {
+  padding: .6em !important;
+}
+
 </style>

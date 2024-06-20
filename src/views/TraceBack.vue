@@ -1,58 +1,54 @@
 <template lang="pug">
-.hello
-  h3.ui.header(v-if="logic == 'backward'") 先備知識倒溯
-  h3.ui.header(v-if="logic == 'forward'") 後續知識前推
-  select.ui.dropdown(@change="onSelectUnit", v-model="selectedUnit")
-    option(:value="null", selected) 選擇一個單元
-    option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
-  .ui.divider
-  .ui.grid
-    .ui.stackable.row(v-if="selectedUnit")
-      .six.wide.padded.column
-        a(@click = "op(units[selectedUnit].url, units[selectedUnit].n, units[selectedUnit].pro, units[selectedUnit].wiki)" target="_blank" rel="noopener noreferrer")
-          img(:src="'https://www.google.com/s2/favicons?domain='+units[selectedUnit].url", :alt="sify(units[selectedUnit].n)")
-          //i.download.icon
-          span.orange(v-if="!useWiki") {{ sify(units[selectedUnit].n) }}
-          span.orange(v-else) {{sify(units[selectedUnit].wiki)}}
-          br.thin-only
-          span.floated.right.gray(v-show="!useWiki") {{ countGrade(units[selectedUnit].g, units[selectedUnit].G) }}
-          // .ui.teal.label(v-show="u.pro") pro
-          br(v-if="units[selectedUnit].d")
-          span.gray(v-if="units[selectedUnit].d") -{{ sify(units[selectedUnit].d) }}
-      
-      .ten.wide.padded.column
-        h4.ui.purple.header 先備知識
-        .ui.list
-          .item(v-for = "u in units", :key="u.id", v-show = "true" )
-            a(@click = "op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
-              img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
-              img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)  
+  .hello
+    h3.ui.header(v-if="logic == 'backward'") 先備知識倒溯
+    h3.ui.header(v-if="logic == 'forward'") 後續知識前推
+    select.ui.dropdown(@change="onSelectUnit", v-model="selectedUnit")
+      option(:value="null", selected) 選擇一個單元
+      option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
+    .ui.divider
+    .ui.grid
+      .ui.stackable.row(v-if="selectedUnit")
+        .eight.wide.padded.left.aligned.column
+          .padded
+            h4.ui.orange.header 當前單元
+            a(@click="op(units[selectedUnit].url, units[selectedUnit].n, units[selectedUnit].pro, units[selectedUnit].wiki)" target="_blank" rel="noopener noreferrer")
+              img(:src="'https://www.google.com/s2/favicons?domain='+units[selectedUnit].url", :alt="sify(units[selectedUnit].n)")
               //i.download.icon
-              span(v-if="!useWiki") {{ sify(u.n) }}
-              span(v-else) {{sify(u.wiki)}}
-              br.thin-only
-              span.floated.right.gray(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
+              span.orange(v-if="!useWiki") {{ sify(units[selectedUnit].n) }}
+              span.orange(v-else) {{sify(units[selectedUnit].wiki)}}
               // .ui.teal.label(v-show="u.pro") pro
-              br(v-if="u.d")
-              span.gray(v-if="u.d") -{{ sify(u.d) }}
-
-  .ui.divider
-  d3-network(
-    v-show="selectedUnit",
-    ref='net',
-    :net-nodes="filteredNodes",
-    :net-links="filteredLinks"  
-    :options="options",
-    style="width: 100%; height: 100%;"
-  )
-</template>
+              span.gray(v-if="units[selectedUnit].d") -{{ sify(units[selectedUnit].d) }}
+        
+        .eight.wide.padded.left.aligned.column
+          .padded
+            h4.ui.purple.header 先備知識
+            .ui.list
+              .item(v-for="u in prerequisiteUnits" :key="u.id")
+                a(@click="op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
+                  img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
+                  img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)
+                  //i.download.icon
+                  span(v-if="!useWiki") {{ sify(u.n) }}
+                  span(v-else) {{sify(u.wiki)}}
+                  // .ui.teal.label(v-show="u.pro") pro
+                  span.gray(v-if="u.d") -{{ sify(u.d) }}
   
-<script>
-
-import {sify} from 'chinese-conv'
+    .ui.divider
+    d3-network(
+      v-show="selectedUnit",
+      ref='net',
+      :net-nodes="filteredNodes",
+      :net-links="filteredLinks"  
+      :options="options",
+      style="width: 100%; height: 100%;"
+    )
+  </template>
+    
+  <script>
+  import {sify} from 'chinese-conv'
   import { backs } from '../data/backs.js'; 
   import D3Network from 'vue-d3-network';
-
+  
   export default {
     name: 'TraceBack',
     components: {
@@ -66,7 +62,7 @@ import {sify} from 'chinese-conv'
         backs: backs,
         selectedUnit: null, // 預設為 null
         nodeSize: 20,
-        canvas: false
+        canvas: true
       }
     },
     computed: {
@@ -114,6 +110,13 @@ import {sify} from 'chinese-conv'
           const targetNode = this.nodes.find(node => node.id === link.tid).name;
           return targetNode === selectedUnitName; // || sourceNode === selectedUnitName;
         });
+      },
+      prerequisiteUnits() {
+        if (this.selectedUnit === null) return [];
+        const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
+        if (!selectedUnit) return [];
+        const selectedUnitName = selectedUnit.n;
+        return this.units.filter(u => this.backs.some(back => back.to.includes(selectedUnitName) && back.from === u.n));
       },
       options() {
         return {
@@ -173,22 +176,21 @@ import {sify} from 'chinese-conv'
       }
     }
   }
-</script>
+  </script>
+    
+  <style scoped>
+  .hello {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   
-<style scoped>
-.hello {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-d3-network {
-  width: 800px;
-  height: 600px;
-}
-</style>
-
+  d3-network {
+    width: 800px;
+    height: 600px;
+  }
+  </style>
   
