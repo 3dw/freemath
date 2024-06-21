@@ -90,6 +90,7 @@ const paths = [
 
 
 module.exports = {
+  transpileDependencies: true,
   runtimeCompiler: true, 
   configureWebpack: {
     resolve: {
