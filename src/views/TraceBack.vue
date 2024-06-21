@@ -1,14 +1,13 @@
 <template lang="pug">
   .hello
-    h3.ui.header(v-if="logic == 'backward'") 先備知識倒溯
-    h3.ui.header(v-if="logic == 'forward'") 後續知識前推
+    h3.ui.header {{sify('知識倒溯與前推')}}
     select.ui.dropdown(@change="onSelectUnit", v-model="selectedUnit")
-      option(:value="null", selected) 選擇一個單元
+      option(:value="null", selected) {{sify('選擇一個單元')}}
       option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
     .ui.divider
     .ui.grid
       .ui.stackable.row(v-if="selectedUnit")
-        .eight.wide.padded.left.aligned.column
+        .five.wide.padded.left.aligned.column
           .padded
             h4.ui.orange.header 當前單元
             a(@click="op(units[selectedUnit].url, units[selectedUnit].n, units[selectedUnit].pro, units[selectedUnit].wiki)" target="_blank" rel="noopener noreferrer")
@@ -19,9 +18,9 @@
               // .ui.teal.label(v-show="u.pro") pro
               span.gray(v-if="units[selectedUnit].d") -{{ sify(units[selectedUnit].d) }}
         
-        .eight.wide.padded.left.aligned.column
+        .five.wide.padded.left.aligned.column
           .padded
-            h4.ui.purple.header 先備知識
+            h4.ui.purple.header {{sify('先備知識')}}
             .ui.list
               .item(v-for="u in prerequisiteUnits" :key="u.id")
                 a(@click="op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
@@ -32,6 +31,25 @@
                   span(v-else) {{sify(u.wiki)}}
                   // .ui.teal.label(v-show="u.pro") pro
                   span.gray(v-if="u.d") -{{ sify(u.d) }}
+                  br
+                  button.ui.basic.purple.button(@click="selectedUnit = u.id")
+                    | {{ sify('往前倒溯') }}
+        .five.wide.padded.left.aligned.column
+          .padded
+            h4.ui.purple.header {{sify('後續知識')}}
+            .ui.list
+              .item(v-for="u in prerequisiteUnits" :key="u.id")
+                a(@click="op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
+                  img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
+                  img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)
+                  //i.download.icon
+                  span(v-if="!useWiki") {{ sify(u.n) }}
+                  span(v-else) {{sify(u.wiki)}}
+                  // .ui.teal.label(v-show="u.pro") pro
+                  span.gray(v-if="u.d") -{{ sify(u.d) }}
+                  br
+                  button.ui.basic.orange.button(@click="selectedUnit = u.id")
+                    | {{ sify('往後前推') }}
   
     .ui.divider
     d3-network(

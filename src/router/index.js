@@ -39,7 +39,7 @@ export default new VueRouter({
     },
     {
       path: '/trace',
-      name: '倒溯程式',
+      name: '倒溯與前推',
       component: TraceBack
     },
     {
