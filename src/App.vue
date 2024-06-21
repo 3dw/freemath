@@ -4,14 +4,10 @@
     .ui.top.menu.no-print.thin-only
       router-link.item(to='/' exact='')
         i.home.icon
-      router-link.item(v-show="!user", to='/login' exact='')
-        i.user.icon
-      router-link.item(to='/maps' exact='')
+        | {{ sify('首頁') }}
+      router-link.item(to='/trace' exact='')
         i.map.icon
-      router-link.item(to='/tools' exact='')
-        i.angle.double.down.icon
-      router-link.item(to='/outer' exact='')
-        i.user.add.icon
+        | {{ sify('倒溯與前推') }}
 
       button.item(@click="copyLink()")
         i.linkify.icon
