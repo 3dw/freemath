@@ -36,9 +36,9 @@
                     | {{ sify('往前倒溯') }}
         .five.wide.padded.left.aligned.column
           .padded
-            h4.ui.purple.header {{sify('後續知識')}}
+            h4.ui.blue.header {{sify('後續知識')}}
             .ui.list
-              .item(v-for="u in prerequisiteUnits" :key="u.id")
+              .item(v-for="u in postrequisiteUnits" :key="u.id")
                 a(@click="op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
                   img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
                   img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)
@@ -60,155 +60,172 @@
       :options="options",
       style="width: 100%; height: 100%;"
     )
-  </template>
+</template>
     
-  <script>
-  import {sify} from 'chinese-conv'
-  import { backs } from '../data/backs.js'; 
-  import D3Network from 'vue-d3-network';
-  
-  export default {
-    name: 'TraceBack',
-    components: {
-      D3Network
+<script>
+import {sify} from 'chinese-conv'
+import { backs } from '../data/backs.js'; 
+import D3Network from 'vue-d3-network';
+
+export default {
+  name: 'TraceBack',
+  components: {
+    D3Network
+  },
+  props: ['units'],
+  data() {
+    return {
+      useWiki: false,
+      logic: 'backward',
+      backs: backs,
+      selectedUnit: null, // 預設為 null
+      nodeSize: 20,
+      canvas: true
+    }
+  },
+  computed: {
+    nodes() {
+      return (this.units || []).map((u) => ({
+        id: u.id,
+        name: u.n,
+        _color: 'orange'
+      }));
     },
-    props: ['units'],
-    data() {
+    filteredNodes() {
+      if (this.selectedUnit === null) return this.nodes;
+      const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
+      if (!selectedUnit) return [];
+      const selectedUnitName = selectedUnit.n;
+      
+      // 找到先備知識單元
+      const prerequisiteUnits = this.backs.filter(back => back.to.includes(selectedUnitName)).map(back => back.from);
+      
+      // 找到後續知識單元
+      const postrequisiteUnits = this.backs.filter(back => back.from === selectedUnitName).map(back => back.to).flat();
+      
+      // 過濾節點以顯示選擇單元及其先備和後續知識單元
+      const filteredNodes = this.nodes.filter(node => 
+        node.name === selectedUnitName || 
+        prerequisiteUnits.includes(node.name) || 
+        postrequisiteUnits.includes(node.name)
+      );
+      
+      // 將先備知識單元設置為紫色
+      filteredNodes.forEach(node => {
+        if (prerequisiteUnits.includes(node.name)) {
+          node._color = 'purple';
+        } else if (postrequisiteUnits.includes(node.name)) {
+          node._color = 'lightblue'; // 將後續知識單元設置為淺藍色
+        }
+      });
+      
+      return filteredNodes;
+    },
+    links() {
+      return this.backs.reduce((lks, back) => {
+        back.to.forEach(to => {
+          const sid = this.getIdByName(back.from);
+          const tid = this.getIdByName(to);
+          if (sid !== -1 && tid !== -1) lks.push({ sid, tid });
+        });
+        return lks;
+      }, []);
+    },
+    filteredLinks() {
+      if (this.selectedUnit === null) return this.links;
+      const selectedUnitName = this.units.find(u => u.id === this.selectedUnit).n;
+      return this.links.filter(link => {
+        // const sourceNode = this.nodes.find(node => node.id === link.sid).name;
+        const targetNode = this.nodes.find(node => node.id === link.tid).name;
+        return targetNode === selectedUnitName; // || sourceNode === selectedUnitName;
+      });
+    },
+    prerequisiteUnits() {
+      if (this.selectedUnit === null) return [];
+      const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
+      if (!selectedUnit) return [];
+      const selectedUnitName = selectedUnit.n;
+      return this.units.filter(u => this.backs.some(back => back.to.includes(selectedUnitName) && back.from === u.n));
+    },
+    postrequisiteUnits() {
+      if (this.selectedUnit === null) return [];
+      const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
+      if (!selectedUnit) return [];
+      const selectedUnitName = selectedUnit.n;
+      return this.units.filter(u => this.backs.some(back => back.from === selectedUnitName && back.to.includes(u.n)));
+    },
+    options() {
       return {
-        useWiki: false,
-        logic: 'backward',
-        backs: backs,
-        selectedUnit: null, // 預設為 null
-        nodeSize: 20,
-        canvas: true
+        force: 600,
+        size: { w: window.innerWidth, h: 420 },
+        nodeSize: this.nodeSize,
+        nodeLabels: true,
+        fontSize: 18, // 這裡設置節點標籤的字級大小,
+        linkLabels: true,
+        linkWidth: 3,
+        canvas: this.canvas
+      };
+    }
+  },
+  methods: {
+    sify (t) {
+      if (this.si) {
+        return sify(t)
+      } else {
+        return t
       }
     },
-    computed: {
-      nodes() {
-        return (this.units || []).map((u) => ({
-          id: u.id,
-          name: u.n,
-          _color: 'orange'
-        }));
-      },
-      filteredNodes() {
-        if (this.selectedUnit === null) return this.nodes;
-        const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
-        if (!selectedUnit) return [];
-        const selectedUnitName = selectedUnit.n;
-        
-        // 找到先備知識單元
-        const prerequisiteUnits = this.backs.filter(back => back.to.includes(selectedUnitName)).map(back => back.from);
-        
-        // 過濾節點以顯示選擇單元及其先備知識單元
-        const filteredNodes = this.nodes.filter(node => node.name === selectedUnitName || prerequisiteUnits.includes(node.name));
-        
-        // 將先備知識單元設置為紫色
-        filteredNodes.forEach(node => {
-          if (prerequisiteUnits.includes(node.name)) node._color = 'purple';
-        });
-        
-        return filteredNodes;
-      },
-      links() {
-        return this.backs.reduce((lks, back) => {
-          back.to.forEach(to => {
-            const sid = this.getIdByName(back.from);
-            const tid = this.getIdByName(to);
-            if (sid !== -1 && tid !== -1) lks.push({ sid, tid });
-          });
-          return lks;
-        }, []);
-      },
-      filteredLinks() {
-        if (this.selectedUnit === null) return this.links;
-        const selectedUnitName = this.units.find(u => u.id === this.selectedUnit).n;
-        return this.links.filter(link => {
-          // const sourceNode = this.nodes.find(node => node.id === link.sid).name;
-          const targetNode = this.nodes.find(node => node.id === link.tid).name;
-          return targetNode === selectedUnitName; // || sourceNode === selectedUnitName;
-        });
-      },
-      prerequisiteUnits() {
-        if (this.selectedUnit === null) return [];
-        const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
-        if (!selectedUnit) return [];
-        const selectedUnitName = selectedUnit.n;
-        return this.units.filter(u => this.backs.some(back => back.to.includes(selectedUnitName) && back.from === u.n));
-      },
-      options() {
-        return {
-          force: 600,
-          size: { w: window.innerWidth, h: 420 },
-          nodeSize: this.nodeSize,
-          nodeLabels: true,
-          fontSize: 18, // 這裡設置節點標籤的字級大小,
-          linkLabels: true,
-          linkWidth: 3,
-          canvas: this.canvas
-        };
+    getIdByName(name) {
+      const unit = (this.units || []).find(u => u.n === name);
+      return unit ? unit.id : -1;
+    },
+    onSelectUnit(event) {
+      this.selectedUnit = parseInt(event.target.value, 10);
+    },
+    op (url, name, pro, wiki) {
+      this.$gtag.query('event', 'view' + name, {
+        name: name,
+        url: url,
+        pro: pro
+      })
+      if (!this.useWiki) {
+        window.open(url)
+      } else {
+        window.open('https://zh.wikipedia.org/wiki/' + wiki)
       }
     },
-    methods: {
-      sify (t) {
-        if (this.si) {
-          return sify(t)
-        } else {
-          return t
-        }
-      },
-      getIdByName(name) {
-        const unit = (this.units || []).find(u => u.n === name);
-        return unit ? unit.id : -1;
-      },
-      onSelectUnit(event) {
-        this.selectedUnit = parseInt(event.target.value, 10);
-      },
-      op (url, name, pro, wiki) {
-        this.$gtag.query('event', 'view' + name, {
-          name: name,
-          url: url,
-          pro: pro
-        })
-        if (!this.useWiki) {
-          window.open(url)
-        } else {
-          window.open('https://zh.wikipedia.org/wiki/' + wiki)
-        }
-      },
-      countGrade (g, G) {
-        var min = g
-        if (g <= 0) {
-          min = '學前'
-        }
-        var ans = G + '年級'
-        if (G <= 0) {
-          ans = '學前'
-        }
-        if (ans === min) {
-          return ans
-        } else {
-          ans = min + '~' + ans
-        }
+    countGrade (g, G) {
+      var min = g
+      if (g <= 0) {
+        min = '學前'
+      }
+      var ans = G + '年級'
+      if (G <= 0) {
+        ans = '學前'
+      }
+      if (ans === min) {
         return ans
+      } else {
+        ans = min + '~' + ans
       }
+      return ans
     }
   }
-  </script>
+}
+</script>
     
-  <style scoped>
-  .hello {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  d3-network {
-    width: 800px;
-    height: 600px;
-  }
-  </style>
-  
+<style scoped>
+.hello {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+d3-network {
+  width: 800px;
+  height: 600px;
+}
+</style>
