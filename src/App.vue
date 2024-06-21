@@ -192,7 +192,7 @@ export default {
         return;
       }
       console.log(this.$route);
-      const copyText = 'https://math.alearn.org.tw/#/' + this.$route.path;
+      const copyText = 'https://math.alearn.org.tw/#' + this.$route.path;
       navigator.clipboard.writeText(copyText)
         .then(() => {
           window.alert("Copied the text: " + copyText);
