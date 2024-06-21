@@ -191,7 +191,7 @@ export default {
           return this.showOrNot(o, s, useAge, age, useWiki)
         })
       } else {
-        return units.slice(0,24)
+        return units.slice(0, 28)
       }
     },
     op (url, name, pro, wiki) {

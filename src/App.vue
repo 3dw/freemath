@@ -17,6 +17,9 @@
       router-link.item(to='/', exact='', name="home")
         i.home.icon
         | {{ sify('首頁') }}
+      router-link.item(to='/trace', exact='', name="intro")
+        i.sort.amount.up.icon
+        | {{ sify('倒溯與前推') }}
       // router-link.item(v-show="!user", to='/login' exact='')
         i.user.icon
         span(v-if="!user") {{ sify('登入') }}
@@ -34,7 +37,7 @@
         i.user.add.icon
         | {{ sify('外部資源') }}
 
-      router-link.item(to='/changelogs', exact='', name="intro")
+      //router-link.item(to='/changelogs', exact='', name="intro")
         i.sort.amount.up.icon
         | {{ sify('更新紀錄') }}
         
