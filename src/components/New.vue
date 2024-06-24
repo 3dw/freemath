@@ -4,17 +4,8 @@
       .sub.header
         span
           Tips(:si="si")
-        br.thin-only.one-line-only
-        span 
-          Tips(:si="si")
     .ui.divider
-    .ui.segment.container.center.aligned
-      h3.ui.header {{ sify('版本更新公告')}}
-        div(v-for="(c, idx) in changelogs.slice(0, 3)", :key="idx")
-          router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
-          a.sub.header(v-else-if="c.h", :href="c.h", target="_blank", rel="noopener noreferrer") {{c.text}}
-          span.sub.header(v-else) {{c.text}}
-      .ui.large.buttons.fat-only
+      //.ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
           | {{ sify('新手上路')}}
@@ -27,7 +18,7 @@
         a.ui.purple.button(href="https://github.com/3dw/freemath/" rel="noopener noreferrer")
           i.adjust.icon
           | {{ sify('參與貢獻')}}
-      .ui.vertical.large.buttons.thin-only
+      //.ui.vertical.large.buttons.thin-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")
           i.blind.icon
           | {{ sify('新手上路')}}
@@ -55,6 +46,16 @@
         a.ui.huge.teal.button(href="https://docs.google.com/document/d/1lw-1BIsl9uLPfphIQ_Ns4xbpLhE7D_KEn9B7Tomjrsw/edit", target="_blank", @click="trackButton('junior', 5)", rel="noopener noreferrer")
           i.users.icon
           | {{ sify('國中數學')}}
+    .ui.container 
+      iframe#podcast(width="100%" height="340" src="https://www.youtube.com/embed/mJha4ls1MfM?si=PNQT8dq8FzzyxzPb&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+    
+    .ui.segment.container.center.aligned
+      h3.ui.header {{ sify('版本更新公告')}}
+        div(v-for="(c, idx) in changelogs.slice(0, 1)", :key="idx")
+          router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
+          a.sub.header(v-else-if="c.h", :href="c.h", target="_blank", rel="noopener noreferrer") {{c.text}}
+          span.sub.header(v-else) {{c.text}}
+   
     .ui.grid.container
       .ui.row
         .column.center.aligned
@@ -168,7 +169,7 @@ export default {
   },
   data () {
     return {
-      showMaterials: false,
+      showMaterials: true,
       s: '',
       useWiki: false,
       useAge: false,
@@ -332,6 +333,10 @@ a.sub.header {
   position: relative;
   left: 15vw;
   width: 60vw !important;
+}
+
+#podcast {
+  max-width: 520px !important;
 }
 
 </style>

@@ -1,35 +1,65 @@
 <template lang="pug">
-  #app
-    vue-headful(:title="$route.name +'@自由數學'")
-    .ui.top.menu.no-print.thin-only
-      router-link.item(to='/' exact='')
-        i.home.icon
-        | {{ sify('首頁') }}
-      router-link.item(to='/trace' exact='')
-        i.map.icon
-        | {{ sify('倒溯與前推') }}
+#app
+  vue-headful(:title="$route.name +'@自由數學'")
 
+  .ui.top.menu.no-print.thin-only
+    button.no-border.ui.item(@click="toggleSidebar")
+      i.icon.bars
+    router-link.item(to='/' exact='')
+      i.home.icon
+      | {{ sify('首頁') }}
+    router-link.item(to='/trace' exact='')
+      i.sort.amount.ui.icon
+      | {{ sify('倒溯與前推') }}
+    button.item(@click="copyLink()")
+      i.linkify.icon
+
+  .ui.top.labeled.icon.menu.no-print.fat-only
+
+    button.no-border.ui.item(@click="toggleSidebar")
+      i.icon.bars
+
+    router-link.item(to='/', exact='', name="home")
+      i.home.icon
+      | {{ sify('首頁') }}
+    router-link.item(to='/trace', exact='', name="intro")
+      i.sort.amount.icon
+      | {{ sify('倒溯與前推') }}
+    router-link.item(to='/tools', exact='', name="tools")
+      i.angle.double.down.icon
+      | {{ sify('小工具') }}
+    
+    .right.menu
+      router-link.item(to='/intro', exact='', name="intro")
+        i.book.icon
+        | {{ sify('編創源起') }}
+      
       button.item(@click="copyLink()")
         i.linkify.icon
-      //a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
-        i.github.icon
-    .ui.top.labeled.icon.menu.no-print.fat-only
+        span.fat-only {{ sify('複製連結') }}
+  
+  .ui.sidebar.vertical.menu#side-menu(:class="{'hidden': !sidebarVisible}")
+    router-link.item(to="/")
       router-link.item(to='/', exact='', name="home")
         i.home.icon
         | {{ sify('首頁') }}
+
+      router-link.item(to='/intro', exact='', name="intro")
+        i.book.icon
+        | {{ sify('編創源起') }}
+      
+
       router-link.item(to='/trace', exact='', name="intro")
-        i.sort.amount.up.icon
+        i.sort.amount.icon
         | {{ sify('倒溯與前推') }}
-      // router-link.item(v-show="!user", to='/login' exact='')
-        i.user.icon
-        span(v-if="!user") {{ sify('登入') }}
-        span(v-else) {{ sify('歡迎') }}
+
       router-link.item(to='/maps', exact='', name="maps")
         i.map.icon
         | {{ sify('學習地圖') }}
-      //router-link.item(to='/quiz', exact='')
+
+      router-link.item(to='/quiz', exact='', name="quiz")
         i.question.icon
-        | 小測驗
+        | {{ sify('小測驗') }}
       router-link.item(to='/tools', exact='', name="tools")
         i.angle.double.down.icon
         | {{ sify('小工具') }}
@@ -37,46 +67,32 @@
         i.user.add.icon
         | {{ sify('外部資源') }}
 
-      //router-link.item(to='/changelogs', exact='', name="intro")
+      router-link.item(to='/changelogs', exact='', name="changelogs")
         i.sort.amount.up.icon
         | {{ sify('更新紀錄') }}
-        
-      .right.menu
-        //router-link.item(to='/vedio', exact='')
-          i.play.icon
-          | 導覽
-        router-link.item(to='/intro', exact='', name="intro")
-          i.book.icon
-          | {{ sify('編創源起') }}
 
+      router-link.item(to='/faq', exact='', name="faq")
+        i.question.icon
+        | {{ sify('常見問題') }}
 
-        // router-link.item(to='/faq' exact='')
-          i.question.icon
-          | 常見問題
-        // router-link.item(to='/donate' exact='')
-          i.gift.icon
-          | 出錢出力
-        // router-link.item(to='/chat' exact='')
-          i.chat.icon
-          | 留言板
-        a.item(v-if = "!si", @click="si = true", name="sify")
-          i.edit.icon
-          | {{ sify('簡体') }}
-        a.item(v-else, @click="si = false", name="tify")
-          i.edit.icon
-          | {{ sify('正體') }}
+      a.item(v-if = "!si", @click="si = true", name="sify")
+        i.edit.icon
+        | {{ sify('簡体') }}
+      a.item(v-else, @click="si = false", name="tify")
+        i.edit.icon
+        | {{ sify('正體') }}
 
-        button.item(@click="copyLink()")
-          i.linkify.icon
-          span.fat-only {{ sify('複製連結') }}
-        // a.item(href = "https://www.github.com/bestian/freemath",target="_blank", name="Source", rel="noopener noreferrer")
-          i.github.icon
-          | {{ sify('原始碼') }}
-    main#main
-      router-view(:changelogs="changelogs", :si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
-      // router-link#logo(to='/')
-        img(src='./assets/logo.png')
-      ad#ad.fat-only(:si="si")
+      a.item(href="https://www.github.com/3dw/freemath")
+        i.github.icon
+        | {{ sify('原始碼') }}
+
+  .ui.sidebar.bg(:class="{'hidden': !sidebarVisible}", @click="toggleSidebar")
+
+  main#main
+    router-view(:changelogs="changelogs", :si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
+    // router-link#logo(to='/')
+      img(src='./assets/logo.png')
+    ad#ad.fat-only(:si="si")
 </template>
 
 <script>
@@ -98,6 +114,7 @@ export default {
       share: false,
       play12: undefined,
       chats: undefined,
+      sidebarVisible: false,
       changelogs: changelogs,
       units: units
     }
@@ -139,6 +156,9 @@ export default {
         event_label: t,
         value: v
       })
+    },
+    toggleSidebar() {
+      this.sidebarVisible = !this.sidebarVisible
     },
     submit: function (n, email, t) {
       var o = {
@@ -404,6 +424,34 @@ svg path {
 
 .padded {
   padding: .6em !important;
+}
+
+/* CSS */
+.ui.sidebar {
+  transition: transform .3s ease, opacity .3s ease, visibility .3s ease !important;
+  z-index: 1000;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 1;
+  visibility: visible !important;
+}
+
+.ui.sidebar.bg {
+  z-index: 2 !important; /* 設定一個低值 */
+  background-color: rgba(180, 180, 180, 0.62); /* 確保有背景色 */
+  width: 100vw;
+  cursor: pointer;
+}
+
+.ui.sidebar.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0s linear !important;
+  transform: translateX(-100%); /* 隱藏時向左滑動 */
 }
 
 </style>
