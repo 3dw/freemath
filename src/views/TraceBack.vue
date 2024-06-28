@@ -5,8 +5,8 @@
       option(:value="null", selected) {{sify('選擇一個單元')}}
       option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
     .ui.divider
-    .ui.grid
-      .ui.stackable.row(v-if="selectedUnit")
+    .ui.grid(v-if="selectedUnit !== null")
+      .ui.stackable.row
         .five.wide.padded.left.aligned.column
           .padded
             h4.ui.orange.header 當前單元
@@ -180,7 +180,10 @@ export default {
       return unit ? unit.id : -1;
     },
     onSelectUnit(event) {
-      this.selectedUnit = parseInt(event.target.value, 10);
+      const value = parseInt(event.target.value, 10);
+      console.log('Selected value:', value);
+      this.selectedUnit = isNaN(value) ? null : value;
+      console.log('Set selectedUnit:', this.selectedUnit);
     },
     op (url, name, pro, wiki) {
       this.$gtag.query('event', 'view' + name, {
