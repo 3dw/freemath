@@ -53,7 +53,7 @@
   
     .ui.divider
     d3-network(
-      v-show="selectedUnit",
+      v-show="selectedUnit !== null",
       ref='net',
       :net-nodes="filteredNodes",
       :net-links="filteredLinks"  
@@ -80,7 +80,7 @@ export default {
       backs: backs,
       selectedUnit: null, // 預設為 null
       nodeSize: 20,
-      canvas: true
+      canvas: false
     }
   },
   computed: {

@@ -22,7 +22,7 @@
     router-link.item(to='/', exact='', name="home")
       i.home.icon
       | {{ sify('首頁') }}
-    router-link.item(to='/trace', exact='', name="intro")
+    router-link.item(to='/trace', exact='', name="trace")
       i.sort.amount.icon
       | {{ sify('倒溯與前推') }}
     router-link.item(to='/tools', exact='', name="tools")
