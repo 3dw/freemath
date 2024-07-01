@@ -11,10 +11,9 @@ import Card from '@/components/Card'
 import Play12 from '@/components/Play12'
 import Grid from '@/components/Grid'
 import Outer from '@/components/Outer'
-import Tools from '@/components/Tools'
 import Quiz from '@/components/Quiz'
 import Chat from '@/components/Chat'
-import New from '@/components/New'
+import Home from '@/views/Home'
 import One1 from '@/components/One1'
 import One2 from '@/components/One2'
 import One3 from '@/components/One3'
@@ -25,7 +24,8 @@ import One7 from '@/components/One7'
 import One8 from '@/components/One8'
 import One9 from '@/components/One9'
 import Login from '@/components/Login'
-import Changelogs from '@/components/Changelogs'
+import Tools from '@/views/Tools'
+import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
 
 Vue.use(VueRouter)
@@ -35,7 +35,7 @@ export default new VueRouter({
     {
       path: '/',
       name: '首頁',
-      component: New
+      component: Home
     },
     {
       path: '/trace',
