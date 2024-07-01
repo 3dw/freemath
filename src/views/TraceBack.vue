@@ -5,18 +5,18 @@
       option(:value="null", selected) {{sify('選擇一個單元')}}
       option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
     .ui.divider
-    .ui.grid(v-if="selectedUnit !== null")
+    .ui.grid(v-if="currentUnit")
       .ui.stackable.row
         .five.wide.padded.left.aligned.column
           .padded
             h4.ui.orange.header 當前單元
-            a(@click="op(units[selectedUnit].url, units[selectedUnit].n, units[selectedUnit].pro, units[selectedUnit].wiki)" target="_blank" rel="noopener noreferrer")
-              img(:src="'https://www.google.com/s2/favicons?domain='+units[selectedUnit].url", :alt="sify(units[selectedUnit].n)")
+            a(@click="op(currentUnit.url, currentUnit.n, currentUnit.pro, currentUnit.wiki)" target="_blank" rel="noopener noreferrer")
+              img(:src="'https://www.google.com/s2/favicons?domain='+currentUnit.url", :alt="sify(currentUnit.n)")
               //i.download.icon
-              span.orange(v-if="!useWiki") {{ sify(units[selectedUnit].n) }}
-              span.orange(v-else) {{sify(units[selectedUnit].wiki)}}
-              // .ui.teal.label(v-show="u.pro") pro
-              span.gray(v-if="units[selectedUnit].d") -{{ sify(units[selectedUnit].d) }}
+              span.orange(v-if="!useWiki") {{ sify(currentUnit.n) }}
+              span.orange(v-else) {{sify(currentUnit.wiki)}}
+              // .ui.teal.label(v-show="currentUnit.pro") pro
+              span.gray(v-if="currentUnit.d") -{{ sify(currentUnit.d) }}
         
         .five.wide.padded.left.aligned.column
           .padded
@@ -84,6 +84,9 @@ export default {
     }
   },
   computed: {
+    currentUnit() {
+      return this.units.find(unit => unit.id === this.selectedUnit) || null;
+    },
     nodes() {
       return (this.units || []).map((u) => ({
         id: u.id,
@@ -93,9 +96,7 @@ export default {
     },
     filteredNodes() {
       if (this.selectedUnit === null) return this.nodes;
-      const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
-      if (!selectedUnit) return [];
-      const selectedUnitName = selectedUnit.n;
+      const selectedUnitName = this.currentUnit.n;
       
       // 找到先備知識單元
       const prerequisiteUnits = this.backs.filter(back => back.to.includes(selectedUnitName)).map(back => back.from);
@@ -133,7 +134,7 @@ export default {
     },
     filteredLinks() {
       if (this.selectedUnit === null) return this.links;
-      const selectedUnitName = this.units.find(u => u.id === this.selectedUnit).n;
+      const selectedUnitName = this.currentUnit.n;
       return this.links.filter(link => {
         // const sourceNode = this.nodes.find(node => node.id === link.sid).name;
         const targetNode = this.nodes.find(node => node.id === link.tid).name;
@@ -142,16 +143,12 @@ export default {
     },
     prerequisiteUnits() {
       if (this.selectedUnit === null) return [];
-      const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
-      if (!selectedUnit) return [];
-      const selectedUnitName = selectedUnit.n;
+      const selectedUnitName = this.currentUnit.n;
       return this.units.filter(u => this.backs.some(back => back.to.includes(selectedUnitName) && back.from === u.n));
     },
     postrequisiteUnits() {
       if (this.selectedUnit === null) return [];
-      const selectedUnit = this.units.find(u => u.id === this.selectedUnit);
-      if (!selectedUnit) return [];
-      const selectedUnitName = selectedUnit.n;
+      const selectedUnitName = this.currentUnit.n;
       return this.units.filter(u => this.backs.some(back => back.from === selectedUnitName && back.to.includes(u.n)));
     },
     options() {

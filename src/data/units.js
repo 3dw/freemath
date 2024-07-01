@@ -61,5 +61,4 @@ export const units = [
     {id: 59, n: '三角函數', d: '認識三角函數及其應用', g: 11, G: 12, wiki: '三角函數', url: 'https://docs.google.com/document/d/1W1ZhNi-rbMmB8im9RTJRPfjtw1a6EJSgo3An4d11Dl0/edit?usp=sharing', edit: true, p: 50, left: 3},
     {id: 60, n: '實無限與微分', d: '認識實無限、微分及其應用', wiki: '無窮小量', g: 12, G: 12, url: 'https://docs.google.com/document/d/1W-lzb6HtaYWLU1S2ypVwmxP6jckXSe7n4oRxJiL52gw/edit?usp=sharing', edit: true, p: 80, left: 1},
     {id: 61, n: '實無限與積分', d: '認識實無限、積分及其應用', wiki: '非標準分析', g: 12, G: 12, url: 'https://docs.google.com/document/d/1rWVyaTU31Wy4NFvwCtDpTlmEmNCRwqL4YOTpLHhfyi0/edit?usp=sharing', edit: true, p: 50, left: 2}
-    
 ]
