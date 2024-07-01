@@ -15,7 +15,7 @@
     "es6-promise": "^4.2.8",
     "firebase": "^8.1.2",
     "node-polyfill-webpack-plugin": "^2.0.1",
-    "pug": "^3.0.0",
+    "pug": "^3.0.3",
     "pug-plain-loader": "^1.1.0",
     "register-service-worker": "^1.7.1",
     "sass-loader": "^10.1.0",
