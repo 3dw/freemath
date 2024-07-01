@@ -1,29 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Intro from '@/components/Intro'
-import Maps from '@/components/Maps'
-import Table from '@/components/Table'
-import StonesLog from '@/components/StonesLog'
-import Donate from '@/components/Donate'
-import Vedio from '@/components/Vedio'
-import Faq from '@/components/Faq'
-import Card from '@/components/Card'
-import Play12 from '@/components/Play12'
-import Grid from '@/components/Grid'
-import Outer from '@/components/Outer'
-import Quiz from '@/components/Quiz'
-import Chat from '@/components/Chat'
+import Intro from '@/views/Intro'
+import Maps from '@/views/Maps'
+import Table from '@/views/Table'
+import StonesLog from '@/views/StonesLog'
+import Donate from '@/views/Donate'
+import Vedio from '@/views/Vedio'
+import Faq from '@/views/Faq'
+import Card from '@/views/Card'
+import Play12 from '@/views/Play12'
+import Grid from '@/views/Grid'
+import Quiz from '@/views/Quiz'
+import Outer from '@/views/Outer'
 import Home from '@/views/Home'
-import One1 from '@/components/One1'
-import One2 from '@/components/One2'
-import One3 from '@/components/One3'
-import One4 from '@/components/One4'
-import One5 from '@/components/One5'
-import One6 from '@/components/One6'
-import One7 from '@/components/One7'
-import One8 from '@/components/One8'
-import One9 from '@/components/One9'
-import Login from '@/components/Login'
+import One1 from '@/views/One1'
+import One2 from '@/views/One2'
+import One3 from '@/views/One3'
+import One4 from '@/views/One4'
+import One5 from '@/views/One5'
+import One6 from '@/views/One6'
+import One7 from '@/views/One7'
+import One8 from '@/views/One8'
+import One9 from '@/views/One9'
+// import Login from '@/views/Login'
+// import Chat from '@/components/Chat'
 import Tools from '@/views/Tools'
 import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
@@ -42,11 +42,11 @@ export default new VueRouter({
       name: '倒溯與前推',
       component: TraceBack
     },
-    {
+    /* {
       path: '/login',
       name: '登入',
       component: Login
-    },
+    }, */
     {
       path: '/intro',
       name: '介紹',
@@ -117,11 +117,11 @@ export default new VueRouter({
       name: '小測驗',
       component: Quiz
     },
-    {
+    /* {
       path: '/chat',
       name: '留言版',
       component: Chat
-    },
+    }, */
     {
       path: '/one1',
       name: '倒溯法',

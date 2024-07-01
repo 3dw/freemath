@@ -7,11 +7,7 @@
     iframe#podcast(width="100%" height="340" src="https://www.youtube.com/embed/mJha4ls1MfM?si=PNQT8dq8FzzyxzPb&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
   
   .ui.segment.container.center.aligned
-    h3.ui.header#changelogs {{ sify('版本更新公告')}}
-      div(v-for="(c, idx) in changelogs.slice(0, 1)", :key="idx")
-        router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
-        a.sub.header(v-else-if="c.h", :href="c.h", target="_blank", rel="noopener noreferrer") {{c.text}}
-        span.sub.header(v-else) {{c.text}}
+    changelog(:changelogs = "changelogs")
   
   .ui.grid.container
     .ui.row
@@ -111,13 +107,15 @@
 <script>
 
 import {sify} from 'chinese-conv'
-import Tips from '@/components/Tips.vue'
+import Tips from '@/components/Home_Tips.vue'
+import Changelog from '@/components/Home_Changelog.vue'
 
 export default {
   name: 'Home',
   props: ['units', 'share', 'si', 'changelogs'],
   components: {
-    Tips
+    Tips,
+    Changelog
   },
   data () {
     return {
@@ -289,10 +287,6 @@ a.sub.header {
 
 #podcast {
   max-width: 520px !important;
-}
-
-#changelogs a {
-  color: #0093ff !important;
 }
 
 </style>
