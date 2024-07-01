@@ -1,9 +1,7 @@
 <template lang="pug">
   .hello
     h1.ui.header {{ sify('自由數學')}}
-      .sub.header
-        span
-          Tips(:si="si")
+      Tips(:si="si")
     .ui.divider
       //.ui.large.buttons.fat-only
         a.ui.green.button(href="https://github.com/3dw/freemath/wiki" rel="noopener noreferrer")

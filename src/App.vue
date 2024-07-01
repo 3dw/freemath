@@ -454,4 +454,9 @@ svg path {
   transform: translateX(-100%); /* 隱藏時向左滑動 */
 }
 
+.tip a {
+  color: blue !important;
+  text-decoration: underline !important;
+}
+
 </style>

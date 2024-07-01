@@ -1,5 +1,7 @@
 <template lang="pug">
-  .tip(v-html="sify(randomTip)")
+.sub.header#main-tip
+  span
+    .tip(v-html="sify(randomTip)")
 </template>
 
 <script>
@@ -48,11 +50,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
-.tip a {
-  color: blue !important;
-  text-decoration: underline !important;
+#main-tip {
+  color: black;
 }
 
 </style>
