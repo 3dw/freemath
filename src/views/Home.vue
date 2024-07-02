@@ -12,6 +12,9 @@
   .ui.grid.container
     .ui.row
       .column.center.aligned
+        h4.black {{ sify('本站所有教材皆以CC-BY-SA授權分享')}} 
+        br
+        img.tiny(src="../assets/cc-by-sa.png")
         h1 
         a.big.link(@click="show1 = !show1", title="請按此")     
           h1 {{ sify('給家長：一對一系列')}}
@@ -64,9 +67,6 @@
           h1 {{ sify('給同學：開放教材')}}
             i.ui.chevron.down.icon(v-if="!showMaterials")
             i.ui.chevron.up.icon(v-else)
-        h4.black {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
-        br
-        img.tiny(src="../assets/cc-by-sa.png")
     .ui.stackable.row
       .five.wide.column.center.aligned
         .ui.toggle.checkbox
