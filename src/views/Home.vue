@@ -6,7 +6,7 @@
   
   iframe#podcast(width="100%" height="340" src="https://www.youtube.com/embed/mJha4ls1MfM?si=PNQT8dq8FzzyxzPb&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
   
-  .ui.segment.container.center.aligned
+  .ui.segment.container.center.aligned#changelog-container
     changelog(:changelogs = "changelogs")
   
   .ui.grid.container
@@ -287,7 +287,7 @@ a.sub.header {
   width: 60vw !important;
 }
 
-#podcast {
+#podcast, #changelog-container {
   max-width: 520px !important;
 }
 
