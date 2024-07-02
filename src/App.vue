@@ -459,4 +459,8 @@ svg path {
   text-decoration: underline !important;
 }
 
+.bold {
+  font-weight: bold !important;
+}
+
 </style>

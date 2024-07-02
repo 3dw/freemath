@@ -85,20 +85,20 @@
           input.prompt(v-model="s" type="text", :placeholder="sify('關鍵字查詢')")
           i.search.icon
       br
-    .ui.four.column.doubling.row
-      .column#col(v-for="(u, idx) in lazyShow(units, showMaterials, s, useAge, age, useWiki)" :key="idx")
+    .ui.doubling.four.cards.container
+      .ui.card.main-card(v-for="(u, idx) in lazyShow(units, showMaterials, s, useAge, age, useWiki)" :key="idx")
         a(@click = "op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
-          img(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
-          img(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)  
+          img.gray-scale(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
+          img.gray-scale(src="https://www.google.com/s2/favicons?domain=https://zh.wikipedia.org", :alt="sify(u.n)", v-else)  
           //i.download.icon
           span(v-if="!useWiki") {{ sify(u.n) }}
           span(v-else) {{sify(u.wiki)}}
           br.thin-only
-          span.floated.right.gray(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
+          span.floated.right.gray.bold(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
           // .ui.teal.label(v-show="u.pro") pro
           br(v-if="u.d")
-          span.gray(v-if="u.d") -{{ sify(u.d) }}
-      .column#col(v-if="!showMaterials && !s && !useAge && !useWiki")
+          span.gray(v-if="u.d") {{ sify(u.d) }}
+      .column.main-card(v-if="!showMaterials && !s && !useAge && !useWiki")
         button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
           i.ui.chevron.right.icon
 
@@ -251,9 +251,20 @@ export default {
   background-color: #c9ffc9;
 }
 
-.column#col {
-  text-align: left;
-  margin: 1em 0;
+.main-card {
+  padding: 0.6em !important;
+  text-align: left !important;
+  margin: 1em 0 !important;
+}
+
+
+.main-card a {
+  color: black !important;
+  font-weight: bold;
+}
+
+.main-card img.gray-scale {
+  filter: grayscale(100);
 }
 
 .column {
