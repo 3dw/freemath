@@ -3,8 +3,8 @@
   h1.ui.header {{ sify('自由數學')}}
     Tips(:si="si")
   .ui.divider
-  .ui.container 
-    iframe#podcast(width="100%" height="340" src="https://www.youtube.com/embed/mJha4ls1MfM?si=PNQT8dq8FzzyxzPb&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+  
+  iframe#podcast(width="100%" height="340" src="https://www.youtube.com/embed/mJha4ls1MfM?si=PNQT8dq8FzzyxzPb&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
   
   .ui.segment.container.center.aligned
     changelog(:changelogs = "changelogs")
@@ -64,7 +64,7 @@
           h1 {{ sify('給同學：開放教材')}}
             i.ui.chevron.down.icon(v-if="!showMaterials")
             i.ui.chevron.up.icon(v-else)
-        h3 {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
+        h4.black {{ sify('本站所有教材皆以CC-BY-SA授權分享')}}
         br
         img.tiny(src="../assets/cc-by-sa.png")
     .ui.stackable.row
@@ -241,6 +241,8 @@ export default {
 .hello {
   text-align: center;
   height: 100vh;
+  width: 100vw;
+  padding: 1em 0;
   /* background-image: url(/static/img/bg-img.jpeg);
   background-repeat: repeat; */
 }
@@ -276,7 +278,7 @@ a.sub.header {
 }
 
 .tiny {
-  width: 200px;
+  width: 180px;
 }
 
 .rel-left {
