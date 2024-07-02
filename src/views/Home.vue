@@ -264,7 +264,7 @@ export default {
 }
 
 .main-card img.gray-scale {
-  filter: grayscale(100);
+  filter: grayscale(38%);
 }
 
 .column {
