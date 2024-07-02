@@ -277,6 +277,7 @@ export default {
 
 a img {
   /* filter: grayscale(100%); */
+  width: 20px;
   margin: 0 3px;
 }
 
