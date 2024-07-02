@@ -94,10 +94,10 @@
           span(v-if="!useWiki") {{ sify(u.n) }}
           span(v-else) {{sify(u.wiki)}}
           br.thin-only
-          span.floated.right.gray.bold(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
+          span.floated.right.gray.bold.des(v-show="!useWiki") {{ countGrade(u.g, u.G) }}
           // .ui.teal.label(v-show="u.pro") pro
           br(v-if="u.d")
-          span.gray(v-if="u.d") {{ sify(u.d) }}
+          span.gray.des(v-if="u.d") {{ sify(u.d) }}
       .column.main-card(v-if="!showMaterials && !s && !useAge && !useWiki")
         button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
           i.ui.chevron.right.icon
@@ -259,8 +259,12 @@ export default {
 
 
 .main-card a {
+  font-size: 18px !important;
   color: black !important;
-  font-weight: bold;
+}
+
+.main-card a .des {
+  font-size: 16px !important;
 }
 
 .main-card img.gray-scale {
@@ -278,7 +282,7 @@ export default {
 
 a img {
   /* filter: grayscale(100%); */
-  width: 20px;
+  width: 18px;
   margin: 0 3px;
 }
 
