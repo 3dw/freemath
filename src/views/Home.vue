@@ -281,7 +281,6 @@ export default {
 }
 
 a img {
-  /* filter: grayscale(100%); */
   width: 18px;
   margin: 0 3px;
 }
