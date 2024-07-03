@@ -85,7 +85,7 @@
           input.prompt(v-model="s" type="text", :placeholder="sify('關鍵字查詢')")
           i.search.icon
       br
-    .ui.doubling.four.cards.container
+    #main-doc-container.ui.doubling.four.cards.container
       .ui.card.main-card(v-for="(u, idx) in lazyShow(units, showMaterials, s, useAge, age, useWiki)" :key="idx")
         a(@click = "op(u.url, u.n, u.pro, u.wiki)" target="_blank" rel="noopener noreferrer")
           img.gray-scale(:src="'https://www.google.com/s2/favicons?domain='+u.url", :alt="sify(u.n)", v-if="!useWiki")
@@ -305,6 +305,10 @@ a.sub.header {
 
 #podcast, #changelog-container {
   max-width: 520px !important;
+}
+
+#main-doc-container {
+  margin: 0 auto;
 }
 
 </style>
