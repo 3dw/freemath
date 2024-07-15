@@ -1,6 +1,6 @@
 <template lang="pug">
 .hello
-  h1.ui.header {{ sify('自由數學')}}
+  h1.ui.header {{ sify('自由數學 - 開源教材教法')}}
     Tips(:si="si")
   .ui.divider
   
