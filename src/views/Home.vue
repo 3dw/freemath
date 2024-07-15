@@ -64,10 +64,7 @@
   .ui.grid.container
     .ui.row
       .column.center.aligned
-        a.big.link(@click="scrollDown(200); showMaterials = !showMaterials", title="按此切換顯示")     
-          h1 {{ sify('給同學：開放教材')}}
-            i.ui.chevron.down.icon(v-if="!showMaterials")
-            i.ui.chevron.up.icon(v-else)
+        h1 {{ sify('給同學：開放教材')}}
     .ui.stackable.row
       .five.wide.column.center.aligned
         .ui.toggle.checkbox
