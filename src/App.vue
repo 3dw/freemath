@@ -25,6 +25,9 @@
     router-link.item(to='/trace', exact='', name="trace")
       i.sort.amount.icon
       | {{ sify('倒溯與前推') }}
+    router-link.item(to='/maps', exact='', name="trace")
+      i.map.icon
+      | {{ sify('學習地圖') }}
     router-link.item(to='/tools', exact='', name="tools")
       i.angle.double.down.icon
       | {{ sify('小工具') }}
