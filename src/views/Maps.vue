@@ -14,7 +14,7 @@
         <div class="item">
           用筆圈出不太會的單元(可打問號)
         </div>
-        <router-link class = 'item' to='/hello' exact=''>
+        <router-link class = 'item' to='/' exact=''>
           <i class="home icon" />下載相關教材
         </router-link>
         <div class="item">
