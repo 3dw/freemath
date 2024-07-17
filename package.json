@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
@@ -40,6 +42,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "7.32.0",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^6.1.1",
     "vue-template-compiler": "^2.6.11"
   }
 }
