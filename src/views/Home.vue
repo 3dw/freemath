@@ -230,9 +230,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped="">
-
+<style scoped>
 .ui.header {
+  font-size: 1.5em;
   margin-top: 1em;
 }
 
@@ -241,47 +241,52 @@ export default {
   height: 100vh;
   width: 100vw;
   padding: 1em 0;
-  /* background-image: url(/static/img/bg-img.jpeg);
-  background-repeat: repeat; */
 }
 
 .ui.segment {
-  background-color: #c9ffc9;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 1.5em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #main-cards-container {
-  min-width: 360px !important;
-  max-width: 860px !important;
-  margin: 0 auto !important;
+  min-width: 360px;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .main-card {
-  padding: 0.6em !important;
-  text-align: left !important;
-  margin-top: 1em !important;
+  padding: 1em;
+  text-align: left;
+  margin-top: 1em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 .main-card a {
-  font-size: 18px !important;
-  color: black !important;
+  font-size: 1em;
+  color: #007bff;
 }
 
 .main-card a .des {
-  font-size: 16px !important;
+  font-size: 0.9em;
+  color: #6c757d;
 }
 
 .main-card img.gray-scale {
-  /* filter: grayscale(100%); */
-  /* filter: grayscale(38%); */
-} 
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
 
 .column {
   text-align: left;
 }
 
 .ui.button.group {
-  background-color: #c9ffc9;
+  background-color: #f8f9fa;
 }
 
 a img {
@@ -290,7 +295,7 @@ a img {
 }
 
 a.sub.header {
-  color: #00f !important;
+  color: #007bff;
 }
 
 .floated.right {
@@ -301,14 +306,27 @@ a.sub.header {
   width: 180px;
 }
 
-.rel-left {
-  position: relative;
-  left: 15vw;
-  width: 60vw !important;
+#podcast {
+  width: 100%;
+  max-width: 960px; /* 設定影片最大寬度 */
+  height: auto;
+  aspect-ratio: 16/9; /* 保持影片比例 */
+  margin: 0 auto;
 }
 
-#podcast, #changelog-container {
-  max-width: 520px !important;
+#changelog-container {
+  max-width: 1140px;
 }
 
+.ui.toggle.checkbox label {
+  font-size: 0.9em;
+}
+
+.ui.icon.input.shadow input {
+  font-size: 0.9em;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 </style>
