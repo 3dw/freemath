@@ -267,39 +267,20 @@
   </script>
   
   
-<style>
+  <style>
   
-/* General Styles for Body and Text */
-body {
-font-family: Arial, sans-serif;  /* Simpler font stack */
-line-height: 1.6; 
-background-color: #fff;  /* White background */
-color: #333;  /* Dark gray text */
-margin: 0;
-}
+  html, body {
+    font-family: Arial, sans-serif;  /* Simpler font stack */
+    line-height: 1.6; 
+    background-color: #fff;  /* White background */
+    color: #333;  /* Dark gray text */
+    margin: 0;
+  }
   
-/* Top Menu Styling */
-.ui.menu {
-background-color: #333; /* Dark background */
-color: white;  /* White text */
-padding: 0.5rem 0; /* Reduced padding */
-border: none;
-}
-.ui.menu .item {
-font-size: 1.2rem; /* Smaller font */
-padding: 0.5rem 1rem;
-}
-
-/* Link and Active Link Styles */
-a, button.item {
-color: white; /* White links */
-text-decoration: none;
-}
-
-.router-link-active {
-text-decoration: underline; /* Underline active links */
-}
-
+  .ui.menu .item {
+      padding: 0.92857143em 0.64285714em !important;
+  }
+  
   .fade-leave {  }
   
   .fade-leave-active {
@@ -372,8 +353,7 @@ text-decoration: underline; /* Underline active links */
   }
   
   .menu .item {
-    font-size: 0.9rem; /* Smaller font */
-    padding: 0.5rem 1rem;
+    justify-content: center;
   }
   
   .ui.menu {
@@ -461,19 +441,14 @@ text-decoration: underline; /* Underline active links */
     left: 0;
     width: 250px;
     height: 100%;
-    background-color: #f8f9fa; /* Light gray background */
-    border-right: 1px solid #dee2e6; /* Subtle border */
-    transition: transform 0.3s ease;
+    background-color: #fff;
     opacity: 1;
     visibility: visible !important;
   }
-  .ui.sidebar .item {
-    padding: 0.8rem 1rem;
-    border-bottom: none; /* Remove bottom borders */
-  }
+  
   .ui.sidebar.bg {
     z-index: 2 !important; /* 設定一個低值 */
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(180, 180, 180, 0.62); /* 確保有背景色 */
     width: 100vw;
     cursor: pointer;
   }
@@ -483,18 +458,6 @@ text-decoration: underline; /* Underline active links */
     visibility: hidden;
     transition: all 0s linear !important;
     transform: translateX(-100%); /* 隱藏時向左滑動 */
-  }
-
-  /* Typography Styles */
-  p {
-    text-align: left;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: bold; /* Bold headings */
   }
   
   .tip a {
