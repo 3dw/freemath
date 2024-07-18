@@ -88,6 +88,9 @@
         router-link.item(to='/source', exact='', name="source")
           i.github.icon
           | {{ sify('原始碼') }}
+        router-link.item(to='/link', exact='', name="link")
+          i.globe.icon.no-float
+          | {{ sify('友站連結') }}  
   
     .ui.sidebar.bg(:class="{'hidden': !sidebarVisible}", @click="toggleSidebar")
   

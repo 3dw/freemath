@@ -23,6 +23,7 @@ import One7 from '@/views/One7'
 import One8 from '@/views/One8'
 import One9 from '@/views/One9'
 import Source from '@/views/Source'
+import Link from '@/views/Link'
 // import Login from '@/views/Login'
 // import Chat from '@/components/Chat'
 import Tools from '@/views/Tools'
@@ -173,6 +174,11 @@ export default new VueRouter({
       path: '/source',
       name: '原始碼',
       component: Source
+    },
+    {
+      path: '/link',
+      name: '友站連結',
+      component: Link
     }
   ]
 })
