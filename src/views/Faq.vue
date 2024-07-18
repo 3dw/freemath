@@ -1,10 +1,10 @@
 <template>
-  <div class="hello">
+  <div class="faq-container">
     <br/>
     <h1>常見問題</h1>
     <h4>
       請先參考
-      <a href = "https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>
+      <a href="https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>
     </h4>
     <div class="ui grid container">
       <div class="ui two stackable column row">
@@ -31,18 +31,15 @@
           <p>人力有限時，我們把3~9年級範圍做的比較好，品質優良，且大部份的單元都有。但也並不是每有單元都有。如果您遇到地圖上有單元沒有對應的教材，可用單元名當關鍵字，上網查詢各方教材、教學短片。</p>
           <p>3年級以下，建議多搭配具體的操作與遊戲，紙筆操作和電腦的操作都不宜太多。</p>
           <p>9年級以上，中英文的閱讀力較強，一般課本與各方網路教材足勘使用。此時也可嘗試英文網站，如:</p>
-          <p><a href ="https://www.khanacademy.org/" target="_blank">https://www.khanacademy.org/</a></p>
-          <p>
-            <a href ="http://www.w3schools.com/" target="_blank">http://www.w3schools.com/
-            </a>等等。
-          </p>
+          <p><a href="https://www.khanacademy.org/" target="_blank">https://www.khanacademy.org/</a></p>
+          <p><a href="http://www.w3schools.com/" target="_blank">http://www.w3schools.com/</a>等等。</p>
         </div>
         <div class="ui segment column">
           <h2>自學過程</h2>
           <h4>Q: 教材中有些空格是需要學生自行填寫的，如果不知道該填入什麼或是不確定填入的答案是否正確時該怎麼辦呢？</h4>
           <p>A: 如果遇到不知如何填寫，可以直接在文件上留言提問，也可上Github
             <a class="item" href="https://github.com/bestian/freemath/milestone/5" target="_blank" rel="noopener norefferer">
-              <i class="github icon" />自由數學議題區
+              <i class="github icon"></i>自由數學議題區
             </a>提問，可將卡住的部份拍照上傳，並寫一些目前的想法與疑問，就會有人回答了。</p>
           <p></p>
           <h4>Q: 觀念性空格的答案何不附在最後面？</h4>
@@ -55,16 +52,82 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'faq',
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.faq-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.faq-container h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-container h2 {
+  font-size: 1.75em;
+  color: #004085;
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.faq-container h4 {
+  font-size: 1.25em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.faq-container p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.faq-container a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.faq-container a:hover {
+  text-decoration: underline;
+}
+
+.ui.grid.container {
+  margin-top: 20px;
+}
+
+.ui.two.stackable.column.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui.segment.column {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.ui.segment.column:last-child {
+  margin-right: 0;
+}
+
+.ui.segment.column h4 {
+  font-size: 1.25em;
+  margin-top: 20px;
+}
+
+.ui.segment.column p {
+  font-size: 1em;
+  color: #495057;
+}
 </style>
