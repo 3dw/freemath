@@ -85,8 +85,8 @@
           i.edit.icon
           | {{ sify('正體') }}
   
-        a.item(href="https://www.github.com/3dw/freemath")
-          i.github.icon
+        router-link.item(to='/source', exact='', name="source")
+          i.question.icon
           | {{ sify('原始碼') }}
   
     .ui.sidebar.bg(:class="{'hidden': !sidebarVisible}", @click="toggleSidebar")

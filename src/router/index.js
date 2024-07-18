@@ -22,11 +22,13 @@ import One6 from '@/views/One6'
 import One7 from '@/views/One7'
 import One8 from '@/views/One8'
 import One9 from '@/views/One9'
+import Source from '@/views/Source'
 // import Login from '@/views/Login'
 // import Chat from '@/components/Chat'
 import Tools from '@/views/Tools'
 import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
+
 
 Vue.use(VueRouter)
 
@@ -166,6 +168,11 @@ export default new VueRouter({
       path: '/one9',
       name: '數學學習診斷是什麼？',
       component: One9
+    },
+    {
+      path: '/source',
+      name: '原始碼',
+      component: Source
     }
   ]
 })
