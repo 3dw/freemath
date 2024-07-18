@@ -1,72 +1,55 @@
-<template>
-  <div class="hello">
-    <br/>
-    <div class="ui left aligned segment container no-print">
-      <h1>攀岩式學習地圖</h1>
-      <h3 class="ui header">如何使用：</h3>
-      <div class="ui large ordered list">
-        <div class="item">
-          選擇適合年段的地圖下載印出
-        </div>
-        <div class="item">
-          用筆圈出己經會的單元
-        </div>
-        <div class="item">
-          用筆圈出不太會的單元(可打問號)
-        </div>
-        <router-link class = 'item' to='/trace' exact=''>
-          <i class="sort amount icon" />下載相關教材
-        </router-link>
-        <div class="item">
-          遇到問題可上
-          <a class="item" href="https://www.facebook.com/groups/156709241062806/" target="_blank">
-            <i class="facebook icon" />自學數學團
-          </a>提問
-        </div>
-      </div>
+<template lang="pug">
+  .hello
+    .ui.container.segment
+      br
+      .ui.left.aligned.segment.container.no-print
+        h1 攀岩式學習地圖
+        h3.ui.header 如何使用：
+        .ui.large.ordered.list
+          .item 選擇適合年段的地圖下載印出
+          .item 用筆圈出己經會的單元
+          .item 用筆圈出不太會的單元(可打問號)
+          router-link.item(to='/trace' exact='')
+            i.sort.amount.icon
+            | 下載相關教材
+          .item
+            | 遇到問題可上
+            a.item(href='https://www.facebook.com/groups/156709241062806/' target='_blank')
+              i.facebook.icon
+              | 自學數學團提問
 
-      <div class="ui divider"></div>
+        .ui.divider
 
-      <div class="ui grid no-print">
-        <label>選擇年段：
-          <br class="thin-only" /></label>
-        <div class="ui stackable row">
-          <div class="four wide column" v-for="(r, l) in ranges" :key="'range' + l">
-            <div class="ui radio checkbox">
-              <input type="radio" name="year" v-bind:value="r" v-model = "myRange">
-              <label class="clickable" @click = "myRange = r">{{r.t}}</label>
-            </div>
-          </div>
-        </div>
-        <div class="ui row text-center">
-          <button class = "ui large green button" id = "doPrint" @click = "printUrl(myRange.t,'.pdf')"> 友善列印
-          </button>
-        </div>
-      </div>
-    </div><!-- Segment END -->
+        .ui.grid.no-print
+          label 選擇年段：
+          br.thin-only
+          .ui.stackable.row
+            .four.wide.column(v-for='(r, l) in ranges' :key="'range' + l")
+              .ui.radio.checkbox
+                input(type='radio' name='year' v-bind:value='r' v-model='myRange')
+                label.clickable(@click='myRange = r') {{ r.t }}
+          .ui.row.text-center
+            button.ui.large.green.button#doPrint(@click='printUrl(myRange.t,".pdf")')
+              | 友善列印
 
-   <ul class = "print">
-      <li v-for = "i in [1,2,3,4,0,5]" :key="'print' + i">
-        <a :href="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" target="_blank">
-          <img :src ="'/static/maps/'+myRange.t+'/p'+i+'.jpg'" style="max-width:75vw" alt = ""/>
-        </a>
-      <div class="divider"></div></li>
-    </ul>
-  </div>
+      ul.print
+        li(v-for='i in [1,2,3,4,0,5]' :key="'print' + i")
+          a(:href="'/static/maps/' + myRange.t + '/p' + i + '.jpg'" target='_blank')
+            img(:src="'/static/maps/' + myRange.t + '/p' + i + '.jpg'" style='max-width:75vw' alt='')
+          .divider
 </template>
 
 <script>
-
 export default {
   name: 'maps',
-  data () {
+  data() {
     return {
       index: undefined,
-      myRange: {t: '小學數學地圖', p: 6},
+      myRange: { t: '小學數學地圖', p: 6 },
       ranges: [
-        {t: '小學數學地圖', p: 6},
-        {t: '國中數學地圖', p: 6},
-        {t: '高中數學地圖', p: 6}
+        { t: '小學數學地圖', p: 6 },
+        { t: '國中數學地圖', p: 6 },
+        { t: '高中數學地圖', p: 6 }
       ],
       images: [
         '/static/maps/小學數學地圖/p0.jpg',
@@ -91,18 +74,15 @@ export default {
     }
   },
   methods: {
-    printUrl: function (title, tail) {
-      window.open(
-        '/static/maps/' + title + tail,
-        '_blank'
-      )
+    printUrl: function(title, tail) {
+      window.open('/static/maps/' + title + tail, '_blank')
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 h1, h2 {
   font-weight: normal;
 }
@@ -123,7 +103,50 @@ a {
 
 .image {
   cursor: pointer;
-  width: 16%
+  width: 16%;
 }
 
+.ui.container.segment {
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  padding: 2em;
+}
+
+.ui.header {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.ui.large.ordered.list .item {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.ui.radio.checkbox label {
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.ui.button {
+  background-color: #21ba45;
+  color: white;
+  font-size: 1.2em;
+}
+
+.ui.divider {
+  margin: 2em 0;
+}
+
+.print img {
+  max-width: 75vw;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.print .divider {
+  margin-top: 1em;
+}
 </style>

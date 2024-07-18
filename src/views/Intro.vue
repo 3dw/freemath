@@ -166,32 +166,90 @@
             p
               b {{ sify('然後，當好的教材不用錢，而且親師生都可以取得，大家就可以把力氣放在學習方法、教學方法等難以言詮的地方，而不會再為教材煩惱') }}
               | {{ sify('。早日脫離「沒教材萬萬不能」，早日進入「教材不是萬能」的境地，把著眼點放在學習、互動與創造上。') }}
-
 </template>
 
 <script>
-
-import {sify} from 'chinese-conv'
+import { sify } from 'chinese-conv';
 
 export default {
   name: 'intro',
   props: ['si'],
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
   methods: {
-    sify (t) {
+    sify(t) {
       if (this.si) {
-        return sify(t)
+        return sify(t);
       } else {
-        return t
+        return t;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.ui.grid .column {
+  margin: 10px 0;
+}
+
+.ui.segment.container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ui.segment h3 {
+  color: #0056b3;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ui.segment p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.ui.segment b {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.ui.segment a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.ui.segment a:hover {
+  text-decoration: underline;
+}
+
+.ui.segment h4 {
+  color: #0056b3;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.ui.segment iframe {
+  margin-top: 20px;
+}
+
+.ui.segment .fluid.text-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ui.segment .github.icon {
+  margin-right: 5px;
+}
 </style>

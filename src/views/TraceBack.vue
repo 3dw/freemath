@@ -61,9 +61,9 @@
       style="width: 100%; height: 100%;"
     )
 </template>
-    
+
 <script>
-import {sify} from 'chinese-conv'
+import { sify } from 'chinese-conv'
 import { backs } from '../data/backs.js'; 
 import D3Network from 'vue-d3-network';
 
@@ -165,7 +165,7 @@ export default {
     }
   },
   methods: {
-    sify (t) {
+    sify(t) {
       if (this.si) {
         return sify(t)
       } else {
@@ -182,7 +182,7 @@ export default {
       this.selectedUnit = isNaN(value) ? null : value;
       console.log('Set selectedUnit:', this.selectedUnit);
     },
-    op (url, name, pro, wiki) {
+    op(url, name, pro, wiki) {
       this.$gtag.query('event', 'view' + name, {
         name: name,
         url: url,
@@ -194,7 +194,7 @@ export default {
         window.open('https://zh.wikipedia.org/wiki/' + wiki)
       }
     },
-    countGrade (g, G) {
+    countGrade(g, G) {
       var min = g
       if (g <= 0) {
         min = '學前'
@@ -213,8 +213,9 @@ export default {
   }
 }
 </script>
-    
-<style scoped>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped="">
 .hello {
   width: 100%;
   height: 100%;
@@ -222,10 +223,45 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #f9f9f9; /* Set a light background color */
+  padding: 20px; /* Add some padding around the content */
+}
+
+.ui.header {
+  font-size: 24px; /* Set header font size */
+  color: #333; /* Set header font color */
+  margin-bottom: 20px; /* Add some space below the header */
+}
+
+.ui.dropdown {
+  font-size: 16px; /* Set dropdown font size */
+  margin-bottom: 20px; /* Add some space below the dropdown */
+}
+
+.ui.divider {
+  margin: 20px 0; /* Add vertical space around the divider */
+}
+
+.ui.grid .column {
+  padding: 20px; /* Add padding inside the grid columns */
+  background-color: #fff; /* Set column background color to white */
+  border: 1px solid #ddd; /* Add a border around columns */
+  border-radius: 4px; /* Round the corners of the columns */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.ui.list .item {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+.ui.button {
+  font-size: 14px; /* Set button font size */
+  margin-top: 10px; /* Add space above buttons */
 }
 
 d3-network {
-  width: 800px;
-  height: 600px;
+  width: 100%; /* Set network width to full container width */
+  height: 600px; /* Set network height */
+  margin-top: 20px; /* Add space above the network */
 }
 </style>

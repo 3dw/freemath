@@ -169,15 +169,67 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-img.q {
-  width: 300px;
-}
-
 .hello {
+    background-color: #f9f9f9;
+    padding: 2em;
+}
+.ui.container {
+    background-color: white;
+    padding: 2em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 8px;
+}  
+.ui.segment {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2em;
+    margin-bottom: 2em;
+} 
+h1.ui.header {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #333;
+    margin-top: 0;
+}
+.ui.header .sub.header {
+    color: #777;
+}
 
-}
-.good {
-  height: 2em;
-}
+       
+.ui.button.green {
+    background-color: #21ba45;
+    color: white;
+  }
+  
+  .ui.button.gray {
+    background-color: #d3d3d3;
+    color: rgb(31, 29, 29);
+  }
+  
+  .ui.button.red {
+    background-color: #db2828;
+    color: white;
+  }
+  
+  .ui.button.orange {
+    background-color: #f2711c;
+    color: white;
+  }
+  
+  .ui.divider {
+    margin: 2em 0;
+  }
+  
+  img.q {
+    width: 300px;
+  }
+  
+  img.good {
+    height: 2em;
+  }
+  
+  .ui.grid.container {
+    margin-top: 2em;
+  }
 </style>

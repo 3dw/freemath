@@ -5,13 +5,11 @@
       h3.ui.header {{ sify('版本更新公告')}}
         div(v-for="(c, idx) in changelogs", :key="idx")
           router-link.sub.header(v-if="c.r", :to="c.r") {{c.text}}
-          a.sub.header(v-else-if="c.h", :to="c.h") {{c.text}}
+          a.sub.header(v-else-if="c.h", :href="c.h") {{c.text}}
           span.sub.header(v-else) {{c.text}}
-
 </template>
 
 <script>
-
 import {sify} from 'chinese-conv'
 
 export default {
@@ -39,59 +37,44 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped="">
-
+<style scoped>
 .ui.header {
   margin-top: 1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  color: #333;
 }
 
 .hello {
   text-align: center;
   height: 100vh;
-  /* background-image: url(/static/img/bg-img.jpeg);
-  background-repeat: repeat; */
+  background-color: #f9f9f9;
 }
 
 .ui.segment {
-  background-color: #c9ffc9;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 2em;
 }
 
-.column#col {
-  text-align: left;
-  margin: 1em 0;
-}
-
-.column {
-  text-align: left;
-}
-
-.ui.button.group {
-  background-color: #c9ffc9;
-}
-
-a img {
-  /* filter: grayscale(100%); */
-  margin: 0 3px;
+.ui.segment.container.left.aligned {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 a.sub.header {
-  color: blue !important;
+  color: #1e70bf !important;
   text-decoration: underline;
+  cursor: pointer;
 }
 
-.floated.right {
-  float: right;
+span.sub.header {
+  color: #555;
 }
 
-.tiny {
-  width: 200px;
-}
-
-.rel-left {
-  position: relative;
-  left: 15vw;
-  width: 60vw !important;
+.router-link-active {
+  font-weight: bold;
 }
 
 </style>
