@@ -7,7 +7,7 @@
       <a href="https://docs.google.com/document/d/14j0lEEZH5A1FNum7L6p9U1ETWx_0JTyasahIi9DLe3w/edit?usp=sharing" target="_blank">給家長的教學引導</a>
     </h4>
     <div class="ui grid container">
-      <div class="ui two stackable column row">
+      <div class="ui stackable two column row">
         <div class="ui segment column">
           <h2>教材架構</h2>
           <h4>Q: 學數學應該每日練習嗎？</h4>
@@ -102,9 +102,10 @@
   margin-top: 20px;
 }
 
-.ui.two.stackable.column.row {
+.ui.stackable.two.column.row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .ui.segment.column {
@@ -115,6 +116,7 @@
   margin-bottom: 20px;
   flex: 1;
   margin-right: 10px;
+  min-width: 100%;
 }
 
 .ui.segment.column:last-child {
@@ -129,5 +131,11 @@
 .ui.segment.column p {
   font-size: 1em;
   color: #495057;
+}
+
+@media (min-width: 600px) {
+  .ui.segment.column {
+    min-width: calc(50% - 20px);
+  }
 }
 </style>
