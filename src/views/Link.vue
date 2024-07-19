@@ -6,6 +6,7 @@
       a.button.tertiary(href="https://sites.google.com/view/autoalearn") 自主學習促進會
       a.button.quaternary(href="https://map.alearn.org.tw/#/") 自學地圖
       a.button.quinary(href="https://playback.bestian.tw/") Playback劇場
+      a.button.primary(href="https://hack.bestian.tw/") Bestian 的工坊
 </template>
 
 <script>
