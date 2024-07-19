@@ -22,7 +22,7 @@
             i.ui.chevron.up.icon(v-if="show1")
             i.ui.chevron.down.icon(v-else)
         
-    .ui.three.column.stackable.row(v-show="show1")
+    .ui.three.column.stackable.row#arts(v-show="show1")
       .column
         router-link(to = "/one1") 
           i.users.icon
@@ -257,7 +257,7 @@ export default {
 }
 
 .main-card {
-  padding: 1em;
+  padding: .4em !important;
   text-align: left;
   margin-top: 1em;
   background-color: #fff;
@@ -266,7 +266,7 @@ export default {
 }
 
 .main-card a {
-  font-size: 1em;
+  font-size: 1.2rem;
   color: #007bff;
 }
 
@@ -276,8 +276,8 @@ export default {
 }
 
 .main-card img.gray-scale {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin-right: 8px;
 }
 
@@ -308,14 +308,14 @@ a.sub.header {
 
 #podcast {
   width: 100%;
-  max-width: 960px; /* 設定影片最大寬度 */
   height: auto;
   aspect-ratio: 16/9; /* 保持影片比例 */
   margin: 0 auto;
 }
 
-#changelog-container {
-  max-width: 1140px;
+
+#podcast, #changelog-container {
+  max-width: 960px !important; /* 設定最大寬度並對齊 */
 }
 
 .ui.toggle.checkbox label {
@@ -328,5 +328,9 @@ a.sub.header {
   border-radius: 4px;
   border: 1px solid #dee2e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#arts .column {
+  font-size: 1.1rem;
 }
 </style>
