@@ -1,104 +1,104 @@
 <template lang="pug">
-  #app
-    vue-headful(:title="$route.name +'@自由數學'")
-  
-    .ui.top.menu.no-print.thin-only
-      button.no-border.ui.item(@click="toggleSidebar")
-        i.icon.bars
-      router-link.item(to='/' exact='')
-        i.home.icon
-        | {{ sify('首頁') }}
-      router-link.item(to='/trace' exact='')
-        i.sort.amount.ui.icon
-        | {{ sify('倒溯與前推') }}
+#app
+  vue-headful(:title="$route.name +'@自由數學'")
+
+  .ui.top.menu.no-print.thin-only
+    button.no-border.ui.item(@click="toggleSidebar")
+      i.icon.bars
+    router-link.item(to='/' exact='')
+      i.home.icon
+      | {{ sify('首頁') }}
+    router-link.item(to='/trace' exact='')
+      i.sort.amount.ui.icon
+      | {{ sify('倒溯與前推') }}
+    button.item(@click="copyLink()")
+      i.linkify.icon
+
+  .ui.top.labeled.icon.menu.no-print.fat-only
+
+    button.no-border.ui.item(@click="toggleSidebar")
+      i.icon.bars
+
+    router-link.item(to='/', exact='', name="home")
+      i.home.icon
+      | {{ sify('首頁') }}
+    router-link.item(to='/trace', exact='', name="trace")
+      i.sort.amount.icon
+      | {{ sify('倒溯與前推') }}
+    router-link.item(to='/maps', exact='', name="trace")
+      i.map.icon
+      | {{ sify('學習地圖') }}
+    router-link.item(to='/tools', exact='', name="tools")
+      i.angle.double.down.icon
+      | {{ sify('小工具') }}
+    
+    .right.menu
+      router-link.item(to='/intro', exact='', name="intro")
+        i.book.icon
+        | {{ sify('編創源起') }}
+      
       button.item(@click="copyLink()")
         i.linkify.icon
+        span.fat-only {{ sify('複製連結') }}
   
-    .ui.top.labeled.icon.menu.no-print.fat-only
-  
-      button.no-border.ui.item(@click="toggleSidebar")
-        i.icon.bars
-  
+  .ui.sidebar.vertical.menu#side-menu(:class="{'hidden': !sidebarVisible}")
+    router-link.item(to="/")
       router-link.item(to='/', exact='', name="home")
         i.home.icon
         | {{ sify('首頁') }}
-      router-link.item(to='/trace', exact='', name="trace")
+
+      router-link.item(to='/intro', exact='', name="intro")
+        i.book.icon
+        | {{ sify('編創源起') }}
+      
+
+      router-link.item(to='/trace', exact='', name="intro")
         i.sort.amount.icon
         | {{ sify('倒溯與前推') }}
-      router-link.item(to='/maps', exact='', name="trace")
+
+      router-link.item(to='/maps', exact='', name="maps")
         i.map.icon
         | {{ sify('學習地圖') }}
+
+      router-link.item(to='/quiz', exact='', name="quiz")
+        i.question.icon
+        | {{ sify('小測驗') }}
       router-link.item(to='/tools', exact='', name="tools")
         i.angle.double.down.icon
         | {{ sify('小工具') }}
-      
-      .right.menu
-        router-link.item(to='/intro', exact='', name="intro")
-          i.book.icon
-          | {{ sify('編創源起') }}
-        
-        button.item(@click="copyLink()")
-          i.linkify.icon
-          span.fat-only {{ sify('複製連結') }}
-    
-    .ui.sidebar.vertical.menu#side-menu(:class="{'hidden': !sidebarVisible}")
-      router-link.item(to="/")
-        router-link.item(to='/', exact='', name="home")
-          i.home.icon
-          | {{ sify('首頁') }}
-  
-        router-link.item(to='/intro', exact='', name="intro")
-          i.book.icon
-          | {{ sify('編創源起') }}
-        
-  
-        router-link.item(to='/trace', exact='', name="intro")
-          i.sort.amount.icon
-          | {{ sify('倒溯與前推') }}
-  
-        router-link.item(to='/maps', exact='', name="maps")
-          i.map.icon
-          | {{ sify('學習地圖') }}
-  
-        router-link.item(to='/quiz', exact='', name="quiz")
-          i.question.icon
-          | {{ sify('小測驗') }}
-        router-link.item(to='/tools', exact='', name="tools")
-          i.angle.double.down.icon
-          | {{ sify('小工具') }}
-        router-link.item(to='/outer', exact='', name="outer")
-          i.user.add.icon
-          | {{ sify('外部資源') }}
-  
-        router-link.item(to='/changelogs', exact='', name="changelogs")
-          i.sort.amount.up.icon
-          | {{ sify('更新紀錄') }}
-  
-        router-link.item(to='/faq', exact='', name="faq")
-          i.question.icon
-          | {{ sify('常見問題') }}
-  
-        a.item(v-if = "!si", @click="si = true", name="sify")
-          i.edit.icon
-          | {{ sify('簡体') }}
-        a.item(v-else, @click="si = false", name="tify")
-          i.edit.icon
-          | {{ sify('正體') }}
-  
-        router-link.item(to='/source', exact='', name="source")
-          i.github.icon
-          | {{ sify('原始碼') }}
-        router-link.item(to='/link', exact='', name="link")
-          i.globe.icon.no-float
-          | {{ sify('友站連結') }}  
-  
-    .ui.sidebar.bg(:class="{'hidden': !sidebarVisible}", @click="toggleSidebar")
-  
-    main#main
-      router-view(:changelogs="changelogs", :si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
-      // router-link#logo(to='/')
-        img(src='./assets/logo.png')
-      ad#ad.fat-only(:si="si")
+      router-link.item(to='/outer', exact='', name="outer")
+        i.user.add.icon
+        | {{ sify('外部資源') }}
+
+      router-link.item(to='/changelogs', exact='', name="changelogs")
+        i.sort.amount.up.icon
+        | {{ sify('更新紀錄') }}
+
+      router-link.item(to='/faq', exact='', name="faq")
+        i.question.icon
+        | {{ sify('常見問題') }}
+
+      a.item(v-if = "!si", @click="si = true", name="sify")
+        i.edit.icon
+        | {{ sify('簡体') }}
+      a.item(v-else, @click="si = false", name="tify")
+        i.edit.icon
+        | {{ sify('正體') }}
+
+      router-link.item(to='/source', exact='', name="source")
+        i.github.icon
+        | {{ sify('原始碼') }}
+      router-link.item(to='/link', exact='', name="link")
+        i.globe.icon.no-float
+        | {{ sify('友站連結') }}  
+
+  .ui.sidebar.bg(:class="{'hidden': !sidebarVisible}", @click="toggleSidebar")
+
+  main#main
+    router-view(:changelogs="changelogs", :si="si", :units='units', :play12="play12", :share = "share", :chats = "chats", @submit = "submit", @rand="rand", @changeCards = "changeCards", @makeCard = "makeCard", @useC="useC", @shared = "shared", @login="login")
+    // router-link#logo(to='/')
+      img(src='./assets/logo.png')
+    ad#ad.fat-only(:si="si")
   </template>
   
   <script>
