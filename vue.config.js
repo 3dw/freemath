@@ -100,7 +100,7 @@ module.exports = {
       }
     },
     plugins: [
-      new SitemapPlugin({ base: 'https://etcoding.tech', paths }),
+      new SitemapPlugin({ base: 'https://math.alearn.org.tw', paths }),
       new NodePolyfillPlugin()
     ]
   },
