@@ -34,6 +34,7 @@ import TraceBack from '@/views/TraceBack'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+  mode: 'history',  // 改為 history 模式
   routes: [
     {
       path: '/',
