@@ -1,21 +1,23 @@
 <template lang="pug">
 .sub.header#main-tip
-  .filler
   a(@click="prevTip")
     i.chevron.left.icon
-  .tip(v-html="sify(randomTip)")
+  .filler
+  .tip
+    span(:key="randomTip" v-html="sify(randomTip)")
+  .filler
   a(@click="nextTip")
     i.chevron.right.icon
-  .filler
 </template>
-  
+
+
 <script>
-import {sify} from 'chinese-conv'
+import { sify } from 'chinese-conv'
 
 export default {
   name: 'Tips',
   props: ['si'],
-  data () {
+  data() {
     return {
       tips: [
         '學習數學，在於秩序。',
@@ -37,36 +39,33 @@ export default {
       randomTip: ''
     }
   },
-  mounted () {
-    setInterval(
-      this.nextTip
-    , 5000);
+  mounted() {
+    this.interval = setInterval(this.nextTip, 5000) // 設置定時器
+  },
+  beforeDestroy() {
+    clearInterval(this.interval) // 清除定時器
   },
   methods: {
-    sify (t) {
-      if (this.si) {
-        return sify(t)
-      } else {
-        return t
-      }
+    sify(t) {
+      return this.si ? sify(t) : t
     },
     getRandomTip() {
-      const randomIndex = Math.floor(Math.random() * this.tips.length);
-      this.randomTip = this.tips[randomIndex];
+      const randomIndex = Math.floor(Math.random() * this.tips.length)
+      this.randomTip = this.tips[randomIndex]
     },
     prevTip() {
-      let currentIndex = this.tips.indexOf(this.randomTip);
-      currentIndex = (currentIndex - 1 + this.tips.length) % this.tips.length;
-      this.randomTip = this.tips[currentIndex];
+      let currentIndex = this.tips.indexOf(this.randomTip)
+      currentIndex = (currentIndex - 1 + this.tips.length) % this.tips.length
+      this.randomTip = this.tips[currentIndex]
     },
     nextTip() {
-      let currentIndex = this.tips.indexOf(this.randomTip);
-      currentIndex = (currentIndex + 1) % this.tips.length;
-      this.randomTip = this.tips[currentIndex];
+      let currentIndex = this.tips.indexOf(this.randomTip)
+      currentIndex = (currentIndex + 1) % this.tips.length
+      this.randomTip = this.tips[currentIndex]
     }
   },
   created() {
-    this.getRandomTip();
+    this.getRandomTip()
   }
 }
 </script>
@@ -77,6 +76,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 580px;
+  margin: 0 auto;
 }
 
 a {
@@ -85,11 +86,23 @@ a {
 
 .tip {
   flex-grow: 1;
-  text-align: center;
+  overflow: hidden; /* 隱藏超出範圍的內容 */
+  position: relative;
+  white-space: nowrap; /* 防止文字換行 */
+}
+
+.tip span {
+  display: inline-block;
+  padding-left: 100%; /* 起始位置在右側 */
+  animation: marquee 10s linear forwards; /* 播放一次，持續5秒 */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 .filler {
   flex-grow: 1;
 }
 </style>
-  
