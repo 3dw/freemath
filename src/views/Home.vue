@@ -315,7 +315,7 @@ a.sub.header {
 
 
 #podcast, #changelog-container {
-  max-width: 960px !important; /* 設定最大寬度並對齊 */
+  max-width: 460px !important; /* 設定最大寬度並對齊 */
 }
 
 .ui.toggle.checkbox label {

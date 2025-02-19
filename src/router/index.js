@@ -29,7 +29,7 @@ import Link from '@/views/Link'
 import Tools from '@/views/Tools'
 import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
-
+import AI from '@/views/AI'
 
 Vue.use(VueRouter)
 
@@ -40,6 +40,11 @@ export default new VueRouter({
       path: '/',
       name: '首頁',
       component: Home
+    },
+    {
+      path: '/ai',
+      name: 'AI',
+      component: AI
     },
     {
       path: '/trace',

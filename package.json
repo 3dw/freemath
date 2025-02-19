@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
     "firebase": "^8.1.2",
+    "marked": "^15.0.7",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "pug": "^3.0.3",
     "pug-plain-loader": "^1.1.0",

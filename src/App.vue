@@ -11,8 +11,12 @@
     router-link.item(to='/trace' exact='')
       i.sort.amount.ui.icon
       | {{ sify('倒溯與前推') }}
-    button.item(@click="copyLink()")
-      i.linkify.icon
+    router-link.item(to='/ai' exact='')
+      i.question.icon
+      | {{ sify('AI家教') }}
+    .right.menu
+      button.item(@click="copyLink()")
+        i.linkify.icon
 
   .ui.top.labeled.icon.menu.no-print.fat-only
 
@@ -31,15 +35,14 @@
     router-link.item(to='/tools', exact='', name="tools")
       i.angle.double.down.icon
       | {{ sify('小工具') }}
+    router-link.item(to='/ai', exact='', name="ai")
+      i.question.icon
+      | {{ sify('AI家教') }}
     
     .right.menu
       router-link.item(to='/intro', exact='', name="intro")
         i.book.icon
         | {{ sify('編創源起') }}
-      
-      button.item(@click="copyLink()")
-        i.linkify.icon
-        span.fat-only {{ sify('複製連結') }}
   
   .ui.sidebar.vertical.menu#side-menu(:class="{'hidden': !sidebarVisible}")
     router-link.item(to="/")
