@@ -95,8 +95,8 @@
       router-link.item(to='/link', exact='', name="link")
         i.globe.icon.no-float
         | {{ sify('友站連結') }}
-        
-      a.item(href="https://www.alearn.org.tw/#donate-online")
+
+      a.item(href="https://www.alearn.org.tw/#donate-online", target="_blank", rel="noopener noreferrer", @click="trackButton('donate', 'donate'); goto('https://www.alearn.org.tw/#donate-online')")
         i.money.icon
         | {{ sify('捐款支持') }}  
 
@@ -155,6 +155,9 @@
           }
         }
         window.alert('登入失敗: e-mail或id不正確')
+      },
+      goto(url) {
+        window.open(url, '_blank')
       },
       sify (t) {
         if (this.si) {
