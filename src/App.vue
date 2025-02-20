@@ -96,7 +96,7 @@
         i.globe.icon.no-float
         | {{ sify('友站連結') }}
 
-      a.item(href="https://www.alearn.org.tw/#donate-online", target="_blank", rel="noopener noreferrer", @click="trackButton('donate', 'donate'); goto('https://www.alearn.org.tw/#donate-online')")
+      a.item(href="https://www.alearn.org.tw/donate", target="_blank", rel="noopener noreferrer", @click="trackButton('donate', 'donate'); goto('https://www.alearn.org.tw/donate')")
         i.money.icon
         | {{ sify('捐款支持') }}  
 
