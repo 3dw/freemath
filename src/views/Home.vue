@@ -100,6 +100,15 @@
       button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
         i.ui.chevron.right.icon
 
+  .ui.segment.container.center.aligned
+    h3.ui.header {{ sify('支持自由數學') }}
+    p {{ sify('自由數學致力於提供優質的開源數學教材，您的支持能幫助我們持續發展') }}
+    p {{ sify('捐款支持自由數學，共同推廣數學教育！') }}
+    .ui.buttons
+      a.ui.green.button(href="https://www.alearn.org.tw/#donate-online")
+        i.ui.money.icon
+        | {{ sify('線上捐款') }}
+    p.small.text.gray {{ sify('您的捐款將用於教材研發與網站維護') }}
 </template>
 
 <script>

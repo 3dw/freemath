@@ -87,13 +87,18 @@
       a.item(v-else, @click="si = false", name="tify")
         i.edit.icon
         | {{ sify('正體') }}
+      
 
       router-link.item(to='/source', exact='', name="source")
         i.github.icon
         | {{ sify('原始碼') }}
       router-link.item(to='/link', exact='', name="link")
         i.globe.icon.no-float
-        | {{ sify('友站連結') }}  
+        | {{ sify('友站連結') }}
+        
+      a.item(href="https://www.alearn.org.tw/#donate-online")
+        i.money.icon
+        | {{ sify('捐款支持') }}  
 
   .ui.sidebar.bg(:class="{'hidden': !sidebarVisible}", @click="toggleSidebar")
 
