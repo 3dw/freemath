@@ -1,4 +1,5 @@
 export const changelogs = [
+    {text: '2025-02-21：更新首頁，加入捐款按鈕', h: 'https://www.alearn.org.tw/donate'},
     {text: '2024-07-15：更新首頁，使小秘訣輪播'},
     {text: '2024-07-01：更新《分數到小數》單元。', h: 'https://docs.google.com/document/d/1xr9bhw0qcsio0R3FU9gUOIjW8Ir2mQpAh0fjJh4cnu0/edit'},
     {text: '2024-06-21：新增「倒溯與前推」功能', r: '/trace'},
