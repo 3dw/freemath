@@ -194,7 +194,7 @@ export default new VueRouter({
       component: Resources
     },
     {
-      path: '/game',
+      path: '/prime-finding',
       name: '質數找找樂',
       component: PrimeFinding
     }

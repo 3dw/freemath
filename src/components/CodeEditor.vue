@@ -65,32 +65,34 @@ export default {
         { name: 'Script' },
         { name: 'Style' }
       ],
-      templateCode: `<div id="app">
-  <h1>數字列表</h1>
-
-  <h2 class="green">倍數著色</h2>
-  <div class="container">
-    <div v-for="num in numbers" :key="num" :class="{red: num % 3 === 0}">
-      {{ num }}
-    </div>
+      templateCode: `<div>
+    <h1>數字列表</h1>
+    
+    <h2 class="green">質數著色</h2>
+    
+    <div class = "container">
+        <div v-for="num in numbers" :key="num" :class="{red: primes.includes(num)}">
+          {{num}}
+        </div>
   </div>
-
-  <h2>2 的次方列表</h2>
-  <ul>
-    <li v-for="(power, index) in powers" :key="index">
-      2<sup>{{ numbers[index] }}</sup> = <span>{{ power }}</span>
-    </li>
-  </ul>
-</div>
+    
+    <h2>2 的次方列表</h2>
+    <ul>
+      <li v-for="(power, index) in powers" :key="index">
+        2<sup>{{ numbers[index] }}</sup> = 
+        <span>{{ power }}</span>
+      </li>
+    </ul>
+  </div>
 `,
       scriptCode: `const { createApp } = Vue; // 從載入的 Vue 庫取得 createApp
 
-// 把上面複製的物件內容貼在這裡，並賦值給一個變數，例如 appOptions
-const appOptions = {
+export default {
   // TODO: 用埃式篩法篩出所有的質數
   data() {
     return {
-      numbers: [0, 1, 2, 3, 4]
+      numbers: [0, 1, 2, 3, 4],
+      primes: []
     };
   },
   mounted () {
@@ -99,6 +101,15 @@ const appOptions = {
     // while是一個迴圈
     while (x <= 100) {
       this.numbers.push(x)
+      var isPrime = x > 1;
+      this.primes.forEach((p) => {
+        if (x % p == 0) {
+          isPrime = false
+        }
+      })
+      if (isPrime) {
+        this.primes.push(x);
+      }
       x += 1;
     }
   },
@@ -108,7 +119,6 @@ const appOptions = {
     }
   }
 };
-
 // 建立 Vue App 並掛載到 HTML 中的 #app 元素
 createApp(appOptions).mount('#app');`,
       styleCode: `ul {
@@ -119,23 +129,42 @@ li {
   margin: 5px 0;
   font-size: 18px;
 }
-.container {
-  width: 580px;
-  display: flex;
-  flex-wrap: wrap;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
 }
-.container div {
+td {
   border: 1px solid black;
-  text-align: right;
-  width: 2em;
-  padding: .6em;
+  padding: 8px;
+  text-align: center;
 }
+ 
+  .container {
+    width: 580px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .container div {
+    border: 1px solid black;
+    text-align:right;
+    width: 2em;
+    padding: .6em;
+  }
+  
 .red {
-  color: #f00;
+   color:#f00;
 }
+  
+.blue { 
+   color:#00f;
+}
+  
 .green {
-  color: #090;
-}
+ color:#090
+}  
+
 `,
       originalTemplateCode: `<template>
   <div class="sieve-game">

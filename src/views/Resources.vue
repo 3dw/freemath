@@ -6,7 +6,7 @@
     </div>
 
     <div class="resources-grid">
-      <div class="resource-card" @click="navigateTo('/game')">
+      <div class="resource-card" @click="navigateTo('/prime-finding')">
         <div class="resource-icon">🎯</div>
         <h2>質數找找樂</h2>
         <p>使用埃式篩法找出質數，了解質數的特性</p>
