@@ -37,7 +37,7 @@
       | {{ sify('小工具') }}
     router-link.item(to='/resources', exact='', name="resources")
       i.book.icon
-      | {{ sify('數學 × 程式教案庫') }}
+      | {{ sify('數學程式') }}
     router-link.item(to='/ai', exact='', name="ai")
       i.question.icon
       | {{ sify('AI家教') }}
