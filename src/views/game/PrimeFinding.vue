@@ -25,12 +25,23 @@
       </ol>
       <p>剩下的未被標記為非質數的數字就是質數。</p>
     </div>
+    
+    <div class="code-editor-section">
+      <h2>程式碼探索</h2>
+      <p>你可以編輯下面的程式碼，看看如何找出質數：</p>
+      <CodeEditor />
+    </div>
   </div>
 </template>
 
 <script>
+import CodeEditor from '@/components/CodeEditor.vue';
+
 export default {
   name: 'PrimeFinding',
+  components: {
+    CodeEditor
+  },
   data() {
     return {
       max: 30,
@@ -192,6 +203,7 @@ button {
   border-radius: 12px;
   padding: 30px;
   border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
 }
 
 .game-explanation h2 {
@@ -215,6 +227,26 @@ button {
 
 .game-explanation li {
   margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.code-editor-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.code-editor-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1e293b;
+}
+
+.code-editor-section p {
+  color: #475569;
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
