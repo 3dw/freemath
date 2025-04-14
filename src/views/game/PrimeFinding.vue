@@ -8,7 +8,19 @@
         </div>
         
         <div class="game-container">
-          <canvas ref="canvas" width="620" height="100" class="canvas"></canvas>
+          <div class="numbers-grid">
+            <div 
+              v-for="i in max" 
+              :key="i" 
+              class="number-box" 
+              :class="{ 
+                'prime': sieve[i], 
+                'not-prime': !sieve[i],
+                'current': i === current
+              }">
+              {{ i }}
+            </div>
+          </div>
           <div class="controls">
             <button @click="nextStep" :disabled="done" class="button next-button">下一步</button>
             <button @click="resetGame" class="button reset-button">重新開始</button>
@@ -20,10 +32,10 @@
           <h3>什麼是埃式篩法？</h3>
           <p>埃式篩法（Sieve of Eratosthenes）是一種找出所有小於或等於給定數值的質數的簡單算法。其步驟如下：</p>
           <ol>
-            <li>從2開始，將所有數字標記為可能是質數</li>
-            <li>選取第一個未被標記為非質數的數字（初始為2）</li>
-            <li>將該數的所有倍數標記為非質數</li>
-            <li>重複步驟2-3，直到選取的數的平方大於給定的最大值</li>
+            <li class="text-left">從2開始，將所有數字標記為可能是質數</li>
+            <li class="text-left">選取第一個未被標記為非質數的數字（初始為2）</li>
+            <li class="text-left">將該數的所有倍數標記為非質數</li>
+            <li class="text-left">重複步驟2-3，直到選取的數的平方大於給定的最大值</li>
           </ol>
           <p>剩下的未被標記為非質數的數字就是質數。</p>
         </div>
@@ -32,9 +44,16 @@
       <div class="section-card code-editor-section">
         <div class="section-header">
           <h2>程式碼探索 🔍</h2>
-          <p>你可以編輯下面的程式碼，看看如何找出質數：</p>
+          <p>你可以看看下面的程式碼，看看如何找出質數：</p>
+          <div id="codepen-container" ref="codepenContainer">
+            <p class="codepen" data-height="600" data-default-tab="html,result" data-slug-hash="JojqGPJ" data-pen-title="埃式篩法篩出所有的質數" data-user="bestianT" data-token="bd65cb8a54b90840bae01b834923f89d" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/bestianT/pen/JojqGPJ/bd65cb8a54b90840bae01b834923f89d">
+              埃式篩法篩出所有的質數</a> by Bestian Tang (<a href="https://codepen.io/bestianT">@bestianT</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+          </div>
         </div>
-        <CodeEditor />
+        <!-- <CodeEditor /> -->
       </div>
 
       <div class="section-card lesson-plan-section">
@@ -46,10 +65,10 @@
         <div class="learning-objectives">
           <h3>🧠 學習目標</h3>
           <ul>
-            <li>認識什麼是質數與合數</li>
-            <li>知道如何用「埃拉托色尼篩法」找出質數</li>
-            <li>培養邏輯思考能力與「效率程式思維」</li>
-            <li>操作互動遊戲，親自劃掉非質數，留下質數！</li>
+            <li class="text-left">認識什麼是質數與合數</li>
+            <li class="text-left">知道如何用「埃拉托色尼篩法」找出質數</li>
+            <li class="text-left">培養邏輯思考能力與「效率程式思維」</li>
+            <li class="text-left">操作互動遊戲，親自劃掉非質數，留下質數！</li>
           </ul>
         </div>
 
@@ -84,7 +103,7 @@
             <div class="table-row">
               <div class="time">25–30分鐘</div>
               <div class="activity">回顧與反思：「你覺得哪裡最神奇？這樣做為什麼比較快？」</div>
-              <div class="focus">建立「ii &lt;= max」和「j = ii」的效率思維</div>
+              <div class="focus">建立效率思維</div>
             </div>
           </div>
         </div>
@@ -99,7 +118,7 @@
         <div class="code-comparison">
           <div class="code-block">
             <h3>寫法1：一個一個試除法</h3>
-            <pre><code>var isPrime = x > 1;
+            <pre><code class="language-javascript text-left">var isPrime = x > 1;
 this.primes.forEach((p) => {
   if (x % p == 0) {
     isPrime = false
@@ -113,7 +132,7 @@ this.primes.forEach((p) => {
 
           <div class="code-block">
             <h3>寫法2：埃拉托色尼篩法</h3>
-            <pre><code>primenumbers() {
+            <pre><code class="language-javascript text-left">primeNumbers() {
   const max = Math.max(...this.numbers);
   const sieve = Array(max + 1).fill(true);
   sieve[0] = sieve[1] = false;
@@ -171,73 +190,78 @@ this.primes.forEach((p) => {
 </template>
 
 <script>
-import CodeEditor from '@/components/CodeEditor.vue';
+// import CodeEditor from '@/components/CodeEditor.vue';
 
 export default {
   name: 'PrimeFinding',
   components: {
-    CodeEditor
+    // CodeEditor
   },
   data() {
     return {
-      max: 30,
+      max: 40,
       sieve: [],
       current: 2,
+      currentMultiple: 0,
       done: false
     };
   },
   mounted() {
     this.initGame();
+    this.loadCodePenScript();
   },
   methods: {
     initGame() {
       this.sieve = Array(this.max + 1).fill(true);
       this.sieve[0] = this.sieve[1] = false;
       this.current = 2;
+      this.currentMultiple = this.current * this.current;
       this.done = false;
-      this.draw();
     },
     resetGame() {
       this.initGame();
     },
     nextStep() {
+      // 如果當前數字不是質數，跳過它並找到下一個質數
       while (this.current <= this.max && !this.sieve[this.current]) {
         this.current++;
+        this.currentMultiple = this.current * this.current;
       }
-  
+
       if (this.current * this.current > this.max) {
         this.done = true;
         return;
       }
-  
-      for (let j = this.current * this.current; j <= this.max; j += this.current) {
-        this.sieve[j] = false;
+
+      // 找到當前質數的下一個需要標記的倍數（跳過已經標記的）
+      while (this.currentMultiple <= this.max && !this.sieve[this.currentMultiple]) {
+        this.currentMultiple += this.current;
       }
-  
-      this.current++;
-      this.draw();
-    },
-    draw() {
-      const ctx = this.$refs.canvas.getContext('2d');
-      ctx.clearRect(0, 0, 620, 100);
-  
-      for (let i = 1; i <= this.max; i++) {
-        ctx.beginPath();
-        ctx.rect((i - 1) * 20, 20, 20, 20);
-  
-        if (!this.sieve[i]) {
-          ctx.fillStyle = '#f87171'; // 非質數 - 紅色
-        } else {
-          ctx.fillStyle = '#4ade80'; // 質數 - 綠色
+
+      if (this.currentMultiple <= this.max) {
+        // 標記這個倍數為非質數
+        const newSieve = [...this.sieve];
+        newSieve[this.currentMultiple] = false;
+        this.sieve = newSieve;
+        
+        // 移動到下一個倍數
+        this.currentMultiple += this.current;
+      } else {
+        // 當前質數的所有倍數都已處理完，移動到下一個數字
+        this.current++;
+        // 自動跳過所有非質數，直接找到下一個質數
+        while (this.current <= this.max && !this.sieve[this.current]) {
+          this.current++;
         }
-  
-        ctx.fill();
-        ctx.stroke();
-  
-        ctx.fillStyle = '#000';
-        ctx.font = '12px sans-serif';
-        ctx.fillText(i, (i - 1) * 20 + 5, 35);
+        this.currentMultiple = this.current * this.current;
       }
+    },
+    loadCodePenScript() {
+      // 載入 CodePen 嵌入腳本
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://public.codepenassets.com/embed/index.js';
+      document.body.appendChild(script);
     }
   }
 };
@@ -303,13 +327,49 @@ export default {
   align-items: center;
 }
 
-.canvas {
+.numbers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
   width: 100%;
   max-width: 800px;
-  height: auto;
+  padding: 16px;
+  margin: 0 auto;
+  background: #f8fafc;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #f8fafc;
+}
+
+.number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.prime {
+  background-color: #4ade80; /* 質數 - 綠色 */
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.not-prime {
+  background-color: #f87171; /* 非質數 - 紅色 */
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: line-through;
+}
+
+.current {
+  background-color: #3b82f6;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
 }
 
 .controls {
@@ -775,6 +835,10 @@ export default {
   content: "👉";
   position: absolute;
   left: 0;
+}
+
+.text-left {
+  text-align: left !important;
 }
 </style>
   
