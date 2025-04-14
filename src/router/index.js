@@ -24,6 +24,8 @@ import One8 from '@/views/One8'
 import One9 from '@/views/One9'
 import Source from '@/views/Source'
 import Link from '@/views/Link'
+import PrimeFinding from '@/views/game/PrimeFinding'
+import Resources from '@/views/Resources'
 // import Login from '@/views/Login'
 // import Chat from '@/components/Chat'
 import Tools from '@/views/Tools'
@@ -185,6 +187,16 @@ export default new VueRouter({
       path: '/link',
       name: '友站連結',
       component: Link
+    },
+    {
+      path: '/resources',
+      name: '資源庫',
+      component: Resources
+    },
+    {
+      path: '/game',
+      name: '質數找找樂',
+      component: PrimeFinding
     }
   ]
 })
