@@ -56,7 +56,7 @@ export default new VueRouter({
     },
     {
       path: '/climbing',
-      name: '爬梯子',
+      name: '數學診療室',
       component: Climbing
     },
     /* {
