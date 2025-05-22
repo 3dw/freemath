@@ -2,12 +2,12 @@
 .hello
   h3.ui.header {{sify('數學診療室')}}
 
-  .ui.success.message {{sify('從一個單元開始，問答5個題目，即可進階到下一個單元。\n如果答錯，則會降低難度。並會協助您找到先備知識，以「倒溯法」補強。')}}
+  .ui.success.message {{sify('從一個單元開始，問答3~5個題目，即可進階到下一個單元。\n如果答錯，則會降低難度。並會協助您找到先備知識，以「倒溯法」補強。\n請您準備好紙筆，以便進行計算，和記錄您的學習過程。')}}
   
   // 單元選擇
   select.ui.dropdown(@change="onSelectUnit", v-model="selectedUnit")
     option(:value="null", selected) {{sify('選擇一個單元')}}
-    option(v-for="unit in units", :value="unit.id" :key="unit.id") {{ unit.n }}
+    option(v-for="unit in filteredUnits", :value="unit.id" :key="unit.id") {{ unit.n }}
   
   .ui.divider
   
@@ -17,7 +17,9 @@
       .eight.wide.column
         .ui.segment
           h4.ui.orange.header 當前單元
-          p {{ currentUnit.n }} - {{ currentUnit.d }}
+          p 
+            b {{ currentUnit.n }}
+            |  - {{ currentUnit.d }}
           p 難度等級: {{ currentDifficulty }}
           a.ui.basic.orange.button(:href="currentUnit.url", target="_blank")
             img(:src="'https://www.google.com/s2/favicons?domain='+currentUnit.url", :alt="sify(currentUnit.n)")
@@ -67,6 +69,12 @@
   
   // 後續知識提示
   .ui.segment(v-if="showPostrequisites")
+    .ui.success.message.donate-us
+      a.ui.icon.header(href="https://www.alearn.org.tw/donate", target="_blank")
+        i.lightbulb.icon
+        | {{sify('邀請您捐贈「自由數學」專案，支持我們的開發者、伺服器和AI服務。')}}
+      .description
+        | {{sify('我們是非營利組織，致力於提供免費優質的學習資源。您的捐款將用於維護伺服器、更新教材、和開發更多功能。')}}
     h4.ui.blue.header {{sify('您可以進展到後續知識了')}}
     .ui.list
       .item(v-for="u in postrequisiteUnits" :key="u.id")
@@ -85,6 +93,18 @@ export default {
   data() {
     return {
       backs: backs,
+      unitBlacklist: [
+        '分類',
+        '誰比較多',
+        '認識數字',
+        '數氣球',
+        '百數表',
+        '湊十釣魚',
+        '分數影片',
+        '加法影片',
+        '減法影片',
+        '乘法影片'
+      ],
       selectedUnit: null,
       currentDifficulty: 3,
       currentQuiz: null,
@@ -96,6 +116,9 @@ export default {
     }
   },
   computed: {
+    filteredUnits() {
+      return this.units.filter(unit => !this.unitBlacklist.includes(unit.n))
+    },
     currentUnit() {
       return this.units.find(unit => unit.id === this.selectedUnit) || null
     },
@@ -106,7 +129,7 @@ export default {
         this.backs.some(back => 
           back.to.includes(selectedUnitName) && back.from === u.n
         )
-      )
+      ).filter(u => !this.unitBlacklist.includes(u.n))
     },
     postrequisiteUnits() {
       if (!this.currentUnit) return []
@@ -115,7 +138,7 @@ export default {
         this.backs.some(back => 
           back.from === selectedUnitName && back.to.includes(u.n)
         )
-      )
+      ).filter(u => !this.unitBlacklist.includes(u.n))
     }
   },
   methods: {
@@ -151,7 +174,7 @@ export default {
       })
       try {
         const response = await fetch(
-          `https://freemath-backend.alearn13994229.workers.dev/api/makeQuiz/${encodeURIComponent(this.currentUnit.n)}/${this.currentDifficulty}`
+          `https://freemath-backend.alearn13994229.workers.dev/api/makeQuiz/${encodeURIComponent(this.currentUnit.n + ': ' + this.currentUnit.d)}/${this.currentDifficulty}`
         )
         const data = await response.json()
         this.currentQuiz = JSON.parse(data)
@@ -299,5 +322,10 @@ export default {
 .ui.message.blue {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.ui.message {
+  font-size: 16px;
+  white-space: pre-wrap;
 }
 </style> 
