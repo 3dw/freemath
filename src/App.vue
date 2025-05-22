@@ -8,12 +8,9 @@
     router-link.item(to='/' exact='')
       i.home.icon
       | {{ sify('首頁') }}
-    router-link.item(to='/trace' exact='')
-      i.sort.amount.ui.icon
-      | {{ sify('倒溯與前推') }}
-    router-link.item(to='/ai' exact='')
-      i.question.icon
-      | {{ sify('AI家教') }}
+    router-link.item(to='/climbing' exact='')
+      i.chart.line.icon
+      | {{ sify('數學診療室') }}
     .right.menu
       button.item(@click="copyLink()")
         i.linkify.icon
@@ -26,9 +23,9 @@
     router-link.item(to='/', exact='', name="home")
       i.home.icon
       | {{ sify('首頁') }}
-    router-link.item(to='/trace', exact='', name="trace")
-      i.sort.amount.icon
-      | {{ sify('倒溯與前推') }}
+    router-link.item(to='/climbing' exact='')
+      i.chart.line.icon
+      | {{ sify('數學診療室') }}
     router-link.item(to='/maps', exact='', name="trace")
       i.map.icon
       | {{ sify('學習地圖') }}
