@@ -1,6 +1,8 @@
 <template lang="pug">
 .hello
-  h3.ui.header {{sify('數學爬坡學習')}}
+  h3.ui.header {{sify('數學診療室')}}
+
+  .ui.success.message {{sify('從一個單元開始，問答5個題目，即可進階到下一個單元。\n如果答錯，則會降低難度。並會協助您找到先備知識，以「倒溯法」補強。')}}
   
   // 單元選擇
   select.ui.dropdown(@change="onSelectUnit", v-model="selectedUnit")
@@ -12,23 +14,38 @@
   // 當前單元資訊
   .ui.grid(v-if="currentUnit")
     .ui.stackable.row
-      .sixteen.wide.column
+      .eight.wide.column
         .ui.segment
           h4.ui.orange.header 當前單元
           p {{ currentUnit.n }} - {{ currentUnit.d }}
           p 難度等級: {{ currentDifficulty }}
+          a.ui.basic.orange.button(:href="currentUnit.url", target="_blank")
+            img(:src="'https://www.google.com/s2/favicons?domain='+currentUnit.url", :alt="sify(currentUnit.n)")
+            | {{ sify('看' + currentUnit.n + '教材') }}
+      .eight.wide.column
+        .ui.segment
+          h4.ui.orange.header 先備知識
+          button.ui.basic.purple.button(v-for="u in prerequisiteUnits" :key="u.id", @click="switchToUnit(u.id)")
+            | {{ u.n }}
   
   // 題目顯示區域
-  .ui.segment(v-if="currentQuiz")
-    h4.ui.header 
-      | {{ currentQuiz.q }}
-    button.ui.icon.button(@click="toggleHint" :class="{ 'yellow': showHint }")
-      i.lightbulb.icon
-      span {{sify('看提示')}}
-    .ui.message.blue(v-if="showHint && currentQuiz.hint")
-      p {{ currentQuiz.hint }}
-    .ui.buttons.vertical.fluid
+  .ui.segment(style="min-height: 300px;")
+    .ui.active.dimmer(v-if="currentUnit && !currentQuiz")
+      .ui.text.loader {{sify('載入中...')}}
+    .ui.segment(v-if="!currentUnit")
+      h4.ui.header 
+        | {{ sify('先請選擇一個單元，題目會隨著難度提升而增加') }}
+    div(v-if="currentQuiz")
+      h4.ui.header 
+        | {{ currentQuiz.q }}
+      button.ui.icon.button(@click="toggleHint" :class="{ 'yellow': showHint }")
+        i.lightbulb.icon
+        span {{sify('看提示')}}
+      .ui.message.blue(v-if="showHint && currentQuiz.hint")
+        p {{ currentQuiz.hint }}
+      .ui.divider
       button.ui.button(
+        style="margin: 10px",
         v-for="(ans, index) in allAnswers",
         :key="index",
         @click="checkAnswer(ans)",
