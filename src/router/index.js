@@ -32,6 +32,7 @@ import Tools from '@/views/Tools'
 import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
 import AI from '@/views/AI'
+import Climbing from '@/views/Climbing'
 
 Vue.use(VueRouter)
 
@@ -52,6 +53,11 @@ export default new VueRouter({
       path: '/trace',
       name: '倒溯與前推',
       component: TraceBack
+    },
+    {
+      path: '/climbing',
+      name: '爬梯子',
+      component: Climbing
     },
     /* {
       path: '/login',
