@@ -325,6 +325,7 @@ export default {
 }
 
 .ui.message {
+  text-align: left;
   font-size: 16px;
   white-space: pre-wrap;
 }
