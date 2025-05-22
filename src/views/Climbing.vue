@@ -29,32 +29,37 @@
             | {{ u.n }}
   
   // 題目顯示區域
-  .ui.segment(style="min-height: 300px;")
+  .ui.segment(style="min-height: 300px;", v-show="currentUnit && !showPrerequisites && !showPostrequisites")
     .ui.active.dimmer(v-if="currentUnit && !currentQuiz")
       .ui.text.loader {{sify('載入中...')}}
     .ui.segment(v-if="!currentUnit")
       h4.ui.header 
         | {{ sify('先請選擇一個單元，題目會隨著難度提升而增加') }}
     div(v-if="currentQuiz")
+      .ui.success.message(v-if="showResult && currentQuiz.correct_ans === currentQuiz.correct_ans") {{sify('答對了！真棒！下一題載入中...')}}
+      .ui.error.message(v-if="showResult && currentQuiz.correct_ans !== currentQuiz.correct_ans") {{sify('答錯了！再接再勵。下一題載入中...')}}
       h4.ui.header 
-        | {{ currentQuiz.q }}
-      button.ui.icon.button(@click="toggleHint" :class="{ 'yellow': showHint }")
+        | {{ tify(currentQuiz.q) }}
+      button.ui.icon.button(@click="toggleHint" :class="{ 'yellow': showHint, 'disabled': showResult }")
         i.lightbulb.icon
         span {{sify('看提示')}}
       .ui.message.blue(v-if="showHint && currentQuiz.hint")
-        p {{ currentQuiz.hint }}
+        p {{ tify(currentQuiz.hint) }}
       .ui.divider
       button.ui.button(
         style="margin: 10px",
         v-for="(ans, index) in allAnswers",
         :key="index",
         @click="checkAnswer(ans)",
-        :class="{ 'green': showResult && ans === currentQuiz.correct_ans, 'red': showResult && ans !== currentQuiz.correct_ans}"
+        :class="{'green': showResult && ans === currentQuiz.correct_ans, 'red': showResult && ans !== currentQuiz.correct_ans, 'disabled': showResult }"
       ) {{ ans }}
   
   // 先備知識提示
   .ui.segment(v-if="showPrerequisites")
-    h4.ui.purple.header {{sify('您需要先建立先備知識')}}
+    h4.ui.purple.header
+      span {{sify('您需要先建立先備知識以學習')}}
+      span {{currentUnit.n}}
+      span {{sify('。請選擇以下單元之一')}}
     .ui.list
       .item(v-for="u in prerequisiteUnits" :key="u.id")
         button.ui.basic.purple.button(@click="switchToUnit(u.id)")
@@ -71,7 +76,7 @@
 </template>
 
 <script>
-import { sify } from 'chinese-conv'
+import { sify, tify } from 'chinese-conv'
 import { backs } from '../data/backs.js'
 
 export default {
@@ -114,6 +119,9 @@ export default {
     }
   },
   methods: {
+    tify(t) {
+      return tify(t)
+    },
     sify(t) {
       if (this.si) {
         return sify(t)
@@ -148,9 +156,9 @@ export default {
         const data = await response.json()
         this.currentQuiz = JSON.parse(data)
         console.log('獲取到的題目:', {
-          題目: this.currentQuiz.q,
-          正確答案: this.currentQuiz.correct_ans,
-          提示: this.currentQuiz.hint
+          題目: tify(this.currentQuiz.q),
+          正確答案: tify(this.currentQuiz.correct_ans),
+          提示: tify(this.currentQuiz.hint)
         })
         // 將所有答案混合並打亂順序
         this.allAnswers = [this.currentQuiz.correct_ans, ...this.currentQuiz.wrong_ans]
@@ -160,6 +168,7 @@ export default {
         this.showHint = false
       } catch (error) {
         console.error('獲取題目時發生錯誤:', error)
+        window.alert('獲取題目時發生錯誤，請重新整理頁面，並稍後再試。')
       }
     },
     shuffleArray(array) {
@@ -188,7 +197,7 @@ export default {
           console.log('難度提升至:', this.currentDifficulty)
           setTimeout(() => {
             this.fetchQuiz()
-          }, 1500)
+          }, 500)
         } else {
           console.log('達到最高難度，顯示後續知識')
           // 達到最高難度，顯示後續知識
@@ -202,7 +211,7 @@ export default {
           console.log('難度降低至:', this.currentDifficulty)
           setTimeout(() => {
             this.fetchQuiz()
-          }, 1500)
+          }, 500)
         } else {
           console.log('達到最低難度，顯示先備知識')
           // 達到最低難度，顯示先備知識
