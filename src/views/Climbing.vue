@@ -38,8 +38,8 @@
       h4.ui.header 
         | {{ sify('先請選擇一個單元，題目會隨著難度提升而增加') }}
     div(v-if="currentQuiz")
-      .ui.success.message(v-if="showResult && currentQuiz.correct_ans === currentQuiz.correct_ans") {{sify('答對了！真棒！下一題載入中...')}}
-      .ui.error.message(v-if="showResult && currentQuiz.correct_ans !== currentQuiz.correct_ans") {{sify('答錯了！再接再勵。下一題載入中...')}}
+      .ui.success.message(v-if="showResult && currentQuiz.correct_ans === userAnswer") {{sify('答對了！真棒！下一題載入中...')}}
+      .ui.error.message(v-if="showResult && currentQuiz.correct_ans !== userAnswer") {{sify('答錯了！再接再勵。下一題載入中...')}}
       h4.ui.header 
         | {{ tify(currentQuiz.q) }}
       button.ui.icon.button(@click="toggleHint" :class="{ 'yellow': showHint, 'disabled': showResult }")
@@ -108,6 +108,7 @@ export default {
       selectedUnit: null,
       currentDifficulty: 3,
       currentQuiz: null,
+      userAnswer: null,
       showResult: false,
       showPrerequisites: false,
       showPostrequisites: false,
@@ -211,6 +212,8 @@ export default {
       })
       this.showResult = true
       this.showHint = false
+
+      this.userAnswer = answer
       
       if (answer === this.currentQuiz.correct_ans) {
         console.log('答對了！')
