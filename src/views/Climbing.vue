@@ -1,6 +1,6 @@
 <template lang="pug">
 .hello
-  h3.ui.header {{sify('數學診療室')}}
+  h3.ui.header {{sify('數學診療室(Beta版)')}}
 
   .ui.success.message {{sify('從一個單元開始，回答3~5個題目，即可進階到下一個單元。\n如果答錯，則會降低難度。並會協助您找到先備知識，以「倒溯法」補強。\n請您準備好紙筆，以便進行計算，和記錄您的學習過程。')}}
   
