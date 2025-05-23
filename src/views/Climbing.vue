@@ -20,7 +20,8 @@
           p 
             b {{ currentUnit.n }}
             |  - {{ currentUnit.d }}
-          p 難度等級: {{ currentDifficulty }}
+          p 難度等級:
+            b {{ currentDifficulty }}
           a.ui.basic.orange.button(:href="currentUnit.url", target="_blank")
             img(:src="'https://www.google.com/s2/favicons?domain='+currentUnit.url", :alt="sify(currentUnit.n)")
             | {{ sify('看' + currentUnit.n + '教材') }}
