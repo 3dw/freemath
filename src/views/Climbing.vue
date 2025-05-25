@@ -104,7 +104,8 @@ export default {
         '分數影片',
         '加法影片',
         '減法影片',
-        '乘法影片'
+        '乘法影片',
+        '除法直式的意涵'
       ],
       selectedUnit: null,
       currentDifficulty: 3,
