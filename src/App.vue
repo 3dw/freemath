@@ -278,6 +278,11 @@
           event_label: 'from:' + from.path + ' to:' + to.path,
           value: 'from:' + from.path + ' to:' + to.path
         })
+        // 捲動到頁面頂部
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
       }
     }
   }

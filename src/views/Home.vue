@@ -26,7 +26,7 @@
       .column
         router-link(to = "/one1") 
           i.users.icon
-          | {{ sify('一、倒溯法')}}
+          | {{ sify('一、倒溯法(PAUSE)')}}
       .column
         router-link(to = "/one2") 
           i.users.icon
