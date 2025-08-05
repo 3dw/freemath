@@ -110,7 +110,7 @@
     .ui.buttons
       a.ui.large.green.button(href="https://www.alearn.org.tw/donate", target="_blank", rel="noopener noreferrer")
         i.ui.money.icon
-        | {{ sify('線上捐款') }}
+        | {{ sify('立即捐款') }}
     p.small.text.gray {{ sify('您的捐款將用於教材研發與網站維護') }}
 </template>
 
