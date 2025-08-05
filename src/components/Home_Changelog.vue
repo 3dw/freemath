@@ -34,4 +34,8 @@ export default {
   color: #0093ff !important;
 }
 
+#changelogs .sub.header {
+  text-align: left;
+}
+
 </style>
