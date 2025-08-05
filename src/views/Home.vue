@@ -21,7 +21,7 @@
         img.tiny(src="../assets/cc-by-sa.png")
         h1 
         a.big.link(@click="show1 = !show1", title="請按此")     
-          h1 {{ sify('給家長：一對一系列')}}
+          h1 {{ sify('給家長和老師：一對一系列')}}
             i.ui.chevron.up.icon(v-if="show1")
             i.ui.chevron.down.icon(v-else)
         
