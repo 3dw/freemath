@@ -37,6 +37,12 @@
             | {{ sify('湊12') }}
           .description
            | {{ sify('四張牌，加減乘除湊12，可以和別人連線一起解謎') }}
+        .ui.item
+          router-link(to='/coins' exact='')
+            i.circle.icon
+            | {{ sify('硬幣排列') }}
+          .description
+           | {{ sify('拖拽硬幣進行排列，支援多種面額') }}
 </template>
 
 <script>

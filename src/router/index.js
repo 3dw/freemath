@@ -33,6 +33,7 @@ import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
 import AI from '@/views/AI'
 import Climbing from '@/views/Climbing'
+import CoinsView from '@/views/CoinsView'
 
 Vue.use(VueRouter)
 
@@ -203,6 +204,11 @@ export default new VueRouter({
       path: '/prime-finding',
       name: '質數找找樂',
       component: PrimeFinding
+    },
+    {
+      path: '/coins',
+      name: '硬幣排列',
+      component: CoinsView
     }
   ]
 })
