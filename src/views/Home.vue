@@ -4,12 +4,15 @@
     Tips(:si="si")
   .ui.divider
   
-  iframe#podcast(width="100%" height="340",
-    src="https://www.youtube.com/embed/BTB5DdKOIHw?si=As0xp6f4dlw&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+  iframe#podcast(width="100%" height="400",
+    :src="homePageSrcURL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
   
   .ui.segment.container.center.aligned#changelog-container
     changelog(:changelogs = "changelogs")
   
+  //- 加入 g0v.social的最近三則標記為 #自由數學 的貼文
+  HomeSocialPosts(:si="si")
+
   .ui.grid.container
     .ui.row
       .column.center.aligned
@@ -116,13 +119,16 @@
 import {sify} from 'chinese-conv'
 import Tips from '@/components/Home_Tips.vue'
 import Changelog from '@/components/Home_Changelog.vue'
+import HomeSocialPosts from '@/components/Home_SocialPosts.vue'
+import { homePageSrcURL } from '@/data/homePage.js'
 
 export default {
   name: 'Home',
   props: ['units', 'share', 'si', 'changelogs'],
   components: {
     Tips,
-    Changelog
+    Changelog,
+    HomeSocialPosts
   },
   data () {
     return {
@@ -131,7 +137,8 @@ export default {
       useWiki: false,
       useAge: false,
       age: 9,
-      show1: true
+      show1: true,
+      homePageSrcURL: homePageSrcURL
     }
   },
   methods: {
