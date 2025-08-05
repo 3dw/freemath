@@ -3,16 +3,19 @@
   .ui.container
     h1.ui.header {{ sify('硬幣排列工具') }}
     
-    .coins-toolbar
-        .coin-item(
-      v-for="coin in availableCoins"
-      :key="coin.id"
-      :draggable="true"
-      @dragstart="onDragStart($event, coin)"
-      @touchstart="onTouchStart($event, coin, 'toolbar')"
-      :style="{ backgroundColor: coin.color, width: coin.size + 'px', height: coin.size + 'px' }"
+    .coins-toolbar(
+      @dragover.prevent
+      @drop="onToolbarDrop($event)"
     )
-            span.coin-value ${{ coin.value }}
+      .coin-item(
+        v-for="coin in availableCoins"
+        :key="coin.id"
+        :draggable="true"
+        @dragstart="onDragStart($event, coin)"
+        @touchstart="onTouchStart($event, coin, 'toolbar')"
+        :style="{ backgroundColor: coin.color, width: coin.size + 'px', height: coin.size + 'px' }"
+      )
+        span.coin-value ${{ coin.value }}
     
     .drop-zone(
       @dragover.prevent
@@ -35,10 +38,10 @@
           span.coin-value ${{ coin.value }}
       
       .drop-zone-text(v-if="placedCoins.length === 0")
-        p {{ sify('將硬幣拖拽到此處進行排列') }}
+        p {{ sify('將硬幣拖拽到此處') }}
     
     .controls
-      button.ui.button.primary(@click="clearAll") {{ sify('清除所有') }}
+      button.ui.button.primary(@click="clearAll") {{ sify('清除全部') }}
 
     <!-- 浮動硬幣（觸控拖曳時顯示） -->
     .placed-coin(
@@ -98,6 +101,8 @@ export default {
       console.log('Drop event:', event)
       event.preventDefault()
       event.stopPropagation()
+      
+      // 拖曳到排列區
       const rect = event.currentTarget.getBoundingClientRect()
       const coinSize = this.draggedCoin.size || 50
       const x = event.clientX - rect.left - coinSize / 2
@@ -118,6 +123,19 @@ export default {
         })
         this.draggedCoin = null
       }
+    },
+    // 工具列拖曳處理
+    onToolbarDrop(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      // 如果是已放置的硬幣拖曳到工具列，刪除它
+      if (this.draggedIndex !== null) {
+        this.placedCoins.splice(this.draggedIndex, 1);
+        this.$forceUpdate();
+      }
+      this.draggedCoin = null;
+      this.draggedIndex = null;
     },
     // 觸控拖曳
     onTouchStart(e, coin, type, index) {
@@ -160,28 +178,48 @@ export default {
     },
     onTouchEnd(e) {
       if (!this.touchDragging || !this.touchDragCoin) return;
-      const dropZone = this.$refs.dropZone;
-      const rect = dropZone.getBoundingClientRect();
       const touch = (e.changedTouches && e.changedTouches[0]) || (e.touches && e.touches[0]);
+      
+      // 檢查是否拖曳到工具列
+      const toolbar = this.$el.querySelector('.coins-toolbar');
+      const toolbarRect = toolbar.getBoundingClientRect();
+      
       if (
-        touch.clientX >= rect.left &&
-        touch.clientX <= rect.right &&
-        touch.clientY >= rect.top &&
-        touch.clientY <= rect.bottom
+        touch.clientX >= toolbarRect.left &&
+        touch.clientX <= toolbarRect.right &&
+        touch.clientY >= toolbarRect.top &&
+        touch.clientY <= toolbarRect.bottom
       ) {
-        // 轉換回相對於 drop-zone 的位置
-        const coinSize = this.touchDragCoin.size || 50;
-        const x = touch.clientX - rect.left - coinSize / 2;
-        const y = touch.clientY - rect.top - coinSize / 2;
-        const finalCoin = { ...this.touchDragCoin };
-        finalCoin.x = Math.max(0, Math.min(x, rect.width - coinSize));
-        finalCoin.y = Math.max(0, Math.min(y, rect.height - coinSize));
-        
+        // 拖曳到工具列，刪除硬幣
         if (this.touchDragIndex !== null) {
           this.placedCoins.splice(this.touchDragIndex, 1);
+          this.$forceUpdate(); // 強制更新視圖
         }
-        this.placedCoins.push(finalCoin);
+      } else {
+        // 檢查是否拖曳到排列區
+        const dropZone = this.$refs.dropZone;
+        const rect = dropZone.getBoundingClientRect();
+        if (
+          touch.clientX >= rect.left &&
+          touch.clientX <= rect.right &&
+          touch.clientY >= rect.top &&
+          touch.clientY <= rect.bottom
+        ) {
+          // 轉換回相對於 drop-zone 的位置
+          const coinSize = this.touchDragCoin.size || 50;
+          const x = touch.clientX - rect.left - coinSize / 2;
+          const y = touch.clientY - rect.top - coinSize / 2;
+          const finalCoin = { ...this.touchDragCoin };
+          finalCoin.x = Math.max(0, Math.min(x, rect.width - coinSize));
+          finalCoin.y = Math.max(0, Math.min(y, rect.height - coinSize));
+          
+          if (this.touchDragIndex !== null) {
+            this.placedCoins.splice(this.touchDragIndex, 1);
+          }
+          this.placedCoins.push(finalCoin);
+        }
       }
+      
       this.touchDragging = false;
       this.touchDragCoin = null;
       this.touchDragIndex = null;
@@ -261,7 +299,7 @@ export default {
 }
 
 .drop-zone {
-  min-height: 400px;
+  min-height: 350px;
   border: 3px dashed #ccc;
   border-radius: 10px;
   position: relative;
@@ -293,7 +331,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .placed-coin {
