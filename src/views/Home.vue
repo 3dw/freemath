@@ -67,7 +67,7 @@
   .ui.grid.container
     .ui.row
       .column.center.aligned
-        h1 {{ sify('給同學：開放教材')}}
+        h1 {{ sify('給同學：形成性教材')}}
     .ui.stackable.row
       .five.wide.column.center.aligned
         .ui.toggle.checkbox
