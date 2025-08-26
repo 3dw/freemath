@@ -70,7 +70,7 @@
   
   // 後續知識提示
   .ui.segment(v-if="showPostrequisites")
-    .ui.success.message.donate-us
+    .ui.success.message.donate-us(v-if="showDonateMessage")
       a.ui.icon.header(href="https://www.alearn.org.tw/donate", target="_blank")
         i.lightbulb.icon
         | {{sify('邀請您捐贈「自由數學」專案，支持我們的開發者、伺服器和AI服務。')}}
@@ -115,7 +115,8 @@ export default {
       showPrerequisites: false,
       showPostrequisites: false,
       allAnswers: [],
-      showHint: false
+      showHint: false,
+      showDonateMessage: false
     }
   },
   computed: {
@@ -165,6 +166,7 @@ export default {
       this.showPrerequisites = false
       this.showPostrequisites = false
       this.showHint = false
+      this.showDonateMessage = false
       if (this.selectedUnit !== null) {
         await this.fetchQuiz()
       }
@@ -226,11 +228,13 @@ export default {
           setTimeout(() => {
             this.fetchQuiz()
           }, 500)
-        } else {
-          console.log('達到最高難度，顯示後續知識')
-          // 達到最高難度，顯示後續知識
-          this.showPostrequisites = true
-        }
+              } else {
+        console.log('達到最高難度，顯示後續知識')
+        // 達到最高難度，顯示後續知識
+        this.showPostrequisites = true
+        // 1/4 機率顯示捐款邀請
+        this.showDonateMessage = Math.random() < 0.25
+      }
       } else {
         console.log('答錯了！')
         // 答錯降低難度
@@ -253,6 +257,7 @@ export default {
       this.currentDifficulty = 3
       this.showPrerequisites = false
       this.showPostrequisites = false
+      this.showDonateMessage = false
       this.fetchQuiz()
     },
     toggleHint() {
