@@ -1,4 +1,5 @@
 export const changelogs = [
+    {text: '2025-08-26：修正「數學診療室」正簡轉換時的錯字', r: '/climbing'},
     {text: '2025-08-06：加入社群動態，HomePage的影片更新', r: '/'},
     {text: '2025-08-05：加入硬幣排列小工具', r: '/coins'},
     {text: '2025-05-22：新增「數學診療室」功能', r: '/climbing'},
