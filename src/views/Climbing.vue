@@ -42,12 +42,12 @@
       .ui.success.message(v-if="showResult && currentQuiz.correct_ans === userAnswer") {{sify('答對了！真棒！下一題載入中...')}}
       .ui.error.message(v-if="showResult && currentQuiz.correct_ans !== userAnswer") {{sify('答錯了！再接再勵。下一題載入中...')}}
       h4.ui.header 
-        | {{ tify(currentQuiz.q) }}
+        | {{ currentQuiz.q }}
       button.ui.icon.button(@click="toggleHint" :class="{ 'yellow': showHint, 'disabled': showResult }")
         i.lightbulb.icon
         span {{sify('看提示')}}
       .ui.message.blue(v-if="showHint && currentQuiz.hint")
-        p {{ tify(currentQuiz.hint) }}
+        p {{ currentQuiz.hint }}
       .ui.divider
       button.ui.button(
         style="margin: 10px",
