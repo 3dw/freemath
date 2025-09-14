@@ -4,7 +4,7 @@
       <i class="ui question circle icon"></i>
       AI 數學家教
       <div class="left aligned sub header">
-        AI數學家教，可以回答數學問題，也可以解釋數學概念。不過生成式AI的回答，不保證百分之百正確，請自行驗證喔。
+        AI數學家教，可以回答數學問題，也可以解釋數學概念。
       </div>
     </h2>
     <div class="input-section">
@@ -34,7 +34,6 @@
 
 <script>
 import { marked } from 'marked'
-import { tify } from 'chinese-conv'
 
 export default {
   name: 'AI',
@@ -64,7 +63,16 @@ export default {
     formattedResponse() {
       if (!this.response) return ''
       console.log(this.response)
-      const html = marked(tify(this.response))
+      
+      // 先處理 LaTeX 公式，將 \( \) 轉換為 $$ $$
+      let processedText = this.response
+        .replace(/\\\(/g, '$$')
+        .replace(/\\\)/g, '$$')
+        .replace(/\\\[/g, '$$')
+        .replace(/\\\]/g, '$$')
+      
+      // 轉換 markdown
+      const html = marked((processedText))
       
       // 在下一個 tick 重新渲染數學公式
       this.$nextTick(() => {
@@ -87,7 +95,7 @@ export default {
       this.response = ''
       
       try {
-        const response = await fetch('https://freemath-backend.alearn13994229.workers.dev/api/deepseek', {
+        const response = await fetch('https://freemath-backend.alearn13994229.workers.dev/api/ai_tutor', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -97,41 +105,13 @@ export default {
           })
         })
 
-        const reader = response.body.getReader()
-        const decoder = new TextDecoder()
-
-        // let reading = true
-        let tokens = 0
-        while (tokens < 1000) {
-          tokens++
-          const { done, value } = await reader.read()
-          if (done) {
-            continue
-          }
-          let text = decoder.decode(value)
-          console.log(text)
-          
-          // 處理多行 data
-          const lines = text.split('\n')
-          for (const line of lines) {
-            if (!line.trim()) continue
-            
-            if (line === 'data: [DONE]') {
-              continue
-            }
-
-            if (line.startsWith('data:')) {
-              const jsonText = line.replace(/^data:\s*/, '')
-              try {
-                let json = JSON.parse(jsonText)
-                if (json.response) {
-                  this.response += json.response
-                }
-              } catch (e) {
-                console.error('JSON parse error:', e)
-              }
-            }
-          }
+        const data = await response.json()
+        console.log(data)
+        
+        if (data.response) {
+          this.response = data.response
+        } else {
+          this.response = '發生錯誤，請稍後再試。'
         }
       } catch (error) {
         this.response = '發生錯誤，請稍後再試。'
