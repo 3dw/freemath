@@ -103,14 +103,23 @@
       button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
         i.ui.chevron.right.icon
 
+  
+
   .ui.segment.container.center.aligned
     h3.ui.header {{ sify('支持自由數學') }}
     p {{ sify('自由數學致力於提供優質的開源數學教材，您的支持能幫助我們持續發展') }}
-    p {{ sify('捐款支持自由數學，共同推廣數學教育！') }}
-    .ui.buttons
+    p {{ sify('支持自由數學，共同推廣數學教育！') }}
+    .ui.vertical.buttons
       a.ui.large.green.button(href="https://www.alearn.org.tw/donate", target="_blank", rel="noopener noreferrer")
         i.ui.money.icon
         | {{ sify('立即捐款') }}
+      a.ui.large.orange.button(href="https://www.alearn.org.tw/outside-collaboration", target="_blank", rel="noopener noreferrer")
+        i.ui.edit.icon
+        | {{ sify('參與協作') }}
+      a.ui.large.blue.button(href="https://www.github.com/3dw/freemath", target="_blank", rel="noopener noreferrer")
+        i.ui.github.icon
+        | {{ sify('本站原始碼') }}
+    br
     p.small.text.gray {{ sify('您的捐款將用於教材研發與網站維護，協會會開正式的捐款收據。') }}
 </template>
 
