@@ -196,6 +196,16 @@ export default {
   padding-left: 2em;
 }
 
+.response-content :deep(table) {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+.response-content :deep(th), .response-content :deep(td) {
+  border: 1px solid #000;
+  padding: 0.5em;
+  border-collapse: collapse;
+}
 .ui.icon {
   display: inline;
   float: left;
