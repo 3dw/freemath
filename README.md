@@ -24,11 +24,9 @@ yarn lint
 
 ### Build & Deploy
 
-Mac:
-``` sh deploy.sh ```
+```yarn build```
 
-Windows:
-``` bash deploy.sh ```
+``` git push```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
