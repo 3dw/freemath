@@ -27,10 +27,16 @@
           .description
            | {{ sify('生成百數表、乘法表等，還可以隨機挖洞') }}
         .ui.item
-          router-link(to='/card' exact='')
+          a(href='https://bestian.github.io/q-flashcard/#/' target='_blank', rel='noopener norefferer')
             i.external.square.alternate.icon
-            | {{ sify('閃卡') }}
-          .description {{ sify('自動產生算式和答案' )}}
+            | {{ sify('數學閃卡') }}
+          .description {{ sify('可翻牌的數學閃卡，以及挑戰模式' )}}
+        
+        //.ui.item
+        //  router-link(to='/card' exact='')
+        //    i.external.square.alternate.icon
+        //    | {{ sify('閃卡') }}
+        //  .description {{ sify('自動產生算式和答案' )}}
         .ui.item
           router-link(to='/play12' exact='')
             i.gamepad.icon
