@@ -15,7 +15,6 @@
     "chinese-conv": "^1.0.1",
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
-    "firebase": "^8.1.2",
     "marked": "^15.0.7",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "pug": "^3.0.3",
@@ -31,8 +30,7 @@
     "vue-d3-network": "^0.1.28",
     "vue-gtag": "^1.10.0",
     "vue-headful": "^2.1.0",
-    "vue-router": "^3.2.0",
-    "vuefire": "^2.2.5"
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.8",

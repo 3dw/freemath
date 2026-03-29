@@ -8,7 +8,6 @@ import Donate from '@/views/Donate'
 import Vedio from '@/views/Vedio'
 import Faq from '@/views/Faq'
 import Card from '@/views/Card'
-import Play12 from '@/views/Play12'
 import Grid from '@/views/Grid'
 import Quiz from '@/views/Quiz'
 import Outer from '@/views/Outer'
@@ -119,11 +118,6 @@ export default new VueRouter({
       path: '/card',
       name: '閃卡',
       component: Card
-    },
-    {
-      path: '/play12',
-      name: '湊12',
-      component: Play12
     },
     {
       path: '/grid',

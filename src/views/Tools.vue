@@ -38,12 +38,6 @@
         //    | {{ sify('閃卡') }}
         //  .description {{ sify('自動產生算式和答案' )}}
         .ui.item
-          router-link(to='/play12' exact='')
-            i.gamepad.icon
-            | {{ sify('湊12') }}
-          .description
-           | {{ sify('四張牌，加減乘除湊12，可以和別人連線一起解謎') }}
-        .ui.item
           router-link(to='/coins' exact='')
             i.circle.icon
             | {{ sify('硬幣排列') }}

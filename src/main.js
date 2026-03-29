@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import SuiVue from 'semantic-ui-vue'
-import { rtdbPlugin } from 'vuefire'
 import promise from 'es6-promise'
 import autofocus from 'vue-autofocus-directive'
 import VueGtag from 'vue-gtag'
@@ -20,7 +19,6 @@ Vue.use(VueGtag, {
 }, router)
 
 promise.polyfill()
-Vue.use(rtdbPlugin)
 
 require('semantic-ui-css/semantic.css')
 Vue.use(SuiVue)
