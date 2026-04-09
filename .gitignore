@@ -1,7 +1,13 @@
 .DS_Store
 node_modules
-.yarn
-# /dist
+
+# Yarn Berry
+.yarn/*
+!.yarn/releases
+!.yarn/releases/*
+
+# Build output
+dist
 
 
 # local env files

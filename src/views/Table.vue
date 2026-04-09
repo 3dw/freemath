@@ -41,8 +41,10 @@
                         | 完稿(歡迎留言)
                   td
                     a(target='_blank', @click = "op(u.url, u.n, u.pro)" )
-                      // {{(u.p || (u.edit && 50) || 100) + '%'}}
-                      sui-progress(:state="u.edit ? 'warning' : 'success'", :percent='u.p || (u.edit && 50) || 100', :label="(u.p || (u.edit && 50) || 100) + '%'")
+                      .progress-wrap
+                        .progress-bar
+                          .progress-value(:style="{ width: (u.p || (u.edit && 50) || 100) + '%' }")
+                        span.progress-text {{ (u.p || (u.edit && 50) || 100) + '%' }}
           .ui.six.wide.column
             iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSeYKTrcBFtsT0QV0NE5oog624LDffR1AQsxB6Gf9lEY9O9LIg/viewform?embedded=true', width='320', height='1775', frameborder='0', marginheight='0', marginwidth='0') Loading...
     // container END
@@ -99,5 +101,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.progress-wrap {
+  min-width: 140px;
+}
 
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #e8eaed;
+  overflow: hidden;
+}
+
+.progress-value {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #22c55e);
+}
+
+.progress-text {
+  margin-top: 6px;
+  display: block;
+  font-size: 0.9em;
+  color: #374151;
+}
 </style>

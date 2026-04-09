@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Intro from '@/views/Intro'
 import Maps from '@/views/Maps'
 import Table from '@/views/Table'
@@ -34,11 +33,7 @@ import AI from '@/views/AI'
 import Climbing from '@/views/Climbing'
 import CoinsView from '@/views/CoinsView'
 
-Vue.use(VueRouter)
-
-export default new VueRouter({
-  mode: 'history',  // 改為 history 模式
-  routes: [
+const routes = [
     {
       path: '/',
       name: '首頁',
@@ -204,5 +199,19 @@ export default new VueRouter({
       name: '硬幣排列',
       component: CoinsView
     }
-  ]
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 })
+
+router.afterEach((to) => {
+  if (to && to.name) {
+    document.title = `${to.name}@自由數學`
+  } else {
+    document.title = '自由數學'
+  }
+})
+
+export default router

@@ -1,6 +1,5 @@
 <template lang="pug">
 #app
-  vue-headful(:title="$route.name +'@自由數學'")
 
   .ui.top.menu.no-print.thin-only
     button.no-border.ui.item(@click="toggleSidebar")

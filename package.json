@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:cf": "corepack yarn install --immutable && corepack yarn build",
     "lint": "vue-cli-service lint",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
@@ -22,26 +23,25 @@
     "register-service-worker": "^1.7.1",
     "sass-loader": "^10.1.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-vue": "^0.11.0",
     "sitemap-webpack-plugin": "^1.1.1",
-    "vue": "^2.6.11",
-    "vue-autofocus-directive": "^1.0.4",
-    "vue-axios": "^3.2.0",
+    "vue": "^3.5.13",
     "vue-d3-network": "^0.1.28",
-    "vue-gtag": "^1.10.0",
-    "vue-headful": "^2.1.0",
-    "vue-router": "^3.2.0"
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.0",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-pwa": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.5.13",
     "babel-eslint": "^10.1.0",
     "eslint": "7.32.0",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^9.31.0",
     "gh-pages": "^6.1.1",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.106.0"
+  },
+  "packageManager": "yarn@4.13.0"
 }

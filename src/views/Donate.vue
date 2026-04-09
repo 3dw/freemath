@@ -11,7 +11,12 @@
             <h3 v-html="u.demo"></h3>
             <h4>集資目標：$NT{{u.goal}}</h4>
             <h4>現已集資：$NT{{u.current}}</h4>
-            <sui-progress :state="u.edit ? 'warning' : 'success'" :percent="u.p" :label="u.p + '%'" />
+            <div class="progress-wrap">
+              <div class="progress-bar">
+                <div class="progress-value" :style="{ width: u.p + '%' }" />
+              </div>
+              <span class="progress-text">{{ u.p }}%</span>
+            </div>
             <a class="ui green big button" href="http://map.alearn.org.tw/#/donate" target="_blank"><i class="gift icon" />樂捐支持</a>
           </div>
         </div>
@@ -93,5 +98,30 @@ export default {
 <style scoped>
 p {
   text-align: center;
+}
+
+.progress-wrap {
+  width: 100%;
+  max-width: 420px;
+  margin: 12px auto 18px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #e8eaed;
+  overflow: hidden;
+}
+
+.progress-value {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+}
+
+.progress-text {
+  margin-top: 6px;
+  display: block;
+  color: #374151;
 }
 </style>

@@ -9,7 +9,7 @@
         img.q(v-if = "myQ.img", :src="myQ.img")
         h1.ui.header
           | {{myQ.q}}
-          h4.sub.header {{myQ.c}}(等級{{myQ.l}})
+          .sub.header {{myQ.c}}(等級{{myQ.l}})
         .ui.buttons
           a.ui.huge.button(:class="myA == a ? 'green' : 'gray'", v-for='a in myQ.as', @click='myA = a; check(a, myQ.t)')
             | {{a}}
@@ -161,7 +161,7 @@ export default {
     }) */
     window.addEventListener('keyup', this.keyH)
   },
-  beforeDestroy () {
+  beforeUnmount () {
     window.removeEventListener('keyup', this.keyH)
   }
 }

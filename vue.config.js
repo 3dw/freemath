@@ -90,6 +90,7 @@ const paths = [
 
 
 module.exports = {
+  lintOnSave: false,
   transpileDependencies: true,
   runtimeCompiler: true, 
   configureWebpack: {

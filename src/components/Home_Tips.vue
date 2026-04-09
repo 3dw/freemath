@@ -42,7 +42,7 @@ export default {
   mounted() {
     this.interval = setInterval(this.nextTip, 5000) // 設置定時器
   },
-  beforeDestroy() {
+  beforeUnmount() {
     clearInterval(this.interval) // 清除定時器
   },
   methods: {

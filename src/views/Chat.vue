@@ -1,6 +1,6 @@
 <template lang="pug">
   .chats
-    sui-header(size="large") {{ msg }}
+    h2.ui.header {{ msg }}
     .ui.left.aligned.segment.container
       .ui.comments
         h3.ui.dividing.header 歡迎留言

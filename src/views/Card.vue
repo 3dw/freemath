@@ -65,7 +65,7 @@ export default {
     this.reset()
     window.addEventListener('keyup', this.flipCard)
   },
-  beforeDestroy () {
+  beforeUnmount () {
     window.removeEventListener('keyup', this.keyH)
   }
 }
