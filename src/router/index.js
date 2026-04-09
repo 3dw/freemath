@@ -8,7 +8,6 @@ import Donate from '@/views/Donate'
 import Vedio from '@/views/Vedio'
 import Faq from '@/views/Faq'
 import Card from '@/views/Card'
-import Play12 from '@/views/Play12'
 import Grid from '@/views/Grid'
 import Quiz from '@/views/Quiz'
 import Outer from '@/views/Outer'
@@ -24,12 +23,16 @@ import One8 from '@/views/One8'
 import One9 from '@/views/One9'
 import Source from '@/views/Source'
 import Link from '@/views/Link'
+import PrimeFinding from '@/views/game/PrimeFinding'
+import Resources from '@/views/Resources'
 // import Login from '@/views/Login'
 // import Chat from '@/components/Chat'
 import Tools from '@/views/Tools'
 import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
-
+import AI from '@/views/AI'
+import Climbing from '@/views/Climbing'
+import CoinsView from '@/views/CoinsView'
 
 Vue.use(VueRouter)
 
@@ -42,9 +45,19 @@ export default new VueRouter({
       component: Home
     },
     {
+      path: '/ai',
+      name: 'AI',
+      component: AI
+    },
+    {
       path: '/trace',
       name: '倒溯與前推',
       component: TraceBack
+    },
+    {
+      path: '/climbing',
+      name: '數學診療室',
+      component: Climbing
     },
     /* {
       path: '/login',
@@ -105,11 +118,6 @@ export default new VueRouter({
       path: '/card',
       name: '閃卡',
       component: Card
-    },
-    {
-      path: '/play12',
-      name: '湊12',
-      component: Play12
     },
     {
       path: '/grid',
@@ -180,6 +188,21 @@ export default new VueRouter({
       path: '/link',
       name: '友站連結',
       component: Link
+    },
+    {
+      path: '/resources',
+      name: '資源庫',
+      component: Resources
+    },
+    {
+      path: '/prime-finding',
+      name: '質數找找樂',
+      component: PrimeFinding
+    },
+    {
+      path: '/coins',
+      name: '硬幣排列',
+      component: CoinsView
     }
   ]
 })

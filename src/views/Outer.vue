@@ -60,17 +60,11 @@
           .card.mb-4
             .card-body
               h5.card-title 會考考古題
-              h6.card-subtitle.mb-2.text-muted 寫的時候就照著時限(80分鐘)，來測試自己的速度
-              p.card-text 最好寫完還有20分鐘以上可以檢查一遍~
               ul.list-group.list-group-flush
-                li.list-group-item(v-for='(o, idx) in (oldtests || []).slice(0,3)')
-                  a(:href='o.h', target='_blank')
-                    img(:src="'https://www.google.com/s2/favicons?domain=' + o.h")
-                    | {{o.n}}
-                  span.space
-                  a(:href='o.a', target='_blank')
-                    img(:src="'https://www.google.com/s2/favicons?domain=' + o.a")
-                    | 解答
+                li.list-group-item
+                  a(href="https://mp3ktv.huhu.tw/years-test/years-test.htm?fbclid=IwY2xjawGwoY9leHRuA2FlbQIxMQABHZQ5hPWKALZpD95IZYWbpq5tCz-XbQhJRE2nzO4PH0FP5VKKWw9GtyfMKw_aem_exkkBNvEQEPsH7NbOPvBcg", target="_blank")
+                    img(src='https://www.google.com/s2/favicons?domain=https://mp3ktv.huhu.tw/years-test/years-test.htm?fbclid=IwY2xjawGwoY9leHRuA2FlbQIxMQABHZQ5hPWKALZpD95IZYWbpq5tCz-XbQhJRE2nzO4PH0FP5VKKWw9GtyfMKw_aem_exkkBNvEQEPsH7NbOPvBcg')
+                    | 國中會考考古題(阿超自編教學影片)
         .col-md-6.col-lg-4
           .card.mb-4
             .card-body

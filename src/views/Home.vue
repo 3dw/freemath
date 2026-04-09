@@ -4,12 +4,15 @@
     Tips(:si="si")
   .ui.divider
   
-  iframe#podcast(width="100%" height="340",
-    src="https://www.youtube.com/embed/BTB5DdKOIHw?si=As0xp6f4dlw&list=PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+  iframe#podcast(width="100%" height="400",
+    :src="homePageSrcURL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
   
   .ui.segment.container.center.aligned#changelog-container
     changelog(:changelogs = "changelogs")
   
+  //- 加入 g0v.social的最近三則標記為 #自由數學 的貼文
+  HomeSocialPosts(:si="si")
+
   .ui.grid.container
     .ui.row
       .column.center.aligned
@@ -18,7 +21,7 @@
         img.tiny(src="../assets/cc-by-sa.png")
         h1 
         a.big.link(@click="show1 = !show1", title="請按此")     
-          h1 {{ sify('給家長：一對一系列')}}
+          h1 {{ sify('給家長和老師：一對一系列')}}
             i.ui.chevron.up.icon(v-if="show1")
             i.ui.chevron.down.icon(v-else)
         
@@ -26,7 +29,7 @@
       .column
         router-link(to = "/one1") 
           i.users.icon
-          | {{ sify('一、倒溯法')}}
+          | {{ sify('一、倒溯法(PAUSE)')}}
       .column
         router-link(to = "/one2") 
           i.users.icon
@@ -64,7 +67,7 @@
   .ui.grid.container
     .ui.row
       .column.center.aligned
-        h1 {{ sify('給同學：開放教材')}}
+        h1 {{ sify('給同學：形成性教材')}}
     .ui.stackable.row
       .five.wide.column.center.aligned
         .ui.toggle.checkbox
@@ -100,6 +103,24 @@
       button.ui.large.green.button(@click="showMaterials = true; useAge = false") 按此看更多
         i.ui.chevron.right.icon
 
+  
+
+  .ui.segment.container.center.aligned
+    h3.ui.header {{ sify('支持自由數學') }}
+    p {{ sify('自由數學致力於提供優質的開源數學教材，您的支持能幫助我們持續發展') }}
+    p {{ sify('支持自由數學，共同推廣數學教育！') }}
+    .ui.vertical.buttons
+      a.ui.large.green.button(href="https://www.alearn.org.tw/donate", target="_blank", rel="noopener noreferrer")
+        i.ui.money.icon
+        | {{ sify('立即捐款') }}
+      a.ui.large.orange.button(href="https://www.alearn.org.tw/outside-collaboration", target="_blank", rel="noopener noreferrer")
+        i.ui.edit.icon
+        | {{ sify('參與協作') }}
+      a.ui.large.blue.button(href="https://www.github.com/3dw/freemath", target="_blank", rel="noopener noreferrer")
+        i.ui.github.icon
+        | {{ sify('本站原始碼') }}
+    br
+    p.small.text.gray {{ sify('您的捐款將用於教材研發與網站維護，協會會開正式的捐款收據。') }}
 </template>
 
 <script>
@@ -107,13 +128,16 @@
 import {sify} from 'chinese-conv'
 import Tips from '@/components/Home_Tips.vue'
 import Changelog from '@/components/Home_Changelog.vue'
+import HomeSocialPosts from '@/components/Home_SocialPosts.vue'
+import { homePageSrcURL } from '@/data/homePage.js'
 
 export default {
   name: 'Home',
   props: ['units', 'share', 'si', 'changelogs'],
   components: {
     Tips,
-    Changelog
+    Changelog,
+    HomeSocialPosts
   },
   data () {
     return {
@@ -122,7 +146,8 @@ export default {
       useWiki: false,
       useAge: false,
       age: 9,
-      show1: true
+      show1: true,
+      homePageSrcURL: homePageSrcURL
     }
   },
   methods: {
@@ -315,7 +340,7 @@ a.sub.header {
 
 
 #podcast, #changelog-container {
-  max-width: 960px !important; /* 設定最大寬度並對齊 */
+  max-width: 460px !important; /* 設定最大寬度並對齊 */
 }
 
 .ui.toggle.checkbox label {

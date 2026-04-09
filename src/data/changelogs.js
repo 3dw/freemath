@@ -1,4 +1,13 @@
 export const changelogs = [
+    {text: '2026-03-29：加入數學閃卡外部小工具', h: 'https://bestian.github.io/q-flashcard/#/'},
+    {text: '2025-11-19：AI家教的內容，表格加入邊框', r: '/ai'},
+    {text: '2025-10-23：更新首頁，加入新影片', r: '/'},
+    {text: '2025-09-14：升級AI家教的模型與功能，優化回答的品質', r: '/ai'},
+    {text: '2025-08-26：修正「數學診療室」正簡轉換時的錯字', r: '/climbing'},
+    {text: '2025-08-06：加入社群動態，HomePage的影片更新', r: '/'},
+    {text: '2025-08-05：加入硬幣排列小工具', r: '/coins'},
+    {text: '2025-05-22：新增「數學診療室」功能', r: '/climbing'},
+    {text: '2025-02-21：更新首頁，加入捐款按鈕', h: 'https://www.alearn.org.tw/donate'},
     {text: '2024-07-15：更新首頁，使小秘訣輪播'},
     {text: '2024-07-01：更新《分數到小數》單元。', h: 'https://docs.google.com/document/d/1xr9bhw0qcsio0R3FU9gUOIjW8Ir2mQpAh0fjJh4cnu0/edit'},
     {text: '2024-06-21：新增「倒溯與前推」功能', r: '/trace'},
@@ -13,4 +22,5 @@ export const changelogs = [
     {text: '2023-09-17：將年齡查詢與關鍵字查詢區隔'},
     {text: '2023-09-17：分享按鈕從臉書脫勾，改為複製超連結'},
     {text: '2023-09-15：將教育圖示純化，並且取消灰階，利與查詢'},
+
 ]

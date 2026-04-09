@@ -5,6 +5,15 @@
     .ui.grid
       .one.column.row
         .column
+          iframe(
+            src="https://docs.google.com/presentation/d/1Mo3E9XtJtIQ1XPIOtjyL0wQDEciVUJtmIZ5Na61wMHM/embed"
+            frameborder="0"
+            width="100%"
+            height="480"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+          )
           .ui.segment.container
             h3 {{ sify('『君子務本，本立而道生』--《論語》') }}
 

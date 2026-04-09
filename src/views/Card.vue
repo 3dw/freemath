@@ -27,15 +27,6 @@
       h1.ui.blue.header(v-if="op == '+'") {{ n1 + n2 }}
       h1.ui.blue.header(v-if="op == '-'") {{ n1 - n2 }}
       h1.ui.blue.header(v-if="op == '*'") {{ n1 * n2 }}
-    .ui.segment.container
-      h3 閃卡手機App
-      .ui.two.buttons.group
-        a.ui.green.huge.button(href='https://play.google.com/store/apps/details?id=tw.bestian.flashcard' target='_blank')
-          i.google.play.icon
-          | Google Play下載
-        a.ui.orange.huge.button(href='https://apps.apple.com/us/app/自由數學閃卡/id1468723833?l=zh&ls=1' target='_blank')
-          i.app.store.icon
-          | App Store下載
 </template>
 
 <script>
