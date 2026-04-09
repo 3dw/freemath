@@ -106,7 +106,7 @@
   
 
   .ui.segment.container.center.aligned
-    h3.ui.header {{ sify('支持自由數學') }}
+    h3.ui.header {{ sify('支持自由數學(愛心碼9806)') }}
     p {{ sify('自由數學致力於提供優質的開源數學教材，您的支持能幫助我們持續發展') }}
     p {{ sify('支持自由數學，共同推廣數學教育！') }}
     .ui.vertical.buttons
@@ -120,7 +120,7 @@
         i.ui.github.icon
         | {{ sify('本站原始碼') }}
     br
-    p.small.text.gray {{ sify('您的捐款將用於教材研發與網站維護，協會會開正式的捐款收據。') }}
+    p.small.text.gray {{ sify('您的捐款將用於教材研發與網站維護，自主學習促進會將開立正式的捐款收據。') }}
 </template>
 
 <script>
