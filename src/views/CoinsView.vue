@@ -41,6 +41,7 @@
         p {{ sify('將硬幣拖拽到此處') }}
     
     .controls
+      .total-display {{ sify('總和') }}: ${{ totalValue }}
       button.ui.button.primary(@click="clearAll") {{ sify('清除全部') }}
 
     <!-- 浮動硬幣（觸控拖曳時顯示） -->
@@ -72,6 +73,11 @@ export default {
       touchDragIndex: null,
       touchOffset: { x: 0, y: 0 },
       originalCoin: null
+    }
+  },
+  computed: {
+    totalValue() {
+      return this.placedCoins.reduce((sum, coin) => sum + coin.value, 0)
     }
   },
   methods: {
@@ -366,8 +372,15 @@ export default {
 .controls {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   margin-top: 20px;
+}
+
+.total-display {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
 }
 
 /* RWD 設計 */
@@ -391,6 +404,10 @@ export default {
   .controls {
     flex-direction: column;
     align-items: center;
+  }
+
+  .total-display {
+    font-size: 18px;
   }
   
   .ui.button {
