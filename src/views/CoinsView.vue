@@ -468,7 +468,7 @@ export default {
 
 /* RWD */
 @media screen and (max-width: 768px) {
-  .coins-container { padding: 10px; }
+  .coins-container { padding: 0 }
   .coins-toolbar { gap: 15px; }
   .coin-value { font-size: 11px; }
   .drop-zone { min-height: 260px; }
