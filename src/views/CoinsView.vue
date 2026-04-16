@@ -1,7 +1,7 @@
 <template lang="pug">
   .coins-container
     .ui.container
-      h1.ui.header {{ sify('硬幣排列工具') }}
+      //- h1.ui.header {{ sify('硬幣排列工具') }}
 
       .split-zones
         //- 左側放置區
@@ -57,8 +57,10 @@
       .equation-box(v-if="showEquation")
         span.eq-text ${{ leftTotal }} + ${{ rightTotal }} = ${{ leftTotal + rightTotal }}
 
-      .controls
-        button.ui.button.teal(@click="toggleEquation") {{ sify('合計') }}
+      .ui.buttons
+        button.ui.button.teal(@click="toggleEquation")
+          span(v-if="!showEquation") {{ sify('合計') }}
+          span(v-else) {{ sify('隱藏總合') }}
         button.ui.button.primary(@click="clearAll") {{ sify('清除全部') }}
 
       .coins-toolbar(
@@ -290,7 +292,7 @@ export default {
 
 <style scoped>
 .coins-container {
-  padding: 20px;
+  padding: 10px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -380,7 +382,7 @@ export default {
 }
 
 .drop-zone {
-  min-height: 350px;
+  min-height: 250px;
   border: 3px dashed #ccc;
   border-radius: 0 0 8px 8px;
   position: relative;
@@ -410,7 +412,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 350px;
+  min-height: 250px;
 }
 
 .placed-coin {
@@ -476,7 +478,6 @@ export default {
   .zone-divider { font-size: 1.8rem; padding: 0 6px; }
   .zone-total { font-size: 1.1rem; }
   .controls { flex-direction: column; }
-  .ui.button { width: 200px; margin: 5px 0; }
   .eq-text { font-size: 1.5rem; }
 }
 
