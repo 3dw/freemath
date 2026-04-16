@@ -3,20 +3,6 @@
     .ui.container
       h1.ui.header {{ sify('硬幣排列工具') }}
 
-      .coins-toolbar(
-        @dragover.prevent
-        @drop="onToolbarDrop($event)"
-      )
-        .coin-item(
-          v-for="coin in availableCoins"
-          :key="coin.id"
-          :draggable="true"
-          @dragstart="onDragStart($event, coin)"
-          @touchstart="onTouchStart($event, coin, 'toolbar')"
-          :style="{ backgroundColor: coin.color, width: coin.size + 'px', height: coin.size + 'px' }"
-        )
-          span.coin-value ${{ coin.value }}
-
       .split-zones
         //- 左側放置區
         .zone-wrapper
@@ -74,6 +60,20 @@
       .controls
         button.ui.button.teal(@click="toggleEquation") {{ sify('合計') }}
         button.ui.button.primary(@click="clearAll") {{ sify('清除全部') }}
+
+      .coins-toolbar(
+        @dragover.prevent
+        @drop="onToolbarDrop($event)"
+      )
+        .coin-item(
+          v-for="coin in availableCoins"
+          :key="coin.id"
+          :draggable="true"
+          @dragstart="onDragStart($event, coin)"
+          @touchstart="onTouchStart($event, coin, 'toolbar')"
+          :style="{ backgroundColor: coin.color, width: coin.size + 'px', height: coin.size + 'px' }"
+        )
+          span.coin-value ${{ coin.value }}
 
       //- 浮動硬幣（觸控拖曳時顯示）
       .placed-coin(
@@ -299,7 +299,7 @@ export default {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 30px;
+  margin-top: 30px;
   flex-wrap: wrap;
 }
 
