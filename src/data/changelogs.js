@@ -1,4 +1,5 @@
 export const changelogs = [
+    {text: '2026-07-03：修復g0v.social的Mastodon社群動態顯示功能', r: '/'},
     {text: '2026-03-29：加入數學閃卡外部小工具', h: 'https://bestian.github.io/q-flashcard/#/'},
     {text: '2025-11-19：AI家教的內容，表格加入邊框', r: '/ai'},
     {text: '2025-10-23：更新首頁，加入新影片', r: '/'},

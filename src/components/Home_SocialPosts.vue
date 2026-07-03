@@ -48,7 +48,7 @@ export default {
       try {
         this.loading = true
         // 使用 g0v.social 的 API 來獲取標記為 #自由數學 的貼文
-        const response = await this.$http.get('https://g0v.social/api/v1/timelines/tag/自由數學?limit=3', {
+        const response = await this.$http.get('https://freemath-backend.alearn13994229.workers.dev/api/mastodon', {
           params: {
             local: true,
             limit: 40
