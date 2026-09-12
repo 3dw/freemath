@@ -6382,7 +6382,7 @@ __metadata:
     vue-d3-network: "npm:^0.1.28"
     vue-loader: "npm:^17.4.2"
     vue-router: "npm:^4.5.1"
-    webpack: "npm:^5.108.2"
+    webpack: "npm:^5.108.3"
   languageName: unknown
   linkType: soft
 
@@ -7812,14 +7812,14 @@ __metadata:
   linkType: hard
 
 "js-yaml@npm:^3.13.1":
-  version: 3.15.1
-  resolution: "js-yaml@npm:3.15.1"
+  version: 3.15.2
+  resolution: "js-yaml@npm:3.15.2"
   dependencies:
     argparse: "npm:^1.0.7"
     esprima: "npm:^4.0.0"
   bin:
     js-yaml: bin/js-yaml.js
-  checksum: 10c0/6c693b8c59ffe12021df3b36994b090df19d920826dd810baab81652b40861e1974509dd11fe92225ab4c00cc14de053300c94db015c2c0e211edea39b118737
+  checksum: 10c0/e341df211dece9d4b784849647ad7568b5b6a58a9ee58ead750482316d83276387343649fe4b71522705dc6c76acf97718588f23dc19443833ef3e75033af967
   languageName: node
   linkType: hard
 
@@ -12353,9 +12353,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.108.2":
-  version: 5.108.2
-  resolution: "webpack@npm:5.108.2"
+"webpack@npm:^5.108.3":
+  version: 5.108.3
+  resolution: "webpack@npm:5.108.3"
   dependencies:
     "@types/estree": "npm:^1.0.8"
     "@types/json-schema": "npm:^7.0.15"
@@ -12384,7 +12384,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10c0/0415339267d6759502022d0fe9a18f59d8c5d5bd08c42566f6591b86814073ee63078ad90344e45ed8bd6f2de13d58623a98b4bf47a620fca356b997da3d7f74
+  checksum: 10c0/96a0e17e5443ed179be24ee91fe2d5aca25aad8cf61e3ea469219b1fe9f970642ae40e0f32ad84888e8867c7141e2b8b2eaf32c290edce2e93762482231b7dad
   languageName: node
   linkType: hard
 
