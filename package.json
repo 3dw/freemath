@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
-    "axios": "^1.18.0",
+    "axios": "^1.20.0",
     "chinese-conv": "^1.0.1",
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
@@ -41,7 +41,7 @@
     "eslint-plugin-vue": "^9.31.0",
     "gh-pages": "^6.1.1",
     "vue-loader": "^17.4.2",
-    "webpack": "^5.108.4"
+    "webpack": "^5.111.1"
   },
   "packageManager": "yarn@4.13.0"
 }
