@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "build:cf": "corepack yarn install --immutable && corepack yarn build",
     "lint": "vue-cli-service lint",
+    "test:analytics": "node --test tests/analytics.test.mjs",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },

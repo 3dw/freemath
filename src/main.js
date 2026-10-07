@@ -3,24 +3,12 @@ import App from './App.vue'
 import router from './router'
 import promise from 'es6-promise'
 import axios from 'axios'
+import { initializeAnalytics, gtagProxy } from './analytics'
 import './registerServiceWorker'
 
 promise.polyfill()
 
 import 'semantic-ui-css/semantic.css'
-
-const gtagProxy = {
-  event (...args) {
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag(...args)
-    }
-  },
-  query (...args) {
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag(...args)
-    }
-  }
-}
 
 const app = createApp(App)
 
@@ -35,4 +23,9 @@ app.directive('autofocus', {
 })
 
 app.use(router)
-app.mount('#app')
+router.isReady().then(() => {
+  if (process.env.NODE_ENV === 'production') {
+    initializeAnalytics(process.env.VUE_APP_GA_MEASUREMENT_ID)
+  }
+  app.mount('#app')
+})
