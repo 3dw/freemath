@@ -46,6 +46,12 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## 首頁影片
+
+首頁播放器網址設定於 `src/data/homePage.js`，使用 YouTube `/embed/影片ID?listType=playlist&list=播放清單ID` 格式。目前播放 `BTB5DdKOIHw`，並載入播放清單 `PLebzuoh5ZI3LrVduRDqLcxCxlkruyDL27`。參數以 `?` 開頭，後續參數以 `&` 串接；播放清單參數依據 [YouTube 官方文件](https://developers.google.com/youtube/player_parameters#list)。
+
+播放器下方提供「開啟完整播放清單」按鈕，搭配小型 SVG 播放圖示，並在新分頁開啟 YouTube 清單。按鈕從同一嵌入網址取得清單 ID，無須另外維護連結；即使嵌入播放器沒有顯示清單選單，訪客仍可直接選片。
+
 ## Google Analytics 4
 
 正式版本透過建置時的 `VUE_APP_GA_MEASUREMENT_ID` 載入 Google tag。本站的正式評估 ID `G-BWTR1H6280` 已設定於 `.env.production`，正式建置會自動使用；未設定時不啟用追蹤，`yarn serve` 也不會送出開發流量。

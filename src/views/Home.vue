@@ -6,6 +6,11 @@
   
   iframe#podcast(width="100%" height="400",
     :src="homePageSrcURL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+  .playlist-actions
+    a.ui.basic.button.playlist-link(:href="homePagePlaylistURL" target="_blank" rel="noopener noreferrer")
+      svg(width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false")
+        path(d="M8 5v14l11-7z")
+      | {{ sify('開啟完整播放清單') }}
   
   .ui.segment.container.center.aligned#changelog-container
     changelog(:changelogs = "changelogs")
@@ -148,6 +153,11 @@ export default {
       age: 9,
       show1: true,
       homePageSrcURL: homePageSrcURL
+    }
+  },
+  computed: {
+    homePagePlaylistURL () {
+      return 'https://www.youtube.com/playlist?list=' + new URL(this.homePageSrcURL).searchParams.get('list')
     }
   },
   methods: {
@@ -336,6 +346,16 @@ a.sub.header {
   height: auto;
   aspect-ratio: 16/9; /* 保持影片比例 */
   margin: 0 auto;
+}
+
+.playlist-actions {
+  margin: 0.75em 0 1em;
+}
+
+.playlist-link.ui.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 
