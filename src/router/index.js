@@ -29,8 +29,6 @@ import Resources from '@/views/Resources'
 import Tools from '@/views/Tools'
 import Changelogs from '@/views/Changelogs'
 import TraceBack from '@/views/TraceBack'
-import AI from '@/views/AI'
-import Climbing from '@/views/Climbing'
 import CoinsView from '@/views/CoinsView'
 
 const routes = [
@@ -40,19 +38,9 @@ const routes = [
       component: Home
     },
     {
-      path: '/ai',
-      name: 'AI',
-      component: AI
-    },
-    {
       path: '/trace',
       name: '倒溯與前推',
       component: TraceBack
-    },
-    {
-      path: '/climbing',
-      name: '數學診療室',
-      component: Climbing
     },
     /* {
       path: '/login',

@@ -6174,7 +6174,6 @@ __metadata:
     eslint: "npm:7.32.0"
     eslint-plugin-vue: "npm:^9.31.0"
     gh-pages: "npm:^6.1.1"
-    marked: "npm:^15.0.7"
     node-polyfill-webpack-plugin: "npm:^2.0.1"
     pug: "npm:^3.0.3"
     pug-plain-loader: "npm:^1.1.0"
@@ -8033,15 +8032,6 @@ __metadata:
     promise-retry: "npm:^2.0.1"
     ssri: "npm:^12.0.0"
   checksum: 10c0/c40efb5e5296e7feb8e37155bde8eb70bc57d731b1f7d90e35a092fde403d7697c56fb49334d92d330d6f1ca29a98142036d6480a12681133a0a1453164cb2f0
-  languageName: node
-  linkType: hard
-
-"marked@npm:^15.0.7":
-  version: 15.0.7
-  resolution: "marked@npm:15.0.7"
-  bin:
-    marked: bin/marked.js
-  checksum: 10c0/0b9d07bace37bbf0548bae356c4184765afa4d2296ed0be4418aa4bb0ce703f323dc1a475125d536581f9fe264797e6265dd0b57499d97c0fe0f29bc6d016343
   languageName: node
   linkType: hard
 

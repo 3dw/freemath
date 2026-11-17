@@ -96,8 +96,7 @@ export default {
       webs: [
         { n: '數學@維基百科', h: 'https://zh.wikipedia.org/zh-tw/%E6%95%B0%E5%AD%A6' },
         { n: 'Math@可汗學院', h: 'https://www.khanacademy.org/math' },
-        { n: 'SAT線上測驗', h: 'https://www.4tests.com/sat' },
-        { n: 'chatGPT', h: 'https://chat.openai.com/' }
+        { n: 'SAT線上測驗', h: 'https://www.4tests.com/sat' }
       ],
       books: [
         { n: '數學教育的藝術與實務─另類教與學', h: 'https://www.books.com.tw/products/0010079574' },

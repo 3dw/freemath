@@ -9,18 +9,6 @@
           .description
            | {{ sify('以倒溯法和前推法，協助教學者，找到合適的教材') }}
         .ui.item
-          router-link(to='/ai' exact='')
-            i.question.icon
-            | {{ sify('AI家教') }}
-          .description
-           | {{ sify('問AI任何數學問題') }}
-        .ui.item
-          router-link(to='/climbing' exact='')
-            i.chart.line.icon
-            | {{ sify('數學診療室') }}
-          .description
-           | {{ sify('以倒溯法協助學習者，找出數學學習的盲點') }}
-        .ui.item
           router-link(to='/grid' exact='')
             i.copy.icon
             | {{ sify('方格紙產生器') }}
